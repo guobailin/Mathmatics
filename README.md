@@ -10,6 +10,8 @@
 - `tools/build.py` — 构建工具：校验覆盖矩阵 → 索引 → 打印页 → 网页版 → 小程序数据
 - `dist/` — 构建产物（打印 HTML、网页版、小程序数据包）
 - `miniprogram/` — 微信小程序源码（数据在 `miniprogram/data/`，由构建自动同步）
+- `h5-preview/` — 小程序 H5 效果预览（近似版，`npm run dev` 启动本地预览）
+- `delivery/` — 小程序静态编译证据包
 - `参考讲义/` — 原始讲义素材
 
 ## 使用
@@ -21,7 +23,8 @@ python3 tools/build.py --check  # 只校验
 
 - 查询/浏览：打开 `dist/web/index.html`
 - 打印：打开 `dist/print/<模块>.html`，浏览器 Cmd+P 出 PDF
-- 小程序：微信开发者工具导入 `miniprogram/` 目录（选测试号即可预览）
+- 小程序：微信开发者工具导入 `miniprogram/` 目录（选测试号即可预览；命令行调用需在 工具→设置→安全设置 中开启"服务端口"）
+- H5 预览：`cd h5-preview && npm run dev`（或 `python3 tools/build_h5_preview.py` 重新生成）
 
 ## 增补知识点
 
