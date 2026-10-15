@@ -1,0 +1,20 @@
+<view class="filter">
+  <view class="chip {{grade===0?'on':''}}" data-g="0" bindtap="pickGrade">全部年级</view>
+  <view class="chip {{grade===g?'on':''}}" wx:for="{{grades}}" wx:for-item="g" wx:key="*this"
+        data-g="{{g}}" bindtap="pickGrade">{{g}}年级</view>
+</view>
+<view class="filter">
+  <view class="chip {{diff===0?'on':''}}" data-d="0" bindtap="pickDiff">全部难度</view>
+  <view class="chip {{diff===1?'on':''}}" data-d="1" bindtap="pickDiff">★ 基础</view>
+  <view class="chip {{diff===2?'on':''}}" data-d="2" bindtap="pickDiff">★★ 提高</view>
+  <view class="chip {{diff===3?'on':''}}" data-d="3" bindtap="pickDiff">★★★ 竞赛</view>
+</view>
+
+<view class="card item" wx:for="{{filtered}}" wx:key="id" data-id="{{item.id}}" bindtap="goDetail">
+  <view class="item-title">{{item.title}}</view>
+  <view class="muted">
+    <text wx:for="{{item.tags}}" wx:for-item="t" wx:key="*this" class="badge">{{t}}</text>
+    <text>{{'★'.repeat(item.difficulty)}} · 年级 {{item.grade.join('/')}} · {{item.examples.length}} 道例题</text>
+  </view>
+</view>
+<view class="muted empty" wx:if="{{!filtered.length}}">没有匹配的知识点</view>

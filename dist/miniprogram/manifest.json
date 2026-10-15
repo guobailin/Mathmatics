@@ -1,0 +1,38 @@
+[
+ {
+  "slug": "m01",
+  "module": "数与计算",
+  "count": 28,
+  "file": "m01.json"
+ },
+ {
+  "slug": "m02",
+  "module": "代数初步",
+  "count": 11,
+  "file": "m02.json"
+ },
+ {
+  "slug": "m03",
+  "module": "图形与几何",
+  "count": 26,
+  "file": "m03.json"
+ },
+ {
+  "slug": "m04",
+  "module": "统计与概率",
+  "count": 7,
+  "file": "m04.json"
+ },
+ {
+  "slug": "m05",
+  "module": "应用题",
+  "count": 21,
+  "file": "m05.json"
+ },
+ {
+  "slug": "m08",
+  "module": "奥数-数论",
+  "count": 13,
+  "file": "m08.json"
+ }
+]

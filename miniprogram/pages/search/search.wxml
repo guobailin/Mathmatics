@@ -1,0 +1,11 @@
+<view class="bar">
+  <input class="input" placeholder="如：质数、面积、鸡兔同笼" value="{{kw}}"
+         bindinput="onInput" confirm-type="search" bindconfirm="onSearch" focus />
+  <button class="btn" size="mini" bindtap="onSearch">搜索</button>
+</view>
+
+<view class="card item" wx:for="{{hits}}" wx:key="id" data-id="{{item.id}}" bindtap="goDetail">
+  <view class="item-title">{{item.title}}</view>
+  <view class="muted">{{item.module}} · {{'★'.repeat(item.difficulty)}} · 年级 {{item.grade.join('/')}}</view>
+</view>
+<view class="muted empty" wx:if="{{searched && !hits.length}}">没有找到「{{kw}}」相关的知识点</view>

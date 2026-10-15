@@ -1,0 +1,8 @@
+.filter { display: flex; flex-wrap: wrap; padding: 12rpx 24rpx 0; }
+.chip {
+  background: #fff; border: 1rpx solid #ddd; border-radius: 28rpx;
+  padding: 8rpx 22rpx; font-size: 24rpx; margin: 0 12rpx 12rpx 0; color: #555;
+}
+.chip.on { background: #3b6ef6; color: #fff; border-color: #3b6ef6; }
+.item-title { font-weight: bold; font-size: 30rpx; margin-bottom: 8rpx; }
+.empty { text-align: center; margin-top: 60rpx; }

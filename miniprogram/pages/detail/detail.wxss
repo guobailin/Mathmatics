@@ -1,0 +1,7 @@
+.title { font-size: 36rpx; font-weight: bold; margin-bottom: 8rpx; }
+.fav { float: right; color: #f60; }
+.h2 { font-size: 30rpx; font-weight: bold; border-left: 6rpx solid #3b6ef6; padding-left: 12rpx; margin-bottom: 12rpx; }
+.ex-title { font-weight: bold; margin-bottom: 4rpx; }
+.problem { background: #f7f8fc; border-radius: 8rpx; padding: 16rpx; margin: 12rpx 0; }
+.toggle { color: #3b6ef6; font-size: 26rpx; text-align: center; padding: 8rpx; }
+.analysis { border-top: 1rpx dashed #ddd; padding-top: 12rpx; margin-top: 8rpx; }

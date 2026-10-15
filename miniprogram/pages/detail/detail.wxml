@@ -1,0 +1,27 @@
+<view class="card" wx:if="{{kp}}">
+  <view class="title">{{kp.title}}</view>
+  <view class="muted">
+    {{kp.module}} · {{'★'.repeat(kp.difficulty)}} · 年级 {{kp.grade.join('/')}}
+    <text class="fav" bindtap="toggleFav">{{fav ? '★ 已收藏' : '☆ 收藏'}}</text>
+  </view>
+  <view class="muted">子技能：<text wx:for="{{kp.skills}}" wx:key="*this" class="badge">{{item}}</text></view>
+</view>
+
+<view class="card">
+  <view class="h2">讲解</view>
+  <rich-text nodes="{{lectureNodes}}"></rich-text>
+</view>
+
+<view class="card" wx:for="{{examples}}" wx:key="title" wx:for-item="ex">
+  <view class="ex-title">{{ex.title}}</view>
+  <view class="muted">覆盖点：{{ex.covers.join('、')}}</view>
+  <view class="problem">
+    <rich-text nodes="{{ex.problemNodes}}"></rich-text>
+  </view>
+  <view class="toggle" data-i="{{index}}" bindtap="toggleAnswer">
+    {{ex.open ? '▲ 收起解析' : '▼ 查看解析与答案'}}
+  </view>
+  <view wx:if="{{ex.open}}" class="analysis">
+    <rich-text nodes="{{ex.analysisNodes}}"></rich-text>
+  </view>
+</view>

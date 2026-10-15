@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>数学巧算技巧 · 例题精讲（可打印）</title>
+<style>
+  /* ===== 打印基础设置 ===== */
+  @page { size: A4; margin: 14mm 12mm 12mm 12mm; }
+
+  * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  html { font-size: 15px; }
+  body {
+    margin: 0 auto;
+    max-width: 190mm;
+    padding: 10mm 6mm;
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Songti SC", serif;
+    color: #1a1a1a;
+    line-height: 1.7;
+    background: #fff;
+  }
+
+  /* ===== 标题区 ===== */
+  header { border-bottom: 3px double #333; padding-bottom: 8px; margin-bottom: 14px; }
+  h1 { font-size: 1.65rem; margin: 0 0 4px; letter-spacing: 2px; }
+  .sub { font-size: .82rem; color: #555; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 4px; }
+  .sub b { color: #000; }
+
+  h2 {
+    font-size: 1.08rem; margin: 20px 0 10px; padding: 4px 10px;
+    background: #f0f0f0; border-left: 5px solid #444;
+  }
+  h2:first-of-type { margin-top: 6px; }
+
+  /* ===== 原理速览 ===== */
+  .principles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 6px; }
+  .principles div { border: 1px solid #bbb; padding: 6px 9px; font-size: .84rem; background: #fafafa; }
+  .principles strong { display: block; font-size: .92rem; margin-bottom: 2px; }
+
+  /* ===== 例题卡片 ===== */
+  .ex {
+    border: 1px solid #999; border-radius: 4px;
+    padding: 9px 12px 10px; margin: 0 0 11px;
+    break-inside: avoid; page-break-inside: avoid;
+  }
+  .ex-head { display: flex; align-items: baseline; gap: 8px; margin-bottom: 5px; }
+  .no {
+    flex: none; background: #333; color: #fff; font-size: .74rem;
+    padding: 1px 7px; border-radius: 3px; letter-spacing: 1px;
+  }
+  .q { font-size: .98rem; font-weight: 700; }
+
+  .row { display: flex; gap: 7px; margin: 3px 0; font-size: .9rem; }
+  .tag {
+    flex: none; width: 3.6em; text-align: center; color: #444;
+    font-size: .74rem; border: 1px solid #bbb; border-radius: 3px;
+    height: 1.45em; line-height: 1.35em; margin-top: .22em; background: #f7f7f7;
+  }
+  .row > div:last-child { flex: 1; }
+
+  /* 算式区块 */
+  .calc {
+    font-family: "SF Mono", Menlo, Consolas, "Courier New", monospace;
+    font-size: .92rem; background: #f6f6f6; border-left: 3px solid #bbb;
+    padding: 5px 10px; margin: 4px 0 4px; white-space: pre-wrap; line-height: 1.85;
+  }
+  .calc b { color: #000; }
+  u { text-decoration: none; border-bottom: 1.5px solid #666; }
+
+  /* 知识点标签 */
+  .chips { margin-top: 6px; font-size: .76rem; color: #444; }
+  .chips span {
+    display: inline-block; border: 1px dashed #999; border-radius: 10px;
+    padding: 0 7px; margin: 2px 4px 0 0; background: #fbfbfb;
+  }
+
+  .var { font-size: .84rem; color: #333; margin-top: 5px; padding-top: 4px; border-top: 1px dotted #ccc; }
+  .var::before { content: "变式 → "; color: #777; }
+
+  /* ===== 分数 ===== */
+  .frac {
+    display: inline-flex; flex-direction: column; vertical-align: -0.55em;
+    text-align: center; font-size: .86em; margin: 0 .18em; line-height: 1.15;
+  }
+  .frac .n { border-bottom: 1.4px solid currentColor; padding: 0 .22em; }
+  .frac .d { padding: 0 .22em; }
+
+  /* ===== 表格 ===== */
+  table { width: 100%; border-collapse: collapse; font-size: .84rem; margin: 4px 0 8px; }
+  th, td { border: 1px solid #999; padding: 4px 7px; text-align: left; vertical-align: top; }
+  th { background: #ececec; font-weight: 700; }
+  tr { break-inside: avoid; page-break-inside: avoid; }
+  table .f { font-family: "SF Mono", Menlo, Consolas, monospace; }
+
+  /* ===== 练习 ===== */
+  ol.qs { margin: 4px 0 6px; padding-left: 1.6em; font-size: .9rem; }
+  ol.qs li { margin: 3px 0; break-inside: avoid; }
+  .qs .two { column-count: 2; column-gap: 22px; }
+
+  .answers { font-size: .84rem; border: 1px dashed #777; padding: 7px 11px; background: #fafafa; break-inside: avoid; }
+  .answers b { margin-right: 4px; }
+  .answers span { display: inline-block; margin-right: 13px; white-space: nowrap; }
+
+  footer { margin-top: 16px; border-top: 1px solid #bbb; padding-top: 6px; font-size: .76rem; color: #666; text-align: center; }
+
+  /* ===== 屏幕上的打印按钮 ===== */
+  .no-print { text-align: right; margin-bottom: 6px; }
+  .no-print button {
+    font-size: .85rem; padding: 5px 16px; cursor: pointer;
+    background: #333; color: #fff; border: 0; border-radius: 4px;
+  }
+  @media print { .no-print { display: none !important; } html { font-size: 14px; } body { padding: 0; max-width: none; } }
+</style>
+</head>
+<body>
+
+<div class="no-print"><button onclick="window.print()">🖨 打印 / 导出 PDF</button></div>
+
+<header>
+  <h1>数学巧算技巧 · 例题精讲</h1>
+  <div class="sub">
+    <span>把知识点串成一条线：<b>先估算 → 再巧算 → 后检验</b></span>
+    <span>适用：小学高年级 ~ 初中</span>
+  </div>
+</header>
+
+<div class="principles">
+  <div><strong>① 凑整</strong>整十整百 ± 零头，加减小技巧都从这来。</div>
+  <div><strong>② 分配律</strong>拆分与合并：<span class="f">(a+b)c = ac+bc</span></div>
+  <div><strong>③ 平方差</strong>两数相乘的通解：<span class="f">a²−b² = (a+b)(a−b)</span></div>
+</div>
+
+<h2>一、加减法：凑整、基准数、补数</h2>
+
+<div class="ex">
+  <div class="ex-head"><span class="no">例 1</span><span class="q">78 + 81 + 79 + 82 + 80 = ?</span></div>
+  <div class="row"><div class="tag">思路</div><div>五个数都在 80 附近，取 <b>80 作基准数</b>，只加"零头"。</div></div>
+  <div class="calc">80 × 5 = 400
+零头：(−2) + (+1) + (−1) + (+2) + 0 = <u>0</u>
+结果：400 + 0 = <b>400</b></div>
+  <div class="row"><div class="tag">原理</div><div>把每个数写成「基准数 + 偏差」，偏差往往互相抵消。</div></div>
+  <div class="var">一堆物品的重量是 498、502、497、503、500 克，总重 = 500×5 + (−2+2−3+3+0) = <b>2500 克</b>。</div>
+  <div class="chips"><span>基准数法</span><span>凑整</span><span>正负抵消</span></div>
+</div>
+
+<div class="ex">
+  <div class="ex-head"><span class="no">例 2</span><span class="q">1000 − 638 = ?</span></div>
+  <div class="row"><div class="tag">思路</div><div>不退位硬算，改用 <b>补数</b>：638 凑满 1000 还差多少？</div></div>
+  <div class="calc">1000 − 638  ⟺  638 + ? = 1000
+"每位凑 9，末位凑 10"：6→3，3→6，8→<u>2</u>
+补数 = 362   →   1000 − 638 = <b>362</b></div>
+  <div class="row"><div class="tag">心法</div><div>减法看成"还差多少"，比逐位借位快，也更不容易错。</div></div>
+  <div class="var">10000 − 2468 = <b>7532</b>（2→7，4→5，6→3，8→2）。另有同增同减：703 − 498 = 705 − 500 = <b>205</b>。</div>
+  <div class="chips"><span>补数</span><span>凑整</span><span>同增同减</span></div>
+</div>
+
+<h2>二、乘法速算：三大招牌解法</h2>
+
+<div class="ex">
+  <div class="ex-head"><span class="no">例 3</span><span class="q">43 × 47 = ?</span></div>
+  <div class="row"><div class="tag">思路</div><div>十位相同（<b>头同</b>），个位 3 + 7 = 10（<b>尾合十</b>）。</div></div>
+  <div class="calc">头 × (头+1)  →  4 × 5 = 20
+尾 × 尾        →  3 × 7 = 21
+两段拼接       →  <b>2021</b></div>
+  <div class="row"><div class="tag">验算</div><div>43×47 = 43×40 + 43×7 = 1720 + 301 = 2021 ✓</div></div>
+  <div class="var">62 × 68 = 6×7 拼 2×8 = 42 拼 16 = <b>4216</b>。</div>
+  <div class="chips"><span>头同尾合十</span><span>位值原理</span><span>分配律</span></div>
+</div>
+
+<div class="ex">
+  <div class="ex-head"><span class="no">例 4</span><span class="q">63 × 57 = ?</span></div>
+  <div class="row"><div class="tag">思路</div><div>两个数关于 <b>60 对称</b>（60±3），套<b>平方差</b>。</div></div>
+  <div class="calc">63 × 57 = (60 + 3)(60 − 3) = 60² − 3²
+       = 3600 − 9 = <b>3591</b></div>
+  <div class="row"><div class="tag">关键</div><div>只要"平均数"好算（整十整百），就用平方差——<b>两位数相乘的通解</b>。</div></div>
+  <div class="var">82 × 78 = 80² − 2² = 6400 − 4 = <b>6396</b>。</div>
+  <div class="chips"><span>平方差</span><span>对称凑整</span></div>
+</div>
+
+<div class="ex">
+  <div class="ex-head"><span class="no">例 5</span><span class="q">35² = ? &nbsp;&nbsp; 47² = ?</span></div>
+  <div class="row"><div class="tag">思路</div><div>平方分两类：<b>末位是 5</b> 用口诀；<b>接近整十</b> 用凑整展开。</div></div>
+  <div class="calc">① 末位 5：  3 × (3+1) = 12，后接 25   →  <b>1225</b>
+② 47² = (50 − 3)² = 2500 − 2×50×3 + 9
+        = 2500 − 300 + 9 = <b>2209</b>
+   （或用平方差：(47+3)(47−3) + 3² = 2200 + 9 = 2209）</div>
+  <div class="row"><div class="tag">公式</div><div><span class="f">(a ± b)² = a² ± 2ab + b²</span>，a 取最接近的整十数。</div></div>
+  <div class="var">65² = 6×7 拼 25 = <b>4225</b>；98² = (100−2)² = 10000 − 400 + 4 = <b>9604</b>。</div>
+  <div class="chips"><span>平方数</span><span>完全平方公式</span><span>凑整</span></div>
+</div>
+
+<div class="ex">
+  <div class="ex-head"><span class="no">例 6</span><span class="q">97 × 98 = ?</span></div>
+  <div class="row"><div class="tag">思路</div><div>两个"九十几"，都缺一点才到 100。</div></div>
+  <div class="calc">97 × 98 = (100 − 3)(100 − 2)
+        = 10000 − 100×(3+2) + 3×2
+        = 10000 − 500 + 6 = <b>9506</b></div>
+  <div class="row"><div class="tag">规律</div><div>九十几相乘：<b>10000 − 100×(两缺口之和) + 两缺口之积</b>。</div></div>
+  <div class="var">96 × 95 = 10000 − 100×9 + 20 = <b>9120</b>。同理 47 × 99 = 4700 − 47 = <b>4653</b>。</div>
+  <div class="chips"><span>接近 100 型</span><span>完全平方公式</span><span>×99 = ×100 − 自身</span></div>
+</div>
+
+<div class="ex">
+  <div class="ex-head"><span class="no">例 7</span><span class="q">125 × 88 = ? &nbsp;&nbsp; 25 × 32 × 125 = ?</span></div>
+  <div class="row"><div class="tag">思路</div><div>看到 125 找 8，看到 25 找 4，<b>把因数拆成"搭档"</b>。</div></div>
+  <div class="calc">125 × 88 = 125 × 8 × 11 = 1000 × 11 = <b>11000</b>
+25 × 32 × 125 = (25×4) × (8×125) = 100 × 1000 = <b>100000</b></div>
+  <div class="row"><div class="tag">口诀</div><div>×5 = ×10÷2&nbsp;&nbsp;×25 = ×100÷4&nbsp;&nbsp;×125 = ×1000÷8</div></div>
+  <div class="var">115 ÷ 5 = 230 ÷ 10 = <b>23</b>；4800 ÷ 25 = 19200 ÷ 100 = <b>192</b>。</div>
+  <div class="chips"><span>因数分解</span><span>乘法结合律</span><span>除以 5/25/125</span></div>
+</div>
+
+<h2>三、分数与数列：裂项、等差求和</h2>
+
+<div class="ex">
+  <div class="ex-head"><span class="no">例 8</span><span class="q"><span class="frac"><span class="n">1</span><span class="d">1×2</span></span> + <span class="frac"><span class="n">1</span><span class="d">2×3</span></span> + <span class="frac"><span class="n">1</span><span class="d">3×4</span></span> + … + <span class="frac"><span class="n">1</span><span class="d">9×10</span></span> = ?</span></div>
+  <div class="row"><div class="tag">思路</div><div>分母是相邻两数之积，可以<b>裂项相消</b>。</div></div>
+  <div class="calc">核心：1/(n(n+1)) = 1/n − 1/(n+1)
+
+原式 = (1 − 1/2) + (1/2 − 1/3) + … + (1/9 − 1/10)
+     = 1 − 1/10 = <b>9/10</b></div>
+  <div class="row"><div class="tag">为什么</div><div>中间项首尾抵消，只剩第一项的头和最后一项的尾。</div></div>
+  <div class="var">间隔型：<span class="frac"><span class="n">1</span><span class="d">1×3</span></span>+<span class="frac"><span class="n">1</span><span class="d">3×5</span></span>+…+<span class="frac"><span class="n">1</span><span class="d">9×11</span></span> = ½(1 − 1/11) = <b>5/11</b>。</div>
+  <div class="chips"><span>裂项相消</span><span>通项拆分</span><span>1/(n(n+k)) = (1/k)(1/n − 1/(n+k))</span></div>
+</div>
+
+<div class="ex">
+  <div class="ex-head"><span class="no">例 9</span><span class="q">1 + 2 + 3 + … + 100 = ? &nbsp;&nbsp; 2 + 4 + 6 + … + 100 = ?</span></div>
+  <div class="row"><div class="tag">思路</div><div>首尾配对（高斯法），或直接用等差求和公式。</div></div>
+  <div class="calc">① 1 + 2 + … + 100 = (1 + 100) × 100 ÷ 2 = <b>5050</b>
+② 2 + 4 + … + 100 = 2 × (1 + 2 + … + 50) = 2 × 1275 = <b>2550</b>
+
+公式：S = 项数 × (首项 + 末项) ÷ 2
+      项数 = (末项 − 首项) ÷ 公差 + 1</div>
+  <div class="row"><div class="tag">延伸</div><div>奇数连加：1+3+5+…+(2n−1) = <b>n²</b>；1³+2³+…+n³ = (1+2+…+n)²。</div></div>
+  <div class="var">3 + 6 + 9 + … + 99 = 3 × (1+2+…+33) = 3 × 561 = <b>1683</b>。</div>
+  <div class="chips"><span>等差求和</span><span>首尾配对</span><span>提取公因数</span></div>
+</div>
+
+<h2>四、百分数与估算：生活里的巧算</h2>
+
+<div class="ex">
+  <div class="ex-head"><span class="no">例 10</span><span class="q">80 的 15% 是多少？一件 200 元的衣服先涨 20% 再打八折，比原价贵还是便宜？</span></div>
+  <div class="row"><div class="tag">思路 1</div><div>百分数可以<b>交换</b>：求 a 的 b% = 求 b 的 a%。</div></div>
+  <div class="calc">80 的 15%  =  15 的 80%  =  15 × 0.8  =  <b>12</b></div>
+  <div class="row"><div class="tag">思路 2</div><div>连续百分比<b>不能相加</b>，要相乘。</div></div>
+  <div class="calc">200 × 1.2 × 0.8 = 200 × 0.96 = 192 元  →  <b>比原价便宜 8 元（净降 4%）</b>
+❌ 错误想法："涨 20% 又降 20%，等于没变"</div>
+  <div class="row"><div class="tag">速记</div><div>1/8 = 12.5%，1/16 = 6.25%，1/6 ≈ 16.7%，1/7 ≈ 14.3%</div></div>
+  <div class="chips"><span>百分数交换律</span><span>连续变化相乘</span><span>折扣</span></div>
+</div>
+
+<div class="ex">
+  <div class="ex-head"><span class="no">例 11</span><span class="q">带 200 元买 3 本 68 元的书，够吗？</span></div>
+  <div class="row"><div class="tag">思路</div><div><b>先估量级，再决定要不要精算</b>——这是巧算最重要的习惯。</div></div>
+  <div class="calc">估算：68 ≈ 70，70 × 3 = 210 &gt; 200   →  <u>钱不够</u>
+精算：68 × 3 = 204，200 − 204 = −4        →  差 4 元</div>
+  <div class="row"><div class="tag">补充</div><div>√50 的估算：50 在 7²=49 附近，√50 ≈ 7 + 1/(2×7) ≈ <b>7.07</b>。</div></div>
+  <div class="chips"><span>估算</span><span>量级判断</span><span>线性逼近开方</span></div>
+</div>
+
+<h2>五、综合大串联：一题走完全流程</h2>
+
+<div class="ex">
+  <div class="ex-head"><span class="no">例 12</span><span class="q">计算 125 × 88 − 94 × 96 + 35²</span></div>
+  <div class="row"><div class="tag">第 1 步</div><div><b>先估算量级</b>：≈ 11000 − 9000 + 1000 ≈ 3000。答案应在三四千之间，为后面的检验定锚。</div></div>
+  <div class="row"><div class="tag">第 2 步</div><div>125 × 88 拆因数（例 7）。</div></div>
+  <div class="calc">125 × 88 = 125 × 8 × 11 = 1000 × 11 = <b>11000</b></div>
+  <div class="row"><div class="tag">第 3 步</div><div>94 × 96 是"九十几相乘"（例 6），缺口 6 和 4。</div></div>
+  <div class="calc">94 × 96 = 10000 − 100 × (6 + 4) + 6 × 4 = 10000 − 1000 + 24 = <b>9024</b></div>
+  <div class="row"><div class="tag">第 4 步</div><div>35² 用"末位 5"口诀（例 5）。</div></div>
+  <div class="calc">35² = 3 × 4 拼 25 = <b>1225</b></div>
+  <div class="row"><div class="tag">第 5 步</div><div>合并，并用<b>弃九法</b>检验（见下）。</div></div>
+  <div class="calc">11000 − 9024 + 1225 = 1976 + 1225 = <b>3201</b>
+检验：数字根 (1+1+0+0+0)=2，(9+0+2+4)=15→6，(1+2+2+5)=10→1
+     2 − 6 + 1 = −3 ≡ 6 (mod 9)
+     结果 3201 → 3+2+0+1 = 6 ✓ 一致</div>
+  <div class="chips"><span>估算定锚</span><span>因数分解</span><span>九十几相乘</span><span>平方口诀</span><span>弃九法检验</span></div>
+</div>
+
+<h2>六、检验工具：弃九法</h2>
+
+<table>
+  <tr><th style="width:22%">步骤</th><th>做法</th><th style="width:32%">例：验 34 × 74 = 2516</th></tr>
+  <tr><td>1. 求数字根</td><td>各位数字相加，直到一位数（等价于 mod 9）</td><td class="f">34 → 7 &nbsp;&nbsp; 74 → 11 → 2</td></tr>
+  <tr><td>2. 运算取根</td><td>对参与者做同样的运算，再取根</td><td class="f">7 × 2 = 14 → 5</td></tr>
+  <tr><td>3. 比对</td><td>结果取根，两者应相同</td><td class="f">2516 → 14 → 5 ✓ 一致</td></tr>
+</table>
+<p style="font-size:.82rem;color:#444;margin-top:-2px;">
+<b>三查口诀：</b>查末位、查奇偶、查量级。弃九法只能发现"算错"，不能发现"抄错"，所以要和估算配合使用。
+</p>
+
+<h2>七、一页速查表</h2>
+
+<table>
+  <tr><th style="width:30%">看到什么</th><th style="width:38%">怎么做</th><th>例子</th></tr>
+  <tr><td>一堆相近的数相加</td><td>取基准数，只算零头</td><td class="f">80×5 + 0 = 400</td></tr>
+  <tr><td>1000 − 638</td><td>用补数（每位凑 9、末位凑 10）</td><td class="f">→ 362</td></tr>
+  <tr><td>尾数相加为 10、十位相同</td><td>头×(头+1) 拼 尾×尾</td><td class="f">43×47 = 2021</td></tr>
+  <tr><td>两数关于整十数对称</td><td>平方差 a²−b²</td><td class="f">63×57 = 3600−9 = 3591</td></tr>
+  <tr><td>末位是 5 的平方</td><td>头×(头+1) 拼 25</td><td class="f">35² = 1225</td></tr>
+  <tr><td>接近整十的平方</td><td>(a±b)² 展开</td><td class="f">47² = 2500−300+9 = 2209</td></tr>
+  <tr><td>九十几 × 九十几</td><td>10000 − 100·(缺口和) + 缺口积</td><td class="f">97×98 = 9506</td></tr>
+  <tr><td>看见 125 / 25 / 5</td><td>找搭档 8 / 4 / 2</td><td class="f">125×88 = 1000×11 = 11000</td></tr>
+  <tr><td>分母为相邻两数之积</td><td>裂项：1/(n(n+1)) = 1/n − 1/(n+1)</td><td class="f">Σ = 1 − 1/10 = 9/10</td></tr>
+  <tr><td>等差数列求和</td><td>项数 × (首+末) ÷ 2</td><td class="f">1+…+100 = 5050</td></tr>
+  <tr><td>求 a 的 b%</td><td>交换：求 b 的 a%</td><td class="f">80 的 15% = 15×0.8 = 12</td></tr>
+  <tr><td>连续涨跌百分比</td><td>相乘，不可相加</td><td class="f">1.2×0.8 = 0.96</td></tr>
+  <tr><td>算完想确认</td><td>弃九法 + 末位 + 量级</td><td class="f">34×74 = 2516 ✓</td></tr>
+</table>
+
+<h2>八、随堂练习（10 题）</h2>
+
+<ol class="qs">
+  <li>97 + 98 + 99 + 100 + 101 + 102 + 103</li>
+  <li>2000 − 1876</li>
+  <li>56 × 54</li>
+  <li>84 × 76</li>
+  <li>75²</li>
+  <li>93 × 97</li>
+  <li><span class="frac"><span class="n">1</span><span class="d">2×3</span></span> + <span class="frac"><span class="n">1</span><span class="d">3×4</span></span> + … + <span class="frac"><span class="n">1</span><span class="d">10×11</span></span></li>
+  <li>125 × 48</li>
+  <li>45 × 11</li>
+  <li>3 + 6 + 9 + … + 99</li>
+</ol>
+
+<div class="answers">
+  <b>参考答案：</b>
+  <span>1. 700（基准 100×7）</span>
+  <span>2. 124</span>
+  <span>3. 3024</span>
+  <span>4. 6384</span>
+  <span>5. 5625</span>
+  <span>6. 9021</span>
+  <span>7. 9/22</span>
+  <span>8. 6000</span>
+  <span>9. 495</span>
+  <span>10. 1683</span>
+</div>
+
+<footer>巧算 = 凑整 + 拆分 + 平方差　|　检验 = 弃九 + 末位 + 量级</footer>
+
+</body>
+</html>

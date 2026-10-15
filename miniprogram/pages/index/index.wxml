@@ -1,0 +1,16 @@
+<view class="header">
+  <view class="search-box" bindtap="goSearch">🔍 搜索知识点、题目关键词…</view>
+</view>
+
+<view class="section-title">📚 学习模块</view>
+<view class="grid">
+  <view class="grid-item" wx:for="{{modules}}" wx:key="slug"
+        data-slug="{{item.slug}}" data-name="{{item.module}}" bindtap="goList">
+    <view class="grid-name">{{item.module}}</view>
+    <view class="grid-count">{{item.count}} 个知识点</view>
+  </view>
+</view>
+
+<view class="fav-entry card" bindtap="goFavorites">
+  ⭐ 我的收藏（标记薄弱知识点）
+</view>

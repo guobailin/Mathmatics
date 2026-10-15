@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>数学巧算技巧 · 例题串讲（打印版）</title>
+<style>
+  :root{
+    --ink:#1a1a1a;
+    --line:#c9ccd1;
+    --soft:#f4f6f8;
+    --soft2:#eef2f6;
+    --accent:#1f4e79;
+    --accent2:#8a5a00;
+    --tag:#e8eef5;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Source Han Sans SC",sans-serif;
+    color:var(--ink);
+    font-size:15px;
+    line-height:1.75;
+    background:#e9ecef;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .sheet{
+    max-width:820px;
+    margin:0 auto;
+    background:#fff;
+    padding:34px 40px 46px;
+  }
+
+  /* ---------- 标题 ---------- */
+  .doc-title{
+    border-bottom:3px double var(--accent);
+    padding-bottom:12px;
+    margin-bottom:6px;
+  }
+  .doc-title h1{
+    font-size:27px;
+    margin:0 0 6px;
+    letter-spacing:1px;
+  }
+  .doc-title .sub{
+    font-size:13px;
+    color:#555;
+    letter-spacing:.5px;
+  }
+  .howto{
+    background:var(--soft);
+    border-left:4px solid var(--accent);
+    padding:10px 14px;
+    font-size:13.5px;
+    margin:14px 0 26px;
+    border-radius:0 4px 4px 0;
+  }
+  .howto b{color:var(--accent)}
+
+  /* ---------- 章节 ---------- */
+  h2.sec{
+    font-size:19px;
+    margin:34px 0 14px;
+    padding:6px 0 6px 12px;
+    border-left:6px solid var(--accent);
+    background:linear-gradient(90deg,var(--soft2),transparent);
+  }
+  h2.sec .en{
+    font-size:12px;
+    color:#888;
+    font-weight:400;
+    margin-left:8px;
+    letter-spacing:.5px;
+  }
+
+  /* ---------- 原理表 ---------- */
+  table{border-collapse:collapse;width:100%;font-size:13.5px;margin:10px 0}
+  th,td{border:1px solid var(--line);padding:6px 9px;text-align:left;vertical-align:top}
+  th{background:var(--soft2);font-weight:600}
+  td.c,th.c{text-align:center}
+
+  /* ---------- 例题卡 ---------- */
+  .card{
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:12px 16px 14px;
+    margin:0 0 14px;
+    break-inside:avoid;
+    page-break-inside:avoid;
+  }
+  .card h3{
+    font-size:15.5px;
+    margin:0 0 8px;
+    color:var(--accent);
+    display:flex;
+    align-items:baseline;
+    gap:8px;
+    flex-wrap:wrap;
+  }
+  .card h3 .no{
+    display:inline-block;
+    background:var(--accent);
+    color:#fff;
+    font-size:12px;
+    border-radius:4px;
+    padding:1px 7px;
+    letter-spacing:.5px;
+    flex:none;
+  }
+  .tags{margin:0 0 8px;display:flex;flex-wrap:wrap;gap:6px}
+  .tag{
+    background:var(--tag);
+    color:var(--accent);
+    border:1px solid #cfdce9;
+    border-radius:10px;
+    font-size:11.5px;
+    padding:1px 9px;
+    white-space:nowrap;
+  }
+  .path{
+    background:#fdf8ec;
+    border-left:3px solid #d9a520;
+    padding:5px 11px;
+    font-size:13.5px;
+    margin:0 0 8px;
+    border-radius:0 4px 4px 0;
+  }
+  .path b{color:var(--accent2)}
+  .sol{font-size:15px;margin:0 0 8px}
+  .sol .step{
+    display:block;
+    margin:2px 0;
+    font-family:"SF Mono",Menlo,Consolas,monospace;
+    font-size:14px;
+    letter-spacing:.2px;
+  }
+  .extend{
+    font-size:13px;
+    color:#444;
+    border-top:1px dashed var(--line);
+    padding-top:6px;
+    margin:0;
+  }
+  .extend b{color:var(--accent2)}
+  .key{background:#fff3cd;padding:0 3px;border-radius:2px;font-weight:600}
+  .box{
+    display:inline-block;
+    border:1.5px solid var(--accent);
+    border-radius:4px;
+    padding:0 7px;
+    font-weight:700;
+    color:var(--accent);
+  }
+
+  /* ---------- 分数 ---------- */
+  .frac{
+    display:inline-block;
+    vertical-align:-0.55em;
+    text-align:center;
+    font-size:.86em;
+    line-height:1.15;
+    margin:0 .1em;
+  }
+  .frac .num{display:block;border-bottom:1.2px solid currentColor;padding:0 .18em}
+  .frac .den{display:block;padding:0 .18em}
+
+  /* ---------- 推导 ---------- */
+  .proof{
+    background:var(--soft);
+    border:1px dashed var(--line);
+    border-radius:5px;
+    padding:9px 14px;
+    font-size:13.5px;
+    margin:8px 0;
+  }
+  .proof .lbl{font-weight:700;color:var(--accent)}
+
+  /* ---------- 速查表 ---------- */
+  .cheat{font-size:12.8px}
+  .cheat td{padding:5px 8px}
+  .cheat .f{font-family:"SF Mono",Menlo,Consolas,monospace}
+
+  /* ---------- 练习 ---------- */
+  ol.ex{padding-left:22px;font-size:14px;column-count:2;column-gap:28px}
+  ol.ex li{margin-bottom:5px;break-inside:avoid}
+  .ans{
+    background:var(--soft);
+    border:1px solid var(--line);
+    border-radius:5px;
+    padding:8px 14px;
+    font-size:12.8px;
+    font-family:"SF Mono",Menlo,Consolas,monospace;
+    line-height:1.9;
+    margin-top:10px;
+  }
+  .ans b{font-family:inherit;color:var(--accent)}
+
+  /* ---------- 打印按钮 ---------- */
+  .printbar{
+    position:fixed;right:18px;bottom:18px;
+    z-index:99;
+  }
+  .printbar button{
+    background:var(--accent);color:#fff;border:0;border-radius:24px;
+    padding:11px 22px;font-size:14px;cursor:pointer;
+    box-shadow:0 4px 14px rgba(0,0,0,.25);
+    font-family:inherit;
+  }
+  .printbar button:hover{background:#16395a}
+  .printbar .hint{
+    display:block;font-size:11px;color:#666;text-align:center;margin-top:6px;
+  }
+
+  /* ---------- 打印 ---------- */
+  @page{ size:A4; margin:14mm 13mm 12mm; }
+  @media print{
+    body{background:#fff;font-size:10.4pt;line-height:1.62}
+    .sheet{max-width:none;margin:0;padding:0;box-shadow:none}
+    .no-print{display:none !important}
+    .doc-title h1{font-size:19pt}
+    h2.sec{font-size:13.5pt;margin:16px 0 9px;break-after:avoid;page-break-after:avoid}
+    .card{padding:8px 11px 9px;margin-bottom:9px;border-color:#bbb}
+    .card h3{font-size:11pt;margin-bottom:5px}
+    .sol{font-size:10.4pt}
+    .sol .step{font-size:10pt}
+    .tag{font-size:8.5pt;padding:0 6px}
+    .extend,.path{font-size:9.5pt}
+    table{font-size:9.6pt}
+    .cheat{font-size:9pt}
+    .proof{font-size:9.6pt}
+    ol.ex{font-size:9.8pt}
+    .ans{font-size:9.2pt}
+    .pagebreak{break-before:page;page-break-before:always}
+    a{color:inherit;text-decoration:none}
+  }
+</style>
+</head>
+<body>
+
+<div class="printbar no-print">
+  <button onclick="window.print()">🖨 打印 / 存为 PDF</button>
+  <span class="hint">建议：A4 · 缩放 100% · 勾选"背景图形"</span>
+</div>
+
+<div class="sheet">
+
+  <!-- ============ 标题 ============ -->
+  <div class="doc-title">
+    <h1>数学巧算技巧 · 例题串讲</h1>
+    <div class="sub">三条原理 · 十六道例题 · 六道综合 · 速查表 · 20 题练习 &nbsp;|&nbsp; 打印学习版</div>
+  </div>
+
+  <div class="howto">
+    <b>怎么用这份材料：</b>不要背口诀。每道例题先看右边黄色"思路"框，<b>自己先算一遍</b>，再看解析。
+    例题是有顺序的——<b>后一题会用上前一题的思想</b>，一路读下来，技巧自然串成一条线。
+    灰色虚线框是<b>"为什么成立"</b>，看懂它，忘了口诀也能现场重建。
+  </div>
+
+  <!-- ============ 零、原理 ============ -->
+  <h2 class="sec">零、底层只有三条原理 <span class="en">THE ONLY THREE RULES</span></h2>
+
+  <table>
+    <tr><th style="width:14%">原理</th><th style="width:34%">公式</th><th>说明与用途</th></tr>
+    <tr>
+      <td class="c"><b>凑整</b></td>
+      <td class="f">298 + 457 = 300 + 457 − 2</td>
+      <td>把数看成"整十整百 ± 零头"，加减法全部靠它。</td>
+    </tr>
+    <tr>
+      <td class="c"><b>分配律</b></td>
+      <td class="f">(a + b)·c = a·c + b·c</td>
+      <td>把难乘的数拆开（如 99 = 100 − 1）。</td>
+    </tr>
+    <tr>
+      <td class="c"><b>平方差</b></td>
+      <td class="f">a² − b² = (a + b)(a − b)</td>
+      <td><span class="key">最被低估的技巧</span>：只要两数平均数是整数，乘法立刻变减法。</td>
+    </tr>
+  </table>
+
+  <div class="proof">
+    <span class="lbl">一句话心法：</span>
+    <b>先估量级 → 再精算 → 最后检验。</b>
+    巧算的价值不是"快"，而是<b>算错时自己知道</b>。本页最后一节"练习"配了弃九法检验，请务必用上。
+  </div>
+
+  <!-- ============ 一、加减法 ============ -->
+  <h2 class="sec">一、加减法：先找伙伴，再找基准 <span class="en">ADDITION &amp; SUBTRACTION</span></h2>
+
+  <section class="card">
+    <h3><span class="no">例 1</span>38 + 47 + 62 + 53 = ?</h3>
+    <p class="tags"><span class="tag">凑整</span><span class="tag">加法交换律 · 结合律</span></p>
+    <div class="path"><b>思路：</b>不要从左往右硬加。先扫一眼——有没有两个数能凑成整百？</div>
+    <div class="sol">
+      <span class="step">38 + 62 = 100 &nbsp;&nbsp;|&nbsp;&nbsp; 47 + 53 = 100</span>
+      <span class="step">原式 = 100 + 100 = <span class="box">200</span></span>
+    </div>
+    <p class="extend"><b>触类旁通：</b>尾数互补（8+2、7+3）就是"伙伴信号"。看到 4 个以上的数相加，<b>先分组，永远先分组</b>。</p>
+  </section>
+
+  <section class="card">
+    <h3><span class="no">例 2</span>78 + 81 + 79 + 82 + 80 = ?</h3>
+    <p class="tags"><span class="tag">基准数法</span><span class="tag">正负数抵消</span></p>
+    <div class="path"><b>思路：</b>例 1 找不出伙伴，但它们都<b>很接近 80</b>。用 80 当"基准"。</div>
+    <div class="sol">
+      <span class="step">取基准 80，记录零头：−2, +1, −1, +2, 0</span>
+      <span class="step">零头之和 = (−2+2) + (1−1) + 0 = 0</span>
+      <span class="step">原式 = 80 × 5 + 0 = <span class="box">400</span></span>
+    </div>
+    <p class="extend"><b>触类旁通：</b>基准数法 = 乘法（省去 5 次加法）+ 凑整（零头抵消）。它是"平均数 × 个数"，也是<b>例 13 等差数列求和</b>的雏形。</p>
+  </section>
+
+  <section class="card">
+    <h3><span class="no">例 3</span>1000 − 638 = ?</h3>
+    <p class="tags"><span class="tag">补数法</span><span class="tag">整十整百借位</span></p>
+    <div class="path"><b>思路：</b>竖式借位容易连错。改成问："638 再加多少到 1000？"</div>
+    <div class="sol">
+      <span class="step">口诀：每位凑 9，末位凑 10 → 6→3, 3→6, 8→2</span>
+      <span class="step">补数 = 362，所以 1000 − 638 = <span class="box">362</span></span>
+    </div>
+    <p class="extend"><b>触类旁通：</b>"凑 9 末凑 10"同样适用于 10000 − 4726 = <b>5274</b>。收钱找零天天在用。</p>
+  </section>
+
+  <!-- ============ 二、乘法基础 ============ -->
+  <h2 class="sec">二、乘法（上）：先乘后除，拆出整十整百 <span class="en">MULTIPLICATION I</span></h2>
+
+  <section class="card">
+    <h3><span class="no">例 4</span>47 × 99 = ?</h3>
+    <p class="tags"><span class="tag">分配律</span><span class="tag">×99 = ×100 − 自身</span></p>
+    <div class="path"><b>思路：</b>99 离 100 只差 1——把它当 100，再"退回去"。</div>
+    <div class="sol">
+      <span class="step">47 × 99 = 47 × (100 − 1)</span>
+      <span class="step">= 4700 − 47 = <span class="box">4653</span></span>
+    </div>
+    <div class="proof">
+      <span class="lbl">为什么成立：</span>分配律 a(b − c) = ab − ac。同理 ×9 = ×10 − 自身，×999 = ×1000 − 自身。
+    </div>
+    <p class="extend"><b>触类旁通：</b>这类"<b>差 1 型</b>"是巧算的主力。看到 9、99、999、19、199 就想拆。</p>
+  </section>
+
+  <section class="card">
+    <h3><span class="no">例 5</span>86 × 5 &nbsp;·&nbsp; 48 × 25 &nbsp;·&nbsp; 32 × 125</h3>
+    <p class="tags"><span class="tag">先乘后除</span><span class="tag">凑整 10 / 100 / 1000</span></p>
+    <div class="path"><b>思路：</b>5、25、125 单独乘很难，但它们分别离 10、100、1000 只差"除以 2、4、8"。</div>
+    <div class="sol">
+      <span class="step">86 × 5 &nbsp; = 860 ÷ 2 &nbsp; = <span class="box">430</span></span>
+      <span class="step">48 × 25 &nbsp;= 4800 ÷ 4 &nbsp;= <span class="box">1200</span></span>
+      <span class="step">32 × 125 = 32000 ÷ 8 = <span class="box">4000</span></span>
+    </div>
+    <p class="extend"><b>触类旁通（逆向同样成立）：</b>除以 5 = ×2 ÷ 10，所以 115 ÷ 5 = 230 ÷ 10 = <b>23</b>；
+    1600 ÷ 25 = 6400 ÷ 100 = <b>64</b>。<b>乘除是一家人，一起记。</b></p>
+  </section>
+
+  <section class="card">
+    <h3><span class="no">例 6</span>78 × 11 = ?</h3>
+    <p class="tags"><span class="tag">×11 口诀</span><span class="tag">两头一拉，中间相加</span><span class="tag">进位</span></p>
+    <div class="path"><b>思路：</b>11 = 10 + 1，所以 a×11 = a×10 + a ——结果就是<b>原数错位相加</b>。</div>
+    <div class="sol">
+      <span class="step">33 × 11 → 3 | (3+3) | 3 = 363</span>
+      <span class="step">78 × 11 → 7 | (7+8=15) | 8 → 进位得 <span class="box">858</span></span>
+      <span class="step">验算：780 + 78 = 858 ✓</span>
+    </div>
+    <p class="extend"><b>触类旁通：</b>三位数乘 11 同理：<span class="f">236×11 → 2 | (2+3) | (3+6) | 6 = 2596</span>。
+    <b>中间满了 10 一定要进位</b>，这是最容易错的地方。</p>
+  </section>
+
+  <!-- ============ 三、乘法进阶 ============ -->
+  <h2 class="sec">三、乘法（下）：三个速算公式 <span class="en">MULTIPLICATION II</span></h2>
+
+  <section class="card">
+    <h3><span class="no">例 7</span>13 × 14 = ?</h3>
+    <p class="tags"><span class="tag">十几乘十几</span><span class="tag">完全平方展开</span></p>
+    <div class="path"><b>思路：</b>两个数都写成 10 + 零头。<b>"一个数 + 另一个的零头，×10，再加零头之积"</b>。</div>
+    <div class="sol">
+      <span class="step">13 + 4 = 17 → 17 × 10 = 170</span>
+      <span class="step">零头之积 3 × 4 = 12</span>
+      <span class="step">170 + 12 = <span class="box">182</span></span>
+    </div>
+    <div class="proof">
+      <span class="lbl">为什么成立：</span>
+      (10+a)(10+b) = 100 + 10a + 10b + ab = <b>10·(10+a+b) + ab</b>。
+      即"第一个数加第二个数的零头，乘 10，再加零头积"。
+    </div>
+    <p class="extend"><b>触类旁通：</b>19 × 17 = (19+7)×10 + 9×7 = 260 + 63 = <b>323</b>。<b>别忘了零头之积也要进位。</b></p>
+  </section>
+
+  <section class="card">
+    <h3><span class="no">例 8</span>43 × 47 = ? &nbsp;（头同尾合十）</h3>
+    <p class="tags"><span class="tag">头同尾合十</span><span class="tag">位值原理</span></p>
+    <div class="path"><b>思路：</b>十位相同（都是 4），个位相加得 10（3 + 7）。这是<b>专属结构</b>，有专属公式。</div>
+    <div class="sol">
+      <span class="step">头 × (头 + 1) → 4 × 5 = 20</span>
+      <span class="step">尾 × 尾 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; → 3 × 7 = 21</span>
+      <span class="step">直接拼接（两个两位数）→ <span class="box">2021</span></span>
+    </div>
+    <div class="proof">
+      <span class="lbl">为什么成立：</span>设两数为 10a+b 和 10a+c，且 b + c = 10。<br>
+      (10a+b)(10a+c) = 100a² + 10a(b+c) + bc = 100a² + 100a + bc = <b>100·a(a+1) + bc</b>。<br>
+      注意 bc 若不足两位要补 0：如 41 × 49 → 20 | 09 = <b>2009</b>。
+    </div>
+    <p class="extend"><b>触类旁通：</b>46 × 44 = 20 | 24 = <b>2024</b>；63 × 67 = 42 | 21 = <b>4221</b>；
+    85 × 85 = 8×9 | 25 = <b>7225</b>。<b>平方末位是 5 只是它的特例！</b></p>
+  </section>
+
+  <section class="card">
+    <h3><span class="no">例 9</span>34 × 74 = ? &nbsp;（尾同头合十）</h3>
+    <p class="tags"><span class="tag">尾同头合十</span><span class="tag">与例 8 对称</span></p>
+    <div class="path"><b>思路：</b>把例 8 的条件对调：<b>个位相同（都是 4），十位相加得 10（3 + 7）</b>。</div>
+    <div class="sol">
+      <span class="step">头 × 头 + 尾 → 3 × 7 + 4 = 25</span>
+      <span class="step">尾 × 尾 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; → 4 × 4 = 16</span>
+      <span class="step">拼接 → <span class="box">2516</span></span>
+    </div>
+    <div class="proof">
+      <span class="lbl">为什么成立：</span>设两数为 10a+c 和 10b+c，且 a + b = 10。<br>
+      (10a+c)(10b+c) = 100ab + 10c(a+b) + c² = 100ab + 100c + c² = <b>100·(ab + c) + c²</b>。
+    </div>
+    <p class="extend"><b>触类旁通：</b>36 × 76 = (21+6) | 36 = <b>2736</b>；
+    例 8 与例 9 是<b>一对孪生公式</b>——"头同尾合十：头加 1；尾同头合十：头上加尾"，<b>对照记忆，不要混。</b></p>
+  </section>
+
+  <section class="card">
+    <h3><span class="no">例 10</span>63 × 57 = ? &nbsp;·&nbsp; 96 × 104 = ?</h3>
+    <p class="tags"><span class="tag">平方差 ★核心</span><span class="tag">万能兜底</span></p>
+    <div class="path"><b>思路：</b>前三个公式都要求"特殊结构"。当结构不特殊时，问一句：<b>这两个数的平均数好算吗？</b></div>
+    <div class="sol">
+      <span class="step">63 与 57 的平均数 = 60，差 = 3</span>
+      <span class="step">63 × 57 = 60² − 3² = 3600 − 9 = <span class="box">3591</span></span>
+      <span class="step">96 × 104 = 100² − 4² = 10000 − 16 = <span class="box">9984</span></span>
+    </div>
+    <div class="proof">
+      <span class="lbl">为什么成立：</span>a² − b² = (a+b)(a−b)。令 a = 平均数、b = 半差，即得。<br>
+      <b>这是最通用的乘法技巧</b>——只要两数同奇偶（平均数整数），任何两位数相乘都能用它。
+    </div>
+    <p class="extend"><b>触类旁通：</b>68 × 72 = 70² − 4 = <b>4896</b>；81 × 79 = 80² − 1 = <b>6399</b>；
+    平方也靠它：47² = (47+3)(47−3) + 3² = 2200 + 9 = <b>2209</b>。<b>例 10 是本章的总钥匙。</b></p>
+  </section>
+
+  <section class="card">
+    <h3><span class="no">例 11</span>97 × 98 = ?</h3>
+    <p class="tags"><span class="tag">九十几速算</span><span class="tag">两次分配律</span></p>
+    <div class="path"><b>思路：</b>两数都接近 100。把它们写成 (100 − 补数)，展开后<b>只有三项</b>。</div>
+    <div class="sol">
+      <span class="step">97 × 98 = (100 − 3)(100 − 2)</span>
+      <span class="step">= 10000 − 100×(3 + 2) + 3×2</span>
+      <span class="step">= 10000 − 500 + 6 = <span class="box">9506</span></span>
+    </div>
+    <p class="extend"><b>触类旁通（口诀版）：</b>补数 3 和 2 → 前两位 = 97 − 2 = 95，后两位 = 3×2 = 06 →
+    <b>9506</b>。再试 94 × 96：94 − 4 = 90，6 × 4 = 24 → <b>9024</b>。<b>注意后两位不足要补 0。</b></p>
+  </section>
+
+  <!-- ============ 四、数列与分数 ============ -->
+  <h2 class="sec">四、数列与分数：把加法变成抵消 <span class="en">SEQUENCES &amp; FRACTIONS</span></h2>
+
+  <section class="card">
+    <h3><span class="no">例 12</span>1 + 2 + 3 + ⋯ + 100 = ?</h3>
+    <p class="tags"><span class="tag">等差数列</span><span class="tag">倒序相加（高斯）</span></p>
+    <div class="path"><b>思路：</b>首尾配对——1 和 100、2 和 99……<b>每一对的和都相等</b>。</div>
+    <div class="sol">
+      <span class="step">配对：(1+100) + (2+99) + ⋯ 共 50 对</span>
+      <span class="step">每对都是 101 → 101 × 50 = <span class="box">5050</span></span>
+      <span class="step">公式：和 = (首项 + 末项) × 项数 ÷ 2</span>
+    </div>
+    <p class="extend"><b>触类旁通：</b>
+    <b>奇数串</b> 1+3+5+⋯+99：共 50 项，前 n 个奇数和 = n² → <b>50² = 2500</b>；
+    <b>偶数串</b> 2+4+⋯+100：共 50 项 = 50 × 51 = <b>2550</b>。
+    <b>先数项数，再套公式</b>——项数 = (末 − 首) ÷ 公差 + 1。</p>
+  </section>
+
+  <section class="card">
+    <h3><span class="no">例 13</span>
+      <span class="frac"><span class="num">1</span><span class="den">1×2</span></span> +
+      <span class="frac"><span class="num">1</span><span class="den">2×3</span></span> +
+      <span class="frac"><span class="num">1</span><span class="den">3×4</span></span> + ⋯ +
+      <span class="frac"><span class="num">1</span><span class="den">9×10</span></span> = ?
+    </h3>
+    <p class="tags"><span class="tag">分数裂项</span><span class="tag">连锁抵消</span></p>
+    <div class="path"><b>思路：</b>通分是灾难。反过来想：<b>能不能把每一项拆成两个分数之差？</b>拆开后中间全抵消。</div>
+    <div class="sol">
+      <span class="step">因为 1/n − 1/(n+1) = 1/[n(n+1)]</span>
+      <span class="step">原式 = (1 − 1/2) + (1/2 − 1/3) + ⋯ + (1/9 − 1/10)</span>
+      <span class="step">中间项两两抵消，只剩首尾 = 1 − 1/10 = <span class="box">9/10</span></span>
+    </div>
+    <div class="proof">
+      <span class="lbl">为什么成立：</span>1/n − 1/(n+1) = [(n+1) − n] / [n(n+1)] = 1/[n(n+1)]。<br>
+      <b>推广：</b>1/[n(n+k)] = (1/k)·(1/n − 1/(n+k))。
+    </div>
+    <p class="extend"><b>触类旁通：</b>"<b>裂项 = 制造可抵消的中间项</b>"，和例 1 的凑整、例 2 的零头抵消是<b>同一个思想的三个面孔</b>。
+    看到分母是连续整数之积（1×2、2×3…），条件反射想到裂项。</p>
+  </section>
+
+  <section class="card">
+    <h3><span class="no">例 14</span>15% × 80 = ? &nbsp;·&nbsp; 先涨 20% 再跌 20% = ?</h3>
+    <p class="tags"><span class="tag">百分数互换</span><span class="tag">连续变化陷阱</span></p>
+    <div class="path"><b>思路：</b>第一问别硬算，用交换律 a% × b = b% × a。第二问小心——<b>百分比不能直接相加</b>。</div>
+    <div class="sol">
+      <span class="step">15% × 80 = 80% × 15 = 0.8 × 15 = <span class="box">12</span></span>
+      <span class="step">涨价后 100 → 120；再跌 20%：120 × 0.8 = 96</span>
+      <span class="step">净变化 = 96 − 100 = <span class="box">−4%</span>（不是 0）</span>
+    </div>
+    <p class="extend"><b>触类旁通：</b>n 次同幅涨跌要看<b>乘积</b>：1.2 × 0.8 = 0.96。
+    常用互化请背：1/8 = 12.5%、1/16 = 6.25%、1/6 ≈ 16.67%、1/7 ≈ 14.29%。</p>
+  </section>
+
+  <!-- ============ 五、综合 ============ -->
+  <h2 class="sec pagebreak">五、综合应用：一题串多技 <span class="en">PUTTING IT TOGETHER</span></h2>
+
+  <section class="card">
+    <h3><span class="no">综 1</span>25 × 32 × 125 = ?</h3>
+    <p class="tags"><span class="tag">乘法结合律</span><span class="tag">拆数配对</span></p>
+    <div class="path"><b>思路：</b>看到 25 就找 4，看到 125 就找 8。<b>把 32 拆成 4 × 8，两边各配一个。</b></div>
+    <div class="sol">
+      <span class="step">32 = 4 × 8</span>
+      <span class="step">原式 = (25 × 4) × (125 × 8) = 100 × 1000 = <span class="box">100000</span></span>
+    </div>
+    <p class="extend"><b>关键：</b>拆数不是乱拆，是<b>为了配对</b>。25×4、125×8、5×2、20×5 是四个黄金搭档。</p>
+  </section>
+
+  <section class="card">
+    <h3><span class="no">综 2</span>1.25 × 8.8 = ?</h3>
+    <p class="tags"><span class="tag">小数拆项</span><span class="tag">先乘后除</span><span class="tag">分配律</span></p>
+    <div class="path"><b>思路：</b>1.25 = 10/8，所以看到 1.25 就想"有没有 8"。8.8 里正好有 8。</div>
+    <div class="sol">
+      <span class="step">8.8 = 8 × 1.1</span>
+      <span class="step">原式 = 1.25 × 8 × 1.1 = 10 × 1.1 = <span class="box">11</span></span>
+    </div>
+    <p class="extend"><b>触类旁通：</b>小数巧算和整数完全同构。0.25 × 4.4 = 0.25 × 4 × 1.1 = <b>1.1</b>。</p>
+  </section>
+
+  <section class="card">
+    <h3><span class="no">综 3</span>78 × 11 &nbsp;<span style="font-weight:400;font-size:13px;color:#666">（用弃九法检验）</span></h3>
+    <p class="tags"><span class="tag">×11 口诀</span><span class="tag">弃九法检验</span></p>
+    <div class="path"><b>思路：</b>巧算唯一的风险是"快而错"。用<b>数字根（mod 9）</b>做一次免费检查。</div>
+    <div class="sol">
+      <span class="step">计算：7 | (7+8=15) | 8 → 进位 → 858</span>
+      <span class="step">检验左边：数字根(78)=15→6；数字根(11)=2；6 × 2 = 12 → 数字根 3</span>
+      <span class="step">检验右边：数字根(858)=8+5+8=21 → 数字根 3 &nbsp;✓ 一致</span>
+    </div>
+    <div class="proof">
+      <span class="lbl">为什么成立：</span>一个数与它的数字根除以 9 余数相同。乘法的余数等于余数之积的余数，
+      所以<b>两边的数字根必须相等</b>。不等 → 一定算错了。
+    </div>
+    <p class="extend"><b>再验例 8：</b>43×47，根 7 × 根 2 = 14 → 5；2021 的根 = 2+0+2+1 = 5 ✓。<b>会算更要会验。</b></p>
+  </section>
+
+  <section class="card">
+    <h3><span class="no">综 4</span>(1 + 3 + 5 + ⋯ + 99) − (2 + 4 + ⋯ + 98) = ?</h3>
+    <p class="tags"><span class="tag">奇偶数列</span><span class="tag">逐项配对</span></p>
+    <div class="path"><b>思路：</b>方法一（分别求和，用例 12）；方法二（<b>逐项相减配对</b>，更漂亮）。</div>
+    <div class="sol">
+      <span class="step">法一：奇数 50 项 = 50² = 2500；偶数 49 项 = 49 × 50 = 2450</span>
+      <span class="step">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2500 − 2450 = 50</span>
+      <span class="step">法二：(1−2) + (3−4) + ⋯ + (97−98) + 99 = −49 + 99 = <span class="box">50</span></span>
+    </div>
+    <p class="extend"><b>收获：</b>法二体现了"<b>重新分组</b>"的威力——和例 1 的分组、例 13 的裂项同源。
+    <b>同一题用两种方法算，是最高效的自检。</b></p>
+  </section>
+
+  <section class="card">
+    <h3><span class="no">综 5</span>估算：√50 ≈ ? &nbsp;·&nbsp; 197 × 31 ≈ ?</h3>
+    <p class="tags"><span class="tag">线性逼近</span><span class="tag">量级估算</span></p>
+    <div class="path"><b>思路：</b>不是所有题都要求精确。先<b>框出答案范围</b>，再决定要不要精算。</div>
+    <div class="sol">
+      <span class="step">√50：7² = 49，只差 1 → √50 ≈ 7 + 1/(2×7) ≈ <span class="box">7.071</span></span>
+      <span class="step">197 × 31：≈ 200 × 30 = 6000，实际略小于 6000</span>
+      <span class="step">精算：197 × 31 = 197 × 30 + 197 = 5910 + 197 = <span class="box">6107</span></span>
+    </div>
+    <div class="proof">
+      <span class="lbl">近似公式：</span>√(a² + b) ≈ a + b/(2a)（b 相对 a² 很小时成立）。
+      要更准就用牛顿迭代：x ← (x + a/x)/2，两次就够。
+    </div>
+    <p class="extend"><b>关键：</b>估算结果 6000 与精算 6107 相差不到 2%，说明没算错——<b>这就是"算错时自己知道"的底气。</b></p>
+  </section>
+
+  <!-- ============ 六、速查表 ============ -->
+  <h2 class="sec pagebreak">六、速查表（建议打印后贴在书桌前） <span class="en">CHEAT SHEET</span></h2>
+
+  <table class="cheat">
+    <tr><th style="width:30%">类型</th><th style="width:38%">公式 / 口诀</th><th>例子</th></tr>
+    <tr><td>加减凑整</td><td>找补数配对、少加多减</td><td class="f">38+62=100；298+457=755</td></tr>
+    <tr><td>基准数法</td><td>基准 × 个数 + 零头之和</td><td class="f">78+81+79+82+80 = 80×5 = 400</td></tr>
+    <tr><td>整百补数</td><td>每位凑 9，末位凑 10</td><td class="f">1000 − 638 = 362</td></tr>
+    <tr><td>乘 5 / 25 / 125</td><td>×5=×10÷2；×25=×100÷4；×125=×1000÷8</td><td class="f">48 × 25 = 1200</td></tr>
+    <tr><td>除 5 / 25 / 125</td><td>÷5=×2÷10；÷25=×4÷100；÷125=×8÷1000</td><td class="f">115 ÷ 5 = 23</td></tr>
+    <tr><td>差 1 型</td><td>×9=×10−自身；×99=×100−自身</td><td class="f">47 × 99 = 4653</td></tr>
+    <tr><td>乘 11</td><td>两头一拉，中间相加，满十进一</td><td class="f">78 × 11 = 858</td></tr>
+    <tr><td>十几乘十几</td><td>10×(第一个数 + 第二个零头) + 零头积</td><td class="f">13 × 14 = 170 + 12 = 182</td></tr>
+    <tr><td><b>头同尾合十</b></td><td>头×(头+1) 拼接 尾×尾（不足补 0）</td><td class="f">43 × 47 = 20 | 21</td></tr>
+    <tr><td><b>尾同头合十</b></td><td>(头×头+尾) 拼接 尾×尾</td><td class="f">34 × 74 = 25 | 16</td></tr>
+    <tr><td>平方差 ★</td><td>a² − b² = (a+b)(a−b)</td><td class="f">63 × 57 = 3600 − 9</td></tr>
+    <tr><td>接近 100</td><td>(100−m)(100−n) = 10000 − 100(m+n) + mn</td><td class="f">97 × 98 = 9506</td></tr>
+    <tr><td>等差数列</td><td>(首 + 末) × 项数 ÷ 2</td><td class="f">1+…+100 = 5050</td></tr>
+    <tr><td>奇数列 / 偶数列</td><td>1+3+…+(2n−1) = n²；2+4+…+2n = n(n+1)</td><td class="f">1+3+…+99 = 2500</td></tr>
+    <tr><td>分数裂项</td><td>1/[n(n+1)] = 1/n − 1/(n+1)</td><td class="f">1/2+1/6+… = 1 − 1/10</td></tr>
+    <tr><td>百分数</td><td>a% × b = b% × a</td><td class="f">15% × 80 = 80% × 15 = 12</td></tr>
+    <tr><td><b>弃九检验</b></td><td>两边数字根必须相等</td><td class="f">78×11：根 6×2=3，858 根 3 ✓</td></tr>
+    <tr><td>开方近似</td><td>√(a²+b) ≈ a + b/(2a)</td><td class="f">√50 ≈ 7.071</td></tr>
+  </table>
+
+  <p style="font-size:13px;color:#555;margin-top:6px">
+    <b>必背数字：</b>11²–19²（121, 144, 169, 196, 225, 256, 289, 324, 361）；
+    2¹⁰ = 1024；π 的倍数 3.14 / 6.28 / 9.42 / 12.56 / 15.7 / 18.84 / 21.98 / 25.12。
+  </p>
+
+  <!-- ============ 七、练习 ============ -->
+  <h2 class="sec">七、练习（先估量级，再巧算，最后验算）</h2>
+
+  <ol class="ex">
+    <li>27 + 58 + 73 + 42</li>
+    <li>1000 − 487</li>
+    <li>68 + 71 + 69 + 72 + 70</li>
+    <li>24 × 25</li>
+    <li>46 × 11</li>
+    <li>12 × 19</li>
+    <li>52 × 58</li>
+    <li>63 × 67</li>
+    <li>45 × 45</li>
+    <li>96 × 104</li>
+    <li>81 × 79</li>
+    <li>68 × 72</li>
+    <li>96 × 97</li>
+    <li>135 ÷ 5</li>
+    <li>3600 ÷ 25</li>
+    <li>1/2 + 1/6 + 1/12 + 1/20</li>
+    <li>1 + 2 + ⋯ + 50</li>
+    <li>2 + 4 + ⋯ + 100</li>
+    <li>125 × 32 × 25</li>
+    <li>20% × 45</li>
+  </ol>
+
+  <div class="ans">
+    <b>答案与技巧对照：</b><br>
+    1. <b>200</b>（配对凑整）&nbsp;&nbsp; 2. <b>513</b>（凑9末凑10）&nbsp;&nbsp; 3. <b>350</b>（基准 70）&nbsp;&nbsp; 4. <b>600</b>（×100÷4）&nbsp;&nbsp; 5. <b>506</b>（×11，进位）<br>
+    6. <b>228</b>（十几乘十几）&nbsp;&nbsp; 7. <b>3016</b>（头同尾合十 5×6 | 2×8）&nbsp;&nbsp; 8. <b>4221</b>（头同尾合十 6×7 | 3×7）&nbsp;&nbsp; 9. <b>2025</b>（4×5 | 25）<br>
+    10. <b>9984</b>（平方差 100²−4²）&nbsp;&nbsp; 11. <b>6399</b>（80²−1）&nbsp;&nbsp; 12. <b>4896</b>（70²−2²）&nbsp;&nbsp; 13. <b>9312</b>（(100−4)(100−3)）<br>
+    14. <b>27</b>（×2÷10）&nbsp;&nbsp; 15. <b>144</b>（×4÷100）&nbsp;&nbsp; 16. <b>4/5</b>（裂项，1 − 1/5）<br>
+    17. <b>1275</b>（51×50÷2）&nbsp;&nbsp; 18. <b>2550</b>（50×51）&nbsp;&nbsp; 19. <b>100000</b>（(125×8)(25×4)）&nbsp;&nbsp; 20. <b>9</b>（45%×20）
+  </div>
+
+  <!-- ============ 八、学习路径 ============ -->
+  <h2 class="sec">八、四周掌握路径</h2>
+  <table>
+    <tr><th class="c" style="width:14%">周次</th><th style="width:40%">内容</th><th>目标</th></tr>
+    <tr><td class="c">第 1 周</td><td>例 1–6：凑整 · 基准数 · 补数 · 乘 5/25/125 · 乘 11</td><td>口算告别竖式，每天 50 题限时。</td></tr>
+    <tr><td class="c">第 2 周</td><td>例 7–9：三个结构型速算公式</td><td>识别结构 → 条件反射，不混用。</td></tr>
+    <tr><td class="c">第 3 周</td><td>例 10–11 + 综合 1–2：平方差总钥匙</td><td>任意两位数相乘都在 5 秒内出结果。</td></tr>
+    <tr><td class="c">第 4 周</td><td>例 12–14 + 综合 3–5：数列 · 裂项 · 估算 · 弃九</td><td>会算，更会验；形成"先估后算"习惯。</td></tr>
+  </table>
+
+  <p style="font-size:13px;color:#555;margin-top:10px;border-top:1px solid var(--line);padding-top:8px">
+    <b>一句话总纲：</b>巧算 = 凑整 + 拆分 + 平方差；检验 = 弃九 + 估算。
+    所有口诀都从这三条原理推出——<b>忘掉口诀，也能现场重建。</b>
+  </p>
+
+</div>
+</body>
+</html>

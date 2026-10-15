@@ -1,0 +1,187 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>统计与概率 · 打印版</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+<style>
+body{font-family:-apple-system,"PingFang SC","Source Han Serif SC",serif;
+max-width:760px;margin:0 auto;padding:24px;line-height:1.8;color:#222}
+h1{border-bottom:2px solid #333;padding-bottom:8px}
+h2{margin-top:1.6em}h3{font-size:1.05em}
+.meta{color:#666;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.example{border:1px solid #ddd;border-radius:8px;padding:12px 16px;margin:14px 0}
+.example h3{margin:.2em 0 .6em}
+.covers{font-size:.75em;color:#888;font-weight:normal;margin-left:1em}
+.problem{background:#f7f7f9;border-radius:6px;padding:8px 12px}
+details{margin-top:.6em}summary{cursor:pointer;color:#36c}
+.answer{color:#b30;font-weight:bold}
+
+.answer-ref{color:#999;font-size:.85em}
+@page{size:A4;margin:2cm}
+@media print{
+  .kp{page-break-before:always}.kp:first-of-type{page-break-before:auto}
+  .answers{page-break-before:always}
+  body{max-width:none}
+}
+</style></head><body><h1>统计与概率</h1>
+<p class="meta">小学数学知识库 · 打印版</p>
+<section class="kp"><h2>可能性</h2><p class="meta"><span>年级：4、5</span><span>难度：★</span></p><p><strong>确定事件</strong>：</p>
+<ul>
+<li><strong>一定</strong>：肯定会发生（太阳从东方升起）；</li>
+<li><strong>不可能</strong>：肯定不会发生（口袋里只有红球，摸出白球）。</li>
+</ul>
+<p><strong>不确定事件</strong>：可能发生也可能不发生，用&quot;<strong>可能</strong>&quot;描述（明天可能下雨）。</p>
+<p><strong>易错点</strong>：&quot;可能&quot;不等于&quot;一定会&quot;；&quot;可能性小&quot;不代表&quot;不可能&quot;，只要有一线机会就可能发生。</p>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：判断事件的类型<span class="covers">覆盖点：判断确定与不确定、用词语描述可能性</span></h3><div class="problem"><p>用&quot;一定&quot;&quot;可能&quot;&quot;不可能&quot;填空：① 一个星期（ ）有 7 天；② 明天（ ）下雪；③ 袋中全是红球，任意摸一个，（ ）是红球，（ ）是白球。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：结合实际判断<span class="covers">覆盖点：判断确定与不确定</span></h3><div class="problem"><p>盒子里有 3 个黄球和 1 个白球。判断：① 摸出一个球，可能是白球；② 摸出一个球，不可能是白球；③ 连续摸 100 次（每次放回），每次一定都是黄球。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>可能性的大小</h2><p class="meta"><span>年级：5</span><span>难度：★★</span></p><p><strong>可能性的大小</strong>：与**数量（所占份数）**有关。数量越多、占的份数越大，可能性越大；数量相等，可能性相等。</p>
+<p><strong>用分数表示</strong>：$\text{可能性} = \dfrac{\text{符合条件的情况数}}{\text{所有可能的情况总数}}$。如袋中 3 红 2 白共 5 球，摸出红球的可能性是 $\frac{3}{5}$。</p>
+<p><strong>游戏公平性</strong>：双方获胜的可能性<strong>相等</strong>，游戏才公平；不相等就不公平，可以修改规则（增减小球、改数字）使可能性相等。</p>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：比较与计算可能性<span class="covers">覆盖点：比较可能性大小、用分数表示可能性</span></h3><div class="problem"><p>一个转盘平均分成 8 份，其中红色 3 份、黄色 3 份、蓝色 2 份。指针停在哪种颜色的可能性最大？停在蓝色的可能性是多少？</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：游戏公平性<span class="covers">覆盖点：游戏公平性、用分数表示可能性</span></h3><div class="problem"><p>小明和小刚玩游戏：掷一枚骰子，点数大于 3 小明赢，点数小于 3 小刚赢。这个游戏公平吗？怎样改才公平？</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>平均数</h2><p class="meta"><span>年级：4、5</span><span>难度：★★</span></p><p><strong>意义</strong>：平均数表示一组数据的<strong>平均水平</strong>，把多的补给少的，使每份同样多（移多补少）。它是&quot;虚拟&quot;的数，不一定等于其中任何一个数据。</p>
+<p><strong>公式</strong>：<br />
+$$\text{平均数} = \text{总数量} \div \text{总份数}$$<br />
+总数量 = 平均数 × 总份数；总份数 = 总数量 ÷ 平均数。</p>
+<p><strong>性质</strong>：平均数一定在最小数据与最大数据<strong>之间</strong>——可用它检查结果是否合理。</p>
+<p><strong>易错点</strong>：求平均速度要用&quot;总路程 ÷ 总时间&quot;，不能把两段速度简单平均；某人的身高高于班级平均身高，不代表他在班里一定算高个（平均数受极端数据影响）。</p>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：求平均数<span class="covers">覆盖点：求平均数</span></h3><div class="problem"><p>小红 5 次数学测验成绩是 92、88、95、90、100 分。她的平均成绩是多少？</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：由平均数求总数与单个量<span class="covers">覆盖点：由平均数求总数</span></h3><div class="problem"><p>4 个同学的平均体重是 35 千克，加上老师后 5 人的平均体重是 42 千克。老师的体重是多少千克？</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>扇形统计图</h2><p class="meta"><span>年级：6</span><span>难度：★★</span></p><p><strong>特点</strong>：用整个圆表示<strong>总数（100%）</strong>，用圆内各扇形的大小表示<strong>各部分占总数的百分比</strong>。扇形统计图擅长看<strong>部分与整体的关系</strong>。</p>
+<p><strong>读图</strong>：扇形越大，占的百分比越大；所有扇形百分比之和 = 100%。</p>
+<p><strong>计算</strong>：部分量 = 总数 × 对应的百分比；总数 = 部分量 ÷ 对应的百分比。</p>
+<p><strong>三种统计图的选择</strong>：</p>
+<ul>
+<li>比较数量多少 → 条形统计图；</li>
+<li>看增减变化 → 折线统计图；</li>
+<li>看部分占整体的百分比 → 扇形统计图。</li>
+</ul>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：读图求部分量<span class="covers">覆盖点：读扇形统计图、由百分比求部分量</span></h3><div class="problem"><p>六年级 200 名学生喜欢的运动项目扇形统计图：足球 30%、跳绳 25%、跑步 20%、其他 25%。喜欢足球的有多少人？</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：由部分求总数<span class="covers">覆盖点：由百分比求部分量、读扇形统计图</span></h3><div class="problem"><p>一块地的种植情况扇形统计图中，白菜占 40%，种了 0.8 公顷。这块地共多少公顷？西红柿占 25%，种了多少公顷？</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>折线统计图</h2><p class="meta"><span>年级：5</span><span>难度：★</span></p><p><strong>特点</strong>：用<strong>折线的升降</strong>表示数量的<strong>增减变化</strong>。条形图擅长比多少，折线图擅长看<strong>变化趋势</strong>。</p>
+<p><strong>结构</strong>：与条形图类似，描点后把各点用线段顺次连接。</p>
+<p><strong>读图分析</strong>：</p>
+<ul>
+<li>线段<strong>上升</strong>表示增加，<strong>下降</strong>表示减少；</li>
+<li>线段越<strong>陡</strong>，变化越快；越平，变化越慢；</li>
+<li>最高点、最低点对应最大值、最小值。</li>
+</ul>
+<p><strong>画法</strong>：描点（对准横轴项目和纵轴数量）→ 连线 → 标数据。</p>
+<p><strong>适用场景</strong>：气温变化、身高增长、水位升降、销售变化等<strong>随时间变化</strong>的数据。</p>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：读图分析趋势<span class="covers">覆盖点：读折线统计图、分析变化趋势</span></h3><div class="problem"><p>某地一周最高气温折线统计图：周一 18°C、周二 20°C、周三 25°C、周四 23°C、周五 26°C。哪天到哪天上升最快？哪天到哪天下降了？</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：选择统计图<span class="covers">覆盖点：读折线统计图、分析变化趋势</span></h3><div class="problem"><p>要反映①各班同学人数的多少，②小明一到六年级的身高变化，分别选哪种统计图更合适？</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>数据的收集与整理</h2><p class="meta"><span>年级：2、3</span><span>难度：★</span></p><p><strong>收集数据的方法</strong>：调查、测量、实验、查阅资料等。记录时常用&quot;<strong>正</strong>&quot;字计数法——每一笔代表 1，一个&quot;正&quot;字代表 5，又快又不容易错。</p>
+<p><strong>整理数据</strong>：把记录的数据分类汇总，填入<strong>统计表</strong>。统计表由表头（项目名称）、数据栏组成，合计一栏可用来检验总数是否正确。</p>
+<p><strong>读表分析</strong>：能回答&quot;谁最多/最少&quot;&quot;相差多少&quot;&quot;合计多少&quot;等问题。</p>
+<p><strong>易错点</strong>：&quot;正&quot;字计数时一笔是 1 不是一个字是 1；分类要做到不重复、不遗漏。</p>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：正字计数与统计表<span class="covers">覆盖点：收集记录数据、整理成统计表</span></h3><div class="problem"><p>班里同学最喜欢的水果记录如下：苹果 正正 一，香蕉 正 正正（共 4 个正），橙子 正 一，梨 正。请算出每种水果的人数和总人数。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：读表分析<span class="covers">覆盖点：读表回答问题</span></h3><div class="problem"><p>接上题。喜欢哪种水果的人最多？比最少的多几人？</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>条形统计图</h2><p class="meta"><span>年级：4</span><span>难度：★</span></p><p><strong>特点</strong>：用直条的<strong>长短</strong>表示数量多少，一眼就能看出谁多谁少，便于<strong>比较数量</strong>。</p>
+<p><strong>结构</strong>：横轴（项目）、纵轴（数量）、标题。关键是看懂<strong>一格表示几个单位</strong>（1 格可以表示 1、2、5、10……由数据大小决定）。</p>
+<p><strong>画法</strong>：定标题 → 画横纵轴、定单位长度 → 按数据画直条（等宽、等间距）→ 标上数据。</p>
+<p><strong>读图要点</strong>：先看一格代表几，再看直条高度；比较多少直接看长短，算相差用减法。</p>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：读图<span class="covers">覆盖点：读条形统计图、一格表示几</span></h3><div class="problem"><p>某班四个小组收集旧电池数量的条形统计图中，一格表示 5 节，四个小组的直条分别对应 8 格、6 格、10 格、7 格。各收集多少节？最多的比最少的多多少节？</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：确定一格表示几<span class="covers">覆盖点：画条形统计图、一格表示几</span></h3><div class="problem"><p>要用条形统计图表示下列数据：45、60、80、95。纵轴一格表示多少比较合适？为什么？</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="answers"><h1>答案与解析</h1>
+<div class="example"><h3>可能性 · 例1：判断事件的类型</h3><div class="analysis"><p>① 一定（确定会发生）；② 可能（不确定）；③ 一定；不可能。</p>
+</div><div class="answer">答案：<p>①一定；②可能；③一定，不可能</p>
+</div></div>
+<div class="example"><h3>可能性 · 例2：结合实际判断</h3><div class="analysis"><p>① 正确，盒中有白球就可能摸到。② 错误。③ 错误，虽然黄球多，但每次仍可能摸到白球。</p>
+</div><div class="answer">答案：<p>①√；②×；③×</p>
+</div></div>
+<div class="example"><h3>可能性的大小 · 例1：比较与计算可能性</h3><div class="analysis"><p>红色和黄色各占 3 份，并列最大。蓝色可能性 $= \frac{2}{8} = \frac{1}{4}$。</p>
+</div><div class="answer">答案：<p>红色和黄色并列最大；$\dfrac{1}{4}$</p>
+</div></div>
+<div class="example"><h3>可能性的大小 · 例2：游戏公平性</h3><div class="analysis"><p>大于 3 的有 4、5、6 共 3 种，可能性 $\frac{3}{6} = \frac{1}{2}$；小于 3 的有 1、2 共 2 种，可能性 $\frac{2}{6} = \frac{1}{3}$。不相等，不公平。改法：点数大于 3 小明赢，小于或等于 3 小刚赢（各 3 种，可能性都是 $\frac{1}{2}$）。</p>
+</div><div class="answer">答案：<p>不公平；改为&quot;大于 3 小明赢，小于等于 3 小刚赢&quot;</p>
+</div></div>
+<div class="example"><h3>平均数 · 例1：求平均数</h3><div class="analysis"><p>总分 $= 92 + 88 + 95 + 90 + 100 = 465$ 分，平均 $= 465 \div 5 = 93$ 分。</p>
+</div><div class="answer">答案：<p>93 分</p>
+</div></div>
+<div class="example"><h3>平均数 · 例2：由平均数求总数与单个量</h3><div class="analysis"><p>4 个同学共 $35 \times 4 = 140$ 千克；5 人共 $42 \times 5 = 210$ 千克。老师 $= 210 - 140 = 70$ 千克。</p>
+</div><div class="answer">答案：<p>70 千克</p>
+</div></div>
+<div class="example"><h3>扇形统计图 · 例1：读图求部分量</h3><div class="analysis"><p>$200 \times 30% = 60$ 人。</p>
+</div><div class="answer">答案：<p>60 人</p>
+</div></div>
+<div class="example"><h3>扇形统计图 · 例2：由部分求总数</h3><div class="analysis"><p>总数 $= 0.8 \div 40% = 2$ 公顷。西红柿 $= 2 \times 25% = 0.5$ 公顷。</p>
+</div><div class="answer">答案：<p>共 2 公顷；西红柿 0.5 公顷</p>
+</div></div>
+<div class="example"><h3>折线统计图 · 例1：读图分析趋势</h3><div class="analysis"><p>算相邻两天的差：周二 +2、周三 +5、周四 −2、周五 +3。周二到周三上升 5°C 最快；周三到周四下降了 2°C。</p>
+</div><div class="answer">答案：<p>周二到周三上升最快；周三到周四下降</p>
+</div></div>
+<div class="example"><h3>折线统计图 · 例2：选择统计图</h3><div class="analysis"><p>① 比较多少，选条形统计图。② 看变化趋势，选折线统计图。</p>
+</div><div class="answer">答案：<p>①条形统计图；②折线统计图</p>
+</div></div>
+<div class="example"><h3>数据的收集与整理 · 例1：正字计数与统计表</h3><div class="analysis"><p>苹果 $2 \times 5 + 1 = 11$ 人；香蕉 $4 \times 5 = 20$ 人；橙子 $5 + 1 = 6$ 人；梨 5 人。总人数 $11 + 20 + 6 + 5 = 42$ 人。</p>
+</div><div class="answer">答案：<p>苹果 11 人、香蕉 20 人、橙子 6 人、梨 5 人，共 42 人</p>
+</div></div>
+<div class="example"><h3>数据的收集与整理 · 例2：读表分析</h3><div class="analysis"><p>香蕉 20 人最多，梨 5 人最少，多 $20 - 5 = 15$ 人。</p>
+</div><div class="answer">答案：<p>香蕉最多，多 15 人</p>
+</div></div>
+<div class="example"><h3>条形统计图 · 例1：读图</h3><div class="analysis"><p>分别收集 $8 \times 5 = 40$、$6 \times 5 = 30$、$10 \times 5 = 50$、$7 \times 5 = 35$ 节。最多 50 节，最少 30 节，相差 20 节。</p>
+</div><div class="answer">答案：<p>40、30、50、35 节；多 20 节</p>
+</div></div>
+<div class="example"><h3>条形统计图 · 例2：确定一格表示几</h3><div class="analysis"><p>数据最大 95，都是 5 的倍数，一格表示 5 太小（要 19 格），一格表示 10 或 20 比较合适，直条高度适中、便于画和读。</p>
+</div><div class="answer">答案：<p>一格表示 10 或 20 较合适</p>
+</div></div>
+</section></body></html>

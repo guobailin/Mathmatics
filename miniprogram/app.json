@@ -1,0 +1,17 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/list/list",
+    "pages/detail/detail",
+    "pages/search/search",
+    "pages/favorites/favorites"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#3b6ef6",
+    "navigationBarTitleText": "小学数学知识库",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#f5f6fa"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

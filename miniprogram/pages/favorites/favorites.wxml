@@ -1,0 +1,7 @@
+<view class="card item" wx:for="{{list}}" wx:key="id" data-id="{{item.id}}" bindtap="goDetail">
+  <view class="item-title">{{item.title}}</view>
+  <view class="muted">{{item.module}} · {{'★'.repeat(item.difficulty)}}</view>
+</view>
+<view class="muted empty" wx:if="{{!list.length}}">
+  还没有收藏。\n在知识点详情页点「☆ 收藏」，把薄弱知识点加到这里。
+</view>
