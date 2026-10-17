@@ -2,12 +2,15 @@
 # -*- coding: utf-8 -*-
 """生成小程序 H5 效果预览（近似版本）：单文件、内联数据，模拟手机界面。"""
 import json
+import os
+import shutil
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "miniprogram" / "data"
 OUT_DIR = ROOT / "h5-preview"
-OUT_DIR.mkdir(exist_ok=True)
+KATEX_SRC = ROOT / "assets" / "katex"
+os.makedirs(OUT_DIR, exist_ok=True)
 
 manifest = json.loads((DATA_DIR / "manifest.json").read_text(encoding="utf-8"))
 data = {}
@@ -17,9 +20,9 @@ for m in manifest:
 HTML = r"""<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
 <title>小学数学知识库 · 小程序效果预览</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+<link rel="stylesheet" href="katex/katex.min.css">
+<script defer src="katex/katex.min.js"></script>
+<script defer src="katex/contrib/auto-render.min.js"
   onload="renderMathInElement(document.body,{{delimiters:[{{left:'$$',right:'$$',display:true}},{{left:'$',right:'$',display:false}}]}})"></script>
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -216,4 +219,5 @@ html = HTML.replace("__MANIFEST__", json.dumps(manifest, ensure_ascii=False))
 html = html.replace("__DATA__", json.dumps(data, ensure_ascii=False))
 out = OUT_DIR / "index.html"
 out.write_text(html, encoding="utf-8")
+shutil.copytree(KATEX_SRC, OUT_DIR / "katex", dirs_exist_ok=True)
 print(f"OK {out} ({out.stat().st_size} bytes)")
