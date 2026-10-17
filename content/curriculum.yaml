@@ -17,22 +17,31 @@ boards:
       content: calc-common-factor
       term: null
     - title: 速算与巧算
-      content: null
+      content: oc-speed-calc
       term: null
     - title: 等差数列
-      content: null
+      content: oc-arithmetic-sequence
       term: null
     - title: 定义新运算
-      content: null
+      content: oc-defined-operation
       term: null
     - title: 分数裂项
-      content: null
+      content: oc-telescoping
       term: null
     - title: 循环小数化分数
-      content: null
+      content: oc-repeating-fraction
       term: null
     - title: 比较大小与估算
-      content: null
+      content: oc-compare-estimate
+      term: null
+    - title: 操作与探究
+      content: oc-operation-explore
+      term: null
+    - title: 末三位估算
+      content: oc-last-three
+      term: null
+    - title: 范围估算
+      content: oc-range-estimate
       term: null
   - name: 数论
     topics:
@@ -46,25 +55,25 @@ boards:
       content: nt-prime-composite
       term: null
     - title: 质数枚举
-      content: null
+      content: nt-prime-enumeration
       term: null
     - title: 分解质因数
       content: nt-prime-factorization
       term: null
     - title: 短除模型
-      content: null
+      content: nt-short-division
       term: null
     - title: 平方/立方数分解质因数
-      content: null
+      content: nt-square-cube-factor
       term: null
     - title: 最大公因数与最小公倍数
       content: nt-gcd-lcm
       term: null
     - title: 最小公倍数/最值
-      content: null
+      content: nt-lcm-extremum
       term: null
     - title: 倍数特征/最值
-      content: null
+      content: nt-multiple-extremum
       term: null
     - title: 带余除法与余数性质
       content: nt-remainder
@@ -73,7 +82,7 @@ boards:
       content: nt-remainder-problems
       term: null
     - title: 韩信点兵
-      content: null
+      content: nt-hanxin
       term: null
     - title: 同余初步
       content: nt-congruence
@@ -94,86 +103,104 @@ boards:
       content: nt-base
       term: null
     - title: 互质情况计数
-      content: null
+      content: nt-coprime-count
+      term: null
+    - title: 韩信点兵与最值
+      content: nt-hanxin-extremum
       term: null
   - name: 计数
     topics:
     - title: 加乘原理
-      content: null
+      content: cnt-add-multiply
       term: null
     - title: 排列组合
-      content: null
+      content: cnt-permutation-combination
       term: null
     - title: 容斥原理
-      content: null
+      content: cnt-inclusion-exclusion
       term: null
     - title: 抽屉原理
-      content: null
+      content: cnt-pigeonhole
       term: null
     - title: 枚举与分类
-      content: null
+      content: cnt-enumeration
       term: null
     - title: 几何计数
-      content: null
+      content: cnt-geometry-count
       term: null
     - title: 标数法
-      content: null
+      content: cnt-path-count
       term: null
     - title: 递推与归纳
-      content: null
+      content: cnt-recursion
       term: null
     - title: 容斥最值
-      content: null
+      content: cnt-ie-extremum
       term: null
     - title: 插空法
-      content: null
+      content: cnt-insertion
       term: null
     - title: 捆绑法与除序法
-      content: null
+      content: cnt-bundling
       term: null
     - title: 概率初步
-      content: null
+      content: cnt-probability
+      term: null
+    - title: 拆连续自然数
+      content: cnt-consecutive-sum
+      term: null
+    - title: 分类列举
+      content: cnt-classification
+      term: null
+    - title: 线分圆环
+      content: cnt-circle-regions
+      term: null
+    - title: 轴对称情况计数
+      content: cnt-symmetry-count
       term: null
   - name: 几何
     topics:
     - title: 面积比
-      content: null
+      content: oge-area-ratio
       term: null
     - title: 等积模型
-      content: null
+      content: oge-equal-area
       term: null
     - title: 鸟头模型
-      content: null
+      content: oge-bird-head
       term: null
     - title: 蝴蝶模型
-      content: null
+      content: oge-butterfly
       term: null
     - title: 燕尾模型
-      content: null
+      content: oge-swallow-tail
       term: null
     - title: 相似模型
-      content: null
+      content: oge-similarity
       term: null
     - title: 圆与扇形
-      content: null
+      content: oge-circle-sector
       term: null
     - title: 格点面积
-      content: null
+      content: oge-lattice-area
       term: null
     - title: 巧求周长
-      content: null
+      content: oge-perimeter-tricks
       term: null
     - title: 面积综合
-      content: null
+      content: oge-area-comprehensive
       term: null
     - title: 斜三角形面积
-      content: null
+      content: oge-oblique-triangle
       term: null
     - title: 三视图求体积
-      content: null
+      content: oge-three-views
       term: null
     - title: 表面染色
-      content: null
+      content: oge-surface-coloring
+      term: null
+    - title: 周长问题
+      content: oge-perimeter
       term: null
   - name: 行程
     topics:
@@ -184,28 +211,28 @@ boards:
       content: wp-catch-up
       term: null
     - title: 多次相遇
-      content: null
+      content: otr-multi-meeting
       term: null
     - title: 环形跑道
-      content: null
+      content: otr-circular-track
       term: null
     - title: 流水行船
-      content: null
+      content: otr-boat-stream
       term: null
     - title: 火车过桥
-      content: null
+      content: otr-train-bridge
       term: null
     - title: 火车追及
-      content: null
+      content: otr-train-chase
       term: null
     - title: 时钟问题
-      content: null
+      content: otr-clock
       term: null
     - title: 比例行程
-      content: null
+      content: otr-proportional
       term: null
     - title: 变速问题
-      content: null
+      content: otr-variable-speed
       term: null
   - name: 应用题
     topics:
@@ -234,36 +261,51 @@ boards:
       content: wp-concentration
       term: null
     - title: 牛吃草
-      content: null
+      content: owp-grazing
       term: null
     - title: 经济问题
-      content: null
+      content: owp-economics
+      term: null
+    - title: 图形找规律
+      content: owp-pattern
+      term: null
+    - title: 时间问题
+      content: owp-time
+      term: null
+    - title: 性价比
+      content: owp-value
+      term: null
+    - title: 假设法
+      content: owp-assumption
       term: null
   - name: 组合
     topics:
     - title: 最值问题
-      content: null
+      content: ocb-extremum
       term: null
     - title: 统筹优化
-      content: null
+      content: ocb-optimization
       term: null
     - title: 逻辑推理
-      content: null
+      content: ocb-logic
       term: null
     - title: 数阵图
-      content: null
+      content: ocb-number-array
       term: null
     - title: 幻方
-      content: null
+      content: ocb-magic-square
       term: null
     - title: 游戏策略
-      content: null
+      content: ocb-game-strategy
       term: null
     - title: 构造与论证
-      content: null
+      content: ocb-construction
       term: null
     - title: 数字谜
-      content: null
+      content: ocb-cryptarithm
+      term: null
+    - title: 除法数字谜
+      content: ocb-division-cryptarithm
       term: null
 - key: g6
   label: 六年级

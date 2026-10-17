@@ -26,19 +26,43 @@
  {
   "slug": "m05",
   "module": "应用题",
-  "count": 21,
+  "count": 27,
   "file": "m05.json"
  },
  {
   "slug": "m06",
   "module": "奥数-计算",
-  "count": 1,
+  "count": 10,
   "file": "m06.json"
+ },
+ {
+  "slug": "m07",
+  "module": "奥数-计数",
+  "count": 16,
+  "file": "m07.json"
  },
  {
   "slug": "m08",
   "module": "奥数-数论",
-  "count": 13,
+  "count": 21,
   "file": "m08.json"
+ },
+ {
+  "slug": "m09",
+  "module": "奥数-几何",
+  "count": 14,
+  "file": "m09.json"
+ },
+ {
+  "slug": "m10",
+  "module": "奥数-行程",
+  "count": 8,
+  "file": "m10.json"
+ },
+ {
+  "slug": "m11",
+  "module": "奥数-组合",
+  "count": 9,
+  "file": "m11.json"
  }
 ]

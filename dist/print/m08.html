@@ -28,28 +28,86 @@ details{margin-top:.6em}summary{cursor:pointer;color:#36c}
 }
 </style></head><body><h1>奥数-数论</h1>
 <p class="meta">小学数学知识库 · 打印版</p>
-<section class="kp"><h2>位值原理</h2><p class="meta"><span>年级：4、5、6</span><span>难度：★★</span></p><p><strong>位值原理</strong>：每个数字的价值取决于它所在的数位。一个多位数可以按数位展开：<br />
-$$\overline{abc} = 100a + 10b + c, \quad \overline{abcd} = 1000a + 100b + 10c + d$$<br />
-字母上加横线 $\overline{abc}$ 表示&quot;由数字 $a$、$b$、$c$ 组成的三位数&quot;，而不是 $a \times b \times c$。</p>
-<p><strong>常用展开技巧</strong>：</p>
+<section class="kp"><h2>互质情况计数</h2><p class="meta"><span>年级：4、5、6</span><span>难度：★★★</span></p><p><strong>一、互质是什么</strong></p>
+<p>两个自然数 $a$、$b$，若公因数只有 $1$，就称它们互质，记作 $\gcd(a,b)=1$。互质是两个数之间的关系，单个质数谈不上互不互质。</p>
+<p>常用三个模型：<strong>枚举</strong>——按 $N$ 的质因数把 $1$ 到 $N$ 筛一遍；<strong>比例</strong>——遇到质因数 $p$ 就划掉 $\frac{1}{p}$，留下 $1-\frac{1}{p}$；<strong>分类</strong>——按与 $N$ 的最大公因数分堆。</p>
+<p><strong>二、核心公式</strong></p>
+<p>设 $N=p_1^{a_1}p_2^{a_2}\cdots p_k^{a_k}$，则<br />
+$$\varphi(N)=N\left(1-\frac{1}{p_1}\right)\left(1-\frac{1}{p_2}\right)\cdots\left(1-\frac{1}{p_k}\right)$$<br />
+就是 $1$ 到 $N$ 中与 $N$ 互质的数的个数。每个<strong>不同</strong>质因数只乘一次，指数不参与，如 $\varphi(36)=36\times\frac{1}{2}\times\frac{2}{3}=12$。</p>
+<p>分类公式：$1$ 到 $N$ 中与 $N$ 的最大公因数为 $d$ 的数有<br />
+$$\varphi\left(\frac{N}{d}\right)$$<br />
+个（因 $n=dm$，要求 $m\le\frac{N}{d}$ 且与 $\frac{N}{d}$ 互质）。</p>
+<p>容斥写法：总数减各质因数倍数，加回两两公倍数，再减三三公倍数……奇减偶加。</p>
+<p><strong>三、识别信号与步骤</strong></p>
 <ul>
-<li>两位数字对调：$\overline{ab} - \overline{ba} = 9(a - b)$，差必是 9 的倍数；</li>
-<li>三位数字对调百位与个位：$\overline{abc} - \overline{cba} = 99(a - c)$；</li>
-<li>在末尾添一个数字 $d$：$\overline{abcd} = 10 \times \overline{abc} + d$。</li>
+<li>&quot;与 $N$ 互质的有哪些&quot;且质因数少：直接筛掉这些质因数的倍数。</li>
+<li>&quot;与 $N$ 互质的有几个&quot;且范围大：先分解质因数，再用 $\varphi(N)$。</li>
+<li>&quot;最大公因数为 $d$&quot;：提公因数 $d$，转化为 $\varphi\left(\frac{N}{d}\right)$，别直接套 $\varphi(N)$。</li>
+<li>&quot;至少满足一个条件&quot;：编成容斥，盯住加减符号。</li>
 </ul>
-<p><strong>解题套路</strong>：把&quot;数字之间的关系&quot;通过位值展开翻译成普通方程，再结合整除特征或枚举求解。看到&quot;数字对调&quot;&quot;在某位插入数字&quot;&quot;把数字移到末位&quot;这类表述，第一反应就是位值展开。</p>
-<p><strong>易错点</strong>：$\overline{ab}$ 中 $a$ 是首位数字，不能为 0；展开后要注意未知数是 0–9 的数字这一天然限制。</p>
+<p>四步：①分解质因数；②列要划掉的质因数；③筛法、比例或容斥计数；④小数验算。</p>
+<p><strong>四、易错点</strong></p>
+<ol>
+<li>错误：以为互质就是两数都质数。正确：只看公因数，$8$ 与 $9$ 互质，$3$ 与 $9$ 不互质。</li>
+<li>错误：$\varphi(12)=12\times\frac{1}{2}\times\frac{1}{2}\times\frac{2}{3}$。正确：不同质因数各乘一次，$\varphi(12)=12\times\frac{1}{2}\times\frac{2}{3}=4$。</li>
+<li>错误：求&quot;最大公因数为 $d$&quot;时直接写 $\varphi(N)$。正确：算 $\varphi\left(\frac{N}{d}\right)$，如 $\gcd(n,1000)=5$ 时算 $\varphi(200)=80$。</li>
+<li>错误：容斥时把两两公倍数也减掉。正确：一减一加，两两交集要加回。</li>
+<li>错误：漏掉 $1$。正确：$\gcd(1,N)=1$，$1$ 必算。</li>
+</ol>
 
 <h2 class="ex-h">例题</h2>
-<div class="example"><h3>例1：数字对调<span class="covers">覆盖点：位值展开、数字对调问题</span></h3><div class="problem"><p>一个两位数，十位数字与个位数字之和是 10。如果把数字对调，得到的新数比原数大 36。求原数。</p>
+<div class="example"><h3>例1：把与 36 互质的数筛出来（★★★）<span class="covers">覆盖点：互质判断与枚举</span></h3><div class="problem"><p>在 $1$ 到 $36$ 这 $36$ 个自然数中，与 $36$ 互质的数有哪些？共有多少个？</p>
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div>
-<div class="example"><h3>例2：末尾添数字<span class="covers">覆盖点：位值展开</span></h3><div class="problem"><p>一个三位数，在它的末尾添上数字 2 得到一个四位数，这个四位数比原三位数大 1082。求原三位数。</p>
+<div class="example"><h3>例2：用欧拉函数数大范围的互质数（★★★★）<span class="covers">覆盖点：欧拉函数计数</span></h3><div class="problem"><p>在 $1$ 到 $1260$ 中，与 $1260$ 互质的数共有多少个？</p>
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div>
-<div class="example"><h3>例3：位值与整除结合<span class="covers">覆盖点：位值与整除结合</span></h3><div class="problem"><p>用数字 1、2、3 各一次组成的三位数中，能被 3 整除的有几个？能被 11 整除的有几个？</p>
+<div class="example"><h3>例3：最大公因数恰为 5 的归类计数（★★★★★）<span class="covers">覆盖点：容斥与公因数分类</span></h3><div class="problem"><p>在 $1$ 到 $1000$ 中，与 $1000$ 的最大公因数恰好等于 $5$ 的数有多少个？</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>位值原理</h2><p class="meta"><span>年级：4、5、6</span><span>难度：★★</span></p><p><strong>一、什么是位值原理</strong></p>
+<p>同一个数字写在不同的数位上，表示的大小完全不同：$3$ 写在个位表示 $3$，写在十位表示 $30$，写在百位表示 $300$。这是因为十进制“满十进一”，每个数位都对应一个 $10$ 的幂。把一个多位数按数位拆开，就得到它的位值展开式：<br />
+$$\overline{abc}=100a+10b+c,\qquad \overline{abcd}=1000a+100b+10c+d$$<br />
+字母上方的横线表示“由这些数字按顺序组成的数”，$\overline{ab}$ 不是 $a\times b$。同时 $a$ 是首位，必须满足 $1\le a\le 9$，其余字母满足 $0\le b,c,d\le 9$。</p>
+<p><strong>二、核心公式与常用变形</strong></p>
+<ul>
+<li>两位对调：$\overline{ab}+\overline{ba}=11(a+b)$，$\overline{ba}-\overline{ab}=9(b-a)$。所以对调前后两数之和必是 $11$ 的倍数，之差必是 $9$ 的倍数。</li>
+<li>三位对调首尾：$\overline{abc}-\overline{cba}=99(a-c)$。十位数字 $b$ 在作差时自动抵消，差必是 $99$ 的倍数。</li>
+<li>末尾添数字：在数 $x$ 后面添上数字 $d$，新数是 $10x+d$；在 $x$ 前面添上数字 $k$，新数是 $k\cdot 10^{n}+x$，其中 $n$ 是 $x$ 的位数。</li>
+<li>数字搬家：把三位数 $\overline{abc}$ 的百位数字 $a$ 移到个位后面，新数是 $100b+10c+a$。</li>
+<li>竖式数字谜：相同字母代表相同数字、不同字母代表不同数字，可以按位值展开后从个位向高位逐位分析进位。</li>
+</ul>
+<p><strong>三、识别信号与解题步骤</strong></p>
+<ol>
+<li>出现“数字对调、颠倒、交换某两位”，先写出原数与新数的位值展开，再作差或作和，提取公因数 $9$、$11$、$99$。</li>
+<li>出现“末尾添数、前面添数、把某位移到某位”，用 $10x+d$、$k\cdot 10^{n}+x$ 表示新数，把文字条件翻译成一元方程。</li>
+<li>出现“数字和、数字积、各位数字之间的关系”，设各数位字母，按位值列方程，再用“$0\le$ 数字 $\le 9$ 且首位非零”筛选。</li>
+<li>出现“能被某数整除”时，先把除数拆成互质的两个数，分别用末位、数字和等整除特征得到关于字母的条件，再逐一枚举。</li>
+<li>解出答案后回代验算，并逐位检查解是否为 $0$ 到 $9$ 的整数、首位是否非零，及时排除多解。</li>
+</ol>
+<p><strong>四、易错点</strong></p>
+<ul>
+<li>易错 1：把 $\overline{ab}$ 当成 $a\times b$。错误做法：认为 $\overline{ab}=ab$ 直接相乘；正确做法：横线是数位记号，$\overline{ab}=10a+b$。</li>
+<li>易错 2：对调作差时符号写反。错误做法：写 $\overline{ba}-\overline{ab}=9(a-b)$；正确做法：新数减原数等于 $9(b-a)$，先判断哪个数大，或统一写成 $|\overline{ba}-\overline{ab}|=9|a-b|$。</li>
+<li>易错 3：忽略首位不能为 $0$。错误做法：解出 $a=0$ 仍把 $\overline{ab}$ 当作两位数；正确做法：$a=0$ 时 $\overline{ab}$ 实际是一位数 $b$，应舍去或单独讨论。</li>
+<li>易错 4：三位数首尾对调误用 $9$。错误做法：写 $\overline{abc}-\overline{cba}=9(a-c)$；正确做法：百位与个位的位值相差 $100-1=99$，差应是 $99(a-c)$。</li>
+<li>易错 5：只列方程、不检查数字范围。错误做法：解出 $b=12$ 也照抄成答案；正确做法：每个字母必须是 $0$ 到 $9$ 的整数，超出范围的解必须舍去。</li>
+</ul>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：按数位关系还原三位数（★★★）<span class="covers">覆盖点：位值展开与数位表示</span></h3><div class="problem"><p>一个三位数，百位数字是十位数字的 $2$ 倍，个位数字比十位数字大 $3$，三个数位上的数字之和是 $15$。求这个三位数。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：首尾对调后作差（★★★★）<span class="covers">覆盖点：数字对调与数位差</span></h3><div class="problem"><p>一个三位数，个位数字是百位数字的 $3$ 倍，十位数字比百位数字大 $1$。把这个三位数的百位数字与个位数字对调，所得的新数比原数大 $396$。求原数。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例3：位值与整除条件结合（★★★★★）<span class="covers">覆盖点：位值原理与整除特征</span></h3><div class="problem"><p>四位数 $\overline{2a3b}$（千位是 $2$、百位是 $a$、十位是 $3$、个位是 $b$）能被 $36$ 整除。在所有这样的四位数中，最小的一个是多少？</p>
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
@@ -72,30 +130,84 @@ $$\overline{abc} = 100a + 10b + c, \quad \overline{abcd} = 1000a + 100b + 10c + 
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
-<section class="kp"><h2>分解质因数</h2><p class="meta"><span>年级：5、6</span><span>难度：★★</span></p><p><strong>定义</strong>：把一个合数写成若干个质数相乘的形式，叫<strong>分解质因数</strong>。算术基本定理保证：每个大于 1 的自然数分解质因数的结果是<strong>唯一</strong>的（不计顺序）。</p>
-<p><strong>方法：短除法</strong>。用最小的质数试除，商继续除，直到商是质数为止，所有除数和最后的商相乘即得。</p>
-<p><strong>标准分解式</strong>：把相同的质因数写成乘方，按质数从小到大排列：<br />
-$$N = p_1^{a_1} \times p_2^{a_2} \times \cdots \times p_k^{a_k}$$<br />
-例如 $360 = 2^3 \times 3^2 \times 5$。</p>
-<p><strong>常见应用</strong>：</p>
+<section class="kp"><h2>倍数特征与最值</h2><p class="meta"><span>年级：4、5、6</span><span>难度：★★★</span></p><p><strong>概念与模型</strong>：这类题把两件事放在一起——<strong>整除特征提供约束，最值要求提供方向</strong>。一个数要&quot;能被 45 整除&quot;&quot;数字和为 26&quot;&quot;还要最大&quot;，条件越多，能填的数字就被锁得越死；最后剩下的自由位，再从高位到低位一路贪心取大或取小，答案就唯一了。所以模型可以概括为：<strong>先用特征锁位，再用数字和算账，最后高位贪心并验算</strong>。</p>
+<p><strong>三类倍数特征</strong>（都写成位值式来看最清楚）：</p>
 <ul>
-<li>判断 $N$ 含哪些质因数、是几的倍数；</li>
-<li>求&quot;乘积末尾有几个 0&quot;——数分解式中 $\min(2\text{的指数}, 5\text{的指数})$；</li>
-<li>已知乘积反推乘数（分组问题）；</li>
-<li>是后面&quot;因数个数&quot;&quot;最大公因数&quot;等知识点的基础。</li>
+<li><strong>末位系</strong>（只看末几位）：被 $2$、$5$ 整除看末 1 位；被 $4$、$25$ 整除看末 2 位；被 $8$、$125$ 整除看末 3 位。例如 $\overline{abcd}=1000a+100b+10c+d$，其中 $100$ 是 $4$ 的倍数、$1000$ 是 $4$ 和 $8$ 的倍数，所以能否被 $4$ 整除只由 $10c+d$ 决定，能否被 $8$ 整除只由 $100b+10c+d$ 决定。</li>
+<li><strong>数字和系</strong>：被 $3$ 整除 $\Leftrightarrow$ 各位数字之和是 $3$ 的倍数；被 $9$ 整除 $\Leftrightarrow$ 各位数字之和是 $9$ 的倍数。</li>
+<li><strong>交错和系</strong>：被 $11$ 整除 $\Leftrightarrow$ 奇数位数字之和与偶数位数字之和的差是 $11$ 的倍数，即 $(a+c)-(b+d)$ 是 $11$ 的倍数。</li>
 </ul>
-<p><strong>易错点</strong>：分解要<strong>彻底</strong>，直到每个因数都是质数；写成标准分解式时别忘了合并相同质因数的乘方。</p>
+<p><strong>合数必须拆成互质因数</strong>：$45=5\times9$、$36=4\times9$、$44=4\times11$、$72=8\times9$。只有因数互质时，&quot;分别满足&quot;才等价于&quot;整体满足&quot;。</p>
+<p><strong>最值五步法</strong>：</p>
+<ol>
+<li><strong>拆</strong>：把除数拆成互质因数，逐个写出特征；</li>
+<li><strong>锁</strong>：先用只管末几位的特征，把末位、末两位或末三位定下来；</li>
+<li><strong>算</strong>：用数字和（或交错和）列出关于剩余数字的等式；</li>
+<li><strong>贪</strong>：从最高位起尽量取大（求最大）或取小（求最小），高位相同时逐位往下比；</li>
+<li><strong>验</strong>：把候选数真除一遍，再回头检查有没有被漏掉的更大（更小）的数。</li>
+</ol>
+<p>两个常用的&quot;账&quot;：数字和固定为 $S$ 时，末尾几位最多能承载的和是 $9+9+9=27$；求最小数时，最高位取到最小后，剩下的和要尽量压给低位。</p>
+<p><strong>识别信号</strong>：</p>
+<ul>
+<li>出现&quot;最大/最小&quot;搭配&quot;能被……整除&quot;→ 先用末位系锁低位，再从高位贪心；</li>
+<li>出现&quot;各位数字之和为……&quot;→ 数字和是硬约束，先把它写成等式；</li>
+<li>除数形如 $45$、$36$、$44$、$72$ → 先拆互质因数，两条特征同时用，缺一不可。</li>
+</ul>
+<p><strong>易错点</strong>（错误做法 → 正确做法）：</p>
+<ul>
+<li><strong>错</strong>：被 $45$ 整除只检查&quot;数字和是 $9$ 的倍数&quot;，不管末位。<strong>对</strong>：$45=5\times9$，必须同时满足末位是 $0$ 或 $5$。</li>
+<li><strong>错</strong>：认定&quot;被 $5$ 整除末位只能填 $5$&quot;。<strong>对</strong>：末位是 $0$ 或 $5$，求最值时两种都要试，末位取 $0$ 常常反而得到更大的数。</li>
+<li><strong>错</strong>：把合数拆成不互质的因数，如判断被 $12$ 整除只看&quot;被 $2$ 整除&quot;和&quot;被 $6$ 整除&quot;。<strong>对</strong>：拆成 $3\times4$（$3$ 与 $4$ 互质），两个条件同时成立才等价。</li>
+<li><strong>错</strong>：求最大数时只把最高位取 $9$，后面随手写。<strong>对</strong>：高位相同要逐位比较，第二位、第三位也要尽量大，必要时整体回退一位重排。</li>
+<li><strong>错</strong>：数字和是 $3$ 的倍数就断定能被 $9$ 整除。<strong>对</strong>：$9$ 的倍数要求数字和是 $9$ 的倍数，条件更强；反过来成立。</li>
+</ul>
 
 <h2 class="ex-h">例题</h2>
-<div class="example"><h3>例1：短除法分解<span class="covers">覆盖点：短除法分解、标准分解式</span></h3><div class="problem"><p>把 1260 分解质因数，并写成标准分解式。</p>
+<div class="example"><h3>例1：填数字使四位数被 45 整除并取最大（★★★）<span class="covers">覆盖点：末位与数字和联立</span></h3><div class="problem"><p>在四位数 $\overline{3a7b}$ 中填入数字 $a$、$b$（$a$ 可以是 0），使它能被 45 整除。这样的四位数中最大的是多少？</p>
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div>
-<div class="example"><h3>例2：乘积末尾 0 的个数<span class="covers">覆盖点：分解质因数应用</span></h3><div class="problem"><p>$1 \times 2 \times 3 \times \cdots \times 20$（即 20!）的乘积末尾有多少个连续的 0？</p>
+<div class="example"><h3>例2：数字和固定时求最大的四位数（★★★★）<span class="covers">覆盖点：数字和定值下的排列最值</span></h3><div class="problem"><p>一个四位数能被 8 整除，且各位数字之和为 26。这样的四位数中最大的是多少？</p>
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div>
-<div class="example"><h3>例3：由乘积反推乘数<span class="covers">覆盖点：分解质因数应用</span></h3><div class="problem"><p>三个连续自然数的乘积是 210，求这三个数。</p>
+<div class="example"><h3>例3：同时被 44 整除且数字和为 20 的最大数（★★★★★）<span class="covers">覆盖点：多特征联立的最值构造</span></h3><div class="problem"><p>一个四位数能被 44 整除，且各位数字之和为 20。这样的四位数中最大的是多少？</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>分解质因数</h2><p class="meta"><span>年级：5、6</span><span>难度：★★</span></p><p><strong>一、概念与模型</strong></p>
+<p>把一个合数写成若干个质数相乘的形式，叫做<strong>分解质因数</strong>，例如 $1260=2\times2\times3\times3\times5\times7$。</p>
+<p>算术基本定理告诉我们：每个大于 1 的自然数，在不计质因数顺序时，分解结果是<strong>唯一</strong>的。所以分解质因数不是&quot;随便凑一个乘式&quot;，而是在找这个数唯一的&quot;质数身份证&quot;——它含哪些质数、各含几个。抓住这一点，很多数论题就有了统一切口。</p>
+<p><strong>二、核心方法与公式</strong></p>
+<p><strong>短除法</strong>：用质数从小到大（$2,3,5,7,11,\dots$）依次试除，除到商也是质数为止，再把所有的除数和最后的商连乘。</p>
+<p><strong>标准分解式</strong>：把相同的质因数合并成乘方，质数按从小到大排列：<br />
+$$N=p_1^{a_1}\times p_2^{a_2}\times\cdots\times p_k^{a_k},\qquad p_1&lt;p_2&lt;\cdots&lt;p_k$$<br />
+例如 $1260=2^2\times3^2\times5\times7$。由标准分解式还能直接读出两条结论：乘积末尾连续 0 的个数 $=\min(a_2,a_5)$（$a_2,a_5$ 分别是质因数 2 和 5 的指数）；因数个数 $=(a_1+1)(a_2+1)\cdots(a_k+1)$。</p>
+<p><strong>三、识别信号与操作步骤</strong></p>
+<ol>
+<li>题目说&quot;分解质因数&quot;&quot;写成质数相乘&quot;：直接短除，从 2 开始依次试。</li>
+<li>题目说&quot;标准分解式&quot;，或给出几个数相乘：先各自分解，再合并指数、按从小到大排序。</li>
+<li>题目说&quot;末尾有几个 0&quot;&quot;至少含有几个 5&quot;：分解后比较 2 与 5 的指数，取较小的那个。</li>
+<li>题目说&quot;几个连续自然数的积&quot;或&quot;把积拆回若干个数&quot;：先把积分解，再按大小把质因数分组试乘。</li>
+</ol>
+<p><strong>四、易错点</strong></p>
+<ol>
+<li>分解不彻底：写成 $60=4\times15$ 就停手。4 和 15 里还藏着合数，正确做法是继续分到 $60=2^2\times3\times5$，保证每个因数都是质数。</li>
+<li>漏掉最后的商：短除到 $1260\to630\to315$ 就以为结束。315 仍是合数，要一直除到商为质数，并把最后的商也写进分解式。</li>
+<li>让 1 或合数冒充质因数：$1$ 既不是质数也不是合数，不能写进分解式；也不要用 4、6、9 这类合数去除，必须用质数试除。</li>
+<li>不合并指数：$360=2\times2\times2\times3\times3\times5$ 只是质因数连乘式，合并写成 $2^3\times3^2\times5$ 才是标准分解式。</li>
+</ol>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：用短除法把 924 分解质因数（★★★）<span class="covers">覆盖点：短除法分解</span></h3><div class="problem"><p>用短除法把 924 分解质因数，写出完整的质因数连乘式。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：先分别分解，再合并求积的标准分解式（★★★★）<span class="covers">覆盖点：标准分解式</span></h3><div class="problem"><p>求 $12\times15\times18$ 的标准分解式。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例3：用质因数指数数出末尾 0 的个数（★★★★★）<span class="covers">覆盖点：分解质因数应用</span></h3><div class="problem"><p>记 $n!=1\times2\times3\times\cdots\times n$。求最小的自然数 $n$，使 $n!$ 的末尾恰好有 20 个连续的 0。</p>
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
@@ -155,7 +267,7 @@ $$\sigma(N) = (1 + p_1 + \cdots + p_1^{a_1})(1 + p_2 + \cdots + p_2^{a_2}) \cdot
 <li>乘方：$a^n$ 与 $a$ 同奇偶（$n \geq 1$）。</li>
 </ul>
 <p><strong>奇偶分析</strong>是奥数的重要思想：很多问题不求具体数值，只判断&quot;和是奇还是偶&quot;就能得出答案，常用于判断&quot;能否做到&quot;&quot;是否存在&quot;。</p>
-<p><strong>易错点</strong>：判断差的奇偶性时，大减小与小减大结果一样；若干个数的和的奇偶性只取决于其中<strong>奇数的个数</strong>——奇数个数为奇则和为奇，反之为偶。</p>
+<p><strong>易错点</strong>：判断差的奇偶性时，大减小与小减大所得差的奇偶性相同；若干个数的和的奇偶性只取决于其中<strong>奇数的个数</strong>——奇数个数为奇则和为奇，反之为偶。</p>
 
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：快速判断运算结果的奇偶性<span class="covers">覆盖点：奇偶判定、奇偶运算规律</span></h3><div class="problem"><p>不计算结果，判断 $1+2+3+\cdots+99+100$ 的和是奇数还是偶数。</p>
@@ -221,41 +333,91 @@ $q$ 叫商，$r$ 叫余数。<strong>余数必须小于除数</strong>，这是�
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
-<section class="kp"><h2>数的整除特征</h2><p class="meta"><span>年级：4、5、6</span><span>难度：★★</span></p><p>判断一个大数能否被某数整除，不必真做除法，看&quot;特征&quot;即可。整除特征按用法分四系：</p>
-<p><strong>末位系</strong>（看末几位）：</p>
+<section class="kp"><h2>平方数与立方数分解质因数</h2><p class="meta"><span>年级：4、5、6</span><span>难度：★★★</span></p><p><strong>概念</strong>：任何一个大于 1 的整数，都能唯一地写成若干个质数幂的乘积，这就是<strong>标准分解式</strong>：<br />
+$$N = p_1^{a_1}p_2^{a_2}\cdots p_k^{a_k}$$<br />
+其中 $p_1&lt;p_2&lt;\cdots&lt;p_k$ 是质数，$a_i\ge 1$。这个式子像一张&quot;身份证&quot;：$N$ 是不是完全平方数、是不是完全立方数，全都写在各质因数的<strong>指数</strong>上，不用真的去开方。</p>
+<p><strong>为什么只看指数</strong>：若 $N=M^2$，则 $M$ 中每个质因数的指数乘 2 就是 $N$ 中该质因数的指数，所以 $a_i$ 全为偶数；反过来，$a_i$ 全为偶数时，<br />
+$$N=\left(p_1^{a_1/2}p_2^{a_2/2}\cdots p_k^{a_k/2}\right)^2,$$<br />
+一定是平方数。立方数同理，把&quot;偶数&quot;换成&quot;3 的倍数&quot;。</p>
+<p><strong>三条判定（核心）</strong>：</p>
 <ul>
-<li>被 2、5 整除：看<strong>末 1 位</strong>；</li>
-<li>被 4、25 整除：看<strong>末 2 位</strong>；</li>
-<li>被 8、125 整除：看<strong>末 3 位</strong>。</li>
+<li>$N$ 是完全平方数 $\iff$ 每个 $a_i$ 都是偶数；</li>
+<li>$N$ 是完全立方数 $\iff$ 每个 $a_i$ 都是 $3$ 的倍数；</li>
+<li>$N$ 既是平方数又是立方数 $\iff$ 每个 $a_i$ 都是 $6$ 的倍数（因为 $\mathrm{lcm}(2,3)=6$），此时 $N$ 是<strong>六次方数</strong>。</li>
 </ul>
-<p><strong>数字和系</strong>（看各位数字之和）：</p>
+<p><strong>补因数公式</strong>：要找一个最小的 $k$，使 $N\cdot k$ 成为平方数，只需把&quot;指数为奇数&quot;的质因数各补一个：<br />
+$$k_{\min}=\prod_{a_i\ \text{为奇数}} p_i.$$<br />
+若目标是立方数，则对每个质因数补到&quot;不小于 $a_i$ 的最小 3 的倍数&quot;，即补 $r_i\equiv -a_i\pmod 3$（$0\le r_i\le 2$）个；目标是六次方数时同理，补到 6 的倍数。</p>
+<p><strong>配方与平方差</strong>：题中出现&quot;$n^2+$ 常数 是完全平方数&quot;时，设 $n^2+C=m^2$，移项配成平方差：<br />
+$$m^2-n^2=C,\qquad (m-n)(m+n)=C.$$<br />
+$m-n$ 与 $m+n$ 的和是 $2m$（偶数），所以两因数<strong>同奇偶</strong>；$C$ 为偶数时，两者必须都是偶数。把 $C$ 拆成&quot;同奇偶的两因数之积&quot;，就能把所有 $n$ 找全。另一个常考配方是连续四数之积加 1：<br />
+$$a(a+1)(a+2)(a+3)+1=(a^2+3a+1)^2.$$</p>
+<p><strong>识别信号</strong>：问&quot;是不是平方数/立方数&quot;&quot;末尾有几个 0&quot;→ 分解质因数，只盯指数；问&quot;乘（或除以）哪个数后成为平方数，最小是多少&quot;→ 补指数；问&quot;既是平方数又是立方数&quot;→ 一次补到 6 的倍数；问&quot;$n^2+C$ 为平方数&quot;→ 配方成平方差、枚举因数对。</p>
+<p><strong>解题步骤</strong>：① 短除法写出标准分解式；② 把所有指数列出来；③ 按目标检查指数要满足的条件；④ 算出要补的质因数；⑤ 平方差型题目列因数对，并代回检验。</p>
+<p><strong>易错点</strong>：</p>
 <ul>
-<li>被 3、9 整除：各位数字之和能被 3、9 整除即可。判断大数时可反复求数字和（弃九法：边加边丢掉 9）。</li>
+<li><strong>错</strong>：把&quot;指数全是偶数&quot;记成&quot;指数都等于 2&quot;，看到 $2^4\times3^6$ 反而犹豫。<strong>对</strong>：只要每个指数是偶数就行，$2^4\times3^6=(2^2\times3^3)^2=108^2$。</li>
+<li><strong>错</strong>：判断立方数时只看&quot;指数是不是 3&quot;，把 $2^6$ 判为不是立方数。<strong>对</strong>：指数只要是 3 的倍数即可，$2^6=(2^2)^3=4^3$。</li>
+<li><strong>错</strong>：求&quot;$360n$ 是平方数&quot;时只把 360 的指数补成偶数，随手写 $n=6$。<strong>对</strong>：$360=2^3\times3^2\times5$，要补 $2^1$ 和 $5^1$，最小的 $n=2\times5=10$。</li>
+<li><strong>错</strong>：平方差 $(m-n)(m+n)=2004$ 时把 $(4,501)$ 这类&quot;一奇一偶&quot;的因数对也拿来算。<strong>对</strong>：两因数必须同奇偶，$4$ 偶而 $501$ 奇，直接舍去，只能取 $(2,1002)$、$(6,334)$。</li>
+<li><strong>错</strong>：算出 $n$ 就交卷，不代入检验。<strong>对</strong>：把 $n$ 代回 $n^2+C$，看开方结果是不是整数。</li>
 </ul>
-<p><strong>交错和系</strong>：</p>
-<ul>
-<li>被 11 整除：<strong>奇数位数字之和</strong>与<strong>偶数位数字之和</strong>的差（大减小）能被 11 整除。</li>
-</ul>
-<p><strong>截断系</strong>（7、11、13 通用）：</p>
-<ul>
-<li>把数从末三位处截开，末三位组成的数与前面部分的差能被 7、11 或 13 整除即可。原理是 $7 \times 11 \times 13 = 1001$。</li>
-</ul>
-<p><strong>易错点</strong>：被 6、12、15 这类合数的整除判定要拆成互质因数分别判，如被 6 整除 ⟺ 同时被 2 和 3 整除；但不能拆成不互质的，如被 12 整除不能只看&quot;被 2 和被 6&quot;。</p>
 
 <h2 class="ex-h">例题</h2>
-<div class="example"><h3>例1：末位系与数字和系<span class="covers">覆盖点：末位系判定、数字和系判定</span></h3><div class="problem"><p>四位数 $\overline{7□36}$ 能被 4 整除，且能被 9 整除，求 □ 中的数字。</p>
+<div class="example"><h3>例1：用指数判断平方数与立方数（★★★）<span class="covers">覆盖点：指数奇偶判定</span></h3><div class="problem"><p>把 $216$、$324$、$729$、$4000$ 分别分解质因数，指出哪些是完全平方数、哪些是完全立方数。</p>
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div>
-<div class="example"><h3>例2：交错和系（11 的判定）<span class="covers">覆盖点：交错和系判定</span></h3><div class="problem"><p>判断 123758 能否被 11 整除。</p>
+<div class="example"><h3>例2：补因数，让 360n 成为六次方数（★★★★）<span class="covers">覆盖点：补因数补全指数</span></h3><div class="problem"><p>求最小的正整数 $n$，使得 $360n$ 既是完全平方数又是完全立方数。</p>
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div>
-<div class="example"><h3>例3：截断系（7、13 的判定）<span class="covers">覆盖点：截断系判定</span></h3><div class="problem"><p>判断 39104 能否被 7 整除、能否被 13 整除。</p>
+<div class="example"><h3>例3：$n^2+2004$ 成为平方数（★★★★★）<span class="covers">覆盖点：配平方差分解</span></h3><div class="problem"><p>求最小的正整数 $n$，使得 $n^2+2004$ 是完全平方数。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>数的整除特征</h2><p class="meta"><span>年级：4、5、6</span><span>难度：★★</span></p><p><strong>概念与模型</strong>：判断一个数能否被某个数整除，不必真做除法。把整数写成<br />
+$$N=\overline{a_na_{n-1}\cdots a_1a_0}=a_n10^n+\cdots+a_110+a_0$$<br />
+所有整除特征都来自同一个想法：找一个能被除数整除的&quot;大块&quot;（$10$、$100$、$1000$、$1001$……），把它从 $N$ 里整块减掉，只看剩下的那一小块。</p>
+<p>以截断为例：$N=1000M+T=1001M+(T-M)$，其中 $1001M$ 是 $1001$ 的倍数，所以 $N$ 与 $T-M$ 同余。整除特征就是这样一条条&quot;同余等式&quot;：$10^k$ 除以某个除数余几，就决定这个特征看末几位、是加还是减。记住这一点，就不必死记硬背。</p>
+<p><strong>核心公式（按&quot;看哪里&quot;分成四系）</strong>：</p>
+<ol>
+<li><strong>末位系</strong>：$2,5\mid N$ 看末 1 位；$4,25\mid N$ 看末 2 位；$8,125\mid N$ 看末 3 位。因为 $100=4\times25$、$1000=8\times125$，前面的部分都是 100 或 1000 的倍数，可以整块删去。<br />
+$$2,5\to10;\qquad 4,25\to100;\qquad 8,125\to1000$$</li>
+<li><strong>数字和系</strong>：$3,9\mid N\iff$ 各位数字之和能被 3、9 整除。因为 $10\equiv1\pmod 9$（对 3 同样成立），所以<br />
+$$N\equiv a_n+\cdots+a_1+a_0\pmod 9$$<br />
+数字很多时用弃九法：边加边把 9 的倍数划掉，甚至反复求数字和。</li>
+<li><strong>交错和系</strong>：$11\mid N\iff$ 奇数位数字和与偶数位数字和之差能被 11 整除。因为 $10\equiv-1\pmod{11}$，符号交替出现：<br />
+$$S_{\text{奇}}-S_{\text{偶}}=(a_0+a_2+\cdots)-(a_1+a_3+\cdots)$$</li>
+<li><strong>截断系</strong>：$1001=7\times11\times13$，所以 $1000\equiv-1\pmod{1001}$。从末三位截开，末三位记作 $T$，前面部分记作 $M$：<br />
+$$N=\overline{M,T}\equiv T-M\pmod{1001}$$<br />
+即 $T-M$ 能被 7、11 或 13 整除，$N$ 就能；差为负数时取绝对值。</li>
+</ol>
+<p><strong>识别信号与步骤</strong>：① 先认除数属于哪一系：$2,4,8,5,25,125$ 看末位，$3,9$ 看数字和，$11$ 看交错和，$7,13$ 用截断；② 除数不在表里（$6,12,15,36\cdots$），就拆成互质因数分别判：<br />
+$$a\mid N,\ b\mid N,\ \gcd(a,b)=1\ \Longrightarrow\ ab\mid N$$<br />
+③ 要填数字，就把该系的条件写成方程或不等式，再用&quot;数字只能是 $0$ 到 $9$&quot;筛选。</p>
+<p><strong>三类典型问法</strong>：一是<strong>判断</strong>——给出一个数，问能否整除、余数是几；二是<strong>填数字</strong>——只给出部分数位，问某一位（或某几位）是几；三是<strong>求最值</strong>——在所有满足整除条件的数中找最大或最小。填数字题最后一定要代回原数验算一次，避免出现&quot;看起来对、其实除不尽&quot;的假解。</p>
+<p>另外注意力量的强弱：被 $9$ 整除一定被 $3$ 整除，反之不然（$12$ 能被 3 整除，不能被 9 整除），所以条件里同时出现 3 和 9 时，判 9 就够了；同理，被 $8$ 整除一定被 $4$ 整除，被 $125$ 整除一定被 $25$ 整除，判强的那个即可。</p>
+<p><strong>易错点</strong>：</p>
+<ul>
+<li>错误：判 8 只看末两位。正确：8 要看末三位。$5724$ 末两位 $24$ 能被 4 整除，末三位 $724=8\times90+4$ 却不能被 8 整除——&quot;过了 4 未必过 8&quot;。</li>
+<li>错误：判 11 时从左边数位。正确：$10\equiv-1$，与个位同号的是百位、万位，必须从右往左数，个位算第 1 位。</li>
+<li>错误：判 12 时说&quot;能被 2 和 6 整除即可&quot;。正确：必须拆成互质因数 $12=4\times3$；$18$ 能被 2 和 6 整除，却不能被 12 整除。</li>
+<li>错误：截断时算成 $T+M$。正确：是 $T-M$。$1053$ 中 $53-1=52$ 能被 13 整除（$1053=13\times81$）；若写成 $53+1=54$，就不能被 13 整除，结论就反了。</li>
+<li>错误：判 7 时只看末三位能不能被 7 整除。正确：7 要用截断差 $T-M$，末三位本身没有意义（$7\nmid1000$，$1000\equiv-1\pmod 7$）。</li>
+<li>错误：求数字和时漏位、漏 0。正确：按位逐个相加，再用弃九法（把 9 的倍数划掉）复核一遍。</li>
+</ul>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：先分层，再看末几位（★★★）<span class="covers">覆盖点：末位系判定</span></h3><div class="problem"><p>不做除法，判断 3724 能否被 4、8 整除，5250 能否被 25、125 整除。</p>
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div>
-<div class="example"><h3>例4：合数判定要拆互质因数<span class="covers">覆盖点：数字和系判定、末位系判定</span></h3><div class="problem"><p>五位数 $\overline{5a41b}$ 能被 15 整除，求所有可能的 $a$、$b$。</p>
+<div class="example"><h3>例2：数字和锁定最大数（★★★★）<span class="covers">覆盖点：数字和系判定</span></h3><div class="problem"><p>求最大的、各位数字互不相同且能被 9 整除的四位数。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例3：11 与 13 同时成立的截断（★★★★★）<span class="covers">覆盖点：交错和与截断判定</span></h3><div class="problem"><p>六位数 $\overline{2024ab}$ 同时能被 11 和 13 整除，求这个六位数。</p>
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
@@ -268,7 +430,7 @@ $q$ 叫商，$r$ 叫余数。<strong>余数必须小于除数</strong>，这是�
 <li><strong>可乘性</strong>：若 $a \mid b$，则对任意整数 $k$，$a \mid kb$。</li>
 </ol>
 <p>性质 2 是奥数中最常用的工具：要判断某数能否整除一个&quot;大式子&quot;，就把它拆成几部分，分别判断。</p>
-<p><strong>易错点</strong>：$a \mid b$ 和 $a \mid c$ 推不出 $a \mid (b+c)$ 的逆命题——$a \mid (b+c)$ 时不能反推 $a$ 分别整除 $b$、$c$。</p>
+<p><strong>易错点</strong>：由 $a \mid (b+c)$ 不能反推 $a \mid b$ 且 $a \mid c$——例如 $5 \mid (2+3)$，但 $5 \nmid 2$、$5 \nmid 3$。</p>
 
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：用定义判断整除<span class="covers">覆盖点：整除定义</span></h3><div class="problem"><p>判断下列各式是否正确：① $6 \mid 36$；② $7 \mid 51$；③ $0.5 \mid 3$；④ $5 \mid 0$。</p>
@@ -313,6 +475,97 @@ $$a = bq + r \Rightarrow (a, b) = (b, r)$$<br />
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
+<section class="kp"><h2>最小公倍数与最值</h2><p class="meta"><span>年级：4、5、6</span><span>难度：★★★</span></p><p><strong>概念与模型</strong></p>
+<p>若正整数 $m$ 同时是 $a_1,a_2,\dots,a_k$ 的倍数，就称 $m$ 是它们的公倍数；公倍数中最小的一个记作 $[a_1,a_2,\dots,a_k]$，即最小公倍数。奥数里的&quot;最值&quot;题几乎都建立在一个模型上：最小公倍数一旦求出，<strong>全部</strong>公倍数就按周期排列。</p>
+<p>$$\left{a_1,\dots,a_k\ \text{的公倍数}\right}=\left{m\cdot[a_1,\dots,a_k]\ \middle|\ m=1,2,3,\dots\right}$$</p>
+<p>求最小值，取最小的可行 $m$；求最大值，让 $m$ 尽量大但不超出题目给定的范围。范围条件往往就是最值题的&quot;扣分点&quot;。</p>
+<p><strong>核心公式与方法</strong></p>
+<ul>
+<li>分解质因数：$[a,b]$ 取各质因数的<strong>最高</strong>次幂之积，$(a,b)$ 取<strong>最低</strong>次幂之积。</li>
+<li>两数关系：$[a,b]=\dfrac{a\times b}{(a,b)}$，即 $a\times b=(a,b)\times[a,b]$。</li>
+<li>三个及以上：不能套用上式，要用质因数最高次幂，或逐次求 $[a,b,c]=[[a,b],c]$。</li>
+<li>反推模型：若 $(a,b)=d$，$[a,b]=L$，则设 $a=dx,\ b=dy$，其中 $(x,y)=1$，且 $xy=\dfrac{L}{d}$。这把公因数公倍数问题变成&quot;分解 $L/d$ 的互质因数对&quot;。</li>
+<li>周期模型：若 $n$ 除以 $m_1,m_2,\dots$ 的余数分别固定，则所有解为 $n=n_0+kL$，其中 $L=[m_1,m_2,\dots]$。</li>
+</ul>
+<p><strong>识别信号</strong></p>
+<ol>
+<li>题中出现&quot;至少&quot;&quot;最小&quot;&quot;再次同时&quot;&quot;同时发车&quot;——答案就是最小公倍数本身。</li>
+<li>题中给出最大公因数与最小公倍数，求两数（或两数之和）的最值——设 $a=dx,\ b=dy$，枚举互质因数对。</li>
+<li>题中给出若干个&quot;除以几余几&quot;的条件，求最大或最小的数——先求特解 $n_0$，再用 $n_0+kL$ 夹出范围。</li>
+</ol>
+<p><strong>为什么要&quot;构造&quot;</strong>：最值题光算出数还不够，还要说明它确实是最值。求最小值时，先构造一个符合条件的例子，再说明比它更小的都不符合；求最大值时，先构造出候选，再说明下一个更大的解已经越界。构造加排除，答案才站得住。</p>
+<p><strong>步骤</strong>：① 把文字条件翻译成&quot;倍数&quot;或&quot;余数&quot;关系；② 用质因数法求 $[,]$，得到最小候选或周期；③ 用题目范围解出 $k$（或 $m$）的范围；④ 代回原条件验算。</p>
+<p><strong>易错点</strong></p>
+<ul>
+<li>求出 $[6,8,15]=120$ 就交卷。→ 若题目问&quot;大于 $1000$ 的最小公倍数&quot;，还要在 $120m$ 中挑 $m$：$120\times8=960$ 不够，应取 $m=9$ 得 $1080$。</li>
+<li>反推时漏掉 $(x,y)=1$。→ $xy=30$ 只有 $(1,30),(2,15),(3,10),(5,6)$ 四对互质解；不加互质条件会把 $(6,5)$、$(10,3)$ 之类重复列出，和算错。</li>
+<li>把 $a\times b=(a,b)\times[a,b]$ 直接搬到三个数上。→ 三个数要用质因数最高次幂，或逐次求 $[a,b,c]=[[a,b],c]$，否则结果偏小。</li>
+<li>求出通解后忘记周期是 $L=[m_1,m_2,\dots]$。→ 如 $n=58+315s$ 中 $315=[5,7,9]$，拿着小公倍数继续试会漏解，或把四位数当三位数。</li>
+<li>最大值只&quot;加一次&quot;就停。→ 必须检查下一个解是否越界，例如 $688+315=1003&gt;999$ 才可断定 $688$ 最大。</li>
+</ul>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：同时整除与超过下限的最小值（★★★）<span class="covers">覆盖点：最小公倍数求最小</span></h3><div class="problem"><p>求同时是 $6$、$8$、$15$ 的倍数的最小正整数；再求大于 $1000$ 的最小这样的数。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：由公因数、公倍数反推两数和的最值（★★★★）<span class="covers">覆盖点：公因数公倍数反推最值</span></h3><div class="problem"><p>两个正整数 $a&lt;b$ 满足 $(a,b)=12$，$[a,b]=360$，求 $a+b$ 的最小值与最大值。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例3：余数条件的周期与最大三位数（★★★★★）<span class="covers">覆盖点：公倍数周期定最值</span></h3><div class="problem"><p>求最大的三位数 $n$，使它除以 $5$ 余 $3$，除以 $7$ 余 $2$，除以 $9$ 余 $4$。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>短除模型</h2><p class="meta"><span>年级：4、5、6</span><span>难度：★★</span></p><p><strong>概念</strong>：短除法是把几个数并排写成一行，在左边画一条竖线，用它们公共的因数（或质数）从上往下一步步去除，把商写在下一行，直到不能再除为止的一种写法。它表面只是一张表，实际上一张表同时管着三件事——<strong>分解质因数</strong>、<strong>求最大公因数</strong>、<strong>求最小公倍数</strong>。三件事共用同一张表，区别只在于&quot;用谁去除&quot;和&quot;乘哪几行&quot;，所以把它叫做<strong>短除模型</strong>。</p>
+<p><strong>一张表，三种读法</strong>：设左列（除数）依次为 $d_1,d_2,\dots,d_k$，最下面一行商为 $q_1,q_2,\dots,q_m$（做分解时最后一行只剩 $1$）。</p>
+<ul>
+<li>分解质因数：每个除数必须是<strong>质数</strong>，除到商为 $1$ 为止，则<br />
+$$N=d_1\times d_2\times\cdots\times d_k=p_1^{a_1}p_2^{a_2}\cdots$$</li>
+<li>最大公因数：每一步都用<strong>所有数的公共因数</strong>去除，除到各数<strong>没有公共因数</strong>为止，则<br />
+$$(a_1,a_2,\dots,a_m)=d_1\times d_2\times\cdots\times d_k$$</li>
+<li>最小公倍数：只要有两个数还有公共因数就除（能整除的写商，不能整除的<strong>原样落下</strong>），除到<strong>两两互质</strong>为止，则<br />
+$$[a_1,a_2,\dots,a_m]=(d_1d_2\cdots d_k)\times(q_1q_2\cdots q_m)$$<br />
+也就是口诀&quot;<strong>左列乘末行</strong>&quot;。</li>
+</ul>
+<p><strong>两数专用公式</strong>：$(a,b)\times[a,b]=a\times b$，知道其中三个就能求第四个；但它<strong>只对两个数成立</strong>，三个数必须回到短除表。</p>
+<p><strong>识别信号</strong>：</p>
+<ul>
+<li>出现&quot;最大&quot;&quot;最多&quot;&quot;裁成同样大&quot;&quot;最长&quot;——求最大公因数；</li>
+<li>出现&quot;至少&quot;&quot;最短&quot;&quot;再次同时&quot;&quot;同时回到起点&quot;——求最小公倍数；</li>
+<li>题目给的是三个以上的数，或数字达到三位数——先摆短除表，比一个个分解更不容易乱；</li>
+<li>题目要求&quot;把结果写成质因数乘积的形式&quot;——只做分解，除数必须是质数。</li>
+</ul>
+<p><strong>四步流程</strong>：<br />
+① 定目标：分解、最大公因数、最小公倍数，三者停止条件不同；<br />
+② 摆表：数并排，左边画竖线，从小到大试 $2,3,5,7,\dots$；<br />
+③ 写商：能整除的写商，不能整除的原样落下（求最小公倍数时）；<br />
+④ 算积并验算：把结果乘回原数，检查&quot;是否整除&quot;以及&quot;是否最大/最小&quot;。</p>
+<p><strong>易错点</strong>：</p>
+<ul>
+<li><strong>错</strong>：分解质因数时用 $4$、$6$、$9$ 这样的合数作除数，还觉得结果没错。<strong>对</strong>：短除的除数必须逐个是质数，按 $2,3,5,7,11,\dots$ 的顺序试，除到商为 $1$ 才停。</li>
+<li><strong>错</strong>：求三个数的最大公因数时，除到&quot;其中两个数已没有公因数&quot;就停手。<strong>对</strong>：每一步都必须是<strong>三个数共同</strong>的因数，要除到三个数没有公共因数；如 $24,36,60$ 要除完 $2,2,3$，得 $(24,36,60)=12$。</li>
+<li><strong>错</strong>：求最小公倍数时只把左列相乘（漏掉了末行的商），或只把末行相乘。<strong>对</strong>：左列乘末行，两项都不能漏；末行出现 $1$ 时乘 $1$ 不影响结果。</li>
+<li><strong>错</strong>：把 $(a,b)\times[a,b]=a\times b$ 直接搬到三个数上。<strong>对</strong>：三个数要逐对求 $[,[a,b],c,]$ 或用短除表；如 $(24,36,60)=12$、$[24,36,60]=360$，而 $12\times360=4320\ne24\times36\times60$。</li>
+<li><strong>错</strong>：求最小公倍数时除到&quot;三个数互质&quot;就停。<strong>对</strong>：要除到<strong>两两互质</strong>（任意两个都没有公共因数）。如 $4,6,9$ 三数互质，但 $6$ 与 $9$ 还有公因数 $3$，必须继续除，得 $[4,6,9]=36$，不是 $4\times6\times9=216$。</li>
+</ul>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：用短除法把 360 分解质因数（★★★）<span class="covers">覆盖点：短除法分解质因数</span></h3><div class="problem"><p>用短除法把 $360$ 分解质因数，并写成质因数乘积的标准形式。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：锯木料——短除法求最大公因数（★★★★）<span class="covers">覆盖点：短除法求最大公因数</span></h3><div class="problem"><p>一根长 $84$ 厘米、宽 $126$ 厘米、高 $210$ 厘米的长方体木料，要锯成若干个同样大小的正方体（棱长为整厘米，不许有剩余），正方体的棱长最大是多少厘米？一共能锯成多少块？</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例3：绕湖跑步——短除法求最小公倍数（★★★★★）<span class="covers">覆盖点：短除法求最小公倍数</span></h3><div class="problem"><p>甲、乙、丙三人绕湖跑步，跑一圈分别要 $24$ 分钟、$36$ 分钟、$60$ 分钟。三人同时同地同向出发。<br />
+（1）至少经过多少分钟，三人再次在出发点同时相遇？<br />
+（2）这时三人各跑了几圈？<br />
+（3）从出发算起，$12$ 小时内（含第 $12$ 小时整）三人在出发点同时相遇几次（不含刚出发那一次）？</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
 <section class="kp"><h2>质数与合数</h2><p class="meta"><span>年级：5、6</span><span>难度：★★</span></p><p><strong>定义</strong>：一个大于 1 的自然数，除了 1 和它本身以外<strong>没有</strong>别的因数，叫<strong>质数</strong>（素数）；<strong>有</strong>别的因数，叫<strong>合数</strong>。</p>
 <ul>
 <li><strong>1 既不是质数也不是合数</strong>；0 不在讨论范围内。</li>
@@ -336,58 +589,311 @@ $$a = bq + r \Rightarrow (a, b) = (b, r)$$<br />
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
-<section class="kp"><h2>进位制</h2><p class="meta"><span>年级：5、6</span><span>难度：★★★</span></p><p><strong>进位制</strong>：日常生活中&quot;满十进一&quot;是<strong>十进制</strong>；计算机用&quot;满二进一&quot;的<strong>二进制</strong>；还有八进制、十六进制等。$k$ 进制只用 $0$ 到 $k-1$ 共 $k$ 个数字，记数时在右下角标注，如 $(1011)_2$。</p>
-<p><strong>$k$ 进制化十进制</strong>（按位值展开相加）：<br />
-$$(a_n a_{n-1} \cdots a_1 a_0)<em>k = a_n k^n + a</em>{n-1} k^{n-1} + \cdots + a_1 k + a_0$$</p>
-<p><strong>十进制化 $k$ 进制</strong>（<strong>除 $k$ 取余，倒序排列</strong>）：反复除以 $k$ 记录余数，直到商为 0，把余数从下往上（倒序）写出。</p>
-<p><strong>二进制的应用思想</strong>：</p>
+<section class="kp"><h2>质数枚举</h2><p class="meta"><span>年级：4、5、6</span><span>难度：★★</span></p><p><strong>概念</strong>：质数有无穷多个，但它们&quot;分布得越来越稀&quot;。所谓<strong>质数枚举</strong>，就是把指定范围内的质数<strong>一个不漏、一个不多</strong>地全部找出来——不是凭感觉举几个，而是用一套可复查的机械流程把它们&quot;筛&quot;出来。</p>
+<p><strong>三件工具</strong>：</p>
+<ol>
+<li>
+<p><strong>质数表（记忆）</strong>：100 以内的质数共 25 个，必须熟到&quot;看一眼就认&quot;：<br />
+$$2,\ 3,\ 5,\ 7,\ 11,\ 13,\ 17,\ 19,\ 23,\ 29,\ 31,\ 37,\ 41,\ 43,\ 47,\ 53,\ 59,\ 61,\ 67,\ 71,\ 73,\ 79,\ 83,\ 89,\ 97$$</p>
+</li>
+<li>
+<p><strong>埃氏筛法（批量划掉）</strong>：要列出 $N$ 以内的全部质数，先把 $1$ 划掉，然后从小到大找第一个没被划掉的数 $p$，它就是质数，再把 $p$ 的倍数全部划掉；重复到 $p^2 &gt; N$ 为止，剩下的都是质数。只需用不超过 $\sqrt{N}$ 的质数去划，因为若 $n = a \times b$（$a \le b$），必有 $a \le \sqrt{n}$。</p>
+</li>
+<li>
+<p><strong>试除判定（单个把关）</strong>：判断 $n$ 是不是质数，用质数 $2,3,5,7,11,\dots$ 依次试除，只需试到 $\sqrt{n}$ 为止；全都除不尽，$n$ 就是质数。</p>
+</li>
+</ol>
+<p><strong>识别信号</strong>：</p>
 <ul>
-<li>二进制每位只有 0/1，天然表达&quot;选 / 不选&quot;，可用二进制表示子集、称重砝码（1、2、4、8……克的砝码可称出任意整数克）；</li>
-<li>相邻进制（2 与 8、16）可分组快速互化。</li>
+<li>题目问&quot;共有多少个质数&quot;&quot;把它们全部列出来&quot;→ 用<strong>筛法</strong>批量枚举，避免漏数；</li>
+<li>题目给出一个较大的数让你判断 → 用<strong>试除</strong>，先把 $\sqrt{n}$ 算出来，再列出该范围内的质数；</li>
+<li>题目限定&quot;在 $a$ 与 $b$ 之间&quot;→ 用<strong>区间枚举</strong>：先把这段数中 $2,3,5$ 的倍数划掉，剩下的候选再用 $7,11,13$ 等逐个试除。</li>
 </ul>
-<p><strong>易错点</strong>：$k$ 进制中不允许出现 $\geq k$ 的数字，如 $(125)_2$ 是非法写法；十进制化 $k$ 进制时余数要<strong>倒序</strong>读。</p>
+<p><strong>典型变形</strong>：① 由&quot;质数 + 奇偶性&quot;缩小范围再枚举，例如 $p+q$ 为奇数时必有一个是 $2$，只需再枚举另一加数；② 先估 $\sqrt{n}$ 再试除，用相邻平方数夹逼即可，如 $14^2=196&lt;223&lt;225=15^2$，所以只需试到 $13$；③ 问&quot;区间内质数的个数&quot;时，用&quot;候选数 $-$ 被划掉的个数&quot;复核，防止漏数或重数。</p>
+<p><strong>标准步骤（区间枚举）</strong>：<br />
+① 算出 $\sqrt{b}$，确定要用的质数集合；<br />
+② 划掉区间内的偶数、3 的倍数（数字和）、5 的倍数（个位 0 或 5）；<br />
+③ 对剩下的候选，用 ① 中的质数逐个试除，写清&quot;$p \times q$ 与 $n$ 的大小关系&quot;；<br />
+④ 数一遍个数，并用另一种方法（如全集减去划掉的个数）复核。</p>
+<p><strong>易错点</strong>：</p>
+<ul>
+<li><strong>错</strong>：筛法里把质数 $p$ 自己也划掉。<strong>对</strong>：从 $p \times p$（或 $2p$）开始划，$p$ 必须保留。</li>
+<li><strong>错</strong>：看到个位是 1、3、7、9 就判为质数。<strong>对</strong>：$91 = 7 \times 13$、$221 = 13 \times 17$、$247 = 13 \times 19$ 都是&quot;伪装质数&quot;的合数，必须试除到 $\sqrt{n}$。</li>
+<li><strong>错</strong>：试除一直除到 $n-1$ 或 $n \div 2$，既慢又容易乱。<strong>对</strong>：只试 $\sqrt{n}$ 以内的质数，并从小到大按序试，不跳序。</li>
+<li><strong>错</strong>：认为 $1$ 是质数、或认为 $2$ 是偶数所以不是质数。<strong>对</strong>：$1$ 既不是质数也不是合数，$2$ 是唯一的偶质数。</li>
+<li><strong>错</strong>：区间枚举只划掉 2、3、5 的倍数就报答案。<strong>对</strong>：区间上界较大时，还要检查 $7$、$11$、$13$ 等的倍数。</li>
+</ul>
 
 <h2 class="ex-h">例题</h2>
-<div class="example"><h3>例1：k 进制化十进制<span class="covers">覆盖点：进制概念、进制互化</span></h3><div class="problem"><p>把 $(1011)_2$ 和 $(234)_5$ 化成十进制。</p>
+<div class="example"><h3>例1：用筛法列出 60 以内的全部质数（★★★）<span class="covers">覆盖点：埃氏筛法</span></h3><div class="problem"><p>用埃氏筛法列出 60 以内的所有质数，并数出共有多少个。</p>
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div>
-<div class="example"><h3>例2：十进制化 k 进制<span class="covers">覆盖点：进制互化</span></h3><div class="problem"><p>把 75 分别化成二进制和六进制。</p>
+<div class="example"><h3>例2：用质数表试除，判断三个数是否为质数（★★★★）<span class="covers">覆盖点：百以内质数表</span></h3><div class="problem"><p>判断 $187$、$221$、$223$ 是不是质数。</p>
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div>
-<div class="example"><h3>例3：二进制的砝码应用<span class="covers">覆盖点：二进制应用</span></h3><div class="problem"><p>用 1 克、2 克、4 克、8 克、16 克的砝码各一个（只放天平一端），最多能称出多少种不同的整数克重量？能称出 13 克吗？</p>
+<div class="example"><h3>例3：枚举 200 到 250 之间的质数（★★★★★）<span class="covers">覆盖点：区间质数枚举</span></h3><div class="problem"><p>$200$ 到 $250$ 之间（含端点）有多少个质数？把它们全部列出来。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>进位制</h2><p class="meta"><span>年级：5、6</span><span>难度：★★</span></p><p><strong>什么是进位制</strong>：我们平时“满十进一”，这是<strong>十进制</strong>；计算机“满二进一”，这是<strong>二进制</strong>；此外还有八进制、十六进制等。$k$ 进制只允许使用 $0,1,2,\dots,k-1$ 这 $k$ 个数字。同一个数字写在不同的位置上，表示的大小不同，这个“位置代表的值”叫<strong>位值（权）</strong>。例如 $(1011)_2$ 右下角的 $2$ 表示它是二进制数，与十进制的一千零一十一毫无关系。</p>
+<p><strong>核心公式（$k$ 进制化十进制）</strong>：按位值展开相加，<br />
+$$(a_na_{n-1}\cdots a_1a_0)<em>k=a_nk^n+a</em>{n-1}k^{n-1}+\cdots+a_1k+a_0 .$$<br />
+最右边一位是 $k^0=1$，往左依次是 $k^1,k^2,\dots$；一个 $n+1$ 位的 $k$ 进制数，最高位对应 $k^n$。</p>
+<p><strong>方法一：位值展开（$k$ 进制 $\to$ 十进制）</strong>。从最高位开始“边乘边加”：<br />
+$$\bigl(\cdots((a_nk+a_{n-1})k+a_{n-2})k+\cdots\bigr)k+a_0 .$$<br />
+这比逐项算幂更快，也不容易把指数数错。</p>
+<p><strong>方法二：除 $k$ 取余（十进制 $\to k$ 进制）</strong>。把十进制数反复除以 $k$，每次记下余数，直到商为 $0$；再把余数**从下往上（倒序）**写出，最后一个余数就是最高位。</p>
+<p><strong>方法三：分组互化（二进制与八、十六进制）</strong>。因为 $8=2^3$、$16=2^4$，所以从右往左每 $3$ 位二进制换成 $1$ 位八进制，每 $4$ 位换成 $1$ 位十六进制；反过来则把一位拆成 $3$ 位或 $4$ 位，最左端不足时补 $0$。</p>
+<p><strong>二进制的应用</strong>：二进制每一位只有 $0$ 和 $1$，正好表示“选”与“不选”。取 $1,2,4,8,\dots,2^{n-1}$ 克的砝码各一个（只放天平一端），能称出 $1$ 到 $2^n-1$ 克的每一个整数重量；把重量写成二进制，数中 $1$ 的个数就是用到的砝码个数。</p>
+<p><strong>识别信号与步骤</strong>：看到数字带下标、题目出现“二进制/几进制”“计算机、开关、灯的亮灭”“砝码各一个”，就应想到进位制。做题顺序是：先判断方向（$k\to10$ 还是 $10\to k$），再选方法算出结果，最后用相反方向回代验算一次。</p>
+<p><strong>易错点</strong>：</p>
+<ol>
+<li>把 $(1011)_2$ 当成“一千零一十一”，按 $10$ 的幂展开。正确做法：看清下标，按 $2$ 的幂展开，$(1011)_2=8+2+1=11$。</li>
+<li>除 $k$ 取余后把余数从上往下抄。正确做法：余数必须<strong>倒序</strong>排列，最后得到的余数是最高位。</li>
+<li>忘记“数字必须小于进制”。$(124)_5$ 合法；$(125)_5$ 和 $(125)_4$ 都不合法（出现了不小于进制的数字 $5$）。正确做法：展开前先逐位检查。</li>
+<li>指数起点数错。正确做法：最右位一定是 $k^0=1$，不要从 $k^1$ 开始。</li>
+<li>二进制分组时从左往右切分，或高位不补 $0$。正确做法：<strong>从右往左</strong>分组，最左一组不足 $3$（或 $4$）位时在左边补 $0$。</li>
+</ol>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：用位值展开把二进制、五进制数化成十进制（★★★）<span class="covers">覆盖点：位值展开法</span></h3><div class="problem"><p>把 $(110101)_2$ 和 $(3402)_5$ 化成十进制数。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：用除k取余把十进制数化成三进制与七进制（★★★★）<span class="covers">覆盖点：除k取余法</span></h3><div class="problem"><p>把十进制数 $500$ 分别化成三进制数和七进制数。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例3：数二进制中恰好有3个1的数（★★★★★）<span class="covers">覆盖点：二进制应用</span></h3><div class="problem"><p>在 $1$ 到 $100$ 的整数中，二进制表示里恰好含有 $3$ 个数字 $1$ 的数有多少个？</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>韩信点兵</h2><p class="meta"><span>年级：4、5、6</span><span>难度：★★★</span></p><p><strong>问题模型</strong>：一队士兵，三人一组数余 $2$ 人，五人一组数余 $3$ 人，七人一组数余 $4$ 人，问最少多少人？已知一个数除以几个数的余数，反过来求这个数，这类问题叫“韩信点兵”，古书上叫“物不知数”。它的一般解法就是<strong>中国剩余定理</strong>。</p>
+<p><strong>核心结论（周期）</strong>：设除数为 $m_1,m_2,\dots,m_n$，令 $M=[m_1,m_2,\dots,m_n]$。只要找到一个解 $N_0$，全部解就是<br />
+$$N=N_0+kM\quad(k=0,1,2,\dots)$$<br />
+因为加上 $M$ 的倍数，不会改变任何一条余数。所以问“最少”就是求 $N_0$，问“某范围内有多少个”就把 $N_0+kM$ 一个个数出来。</p>
+<p><strong>方法一：逐步满足法（最通用）</strong><br />
+① 从<strong>除数最大</strong>的条件入手，从余数起、每次加这个除数，列出候选（除数大，列的个数就少）；<br />
+② 用第二个条件去筛，留下的数会从某个数起，每隔“前两个除数的最小公倍数”出现一次；<br />
+③ 再用第三个条件筛，<strong>每次加的数要换成“已满足条件的所有除数的最小公倍数”</strong>，这样前面已满足的条件不会被破坏；<br />
+④ 筛到全部满足，即得 $N_0$。</p>
+<p><strong>方法二：中国剩余定理（凑数法）</strong> 以除数 $2,3,5$ 为例，$M=2\times3\times5=30$：</p>
+<ul>
+<li>要让一个数只管第一个条件、不干扰后两个条件，它必须是 $3\times5=15$ 的倍数，且除以 $2$ 余 $1$，取 $b_1=15$；</li>
+<li>同理，$10$ 的倍数中除以 $3$ 余 $1$ 的是 $b_2=10$；$6$ 的倍数中除以 $5$ 余 $1$ 的是 $b_3=6$。</li>
+</ul>
+<p>于是“除以 $2$ 余 $1$、除以 $3$ 余 $2$、除以 $5$ 余 $4$”的解为<br />
+$$N\equiv15\times1+10\times2+6\times4=59\equiv29\pmod{30}$$<br />
+最小解是 $29$。口诀：<strong>给每个条件造一个“别的条件都不管”的数，乘上各自的余数，全部加起来，再减去 $M$ 的倍数压到最小</strong>。</p>
+<p><strong>识别信号</strong></p>
+<ul>
+<li>出现“三三数之剩……”“除以……余……”，并问“至少/最少”——求最小解 $N_0$；</li>
+<li>问“某范围内有多少个/最大是多少”——先求 $N_0$，再按周期 $M$ 列举；</li>
+<li>除数与余数的<strong>差相同</strong>（如除以 $4$ 余 $1$、除以 $6$ 余 $3$，差都是 $3$）——先化成“$N+3$ 能同时被 $4$、$6$ 整除”；</li>
+<li><strong>余数相同</strong>（都余 $2$）——化成“$N-2$ 能被各除数整除”。</li>
+</ul>
+<p><strong>易错点</strong></p>
+<ul>
+<li><strong>错</strong>：逐步满足时筛完第二个条件后，一直加第二个除数（如 $18$ 加 $7$ 得 $25$）。<strong>对</strong>：加的是<strong>已满足条件除数的最小公倍数</strong>，$18$ 之后要加 $[5,7]=35$，得 $18,53,88,\dots$。</li>
+<li><strong>错</strong>：求出最小解就交卷。<strong>对</strong>：解有无穷多个，要写成 $N_0+kM$；问范围时逐个列出，别漏掉最小和最大两端。</li>
+<li><strong>错</strong>：看到“除以 $4$ 余 $1$、除以 $6$ 余 $3$”就说条件太乱没法合并，或写成“$N-3$ 能被 $4$、$6$ 整除”。<strong>对</strong>：除数减余数的差相同，是“$N+$ 差”能被整除，加减方向别弄反。</li>
+<li><strong>错</strong>：题目写“除以 $5$ 余 $7$”也照抄进算式。<strong>对</strong>：余数必须小于除数，先化简：$7=5+2$，即除以 $5$ 余 $2$。</li>
+<li><strong>错</strong>：凑数时随手取 $M_i$，不检验它除以 $m_i$ 是否余 $1$；算完也不减 $M$ 的倍数。<strong>对</strong>：先验证 $b_i\equiv1\pmod{m_i}$，最后用 $M$ 把结果压到最小。</li>
+</ul>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：三三数之剩二，求最少人数（★★★）<span class="covers">覆盖点：逐步满足法</span></h3><div class="problem"><p>一队士兵，三人一组数余 $2$ 人，五人一组数余 $3$ 人，七人一组数余 $4$ 人。这队士兵最少有多少人？</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：用中国剩余定理凑数（★★★★）<span class="covers">覆盖点：中国剩余定理</span></h3><div class="problem"><p>一个数除以 $3$ 余 $1$，除以 $5$ 余 $2$，除以 $7$ 余 $3$。求最小的这样的数。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例3：同差条件先合并，再求范围与最大值（★★★★★）<span class="covers">覆盖点：同差条件合并</span></h3><div class="problem"><p>一个数除以 $4$ 余 $1$，除以 $6$ 余 $3$，除以 $7$ 余 $4$。（1）求最小的这样的数；（2）$500$ 以内这样的数共有多少个？最大的一个是多少？</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>韩信点兵与最值</h2><p class="meta"><span>年级：4、5、6</span><span>难度：★★★</span></p><p><strong>概念与模型</strong></p>
+<p>传说韩信点兵：让士兵 3 人一排、5 人一排、7 人一排报数，只记下每次剩下的余数，就能算出总人数。这个模型是&quot;已知一个数除以几个数的余数，求这个数&quot;，即同余问题，小学阶段不需要同余符号也能做。</p>
+<p>本讲的重点不是&quot;能不能求出一个解&quot;，而是&quot;在一段范围里挑出最大或最小的那个&quot;。所以每个题都走同一条路：先求一个符合条件的<strong>特解</strong> $n_0$，再找出<strong>周期</strong> $L$，最后用范围把答案&quot;夹&quot;出来。</p>
+<p><strong>为什么周期是最小公倍数</strong>：要让 $n_0$ 加上一个数以后，除以 $3$、除以 $5$、除以 $7$ 的余数都不改变，这个加数必须同时是 $3$、$5$、$7$ 的倍数；这样的加数中最小的就是最小公倍数 $105$。因此解不是零散的，而是每隔 $105$ 出现一次，求最值只要盯住这一串数。</p>
+<p><strong>核心公式与方法</strong></p>
+<p>单条条件的翻译式：</p>
+<p>$$n\div m\ \text{余}\ r\quad\Longleftrightarrow\quad n=r+mk\ (k=0,1,2,\dots)$$</p>
+<p>合并条件的通解式：若 $n_0$ 同时满足全部条件，而各除数的最小公倍数是 $L$，则全部解是</p>
+<p>$$n=n_0+Lt\quad(t=0,1,2,\dots)$$</p>
+<p>求最值，就是解不等式 $A\le n_0+Lt\le B$，再取 $t$ 的端点。另有一个省事的变形：&quot;差同&quot;可整体补——若 $n$ 除以 $4,5,7$ 的余数分别是 $3,4,6$，除数与余数都差 $1$，则 $n+1$ 是 $4,5,7$ 的公倍数，$n=140k-1$。</p>
+<p><strong>识别信号与步骤</strong></p>
+<ol>
+<li>余数与除数&quot;差相同&quot;（都差 1 或都差 3），或&quot;和相同&quot;——先整体加或减，化成整除条件。</li>
+<li>条件有三个以上——逐步满足：先满足一个条件，以后每加一次&quot;已满足各除数的最小公倍数&quot;，再去满足下一个条件。</li>
+<li>题目问&quot;最大&quot;&quot;最小&quot;&quot;某范围内有几个&quot;——先求 $n_0$ 和 $L$，再解 $A\le n_0+Lt\le B$，$t$ 取最小整数时是范围内最小解，取最大整数时是最大解。</li>
+<li>除数不互质（如 $6$ 与 $8$）——周期仍是最小公倍数 $24$，不是乘积 $48$；动笔前先检验条件是否自相矛盾。</li>
+</ol>
+<p><strong>易错点</strong></p>
+<ul>
+<li>把周期当成各除数相乘。→ 除以 $6$ 余 $4$、除以 $8$ 余 $2$ 时，周期是 $[6,8]=24$，用 $48$ 会漏掉一半的解。</li>
+<li>求最大值时只加一次就交卷。→ 必须验证下一个解已经越界，例如 $997+385=1382$ 超过三位数，才能断定 $997$ 最大。</li>
+<li>列数时&quot;起点对、步长错&quot;。→ &quot;除以 $7$ 余 $6$&quot;应写 $6,13,20,\dots$（每次加 $7$），不是每次加 $6$。</li>
+<li>范围题取整方向弄反。→ 由 $A\le n_0+Lt$ 得 $t\ge\dfrac{A-n_0}{L}$，$t$ 要<strong>向上取整</strong>，四舍五入会把答案定到范围外。</li>
+<li>不看奇偶就硬算。→ &quot;除以 $4$ 余 $1$&quot;要求 $n$ 是奇数，&quot;除以 $6$ 余 $2$&quot;要求 $n$ 是偶数，两者不可能同时成立，先判断矛盾能省大量计算。</li>
+</ul>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：士兵列队求最少人数（★★★）<span class="covers">覆盖点：逐步满足法求特解</span></h3><div class="problem"><p>一队士兵，$3$ 人一排余 $1$ 人，$5$ 人一排余 $2$ 人，$7$ 人一排余 $6$ 人。这队士兵最少有多少人？</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：人数在区间内，用周期夹出唯一值（★★★★）<span class="covers">覆盖点：通解周期化定范围</span></h3><div class="problem"><p>一个数在 $200$ 到 $300$ 之间，它除以 $6$ 余 $4$，除以 $8$ 余 $2$，除以 $9$ 余 $7$。求这个数。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例3：不超过定值的最大解与个数（★★★★★）<span class="covers">覆盖点：夹逼与排除定最值</span></h3><div class="problem"><p>一个正整数除以 $5$ 余 $2$，除以 $7$ 余 $3$，除以 $11$ 余 $7$。求不超过 $2010$ 的最大的这样的数，并求 $1$ 到 $2010$ 中这样的数共有多少个。</p>
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
 <section class="answers"><h1>答案与解析</h1>
-<div class="example"><h3>位值原理 · 例1：数字对调</h3><div class="analysis"><p>设原数为 $\overline{ab}$，则 $a + b = 10$。对调差：$\overline{ba} - \overline{ab} = 9(b - a) = 36$，得 $b - a = 4$。联立解得 $a = 3$，$b = 7$。</p>
-</div><div class="answer">答案：<p>37</p>
+<div class="example"><h3>互质情况计数 · 例1：把与 36 互质的数筛出来（★★★）</h3><div class="analysis"><p>先把 $36$ 分解质因数：$36=2^2\times3^2$。一个数与 $36$ 互质，当且仅当它既不是 $2$ 的倍数，也不是 $3$ 的倍数。</p>
+<p>第一步，划掉 $2$ 的倍数（偶数）$18$ 个，剩下 $18$ 个奇数。</p>
+<p>第二步，在剩下的奇数中再划掉 $3$ 的倍数：$3,9,15,21,27,33$，共 $6$ 个。</p>
+<p>第三步，剩下的就是与 $36$ 互质的数：<br />
+$$1,5,7,11,13,17,19,23,25,29,31,35.$$</p>
+<p>数一数共 $12$ 个。也可以按&quot;除以 $6$ 的余数&quot;分类：与 $36$ 互质的数恰好是 $6k+1$ 型（$1,7,13,19,25,31$）和 $6k+5$ 型（$5,11,17,23,29,35$），每类 $6$ 个，共 $12$ 个。</p>
+<p>验算：$1$ 到 $36$ 中奇数有 $18$ 个，其中 $3$ 的倍数有 $6$ 个，$18-6=12$；抽查 $25$（$25=5^2$，不含因数 $2$、$3$）与 $35$（$35=5\times7$）都与 $36$ 互质，$27$、$33$ 是 $3$ 的倍数，确实被划掉。</p>
+</div><div class="answer">答案：<p>$1,5,7,11,13,17,19,23,25,29,31,35$，共 $12$ 个</p>
 </div></div>
-<div class="example"><h3>位值原理 · 例2：末尾添数字</h3><div class="analysis"><p>设原数为 $x$，末尾添 2 后变为 $10x + 2$。由 $10x + 2 - x = 1082$，得 $9x = 1080$，$x = 120$。验算：$1202 - 120 = 1082$ ✓</p>
-</div><div class="answer">答案：<p>120</p>
+<div class="example"><h3>互质情况计数 · 例2：用欧拉函数数大范围的互质数（★★★★）</h3><div class="analysis"><p>先分解质因数：$1260=2^2\times3^2\times5\times7$，不同的质因数是 $2,3,5,7$ 四个。</p>
+<p>按比例模型，从 $1260$ 个数里依次划掉：</p>
+<ul>
+<li>$2$ 的倍数，剩下 $1260\times\frac{1}{2}=630$ 个；</li>
+<li>再划掉 $3$ 的倍数，剩下 $630\times\frac{2}{3}=420$ 个；</li>
+<li>再划掉 $5$ 的倍数，剩下 $420\times\frac{4}{5}=336$ 个；</li>
+<li>再划掉 $7$ 的倍数，剩下 $336\times\frac{6}{7}=288$ 个。</li>
+</ul>
+<p>即<br />
+$$\varphi(1260)=1260\times\frac{1}{2}\times\frac{2}{3}\times\frac{4}{5}\times\frac{6}{7}=288.$$</p>
+<p>注意质因数 $2$ 和 $3$ 虽然指数是 $2$，但都只乘一次。</p>
+<p>验算：$\varphi$ 对互质的因数可以分开算，$1260=4\times9\times5\times7$，且 $4,9,5,7$ 两两互质，所以 $\varphi(1260)=\varphi(4)\varphi(9)\varphi(5)\varphi(7)=2\times6\times4\times6=288$，与上面一致；再看比例 $\frac{288}{1260}=\frac{8}{35}$，而 $\frac{1}{2}\times\frac{2}{3}\times\frac{4}{5}\times\frac{6}{7}=\frac{8}{35}$，吻合。</p>
+</div><div class="answer">答案：<p>$288$ 个</p>
 </div></div>
-<div class="example"><h3>位值原理 · 例3：位值与整除结合</h3><div class="analysis"><p>数字和 $1+2+3=6$ 是 3 的倍数，所以 6 种排列（123、132、213、231、312、321）全部能被 3 整除。被 11 整除要求（百位 + 个位）− 十位 是 11 的倍数，数字很小只能差为 0，即十位 = 百位 + 个位，只有十位 = 3 时成立（$1+2=3$），即 132 和 231。</p>
-</div><div class="answer">答案：<p>能被 3 整除的 6 个；能被 11 整除的 2 个</p>
+<div class="example"><h3>互质情况计数 · 例3：最大公因数恰为 5 的归类计数（★★★★★）</h3><div class="analysis"><p>$1000=2^3\times5^3$。</p>
+<p>第一步，$\gcd(n,1000)=5$，说明 $n$ 是 $5$ 的倍数，可设 $n=5m$，由 $n\le 1000$ 得 $m\le 200$。</p>
+<p>第二步，把条件翻译成对 $m$ 的要求：<br />
+$$\gcd(5m,,2^3\times5^3)=5.$$<br />
+$5m$ 中已经含有一个因数 $5$，要让最大公因数正好是 $5$，$m$ 里不能再含因数 $5$；同时 $m$ 也不能含因数 $2$。于是 $\gcd(m,200)=1$，问题变成&quot;在 $1$ 到 $200$ 中与 $200$ 互质的数有多少个&quot;。</p>
+<p>第三步，用容斥数：$200$ 中 $2$ 的倍数有 $100$ 个，$5$ 的倍数有 $40$ 个，$10$ 的倍数被重复减了，有 $20$ 个，所以<br />
+$$200-100-40+20=80.$$<br />
+（用欧拉函数同样得 $\varphi(200)=200\times\frac{1}{2}\times\frac{4}{5}=80$。）</p>
+<p>验算：抽查 $m=3$，$n=15$，$\gcd(15,1000)=5$ ✓；$m=199$，$n=995=5\times199$，$\gcd(995,1000)=5$ ✓；被排除的 $m=2$ 给出 $n=10$，$\gcd(10,1000)=10$ ✗，$m=5$ 给出 $n=25$，$\gcd(25,1000)=25$ ✗。再用对应关系复核：$m$ 与 $200$ 互质，$n=5m$ 就与 $1000$ 的最大公因数为 $5$，如 $m=1\to n=5$；而 $m=200\to n=1000$，$\gcd(1000,1000)=1000$，已被排除。$1$ 到 $200$ 中这样的 $m$ 有 $80$ 个，与容斥结果一致。</p>
+</div><div class="answer">答案：<p>$80$ 个</p>
+</div></div>
+<div class="example"><h3>位值原理 · 例1：按数位关系还原三位数（★★★）</h3><div class="analysis"><p>设十位数字为 $x$，则百位数字为 $2x$，个位数字为 $x+3$。</p>
+<p>由数字之和列方程：<br />
+$$2x+x+(x+3)=15$$<br />
+即 $4x+3=15$，$4x=12$，解得 $x=3$。</p>
+<p>于是百位数字为 $2\times 3=6$，十位数字为 $3$，个位数字为 $3+3=6$。按位值展开写成数：<br />
+$$\overline{abc}=100a+10b+c=6\times 100+3\times 10+6=636$$</p>
+<p>检查数位限制：$x=3$ 是整数，百位 $6$、个位 $6$ 都在 $0$ 到 $9$ 之间，且百位不为 $0$，符合要求。</p>
+<p>验算：数字和 $6+3+6=15$ ✓；百位 $6=2\times 3$ ✓；个位 $6=3+3$ ✓。</p>
+</div><div class="answer">答案：<p>$636$</p>
+</div></div>
+<div class="example"><h3>位值原理 · 例2：首尾对调后作差（★★★★）</h3><div class="analysis"><p>设原数为 $\overline{abc}$，其中百位数字为 $a$，十位数字为 $b$，个位数字为 $c$。</p>
+<p>由题意，$c=3a$，$b=a+1$。</p>
+<p>原数为 $100a+10b+c$，首尾对调后的新数为 $100c+10b+a$。两数作差：<br />
+$$(100c+10b+a)-(100a+10b+c)=99(c-a)$$<br />
+因为新数比原数大 $396$，所以<br />
+$$99(c-a)=396,\qquad c-a=4$$<br />
+把 $c=3a$ 代入：$3a-a=4$，即 $2a=4$，解得 $a=2$。</p>
+<p>于是 $c=3\times 2=6$，$b=2+1=3$，原数为 $236$。</p>
+<p>检查数位限制：$a=2,b=3,c=6$ 都是 $0$ 到 $9$ 的整数，百位不为 $0$，符合要求。</p>
+<p>验算：新数 $632$，$632-236=396$ ✓；个位 $6$ 是百位 $2$ 的 $3$ 倍 ✓；十位 $3$ 比百位 $2$ 大 $1$ ✓。</p>
+</div><div class="answer">答案：<p>$236$</p>
+</div></div>
+<div class="example"><h3>位值原理 · 例3：位值与整除条件结合（★★★★★）</h3><div class="analysis"><p>因为 $36=4\times 9$，且 $4$ 与 $9$ 互质，所以 $\overline{2a3b}$ 必须同时能被 $4$ 和 $9$ 整除。</p>
+<p>被 $4$ 整除看末两位：$\overline{3b}=30+b$ 是 $4$ 的倍数。在 $30$ 到 $39$ 中，$4$ 的倍数只有 $32$ 和 $36$，所以 $b=2$ 或 $b=6$。</p>
+<p>被 $9$ 整除看数字和：$2+a+3+b=a+b+5$ 是 $9$ 的倍数，分两种情况讨论。</p>
+<ul>
+<li>当 $b=2$ 时，$a+7$ 是 $9$ 的倍数。因为 $0\le a\le 9$，$a+7$ 在 $7$ 到 $16$ 之间，只能是 $9$，得 $a=2$，此时四位数为 $2232$。</li>
+<li>当 $b=6$ 时，$a+11$ 是 $9$ 的倍数。$a+11$ 在 $11$ 到 $20$ 之间，只能是 $18$，得 $a=7$，此时四位数为 $2736$。</li>
+</ul>
+<p>比较两个结果：$2232&lt;2736$，所以最小的一个是 $2232$。</p>
+<p>验算：$36\times 62=2232$ ✓，且数字和 $2+2+3+2=9$ 是 $9$ 的倍数、末两位 $32$ 能被 $4$ 整除 ✓；另一个 $36\times 76=2736$ ✓，说明分类没有遗漏。</p>
+</div><div class="answer">答案：<p>$2232$</p>
 </div></div>
 <div class="example"><h3>余数问题（物不知数） · 例1：列举法解物不知数</h3><div class="analysis"><p>除以 7 余 2 的数最少，先列：2、9、16、<strong>23</strong>、30……其中除以 3 余 2 的有 2、23……；再看除以 5 余 3：23 ÷ 5 = 4……3 ✓。三个条件都满足。</p>
 </div><div class="answer">答案：<p>23</p>
 </div></div>
-<div class="example"><h3>余数问题（物不知数） · 例2：逐步满足法</h3><div class="analysis"><p>从除数最大的条件入手：除以 7 余 4 的数有 4、11、18、25、32、39、46、53、60、67、74、81、88、95、102、109、116、123、130、137、144、151、158、165、172、179、186、193、200、207……<br />
-再满足&quot;除以 6 余 5&quot;（即比 6 的倍数少 1）：检查得 11？11÷6 余 5 ✓，但还要除以 5 余 1：11 ÷ 5 余 1 ✓？$11 = 5\times2+1$ ✓。验证：11÷7 余 4 ✓，11÷6 余 5 ✓，11÷5 余 1 ✓。</p>
-</div><div class="answer">答案：<p>11（注：严格从 4 起逐一检查，11 即同时满足三者）</p>
+<div class="example"><h3>余数问题（物不知数） · 例2：逐步满足法</h3><div class="analysis"><p>从除数最大的条件入手：除以 7 余 4 的数从 4 起、每次加 7，依次是 4、11、18、25、……<br />
+先看 4：$4\div6$ 余 4，不满足&quot;除以 6 余 5&quot;；再看 11：$11\div6=1\cdots\cdots5$ ✓，且 $11\div5=2\cdots\cdots1$ ✓。所以 11 同时满足三个条件。<br />
+比 11 小的候选只有 4，已被排除，故最小是 11。</p>
+</div><div class="answer">答案：<p>11</p>
 </div></div>
 <div class="example"><h3>余数问题（物不知数） · 例3：求指定范围内的所有解</h3><div class="analysis"><p>先求最小解：除以 5 余 2 的有 2、7、12、17……其中 7 除以 4 余 3 ✓，最小解是 7。所有解：$7 + [4,5]k = 7 + 20k$。在 100–200 内：$k = 5,6,\ldots,9$，即 107、127、147、167、187。</p>
 </div><div class="answer">答案：<p>107、127、147、167、187</p>
 </div></div>
-<div class="example"><h3>分解质因数 · 例1：短除法分解</h3><div class="analysis"><p>$1260 \div 2 = 630$，$\div 2 = 315$，$\div 3 = 105$，$\div 3 = 35$，$\div 5 = 7$，7 是质数。合并相同质因数。</p>
-</div><div class="answer">答案：<p>$1260 = 2^2 \times 3^2 \times 5 \times 7$</p>
+<div class="example"><h3>倍数特征与最值 · 例1：填数字使四位数被 45 整除并取最大（★★★）</h3><div class="analysis"><p>第一步，拆：$45=5\times9$，且 $5$ 与 $9$ 互质，所以&quot;被 45 整除&quot;等价于&quot;被 5 整除且被 9 整除&quot;。<br />
+第二步，锁末位：被 5 整除，末位 $b=0$ 或 $b=5$。<br />
+第三步，用数字和：被 9 整除要求数字和 $3+a+7+b=10+a+b$ 是 9 的倍数，而 $a$ 是 0–9 的数字。</p>
+<ul>
+<li>若 $b=0$：$10+a$ 是 9 的倍数，在 $10\sim19$ 中只有 $18$，得 $a=8$，数为 $3870$；</li>
+<li>若 $b=5$：$15+a$ 是 9 的倍数，在 $15\sim24$ 中只有 $18$，得 $a=3$，数为 $3375$。<br />
+第四步，比较取大：$3870&gt;3375$，且千位、百位已被 $3$、$7$ 固定，末位只有 $0$、$5$ 两种，故没有别的候选，最大的是 $3870$。<br />
+第五步，验算：$3870=45\times86$，整除；数字和 $3+8+7+0=18$ 是 9 的倍数，末位 $0$ 满足被 5 整除。</li>
+</ul>
+</div><div class="answer">答案：<p>$3870$</p>
 </div></div>
-<div class="example"><h3>分解质因数 · 例2：乘积末尾 0 的个数</h3><div class="analysis"><p>末尾每个 0 来自一对 $2 \times 5$。因数 2 远多于 5，只需数 5 的个数：5、10、15、20 各含一个 5，共 4 个。所以末尾有 4 个 0。</p>
-</div><div class="answer">答案：<p>4 个</p>
+<div class="example"><h3>倍数特征与最值 · 例2：数字和固定时求最大的四位数（★★★★）</h3><div class="analysis"><p>第一步，记四位数为 $\overline{abcd}$。被 8 整除只看末三位 $100b+10c+d$，因为 $1000a$ 是 8 的倍数。<br />
+第二步，定数字和：$a+b+c+d=26$。要让数最大，先让千位取最大，$a=9$；剩下 $b+c+d=17$。再让百位取最大，$b=9$；剩下 $c+d=8$。<br />
+第三步，在 $c+d=8$ 中从大到小试末三位 $9cd$：</p>
+<ul>
+<li>$c=8,\ d=0$：$980=8\times122+4$，不行；</li>
+<li>$c=7,\ d=1$：$971=8\times121+3$，不行；</li>
+<li>$c=6,\ d=2$：$962=8\times120+2$，不行；</li>
+<li>$c=5,\ d=3$：$953=8\times119+1$，不行；</li>
+<li>$c=4,\ d=4$：$944=8\times118$，整除，得四位数 $9944$。<br />
+第四步，说明没有更大的：数字和为 26 且大于 $9944$ 的四位数，前两位必为 $99$，此时 $c+d=8$；而 $c$ 从 $9$ 到 $5$ 的取法已逐一试过全不整除（$c=9$ 时 $d=-1$ 不合），故 $9944$ 就是最大。<br />
+第五步，验算：$9+9+4+4=26$，末三位 $944=8\times118$，且 $9944\div8=1243$，整除。</li>
+</ul>
+</div><div class="answer">答案：<p>$9944$</p>
 </div></div>
-<div class="example"><h3>分解质因数 · 例3：由乘积反推乘数</h3><div class="analysis"><p>$210 = 2 \times 3 \times 5 \times 7$。要把这些质因数分成三组，使三组乘积是连续自然数。试凑：$5$、$2 \times 3 = 6$、$7$，恰好是 5、6、7。</p>
-</div><div class="answer">答案：<p>5、6、7</p>
+<div class="example"><h3>倍数特征与最值 · 例3：同时被 44 整除且数字和为 20 的最大数（★★★★★）</h3><div class="analysis"><p>第一步，拆：$44=4\times11$，$4$ 与 $11$ 互质，两条特征都要用。<br />
+第二步，用交错和：设四位数为 $\overline{abcd}$，被 11 整除要求 $(a+c)-(b+d)$ 是 11 的倍数。记 $S_1=a+c$，$S_2=b+d$，则 $S_1+S_2=20$，所以 $S_1-S_2=20-2S_2$ 是偶数，只可能是 $0$ 或 $\pm22$；若为 $22$，则 $S_1=21$、$S_2=-1$，不可能。故 $S_1=S_2=10$，即 $a+c=10$，$b+d=10$。<br />
+第三步，高位贪心：要让数最大，千位取 $a=9$，则 $c=10-9=1$；再看末两位 $\overline{1d}$ 要被 4 整除，即 $10+d$ 是 4 的倍数，$d$ 只能取 $2$ 或 $6$。</p>
+<ul>
+<li>$d=6$：$b=10-6=4$，得 $9416$；</li>
+<li>$d=2$：$b=10-2=8$，得 $9812$。<br />
+第四步，比较：两数千位同为 $9$，百位 $8&gt;4$，所以 $9812$ 更大。再核对：千位已是最大数字 $9$，此时 $a+c=10$ 把十位钉死为 $1$，末两位只有 $12$、$16$ 两种，故没有更大的可行数。<br />
+第五步，验算：$9+8+1+2=20$；$9812\div4=2453$；$9812\div11=892$；$44\times223=9812$，整除。</li>
+</ul>
+</div><div class="answer">答案：<p>$9812$</p>
+</div></div>
+<div class="example"><h3>分解质因数 · 例1：用短除法把 924 分解质因数（★★★）</h3><div class="analysis"><p>第 1 步，用最小的质数 2 试除：$924\div2=462$；<br />
+第 2 步，462 仍是偶数，继续用 2 除：$462\div2=231$；<br />
+第 3 步，231 的数字和 $2+3+1=6$ 是 3 的倍数，用 3 除：$231\div3=77$；<br />
+第 4 步，77 用 3、5 都除不尽，用 7 除：$77\div7=11$；<br />
+第 5 步，11 是质数，分解结束。<br />
+把左边的除数与最后的商连乘：$924=2\times2\times3\times7\times11$。</p>
+<p>验算：$2\times2\times3\times7\times11=4\times3\times7\times11=12\times77=924$，与原数相同，分解正确。</p>
+</div><div class="answer">答案：<p>$924=2\times2\times3\times7\times11$（即 $2^2\times3\times7\times11$）</p>
+</div></div>
+<div class="example"><h3>分解质因数 · 例2：先分别分解，再合并求积的标准分解式（★★★★）</h3><div class="analysis"><p>先把每个因数单独分解：$12=2^2\times3$，$15=3\times5$，$18=2\times3^2$。<br />
+再合并同类质因数，指数相加：2 的指数为 $2+0+1=3$，3 的指数为 $1+1+2=4$，5 的指数为 $0+0+1=1$。<br />
+按 $2&lt;3&lt;5$ 的顺序写出：$2^3\times3^4\times5$，没有遗漏也没有重复计算。</p>
+<p>验算：$2^3\times3^4\times5=8\times81\times5=648\times5=3240$；而 $12\times15\times18=180\times18=3240$，两边相等。</p>
+</div><div class="answer">答案：<p>$12\times15\times18=2^3\times3^4\times5$</p>
+</div></div>
+<div class="example"><h3>分解质因数 · 例3：用质因数指数数出末尾 0 的个数（★★★★★）</h3><div class="analysis"><p>每个末尾的 0 都来自一对质因数 $2\times5$，所以 $n!$ 末尾 0 的个数等于 $\min(a_2,a_5)$，其中 $a_2,a_5$ 分别是 $n!$ 标准分解式中 2 与 5 的指数。由于偶数远多于 5 的倍数，恒有 $a_2&gt;a_5$，只需数 5。<br />
+5 的指数按层计数：<br />
+$$a_5=\left\lfloor\frac{n}{5}\right\rfloor+\left\lfloor\frac{n}{25}\right\rfloor+\left\lfloor\frac{n}{125}\right\rfloor+\cdots$$<br />
+先粗估：只数 5 的倍数，$n$ 约在 $20\times5=100$ 附近；但 25、50、75、100 这些数各多含一个 5，必须下调。<br />
+试 $n=85$：$\left\lfloor85\div5\right\rfloor=17$，$\left\lfloor85\div25\right\rfloor=3$，$\left\lfloor85\div125\right\rfloor=0$，共 $17+3=20$ 个 5。<br />
+再检查 $n=84$：$\left\lfloor84\div5\right\rfloor=16$，$\left\lfloor84\div25\right\rfloor=3$，共 $16+3=19$ 个 5，不足 20。<br />
+而 $a_5$ 随 $n$ 增大只增不减，所以 85 以下都达不到 20，85 就是最小解。</p>
+<p>验算：$85!$ 中 5 的倍数是 $5,10,\dots,85$ 共 17 个，其中 $25,50,75$ 各额外贡献 1 个 5，合计 $17+3=20$；$84!$ 只有 $16+3=19$ 个 5，末尾 19 个 0。又 $a_2\ge a_5$，末尾 0 的个数由 5 决定，故 $85!$ 末尾恰有 20 个 0。</p>
+</div><div class="answer">答案：<p>$n=85$</p>
 </div></div>
 <div class="example"><h3>同余初步 · 例1：同余的判断与写法</h3><div class="analysis"><p>① $37 - 22 = 15$，$5 \mid 15$，成立。② $100 - 1 = 99$，$9 \mid 99$，成立。③ $50 - 8 = 42$，$6 \mid 42$，成立。</p>
 </div><div class="answer">答案：<p>三个都成立</p>
@@ -406,7 +912,7 @@ $$(a_n a_{n-1} \cdots a_1 a_0)<em>k = a_n k^n + a</em>{n-1} k^{n-1} + \cdots + a
 <div class="example"><h3>因数个数与因数和 · 例2：平方数因数个数为奇数</h3><div class="analysis"><p>第 $n$ 号灯被按的次数 = $n$ 的因数个数。因数个数为奇数时灯才会亮，而因数个数为奇数的数恰是完全平方数。</p>
 </div><div class="answer">答案：<p>编号为 1、4、9、16、25、36、49、64、81、100 的灯亮着</p>
 </div></div>
-<div class="example"><h3>因数个数与因数和 · 例3：由因数个数反推最小自然数</h3><div class="analysis"><p>$6 = 6 = 2 \times 3$，对应两种分解形态：</p>
+<div class="example"><h3>因数个数与因数和 · 例3：由因数个数反推最小自然数</h3><div class="analysis"><p>把 $6$ 拆成&quot;指数 $+1$&quot;的乘积，有两种形态：$6$ 和 $2\times3$。</p>
 <ul>
 <li>$6$：形如 $p^5$，最小 $2^5 = 32$；</li>
 <li>$2 \times 3$：形如 $p^1 q^2$，最小取 $p = 3, q = 2$ 得 $3 \times 4 = 12$。</li>
@@ -441,21 +947,87 @@ $$(a_n a_{n-1} \cdots a_1 a_0)<em>k = a_n k^n + a</em>{n-1} k^{n-1} + \cdots + a
 <div class="example"><h3>带余除法与余数性质 · 例3：周期余数</h3><div class="analysis"><p>找 $3^n$ 除以 7 的余数规律：$3, 2, 6, 4, 5, 1, 3, 2, \ldots$，周期为 6。$100 = 6 \times 16 + 4$，所以 $3^{100}$ 的余数与 $3^4$ 相同，为 4。</p>
 </div><div class="answer">答案：<p>4</p>
 </div></div>
-<div class="example"><h3>数的整除特征 · 例1：末位系与数字和系</h3><div class="analysis"><p>被 4 整除看末两位 $36$，$36 = 4 \times 9$ 已满足，对 □ 无限制。被 9 整除要求数字和 $7 + □ + 3 + 6 = 16 + □$ 是 9 的倍数，□ 为数字（0–9），只有 $16 + 2 = 18$ 符合。</p>
-</div><div class="answer">答案：<p>□ = 2</p>
-</div></div>
-<div class="example"><h3>数的整除特征 · 例2：交错和系（11 的判定）</h3><div class="analysis"><p>从右往左数，奇数位（个、百、万位）：$8 + 7 + 2 = 17$；偶数位（十、千、十万位）：$5 + 3 + 1 = 9$。差 $17 - 9 = 8$，不是 11 的倍数，所以不能整除。</p>
-</div><div class="answer">答案：<p>不能被 11 整除</p>
-</div></div>
-<div class="example"><h3>数的整除特征 · 例3：截断系（7、13 的判定）</h3><div class="analysis"><p>从末三位截开：$104$ 与 $39$，差 $104 - 39 = 65$。$65 = 5 \times 13$，能被 13 整除，不能被 7 整除。所以 39104 能被 13 整除，不能被 7 整除。</p>
-</div><div class="answer">答案：<p>能被 13 整除，不能被 7 整除</p>
-</div></div>
-<div class="example"><h3>数的整除特征 · 例4：合数判定要拆互质因数</h3><div class="analysis"><p>$15 = 3 \times 5$ 且 3、5 互质。被 5 整除：$b = 0$ 或 $5$。被 3 整除：$5 + a + 4 + 1 + b = 10 + a + b$ 是 3 的倍数。</p>
+<div class="example"><h3>平方数与立方数分解质因数 · 例1：用指数判断平方数与立方数（★★★）</h3><div class="analysis"><p>第一步，短除写出标准分解式：<br />
+$$216=2^3\times3^3,\quad 324=2^2\times3^4,\quad 729=3^6,\quad 4000=2^5\times5^3.$$<br />
+第二步，逐个数指数：</p>
 <ul>
-<li>若 $b = 0$：$10 + a$ 是 3 的倍数，$a = 2, 5, 8$；</li>
-<li>若 $b = 5$：$15 + a$ 是 3 的倍数，$a = 0, 3, 6, 9$。</li>
+<li>$216$：指数是 $3,3$，都是 3 的倍数而不是偶数，所以是立方数、不是平方数，$216=(2\times3)^3=6^3$。</li>
+<li>$324$：指数是 $2,4$，都是偶数但都不被 3 整除，所以是平方数、不是立方数，$324=(2\times3^2)^2=18^2$。</li>
+<li>$729$：指数是 $6$，既是偶数又是 3 的倍数，所以两个都是，$729=27^2=9^3$。</li>
+<li>$4000$：指数是 $5,3$，其中 $5$ 既不是偶数也不是 3 的倍数，所以两个都不是。<br />
+<strong>验算</strong>：$6^3=216$，$18^2=324$，$27^2=729$、$9^3=729$，指数判断与直接计算一致；再用夹逼复核 $4000$：$63^2=3969&lt;4000&lt;4096=64^2$，$15^3=3375&lt;4000&lt;4096=16^3$，确实既不是平方数也不是立方数。</li>
 </ul>
-</div><div class="answer">答案：<p>b=0 时 a=2、5、8；b=5 时 a=0、3、6、9</p>
+</div><div class="answer">答案：<p>完全平方数：$324$、$729$；完全立方数：$216$、$729$；其中 $729$ 两者都是。</p>
+</div></div>
+<div class="example"><h3>平方数与立方数分解质因数 · 例2：补因数，让 360n 成为六次方数（★★★★）</h3><div class="analysis"><p>第一步，分解：$360=2^3\times3^2\times5$。<br />
+第二步，翻译条件。&quot;既是平方数又是立方数&quot;就是要求每个质因数的指数同时被 2 和 3 整除，即被 $6$ 整除，所以 $360n$ 必须是<strong>六次方数</strong>。<br />
+第三步，逐个质因数把指数补到 6 的倍数：</p>
+<ul>
+<li>质因数 $2$：$3\to 6$，要补 $2^{6-3}=2^3$；</li>
+<li>质因数 $3$：$2\to 6$，要补 $3^{6-2}=3^4$；</li>
+<li>质因数 $5$：$1\to 6$，要补 $5^{6-1}=5^5$。<br />
+第四步，相乘得<br />
+$$n_{\min}=2^3\times3^4\times5^5=8\times81\times3125=2,025,000.$$<br />
+<strong>验算</strong>：$360\times2,025,000=729,000,000$，而<br />
+$$30^6=(30^3)^2=27,000^2=729,000,000=(30^2)^3=900^3,$$<br />
+确实是平方数又是立方数；且任一项指数少补 1 就无法被 6 整除，故 $n=2,025,000$ 最小。</li>
+</ul>
+</div><div class="answer">答案：<p>$n_{\min}=2,025,000$（此时 $360n=30^6=729,000,000$）</p>
+</div></div>
+<div class="example"><h3>平方数与立方数分解质因数 · 例3：$n^2+2004$ 成为平方数（★★★★★）</h3><div class="analysis"><p>第一步，设 $n^2+2004=m^2$，其中 $m$ 是正整数且 $m&gt;n$。<br />
+第二步，移项配成平方差：$m^2-n^2=2004$，即<br />
+$$(m-n)(m+n)=2004.$$<br />
+第三步，判断两因数的奇偶。$m-n$ 与 $m+n$ 相差 $2n$（偶数），所以它们同奇偶；乘积 $2004$ 是偶数，故只能<strong>同为偶数</strong>。设 $m-n=2a$、$m+n=2b$（$a&lt;b$），代入得 $4ab=2004$，即<br />
+$$ab=501=3\times167.$$<br />
+第四步，枚举 501 的因数对：</p>
+<ul>
+<li>$(a,b)=(1,501)$，得 $n=b-a=500$；</li>
+<li>$(a,b)=(3,167)$，得 $n=167-3=164$。<br />
+（交换顺序会使 $n&lt;0$，不合题意。）所以满足条件的 $n$ 只有 $164$ 和 $500$，其中最小的是 $164$。<br />
+<strong>验算</strong>：$164^2=26896$，$26896+2004=28900=170^2$，成立（此时 $m-n=6$、$m+n=334$，$6\times334=2004$）；另一个解 $500^2+2004=250000+2004=252004=502^2$，也成立，说明两个因数对都已被考虑，没有遗漏更小的 $n$。</li>
+</ul>
+</div><div class="answer">答案：<p>$n=164$（此时 $n^2+2004=170^2$）</p>
+</div></div>
+<div class="example"><h3>数的整除特征 · 例1：先分层，再看末几位（★★★）</h3><div class="analysis"><p>先分层：$100=4\times25$，$1000=8\times125$，所以 4、25 只要看末两位，8、125 要看末三位，前面高位一律整块删去。</p>
+<p>对 3724：</p>
+<ul>
+<li>末两位是 24，$24=4\times6$，故 $4\mid 3724$；</li>
+<li>末三位是 724，$724=8\times90+4$，故 $8\nmid 3724$（4 通过了，8 没通过）；</li>
+<li>24 不是 25 的倍数，724 也不是 125 的倍数（$125\times5=625$，$125\times6=750$），故 25、125 都整除不了它。</li>
+</ul>
+<p>对 5250：</p>
+<ul>
+<li>末两位是 50，$50=25\times2$，故 $25\mid 5250$；</li>
+<li>末三位是 250，$250=125\times2$，故 $125\mid 5250$；</li>
+<li>但末两位 50 不是 4 的倍数，末三位 250 不是 8 的倍数（$250=8\times31+2$），故 4、8 都整除不了它。</li>
+</ul>
+<p>验算：$3724=4\times931$，$3724=8\times465+4$，$3724=25\times148+24$；$5250=25\times210$，$5250=125\times42$，$5250=4\times1312+2$。</p>
+</div><div class="answer">答案：<p>3724 能被 4 整除，不能被 8、25、125 整除；5250 能被 25、125 整除，不能被 4、8 整除。</p>
+</div></div>
+<div class="example"><h3>数的整除特征 · 例2：数字和锁定最大数（★★★★）</h3><div class="analysis"><p>第一步，把整除条件翻译成数字和条件。设四位数为 $\overline{abcd}$，因为 $10\equiv1\pmod 9$，所以<br />
+$$N\equiv a+b+c+d\pmod 9$$<br />
+即 $9\mid N\iff a+b+c+d$ 是 9 的倍数。</p>
+<p>第二步，要数最大，就从千位起尽量取大：先试 $9876$。</p>
+<ul>
+<li>$9876$：$9+8+7+6=30$，$30=9\times3+3$，不符；</li>
+<li>$9875$：数字和 $29=9\times3+2$，不符；</li>
+<li>$9874$：数字和 $28=9\times3+1$，不符；</li>
+<li>$9873$：数字和 $27=9\times3$，符合。</li>
+</ul>
+<p>第三步，确认&quot;最大&quot;。四位数中数字互不相同的最大者是 $9876$，比 $9873$ 大的只剩 $9874,9875,9876$ 三个数，而它们的数字和除以 9 的余数依次是 1、2、3，都不为 0，所以 $9873$ 确实是最大的。</p>
+<p>验算：$9873=9\times1097$，且四个数字 $9,8,7,3$ 互不相同。</p>
+</div><div class="answer">答案：<p>9873</p>
+</div></div>
+<div class="example"><h3>数的整除特征 · 例3：11 与 13 同时成立的截断（★★★★★）</h3><div class="analysis"><p>第一步，选工具。11 可用交错和，13 只能截断；而 $1001=7\times11\times13$，$1000\equiv-1\pmod{1001}$，所以对 11 和 13 都用&quot;末三位减前面部分&quot;最快：<br />
+$$N=\overline{M,T}\equiv T-M\pmod{1001}$$</p>
+<p>第二步，定范围。设 $N=\overline{2024ab}$，则 $202400\le N\le 202499$。前面部分 $M=202$，末三位 $T=\overline{4ab}$，于是 $400\le T\le499$。</p>
+<p>第三步，把两个条件合成一个。要 $11\mid(T-202)$ 且 $13\mid(T-202)$，而 $11$、$13$ 互质，所以 $143\mid(T-202)$。由 $400\le T\le499$ 得<br />
+$$198\le T-202\le 297$$<br />
+这个区间内 143 的倍数只有 $143\times2=286$（$143\times1=143$ 太小，$143\times3=429$ 太大），故<br />
+$$T-202=286,\qquad T=488$$</p>
+<p>第四步，还原数字：末三位 $488$ 给出 $a=8$、$b=8$，所求为 $202488$。</p>
+<p>验算：截断差 $488-202=286=2\times143$；直接除，$202488=143\times1416$，即 $202488\div11=18408$、$202488\div13=15576$；再用交错和复核，奇数位和 $8+4+0=12$，偶数位和 $8+2+2=12$，差为 $0$，确能被 11 整除。</p>
+</div><div class="answer">答案：<p>202488</p>
 </div></div>
 <div class="example"><h3>整除的概念与性质 · 例1：用定义判断整除</h3><div class="analysis"><p>① $36 \div 6 = 6$，整除，正确。② $51 \div 7 = 7\cdots\cdots2$，有余数，错误。③ 整除只对整数讨论，$0.5$ 不是整数，记号本身错误。④ $0 \div 5 = 0$，商是整数，任何非零整数都整除 0，正确。</p>
 </div><div class="answer">答案：<p>①④正确，②③错误</p>
@@ -481,6 +1053,70 @@ $$(a_n a_{n-1} \cdots a_1 a_0)<em>k = a_n k^n + a</em>{n-1} k^{n-1} + \cdots + a
 <div class="example"><h3>最大公因数与最小公倍数 · 例4：用核心公式反推</h3><div class="analysis"><p>由 $(a,b) \times [a,b] = a \times b$，另一个数 $= 6 \times 180 \div 30 = 36$。</p>
 </div><div class="answer">答案：<p>36</p>
 </div></div>
+<div class="example"><h3>最小公倍数与最值 · 例1：同时整除与超过下限的最小值（★★★）</h3><div class="analysis"><p>先把三个数分解质因数：$6=2\times3$，$8=2^3$，$15=3\times5$。最小公倍数取每个质因数的最高次幂：<br />
+$$[6,8,15]=2^3\times3\times5=120$$<br />
+所以 $6$、$8$、$15$ 的公倍数恰为 $120m$（$m=1,2,3,\dots$），最小正整数是 $m=1$ 时的 $120$。<br />
+再处理&quot;大于 $1000$&quot;：由 $120m&gt;1000$ 得 $m&gt;8.33$，故 $m$ 取 $9$，$120\times9=1080$。<br />
+验算：$1080\div6=180$，$1080\div8=135$，$1080\div15=72$，都能整除；前一个公倍数是 $120\times8=960&lt;1000$，不合要求。✓</p>
+</div><div class="answer">答案：<p>同时整除的最小正整数是 $120$；大于 $1000$ 的最小是 $1080$。</p>
+</div></div>
+<div class="example"><h3>最小公倍数与最值 · 例2：由公因数、公倍数反推两数和的最值（★★★★）</h3><div class="analysis"><p>设 $a=12x$，$b=12y$，则 $(x,y)=1$ 且 $x&lt;y$。由<br />
+$$a\times b=(a,b)\times[a,b]=12\times360=4320$$<br />
+得 $144xy=4320$，即 $xy=30$。<br />
+于是只须枚举 $30$ 的互质因数对 $(x,y)$：$(1,30)$、$(2,15)$、$(3,10)$、$(5,6)$，逐对算出两数与和：</p>
+<ul>
+<li>$(a,b)=(12,360)$，和 $372$；</li>
+<li>$(a,b)=(24,180)$，和 $204$；</li>
+<li>$(a,b)=(36,120)$，和 $156$；</li>
+<li>$(a,b)=(60,72)$，和 $132$。</li>
+</ul>
+<p>比较得最小和 $132$，最大和 $372$。<br />
+验算：$(60,72)=12$，$[60,72]=2^3\times3^2\times5=360$，$60+72=132$ ✓；$(12,360)=12$，$[12,360]=360$，$12+360=372$ ✓。</p>
+</div><div class="answer">答案：<p>最小值 $132$（$a=60$，$b=72$）；最大值 $372$（$a=12$，$b=360$）。</p>
+</div></div>
+<div class="example"><h3>最小公倍数与最值 · 例3：余数条件的周期与最大三位数（★★★★★）</h3><div class="analysis"><p>先满足前两个条件。由&quot;除以 $5$ 余 $3$&quot;设 $n=3+5k$，代入&quot;除以 $7$ 余 $2$&quot;：<br />
+$$3+5k\equiv2\pmod 7\ \Longrightarrow\ 5k\equiv6\pmod 7\ \Longrightarrow\ k\equiv4\pmod 7$$<br />
+（$5$ 在模 $7$ 下的逆是 $3$，$6\times3=18\equiv4$。）取 $k=4$ 得 $n=23$，故 $n=23+35t$，其中 $35=[5,7]$。<br />
+再代入&quot;除以 $9$ 余 $4$&quot;，注意 $23\equiv5$、$35\equiv8\pmod 9$：<br />
+$$5+8t\equiv4\pmod 9\ \Longrightarrow\ 8t\equiv8\pmod 9\ \Longrightarrow\ t\equiv1\pmod 9$$<br />
+取 $t=1$ 得特解 $n=58$，故全部解为 $n=58+315s$，其中 $315=[5,7,9]$ 是周期。<br />
+最后让 $n$ 尽量大且不超过三位数：$s=2$ 时 $n=58+630=688$；$s=3$ 时 $n=58+945=1003&gt;999$，越界。所以最大值是 $688$。<br />
+验算：$688=5\times137+3$，$688=7\times98+2$，$688=9\times76+4$，三个余数全部符合；而 $688+315=1003$ 已是四位数，更大的解都不合要求。✓</p>
+</div><div class="answer">答案：<p>$688$。</p>
+</div></div>
+<div class="example"><h3>短除模型 · 例1：用短除法把 360 分解质因数（★★★）</h3><div class="analysis"><p>第一步，$360$ 是偶数，用最小的质数 $2$ 去除，商写在下面；只要还是偶数就继续：<br />
+$$360\div2=180,\quad 180\div2=90,\quad 90\div2=45$$<br />
+此时 $45$ 是奇数，$2$ 不能再除。<br />
+第二步，换下一个质数 $3$：$45\div3=15$，$15\div3=5$。<br />
+第三步，商已经是质数 $5$，用 $5$ 去除得 $1$，短除结束。<br />
+把左列的除数连乘：$360=2\times2\times2\times3\times3\times5=2^3\times3^2\times5$。<br />
+<strong>验算</strong>：$2^3=8$，$3^2=9$，$8\times9\times5=72\times5=360$ ✓；也可只查一步 $8\times45=360$ ✓。</p>
+</div><div class="answer">答案：<p>$360=2^3\times3^2\times5$</p>
+</div></div>
+<div class="example"><h3>短除模型 · 例2：锯木料——短除法求最大公因数（★★★★）</h3><div class="analysis"><p>第一步，棱长要同时整除 $84$、$126$、$210$，且要最大，就是求 $(84,126,210)$。<br />
+第二步，摆短除表，每一步都用三个数的公共因数去除：<br />
+$$2\mid84,\ 126,\ 210\ \Rightarrow\ 42,\ 63,\ 105$$<br />
+$$3\mid42,\ 63,\ 105\ \Rightarrow\ 14,\ 21,\ 35$$<br />
+$$7\mid14,\ 21,\ 35\ \Rightarrow\ 2,\ 3,\ 5$$<br />
+第三步，$2,3,5$ 已没有公共因数，停止。最大公因数是左列之积：<br />
+$$(84,126,210)=2\times3\times7=42$$<br />
+第四步，求块数：三个方向分别能排 $84\div42=2$、$126\div42=3$、$210\div42=5$ 块，共 $2\times3\times5=30$ 块。<br />
+<strong>验算</strong>：$42\times2=84$ ✓，$42\times3=126$ ✓，$42\times5=210$ ✓；体积 $84\times126\times210=2222640$ 立方厘米，而 $42^3\times30=74088\times30=2222640$ ✓，块数正确。</p>
+</div><div class="answer">答案：<p>棱长最大 $42$ 厘米，一共锯成 $30$ 块</p>
+</div></div>
+<div class="example"><h3>短除模型 · 例3：绕湖跑步——短除法求最小公倍数（★★★★★）</h3><div class="analysis"><p>第一步，三人都在出发点相遇的时刻，必须同时是 $24$、$36$、$60$ 的倍数，求&quot;至少&quot;就是求最小公倍数 $[24,36,60]$。<br />
+第二步，摆短除表，除到两两互质：<br />
+$$2\mid24,\ 36,\ 60\ \Rightarrow\ 12,\ 18,\ 30$$<br />
+$$2\mid12,\ 18,\ 30\ \Rightarrow\ 6,\ 9,\ 15$$<br />
+$$3\mid6,\ 9,\ 15\ \Rightarrow\ 2,\ 3,\ 5$$<br />
+末行 $2,3,5$ 两两互质，停止。左列乘末行：<br />
+$$[24,36,60]=(2\times2\times3)\times(2\times3\times5)=12\times30=360$$<br />
+即 $360$ 分钟 $=6$ 小时。<br />
+第三步，算圈数：$360\div24=15$，$360\div36=10$，$360\div60=6$，所以甲 $15$ 圈、乙 $10$ 圈、丙 $6$ 圈。<br />
+第四步，$12$ 小时 $=720$ 分钟，相遇时刻是 $360$ 的倍数：$360$ 分钟（第 $6$ 小时）、$720$ 分钟（第 $12$ 小时），共 $2$ 次。<br />
+<strong>验算</strong>：$24\times15=360$ ✓，$36\times10=360$ ✓，$60\times6=360$ ✓；再用标准分解式核对最小性：$24=2^3\times3$、$36=2^2\times3^2$、$60=2^2\times3\times5$，取各质因数最高次幂得 $2^3\times3^2\times5=8\times9\times5=360$ ✓；$720\div360=2$ ✓。</p>
+</div><div class="answer">答案：<p>（1）$360$ 分钟（即 $6$ 小时）；（2）甲 $15$ 圈、乙 $10$ 圈、丙 $6$ 圈；（3）$2$ 次</p>
+</div></div>
 <div class="example"><h3>质数与合数 · 例1：定义判断</h3><div class="analysis"><p>1 不是质数也不是合数。2 是质数。9 = 3×3，21 = 3×7，51 = 3×17，91 = 7×13，都是合数。37、97 在 100 以内质数表中，是质数。</p>
 </div><div class="answer">答案：<p>质数有 2、37、97</p>
 </div></div>
@@ -490,15 +1126,126 @@ $$(a_n a_{n-1} \cdots a_1 a_0)<em>k = a_n k^n + a</em>{n-1} k^{n-1} + \cdots + a
 <div class="example"><h3>质数与合数 · 例3：利用"唯一偶质数 2"解题</h3><div class="analysis"><p>99 是奇数，而 奇数 = 奇 + 偶，所以 $p$、$q$ 一奇一偶。偶质数只有 2，不妨设 $p = 2$，则 $q = 97$，97 确实是质数。$p \times q = 2 \times 97 = 194$。</p>
 </div><div class="answer">答案：<p>194</p>
 </div></div>
-<div class="example"><h3>进位制 · 例1：k 进制化十进制</h3><div class="analysis"><p>$(1011)_2 = 1 \times 2^3 + 0 \times 2^2 + 1 \times 2 + 1 = 8 + 2 + 1 = 11$。<br />
-$(234)_5 = 2 \times 5^2 + 3 \times 5 + 4 = 50 + 15 + 4 = 69$。</p>
-</div><div class="answer">答案：<p>$(1011)_2 = 11$，$(234)_5 = 69$</p>
+<div class="example"><h3>质数枚举 · 例1：用筛法列出 60 以内的全部质数（★★★）</h3><div class="analysis"><p>第一步，写出 $1\sim 60$，把 $1$ 划掉（它既不是质数也不是合数）。<br />
+第二步，$\sqrt{60} &lt; 8$，只需用 $2,3,5,7$ 去划。</p>
+<ul>
+<li>保留 $2$，划掉 $4,6,8,\dots,60$（共 29 个偶数）；</li>
+<li>保留 $3$，划掉 $9,15,21,27,33,39,45,51,57$ 等 3 的倍数；</li>
+<li>保留 $5$，划掉 $25,35,55$ 等（个位 0、5 的已划去）；</li>
+<li>保留 $7$，划掉 $49$（$7\times7$）。<br />
+第三步，剩下没被划掉的数：$2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59$，共 17 个。<br />
+<strong>验算</strong>：100 以内的质数有 25 个，其中大于 60 的是 $61,67,71,73,79,83,89,97$ 共 8 个，$25 - 8 = 17$，与筛出的个数一致。</li>
+</ul>
+</div><div class="answer">答案：<p>$2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59$，共 17 个</p>
 </div></div>
-<div class="example"><h3>进位制 · 例2：十进制化 k 进制</h3><div class="analysis"><p>化二进制，反复除以 2 记余数：75 → 37 余 1 → 18 余 1 → 9 余 0 → 4 余 1 → 2 余 0 → 1 余 0 → 0 余 1，倒序读得 $(1001011)_2$。<br />
-化六进制：75 ÷ 6 = 12 余 3，12 ÷ 6 = 2 余 0，2 ÷ 6 = 0 余 2，倒序读得 $(203)_6$。</p>
-</div><div class="answer">答案：<p>$(1001011)_2$，$(203)_6$</p>
+<div class="example"><h3>质数枚举 · 例2：用质数表试除，判断三个数是否为质数（★★★★）</h3><div class="analysis"><p>$\sqrt{187} \approx 13.7$，$\sqrt{221} \approx 14.9$，$\sqrt{223} \approx 14.9$，三数都只需用质数 $2,3,5,7,11,13$ 试除。</p>
+<ul>
+<li>$187$：奇数，数字和 $1+8+7=16$ 不是 3 的倍数，个位不是 0、5；$187 \div 7 = 26\cdots\cdots5$（$7\times26=182$）；$187 \div 11 = 17$，整除！所以 $187 = 11 \times 17$，是合数。</li>
+<li>$221$：奇数，数字和 $5$；$221 \div 7 = 31\cdots\cdots4$（$7\times31=217$）；$221 \div 11 = 20\cdots\cdots1$（$11\times20=220$）；$221 \div 13 = 17$，整除！所以 $221 = 13 \times 17$，是合数。</li>
+<li>$223$：奇数，数字和 $7$，个位 3；$223 \div 7 = 31\cdots\cdots6$（$7\times31=217$，$7\times32=224$）；$223 \div 11 = 20\cdots\cdots3$；$223 \div 13 = 17\cdots\cdots2$（$13\times17=221$）。都除不尽，所以 $223$ 是质数。<br />
+<strong>验算</strong>：$11 \times 17 = 187$ ✓，$13 \times 17 = 221$ ✓；$223$ 在 $14^2=196$ 与 $15^2=225$ 之间，$7\times31+6=223$、$11\times20+3=223$、$13\times17+2=223$，三个余数都不是 $0$，故 $223$ 为质数。</li>
+</ul>
+</div><div class="answer">答案：<p>$187$ 是合数（$11\times17$），$221$ 是合数（$13\times17$），$223$ 是质数</p>
 </div></div>
-<div class="example"><h3>进位制 · 例3：二进制的砝码应用</h3><div class="analysis"><p>每个砝码&quot;放或不放&quot;恰对应二进制的一位。5 个砝码共 $2^5 - 1 = 31$ 种非空组合，可称出 1 到 31 克中的每一个整数克。$13 = 8 + 4 + 1$，即 $(1101)_2$，用 8 克、4 克、1 克即可。</p>
-</div><div class="answer">答案：<p>31 种；能，用 8 克、4 克、1 克</p>
+<div class="example"><h3>质数枚举 · 例3：枚举 200 到 250 之间的质数（★★★★★）</h3><div class="analysis"><p>第一步，$\sqrt{250} \approx 15.8$，只需用到质数 $2,3,5,7,11,13$。<br />
+第二步，端点 $200$、$250$ 都是偶数，区间内的奇数共 $(249-201)\div 2+1 = 25$ 个。先划掉其中 3 的倍数：$201,207,213,219,225,231,237,243,249$ 共 9 个；再划掉 5 的倍数：$205,215,235,245$ 共 4 个（$225$ 已划）。剩下 $25-9-4=12$ 个候选：<br />
+$$203,\ 209,\ 211,\ 217,\ 221,\ 223,\ 227,\ 229,\ 233,\ 239,\ 241,\ 247$$<br />
+第三步，用 $7,11,13$ 逐个把关：</p>
+<ul>
+<li>$203 = 7 \times 29$，划掉；$217 = 7 \times 31$，划掉；</li>
+<li>$209 = 11 \times 19$，划掉；</li>
+<li>$221 = 13 \times 17$，划掉；$247 = 13 \times 19$，划掉。<br />
+剩下 7 个候选，逐一写出除以 $7,11,13$ 的余数（被除数 $=$ 除数 $\times$ 商 $+$ 余数）：</li>
+<li>$211$：$7\times30=210$ 余 $1$；$11\times19=209$ 余 $2$；$13\times16=208$ 余 $3$；</li>
+<li>$223$：$7\times31=217$ 余 $6$；$11\times20=220$ 余 $3$；$13\times17=221$ 余 $2$；</li>
+<li>$227$：$7\times32=224$ 余 $3$；$11\times20=220$ 余 $7$；$13\times17=221$ 余 $6$；</li>
+<li>$229$：$7\times32=224$ 余 $5$；$11\times20=220$ 余 $9$；$13\times17=221$ 余 $8$；</li>
+<li>$233$：$7\times33=231$ 余 $2$；$11\times21=231$ 余 $2$；$13\times18=234$ 比它多 $1$，即余 $12$；</li>
+<li>$239$：$7\times34=238$ 余 $1$；$11\times21=231$ 余 $8$；$13\times18=234$ 余 $5$；</li>
+<li>$241$：$7\times34=238$ 余 $3$；$11\times21=231$ 余 $10$；$13\times18=234$ 余 $7$。</li>
+</ul>
+<p>余数都不为 $0$，又没有别的质数可试，所以这 7 个数都是质数。<br />
+<strong>验算</strong>：候选 $12$ 个，被 $7,11,13$ 划掉 $5$ 个，$12-5=7$，与列出的个数一致。再抽两个数验证：$13\times19=247$ ✓，确实该划掉；$241$ 除以 $7$ 余 $3$，$7\times34=238$，$238+3=241$ ✓。</p>
+</div><div class="answer">答案：<p>共 7 个：$211,223,227,229,233,239,241$</p>
+</div></div>
+<div class="example"><h3>进位制 · 例1：用位值展开把二进制、五进制数化成十进制（★★★）</h3><div class="analysis"><p>二进制数 $(110101)_2$ 共 $6$ 位，最高位对应 $2^5=32$，从右往左的权依次是 $32,16,8,4,2,1$。按位值展开：<br />
+$$1\times32+1\times16+0\times8+1\times4+0\times2+1\times1=32+16+4+1=53 .$$<br />
+也可以用“边乘边加”核对：$(((1\times2+1)\times2+0)\times2+1)\times2+0=26$，再 $26\times2+1=53$，两种算法一致。</p>
+<p>五进制数 $(3402)_5$ 共 $4$ 位，从右往左的权是 $5^3=125,5^2=25,5^1=5,5^0=1$：<br />
+$$3\times125+4\times25+0\times5+2\times1=375+100+0+2=477 .$$<br />
+验算：$477\div5=95$ 余 $2$，$95\div5=19$ 余 $0$，$19\div5=3$ 余 $4$，$3\div5=0$ 余 $3$，余数倒序为 $3402$，与题相符。</p>
+</div><div class="answer">答案：<p>$(110101)_2=53$，$(3402)_5=477$。</p>
+</div></div>
+<div class="example"><h3>进位制 · 例2：用除k取余把十进制数化成三进制与七进制（★★★★）</h3><div class="analysis"><p>化三进制时反复除以 $3$，记下每次的余数：<br />
+$$500\div3=166\ \text{余}\ 2,\quad 166\div3=55\ \text{余}\ 1,\quad 55\div3=18\ \text{余}\ 1,$$<br />
+$$18\div3=6\ \text{余}\ 0,\quad 6\div3=2\ \text{余}\ 0,\quad 2\div3=0\ \text{余}\ 2 .$$<br />
+商已为 $0$，把余数倒序读出（最后除得的最先写）：$2,0,0,1,1,2$，即 $(200112)_3$。</p>
+<p>化七进制：$500\div7=71$ 余 $3$，$71\div7=10$ 余 $1$，$10\div7=1$ 余 $3$，$1\div7=0$ 余 $1$，余数倒序为 $1,3,1,3$，即 $(1313)_7$。</p>
+<p>验算：$(200112)_3=2\times243+0\times81+0\times27+1\times9+1\times3+2=486+9+3+2=500$；$(1313)_7=1\times343+3\times49+1\times7+3=343+147+7+3=500$，都还原成 $500$。</p>
+</div><div class="answer">答案：<p>$(200112)_3$ 和 $(1313)_7$。</p>
+</div></div>
+<div class="example"><h3>进位制 · 例3：数二进制中恰好有3个1的数（★★★★★）</h3><div class="analysis"><p>一个数的二进制写法中 $1$ 的个数，就是“把它拆成不同的 $2$ 的幂之和时用到的项数”，按位数分类计数最稳妥。最高位一定是 $1$，其余位置中再选 $2$ 个放 $1$。</p>
+<ul>
+<li>$3$ 位数：只有 $111=7$，共 $1$ 个；</li>
+<li>$4$ 位数：最高位是 $1$，剩下 $3$ 位中选 $2$ 位放 $1$，有 $3$ 个（$11,13,14$）；</li>
+<li>$5$ 位数：剩下 $4$ 位中选 $2$ 位，有 $6$ 个；</li>
+<li>$6$ 位数：剩下 $5$ 位中选 $2$ 位，有 $10$ 个。</li>
+</ul>
+<p>以上都不超过 $63$，共 $1+3+6+10=20$ 个。$7$ 位数的范围是 $64$ 到 $127$，最高位 $64$ 已用掉一个 $1$，另外两个 $1$ 要从 $1,2,4,8,16,32$ 中选两个相加，共有 $15$ 种。要不超过 $100$，另两位之和不能超过 $100-64=36$：只有 $32+16=48$ 和 $32+8=40$ 两种超过（$32+4=36$ 恰好得 $100$，符合要求），所以 $7$ 位数中有 $15-2=13$ 个符合。</p>
+<p>合计 $20+13=33$ 个。验算：$1$ 到 $127$ 中含 $3$ 个 $1$ 的数共 $\binom{7}{3}=35$ 个，减去超过 $100$ 的 $(1101000)_2=104$ 和 $(1110000)_2=112$ 这 $2$ 个，得 $35-2=33$，且 $(1100100)_2=100$ 恰好含 $3$ 个 $1$，应当算在内，结果一致。</p>
+</div><div class="answer">答案：<p>$33$ 个。</p>
+</div></div>
+<div class="example"><h3>韩信点兵 · 例1：三三数之剩二，求最少人数（★★★）</h3><div class="analysis"><p>第一步，三个除数中 $7$ 最大，从“除以 $7$ 余 $4$”入手枚举最省事：从余数 $4$ 起，每次加 $7$，候选为<br />
+$$4,\ 11,\ 18,\ 25,\ 32,\ 39,\ 46,\ 53,\dots$$<br />
+第二步，用“除以 $5$ 余 $3$”去筛：$4\div5$ 余 $4$；$11$ 余 $1$；$18$ 余 $3$ ✓；$25$ 余 $0$；$32$ 余 $2$；$39$ 余 $4$；$46$ 余 $1$；$53$ 余 $3$ ✓。留下 $18,53,\dots$，最小的是 $18$。<br />
+第三步，$18$ 已同时满足后两个条件。要保持“除以 $5$ 余 $3$、除以 $7$ 余 $4$”都不变，只能加 $[5,7]=35$，候选变成<br />
+$$18,\ 53,\ 88,\ 123,\dots$$<br />
+第四步，用“除以 $3$ 余 $2$”筛：$18=3\times6$ 余 $0$，不合；$53=3\times17+2$ ✓。所以最小解为 $53$。<br />
+<strong>验算</strong>：$53=3\times17+2$ ✓，$53=5\times10+3$ ✓，$53=7\times7+4$ ✓；再查比 $53$ 小的候选，同时满足后两条的只有 $18$，而 $18$ 除以 $3$ 余 $0$，故 $53$ 确实最小。全部解为 $53+105k$：$53,158,263,\dots$</p>
+</div><div class="answer">答案：<p>$53$ 人</p>
+</div></div>
+<div class="example"><h3>韩信点兵 · 例2：用中国剩余定理凑数（★★★★）</h3><div class="analysis"><p>第一步，三个除数 $3,5,7$ 两两互质，周期 $M=3\times5\times7=105$。<br />
+第二步，为“除以 $3$ 余 $1$”造数：它必须是 $5$ 和 $7$ 的倍数才不干扰后两条，即 $35,70,105,\dots$，其中除以 $3$ 余 $1$ 的最小的是 $70$（$70=3\times23+1$），记 $b_1=70$。<br />
+第三步，为“除以 $5$ 余 $2$”造数：取 $3$ 和 $7$ 的倍数 $21,42,\dots$，$21=5\times4+1$，再乘 $2$ 得 $b_2=42$（$42=5\times8+2$）。<br />
+第四步，为“除以 $7$ 余 $3$”造数：取 $3$ 和 $5$ 的倍数 $15,30,\dots$，$15=7\times2+1$，再乘 $3$ 得 $b_3=45$（$45=7\times6+3$）。<br />
+第五步，把三个数加起来：$70+42+45=157$。它同时满足三条余数条件，但已经超过周期，减去 $M$ 的倍数压到最小：<br />
+$$157-105=52$$<br />
+所以最小解为 $52$，全部解为 $52+105k$。<br />
+<strong>验算</strong>：$52=3\times17+1$ ✓；$52=5\times10+2$ ✓；$52=7\times7+3$ ✓。再看 $52-105&lt;0$，无法再减，故 $52$ 最小；用逐步满足法抽查：除以 $5$ 余 $2$ 且除以 $7$ 余 $3$ 的数从 $17$ 起每次加 $35$，即 $17,52,87,\dots$，其中除以 $3$ 余 $1$ 的最小者正是 $52$（$17$ 除以 $3$ 余 $2$）✓。</p>
+</div><div class="answer">答案：<p>$52$</p>
+</div></div>
+<div class="example"><h3>韩信点兵 · 例3：同差条件先合并，再求范围与最大值（★★★★★）</h3><div class="analysis"><p>第一步，观察前两个条件：$4-1=3$，$6-3=3$，除数与余数的<strong>差相同</strong>。这说明这个数<strong>加上 $3$</strong> 后，既能被 $4$ 整除，也能被 $6$ 整除。<br />
+第二步，$[4,6]=12$，于是 $12\mid N+3$，即 $N=12k-3$，也就是“除以 $12$ 余 $9$”。把它们列出来：<br />
+$$9,\ 21,\ 33,\ 45,\ 57,\ 69,\ 81,\ 93,\dots$$<br />
+第三步，用“除以 $7$ 余 $4$”去筛：$9$ 余 $2$；$21$ 余 $0$；$33$ 余 $5$；$45$ 余 $3$；$57$ 余 $1$；$69$ 余 $6$；$81$ 余 $4$ ✓。所以最小解 $N_0=81$。<br />
+第四步，求周期：已满足的三条要同时不被破坏，间隔必须同时是 $12$ 和 $7$ 的倍数，即 $M=[12,7]=84$。全部解为<br />
+$$N=81+84t\quad(t=0,1,2,\dots)$$<br />
+第五步，数 $500$ 以内的：$81+84t\le500$，即 $84t\le419$，$t\le4$（$84\times5=420&gt;419$），故 $t=0,1,2,3,4$，共 $5$ 个：<br />
+$$81,\ 165,\ 249,\ 333,\ 417$$<br />
+<strong>验算</strong>：$81=4\times20+1$ ✓，$81=6\times13+3$ ✓，$81=7\times11+4$ ✓；最大的 $417=4\times104+1$ ✓，$417=6\times69+3$ ✓，$417=7\times59+4$ ✓（$7\times59=413$）；再看相邻两数之差 $417-333=84=[4,6,7]$ ✓，下一个 $417+84=501&gt;500$ ✓。</p>
+</div><div class="answer">答案：<p>（1）$81$；（2）$5$ 个，最大的是 $417$</p>
+</div></div>
+<div class="example"><h3>韩信点兵与最值 · 例1：士兵列队求最少人数（★★★）</h3><div class="analysis"><p>先满足&quot;除以 $5$ 余 $2$&quot;：$n=2+5k$，即 $2,7,12,17,22,27,\dots$。<br />
+在这串数中找&quot;除以 $7$ 余 $6$&quot;的：$2\div7$ 余 $2$，$7\div7$ 余 $0$，$12$ 余 $5$，$17$ 余 $3$，$22$ 余 $1$，$27$ 余 $6$ ✓。<br />
+所以 $n=27$ 同时满足后两个条件，而 $5$ 与 $7$ 的最小公倍数是 $35$，故这一段全部解为 $n=27+35t$。<br />
+再让它&quot;除以 $3$ 余 $1$&quot;：$27\div3$ 余 $0$，$35\div3$ 余 $2$，即余数每次加 $2$，依次是 $0,2,1$，当 $t=2$ 时余 $1$ ✓。<br />
+于是 $n=27+35\times2=97$，周期为 $[3,5,7]=105$。<br />
+验算：$97=3\times32+1$，$97=5\times19+2$，$97=7\times13+6$，三个余数全对；比 $97$ 小的候选只有 $27$（$27\div3$ 余 $0$）、$62$（$62\div3$ 余 $2$），都不合，所以 $97$ 最小。✓</p>
+</div><div class="answer">答案：<p>最少 $97$ 人。</p>
+</div></div>
+<div class="example"><h3>韩信点兵与最值 · 例2：人数在区间内，用周期夹出唯一值（★★★★）</h3><div class="analysis"><p>先合并前两个条件。除以 $6$ 余 $4$ 的数是 $4,10,16,22,28,\dots$，其中除以 $8$ 余 $2$ 的：$4$ 余 $4$，$10$ 余 $2$ ✓，所以 $n=10$ 是一个特解。<br />
+$6$ 与 $8$ 的最小公倍数是 $24$，故这一段全部解为 $n=10+24t$：$10,34,58,82,106,130,154,178,202,226,250,\dots$<br />
+在其中找&quot;除以 $9$ 余 $7$&quot;的：$10$ 余 $1$，$34$ 余 $7$ ✓。所以 $n=34+72s$（$[6,8,9]=72$）：$34,106,178,250,322,\dots$<br />
+用范围夹：$200\le34+72s\le300$。$s=2$ 得 $178&lt;200$，$s=3$ 得 $250$ ✓，$s=4$ 得 $322&gt;300$。<br />
+验算：$250=6\times41+4$，$250=8\times31+2$，$250=9\times27+7$，三个余数都对；而 $250-72=178$、$250+72=322$ 都在区间外，故 $250$ 是区间内唯一解。✓</p>
+</div><div class="answer">答案：<p>这个数是 $250$。</p>
+</div></div>
+<div class="example"><h3>韩信点兵与最值 · 例3：不超过定值的最大解与个数（★★★★★）</h3><div class="analysis"><p>第一步，合并前两个条件。除以 $7$ 余 $3$ 的数是 $3,10,17,24,31,\dots$，其中除以 $5$ 余 $2$ 的：$3$ 余 $3$，$10$ 余 $0$，$17$ 余 $2$ ✓。故 $n=17+35t$（$[5,7]=35$）。<br />
+第二步，加入第三个条件。$17\div11$ 余 $6$，$35\div11$ 余 $2$，余数依次为 $6,8,10,1,3,5,7$，$t=6$ 时余 $7$ ✓。所以特解 $n_0=17+35\times6=227$，周期 $L=[5,7,11]=385$，全部解为<br />
+$$n=227+385t\quad(t=0,1,2,\dots)$$<br />
+第三步，夹出最大的不超过 $2010$ 的解。由 $227+385t\le2010$ 得 $385t\le1783$，$t\le4.63$，故 $t=4$，$n=227+385\times4=1767$。<br />
+第四步，数个数。$t=0,1,2,3,4$ 共 $5$ 个，依次是 $227,612,997,1382,1767$。<br />
+验算：$1767=5\times353+2$，$1767=7\times252+3$，$1767=11\times160+7$，三个余数全对；下一个解 $1767+385=2152&gt;2010$，已越界，故 $1767$ 最大，个数为 $5$。✓</p>
+</div><div class="answer">答案：<p>最大的是 $1767$；$1$ 到 $2010$ 中这样的数共 $5$ 个。</p>
 </div></div>
 </section></body></html>
