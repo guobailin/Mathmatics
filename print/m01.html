@@ -1,0 +1,705 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>数与计算 · 打印版</title>
+<link rel="stylesheet" href="katex/katex.min.css">
+<script defer src="katex/katex.min.js"></script>
+<script defer src="katex/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+<style>
+body{font-family:-apple-system,"PingFang SC","Source Han Serif SC",serif;
+max-width:760px;margin:0 auto;padding:24px;line-height:1.8;color:#222}
+h1{border-bottom:2px solid #333;padding-bottom:8px}
+h2{margin-top:1.6em}h3{font-size:1.05em}
+.meta{color:#666;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.example{border:1px solid #ddd;border-radius:8px;padding:12px 16px;margin:14px 0}
+.example h3{margin:.2em 0 .6em}
+.covers{font-size:.75em;color:#888;font-weight:normal;margin-left:1em}
+.problem{background:#f7f7f9;border-radius:6px;padding:8px 12px}
+details{margin-top:.6em}summary{cursor:pointer;color:#36c}
+.answer{color:#b30;font-weight:bold}
+
+.answer-ref{color:#999;font-size:.85em}
+@page{size:A4;margin:2cm}
+@media print{
+  .kp{page-break-before:always}.kp:first-of-type{page-break-before:auto}
+  .answers{page-break-before:always}
+  body{max-width:none}
+}
+</style></head><body><h1>数与计算</h1>
+<p class="meta">小学数学知识库 · 打印版</p>
+<section class="kp"><h2>乘法运算定律</h2><p class="meta"><span>年级：4</span><span>难度：★★</span></p><p><strong>乘法交换律</strong>：$a \times b = b \times a$</p>
+<p><strong>乘法结合律</strong>：$(a \times b) \times c = a \times (b \times c)$</p>
+<p><strong>乘法分配律</strong>（最重要、最易错）：<br />
+$$(a + b) \times c = a \times c + b \times c$$<br />
+逆用：$a \times c + b \times c = (a + b) \times c$</p>
+<p><strong>常用凑整组合</strong>：$25 \times 4 = 100$，$125 \times 8 = 1000$，$50 \times 2 = 100$。看到 25 想 4，看到 125 想 8。</p>
+<p><strong>易错点</strong>：</p>
+<ul>
+<li>$(a + b) \times c$ 中括号里<strong>每一项</strong>都要乘 $c$，漏乘是第一大错；</li>
+<li>$99 \times 38$ 应想成 $(100 - 1) \times 38 = 3800 - 38$；</li>
+<li>区分 $25 \times 4 \times 8$（连乘，用结合律）与 $25 \times (4 + 8)$（有括号加，用分配律）。</li>
+</ul>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：交换律与结合律<span class="covers">覆盖点：乘法交换结合律</span></h3><div class="problem"><p>简便计算 $25 \times 32 \times 125$。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：分配律正用与逆用<span class="covers">覆盖点：乘法分配律、分配律逆用</span></h3><div class="problem"><p>简便计算：① $102 \times 45$；② $67 \times 28 + 33 \times 28$。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>估算</h2><p class="meta"><span>年级：3、4</span><span>难度：★</span></p><p><strong>估算</strong>：把数看成接近的整十、整百数再口算，快速得到大致结果。估算用&quot;$\approx$&quot;。</p>
+<p><strong>常用方法</strong>：</p>
+<ul>
+<li>加减法：各数四舍五入到相同数位再算；</li>
+<li>乘法：两个乘数分别看成整十整百，如 $48 \times 21 \approx 50 \times 20 = 1000$；</li>
+<li>除法：把被除数看成除数的倍数，如 $362 \div 9 \approx 360 \div 9 = 40$。</li>
+</ul>
+<p><strong>实际问题中的方向选择</strong>：</p>
+<ul>
+<li>&quot;带多少钱够吗&quot;要往<strong>大</strong>估（估大都够才真够）；</li>
+<li>&quot;能装多少袋/能运多少次&quot;要根据实际选择往小估或进一法。</li>
+</ul>
+<p><strong>易错点</strong>：估算结果没有唯一答案，合理即可；但要写清&quot;把 ×× 看作 ××&quot;，说明估的过程。</p>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：乘除估算<span class="covers">覆盖点：乘除估算</span></h3><div class="problem"><p>估算 $297 \times 4$ 和 $478 \div 6$。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：估算解决实际问题<span class="covers">覆盖点：估算解决实际问题、加减估算</span></h3><div class="problem"><p>妈妈带了 200 元，买一件 89 元的上衣和一条 68 元的裤子，钱够吗？（用估算说明）</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>分数与小数的互化</h2><p class="meta"><span>年级：5</span><span>难度：★</span></p><p><strong>小数化分数</strong>：有几位小数，就在 1 后面写几个 0 作分母，去掉小数点作分子，能约分的要约分。如 $0.25 = \frac{25}{100} = \frac{1}{4}$。</p>
+<p><strong>分数化小数</strong>：用分子除以分母。除得尽的是有限小数，除不尽的一般保留三位小数（用 $\approx$）。</p>
+<p><strong>判断能否化成有限小数</strong>：一个<strong>最简分数</strong>，分母只含质因数 2 和 5，就能化成有限小数；分母含 2、5 以外的质因数（3、7、11……）就不能。如 $\frac{3}{8}$ 能（$8 = 2^3$），$\frac{5}{12}$ 不能（12 含因数 3）。</p>
+<p><strong>常用互化要熟记</strong>：$\frac{1}{2}=0.5$，$\frac{1}{4}=0.25$，$\frac{3}{4}=0.75$，$\frac{1}{5}=0.2$，$\frac{1}{8}=0.125$，$\frac{3}{8}=0.375$，$\frac{5}{8}=0.625$，$\frac{7}{8}=0.875$，$\frac{1}{20}=0.05$，$\frac{1}{25}=0.04$。</p>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：互化<span class="covers">覆盖点：分数化小数、小数化分数</span></h3><div class="problem"><p>把 0.45、1.6 化成分数；把 $\dfrac{7}{8}$、$\dfrac{5}{6}$ 化成小数（除不尽的保留三位小数）。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：判断能否化成有限小数<span class="covers">覆盖点：互化应用</span></h3><div class="problem"><p>下列分数中哪些能化成有限小数：$\dfrac{7}{20}$、$\dfrac{8}{15}$、$\dfrac{9}{30}$、$\dfrac{3}{14}$？</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>分数乘法</h2><p class="meta"><span>年级：6</span><span>难度：★★</span></p><p><strong>意义</strong>：分数乘整数表示几个相同分数的和；一个数乘分数表示<strong>求这个数的几分之几是多少</strong>，如 $12 \times \frac{3}{4}$ 表示 12 的 $\frac{3}{4}$ 是多少。</p>
+<p><strong>计算法则</strong>：分子乘分子作分子，分母乘分母作分母；能约分的<strong>先约分再乘</strong>，更简便。<br />
+$$\frac{a}{b} \times \frac{c}{d} = \frac{a \times c}{b \times d}$$</p>
+<p><strong>积与乘数的关系</strong>：一个数（0 除外）乘真分数，积比原数小；乘大于 1 的假分数，积比原数大。</p>
+<p><strong>倒数</strong>：乘积是 1 的两个数互为倒数。求 $\frac{a}{b}$ 的倒数就是 $\frac{b}{a}$；1 的倒数是 1，0 没有倒数。</p>
+<p><strong>易错点</strong>：约分是分子与<strong>分母</strong>交叉约，不是分子约分子；&quot;求一个数的几分之几&quot;用乘法，&quot;已知一个数的几分之几求这个数&quot;用除法，别混淆。</p>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：分数乘法计算<span class="covers">覆盖点：分数乘整数、分数乘分数</span></h3><div class="problem"><p>计算 $\dfrac{5}{6} \times 9$ 和 $\dfrac{14}{15} \times \dfrac{5}{7}$。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：求一个数的几分之几<span class="covers">覆盖点：求一个数的几分之几</span></h3><div class="problem"><p>一本书 120 页，第一天看了全书的 $\dfrac{1}{4}$，第二天看了余下的 $\dfrac{1}{3}$。第二天看了多少页？</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>分数四则混合运算</h2><p class="meta"><span>年级：6</span><span>难度：★★</span></p><p><strong>运算顺序</strong>：与整数完全相同——先乘除后加减，有括号先算括号里的（先小括号、再中括号）。</p>
+<p><strong>运算定律</strong>：整数的交换律、结合律、分配律对分数全部适用，分数混合运算中要主动寻找简算机会。</p>
+<p><strong>常用简算模式</strong>：</p>
+<ul>
+<li>除法化乘法后统一约分：$\frac{3}{4} \div \frac{2}{3} \div \frac{9}{8} = \frac{3}{4} \times \frac{3}{2} \times \frac{8}{9}$；</li>
+<li>分配律：$(\frac{1}{2} + \frac{1}{3}) \times 6 = \frac{1}{2} \times 6 + \frac{1}{3} \times 6 = 3 + 2 = 5$；</li>
+<li>凑整：$\frac{5}{9} - \frac{7}{12} + \frac{4}{9} = 1 - \frac{7}{12} = \frac{5}{12}$。</li>
+</ul>
+<p><strong>易错点</strong>：$a \div (b + c)$ <strong>没有</strong>分配律，只有 $(a + b) \div c = a \div c + b \div c$ 这种&quot;除以同一个数&quot;才能拆；连除先把所有除法化成乘法再约分。</p>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：按顺序计算<span class="covers">覆盖点：分数混合运算顺序</span></h3><div class="problem"><p>计算 $\left(\dfrac{1}{2} - \dfrac{1}{3}\right) \div \dfrac{1}{6} + \dfrac{2}{5}$。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：简便计算<span class="covers">覆盖点：分数简便计算</span></h3><div class="problem"><p>简便计算 $\dfrac{5}{13} \times \dfrac{1}{7} + \dfrac{6}{7} \times \dfrac{5}{13}$。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>分数的加法和减法</h2><p class="meta"><span>年级：5</span><span>难度：★★</span></p><p><strong>同分母分数加减</strong>：分母不变，分子相加减，结果能约分的要约分。<br />
+$$\frac{3}{7} + \frac{2}{7} = \frac{5}{7}$$</p>
+<p><strong>异分母分数加减</strong>：先<strong>通分</strong>化成同分母，再加减。<br />
+$$\frac{1}{4} + \frac{1}{6} = \frac{3}{12} + \frac{2}{12} = \frac{5}{12}$$</p>
+<p><strong>带分数加减</strong>：整数部分与分数部分分别相加减；分数部分不够减时，从整数部分退 1 化成假分数再减。</p>
+<p><strong>简便计算</strong>：整数加法的交换律、结合律对分数同样适用，同分母的先结合，如 $\frac{5}{9} + \frac{2}{3} + \frac{4}{9}$。</p>
+<p><strong>易错点</strong>：异分母分数<strong>不能直接</strong>分子加分子、分母加分母；得数要约成最简分数。</p>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：异分母加减<span class="covers">覆盖点：异分母加减</span></h3><div class="problem"><p>计算 $\dfrac{3}{4} - \dfrac{1}{6}$ 和 $\dfrac{5}{8} + \dfrac{1}{6}$。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：带分数减法与简算<span class="covers">覆盖点：同分母加减、分数加减简算</span></h3><div class="problem"><p>① 计算 $3\dfrac{1}{4} - 1\dfrac{3}{4}$；② 简便计算 $\dfrac{5}{7} + \dfrac{5}{9} + \dfrac{2}{7}$。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>分数的基本性质与约分</h2><p class="meta"><span>年级：5</span><span>难度：★★</span></p><p><strong>分数的基本性质</strong>：分数的分子和分母<strong>同时</strong>乘或除以<strong>相同</strong>的数（0 除外），分数的大小不变。<br />
+$$\frac{a}{b} = \frac{a \times c}{b \times c} = \frac{a \div c}{b \div c} \quad (c \neq 0)$$</p>
+<p><strong>约分</strong>：把分数的分子、分母同时除以它们的公因数，化成大小不变的分数。分子分母<strong>只有公因数 1</strong>（互质）的分数叫<strong>最简分数</strong>，计算结果一般要化成最简分数。</p>
+<p><strong>快速约分</strong>：直接用分子分母的<strong>最大公因数</strong>一次约完，如 $\frac{24}{36}$ 用 $(24, 36) = 12$ 一次约成 $\frac{2}{3}$。</p>
+<p><strong>假分数化带分数</strong>：分子 ÷ 分母，商作整数部分，余数作分子，分母不变，如 $\frac{11}{4} = 2\frac{3}{4}$。带分数化假分数：整数 × 分母 + 分子作分子，分母不变。</p>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：约分<span class="covers">覆盖点：约分、分数基本性质</span></h3><div class="problem"><p>把 $\dfrac{36}{54}$ 化成最简分数。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：基本性质与互化<span class="covers">覆盖点：分数基本性质、假分数与带分数互化</span></h3><div class="problem"><p>① 在括号里填数：$\dfrac{3}{7} = \dfrac{(\quad)}{28} = \dfrac{15}{(\quad)}$；② 把 $\dfrac{17}{5}$ 化成带分数，把 $3\dfrac{2}{5}$ 化成假分数。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>分数的意义</h2><p class="meta"><span>年级：3、5</span><span>难度：★</span></p><p><strong>意义</strong>：把**单位&quot;1&quot;**平均分成若干份，表示这样一份或几份的数叫分数。分母表示平均分成的份数，分子表示取的份数。如 $\dfrac{3}{4}$ 表示把单位&quot;1&quot;平均分成 4 份，取其中 3 份。</p>
+<p><strong>分数单位</strong>：把单位&quot;1&quot;平均分成 $n$ 份，其中一份 $\dfrac{1}{n}$ 就是分数单位。$\dfrac{3}{4}$ 的分数单位是 $\dfrac{1}{4}$，它有 3 个这样的分数单位。</p>
+<p><strong>分数与除法</strong>：$a \div b = \dfrac{a}{b}$（$b \neq 0$）。分子相当于被除数，分母相当于除数。</p>
+<p><strong>分类</strong>：分子 &lt; 分母是<strong>真分数</strong>（&lt; 1）；分子 ≥ 分母是<strong>假分数</strong>（≥ 1）；整数和真分数合成的是<strong>带分数</strong>。</p>
+<p><strong>易错点</strong>：单位&quot;1&quot;可以是一个物体、一个计量单位或一批物体；&quot;把 3 米平均分成 5 段，每段长 $\frac{3}{5}$ 米&quot;（具体量）与&quot;每段占全长的 $\frac{1}{5}$&quot;（分率）要分清。</p>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：分数的意义与单位"1"<span class="covers">覆盖点：分数的意义、单位1判断</span></h3><div class="problem"><p>&quot;男生人数占全班人数的 $\dfrac{3}{5}$&quot;中，单位&quot;1&quot;是什么？$\dfrac{3}{5}$ 表示什么？</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：分数与除法<span class="covers">覆盖点：分数与除法关系、分数的意义</span></h3><div class="problem"><p>把 3 千克糖平均装进 4 个袋子，每袋装多少千克？每袋占这些糖的几分之几？</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>分数除法</h2><p class="meta"><span>年级：6</span><span>难度：★★</span></p><p><strong>计算法则</strong>：除以一个不为 0 的数，等于乘这个数的<strong>倒数</strong>。<br />
+$$\frac{a}{b} \div \frac{c}{d} = \frac{a}{b} \times \frac{d}{c}$$<br />
+整数也可以看作分母是 1 的分数，同样取倒数。</p>
+<p><strong>商与被除数的关系</strong>：除数 &lt; 1（真分数），商 &gt; 被除数；除数 &gt; 1，商 &lt; 被除数。</p>
+<p><strong>两类应用题的方向</strong>：</p>
+<ul>
+<li>求一个数的几分之几：<strong>乘</strong>（单位&quot;1&quot;已知）；</li>
+<li>已知一个数的几分之几是多少，求这个数：<strong>除</strong>（单位&quot;1&quot;未知），如&quot;甲的 $\frac{2}{3}$ 是 24，甲 $= 24 \div \frac{2}{3} = 36$&quot;。</li>
+</ul>
+<p><strong>易错点</strong>：只有<strong>除数</strong>取倒数，被除数不变；混合运算先把除法全部化成乘法再约分。</p>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：分数除法计算<span class="covers">覆盖点：分数除以整数、一个数除以分数</span></h3><div class="problem"><p>计算 $\dfrac{4}{5} \div 6$ 和 $\dfrac{8}{9} \div \dfrac{2}{3}$。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：已知几分之几求这个数<span class="covers">覆盖点：已知几分之几求这个数</span></h3><div class="problem"><p>果园里有苹果树 120 棵，是梨树的 $\dfrac{3}{4}$。梨树有多少棵？</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>加法运算定律</h2><p class="meta"><span>年级：4</span><span>难度：★</span></p><p><strong>加法交换律</strong>：两个数相加，交换位置，和不变。<br />
+$$a + b = b + a$$</p>
+<p><strong>加法结合律</strong>：三个数相加，先把前两个数相加，或先把后两个数相加，和不变。<br />
+$$(a + b) + c = a + (b + c)$$</p>
+<p><strong>减法的性质</strong>（常配合用）：一个数连续减去两个数，等于减去这两个数的和：<br />
+$$a - b - c = a - (b + c)$$</p>
+<p><strong>凑整思想</strong>：观察哪些数能凑成整十、整百（如 25 与 75、136 与 64），用交换律、结合律把它们先加，让计算变简单。</p>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：交换律与结合律<span class="covers">覆盖点：加法交换律、加法结合律、凑整简算</span></h3><div class="problem"><p>简便计算 $138 + 67 + 62 + 33$。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：减法性质<span class="covers">覆盖点：凑整简算</span></h3><div class="problem"><p>简便计算 $456 - 178 - 122$。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>四则混合运算顺序</h2><p class="meta"><span>年级：3、4</span><span>难度：★</span></p><p><strong>运算顺序</strong>：</p>
+<ol>
+<li>没有括号：只有加减或只有乘除，<strong>从左往右</strong>依次算；加减乘除混合，<strong>先乘除、后加减</strong>。</li>
+<li>有括号：先算<strong>小括号</strong>里的，再算<strong>中括号</strong>里的，最后算括号外面的。</li>
+</ol>
+<p><strong>递等式书写</strong>：每一步把&quot;算出来的结果&quot;和&quot;还没算的部分&quot;照抄下来，等号对齐写在左边，养成规范书写的习惯可以避免大量粗心错误。</p>
+<p><strong>易错点</strong>：</p>
+<ul>
+<li>$20 - 8 \div 4$ 要先算除法，得 $20 - 2 = 18$，不能从左往右算成 $12 \div 4$；</li>
+<li>$100 - (25 + 25) \times 2$ 先算括号，再乘后减，得 $100 - 100 = 0$；</li>
+<li>添括号可以改变运算顺序，审题时先看清括号位置。</li>
+</ul>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：无括号混合运算<span class="covers">覆盖点：无括号运算顺序、递等式书写</span></h3><div class="problem"><p>计算 $36 + 64 \div 4 - 20$。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：含小括号与中括号<span class="covers">覆盖点：含括号运算顺序、递等式书写</span></h3><div class="problem"><p>计算 $96 \div [(12 + 4) \times 2]$。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>大数的读法与写法</h2><p class="meta"><span>年级：4</span><span>难度：★</span></p><p><strong>读法</strong>：先分级（四位一级），从最高级读起。亿级、万级的数按个级的读法读，读完加上&quot;亿&quot;或&quot;万&quot;。</p>
+<p><strong>零的读法</strong>：每级<strong>末尾</strong>的 0 都不读；每级<strong>中间或开头</strong>有一个 0 或连续几个 0，都只读一个&quot;零&quot;。</p>
+<p><strong>写法</strong>：从最高级写起，哪个数位上一个单位也没有，就在那个数位上写 0 占位。</p>
+<p><strong>检验方法</strong>：写完后再读一遍，与原题对照；或分级数位数。</p>
+<p><strong>易错点</strong>：如 30050600 读作&quot;三千零五万零六百&quot;——万级中间的两个 0 只读一个，个级开头的 0 要读；写&quot;五亿零四十万&quot;时，千万位、百万位等空位都要补 0，共写成 500400000。</p>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：读出大数<span class="covers">覆盖点：大数读法、零的读写规则</span></h3><div class="problem"><p>读出下列各数：40600000、70005080、300400500。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：写出大数<span class="covers">覆盖点：大数写法</span></h3><div class="problem"><p>写出下列各数：六亿零七十万三千、八千万零九。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>小数乘法</h2><p class="meta"><span>年级：5</span><span>难度：★★</span></p><p><strong>计算法则</strong>：先按整数乘法算出积，再看两个乘数中<strong>一共有几位小数</strong>，就从积的右边起数出几位，点上小数点；位数不够在前面补 0。</p>
+<p>如 $0.24 \times 0.3$：先算 $24 \times 3 = 72$，共三位小数，得 $0.072$。</p>
+<p><strong>积与乘数的关系</strong>（判断大小不求积）：</p>
+<ul>
+<li>一个数（0 除外）乘<strong>大于 1</strong> 的数，积比原数<strong>大</strong>；</li>
+<li>乘<strong>小于 1</strong> 的数，积比原数<strong>小</strong>；</li>
+<li>乘 1，积等于原数。</li>
+</ul>
+<p><strong>易错点</strong>：积末尾有 0 时要<strong>先点小数点再去 0</strong>，如 $2.5 \times 0.4 = 1.00 = 1$；判断积的小数位数要把两个乘数的小数位数相加。</p>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：小数乘小数<span class="covers">覆盖点：小数乘整数、小数乘小数</span></h3><div class="problem"><p>计算 $1.25 \times 0.8$。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：不计算比较大小<span class="covers">覆盖点：积与乘数关系</span></h3><div class="problem"><p>不计算，在 ○ 里填 &gt;、&lt; 或 =：$3.6 \times 0.9$ ○ $3.6$；$3.6 \times 1.2$ ○ $3.6$；$0.99 \times 4.5$ ○ $4.5$。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>小数加法和减法</h2><p class="meta"><span>年级：4、5</span><span>难度：★</span></p><p><strong>计算法则</strong>：小数点对齐（也就是相同数位对齐），再按整数加减法计算；得数的小数点与横线上的小数点对齐；末尾有 0 的一般去掉。</p>
+<p><strong>位数不同</strong>：位数少的小数末尾补 0 再减，如 $7.2 - 3.45$ 看作 $7.20 - 3.45$。</p>
+<p><strong>简便计算</strong>：整数加法的交换律、结合律和减法性质对小数同样适用，仍用凑整思想，如 $4.7 + 2.35 + 5.3 + 7.65$。</p>
+<p><strong>易错点</strong>：是小数点对齐而<strong>不是</strong>末位对齐（这是与整数竖式最大的区别）；得数如 2.50 要化简为 2.5。</p>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：小数加减竖式<span class="covers">覆盖点：小数加减竖式</span></h3><div class="problem"><p>计算 $12.5 + 3.78$ 和 $10 - 4.36$。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：小数加减简算<span class="covers">覆盖点：小数加减简算</span></h3><div class="problem"><p>简便计算 $6.4 + 3.75 + 3.6 + 6.25$。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>小数点移动规律</h2><p class="meta"><span>年级：4、5</span><span>难度：★★</span></p><p><strong>小数点向右移</strong>（数变大）：</p>
+<ul>
+<li>移一位 → 扩大到原来的 10 倍（×10）</li>
+<li>移两位 → 扩大到原来的 100 倍（×100）</li>
+<li>移三位 → 扩大到原来的 1000 倍（×1000）</li>
+</ul>
+<p><strong>小数点向左移</strong>（数变小）：</p>
+<ul>
+<li>移一位 → 缩小到原来的 $\dfrac{1}{10}$（÷10）</li>
+<li>移两位 → 缩小到原来的 $\dfrac{1}{100}$（÷100）</li>
+<li>移三位 → 缩小到原来的 $\dfrac{1}{1000}$（÷1000）</li>
+</ul>
+<p><strong>应用</strong>：单位换算（米↔厘米、千克↔克）、乘除整十整百的快速计算，本质都是小数点移动。</p>
+<p><strong>易错点</strong>：位数不够时用 0 补足，如 $0.07 \times 1000 = 70$（向右移三位，补一个 0）；$3.5 \div 100 = 0.035$（向左移两位，前面补 0）。</p>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：直接移动小数点<span class="covers">覆盖点：右移扩大、左移缩小</span></h3><div class="problem"><p>① $0.045 \times 100 = ?$ ② $32.7 \div 1000 = ?$</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：移动规律逆推<span class="covers">覆盖点：移动规律应用</span></h3><div class="problem"><p>一个数的小数点先向右移动两位，再向左移动三位，结果是 0.56。原数是多少？</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>小数的意义与性质</h2><p class="meta"><span>年级：4、5</span><span>难度：★</span></p><p><strong>意义</strong>：分母是 10、100、1000……的分数可以用小数表示。十分之几是一位小数，百分之几是两位小数，千分之几是三位小数。</p>
+<p><strong>小数数位</strong>：小数点右边依次是十分位（0.1）、百分位（0.01）、千分位（0.001）……相邻进率仍是 10。</p>
+<p><strong>小数的基本性质</strong>：小数的<strong>末尾</strong>添上 0 或去掉 0，小数的大小不变。如 $0.5 = 0.50 = 0.500$。</p>
+<p><strong>大小比较</strong>：先比整数部分，整数部分大的数大；整数部分相同，从十分位起依次比较。</p>
+<p><strong>易错点</strong>：$0.5$ 和 $0.50$ <strong>大小相等</strong>但<strong>计数单位不同</strong>（0.1 与 0.01），精确程度不同；只有<strong>末尾</strong>的 0 才能去掉，$2.03$ 中间的 0 不能去。</p>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：小数的意义与组成<span class="covers">覆盖点：小数意义与数位</span></h3><div class="problem"><p>0.375 中的 3、7、5 各表示什么？0.375 里面有多少个 0.001？</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：性质与比较<span class="covers">覆盖点：小数性质、小数大小比较</span></h3><div class="problem"><p>① 化简 3.0600；② 把 0.9 改写成三位小数；③ 比较 0.89 和 0.9 的大小。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>小数除法</h2><p class="meta"><span>年级：5</span><span>难度：★★</span></p><p><strong>小数除以整数</strong>：按整数除法计算，商的小数点与被除数的小数点对齐；整数部分不够商 1 就商 0 点小数点；有余数就在末尾添 0 继续除。</p>
+<p><strong>除数是小数</strong>：利用<strong>商不变性质</strong>，移动除数的小数点使它变成整数，被除数的小数点也向右移动相同的位数（位数不够补 0），再按除数是整数的除法算。<br />
+如 $7.65 \div 0.85 = 765 \div 85$。</p>
+<p><strong>商与被除数的关系</strong>：</p>
+<ul>
+<li>除数 &gt; 1，商 <strong>&lt;</strong> 被除数；</li>
+<li>除数 = 1，商 = 被除数；</li>
+<li>除数 &lt; 1（不为 0），商 <strong>&gt;</strong> 被除数。</li>
+</ul>
+<p><strong>易错点</strong>：移动小数点是&quot;除数变整数&quot;为标准，除数移几位被除数就移几位，不要只看被除数；商的小数点要和<strong>移动后</strong>的被除数小数点对齐。</p>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：小数除法计算<span class="covers">覆盖点：小数除以整数、除数是小数的除法</span></h3><div class="problem"><p>计算 $5.04 \div 6$ 和 $10.5 \div 0.75$。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：商与被除数的关系<span class="covers">覆盖点：商与被除数关系</span></h3><div class="problem"><p>不计算，比较大小：$8.5 \div 1.7$ ○ $8.5$；$8.5 \div 0.5$ ○ $8.5$；$8.5 \div 1$ ○ $8.5$。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>循环小数</h2><p class="meta"><span>年级：5</span><span>难度：★★</span></p><p><strong>产生</strong>：两个数相除，除不尽时余数会重复出现，商的数字就依次不断重复出现，这样的小数叫<strong>循环小数</strong>，如 $1 \div 3 = 0.333\cdots$</p>
+<p><strong>循环节</strong>：循环小数的小数部分依次不断重复出现的数字，如 $0.333\cdots$ 的循环节是 3，$5.2727\cdots$ 的循环节是 27。</p>
+<p><strong>简便写法</strong>：在循环节的首位和末位数字上面各记一个小圆点：$0.333\cdots = 0.\dot{3}$，$5.2727\cdots = 5.\dot{2}\dot{7}$。</p>
+<p><strong>分类</strong>：小数部分的位数有限的是<strong>有限小数</strong>（如 0.75），无限的是<strong>无限小数</strong>；循环小数是无限小数，无限小数不一定是循环小数（如 $\pi = 3.14159\cdots$ 不循环）。</p>
+<p><strong>比较大小</strong>：把循环节多写出一两位再按小数比较法比较。</p>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：认识循环节并简写<span class="covers">覆盖点：认识循环小数、循环节简写</span></h3><div class="problem"><p>计算 $10 \div 3$ 和 $58.6 \div 11$，用循环小数的简便写法表示商，并指出循环节。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：循环小数比较大小<span class="covers">覆盖点：比较小数大小</span></h3><div class="problem"><p>把 $1.\dot{2}1\dot{3}$、$1.21\dot{3}$、$1.\dot{2}\dot{1}$、$1.213$ 按从大到小排列。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>数位与计数单位</h2><p class="meta"><span>年级：1、2、3、4</span><span>难度：★</span></p><p><strong>数位顺序表</strong>（从右往左）：个位、十位、百位、千位、万位、十万位、百万位、千万位、亿位、十亿位……</p>
+<p><strong>计数单位</strong>：个（一）、十、百、千、万、十万、百万、千万、亿……每相邻两个计数单位之间的进率都是 <strong>10</strong>，这叫<strong>十进制计数法</strong>。</p>
+<p><strong>分级读数</strong>：从右起每四位为一级，依次是个级、万级、亿级。读数时先读亿级、再读万级、最后读个级。</p>
+<p><strong>数的组成</strong>：如 3508200 由 3 个百万、5 个十万、8 个千、2 个百组成。某个数位上是几，就表示有几个相应的计数单位。</p>
+<p><strong>易错点</strong>：区分&quot;数位&quot;（位置，带&quot;位&quot;字）与&quot;计数单位&quot;（不带&quot;位&quot;字）；每级末尾的 0 不读，中间的 0 要读（连续的 0 只读一个）。</p>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：认识数位与组成<span class="covers">覆盖点：认识数位、数的组成</span></h3><div class="problem"><p>4607000 这个数中，&quot;6&quot;在什么数位上？表示什么？这个数由哪些计数单位组成？</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：计数单位进率<span class="covers">覆盖点：计数单位进率</span></h3><div class="problem"><p>10 个一万是多少？10 个一百万是多少？1 亿里面有多少个一千万？</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>数的大小比较与改写</h2><p class="meta"><span>年级：4</span><span>难度：★</span></p><p><strong>比较大小</strong>：</p>
+<ol>
+<li>位数不同：位数多的数大；</li>
+<li>位数相同：从最高位比起，最高位大的数大；最高位相同再比下一位，依次类推。</li>
+</ol>
+<p><strong>改写</strong>（大小不变，用&quot;=&quot;）：</p>
+<ul>
+<li>改写成用&quot;万&quot;作单位：去掉个级的 4 个 0，加&quot;万&quot;字，如 $360000 = 36$ 万；</li>
+<li>改写成用&quot;亿&quot;作单位：去掉个级和万级的 8 个 0，加&quot;亿&quot;字；</li>
+<li>不是整万整亿的，在万位或亿位右下角点小数点，如 $365800 = 36.58$ 万。</li>
+</ul>
+<p><strong>易错点</strong>：改写用等号（大小不变），求近似数用约等号（$\approx$）；改写后末尾的&quot;万&quot;&quot;亿&quot;不能丢。</p>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：比较大小<span class="covers">覆盖点：比较大小</span></h3><div class="problem"><p>比较 989898 和 1010102；比较 5467000 和 5460700。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：改写<span class="covers">覆盖点：改写成万亿作单位</span></h3><div class="problem"><p>把 780000 改写成用&quot;万&quot;作单位的数；把 149600000 改写成用&quot;亿&quot;作单位的数；把 456300 改写成用&quot;万&quot;作单位的小数。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>整数乘法</h2><p class="meta"><span>年级：3、4</span><span>难度：★</span></p><p><strong>基础</strong>：乘法口诀表（九九表）必须脱口而出；乘法是求几个相同加数和的简便运算。</p>
+<p><strong>多位数乘一位数</strong>：从个位起，用一位数依次乘多位数每一位，满几十向前进几。</p>
+<p><strong>多位数乘两位数</strong>：先用第二个乘数个位去乘，再用十位去乘（积的末位与十位对齐），最后把两次的积相加。</p>
+<p><strong>末尾有 0 的乘法</strong>：先算 0 前面的数，再看两个乘数末尾一共有几个 0，就在积的末尾添几个 0。</p>
+<p><strong>积的变化规律</strong>：一个乘数不变，另一个乘数乘几（或除以几，0 除外），积也乘几（或除以几）；两个乘数都乘 10，积乘 100。</p>
+<p><strong>易错点</strong>：第二个乘数十位上的数去乘时，积表示多少个&quot;十&quot;，末位要和十位对齐，如 $46 \times 23$ 中 $46 \times 2 = 92$ 表示 92 个十。</p>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：两位数乘三位数<span class="covers">覆盖点：多位数乘法竖式</span></h3><div class="problem"><p>计算 $145 \times 12$。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：末尾有 0 的乘法与积的变化<span class="covers">覆盖点：末尾有0的乘法、乘法口诀运用</span></h3><div class="problem"><p>① 计算 $250 \times 40$；② 已知 $23 \times 15 = 345$，直接写出 $230 \times 150$ 的积。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>整数加法与减法</h2><p class="meta"><span>年级：1、2、3</span><span>难度：★</span></p><p><strong>加法竖式</strong>：相同数位对齐，从个位加起，哪一位满十向前一位进 1。</p>
+<p><strong>减法竖式</strong>：相同数位对齐，从个位减起，哪一位不够减，从前一位退 1 当 10，与本位合起来再减。</p>
+<p><strong>各部分关系</strong>：</p>
+<ul>
+<li>加数 + 加数 = 和，和 − 一个加数 = 另一个加数；</li>
+<li>被减数 − 减数 = 差，被减数 = 减数 + 差，减数 = 被减数 − 差。</li>
+</ul>
+<p><strong>验算</strong>：加法用&quot;交换加数再算一遍&quot;或&quot;和 − 加数&quot;；减法用&quot;差 + 减数 = 被减数&quot;。</p>
+<p><strong>易错点</strong>：退位减法中被借位的数字要减 1 再算；连续退位（如 1000 − 456）最容易出错，务必验算。</p>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：进位加法<span class="covers">覆盖点：加法竖式</span></h3><div class="problem"><p>计算 $476 + 358$。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：连续退位减法<span class="covers">覆盖点：减法竖式、加减法验算</span></h3><div class="problem"><p>计算 $1000 - 456$，并验算。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>整数除法</h2><p class="meta"><span>年级：3、4</span><span>难度：★</span></p><p><strong>除法竖式</strong>（除数是两位数）：从被除数的高位除起，先看前两位，不够除再看前三位；除到哪一位，商就写在那一位上面；每次余数必须比除数小。</p>
+<p><strong>试商方法</strong>：把除数&quot;四舍五入&quot;成整十数试商。四舍时商容易偏大（要调小），五入时商容易偏小（要调大）。</p>
+<p><strong>商不变的性质</strong>：被除数和除数同时乘（或除以）相同的数（0 除外），商不变。利用它可以把除数变成整十整百再算，如 $900 \div 25 = 3600 \div 100 = 36$。</p>
+<p><strong>余数变化</strong>：被除数和除数同时乘 10，商不变，但<strong>余数也跟着乘 10</strong>，如 $7 \div 3 = 2\cdots\cdots1$，$70 \div 30 = 2\cdots\cdots10$。</p>
+<p><strong>易错点</strong>：竖式中不够商 1 时要写 0 占位；验算用&quot;商 × 除数 + 余数 = 被除数&quot;。</p>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：除法竖式与验算<span class="covers">覆盖点：除法竖式、试商</span></h3><div class="problem"><p>计算 $576 \div 18$，并验算。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：商不变性质的应用<span class="covers">覆盖点：商不变性质</span></h3><div class="problem"><p>① 用商不变性质计算 $8400 \div 700$；② 判断：$850 \div 60$ 的余数是 1 还是 10？</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>百分数</h2><p class="meta"><span>年级：6</span><span>难度：★</span></p><p><strong>意义</strong>：表示一个数是另一个数的百分之几的数，又叫百分比或百分率。百分数只表示<strong>关系</strong>，后面<strong>不能带单位</strong>。</p>
+<p><strong>互化</strong>：</p>
+<ul>
+<li>小数 → 百分数：小数点右移两位，加 %（$0.35 = 35%$）；</li>
+<li>百分数 → 小数：去掉 %，小数点左移两位；</li>
+<li>分数 → 百分数：先化小数（除不尽保留三位）再化百分数，$\frac{3}{4} = 0.75 = 75%$。</li>
+</ul>
+<p><strong>常见百分率</strong>：出勤率 $= \dfrac{\text{出勤人数}}{\text{总人数}} \times 100%$；发芽率、合格率、命中率同理。这些率最多 100%；增长率、利润率可以超过 100%。</p>
+<p><strong>易错点</strong>：$\frac{1}{2}$ 千克可以写成 0.5 千克，但<strong>不能</strong>写成 50% 千克；&quot;甲比乙多 25%&quot;与&quot;乙比甲少 25%&quot;不是一回事（单位&quot;1&quot;不同）。</p>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：互化<span class="covers">覆盖点：百分数与小数分数互化</span></h3><div class="problem"><p>把 0.125、$\dfrac{5}{8}$ 化成百分数；把 45%、130% 化成小数。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：常见百分率<span class="covers">覆盖点：常见百分率、百分数的意义</span></h3><div class="problem"><p>六年级有学生 200 人，今天出勤 196 人。今天的出勤率是多少？用 500 粒种子做发芽试验，485 粒发芽，发芽率是多少？</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>积与商的近似数</h2><p class="meta"><span>年级：5</span><span>难度：★★</span></p><p><strong>求积的近似数</strong>：先算出准确的积，再按要求用四舍五入保留位数。</p>
+<p><strong>求商的近似数</strong>：除到比要保留的位数<strong>多一位</strong>，再四舍五入。如保留两位小数，要除到小数点后第三位。</p>
+<p><strong>实际问题的取近似</strong>：</p>
+<ul>
+<li><strong>进一法</strong>：装东西、租车、运货，剩下的也要一件/一辆/一次，如 $20 \div 3 \approx 7$（6 个装不完）；</li>
+<li><strong>去尾法</strong>：做衣服、买东西，不够一份的舍去，如 20 米花布每 3 米做一件，只能做 6 件。</li>
+</ul>
+<p><strong>易错点</strong>：近似数末尾的 0 不能去掉，如精确到百分位得 2.40，表示精确到 0.01，写成 2.4 就错了；求近似数用&quot;$\approx$&quot;。</p>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：积与商的近似数<span class="covers">覆盖点：求积的近似数、求商的近似数</span></h3><div class="problem"><p>① $2.35 \times 0.47$（保留一位小数）；② $15.2 \div 3.3$（保留两位小数）。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：进一法与去尾法<span class="covers">覆盖点：进一法与去尾法</span></h3><div class="problem"><p>① 每辆车限坐 4 人，27 人至少需要几辆车？② 一根绳子长 25 米，每 4 米剪一段，最多能剪几段？</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>简便计算</h2><p class="meta"><span>年级：4、5</span><span>难度：★★</span></p><p>简便计算的核心思想是<strong>凑整</strong>：利用运算定律把数重新组合或拆分，凑出整十、整百、整千再算。</p>
+<p><strong>常用技巧</strong>：</p>
+<ol>
+<li><strong>多加要减</strong>：$299 + 86 = 300 + 86 - 1$（把 299 当 300 多加了 1，要减去）；</li>
+<li><strong>多减要加</strong>：$356 - 198 = 356 - 200 + 2$；</li>
+<li><strong>拆数</strong>：$125 \times 32 = 125 \times 8 \times 4$；</li>
+<li><strong>商不变</strong>：$600 \div 25 = 2400 \div 100 = 24$；</li>
+<li><strong>带符号搬家</strong>：加减同级运算中，数可以带着前面的符号交换位置：$356 + 78 - 156 = 356 - 156 + 78$。</li>
+</ol>
+<p><strong>易错点</strong>：$199 + 202$ 拆成 $200 - 1 + 200 + 2$，符号别搞错；$356 - (156 + 78)$ 去括号要变号：$356 - 156 - 78$。</p>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：加减凑整<span class="covers">覆盖点：加减凑整</span></h3><div class="problem"><p>简便计算 $587 + 198$ 和 $735 - 299$。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：乘除凑整与拆数<span class="covers">覆盖点：乘除凑整、拆数凑整</span></h3><div class="problem"><p>简便计算 $48 \times 25$ 和 $4500 \div 125$。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>近似数与四舍五入</h2><p class="meta"><span>年级：4、5</span><span>难度：★</span></p><p><strong>近似数</strong>：与实际接近、但不完全相等的数，用&quot;$\approx$&quot;连接。</p>
+<p><strong>四舍五入法</strong>：要省略的尾数的<strong>最高位</strong>上的数字是 4 或比 4 小就舍去（四舍）；是 5 或比 5 大就向前一位进 1（五入）。</p>
+<p><strong>步骤</strong>：① 找到要精确到的数位；② 看它右边第一位；③ 按四舍五入处理；④ 后面各位改写为 0（或省略后加单位）。</p>
+<p><strong>近似数的范围</strong>：一个数四舍五入到万位后是 5 万，这个数最大是 54999，最小是 45000——最大是&quot;四舍&quot;来的（下一位取 4，其余取 9），最小是&quot;五入&quot;来的（前一位减 1，下一位取 5，其余取 0）。</p>
+<p><strong>易错点</strong>：五入向万位进 1 可能引起连锁进位，如 4995000 精确到万位是 500 万。</p>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：四舍五入求近似数<span class="covers">覆盖点：四舍五入求近似数、精确到某一位</span></h3><div class="problem"><p>把 395480 四舍五入到万位；把 1295330000 四舍五入到亿位。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：求近似数对应的范围<span class="covers">覆盖点：近似数范围</span></h3><div class="problem"><p>一个整数四舍五入到万位约是 8 万，这个数最大是多少？最小是多少？</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>通分与分数大小比较</h2><p class="meta"><span>年级：5</span><span>难度：★★</span></p><p><strong>通分</strong>：把异分母分数分别化成和原来分数相等的同分母分数。公分母一般取各分母的<strong>最小公倍数</strong>。</p>
+<p><strong>比较大小</strong>：</p>
+<ol>
+<li>分母相同：分子大的分数大；</li>
+<li>分子相同：分母小的分数大；</li>
+<li>分子分母都不同：先通分再比较。</li>
+</ol>
+<p><strong>比较技巧</strong>：</p>
+<ul>
+<li>与 $\frac{1}{2}$ 比较：分子大于分母一半则大于 $\frac{1}{2}$；</li>
+<li>与 1 比较：看分子比分母少多少（差越小越接近 1）；</li>
+<li>交叉相乘：$\frac{a}{b}$ 与 $\frac{c}{d}$ 比较 $a \times d$ 与 $b \times c$ 的大小。</li>
+</ul>
+<p><strong>易错点</strong>：通分后比较的是新分子，别忘还原到原分数作答。</p>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：通分<span class="covers">覆盖点：通分</span></h3><div class="problem"><p>把 $\dfrac{5}{6}$ 和 $\dfrac{7}{9}$ 通分。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：比较大小<span class="covers">覆盖点：异分母分数比较、比较技巧</span></h3><div class="problem"><p>比较 $\dfrac{5}{6}$ 和 $\dfrac{7}{9}$；不计算，比较 $\dfrac{99}{100}$ 和 $\dfrac{199}{200}$。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="answers"><h1>答案与解析</h1>
+<div class="example"><h3>乘法运算定律 · 例1：交换律与结合律</h3><div class="analysis"><p>32 拆成 $4 \times 8$。原式 $= (25 \times 4) \times (8 \times 125) = 100 \times 1000 = 100000$。</p>
+</div><div class="answer">答案：<p>100000</p>
+</div></div>
+<div class="example"><h3>乘法运算定律 · 例2：分配律正用与逆用</h3><div class="analysis"><p>① $102 \times 45 = (100 + 2) \times 45 = 4500 + 90 = 4590$。② 逆用分配律：$(67 + 33) \times 28 = 100 \times 28 = 2800$。</p>
+</div><div class="answer">答案：<p>① 4590；② 2800</p>
+</div></div>
+<div class="example"><h3>估算 · 例1：乘除估算</h3><div class="analysis"><p>$297 \times 4 \approx 300 \times 4 = 1200$；$478 \div 6 \approx 480 \div 6 = 80$。</p>
+</div><div class="answer">答案：<p>约 1200；约 80</p>
+</div></div>
+<div class="example"><h3>估算 · 例2：估算解决实际问题</h3><div class="analysis"><p>往大估：89 &lt; 90，68 &lt; 70，$90 + 70 = 160$ 元，$160 &lt; 200$。估大了都不超过 200 元，实际一定够。</p>
+</div><div class="answer">答案：<p>够</p>
+</div></div>
+<div class="example"><h3>分数与小数的互化 · 例1：互化</h3><div class="analysis"><p>$0.45 = \frac{45}{100} = \frac{9}{20}$；$1.6 = \frac{16}{10} = \frac{8}{5}$（或 $1\frac{3}{5}$）。$\frac{7}{8} = 7 \div 8 = 0.875$；$\frac{5}{6} = 5 \div 6 = 0.833\cdots \approx 0.833$。</p>
+</div><div class="answer">答案：<p>$\frac{9}{20}$、$\frac{8}{5}$；0.875、约 0.833</p>
+</div></div>
+<div class="example"><h3>分数与小数的互化 · 例2：判断能否化成有限小数</h3><div class="analysis"><p>必须先化成最简分数再看分母。$\frac{7}{20}$：$20 = 2^2 \times 5$，能。$\frac{8}{15}$：15 含因数 3，不能。$\frac{9}{30} = \frac{3}{10}$（先约分！），10 只含 2 和 5，能。$\frac{3}{14}$：14 含因数 7，不能。</p>
+</div><div class="answer">答案：<p>$\dfrac{7}{20}$ 和 $\dfrac{9}{30}$ 能化成有限小数</p>
+</div></div>
+<div class="example"><h3>分数乘法 · 例1：分数乘法计算</h3><div class="analysis"><p>$\frac{5}{6} \times 9$：9 与 6 约分（同除以 3）得 $\frac{5 \times 3}{2} = \frac{15}{2} = 7\frac{1}{2}$。$\frac{14}{15} \times \frac{5}{7}$：14 与 7 约（÷7），5 与 15 约（÷5），得 $\frac{2}{3}$。</p>
+</div><div class="answer">答案：<p>$7\dfrac{1}{2}$；$\dfrac{2}{3}$</p>
+</div></div>
+<div class="example"><h3>分数乘法 · 例2：求一个数的几分之几</h3><div class="analysis"><p>注意第二天是&quot;余下的&quot; $\frac{1}{3}$，单位&quot;1&quot;不同。第一天看了 $120 \times \frac{1}{4} = 30$ 页，余下 $120 - 30 = 90$ 页，第二天看了 $90 \times \frac{1}{3} = 30$ 页。</p>
+</div><div class="answer">答案：<p>30 页</p>
+</div></div>
+<div class="example"><h3>分数四则混合运算 · 例1：按顺序计算</h3><div class="analysis"><p>先算括号：$\frac{1}{2} - \frac{1}{3} = \frac{1}{6}$；再算除法：$\frac{1}{6} \div \frac{1}{6} = 1$；最后加法：$1 + \frac{2}{5} = 1\frac{2}{5}$。</p>
+</div><div class="answer">答案：<p>$1\dfrac{2}{5}$</p>
+</div></div>
+<div class="example"><h3>分数四则混合运算 · 例2：简便计算</h3><div class="analysis"><p>两项都含因数 $\frac{5}{13}$，逆用分配律：$\frac{5}{13} \times \left(\frac{1}{7} + \frac{6}{7}\right) = \frac{5}{13} \times 1 = \frac{5}{13}$。</p>
+</div><div class="answer">答案：<p>$\dfrac{5}{13}$</p>
+</div></div>
+<div class="example"><h3>分数的加法和减法 · 例1：异分母加减</h3><div class="analysis"><p>$\frac{3}{4} - \frac{1}{6} = \frac{9}{12} - \frac{2}{12} = \frac{7}{12}$。$\frac{5}{8} + \frac{1}{6} = \frac{15}{24} + \frac{4}{24} = \frac{19}{24}$。</p>
+</div><div class="answer">答案：<p>$\dfrac{7}{12}$；$\dfrac{19}{24}$</p>
+</div></div>
+<div class="example"><h3>分数的加法和减法 · 例2：带分数减法与简算</h3><div class="analysis"><p>① 分数部分 $\frac{1}{4}$ 不够减 $\frac{3}{4}$，从整数 3 退 1 得 $2\frac{5}{4} - 1\frac{3}{4} = 1\frac{2}{4} = 1\frac{1}{2}$。② 同分母先结合：$\frac{5}{7} + \frac{2}{7} + \frac{5}{9} = 1 + \frac{5}{9} = 1\frac{5}{9}$。</p>
+</div><div class="answer">答案：<p>① $1\dfrac{1}{2}$；② $1\dfrac{5}{9}$</p>
+</div></div>
+<div class="example"><h3>分数的基本性质与约分 · 例1：约分</h3><div class="analysis"><p>$(36, 54) = 18$，分子分母同除以 18：$\dfrac{36 \div 18}{54 \div 18} = \dfrac{2}{3}$。</p>
+</div><div class="answer">答案：<p>$\dfrac{2}{3}$</p>
+</div></div>
+<div class="example"><h3>分数的基本性质与约分 · 例2：基本性质与互化</h3><div class="analysis"><p>① $7 \times 4 = 28$，分子也乘 4 得 12；$3 \times 5 = 15$，分母也乘 5 得 35。② $17 \div 5 = 3\cdots\cdots2$，即 $3\frac{2}{5}$；$3\frac{2}{5} = \frac{3 \times 5 + 2}{5} = \frac{17}{5}$。</p>
+</div><div class="answer">答案：<p>① 12，35；② $3\frac{2}{5}$，$\frac{17}{5}$</p>
+</div></div>
+<div class="example"><h3>分数的意义 · 例1：分数的意义与单位"1"</h3><div class="analysis"><p>单位&quot;1&quot;是全班人数。$\frac{3}{5}$ 表示把全班人数平均分成 5 份，男生占其中 3 份。</p>
+</div><div class="answer">答案：<p>单位&quot;1&quot;是全班人数；表示全班平均分成 5 份，男生占 3 份</p>
+</div></div>
+<div class="example"><h3>分数的意义 · 例2：分数与除法</h3><div class="analysis"><p>求每袋多少千克用除法：$3 \div 4 = \dfrac{3}{4}$ 千克（具体数量，带单位）。求占几分之几是把总量看作单位&quot;1&quot;：$1 \div 4 = \dfrac{1}{4}$（分率，不带单位）。</p>
+</div><div class="answer">答案：<p>每袋 $\dfrac{3}{4}$ 千克，占 $\dfrac{1}{4}$</p>
+</div></div>
+<div class="example"><h3>分数除法 · 例1：分数除法计算</h3><div class="analysis"><p>$\frac{4}{5} \div 6 = \frac{4}{5} \times \frac{1}{6} = \frac{2}{15}$。$\frac{8}{9} \div \frac{2}{3} = \frac{8}{9} \times \frac{3}{2} = \frac{4}{3} = 1\frac{1}{3}$。</p>
+</div><div class="answer">答案：<p>$\dfrac{2}{15}$；$1\dfrac{1}{3}$</p>
+</div></div>
+<div class="example"><h3>分数除法 · 例2：已知几分之几求这个数</h3><div class="analysis"><p>梨树的棵数是单位&quot;1&quot;，未知，用除法：$120 \div \frac{3}{4} = 120 \times \frac{4}{3} = 160$ 棵。验算：$160 \times \frac{3}{4} = 120$ ✓</p>
+</div><div class="answer">答案：<p>160 棵</p>
+</div></div>
+<div class="example"><h3>加法运算定律 · 例1：交换律与结合律</h3><div class="analysis"><p>138 与 62 凑 200，67 与 33 凑 100。原式 $= (138 + 62) + (67 + 33) = 200 + 100 = 300$。</p>
+</div><div class="answer">答案：<p>300</p>
+</div></div>
+<div class="example"><h3>加法运算定律 · 例2：减法性质</h3><div class="analysis"><p>178 与 122 凑 300。原式 $= 456 - (178 + 122) = 456 - 300 = 156$。</p>
+</div><div class="answer">答案：<p>156</p>
+</div></div>
+<div class="example"><h3>四则混合运算顺序 · 例1：无括号混合运算</h3><div class="analysis"><p>先算除法：$64 \div 4 = 16$；再从左往右：$36 + 16 - 20 = 52 - 20 = 32$。</p>
+</div><div class="answer">答案：<p>32</p>
+</div></div>
+<div class="example"><h3>四则混合运算顺序 · 例2：含小括号与中括号</h3><div class="analysis"><p>先算小括号：$12 + 4 = 16$；再算中括号：$16 \times 2 = 32$；最后算除法：$96 \div 32 = 3$。</p>
+</div><div class="answer">答案：<p>3</p>
+</div></div>
+<div class="example"><h3>大数的读法与写法 · 例1：读出大数</h3><div class="analysis"><p>40600000 分级为 4060┆0000，读作四千零六十万（个级全是 0，不读）。70005080 分级为 7000┆5080，万级末尾 0 不读，读作七千万五千零八十。300400500 分级为 3┆0040┆0500，读作三亿零四十万零五百。</p>
+</div><div class="answer">答案：<p>四千零六十万；七千万五千零八十；三亿零四十万零五百</p>
+</div></div>
+<div class="example"><h3>大数的读法与写法 · 例2：写出大数</h3><div class="analysis"><p>六亿零七十万三千：亿级 6，万级 0070，个级 3000，写作 600703000。八千万零九：亿级无，万级 8000，个级 0009，写作 80000009。</p>
+</div><div class="answer">答案：<p>600703000；80000009</p>
+</div></div>
+<div class="example"><h3>小数乘法 · 例1：小数乘小数</h3><div class="analysis"><p>先算 $125 \times 8 = 1000$，两个乘数共三位小数，从右数三位点小数点得 $1.000$，化简为 1。</p>
+</div><div class="answer">答案：<p>1</p>
+</div></div>
+<div class="example"><h3>小数乘法 · 例2：不计算比较大小</h3><div class="analysis"><p>乘小于 1 的数积变小：$3.6 \times 0.9 &lt; 3.6$，$0.99 \times 4.5 &lt; 4.5$；乘大于 1 的数积变大：$3.6 \times 1.2 &gt; 3.6$。</p>
+</div><div class="answer">答案：<p>&lt;；&gt;；&lt;</p>
+</div></div>
+<div class="example"><h3>小数加法和减法 · 例1：小数加减竖式</h3><div class="analysis"><p>$12.5 + 3.78$：小数点对齐，12.50 + 3.78 = 16.28。$10 - 4.36$：把 10 看作 10.00，$10.00 - 4.36 = 5.64$。</p>
+</div><div class="answer">答案：<p>16.28；5.64</p>
+</div></div>
+<div class="example"><h3>小数加法和减法 · 例2：小数加减简算</h3><div class="analysis"><p>6.4 与 3.6 凑 10，3.75 与 6.25 凑 10。原式 $= (6.4 + 3.6) + (3.75 + 6.25) = 10 + 10 = 20$。</p>
+</div><div class="answer">答案：<p>20</p>
+</div></div>
+<div class="example"><h3>小数点移动规律 · 例1：直接移动小数点</h3><div class="analysis"><p>① 乘 100 小数点右移两位，得 4.5。② 除以 1000 小数点左移三位，位数不够前面补 0，得 0.0327。</p>
+</div><div class="answer">答案：<p>① 4.5；② 0.0327</p>
+</div></div>
+<div class="example"><h3>小数点移动规律 · 例2：移动规律逆推</h3><div class="analysis"><p>右移两位再左移三位，相当于总体左移一位，即原数 ÷ 10 = 0.56，原数 $= 0.56 \times 10 = 5.6$。</p>
+</div><div class="answer">答案：<p>5.6</p>
+</div></div>
+<div class="example"><h3>小数的意义与性质 · 例1：小数的意义与组成</h3><div class="analysis"><p>3 在十分位表示 3 个 0.1，7 在百分位表示 7 个 0.01，5 在千分位表示 5 个 0.001。$0.375 = 375$ 个 0.001。</p>
+</div><div class="answer">答案：<p>3 个 0.1、7 个 0.01、5 个 0.001；375 个 0.001</p>
+</div></div>
+<div class="example"><h3>小数的意义与性质 · 例2：性质与比较</h3><div class="analysis"><p>① 去掉末尾两个 0 得 3.06。② 末尾添两个 0 得 0.900。③ 整数部分相同，十分位 8 &lt; 9，所以 0.89 &lt; 0.9。</p>
+</div><div class="answer">答案：<p>① 3.06；② 0.900；③ 0.89 &lt; 0.9</p>
+</div></div>
+<div class="example"><h3>小数除法 · 例1：小数除法计算</h3><div class="analysis"><p>$5.04 \div 6$：整数部分 5 不够除商 0，$50.4 \div 6$……直接除得 0.84。$10.5 \div 0.75$：除数右移两位变 75，被除数也右移两位变 1050，$1050 \div 75 = 14$。</p>
+</div><div class="answer">答案：<p>0.84；14</p>
+</div></div>
+<div class="example"><h3>小数除法 · 例2：商与被除数的关系</h3><div class="analysis"><p>除数 1.7 &gt; 1，商 &lt; 8.5；除数 0.5 &lt; 1，商 &gt; 8.5；除以 1 等于本身。</p>
+</div><div class="answer">答案：<p>&lt;；&gt;；=</p>
+</div></div>
+<div class="example"><h3>循环小数 · 例1：认识循环节并简写</h3><div class="analysis"><p>$10 \div 3 = 3.333\cdots = 3.\dot{3}$，循环节是 3。$58.6 \div 11 = 5.32727\cdots = 5.3\dot{2}\dot{7}$，循环节是 27（从百分位才开始循环）。</p>
+</div><div class="answer">答案：<p>$3.\dot{3}$，循环节 3；$5.3\dot{2}\dot{7}$，循环节 27</p>
+</div></div>
+<div class="example"><h3>循环小数 · 例2：循环小数比较大小</h3><div class="analysis"><p>多写几位：$1.\dot{2}1\dot{3} = 1.213213\cdots$，$1.21\dot{3} = 1.213333\cdots$，$1.\dot{2}\dot{1} = 1.212121\cdots$，$1.213$。比到万分位：$1.213333 &gt; 1.213213 &gt; 1.213 &gt; 1.212121$。</p>
+</div><div class="answer">答案：<p>$1.21\dot{3} &gt; 1.\dot{2}1\dot{3} &gt; 1.213 &gt; 1.\dot{2}\dot{1}$</p>
+</div></div>
+<div class="example"><h3>数位与计数单位 · 例1：认识数位与组成</h3><div class="analysis"><p>从右数第 6 位是十万位，&quot;6&quot;在十万位上，表示 6 个十万。这个数由 4 个百万、6 个十万、7 个千组成。</p>
+</div><div class="answer">答案：<p>&quot;6&quot;在十万位上，表示 6 个十万；由 4 个百万、6 个十万、7 个千组成</p>
+</div></div>
+<div class="example"><h3>数位与计数单位 · 例2：计数单位进率</h3><div class="analysis"><p>相邻计数单位进率是 10：10 个一万是十万；10 个一百万是一千万；一亿与一千万相邻，1 亿里有 10 个一千万。</p>
+</div><div class="answer">答案：<p>十万；一千万；10 个</p>
+</div></div>
+<div class="example"><h3>数的大小比较与改写 · 例1：比较大小</h3><div class="analysis"><p>989898 是六位数，1010102 是七位数，位数多的大，989898 &lt; 1010102。5467000 与 5460700 位数相同，前三位相同，第四位 7 &gt; 0，所以 5467000 &gt; 5460700。</p>
+</div><div class="answer">答案：<p>989898 &lt; 1010102；5467000 &gt; 5460700</p>
+</div></div>
+<div class="example"><h3>数的大小比较与改写 · 例2：改写</h3><div class="analysis"><p>780000 去掉 4 个 0 得 78 万。149600000 去掉 8 个 0 得 1.496 亿（也可去 0 后点小数点）。456300 在万位后点小数点得 45.63 万。</p>
+</div><div class="answer">答案：<p>78 万；1.496 亿；45.63 万</p>
+</div></div>
+<div class="example"><h3>整数乘法 · 例1：两位数乘三位数</h3><div class="analysis"><p>先算 $145 \times 2 = 290$；再算 $145 \times 10 = 1450$（十位上的 1 乘 145，末位与十位对齐）；相加 $290 + 1450 = 1740$。</p>
+</div><div class="answer">答案：<p>1740</p>
+</div></div>
+<div class="example"><h3>整数乘法 · 例2：末尾有 0 的乘法与积的变化</h3><div class="analysis"><p>① 先算 $25 \times 4 = 100$，两个乘数末尾共 2 个 0，再添 2 个 0，得 10000。② 两个乘数各乘 10，积乘 100，$345 \times 100 = 34500$。</p>
+</div><div class="answer">答案：<p>① 10000；② 34500</p>
+</div></div>
+<div class="example"><h3>整数加法与减法 · 例1：进位加法</h3><div class="analysis"><p>个位 $6+8=14$，写 4 进 1；十位 $7+5+1=13$，写 3 进 1；百位 $4+3+1=8$。得 834。验算：$358+476=834$ ✓</p>
+</div><div class="answer">答案：<p>834</p>
+</div></div>
+<div class="example"><h3>整数加法与减法 · 例2：连续退位减法</h3><div class="analysis"><p>个位 0 不够减 6，十位、百位都是 0，需从千位连续退位：千位退 1，百位变 10，百位退 1 十位变 10，十位退 1 个位变 10。个位 $10-6=4$，十位 $9-5=4$，百位 $9-4=5$，得 544。验算：$544+456=1000$ ✓</p>
+</div><div class="answer">答案：<p>544</p>
+</div></div>
+<div class="example"><h3>整数除法 · 例1：除法竖式与验算</h3><div class="analysis"><p>57 个十除以 18，试商 3（18 看作 20），$18 \times 3 = 54$，余 3；落下 6 得 36，$36 \div 18 = 2$。商 32。验算：$32 \times 18 = 576$ ✓</p>
+</div><div class="answer">答案：<p>32</p>
+</div></div>
+<div class="example"><h3>整数除法 · 例2：商不变性质的应用</h3><div class="analysis"><p>① 被除数除数同除以 100：$84 \div 7 = 12$。② $850 \div 60$：商不变地看 $85 \div 6 = 14\cdots\cdots1$，但被除数除数同除以 10，余数也除以了 10，所以实际余数是 $1 \times 10 = 10$。</p>
+</div><div class="answer">答案：<p>① 12；② 余数是 10</p>
+</div></div>
+<div class="example"><h3>百分数 · 例1：互化</h3><div class="analysis"><p>$0.125 = 12.5%$；$\frac{5}{8} = 0.625 = 62.5%$；$45% = 0.45$；$130% = 1.3$。</p>
+</div><div class="answer">答案：<p>12.5%；62.5%；0.45；1.3</p>
+</div></div>
+<div class="example"><h3>百分数 · 例2：常见百分率</h3><div class="analysis"><p>出勤率 $= \frac{196}{200} \times 100% = 98%$。发芽率 $= \frac{485}{500} \times 100% = 97%$。</p>
+</div><div class="answer">答案：<p>出勤率 98%；发芽率 97%</p>
+</div></div>
+<div class="example"><h3>积与商的近似数 · 例1：积与商的近似数</h3><div class="analysis"><p>① $2.35 \times 0.47 = 1.1045$，保留一位小数看百分位 0，四舍，$\approx 1.1$。② $15.2 \div 3.3 = 4.6060\cdots$，保留两位要看第三位 6，五入，$\approx 4.61$。</p>
+</div><div class="answer">答案：<p>① 1.1；② 4.61</p>
+</div></div>
+<div class="example"><h3>积与商的近似数 · 例2：进一法与去尾法</h3><div class="analysis"><p>① $27 \div 4 = 6$ 辆余 3 人，余下 3 人也要一辆车，进一法得 7 辆。② $25 \div 4 = 6$ 段余 1 米，剩下 1 米不够一段，去尾法得 6 段。</p>
+</div><div class="answer">答案：<p>① 7 辆；② 6 段</p>
+</div></div>
+<div class="example"><h3>简便计算 · 例1：加减凑整</h3><div class="analysis"><p>$587 + 198 = 587 + 200 - 2 = 785$；$735 - 299 = 735 - 300 + 1 = 436$。</p>
+</div><div class="answer">答案：<p>785；436</p>
+</div></div>
+<div class="example"><h3>简便计算 · 例2：乘除凑整与拆数</h3><div class="analysis"><p>$48 \times 25 = 12 \times (4 \times 25) = 12 \times 100 = 1200$。$4500 \div 125$：被除数除数同乘 8，$= 36000 \div 1000 = 36$。</p>
+</div><div class="answer">答案：<p>1200；36</p>
+</div></div>
+<div class="example"><h3>近似数与四舍五入 · 例1：四舍五入求近似数</h3><div class="analysis"><p>395480 的万位是 9，千位是 5，五入，万位 9 进 1 连锁进位，约为 40 万。1295330000 的亿位是 2，千万位是 9，五入，约为 13 亿。</p>
+</div><div class="answer">答案：<p>40 万；13 亿</p>
+</div></div>
+<div class="example"><h3>近似数与四舍五入 · 例2：求近似数对应的范围</h3><div class="analysis"><p>最大来自&quot;四舍&quot;：万级是 8，千位取 4，其余各位取 9，即 84999。最小来自&quot;五入&quot;：万级是 7，千位取 5，其余各位取 0，即 75000。</p>
+</div><div class="answer">答案：<p>最大 84999，最小 75000</p>
+</div></div>
+<div class="example"><h3>通分与分数大小比较 · 例1：通分</h3><div class="analysis"><p>$[6, 9] = 18$。$\dfrac{5}{6} = \dfrac{5 \times 3}{6 \times 3} = \dfrac{15}{18}$，$\dfrac{7}{9} = \dfrac{7 \times 2}{9 \times 2} = \dfrac{14}{18}$。</p>
+</div><div class="answer">答案：<p>$\dfrac{15}{18}$ 和 $\dfrac{14}{18}$</p>
+</div></div>
+<div class="example"><h3>通分与分数大小比较 · 例2：比较大小</h3><div class="analysis"><p>由例 1 通分结果，$15 &gt; 14$，所以 $\frac{5}{6} &gt; \frac{7}{9}$。第二组用&quot;与 1 的差&quot;：$1 - \frac{99}{100} = \frac{1}{100}$，$1 - \frac{199}{200} = \frac{1}{200}$，差小的大，所以 $\frac{199}{200} &gt; \frac{99}{100}$。</p>
+</div><div class="answer">答案：<p>$\dfrac{5}{6} &gt; \dfrac{7}{9}$；$\dfrac{199}{200} &gt; \dfrac{99}{100}$</p>
+</div></div>
+</section></body></html>

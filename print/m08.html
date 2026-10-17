@@ -1,0 +1,504 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>奥数-数论 · 打印版</title>
+<link rel="stylesheet" href="katex/katex.min.css">
+<script defer src="katex/katex.min.js"></script>
+<script defer src="katex/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+<style>
+body{font-family:-apple-system,"PingFang SC","Source Han Serif SC",serif;
+max-width:760px;margin:0 auto;padding:24px;line-height:1.8;color:#222}
+h1{border-bottom:2px solid #333;padding-bottom:8px}
+h2{margin-top:1.6em}h3{font-size:1.05em}
+.meta{color:#666;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.example{border:1px solid #ddd;border-radius:8px;padding:12px 16px;margin:14px 0}
+.example h3{margin:.2em 0 .6em}
+.covers{font-size:.75em;color:#888;font-weight:normal;margin-left:1em}
+.problem{background:#f7f7f9;border-radius:6px;padding:8px 12px}
+details{margin-top:.6em}summary{cursor:pointer;color:#36c}
+.answer{color:#b30;font-weight:bold}
+
+.answer-ref{color:#999;font-size:.85em}
+@page{size:A4;margin:2cm}
+@media print{
+  .kp{page-break-before:always}.kp:first-of-type{page-break-before:auto}
+  .answers{page-break-before:always}
+  body{max-width:none}
+}
+</style></head><body><h1>奥数-数论</h1>
+<p class="meta">小学数学知识库 · 打印版</p>
+<section class="kp"><h2>位值原理</h2><p class="meta"><span>年级：4、5、6</span><span>难度：★★</span></p><p><strong>位值原理</strong>：每个数字的价值取决于它所在的数位。一个多位数可以按数位展开：<br />
+$$\overline{abc} = 100a + 10b + c, \quad \overline{abcd} = 1000a + 100b + 10c + d$$<br />
+字母上加横线 $\overline{abc}$ 表示&quot;由数字 $a$、$b$、$c$ 组成的三位数&quot;，而不是 $a \times b \times c$。</p>
+<p><strong>常用展开技巧</strong>：</p>
+<ul>
+<li>两位数字对调：$\overline{ab} - \overline{ba} = 9(a - b)$，差必是 9 的倍数；</li>
+<li>三位数字对调百位与个位：$\overline{abc} - \overline{cba} = 99(a - c)$；</li>
+<li>在末尾添一个数字 $d$：$\overline{abcd} = 10 \times \overline{abc} + d$。</li>
+</ul>
+<p><strong>解题套路</strong>：把&quot;数字之间的关系&quot;通过位值展开翻译成普通方程，再结合整除特征或枚举求解。看到&quot;数字对调&quot;&quot;在某位插入数字&quot;&quot;把数字移到末位&quot;这类表述，第一反应就是位值展开。</p>
+<p><strong>易错点</strong>：$\overline{ab}$ 中 $a$ 是首位数字，不能为 0；展开后要注意未知数是 0–9 的数字这一天然限制。</p>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：数字对调<span class="covers">覆盖点：位值展开、数字对调问题</span></h3><div class="problem"><p>一个两位数，十位数字与个位数字之和是 10。如果把数字对调，得到的新数比原数大 36。求原数。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：末尾添数字<span class="covers">覆盖点：位值展开</span></h3><div class="problem"><p>一个三位数，在它的末尾添上数字 2 得到一个四位数，这个四位数比原三位数大 1082。求原三位数。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例3：位值与整除结合<span class="covers">覆盖点：位值与整除结合</span></h3><div class="problem"><p>用数字 1、2、3 各一次组成的三位数中，能被 3 整除的有几个？能被 11 整除的有几个？</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>余数问题（物不知数）</h2><p class="meta"><span>年级：5、6</span><span>难度：★★★</span></p><p><strong>问题模型</strong>（《孙子算经》&quot;物不知数&quot;）：一个数除以 3 余 2，除以 5 余 3，除以 7 余 2，求这个数。这类&quot;已知对几个除数的余数，求原数&quot;的问题，小学阶段用两种方法解决。</p>
+<p><strong>方法一：列举法</strong>。分别列出满足各条件的数（&quot;余 $r$&quot;即&quot;从 $r$ 开始每次加除数&quot;），找公共出现的最小数。适合数较小、条件少的题。</p>
+<p><strong>方法二：逐步满足法</strong>。先满足一个条件（一般从除数最大的入手，列举次数最少），在满足的数中再找满足第二个条件的，依次推进。</p>
+<p><strong>重要结论</strong>：求出一个解 $x_0$ 后，所有解为 $x_0 + k \times [m_1, m_2, \ldots]$（各除数的最小公倍数的整数倍）。题目常问&quot;最小值&quot;或&quot;几百到几百之间的值&quot;。</p>
+<p><strong>易错点</strong>：列举时从&quot;余数&quot;开始、每次加&quot;除数&quot;，不要加成余数；逐步满足时保持已满足的条件不被破坏——每次加的是已满足各除数的最小公倍数。</p>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：列举法解物不知数<span class="covers">覆盖点：列举法求解</span></h3><div class="problem"><p>一个数除以 3 余 2，除以 5 余 3，除以 7 余 2。这个数最小是多少？</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：逐步满足法<span class="covers">覆盖点：逐步满足法</span></h3><div class="problem"><p>一个数除以 5 余 1，除以 6 余 5，除以 7 余 4。求这个数最小是多少。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例3：求指定范围内的所有解<span class="covers">覆盖点：同余方程组应用、逐步满足法</span></h3><div class="problem"><p>一个数除以 4 余 3，除以 5 余 2。求 100 到 200 之间所有这样的数。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>分解质因数</h2><p class="meta"><span>年级：5、6</span><span>难度：★★</span></p><p><strong>定义</strong>：把一个合数写成若干个质数相乘的形式，叫<strong>分解质因数</strong>。算术基本定理保证：每个大于 1 的自然数分解质因数的结果是<strong>唯一</strong>的（不计顺序）。</p>
+<p><strong>方法：短除法</strong>。用最小的质数试除，商继续除，直到商是质数为止，所有除数和最后的商相乘即得。</p>
+<p><strong>标准分解式</strong>：把相同的质因数写成乘方，按质数从小到大排列：<br />
+$$N = p_1^{a_1} \times p_2^{a_2} \times \cdots \times p_k^{a_k}$$<br />
+例如 $360 = 2^3 \times 3^2 \times 5$。</p>
+<p><strong>常见应用</strong>：</p>
+<ul>
+<li>判断 $N$ 含哪些质因数、是几的倍数；</li>
+<li>求&quot;乘积末尾有几个 0&quot;——数分解式中 $\min(2\text{的指数}, 5\text{的指数})$；</li>
+<li>已知乘积反推乘数（分组问题）；</li>
+<li>是后面&quot;因数个数&quot;&quot;最大公因数&quot;等知识点的基础。</li>
+</ul>
+<p><strong>易错点</strong>：分解要<strong>彻底</strong>，直到每个因数都是质数；写成标准分解式时别忘了合并相同质因数的乘方。</p>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：短除法分解<span class="covers">覆盖点：短除法分解、标准分解式</span></h3><div class="problem"><p>把 1260 分解质因数，并写成标准分解式。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：乘积末尾 0 的个数<span class="covers">覆盖点：分解质因数应用</span></h3><div class="problem"><p>$1 \times 2 \times 3 \times \cdots \times 20$（即 20!）的乘积末尾有多少个连续的 0？</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例3：由乘积反推乘数<span class="covers">覆盖点：分解质因数应用</span></h3><div class="problem"><p>三个连续自然数的乘积是 210，求这三个数。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>同余初步</h2><p class="meta"><span>年级：5、6</span><span>难度：★★★</span></p><p><strong>定义</strong>：整数 $a$、$b$ 除以正整数 $m$ 的余数相同，就说 $a$ 与 $b$ <strong>模 $m$ 同余</strong>，记作<br />
+$$a \equiv b \pmod{m}$$<br />
+等价说法：$m \mid (a - b)$。同余把&quot;余数相同&quot;这件事变成了可以运算的等式。</p>
+<p><strong>基本性质</strong>（加减乘保持同余）：若 $a \equiv b$，$c \equiv d \pmod{m}$，则</p>
+<ul>
+<li>$a + c \equiv b + d \pmod{m}$</li>
+<li>$a - c \equiv b - d \pmod{m}$</li>
+<li>$ac \equiv bd \pmod{m}$，特别地 $a^n \equiv b^n \pmod{m}$</li>
+</ul>
+<p><strong>经典推论</strong>：一个数与它的各位数字之和模 9（或模 3）同余——这正是&quot;弃九验算法&quot;的原理：$10 \equiv 1 \pmod 9$，所以 $10^k \equiv 1$，$\overline{a_n \cdots a_1 a_0} \equiv a_n + \cdots + a_1 + a_0 \pmod 9$。</p>
+<p><strong>易错点</strong>：同余式两边<strong>不能随便除以</strong>一个数，除非这个数与模 $m$ 互质（小学阶段只要求知道不能随意约）。</p>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：同余的判断与写法<span class="covers">覆盖点：同余概念与记号</span></h3><div class="problem"><p>判断下列同余式是否成立：① $37 \equiv 22 \pmod 5$；② $100 \equiv 1 \pmod 9$；③ $50 \equiv 8 \pmod 6$。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：弃九法验算<span class="covers">覆盖点：同余基本性质、同余求余应用</span></h3><div class="problem"><p>用弃九法检验 $487 \times 236 = 114932$ 是否正确。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例3：同余求大数的余数<span class="covers">覆盖点：同余基本性质、同余求余应用</span></h3><div class="problem"><p>求 $2026^{2026}$ 除以 5 的余数。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>因数个数与因数和</h2><p class="meta"><span>年级：5、6</span><span>难度：★★★</span></p><p>若 $N$ 的标准分解式为 $N = p_1^{a_1} \times p_2^{a_2} \times \cdots \times p_k^{a_k}$，则：</p>
+<p><strong>因数个数公式</strong>：<br />
+$$d(N) = (a_1 + 1)(a_2 + 1) \cdots (a_k + 1)$$<br />
+原理：$N$ 的每个因数形如 $p_1^{b_1} \cdots p_k^{b_k}$，其中每个 $b_i$ 有 $0$ 到 $a_i$ 共 $a_i + 1$ 种取法，由乘法原理相乘。</p>
+<p><strong>因数和公式</strong>：<br />
+$$\sigma(N) = (1 + p_1 + \cdots + p_1^{a_1})(1 + p_2 + \cdots + p_2^{a_2}) \cdots (1 + p_k + \cdots + p_k^{a_k})$$<br />
+展开后每一项恰是 $N$ 的一个因数，且不重不漏。</p>
+<p><strong>重要结论</strong>：<strong>完全平方数的因数个数是奇数</strong>（所有指数 $a_i$ 为偶数，各 $a_i+1$ 为奇），非平方数的因数个数是偶数（因数成对出现）。</p>
+<p><strong>逆向应用</strong>：已知因数个数反推 $N$——先把个数分解为若干个&quot;指数+1&quot;的乘积，再选最小的质数配上相应指数，使 $N$ 最小。</p>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：直接套公式<span class="covers">覆盖点：因数个数公式、因数和公式</span></h3><div class="problem"><p>求 360 的因数个数与所有因数之和。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：平方数因数个数为奇数<span class="covers">覆盖点：因数个数公式</span></h3><div class="problem"><p>100 盏灯排成一列，开始都关着。第 1 人把每盏灯按一下，第 2 人把编号是 2 的倍数的灯各按一下，……，第 100 人把编号是 100 的倍数的灯各按一下。最后哪些灯亮着？</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例3：由因数个数反推最小自然数<span class="covers">覆盖点：公式逆向应用</span></h3><div class="problem"><p>一个自然数恰好有 6 个因数，求这样的最小自然数。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>奇数与偶数</h2><p class="meta"><span>年级：3、4、5</span><span>难度：★</span></p><p><strong>定义</strong>：能被 2 整除的整数叫<strong>偶数</strong>（个位是 0、2、4、6、8），不能被 2 整除的整数叫<strong>奇数</strong>（个位是 1、3、5、7、9）。0 是偶数。</p>
+<p><strong>运算规律</strong>（不需要背结果，记&quot;奇偶配对&quot;即可）：</p>
+<ul>
+<li>加减法：同奇偶得偶，一奇一偶得奇。即 奇±奇=偶，偶±偶=偶，奇±偶=奇。</li>
+<li>乘法：有偶则偶，全奇才奇。即 奇×奇=奇，其余三种情况都是偶。</li>
+<li>乘方：$a^n$ 与 $a$ 同奇偶（$n \geq 1$）。</li>
+</ul>
+<p><strong>奇偶分析</strong>是奥数的重要思想：很多问题不求具体数值，只判断&quot;和是奇还是偶&quot;就能得出答案，常用于判断&quot;能否做到&quot;&quot;是否存在&quot;。</p>
+<p><strong>易错点</strong>：判断差的奇偶性时，大减小与小减大结果一样；若干个数的和的奇偶性只取决于其中<strong>奇数的个数</strong>——奇数个数为奇则和为奇，反之为偶。</p>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：快速判断运算结果的奇偶性<span class="covers">覆盖点：奇偶判定、奇偶运算规律</span></h3><div class="problem"><p>不计算结果，判断 $1+2+3+\cdots+99+100$ 的和是奇数还是偶数。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：奇偶分析判断"能否做到"<span class="covers">覆盖点：奇偶分析应用</span></h3><div class="problem"><p>桌上有 7 只杯子，全部杯口朝上。每次翻转其中 2 只，能否经过若干次操作使 7 只杯子全部杯口朝下？</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例3：含乘法的奇偶判断<span class="covers">覆盖点：奇偶运算规律</span></h3><div class="problem"><p>$1\times 2 + 2\times 3 + 3\times 4 + \cdots + 99\times 100$ 的结果是奇数还是偶数？</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>完全平方数</h2><p class="meta"><span>年级：5、6</span><span>难度：★★</span></p><p><strong>定义</strong>：一个数能写成某个整数的平方，叫<strong>完全平方数</strong>，如 1、4、9、16、25……</p>
+<p><strong>核心性质</strong>：</p>
+<ol>
+<li><strong>质因数指数全为偶数</strong>：$n^2$ 的标准分解式中每个质因数的指数都是偶数；反之，指数全为偶数的数必为完全平方数。这是判定平方数的根本方法。</li>
+<li><strong>因数个数为奇数</strong>（反之亦然）。</li>
+<li><strong>个位数字</strong>只能是 0、1、4、5、6、9；个位是 2、3、7、8 的数一定不是平方数。</li>
+<li>偶数的平方是 4 的倍数，奇数的平方除以 8 余 1。</li>
+</ol>
+<p><strong>平方差公式</strong>（与平方数形影不离）：<br />
+$$a^2 - b^2 = (a + b)(a - b)$$<br />
+常用于分解、速算与构造问题。</p>
+<p><strong>常用数据</strong>：$11^2=121$ 到 $20^2=400$ 这一段的平方数要能脱口而出；$31^2=961$、$32^2=1024$、$44^2=1936$、$45^2=2025$ 也值得记住。</p>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：平方数的判定<span class="covers">覆盖点：平方数判定</span></h3><div class="problem"><p>下列各数中哪些是完全平方数：441、588、729、1000？</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：凑成平方数<span class="covers">覆盖点：平方数性质</span></h3><div class="problem"><p>一个自然数乘以 24 后是完全平方数，这个自然数最小是多少？</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例3：平方差公式应用<span class="covers">覆盖点：平方差应用</span></h3><div class="problem"><p>计算 $100^2 - 99^2 + 98^2 - 97^2 + \cdots + 2^2 - 1^2$。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>带余除法与余数性质</h2><p class="meta"><span>年级：4、5、6</span><span>难度：★★</span></p><p><strong>带余除法</strong>：任何整数 $a$ 除以正整数 $b$，都可以唯一写成<br />
+$$a = b \times q + r, \quad 0 \leq r &lt; b$$<br />
+$q$ 叫商，$r$ 叫余数。<strong>余数必须小于除数</strong>，这是检验和解题的常用条件。变形：$a - r$ 必能被 $b$ 整除。</p>
+<p><strong>余数运算性质</strong>（加、减、乘的余数 = 余数的加、减、乘再取余）：</p>
+<ul>
+<li>$(a + b) \div m$ 的余数 = $(a$ 的余数 $+ b$ 的余数$) \div m$ 的余数；</li>
+<li>$(a - b)$、$(a \times b)$ 同理；</li>
+<li>幂的余数：$a^n$ 的余数 = （$a$ 的余数）$^n$ 的余数。</li>
+</ul>
+<p><strong>周期现象</strong>：$a^1, a^2, a^3, \ldots$ 除以 $m$ 的余数必然循环，找到循环节就能求任意大幂的余数。</p>
+<p><strong>易错点</strong>：余数运算后若结果 $\geq m$ 或为负数，要再调整回 $[0, m)$ 区间；除法<strong>没有</strong>对应的余数性质。</p>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：带余除法基本关系<span class="covers">覆盖点：带余除法关系</span></h3><div class="problem"><p>两个数相除，商是 8，余数是 11，被除数、除数、商、余数的和是 543，求被除数和除数。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：余数运算性质<span class="covers">覆盖点：余数运算性质</span></h3><div class="problem"><p>求 $478 \times 296 \times 351$ 除以 9 的余数。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例3：周期余数<span class="covers">覆盖点：周期余数问题、余数运算性质</span></h3><div class="problem"><p>求 $3^{100}$ 除以 7 的余数。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>数的整除特征</h2><p class="meta"><span>年级：4、5、6</span><span>难度：★★</span></p><p>判断一个大数能否被某数整除，不必真做除法，看&quot;特征&quot;即可。整除特征按用法分四系：</p>
+<p><strong>末位系</strong>（看末几位）：</p>
+<ul>
+<li>被 2、5 整除：看<strong>末 1 位</strong>；</li>
+<li>被 4、25 整除：看<strong>末 2 位</strong>；</li>
+<li>被 8、125 整除：看<strong>末 3 位</strong>。</li>
+</ul>
+<p><strong>数字和系</strong>（看各位数字之和）：</p>
+<ul>
+<li>被 3、9 整除：各位数字之和能被 3、9 整除即可。判断大数时可反复求数字和（弃九法：边加边丢掉 9）。</li>
+</ul>
+<p><strong>交错和系</strong>：</p>
+<ul>
+<li>被 11 整除：<strong>奇数位数字之和</strong>与<strong>偶数位数字之和</strong>的差（大减小）能被 11 整除。</li>
+</ul>
+<p><strong>截断系</strong>（7、11、13 通用）：</p>
+<ul>
+<li>把数从末三位处截开，末三位组成的数与前面部分的差能被 7、11 或 13 整除即可。原理是 $7 \times 11 \times 13 = 1001$。</li>
+</ul>
+<p><strong>易错点</strong>：被 6、12、15 这类合数的整除判定要拆成互质因数分别判，如被 6 整除 ⟺ 同时被 2 和 3 整除；但不能拆成不互质的，如被 12 整除不能只看&quot;被 2 和被 6&quot;。</p>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：末位系与数字和系<span class="covers">覆盖点：末位系判定、数字和系判定</span></h3><div class="problem"><p>四位数 $\overline{7□36}$ 能被 4 整除，且能被 9 整除，求 □ 中的数字。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：交错和系（11 的判定）<span class="covers">覆盖点：交错和系判定</span></h3><div class="problem"><p>判断 123758 能否被 11 整除。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例3：截断系（7、13 的判定）<span class="covers">覆盖点：截断系判定</span></h3><div class="problem"><p>判断 39104 能否被 7 整除、能否被 13 整除。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例4：合数判定要拆互质因数<span class="covers">覆盖点：数字和系判定、末位系判定</span></h3><div class="problem"><p>五位数 $\overline{5a41b}$ 能被 15 整除，求所有可能的 $a$、$b$。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>整除的概念与性质</h2><p class="meta"><span>年级：4、5</span><span>难度：★</span></p><p><strong>定义</strong>：整数 $a$ 除以整数 $b$（$b \neq 0$），商是整数且没有余数，就说 $b$ <strong>整除</strong> $a$，记作 $b \mid a$。此时 $b$ 是 $a$ 的因数，$a$ 是 $b$ 的倍数。</p>
+<p>注意区分&quot;整除&quot;与&quot;除尽&quot;：除尽只要求商没有余数，被除数、除数、商可以是小数；整除要求三者都是整数。</p>
+<p><strong>基本性质</strong>：</p>
+<ol>
+<li><strong>传递性</strong>：若 $a \mid b$ 且 $b \mid c$，则 $a \mid c$。</li>
+<li><strong>和差性</strong>：若 $a \mid b$ 且 $a \mid c$，则 $a \mid (b+c)$ 且 $a \mid (b-c)$。推广：$a$ 整除 $b$、$c$ 的任意整数组合 $mb \pm nc$。</li>
+<li><strong>可乘性</strong>：若 $a \mid b$，则对任意整数 $k$，$a \mid kb$。</li>
+</ol>
+<p>性质 2 是奥数中最常用的工具：要判断某数能否整除一个&quot;大式子&quot;，就把它拆成几部分，分别判断。</p>
+<p><strong>易错点</strong>：$a \mid b$ 和 $a \mid c$ 推不出 $a \mid (b+c)$ 的逆命题——$a \mid (b+c)$ 时不能反推 $a$ 分别整除 $b$、$c$。</p>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：用定义判断整除<span class="covers">覆盖点：整除定义</span></h3><div class="problem"><p>判断下列各式是否正确：① $6 \mid 36$；② $7 \mid 51$；③ $0.5 \mid 3$；④ $5 \mid 0$。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：用传递性与和差性推理<span class="covers">覆盖点：整除传递性、和差整除性质</span></h3><div class="problem"><p>已知 $13 \mid 91$，$91 \mid 728$，$13$ 是否整除 $728$？$13$ 是否整除 $728 + 91$？是否整除 $728 - 52$（已知 $13 \mid 52$）？</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例3：拆分大数判断整除（性质的应用）<span class="covers">覆盖点：和差整除性质</span></h3><div class="problem"><p>不计算，判断 $4800 + 275 - 105$ 能否被 5 整除。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>最大公因数与最小公倍数</h2><p class="meta"><span>年级：5、6</span><span>难度：★★</span></p><p><strong>定义</strong>：几个数公有的因数中最大的叫<strong>最大公因数</strong>，记 $(a, b)$；公有的倍数中最小的叫<strong>最小公倍数</strong>，记 $[a, b]$。</p>
+<p><strong>求法一：分解质因数 / 短除法</strong></p>
+<ul>
+<li>最大公因数：取<strong>共有</strong>质因数的<strong>最低次幂</strong>相乘；</li>
+<li>最小公倍数：取<strong>所有</strong>质因数的<strong>最高次幂</strong>相乘。</li>
+</ul>
+<p><strong>求法二：辗转相除法</strong>（数大时的利器）<br />
+$$a = bq + r \Rightarrow (a, b) = (b, r)$$<br />
+用大数除以小数，再用小数除以余数，反复直到余数为 0，此时的除数就是最大公因数。</p>
+<p><strong>核心公式</strong>：$(a, b) \times [a, b] = a \times b$。知道其中三个可求第四个。</p>
+<p><strong>典型应用</strong>：&quot;裁成同样大的正方形求最大边长&quot;用最大公因数；&quot;再次同时发车/重逢&quot;类问题用最小公倍数。</p>
+<p><strong>易错点</strong>：三个数的最大公因数、最小公倍数不能用&quot;两数之积公式&quot;直接推广；短除法求三个数的最小公倍数时，要除到<strong>两两互质</strong>为止。</p>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：分解质因数法<span class="covers">覆盖点：求最大公因数、求最小公倍数</span></h3><div class="problem"><p>求 36 和 84 的最大公因数与最小公倍数。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：辗转相除法<span class="covers">覆盖点：辗转相除法</span></h3><div class="problem"><p>求 $(1073, 551)$。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例3：应用——裁正方形与同时发车<span class="covers">覆盖点：公因数公倍数应用</span></h3><div class="problem"><p>① 一块长 48 厘米、宽 36 厘米的长方形铁皮，要裁成若干同样大的正方形且无剩余，正方形边长最大是多少？② 甲、乙两路公交车同时从总站发车，甲每 8 分钟一班，乙每 12 分钟一班，至少再过多少分钟又同时发车？</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例4：用核心公式反推<span class="covers">覆盖点：求最大公因数、求最小公倍数</span></h3><div class="problem"><p>两个数的最大公因数是 6，最小公倍数是 180，其中一个数是 30，求另一个数。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>质数与合数</h2><p class="meta"><span>年级：5、6</span><span>难度：★★</span></p><p><strong>定义</strong>：一个大于 1 的自然数，除了 1 和它本身以外<strong>没有</strong>别的因数，叫<strong>质数</strong>（素数）；<strong>有</strong>别的因数，叫<strong>合数</strong>。</p>
+<ul>
+<li><strong>1 既不是质数也不是合数</strong>；0 不在讨论范围内。</li>
+<li><strong>2 是唯一的偶质数</strong>，也是最小的质数；最小的合数是 4。</li>
+</ul>
+<p><strong>100 以内的质数</strong>（共 25 个，要能默写）：<br />
+2、3、5、7、11、13、17、19、23、29、31、37、41、43、47、53、59、61、67、71、73、79、83、89、97。</p>
+<p><strong>试除法判定质数</strong>：要判断 $n$ 是否为质数，只需用不超过 $\sqrt{n}$ 的质数（2、3、5、7、11……）依次试除，都不能整除则 $n$ 是质数。因为若 $n = a \times b$（$a \leq b$），必有 $a \leq \sqrt{n}$。</p>
+<p><strong>易错点</strong>：① 91 = 7 × 13、57 = 3 × 19 是&quot;伪装成质数&quot;的经典合数；② 除 2、5 外，所有质数个位只能是 1、3、7、9，但个位是 1、3、7、9 的数不一定是质数。</p>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：定义判断<span class="covers">覆盖点：质数合数定义、百以内质数</span></h3><div class="problem"><p>在 1、2、9、21、37、51、91、97 中，哪些是质数？</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：试除法判定<span class="covers">覆盖点：试除法判定</span></h3><div class="problem"><p>判断 137 是不是质数。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例3：利用"唯一偶质数 2"解题<span class="covers">覆盖点：质数合数定义、百以内质数</span></h3><div class="problem"><p>已知 $p$、$q$ 都是质数，且 $p + q = 99$，求 $p \times q$。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>进位制</h2><p class="meta"><span>年级：5、6</span><span>难度：★★★</span></p><p><strong>进位制</strong>：日常生活中&quot;满十进一&quot;是<strong>十进制</strong>；计算机用&quot;满二进一&quot;的<strong>二进制</strong>；还有八进制、十六进制等。$k$ 进制只用 $0$ 到 $k-1$ 共 $k$ 个数字，记数时在右下角标注，如 $(1011)_2$。</p>
+<p><strong>$k$ 进制化十进制</strong>（按位值展开相加）：<br />
+$$(a_n a_{n-1} \cdots a_1 a_0)<em>k = a_n k^n + a</em>{n-1} k^{n-1} + \cdots + a_1 k + a_0$$</p>
+<p><strong>十进制化 $k$ 进制</strong>（<strong>除 $k$ 取余，倒序排列</strong>）：反复除以 $k$ 记录余数，直到商为 0，把余数从下往上（倒序）写出。</p>
+<p><strong>二进制的应用思想</strong>：</p>
+<ul>
+<li>二进制每位只有 0/1，天然表达&quot;选 / 不选&quot;，可用二进制表示子集、称重砝码（1、2、4、8……克的砝码可称出任意整数克）；</li>
+<li>相邻进制（2 与 8、16）可分组快速互化。</li>
+</ul>
+<p><strong>易错点</strong>：$k$ 进制中不允许出现 $\geq k$ 的数字，如 $(125)_2$ 是非法写法；十进制化 $k$ 进制时余数要<strong>倒序</strong>读。</p>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：k 进制化十进制<span class="covers">覆盖点：进制概念、进制互化</span></h3><div class="problem"><p>把 $(1011)_2$ 和 $(234)_5$ 化成十进制。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：十进制化 k 进制<span class="covers">覆盖点：进制互化</span></h3><div class="problem"><p>把 75 分别化成二进制和六进制。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例3：二进制的砝码应用<span class="covers">覆盖点：二进制应用</span></h3><div class="problem"><p>用 1 克、2 克、4 克、8 克、16 克的砝码各一个（只放天平一端），最多能称出多少种不同的整数克重量？能称出 13 克吗？</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="answers"><h1>答案与解析</h1>
+<div class="example"><h3>位值原理 · 例1：数字对调</h3><div class="analysis"><p>设原数为 $\overline{ab}$，则 $a + b = 10$。对调差：$\overline{ba} - \overline{ab} = 9(b - a) = 36$，得 $b - a = 4$。联立解得 $a = 3$，$b = 7$。</p>
+</div><div class="answer">答案：<p>37</p>
+</div></div>
+<div class="example"><h3>位值原理 · 例2：末尾添数字</h3><div class="analysis"><p>设原数为 $x$，末尾添 2 后变为 $10x + 2$。由 $10x + 2 - x = 1082$，得 $9x = 1080$，$x = 120$。验算：$1202 - 120 = 1082$ ✓</p>
+</div><div class="answer">答案：<p>120</p>
+</div></div>
+<div class="example"><h3>位值原理 · 例3：位值与整除结合</h3><div class="analysis"><p>数字和 $1+2+3=6$ 是 3 的倍数，所以 6 种排列（123、132、213、231、312、321）全部能被 3 整除。被 11 整除要求（百位 + 个位）− 十位 是 11 的倍数，数字很小只能差为 0，即十位 = 百位 + 个位，只有十位 = 3 时成立（$1+2=3$），即 132 和 231。</p>
+</div><div class="answer">答案：<p>能被 3 整除的 6 个；能被 11 整除的 2 个</p>
+</div></div>
+<div class="example"><h3>余数问题（物不知数） · 例1：列举法解物不知数</h3><div class="analysis"><p>除以 7 余 2 的数最少，先列：2、9、16、<strong>23</strong>、30……其中除以 3 余 2 的有 2、23……；再看除以 5 余 3：23 ÷ 5 = 4……3 ✓。三个条件都满足。</p>
+</div><div class="answer">答案：<p>23</p>
+</div></div>
+<div class="example"><h3>余数问题（物不知数） · 例2：逐步满足法</h3><div class="analysis"><p>从除数最大的条件入手：除以 7 余 4 的数有 4、11、18、25、32、39、46、53、60、67、74、81、88、95、102、109、116、123、130、137、144、151、158、165、172、179、186、193、200、207……<br />
+再满足&quot;除以 6 余 5&quot;（即比 6 的倍数少 1）：检查得 11？11÷6 余 5 ✓，但还要除以 5 余 1：11 ÷ 5 余 1 ✓？$11 = 5\times2+1$ ✓。验证：11÷7 余 4 ✓，11÷6 余 5 ✓，11÷5 余 1 ✓。</p>
+</div><div class="answer">答案：<p>11（注：严格从 4 起逐一检查，11 即同时满足三者）</p>
+</div></div>
+<div class="example"><h3>余数问题（物不知数） · 例3：求指定范围内的所有解</h3><div class="analysis"><p>先求最小解：除以 5 余 2 的有 2、7、12、17……其中 7 除以 4 余 3 ✓，最小解是 7。所有解：$7 + [4,5]k = 7 + 20k$。在 100–200 内：$k = 5,6,\ldots,9$，即 107、127、147、167、187。</p>
+</div><div class="answer">答案：<p>107、127、147、167、187</p>
+</div></div>
+<div class="example"><h3>分解质因数 · 例1：短除法分解</h3><div class="analysis"><p>$1260 \div 2 = 630$，$\div 2 = 315$，$\div 3 = 105$，$\div 3 = 35$，$\div 5 = 7$，7 是质数。合并相同质因数。</p>
+</div><div class="answer">答案：<p>$1260 = 2^2 \times 3^2 \times 5 \times 7$</p>
+</div></div>
+<div class="example"><h3>分解质因数 · 例2：乘积末尾 0 的个数</h3><div class="analysis"><p>末尾每个 0 来自一对 $2 \times 5$。因数 2 远多于 5，只需数 5 的个数：5、10、15、20 各含一个 5，共 4 个。所以末尾有 4 个 0。</p>
+</div><div class="answer">答案：<p>4 个</p>
+</div></div>
+<div class="example"><h3>分解质因数 · 例3：由乘积反推乘数</h3><div class="analysis"><p>$210 = 2 \times 3 \times 5 \times 7$。要把这些质因数分成三组，使三组乘积是连续自然数。试凑：$5$、$2 \times 3 = 6$、$7$，恰好是 5、6、7。</p>
+</div><div class="answer">答案：<p>5、6、7</p>
+</div></div>
+<div class="example"><h3>同余初步 · 例1：同余的判断与写法</h3><div class="analysis"><p>① $37 - 22 = 15$，$5 \mid 15$，成立。② $100 - 1 = 99$，$9 \mid 99$，成立。③ $50 - 8 = 42$，$6 \mid 42$，成立。</p>
+</div><div class="answer">答案：<p>三个都成立</p>
+</div></div>
+<div class="example"><h3>同余初步 · 例2：弃九法验算</h3><div class="analysis"><p>$487$ 数字和 $= 19 \equiv 1 \pmod 9$；$236$ 数字和 $= 11 \equiv 2 \pmod 9$。乘积应 $\equiv 1 \times 2 = 2 \pmod 9$。而 $114932$ 数字和 $= 20 \equiv 2 \pmod 9$，吻合。弃九法只能查错不能保对，但不吻合就一定错。</p>
+</div><div class="answer">答案：<p>检验通过（该乘法在模 9 意义下自洽）</p>
+</div></div>
+<div class="example"><h3>同余初步 · 例3：同余求大数的余数</h3><div class="analysis"><p>$2026 \equiv 1 \pmod 5$，由幂的同余性质 $2026^{2026} \equiv 1^{2026} = 1 \pmod 5$。</p>
+</div><div class="answer">答案：<p>1</p>
+</div></div>
+<div class="example"><h3>因数个数与因数和 · 例1：直接套公式</h3><div class="analysis"><p>$360 = 2^3 \times 3^2 \times 5$。<br />
+因数个数：$(3+1)(2+1)(1+1) = 4 \times 3 \times 2 = 24$。<br />
+因数和：$(1+2+4+8)(1+3+9)(1+5) = 15 \times 13 \times 6 = 1170$。</p>
+</div><div class="answer">答案：<p>24 个因数，因数和为 1170</p>
+</div></div>
+<div class="example"><h3>因数个数与因数和 · 例2：平方数因数个数为奇数</h3><div class="analysis"><p>第 $n$ 号灯被按的次数 = $n$ 的因数个数。因数个数为奇数时灯才会亮，而因数个数为奇数的数恰是完全平方数。</p>
+</div><div class="answer">答案：<p>编号为 1、4、9、16、25、36、49、64、81、100 的灯亮着</p>
+</div></div>
+<div class="example"><h3>因数个数与因数和 · 例3：由因数个数反推最小自然数</h3><div class="analysis"><p>$6 = 6 = 2 \times 3$，对应两种分解形态：</p>
+<ul>
+<li>$6$：形如 $p^5$，最小 $2^5 = 32$；</li>
+<li>$2 \times 3$：形如 $p^1 q^2$，最小取 $p = 3, q = 2$ 得 $3 \times 4 = 12$。</li>
+</ul>
+<p>比较得最小为 12（因数为 1、2、3、4、6、12，验证正确）。</p>
+</div><div class="answer">答案：<p>12</p>
+</div></div>
+<div class="example"><h3>奇数与偶数 · 例1：快速判断运算结果的奇偶性</h3><div class="analysis"><p>不必求和。$1$ 到 $100$ 中有 $50$ 个奇数、$50$ 个偶数。偶数不影响和的奇偶性；$50$ 个奇数相加，奇数个数为偶数，所以总和为偶数。</p>
+</div><div class="answer">答案：<p>偶数</p>
+</div></div>
+<div class="example"><h3>奇数与偶数 · 例2：奇偶分析判断"能否做到"</h3><div class="analysis"><p>一只杯子从朝上变成朝下，需要被翻转<strong>奇数</strong>次。7 只杯子全部朝下，总翻转次数应是 7 个奇数之和，即奇数。但每次操作翻转 2 只，总次数永远是 2 的倍数（偶数）。奇数 ≠ 偶数，所以不可能做到。</p>
+</div><div class="answer">答案：<p>不能</p>
+</div></div>
+<div class="example"><h3>奇数与偶数 · 例3：含乘法的奇偶判断</h3><div class="analysis"><p>每一项都是两个连续自然数的乘积 $n(n+1)$，其中必有一个偶数，&quot;有偶则偶&quot;，所以每一项都是偶数。任意个偶数相加仍是偶数。</p>
+</div><div class="answer">答案：<p>偶数</p>
+</div></div>
+<div class="example"><h3>完全平方数 · 例1：平方数的判定</h3><div class="analysis"><p>分解质因数看指数是否全为偶数。$441 = 3^2 \times 7^2$，全为偶数，是平方数（$21^2$）。$588 = 2^2 \times 3 \times 7^2$，3 的指数是 1，不是。$729 = 3^6$，指数 6 为偶数，是平方数（$27^2$）。$1000 = 2^3 \times 5^3$，指数都是 3，不是。</p>
+</div><div class="answer">答案：<p>441 和 729</p>
+</div></div>
+<div class="example"><h3>完全平方数 · 例2：凑成平方数</h3><div class="analysis"><p>$24 = 2^3 \times 3$。乘积要为平方数，各质因数指数须为偶数，至少再补一个 $2 \times 3 = 6$，使 $24 \times 6 = 144 = 12^2$。</p>
+</div><div class="answer">答案：<p>6</p>
+</div></div>
+<div class="example"><h3>完全平方数 · 例3：平方差公式应用</h3><div class="analysis"><p>每对用平方差：$n^2 - (n-1)^2 = n + (n-1)$。原式 $= 100+99+98+97+\cdots+2+1 = \dfrac{100 \times 101}{2} = 5050$。</p>
+</div><div class="answer">答案：<p>5050</p>
+</div></div>
+<div class="example"><h3>带余除法与余数性质 · 例1：带余除法基本关系</h3><div class="analysis"><p>设除数为 $b$，则被除数 $a = 8b + 11$。由题意 $a + b + 8 + 11 = 543$，即 $8b + 11 + b = 524$，$9b = 513$，$b = 57$，$a = 8 \times 57 + 11 = 467$。验算：$467 \div 57 = 8\cdots\cdots11$ ✓</p>
+</div><div class="answer">答案：<p>被除数 467，除数 57</p>
+</div></div>
+<div class="example"><h3>带余除法与余数性质 · 例2：余数运算性质</h3><div class="analysis"><p>不必算乘积。各数除以 9 的余数用数字和求：$478 \to 4+7+8=19 \to 1$；$296 \to 17 \to 8$；$351 \to 9 \to 0$。乘积的余数 = $1 \times 8 \times 0 = 0$ 的余数，即能被 9 整除。</p>
+</div><div class="answer">答案：<p>0</p>
+</div></div>
+<div class="example"><h3>带余除法与余数性质 · 例3：周期余数</h3><div class="analysis"><p>找 $3^n$ 除以 7 的余数规律：$3, 2, 6, 4, 5, 1, 3, 2, \ldots$，周期为 6。$100 = 6 \times 16 + 4$，所以 $3^{100}$ 的余数与 $3^4$ 相同，为 4。</p>
+</div><div class="answer">答案：<p>4</p>
+</div></div>
+<div class="example"><h3>数的整除特征 · 例1：末位系与数字和系</h3><div class="analysis"><p>被 4 整除看末两位 $36$，$36 = 4 \times 9$ 已满足，对 □ 无限制。被 9 整除要求数字和 $7 + □ + 3 + 6 = 16 + □$ 是 9 的倍数，□ 为数字（0–9），只有 $16 + 2 = 18$ 符合。</p>
+</div><div class="answer">答案：<p>□ = 2</p>
+</div></div>
+<div class="example"><h3>数的整除特征 · 例2：交错和系（11 的判定）</h3><div class="analysis"><p>从右往左数，奇数位（个、百、万位）：$8 + 7 + 2 = 17$；偶数位（十、千、十万位）：$5 + 3 + 1 = 9$。差 $17 - 9 = 8$，不是 11 的倍数，所以不能整除。</p>
+</div><div class="answer">答案：<p>不能被 11 整除</p>
+</div></div>
+<div class="example"><h3>数的整除特征 · 例3：截断系（7、13 的判定）</h3><div class="analysis"><p>从末三位截开：$104$ 与 $39$，差 $104 - 39 = 65$。$65 = 5 \times 13$，能被 13 整除，不能被 7 整除。所以 39104 能被 13 整除，不能被 7 整除。</p>
+</div><div class="answer">答案：<p>能被 13 整除，不能被 7 整除</p>
+</div></div>
+<div class="example"><h3>数的整除特征 · 例4：合数判定要拆互质因数</h3><div class="analysis"><p>$15 = 3 \times 5$ 且 3、5 互质。被 5 整除：$b = 0$ 或 $5$。被 3 整除：$5 + a + 4 + 1 + b = 10 + a + b$ 是 3 的倍数。</p>
+<ul>
+<li>若 $b = 0$：$10 + a$ 是 3 的倍数，$a = 2, 5, 8$；</li>
+<li>若 $b = 5$：$15 + a$ 是 3 的倍数，$a = 0, 3, 6, 9$。</li>
+</ul>
+</div><div class="answer">答案：<p>b=0 时 a=2、5、8；b=5 时 a=0、3、6、9</p>
+</div></div>
+<div class="example"><h3>整除的概念与性质 · 例1：用定义判断整除</h3><div class="analysis"><p>① $36 \div 6 = 6$，整除，正确。② $51 \div 7 = 7\cdots\cdots2$，有余数，错误。③ 整除只对整数讨论，$0.5$ 不是整数，记号本身错误。④ $0 \div 5 = 0$，商是整数，任何非零整数都整除 0，正确。</p>
+</div><div class="answer">答案：<p>①④正确，②③错误</p>
+</div></div>
+<div class="example"><h3>整除的概念与性质 · 例2：用传递性与和差性推理</h3><div class="analysis"><p>由传递性，$13 \mid 91$、$91 \mid 728$，所以 $13 \mid 728$。由和差性，$13$ 整除 $728$ 与 $91$，所以 $13 \mid (728+91)=819$。$13 \mid 728$ 且 $13 \mid 52$，所以 $13 \mid (728-52)=676$。</p>
+</div><div class="answer">答案：<p>三个都整除</p>
+</div></div>
+<div class="example"><h3>整除的概念与性质 · 例3：拆分大数判断整除（性质的应用）</h3><div class="analysis"><p>分别看每一部分：$4800 = 48 \times 100$ 含因数 5，$275$ 末位是 5 含因数 5，$105$ 也含因数 5。三部分都能被 5 整除，由和差性，整个式子能被 5 整除。</p>
+</div><div class="answer">答案：<p>能被 5 整除</p>
+</div></div>
+<div class="example"><h3>最大公因数与最小公倍数 · 例1：分解质因数法</h3><div class="analysis"><p>$36 = 2^2 \times 3^2$，$84 = 2^2 \times 3 \times 7$。<br />
+最大公因数取共有质因数最低次幂：$2^2 \times 3 = 12$。<br />
+最小公倍数取所有质因数最高次幂：$2^2 \times 3^2 \times 7 = 252$。<br />
+验证：$12 \times 252 = 3024 = 36 \times 84$ ✓</p>
+</div><div class="answer">答案：<p>$(36, 84) = 12$，$[36, 84] = 252$</p>
+</div></div>
+<div class="example"><h3>最大公因数与最小公倍数 · 例2：辗转相除法</h3><div class="analysis"><p>$1073 = 551 \times 1 + 522$；$551 = 522 \times 1 + 29$；$522 = 29 \times 18 + 0$。余数为 0，除数 29 即最大公因数。</p>
+</div><div class="answer">答案：<p>29</p>
+</div></div>
+<div class="example"><h3>最大公因数与最小公倍数 · 例3：应用——裁正方形与同时发车</h3><div class="analysis"><p>① 边长必须同时整除 48 和 36，求最大边长即 $(48, 36) = 12$ 厘米。② 再次同时发车的时间要同时是 8 和 12 的倍数，至少即 $[8, 12] = 24$ 分钟。</p>
+</div><div class="answer">答案：<p>① 12 厘米；② 24 分钟</p>
+</div></div>
+<div class="example"><h3>最大公因数与最小公倍数 · 例4：用核心公式反推</h3><div class="analysis"><p>由 $(a,b) \times [a,b] = a \times b$，另一个数 $= 6 \times 180 \div 30 = 36$。</p>
+</div><div class="answer">答案：<p>36</p>
+</div></div>
+<div class="example"><h3>质数与合数 · 例1：定义判断</h3><div class="analysis"><p>1 不是质数也不是合数。2 是质数。9 = 3×3，21 = 3×7，51 = 3×17，91 = 7×13，都是合数。37、97 在 100 以内质数表中，是质数。</p>
+</div><div class="answer">答案：<p>质数有 2、37、97</p>
+</div></div>
+<div class="example"><h3>质数与合数 · 例2：试除法判定</h3><div class="analysis"><p>$\sqrt{137} &lt; 12$，只需用 2、3、5、7、11 试除。137 是奇数；数字和 $1+3+7=11$ 不是 3 的倍数；个位不是 0、5；$137 \div 7 = 19\cdots\cdots4$；$137 \div 11 = 12\cdots\cdots5$。都不能整除，所以 137 是质数。</p>
+</div><div class="answer">答案：<p>是质数</p>
+</div></div>
+<div class="example"><h3>质数与合数 · 例3：利用"唯一偶质数 2"解题</h3><div class="analysis"><p>99 是奇数，而 奇数 = 奇 + 偶，所以 $p$、$q$ 一奇一偶。偶质数只有 2，不妨设 $p = 2$，则 $q = 97$，97 确实是质数。$p \times q = 2 \times 97 = 194$。</p>
+</div><div class="answer">答案：<p>194</p>
+</div></div>
+<div class="example"><h3>进位制 · 例1：k 进制化十进制</h3><div class="analysis"><p>$(1011)_2 = 1 \times 2^3 + 0 \times 2^2 + 1 \times 2 + 1 = 8 + 2 + 1 = 11$。<br />
+$(234)_5 = 2 \times 5^2 + 3 \times 5 + 4 = 50 + 15 + 4 = 69$。</p>
+</div><div class="answer">答案：<p>$(1011)_2 = 11$，$(234)_5 = 69$</p>
+</div></div>
+<div class="example"><h3>进位制 · 例2：十进制化 k 进制</h3><div class="analysis"><p>化二进制，反复除以 2 记余数：75 → 37 余 1 → 18 余 1 → 9 余 0 → 4 余 1 → 2 余 0 → 1 余 0 → 0 余 1，倒序读得 $(1001011)_2$。<br />
+化六进制：75 ÷ 6 = 12 余 3，12 ÷ 6 = 2 余 0，2 ÷ 6 = 0 余 2，倒序读得 $(203)_6$。</p>
+</div><div class="answer">答案：<p>$(1001011)_2$，$(203)_6$</p>
+</div></div>
+<div class="example"><h3>进位制 · 例3：二进制的砝码应用</h3><div class="analysis"><p>每个砝码&quot;放或不放&quot;恰对应二进制的一位。5 个砝码共 $2^5 - 1 = 31$ 种非空组合，可称出 1 到 31 克中的每一个整数克。$13 = 8 + 4 + 1$，即 $(1101)_2$，用 8 克、4 克、1 克即可。</p>
+</div><div class="answer">答案：<p>31 种；能，用 8 克、4 克、1 克</p>
+</div></div>
+</section></body></html>

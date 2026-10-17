@@ -1,0 +1,289 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>代数初步 · 打印版</title>
+<link rel="stylesheet" href="katex/katex.min.css">
+<script defer src="katex/katex.min.js"></script>
+<script defer src="katex/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+<style>
+body{font-family:-apple-system,"PingFang SC","Source Han Serif SC",serif;
+max-width:760px;margin:0 auto;padding:24px;line-height:1.8;color:#222}
+h1{border-bottom:2px solid #333;padding-bottom:8px}
+h2{margin-top:1.6em}h3{font-size:1.05em}
+.meta{color:#666;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.example{border:1px solid #ddd;border-radius:8px;padding:12px 16px;margin:14px 0}
+.example h3{margin:.2em 0 .6em}
+.covers{font-size:.75em;color:#888;font-weight:normal;margin-left:1em}
+.problem{background:#f7f7f9;border-radius:6px;padding:8px 12px}
+details{margin-top:.6em}summary{cursor:pointer;color:#36c}
+.answer{color:#b30;font-weight:bold}
+
+.answer-ref{color:#999;font-size:.85em}
+@page{size:A4;margin:2cm}
+@media print{
+  .kp{page-break-before:always}.kp:first-of-type{page-break-before:auto}
+  .answers{page-break-before:always}
+  body{max-width:none}
+}
+</style></head><body><h1>代数初步</h1>
+<p class="meta">小学数学知识库 · 打印版</p>
+<section class="kp"><h2>列方程解应用题</h2><p class="meta"><span>年级：5、6</span><span>难度：★★</span></p><p><strong>一般步骤</strong>：</p>
+<ol>
+<li><strong>审</strong>：读懂题意，弄清已知与所求；</li>
+<li><strong>设</strong>：设未知数 $x$（问什么设什么，或设关键的小量）；</li>
+<li><strong>找</strong>：找出题目中的<strong>等量关系</strong>——这是列方程的灵魂；</li>
+<li><strong>列</strong>：根据等量关系列出方程；</li>
+<li><strong>解</strong>：解方程；</li>
+<li><strong>验</strong>：检验结果是否符合题意；<strong>答</strong>：写出答案。</li>
+</ol>
+<p><strong>找等量关系的常见依据</strong>：总数 = 各部分之和；&quot;比……多/少&quot;翻译成加减；&quot;是……的几倍&quot;翻译成乘法；路程 = 速度 × 时间等公式。</p>
+<p><strong>算术法 vs 方程法</strong>：算术法用已知数推出未知数（逆向思维），方程法把未知数当已知数参与列式（顺向思维）。条件关系复杂、&quot;倒推&quot;困难的题（如&quot;比一个数的几倍多几&quot;），方程法往往更简单。</p>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：倍数关系问题<span class="covers">覆盖点：设未知数列方程、找等量关系</span></h3><div class="problem"><p>果园里梨树有 180 棵，比苹果树的 3 倍还多 30 棵。苹果树有多少棵？（用方程解）</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：和倍问题<span class="covers">覆盖点：找等量关系、设未知数列方程</span></h3><div class="problem"><p>一套桌椅 240 元，桌子的单价是椅子的 3 倍。桌子和椅子各多少元？（用方程解）</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>反比例</h2><p class="meta"><span>年级：6</span><span>难度：★★</span></p><p><strong>意义</strong>：两种相关联的量，一种量变化，另一种量也随着变化，如果<strong>相对应的两个数的乘积一定</strong>，这两种量叫成反比例的量。<br />
+$$x \times y = k \text{（一定）}$$</p>
+<p><strong>判断方法</strong>：① 相关联；② 变化方向相反（一个扩大另一个缩小）；③ <strong>乘积是否一定</strong>。</p>
+<p><strong>常见反比例</strong>：路程一定时，速度与时间；总价一定时，单价与数量；工作总量一定时，工作效率与时间。</p>
+<p><strong>反比例解决问题</strong>：乘积一定 → 列方程 $a_1 b_1 = a_2 b_2$ 求解。</p>
+<p><strong>对比记忆</strong>：正比例&quot;比值一定，同大同小&quot;；反比例&quot;乘积一定，一大一小&quot;。</p>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：判断反比例关系<span class="covers">覆盖点：反比例的意义、判断反比例关系</span></h3><div class="problem"><p>判断：① 长方形的面积一定，它的长和宽；② 一本书的总页数一定，已看的页数与未看的页数。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：反比例解决问题<span class="covers">覆盖点：反比例解决问题</span></h3><div class="problem"><p>一批零件，原计划每天生产 120 个，15 天完成。实际每天生产 150 个，多少天完成？（用比例解）</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>正比例</h2><p class="meta"><span>年级：6</span><span>难度：★★</span></p><p><strong>意义</strong>：两种相关联的量，一种量变化，另一种量也随着变化，如果<strong>相对应的两个数的比值（商）一定</strong>，这两种量叫成正比例的量，关系叫正比例关系。<br />
+$$\frac{y}{x} = k \text{（一定）}$$</p>
+<p><strong>判断方法</strong>（三步）：① 两种量是否相关联；② 变化方向是否一致（一个扩大另一个也扩大）；③ <strong>比值是否一定</strong>——这是关键。</p>
+<p><strong>常见正比例</strong>：速度一定时，路程与时间；单价一定时，总价与数量；工作效率一定时，工作总量与时间。</p>
+<p><strong>正比例解决问题</strong>：比值一定 → 列比例 $\frac{a_1}{b_1} = \frac{a_2}{b_2}$ 求解。</p>
+<p><strong>易错点</strong>：圆的面积与半径<strong>不成</strong>正比例（$\frac{S}{r} = \pi r$，比值随 $r$ 变化）；正方形的周长与边长成正比例（比值恒为 4）。</p>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：判断正比例关系<span class="covers">覆盖点：正比例的意义、判断正比例关系</span></h3><div class="problem"><p>判断下列各题中两种量是否成正比例：① 订阅《小学生报》的份数与总价；② 小明的年龄与身高；③ 圆的周长与直径。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：正比例解决问题<span class="covers">覆盖点：正比例解决问题</span></h3><div class="problem"><p>一辆汽车 2 小时行驶 150 千米。照这样的速度，行驶 375 千米需要几小时？（用比例解）</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>比例尺</h2><p class="meta"><span>年级：6</span><span>难度：★★</span></p><p><strong>意义</strong>：一幅图的<strong>图上距离与实际距离的比</strong>，叫这幅图的比例尺。<br />
+$$\text{比例尺} = \frac{\text{图上距离}}{\text{实际距离}}$$</p>
+<p><strong>两种形式</strong>：数值比例尺（如 1:1000000，表示图上 1 厘米相当于实际 1000000 厘米 = 10 千米）；线段比例尺（图上标一段代表实际多少）。</p>
+<p><strong>三个量的关系</strong>：图上距离 = 实际距离 × 比例尺；实际距离 = 图上距离 ÷ 比例尺。</p>
+<p><strong>操作要点</strong>：计算前<strong>统一单位</strong>（一般把实际距离化成厘米）；求图上距离时用乘法，求实际距离时用除法，也可统一列比例。</p>
+<p><strong>易错点</strong>：比例尺 1:500 是一个比，<strong>不带单位</strong>；&quot;比例尺 50:1&quot;是放大比例尺（精密零件图），图上 50 厘米对应实际 1 厘米。</p>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：求比例尺与实际距离<span class="covers">覆盖点：比例尺的意义、求图上或实际距离</span></h3><div class="problem"><p>① 甲乙两地实际相距 120 千米，地图上量得 3 厘米，这幅地图的比例尺是多少？② 在比例尺 1:6000000 的地图上，量得两地相距 5 厘米，实际相距多少千米？</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：求图上距离<span class="covers">覆盖点：求图上或实际距离、比例尺计算</span></h3><div class="problem"><p>一个长方形操场长 100 米、宽 60 米，画在比例尺 1:2000 的图纸上，长和宽各应画多少厘米？</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>比例的意义与基本性质</h2><p class="meta"><span>年级：6</span><span>难度：★★</span></p><p><strong>比例</strong>：表示两个比<strong>相等</strong>的式子，如 $2 : 3 = 4 : 6$。两端的两项叫<strong>外项</strong>，中间的两项叫<strong>内项</strong>。</p>
+<p><strong>比例的基本性质</strong>：在比例里，<strong>两个外项的积等于两个内项的积</strong>。<br />
+$$a : b = c : d \Rightarrow ad = bc$$<br />
+这又叫&quot;交叉相乘相等&quot;，是解比例和判断比例的钥匙。</p>
+<p><strong>判断两个比能否组成比例</strong>：方法一，分别求比值看是否相等；方法二，假设组成比例，看交叉相乘是否相等。</p>
+<p><strong>易错点</strong>：比例是&quot;两个比相等&quot;的<strong>式子</strong>，单独一个比不是比例；写比例时注意顺序，$2:3 = 4:6$ 成立，$2:3 = 6:4$ 不成立。</p>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：判断能否组成比例<span class="covers">覆盖点：比例的意义、判断能否组成比例</span></h3><div class="problem"><p>下面哪组的两个比能组成比例？① 6:9 和 9:12；② $\dfrac{1}{2} : \dfrac{1}{3}$ 和 6:4。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：用基本性质写比例<span class="covers">覆盖点：比例的基本性质</span></h3><div class="problem"><p>已知 $3 \times 8 = 4 \times 6$，请写出一个比例，并说明外项和内项。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>比的基本性质与化简</h2><p class="meta"><span>年级：6</span><span>难度：★</span></p><p><strong>比的基本性质</strong>：比的前项和后项<strong>同时乘或除以相同的数（0 除外）</strong>，比值不变。</p>
+<p><strong>化简比</strong>：把比化成<strong>前项后项互质</strong>的最简单的整数比。</p>
+<ul>
+<li>整数比：同除以最大公因数，如 $24 : 36 = 2 : 3$；</li>
+<li>小数比：先同乘 10、100 化成整数比，再约分；</li>
+<li>分数比：先同乘分母的最小公倍数化成整数比，再约分；</li>
+<li>带单位的比：先统一单位再化简。</li>
+</ul>
+<p><strong>化简比 vs 求比值</strong>：化简比的结果仍是<strong>一个比</strong>（如 2:3），求比值的结果是<strong>一个数</strong>（如 $\frac{2}{3}$）。这是最易混淆的两件事。</p>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：化简整数比与小数比<span class="covers">覆盖点：化简整数比、化简小数分数比</span></h3><div class="problem"><p>化简：$48 : 64$；$0.75 : 2$；1.2 米 : 80 厘米。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：化简分数比并区分比值<span class="covers">覆盖点：化简小数分数比、比的基本性质</span></h3><div class="problem"><p>把 $\dfrac{5}{6} : \dfrac{7}{9}$ 化成最简整数比，并求比值。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>比的意义</h2><p class="meta"><span>年级：6</span><span>难度：★</span></p><p><strong>意义</strong>：两个数相除又叫两个数的<strong>比</strong>。&quot;$a$ 比 $b$&quot;写作 $a : b$，$a$ 叫前项，$b$ 叫后项（后项不能为 0）。</p>
+<p><strong>比值</strong>：前项 ÷ 后项所得的商，可以是整数、小数或分数，如 $3 : 4 = \frac{3}{4}$。</p>
+<p><strong>比、除法、分数的关系</strong>：</p>
+<p>| 比 | 前项 | :（比号） | 后项 | 比值 |<br />
+|---|---|---|---|---|<br />
+| 除法 | 被除数 | ÷ | 除数 | 商 |<br />
+| 分数 | 分子 | 分数线 | 分母 | 分数值 |</p>
+<p><strong>比与比值的区别</strong>：$a : b$ 表示一种关系，比值是一个数。&quot;3:4&quot;读作三比四。</p>
+<p><strong>易错点</strong>：体育比赛中的&quot;3:0&quot;不是数学上的比（后项不能为 0，它只记录比分）；带单位的同类量求比要先统一单位。</p>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：求比值<span class="covers">覆盖点：求比值、比的意义与读写</span></h3><div class="problem"><p>求下列各比的比值：$4 : 5$；$1.2 : 0.4$；$\dfrac{3}{4} : \dfrac{5}{8}$。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：比与除法、分数互化<span class="covers">覆盖点：比与除法分数的关系</span></h3><div class="problem"><p>填空：$6 : (\quad) = \dfrac{3}{8} = 9 \div (\quad) = (\quad) : 40$。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>用字母表示数</h2><p class="meta"><span>年级：5</span><span>难度：★</span></p><p><strong>意义</strong>：用字母可以表示任意的数、运算定律（$a+b=b+a$）、公式（$S = ah$）和数量关系，让表达更简洁、更一般。</p>
+<p><strong>省略写法</strong>：字母与数、字母与字母相乘，乘号可记作&quot;·&quot;或省略不写，<strong>数写在字母前面</strong>：$a \times 3 = 3a$，$a \times b = ab$。$a \times a = a^2$（读作 a 的平方），注意 $2a = a + a$ 与 $a^2 = a \times a$ 完全不同。</p>
+<p><strong>代数式求值</strong>：把字母换成指定的数，按运算顺序算出结果。求值时要把省略的乘号补回来。</p>
+<p><strong>易错点</strong>：$a^2$ 不一定大于 $2a$（如 $a = 1$ 时 $a^2 &lt; 2a$）；字母后面带单位时，式子要加括号，如&quot;$(3a + 2)$ 元&quot;。</p>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：用字母表示数量关系<span class="covers">覆盖点：字母表示数与省略写法、字母表示数量关系</span></h3><div class="problem"><p>苹果每千克 $a$ 元，香蕉每千克 $b$ 元。买 3 千克苹果和 2 千克香蕉共花多少元？$a - b$ 表示什么？</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：代数式求值<span class="covers">覆盖点：代数式求值</span></h3><div class="problem"><p>当 $a = 4$，$b = 2.5$ 时，求 $3a + 2b$ 和 $a^2 - ab$ 的值。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>等式的性质</h2><p class="meta"><span>年级：5</span><span>难度：★</span></p><p><strong>等式</strong>：用等号连接、左右两边相等的式子，如 $20 + 30 = 50$、$x + 3 = 9$。等式就像一架平衡的天平。</p>
+<p><strong>性质 1</strong>：等式两边<strong>同时加上或减去</strong>同一个数，等式仍然成立。<br />
+$$a = b \Rightarrow a + c = b + c$$</p>
+<p><strong>性质 2</strong>：等式两边<strong>同时乘</strong>同一个数，或同时<strong>除以</strong>同一个<strong>不为 0</strong> 的数，等式仍然成立。<br />
+$$a = b \Rightarrow ac = bc; \quad a = b \Rightarrow a \div c = b \div c \ (c \neq 0)$$</p>
+<p>等式的性质是<strong>解方程的依据</strong>：解方程的每一步&quot;两边同时……&quot;都是在用这两条性质。</p>
+<p><strong>易错点</strong>：除以的数不能为 0；&quot;同时&quot;意味着两边必须做完全相同的操作，只动一边就破坏了平衡。</p>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：用等式性质填空<span class="covers">覆盖点：等式性质1、等式性质2</span></h3><div class="problem"><p>如果 $x + 5 = 12$，根据等式性质填空：$x + 5 - 5 = 12 - (\quad)$；如果 $3x = 18$，则 $3x \div 3 = 18 \div (\quad)$。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：判断变形是否正确<span class="covers">覆盖点：等式性质1、等式性质2</span></h3><div class="problem"><p>已知 $a = b$。判断：① $a + 3 = b + 3$；② $a - c = b - c$；③ $2a = 2b$；④ $a \div c = b \div c$。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>解比例</h2><p class="meta"><span>年级：6</span><span>难度：★★</span></p><p><strong>解比例</strong>：根据比例的基本性质（外项积 = 内项积），先把比例转化成方程，再求解。</p>
+<p>步骤：$a : b = c : x \Rightarrow ax = bc \Rightarrow x = \dfrac{bc}{a}$</p>
+<p><strong>分数形式的比例</strong>同样用交叉相乘：$\dfrac{a}{b} = \dfrac{c}{x} \Rightarrow ax = bc$。</p>
+<p><strong>检验</strong>：把求得的值代入原比例，看两个比的比值是否相等（或交叉相乘是否相等）。</p>
+<p><strong>应用</strong>：解比例广泛用于按比例分配、比例尺、图形的放大缩小等问题。</p>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：解比例<span class="covers">覆盖点：解比例、含分数小数的比例</span></h3><div class="problem"><p>解比例：$x : 12 = 5 : 4$；$\dfrac{1.5}{2.5} = \dfrac{6}{x}$。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：解比例的应用<span class="covers">覆盖点：解比例应用</span></h3><div class="problem"><p>配制一种消毒液，药粉与水的质量比是 1:100。现有药粉 25 克，需要加水多少克？</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="kp"><h2>认识方程与解方程</h2><p class="meta"><span>年级：5</span><span>难度：★★</span></p><p><strong>方程</strong>：含有<strong>未知数</strong>的<strong>等式</strong>，如 $x + 3 = 9$。两个条件缺一不可：$3 + 5 = 8$ 不是方程（无未知数），$x + 3$ 也不是方程（不是等式）。</p>
+<p><strong>方程的解</strong>：使方程左右两边相等的未知数的值；求方程的解的过程叫<strong>解方程</strong>。</p>
+<p><strong>解方程的依据</strong>：等式性质。常见类型：</p>
+<ul>
+<li>$x + a = b \Rightarrow x = b - a$</li>
+<li>$x - a = b \Rightarrow x = b + a$</li>
+<li>$ax = b \Rightarrow x = b \div a$</li>
+<li>$x \div a = b \Rightarrow x = b \times a$</li>
+<li>两步型 $ax + b = c$：先两边减 $b$，再两边除以 $a$。</li>
+</ul>
+<p><strong>检验</strong>：把解代入原方程，看左右两边是否相等——这是必须养成的习惯。</p>
+<p><strong>易错点</strong>：$3x = 0$ 的解是 $x = 0$，不是&quot;无解&quot;；解 $x \div 5 = 20$ 两边同乘 5，不是除以 5。</p>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：解一步方程<span class="covers">覆盖点：解一步方程</span></h3><div class="problem"><p>解方程并检验：$x - 4.5 = 7.8$；$1.2x = 9.6$。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：解两步方程<span class="covers">覆盖点：解两步方程与检验</span></h3><div class="problem"><p>解方程：$3x + 6 = 27$；$5x - 12 = 48$。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
+<section class="answers"><h1>答案与解析</h1>
+<div class="example"><h3>列方程解应用题 · 例1：倍数关系问题</h3><div class="analysis"><p>设苹果树有 $x$ 棵。等量关系：苹果树的 3 倍 + 30 = 梨树棵数。列方程 $3x + 30 = 180$，解得 $3x = 150$，$x = 50$。检验：$50 \times 3 + 30 = 180$ ✓</p>
+</div><div class="answer">答案：<p>苹果树有 50 棵</p>
+</div></div>
+<div class="example"><h3>列方程解应用题 · 例2：和倍问题</h3><div class="analysis"><p>设椅子 $x$ 元，则桌子 $3x$ 元。等量关系：桌子价 + 椅子价 = 总价。$x + 3x = 240$，$4x = 240$，$x = 60$。桌子 $3 \times 60 = 180$ 元。</p>
+</div><div class="answer">答案：<p>椅子 60 元，桌子 180 元</p>
+</div></div>
+<div class="example"><h3>反比例 · 例1：判断反比例关系</h3><div class="analysis"><p>① 长 × 宽 = 面积（一定），成反比例。② 已看 + 未看 = 总页数，是<strong>和</strong>一定不是积一定，不成反比例。</p>
+</div><div class="answer">答案：<p>①成反比例；②不成</p>
+</div></div>
+<div class="example"><h3>反比例 · 例2：反比例解决问题</h3><div class="analysis"><p>总量一定，每天产量与天数成反比例。设 $x$ 天完成：$150x = 120 \times 15 = 1800$，$x = 12$。</p>
+</div><div class="answer">答案：<p>12 天</p>
+</div></div>
+<div class="example"><h3>正比例 · 例1：判断正比例关系</h3><div class="analysis"><p>① 总价 ÷ 份数 = 单价（一定），成正比例。② 年龄与身高的比值不固定，不成正比例。③ 周长 ÷ 直径 = $\pi$（一定），成正比例。</p>
+</div><div class="answer">答案：<p>①成正比例；②不成；③成正比例</p>
+</div></div>
+<div class="example"><h3>正比例 · 例2：正比例解决问题</h3><div class="analysis"><p>速度一定，路程与时间成正比例。设需要 $x$ 小时：$\dfrac{150}{2} = \dfrac{375}{x}$，$150x = 750$，$x = 5$。</p>
+</div><div class="answer">答案：<p>5 小时</p>
+</div></div>
+<div class="example"><h3>比例尺 · 例1：求比例尺与实际距离</h3><div class="analysis"><p>① 120 千米 = 12000000 厘米，比例尺 $= 3 : 12000000 = 1 : 4000000$。② 实际距离 $= 5 \times 6000000 = 30000000$ 厘米 $= 300$ 千米。</p>
+</div><div class="answer">答案：<p>① 1:4000000；② 300 千米</p>
+</div></div>
+<div class="example"><h3>比例尺 · 例2：求图上距离</h3><div class="analysis"><p>100 米 = 10000 厘米，$10000 \times \frac{1}{2000} = 5$ 厘米；60 米 = 6000 厘米，$6000 \times \frac{1}{2000} = 3$ 厘米。</p>
+</div><div class="answer">答案：<p>长画 5 厘米，宽画 3 厘米</p>
+</div></div>
+<div class="example"><h3>比例的意义与基本性质 · 例1：判断能否组成比例</h3><div class="analysis"><p>① $6:9 = \frac{2}{3}$，$9:12 = \frac{3}{4}$，比值不等，不能。② $\frac{1}{2}:\frac{1}{3} = \frac{3}{2}$，$6:4 = \frac{3}{2}$，比值相等，能组成比例 $\frac{1}{2}:\frac{1}{3} = 6:4$。用交叉相乘验证：$\frac{1}{2} \times 4 = 2 = \frac{1}{3} \times 6$ ✓</p>
+</div><div class="answer">答案：<p>① 不能；② 能</p>
+</div></div>
+<div class="example"><h3>比例的意义与基本性质 · 例2：用基本性质写比例</h3><div class="analysis"><p>把 3 和 8 作外项，4 和 6 作内项，可写 $3 : 4 = 6 : 8$（交叉相乘：$3 \times 8 = 4 \times 6$ ✓）。外项是 3 和 8，内项是 4 和 6。（答案不唯一，还可写 3:6=4:8 等共 8 种）</p>
+</div><div class="answer">答案：<p>如 $3 : 4 = 6 : 8$，外项 3、8，内项 4、6</p>
+</div></div>
+<div class="example"><h3>比的基本性质与化简 · 例1：化简整数比与小数比</h3><div class="analysis"><p>$48 : 64 = (48 \div 16) : (64 \div 16) = 3 : 4$。$0.75 : 2 = 75 : 200 = 3 : 8$。统一单位：120 厘米 : 80 厘米 $= 3 : 2$。</p>
+</div><div class="answer">答案：<p>3:4；3:8；3:2</p>
+</div></div>
+<div class="example"><h3>比的基本性质与化简 · 例2：化简分数比并区分比值</h3><div class="analysis"><p>同乘分母最小公倍数 18：$\frac{5}{6} \times 18 : \frac{7}{9} \times 18 = 15 : 14$。比值 $= 15 \div 14 = \frac{15}{14}$。</p>
+</div><div class="answer">答案：<p>最简比 15:14，比值 $\dfrac{15}{14}$</p>
+</div></div>
+<div class="example"><h3>比的意义 · 例1：求比值</h3><div class="analysis"><p>比值 = 前项 ÷ 后项。$4 : 5 = 0.8$；$1.2 : 0.4 = 3$；$\frac{3}{4} : \frac{5}{8} = \frac{3}{4} \times \frac{8}{5} = \frac{6}{5}$。</p>
+</div><div class="answer">答案：<p>0.8；3；$\dfrac{6}{5}$</p>
+</div></div>
+<div class="example"><h3>比的意义 · 例2：比与除法、分数互化</h3><div class="analysis"><p>$\frac{3}{8} = 3 : 8$，前项 3 变 6 乘 2，后项也乘 2 得 16；$\frac{3}{8} = 3 \div 8$，被除数 3 变 9 乘 3，除数变 24；后项 8 变 40 乘 5，前项变 15。</p>
+</div><div class="answer">答案：<p>16；24；15</p>
+</div></div>
+<div class="example"><h3>用字母表示数 · 例1：用字母表示数量关系</h3><div class="analysis"><p>总价 = 苹果价 × 3 + 香蕉价 × 2 = $(3a + 2b)$ 元。$a - b$ 表示每千克苹果比每千克香蕉贵的钱数。</p>
+</div><div class="answer">答案：<p>$(3a + 2b)$ 元；每千克苹果比香蕉贵多少元</p>
+</div></div>
+<div class="example"><h3>用字母表示数 · 例2：代数式求值</h3><div class="analysis"><p>$3a + 2b = 3 \times 4 + 2 \times 2.5 = 12 + 5 = 17$。$a^2 - ab = 4 \times 4 - 4 \times 2.5 = 16 - 10 = 6$。</p>
+</div><div class="answer">答案：<p>17；6</p>
+</div></div>
+<div class="example"><h3>等式的性质 · 例1：用等式性质填空</h3><div class="analysis"><p>左边减了 5，右边也要减 5；左边除以 3，右边也要除以 3。</p>
+</div><div class="answer">答案：<p>5；3</p>
+</div></div>
+<div class="example"><h3>等式的性质 · 例2：判断变形是否正确</h3><div class="analysis"><p>①②③分别用了性质 1 和性质 2，正确。④ 当 $c = 0$ 时不成立，题目没说明 $c \neq 0$，错误。</p>
+</div><div class="answer">答案：<p>①②③正确；④错误（未排除 c = 0）</p>
+</div></div>
+<div class="example"><h3>解比例 · 例1：解比例</h3><div class="analysis"><p>① $4x = 12 \times 5 = 60$，$x = 15$。② 交叉相乘：$1.5x = 2.5 \times 6 = 15$，$x = 10$。</p>
+</div><div class="answer">答案：<p>$x = 15$；$x = 10$</p>
+</div></div>
+<div class="example"><h3>解比例 · 例2：解比例的应用</h3><div class="analysis"><p>设需加水 $x$ 克。$1 : 100 = 25 : x$，即 $x = 100 \times 25 = 2500$ 克。</p>
+</div><div class="answer">答案：<p>2500 克</p>
+</div></div>
+<div class="example"><h3>认识方程与解方程 · 例1：解一步方程</h3><div class="analysis"><p>$x - 4.5 = 7.8$，两边同加 4.5，$x = 12.3$。检验：$12.3 - 4.5 = 7.8$ ✓。$1.2x = 9.6$，两边同除以 1.2，$x = 8$。检验：$1.2 \times 8 = 9.6$ ✓。</p>
+</div><div class="answer">答案：<p>$x = 12.3$；$x = 8$</p>
+</div></div>
+<div class="example"><h3>认识方程与解方程 · 例2：解两步方程</h3><div class="analysis"><p>$3x + 6 = 27$：两边同减 6 得 $3x = 21$，再同除以 3 得 $x = 7$。$5x - 12 = 48$：两边同加 12 得 $5x = 60$，$x = 12$。</p>
+</div><div class="answer">答案：<p>$x = 7$；$x = 12$</p>
+</div></div>
+</section></body></html>
