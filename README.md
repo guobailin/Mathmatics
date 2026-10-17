@@ -37,3 +37,17 @@ python3 tools/build.py
 `content/curriculum.yaml` 维护「年级 → 领域 → 知识点」大纲；大纲中 `content: null` 表示已列入地图、内容待补充。构建会校验每个知识点都已挂入大纲。
 
 规则详见 `content/README.md`。
+
+## 部署（GitHub Pages）
+
+网页版与打印页已部署，改内容后一键更新：
+
+```bash
+bash tools/deploy_gh_pages.sh               # 构建 + 部署（约 1 分钟生效）
+bash tools/deploy_gh_pages.sh --skip-build  # dist/ 已是最新时只部署
+```
+
+- 网页版（知识地图）：https://guobailin.github.io/Mathmatics/
+- 打印页：https://guobailin.github.io/Mathmatics/print/m01.html（m01–m06、m08 共 7 个模块）
+- 公式库 KaTeX 已本地化到 `assets/katex/`（构建时自动拷入 `dist/web` 与 `dist/print`），三端均不依赖外网 CDN
+- 脚本会自动选择带 `pyyaml` + `markdown-it-py` 的 Python；也可 `PYTHON=/path/to/python3 bash tools/deploy_gh_pages.sh` 指定解释器
