@@ -18,6 +18,7 @@ python3 ../tools/build.py
 4. 例题数量默认 2–4 道，按难度阶梯排列；能一题覆盖多个子技能就不拆成两题。
 5. 图片放 `assets/`，用 `![说明](/assets/xxx.svg)` 引用，优先 SVG。
 6. 公式用 LaTeX：行内 `$...$`，独立行 `$$...$$`。
+7. 新增知识点必须挂入 `curriculum.yaml` 的对应年级/领域（`content:` 填知识点 id）；`content: null` 表示大纲已列入、内容待补充。`tools/build.py` 会校验每个知识点都已挂入大纲。
 
 ## 模块清单
 

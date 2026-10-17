@@ -16,16 +16,23 @@
 """
 import argparse
 import json
+import os
 import re
+import shutil
 import sys
 from pathlib import Path
 
 import yaml
 from markdown_it import MarkdownIt
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from web_index import WEB_INDEX_BODY, WEB_INDEX_CSS  # noqa: E402
+
 ROOT = Path(__file__).resolve().parent.parent
 CONTENT_DIR = ROOT / "content"
 DIST_DIR = ROOT / "dist"
+CURRICULUM_FILE = CONTENT_DIR / "curriculum.yaml"
+KATEX_SRC = ROOT / "assets" / "katex"  # 本地化 KaTeX 运行时（含字体），构建时拷入各输出目录
 
 REQUIRED_FIELDS = ["id", "title", "module", "grade", "tags", "difficulty", "skills", "related"]
 EXAMPLE_RE = re.compile(r"^###\s*例\d+[^\n]*$", re.M)
@@ -146,7 +153,85 @@ def load_knowledge_points():
     return kps, errors, warnings
 
 
+def load_curriculum(kps):
+    """加载 content/curriculum.yaml，校验每个知识点都挂入年级/模块。"""
+    errors = []
+    if not CURRICULUM_FILE.exists():
+        return None, [f"{CURRICULUM_FILE.relative_to(ROOT)}: 缺少课程大纲文件"]
+    try:
+        raw = yaml.safe_load(CURRICULUM_FILE.read_text(encoding="utf-8")) or {}
+    except yaml.YAMLError as e:
+        return None, [f"{CURRICULUM_FILE.relative_to(ROOT)}: YAML 解析失败：{e}"]
+    boards = raw.get("boards")
+    if not isinstance(boards, list) or not boards:
+        return None, [f"{CURRICULUM_FILE.relative_to(ROOT)}: boards 为空或格式错误"]
+
+    content = {k["id"]: k for k in kps}
+    seen = {}
+    keys = set()
+    out = []
+    for bi, board in enumerate(boards, 1):
+        key = board.get("key")
+        if not key:
+            errors.append(f"curriculum: 第 {bi} 个板块缺少 key")
+            continue
+        if key in keys:
+            errors.append(f"curriculum: board key '{key}' 重复")
+        keys.add(key)
+        label = board.get("label") or key
+        domains = board.get("domains")
+        if not isinstance(domains, list) or not domains:
+            errors.append(f"curriculum: {label} 缺少 domains")
+            continue
+        domains_out = []
+        bc = bo = 0
+        for domain in domains:
+            dname = (domain.get("name") or "").strip()
+            if not dname:
+                errors.append(f"curriculum: {label} 下存在空领域名")
+                continue
+            topics_out = []
+            for topic in domain.get("topics") or []:
+                cid = topic.get("content")
+                title = (topic.get("title") or "").strip()
+                if cid:
+                    if cid not in content:
+                        errors.append(f"curriculum: {label}/{dname}: content '{cid}' 不存在")
+                        continue
+                    if cid in seen:
+                        errors.append(
+                            f"curriculum: content '{cid}' 重复挂载（{seen[cid]} 与 {label}/{dname}）")
+                    seen[cid] = f"{label}/{dname}"
+                    title = content[cid]["title"]
+                if not title:
+                    errors.append(f"curriculum: {label}/{dname}: 存在空标题")
+                    continue
+                topics_out.append({"title": title, "content": cid, "term": topic.get("term")})
+                bc += 1
+                bo += 1 if cid else 0
+            if topics_out:
+                domains_out.append({"name": dname, "topics": topics_out})
+        out.append({
+            "key": key, "label": label,
+            "short": board.get("short") or label[:1],
+            "kind": board.get("kind") or "grade",
+            "color": board.get("color") or "#2F6F6B",
+            "intro": board.get("intro") or "",
+            "count": bc, "online": bo, "domains": domains_out,
+        })
+
+    for kid, kp in content.items():
+        if kid not in seen:
+            errors.append(f"curriculum: 知识点 '{kid}'（{kp['title']}）未挂入任何年级/模块")
+    return out, errors
+
+
 # ---------- 输出 ----------
+
+def copy_katex(dst_dir: Path):
+    """把 assets/katex 拷入输出目录，公式渲染完全本地化（不依赖外网 CDN）。"""
+    shutil.copytree(KATEX_SRC, dst_dir / "katex", dirs_exist_ok=True)
+
 
 def render_md(text: str) -> str:
     return md.render(text)
@@ -182,9 +267,9 @@ def answers_to_html(k):
 HEAD = """<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{title}</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+<link rel="stylesheet" href="katex/katex.min.css">
+<script defer src="katex/katex.min.js"></script>
+<script defer src="katex/contrib/auto-render.min.js"
   onload="renderMathInElement(document.body,{{delimiters:[{{left:'$$',right:'$$',display:true}},{{left:'$',right:'$',display:false}}]}})"></script>
 <style>{css}</style></head><body>"""
 
@@ -236,7 +321,7 @@ def build_index(kps):
 
 def build_print(kps):
     out_dir = DIST_DIR / "print"
-    out_dir.mkdir(parents=True, exist_ok=True)
+    os.makedirs(out_dir, exist_ok=True)
     by_module = {}
     for k in kps:
         by_module.setdefault(k["moduleDir"], []).append(k)
@@ -257,12 +342,13 @@ def build_print(kps):
         p = out_dir / f"{slug(module_dir)}.html"
         p.write_text(html, encoding="utf-8")
         files.append(p)
+    copy_katex(out_dir)
     return files
 
 
-def build_web(kps):
+def build_web(kps, boards):
     out_dir = DIST_DIR / "web"
-    out_dir.mkdir(parents=True, exist_ok=True)
+    os.makedirs(out_dir, exist_ok=True)
     data = []
     for k in kps:
         data.append({
@@ -274,14 +360,21 @@ def build_web(kps):
                               " ".join(k["skills"] or []), k["lecture"],
                               " ".join(ex["problem"] for ex in k["examples"])]),
         })
-    app = WEB_APP.replace("__DATA__", json.dumps(data, ensure_ascii=False))
+    total = sum(b["count"] for b in boards)
+    online = sum(b["online"] for b in boards)
+    outline = {"boards": boards,
+               "stats": {"total": total, "online": online,
+                         "stubs": total - online, "boards": len(boards)}}
+    app = WEB_APP.replace("__OUTLINE__", json.dumps(outline, ensure_ascii=False))
+    app = app.replace("__DATA__", json.dumps(data, ensure_ascii=False))
     (out_dir / "index.html").write_text(app, encoding="utf-8")
+    copy_katex(out_dir)
     return out_dir / "index.html"
 
 
 def build_miniprogram(kps):
     out_dir = DIST_DIR / "miniprogram"
-    out_dir.mkdir(parents=True, exist_ok=True)
+    os.makedirs(out_dir, exist_ok=True)
     by_module = {}
     for k in kps:
         by_module.setdefault(k["moduleSlug"], []).append({
@@ -302,67 +395,14 @@ def build_miniprogram(kps):
     return manifest
 
 
-WEB_APP = HEAD.replace("{title}", "小学数学知识库").replace("{css}", BASE_CSS + """
-header{position:sticky;top:0;background:#fff;padding:8px 0;border-bottom:1px solid #eee;z-index:9}
-input,select{font-size:1em;padding:6px 10px;border:1px solid #ccc;border-radius:6px;margin-right:8px}
-.result{padding:8px 12px;border-bottom:1px solid #eee;cursor:pointer}
-.result:hover{background:#f4f8ff}
-.result .m{color:#888;font-size:.85em}
-.badge{display:inline-block;background:#eef;border-radius:4px;padding:0 6px;font-size:.8em;margin-right:4px}
-""") + """
-<header>
-  <input id="q" placeholder="搜索知识点 / 标签 / 题目关键词…" style="width:46%">
-  <select id="mod"><option value="">全部模块</option></select>
-  <select id="grade"><option value="">全部年级</option>
-    <option>1</option><option>2</option><option>3</option>
-    <option>4</option><option>5</option><option>6</option></select>
-  <select id="diff"><option value="">全部难度</option>
-    <option value="1">★ 基础</option><option value="2">★★ 提高</option><option value="3">★★★ 竞赛</option></select>
-</header>
-<div id="results"></div>
-<div id="detail"></div>
-<script>
-const DATA = __DATA__;
-const $ = s => document.querySelector(s);
-const mods = [...new Set(DATA.map(d => d.module))];
-mods.forEach(m => { const o = document.createElement("option"); o.text = m; $("#mod").add(o); });
-function esc(s){return s.replace(/[&<>]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));}
-function search(){
-  const q = $("#q").value.trim(), mod = $("#mod").value,
-        g = $("#grade").value, df = $("#diff").value;
-  $("#detail").innerHTML = "";
-  let hits = DATA.filter(d =>
-    (!mod || d.module === mod) &&
-    (!g || d.grade.includes(+g)) &&
-    (!df || d.difficulty === +df) &&
-    (!q || d.text.includes(q)));
-  $("#results").innerHTML = hits.map(d =>
-    `<div class="result" onclick="show('${d.id}')">
-       <b>${esc(d.title)}</b> <span class="m">${esc(d.module)} · ${"★".repeat(d.difficulty)} · 年级 ${d.grade.join("/")}</span><br>
-       ${d.tags.map(t=>`<span class="badge">${esc(t)}</span>`).join("")}
-     </div>`).join("") || "<p style='padding:16px'>没有匹配的知识点</p>";
-}
-function show(id){
-  const d = DATA.find(x => x.id === id);
-  $("#detail").innerHTML = `<h1>${esc(d.title)}</h1>
-    <p class="meta"><span>${esc(d.module)}</span><span>难度 ${"★".repeat(d.difficulty)}</span>
-    <span>子技能：${d.skills.map(esc).join("、")}</span></p>` + d.html;
-  if (window.renderMathInElement) renderMathInElement($("#detail"),
-    {delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]});
-  window.scrollTo(0, 0);
-}
-["q","mod","grade","diff"].forEach(id => $("#"+id).addEventListener("input", search));
-search();
-</script></body></html>
-"""
+WEB_APP = HEAD.format(title="小学数学知识地图", css=BASE_CSS + WEB_INDEX_CSS) + WEB_INDEX_BODY
 
 
 def sync_miniprogram_data():
     """把 dist/miniprogram/*.json 同步进小程序源码目录 miniprogram/data/。"""
     src = DIST_DIR / "miniprogram"
     dst = ROOT / "miniprogram" / "data"
-    dst.mkdir(parents=True, exist_ok=True)
-    import shutil
+    os.makedirs(dst, exist_ok=True)
     for f in src.glob("*.json"):
         shutil.copy2(f, dst / f.name)
     return len(list(dst.glob("*.json")))
@@ -374,6 +414,8 @@ def main():
     args = ap.parse_args()
 
     kps, errors, warnings = load_knowledge_points()
+    boards, curriculum_errors = load_curriculum(kps)
+    errors += curriculum_errors
     for w in warnings:
         print(f"⚠️  {w}")
     if errors:
@@ -385,10 +427,10 @@ def main():
     if args.check:
         return
 
-    DIST_DIR.mkdir(exist_ok=True)
+    os.makedirs(DIST_DIR, exist_ok=True)
     build_index(kps)
     prints = build_print(kps)
-    web = build_web(kps)
+    web = build_web(kps, boards)
     manifest = build_miniprogram(kps)
     n = sync_miniprogram_data()
     print(f"📄 打印页 {len(prints)} 个 → dist/print/")

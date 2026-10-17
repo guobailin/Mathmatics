@@ -5,7 +5,7 @@
 ## 目录
 
 - `DESIGN.md` — 总体设计方案
-- `content/` — 唯一数据源：知识点 Markdown（YAML 元数据 + 讲解 + 例题）
+- `content/` — 唯一数据源：知识点 Markdown（YAML 元数据 + 讲解 + 例题）+ `curriculum.yaml` 课程大纲
 - `templates/` — 新知识点模板
 - `tools/build.py` — 构建工具：校验覆盖矩阵 → 索引 → 打印页 → 网页版 → 小程序数据
 - `dist/` — 构建产物（打印 HTML、网页版、小程序数据包）
@@ -21,7 +21,7 @@ python3 tools/build.py          # 校验 + 全量构建
 python3 tools/build.py --check  # 只校验
 ```
 
-- 查询/浏览：打开 `dist/web/index.html`
+- 查询/浏览：打开 `dist/web/index.html`。首页是按「年级 → 领域 → 知识点」组织的知识地图（1–6 年级 + 奥数），支持搜索与状态筛选。
 - 打印：打开 `dist/print/<模块>.html`，浏览器 Cmd+P 出 PDF
 - 小程序：微信开发者工具导入 `miniprogram/` 目录（选测试号即可预览；命令行调用需在 工具→设置→安全设置 中开启"服务端口"）
 - H5 预览：`cd h5-preview && npm run dev`（或 `python3 tools/build_h5_preview.py` 重新生成）
@@ -30,8 +30,10 @@ python3 tools/build.py --check  # 只校验
 
 ```bash
 cp templates/knowledge-point.md "content/<模块目录>/新知识点.md"
-# 编辑后
+# 编辑内容，并把该知识点挂入 content/curriculum.yaml 对应年级/领域
 python3 tools/build.py
 ```
+
+`content/curriculum.yaml` 维护「年级 → 领域 → 知识点」大纲；大纲中 `content: null` 表示已列入地图、内容待补充。构建会校验每个知识点都已挂入大纲。
 
 规则详见 `content/README.md`。
