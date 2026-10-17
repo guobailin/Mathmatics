@@ -30,6 +30,12 @@
   "file": "m05.json"
  },
  {
+  "slug": "m06",
+  "module": "奥数-计算",
+  "count": 1,
+  "file": "m06.json"
+ },
+ {
   "slug": "m08",
   "module": "奥数-数论",
   "count": 13,
