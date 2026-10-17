@@ -2,511 +2,8 @@
 # 依据：人教版（2024）小学数学 1–6 年级 12 册 + 小学奥数七大模块
 # content: 对应 content/ 下知识点 id；null 表示大纲已列入、内容待补充
 # term: 上 / 下（课内册次）；奥数为 null
+# 展示顺序：奥数 → 六年级 → 五年级 → 四年级 → 三年级 → 二年级 → 一年级
 boards:
-- key: g1
-  label: 一年级
-  short: 一
-  kind: grade
-  color: '#D96C4F'
-  intro: 数数、20 以内加减法、认识图形与人民币，建立最初的数感。
-  domains:
-  - name: 数与代数
-    topics:
-    - title: 数位与计数单位
-      content: nc-counting-units
-      term: 上
-    - title: 整数加法与减法
-      content: nc-int-add-sub
-      term: 上
-    - title: 20 以内的进位加法
-      content: null
-      term: 上
-    - title: 20 以内的退位减法
-      content: null
-      term: 下
-    - title: 100 以内数的认识
-      content: null
-      term: 下
-    - title: 100 以内的加减法（口算）
-      content: null
-      term: 下
-    - title: 认识人民币
-      content: null
-      term: 下
-    - title: 认识钟表
-      content: null
-      term: 上
-  - name: 图形与几何
-    topics:
-    - title: 认识立体图形
-      content: null
-      term: 上
-    - title: 认识平面图形
-      content: null
-      term: 下
-    - title: 位置（上下前后左右）
-      content: null
-      term: 上
-  - name: 统计与概率
-    topics:
-    - title: 分类与整理
-      content: null
-      term: 下
-  - name: 综合与实践
-    topics:
-    - title: 找规律
-      content: null
-      term: 下
-- key: g2
-  label: 二年级
-  short: 二
-  kind: grade
-  color: '#C9932E'
-  intro: 表内乘除法、万以内数、长度与质量单位，开始用算式描述世界。
-  domains:
-  - name: 数与代数
-    topics:
-    - title: 长度单位（厘米、米）
-      content: null
-      term: 上
-    - title: 100 以内的加法和减法（笔算）
-      content: null
-      term: 上
-    - title: 表内乘法（一）
-      content: null
-      term: 上
-    - title: 表内乘法（二）
-      content: null
-      term: 上
-    - title: 表内除法（一）
-      content: null
-      term: 下
-    - title: 表内除法（二）
-      content: null
-      term: 下
-    - title: 有余数的除法
-      content: null
-      term: 下
-    - title: 万以内数的认识
-      content: null
-      term: 下
-    - title: 万以内的加法和减法
-      content: null
-      term: 下
-    - title: 克和千克
-      content: null
-      term: 下
-    - title: 认识时间
-      content: null
-      term: 上
-  - name: 图形与几何
-    topics:
-    - title: 角的初步认识
-      content: null
-      term: 上
-    - title: 观察物体
-      content: geo-observation
-      term: 上
-    - title: 图形的运动（一）
-      content: null
-      term: 下
-  - name: 统计与概率
-    topics:
-    - title: 数据的收集与整理
-      content: stat-data-collection
-      term: 下
-  - name: 综合与实践
-    topics:
-    - title: 两步复合应用题
-      content: wp-composite
-      term: 下
-    - title: 数学广角——搭配（一）
-      content: null
-      term: 上
-    - title: 数学广角——推理
-      content: null
-      term: 下
-- key: g3
-  label: 三年级
-  short: 三
-  kind: grade
-  color: '#5E8C61'
-  intro: 多位数乘除、分数与小数初步、周长与面积，完成从算术到代数的过渡。
-  domains:
-  - name: 数与代数
-    topics:
-    - title: 时、分、秒
-      content: null
-      term: 上
-    - title: 万以内的加法和减法（一）
-      content: null
-      term: 上
-    - title: 测量（毫米、分米、千米、吨）
-      content: null
-      term: 上
-    - title: 万以内的加法和减法（二）
-      content: null
-      term: 上
-    - title: 倍的认识
-      content: null
-      term: 上
-    - title: 整数乘法
-      content: nc-int-multiplication
-      term: 上
-    - title: 整数除法
-      content: nc-int-division
-      term: 下
-    - title: 两位数乘两位数
-      content: null
-      term: 下
-    - title: 分数的初步认识
-      content: null
-      term: 上
-    - title: 小数的初步认识
-      content: null
-      term: 下
-    - title: 年、月、日
-      content: null
-      term: 下
-    - title: 混合运算
-      content: null
-      term: 上
-    - title: 估算
-      content: nc-estimation
-      term: 上
-  - name: 图形与几何
-    topics:
-    - title: 长方形和正方形的周长
-      content: geo-rect-perimeter
-      term: 上
-    - title: 长方形和正方形的面积
-      content: geo-rect-area
-      term: 下
-    - title: 位置与方向
-      content: geo-position-direction
-      term: 下
-    - title: 图形的运动（一）
-      content: null
-      term: 下
-  - name: 统计与概率
-    topics:
-    - title: 复式统计表
-      content: null
-      term: 下
-  - name: 综合与实践
-    topics:
-    - title: 归一问题
-      content: wp-unit-rate
-      term: 上
-    - title: 归总问题
-      content: wp-total
-      term: 上
-    - title: 数学广角——集合
-      content: null
-      term: 上
-    - title: 数学广角——搭配（二）
-      content: null
-      term: 下
-    - title: 数字编码
-      content: null
-      term: 上
-- key: g4
-  label: 四年级
-  short: 四
-  kind: grade
-  color: '#3D7EA6'
-  intro: 大数、运算律、小数、三角形与统计，运算能力和推理能力同步进阶。
-  domains:
-  - name: 数与代数
-    topics:
-    - title: 大数的读法与写法
-      content: nc-large-numbers
-      term: 上
-    - title: 公顷和平方千米
-      content: null
-      term: 上
-    - title: 三位数乘两位数
-      content: null
-      term: 上
-    - title: 除数是两位数的除法
-      content: null
-      term: 上
-    - title: 四则混合运算顺序
-      content: nc-order-of-operations
-      term: 下
-    - title: 加法运算定律
-      content: nc-addition-laws
-      term: 下
-    - title: 乘法运算定律
-      content: nc-multiplication-laws
-      term: 下
-    - title: 简便计算
-      content: nc-quick-calc
-      term: 下
-    - title: 小数的意义与性质
-      content: nc-decimal-meaning
-      term: 下
-    - title: 小数点移动规律
-      content: nc-decimal-point
-      term: 下
-    - title: 小数加法和减法
-      content: nc-decimal-add-sub
-      term: 下
-    - title: 近似数与四舍五入
-      content: nc-rounding
-      term: 下
-    - title: 数的大小比较与改写
-      content: nc-compare-rewrite
-      term: 上
-  - name: 图形与几何
-    topics:
-    - title: 线与角
-      content: geo-lines-angles
-      term: 上
-    - title: 相交、垂直与平行
-      content: geo-perpendicular-parallel
-      term: 上
-    - title: 平行四边形和梯形
-      content: null
-      term: 上
-    - title: 三角形的认识与分类
-      content: geo-triangle
-      term: 下
-    - title: 三角形内角和与三边关系
-      content: geo-triangle-properties
-      term: 下
-    - title: 轴对称图形
-      content: geo-symmetry
-      term: 下
-    - title: 平移与旋转
-      content: geo-translation-rotation
-      term: 下
-  - name: 统计与概率
-    topics:
-    - title: 条形统计图
-      content: stat-bar
-      term: 上
-    - title: 平均数
-      content: stat-average
-      term: 下
-  - name: 综合与实践
-    topics:
-    - title: 数学广角——优化
-      content: null
-      term: 上
-    - title: 鸡兔同笼
-      content: wp-chicken-rabbit
-      term: 下
-    - title: 平均数应用题
-      content: wp-average
-      term: 下
-- key: g5
-  label: 五年级
-  short: 五
-  kind: grade
-  color: '#7A5C9E'
-  intro: 小数乘除、方程、因数倍数、多边形面积与分数，抽象思维真正起步。
-  domains:
-  - name: 数与代数
-    topics:
-    - title: 小数乘法
-      content: nc-decimal-multiplication
-      term: 上
-    - title: 小数除法
-      content: nc-decimal-division
-      term: 上
-    - title: 循环小数
-      content: nc-repeating-decimal
-      term: 上
-    - title: 积与商的近似数
-      content: nc-decimal-approx
-      term: 上
-    - title: 用字母表示数
-      content: alg-letters
-      term: 上
-    - title: 等式的性质
-      content: alg-equality
-      term: 上
-    - title: 认识方程与解方程
-      content: alg-equation
-      term: 上
-    - title: 列方程解应用题
-      content: alg-word-problems
-      term: 上
-    - title: 因数与倍数
-      content: null
-      term: 下
-    - title: 分数的意义
-      content: nc-fraction-meaning
-      term: 下
-    - title: 分数的基本性质与约分
-      content: nc-fraction-basic
-      term: 下
-    - title: 通分与分数大小比较
-      content: nc-fraction-compare
-      term: 下
-    - title: 分数与小数的互化
-      content: nc-fraction-decimal-convert
-      term: 下
-    - title: 分数的加法和减法
-      content: nc-fraction-add-sub
-      term: 下
-  - name: 图形与几何
-    topics:
-    - title: 用数对确定位置
-      content: geo-coordinate-pairs
-      term: 上
-    - title: 平行四边形的面积
-      content: geo-parallelogram
-      term: 上
-    - title: 三角形的面积
-      content: geo-triangle-area
-      term: 上
-    - title: 梯形的面积
-      content: geo-trapezoid-area
-      term: 上
-    - title: 组合图形的面积
-      content: geo-composite-area
-      term: 上
-    - title: 观察物体（三）
-      content: null
-      term: 下
-    - title: 长方体和正方体的认识
-      content: geo-cuboid
-      term: 下
-    - title: 长方体和正方体的表面积
-      content: geo-cuboid-surface
-      term: 下
-    - title: 长方体和正方体的体积
-      content: geo-cuboid-volume
-      term: 下
-    - title: 体积与容积单位
-      content: geo-volume-units
-      term: 下
-    - title: 图形的运动（三）
-      content: null
-      term: 下
-  - name: 统计与概率
-    topics:
-    - title: 可能性
-      content: prob-possibility
-      term: 上
-    - title: 可能性的大小
-      content: prob-possibility-size
-      term: 上
-    - title: 折线统计图
-      content: stat-line
-      term: 下
-  - name: 综合与实践
-    topics:
-    - title: 植树问题
-      content: wp-tree-planting
-      term: 上
-    - title: 找次品
-      content: null
-      term: 下
-- key: g6
-  label: 六年级
-  short: 六
-  kind: grade
-  color: '#B5525C'
-  intro: 分数百分数、比与比例、圆与圆柱圆锥，完成小学阶段的综合收束。
-  domains:
-  - name: 数与代数
-    topics:
-    - title: 分数乘法
-      content: nc-fraction-multiplication
-      term: 上
-    - title: 分数除法
-      content: nc-fraction-division
-      term: 上
-    - title: 分数四则混合运算
-      content: nc-fraction-mixed
-      term: 上
-    - title: 比的意义
-      content: alg-ratio
-      term: 上
-    - title: 比的基本性质与化简
-      content: alg-ratio-simplify
-      term: 上
-    - title: 按比例分配
-      content: wp-ratio-distribution
-      term: 上
-    - title: 百分数
-      content: nc-percentage
-      term: 上
-    - title: 百分数应用题（折扣与成数）
-      content: wp-percent
-      term: 上
-    - title: 利率与税率
-      content: wp-interest-tax
-      term: 下
-    - title: 盈亏问题
-      content: wp-profit-loss
-      term: 下
-    - title: 分数应用题（量率对应）
-      content: wp-fraction
-      term: 上
-    - title: 负数
-      content: null
-      term: 下
-    - title: 比例的意义与基本性质
-      content: alg-proportion
-      term: 下
-    - title: 解比例
-      content: alg-solve-proportion
-      term: 下
-    - title: 正比例
-      content: alg-direct-proportion
-      term: 下
-    - title: 反比例
-      content: alg-inverse-proportion
-      term: 下
-    - title: 比例尺
-      content: alg-scale
-      term: 下
-  - name: 图形与几何
-    topics:
-    - title: 位置与方向（二）
-      content: null
-      term: 上
-    - title: 圆的认识
-      content: geo-circle
-      term: 上
-    - title: 圆的周长
-      content: geo-circle-circumference
-      term: 上
-    - title: 圆的面积
-      content: geo-circle-area
-      term: 上
-    - title: 扇形
-      content: geo-sector
-      term: 上
-    - title: 圆柱的认识与表面积
-      content: geo-cylinder
-      term: 下
-    - title: 圆柱的体积
-      content: geo-cylinder-volume
-      term: 下
-    - title: 圆锥的体积
-      content: geo-cone-volume
-      term: 下
-  - name: 统计与概率
-    topics:
-    - title: 扇形统计图
-      content: stat-pie
-      term: 上
-  - name: 综合与实践
-    topics:
-    - title: 数学广角——数与形
-      content: null
-      term: 上
-    - title: 数学广角——鸽巢问题
-      content: null
-      term: 下
-    - title: 整理和复习
-      content: null
-      term: 下
 - key: oly
   label: 小学奥数
   short: 奥
@@ -768,3 +265,507 @@ boards:
     - title: 数字谜
       content: null
       term: null
+- key: g6
+  label: 六年级
+  short: 六
+  kind: grade
+  color: '#B5525C'
+  intro: 分数百分数、比与比例、圆与圆柱圆锥，完成小学阶段的综合收束。
+  domains:
+  - name: 数与代数
+    topics:
+    - title: 分数乘法
+      content: nc-fraction-multiplication
+      term: 上
+    - title: 分数除法
+      content: nc-fraction-division
+      term: 上
+    - title: 分数四则混合运算
+      content: nc-fraction-mixed
+      term: 上
+    - title: 比的意义
+      content: alg-ratio
+      term: 上
+    - title: 比的基本性质与化简
+      content: alg-ratio-simplify
+      term: 上
+    - title: 按比例分配
+      content: wp-ratio-distribution
+      term: 上
+    - title: 百分数
+      content: nc-percentage
+      term: 上
+    - title: 百分数应用题（折扣与成数）
+      content: wp-percent
+      term: 上
+    - title: 利率与税率
+      content: wp-interest-tax
+      term: 下
+    - title: 盈亏问题
+      content: wp-profit-loss
+      term: 下
+    - title: 分数应用题（量率对应）
+      content: wp-fraction
+      term: 上
+    - title: 负数
+      content: null
+      term: 下
+    - title: 比例的意义与基本性质
+      content: alg-proportion
+      term: 下
+    - title: 解比例
+      content: alg-solve-proportion
+      term: 下
+    - title: 正比例
+      content: alg-direct-proportion
+      term: 下
+    - title: 反比例
+      content: alg-inverse-proportion
+      term: 下
+    - title: 比例尺
+      content: alg-scale
+      term: 下
+  - name: 图形与几何
+    topics:
+    - title: 位置与方向（二）
+      content: null
+      term: 上
+    - title: 圆的认识
+      content: geo-circle
+      term: 上
+    - title: 圆的周长
+      content: geo-circle-circumference
+      term: 上
+    - title: 圆的面积
+      content: geo-circle-area
+      term: 上
+    - title: 扇形
+      content: geo-sector
+      term: 上
+    - title: 圆柱的认识与表面积
+      content: geo-cylinder
+      term: 下
+    - title: 圆柱的体积
+      content: geo-cylinder-volume
+      term: 下
+    - title: 圆锥的体积
+      content: geo-cone-volume
+      term: 下
+  - name: 统计与概率
+    topics:
+    - title: 扇形统计图
+      content: stat-pie
+      term: 上
+  - name: 综合与实践
+    topics:
+    - title: 数学广角——数与形
+      content: null
+      term: 上
+    - title: 数学广角——鸽巢问题
+      content: null
+      term: 下
+    - title: 整理和复习
+      content: null
+      term: 下
+- key: g5
+  label: 五年级
+  short: 五
+  kind: grade
+  color: '#7A5C9E'
+  intro: 小数乘除、方程、因数倍数、多边形面积与分数，抽象思维真正起步。
+  domains:
+  - name: 数与代数
+    topics:
+    - title: 小数乘法
+      content: nc-decimal-multiplication
+      term: 上
+    - title: 小数除法
+      content: nc-decimal-division
+      term: 上
+    - title: 循环小数
+      content: nc-repeating-decimal
+      term: 上
+    - title: 积与商的近似数
+      content: nc-decimal-approx
+      term: 上
+    - title: 用字母表示数
+      content: alg-letters
+      term: 上
+    - title: 等式的性质
+      content: alg-equality
+      term: 上
+    - title: 认识方程与解方程
+      content: alg-equation
+      term: 上
+    - title: 列方程解应用题
+      content: alg-word-problems
+      term: 上
+    - title: 因数与倍数
+      content: null
+      term: 下
+    - title: 分数的意义
+      content: nc-fraction-meaning
+      term: 下
+    - title: 分数的基本性质与约分
+      content: nc-fraction-basic
+      term: 下
+    - title: 通分与分数大小比较
+      content: nc-fraction-compare
+      term: 下
+    - title: 分数与小数的互化
+      content: nc-fraction-decimal-convert
+      term: 下
+    - title: 分数的加法和减法
+      content: nc-fraction-add-sub
+      term: 下
+  - name: 图形与几何
+    topics:
+    - title: 用数对确定位置
+      content: geo-coordinate-pairs
+      term: 上
+    - title: 平行四边形的面积
+      content: geo-parallelogram
+      term: 上
+    - title: 三角形的面积
+      content: geo-triangle-area
+      term: 上
+    - title: 梯形的面积
+      content: geo-trapezoid-area
+      term: 上
+    - title: 组合图形的面积
+      content: geo-composite-area
+      term: 上
+    - title: 观察物体（三）
+      content: null
+      term: 下
+    - title: 长方体和正方体的认识
+      content: geo-cuboid
+      term: 下
+    - title: 长方体和正方体的表面积
+      content: geo-cuboid-surface
+      term: 下
+    - title: 长方体和正方体的体积
+      content: geo-cuboid-volume
+      term: 下
+    - title: 体积与容积单位
+      content: geo-volume-units
+      term: 下
+    - title: 图形的运动（三）
+      content: null
+      term: 下
+  - name: 统计与概率
+    topics:
+    - title: 可能性
+      content: prob-possibility
+      term: 上
+    - title: 可能性的大小
+      content: prob-possibility-size
+      term: 上
+    - title: 折线统计图
+      content: stat-line
+      term: 下
+  - name: 综合与实践
+    topics:
+    - title: 植树问题
+      content: wp-tree-planting
+      term: 上
+    - title: 找次品
+      content: null
+      term: 下
+- key: g4
+  label: 四年级
+  short: 四
+  kind: grade
+  color: '#3D7EA6'
+  intro: 大数、运算律、小数、三角形与统计，运算能力和推理能力同步进阶。
+  domains:
+  - name: 数与代数
+    topics:
+    - title: 大数的读法与写法
+      content: nc-large-numbers
+      term: 上
+    - title: 公顷和平方千米
+      content: null
+      term: 上
+    - title: 三位数乘两位数
+      content: null
+      term: 上
+    - title: 除数是两位数的除法
+      content: null
+      term: 上
+    - title: 四则混合运算顺序
+      content: nc-order-of-operations
+      term: 下
+    - title: 加法运算定律
+      content: nc-addition-laws
+      term: 下
+    - title: 乘法运算定律
+      content: nc-multiplication-laws
+      term: 下
+    - title: 简便计算
+      content: nc-quick-calc
+      term: 下
+    - title: 小数的意义与性质
+      content: nc-decimal-meaning
+      term: 下
+    - title: 小数点移动规律
+      content: nc-decimal-point
+      term: 下
+    - title: 小数加法和减法
+      content: nc-decimal-add-sub
+      term: 下
+    - title: 近似数与四舍五入
+      content: nc-rounding
+      term: 下
+    - title: 数的大小比较与改写
+      content: nc-compare-rewrite
+      term: 上
+  - name: 图形与几何
+    topics:
+    - title: 线与角
+      content: geo-lines-angles
+      term: 上
+    - title: 相交、垂直与平行
+      content: geo-perpendicular-parallel
+      term: 上
+    - title: 平行四边形和梯形
+      content: null
+      term: 上
+    - title: 三角形的认识与分类
+      content: geo-triangle
+      term: 下
+    - title: 三角形内角和与三边关系
+      content: geo-triangle-properties
+      term: 下
+    - title: 轴对称图形
+      content: geo-symmetry
+      term: 下
+    - title: 平移与旋转
+      content: geo-translation-rotation
+      term: 下
+  - name: 统计与概率
+    topics:
+    - title: 条形统计图
+      content: stat-bar
+      term: 上
+    - title: 平均数
+      content: stat-average
+      term: 下
+  - name: 综合与实践
+    topics:
+    - title: 数学广角——优化
+      content: null
+      term: 上
+    - title: 鸡兔同笼
+      content: wp-chicken-rabbit
+      term: 下
+    - title: 平均数应用题
+      content: wp-average
+      term: 下
+- key: g3
+  label: 三年级
+  short: 三
+  kind: grade
+  color: '#5E8C61'
+  intro: 多位数乘除、分数与小数初步、周长与面积，完成从算术到代数的过渡。
+  domains:
+  - name: 数与代数
+    topics:
+    - title: 时、分、秒
+      content: null
+      term: 上
+    - title: 万以内的加法和减法（一）
+      content: null
+      term: 上
+    - title: 测量（毫米、分米、千米、吨）
+      content: null
+      term: 上
+    - title: 万以内的加法和减法（二）
+      content: null
+      term: 上
+    - title: 倍的认识
+      content: null
+      term: 上
+    - title: 整数乘法
+      content: nc-int-multiplication
+      term: 上
+    - title: 整数除法
+      content: nc-int-division
+      term: 下
+    - title: 两位数乘两位数
+      content: null
+      term: 下
+    - title: 分数的初步认识
+      content: null
+      term: 上
+    - title: 小数的初步认识
+      content: null
+      term: 下
+    - title: 年、月、日
+      content: null
+      term: 下
+    - title: 混合运算
+      content: null
+      term: 上
+    - title: 估算
+      content: nc-estimation
+      term: 上
+  - name: 图形与几何
+    topics:
+    - title: 长方形和正方形的周长
+      content: geo-rect-perimeter
+      term: 上
+    - title: 长方形和正方形的面积
+      content: geo-rect-area
+      term: 下
+    - title: 位置与方向
+      content: geo-position-direction
+      term: 下
+    - title: 图形的运动（一）
+      content: null
+      term: 下
+  - name: 统计与概率
+    topics:
+    - title: 复式统计表
+      content: null
+      term: 下
+  - name: 综合与实践
+    topics:
+    - title: 归一问题
+      content: wp-unit-rate
+      term: 上
+    - title: 归总问题
+      content: wp-total
+      term: 上
+    - title: 数学广角——集合
+      content: null
+      term: 上
+    - title: 数学广角——搭配（二）
+      content: null
+      term: 下
+    - title: 数字编码
+      content: null
+      term: 上
+- key: g2
+  label: 二年级
+  short: 二
+  kind: grade
+  color: '#C9932E'
+  intro: 表内乘除法、万以内数、长度与质量单位，开始用算式描述世界。
+  domains:
+  - name: 数与代数
+    topics:
+    - title: 长度单位（厘米、米）
+      content: null
+      term: 上
+    - title: 100 以内的加法和减法（笔算）
+      content: null
+      term: 上
+    - title: 表内乘法（一）
+      content: null
+      term: 上
+    - title: 表内乘法（二）
+      content: null
+      term: 上
+    - title: 表内除法（一）
+      content: null
+      term: 下
+    - title: 表内除法（二）
+      content: null
+      term: 下
+    - title: 有余数的除法
+      content: null
+      term: 下
+    - title: 万以内数的认识
+      content: null
+      term: 下
+    - title: 万以内的加法和减法
+      content: null
+      term: 下
+    - title: 克和千克
+      content: null
+      term: 下
+    - title: 认识时间
+      content: null
+      term: 上
+  - name: 图形与几何
+    topics:
+    - title: 角的初步认识
+      content: null
+      term: 上
+    - title: 观察物体
+      content: geo-observation
+      term: 上
+    - title: 图形的运动（一）
+      content: null
+      term: 下
+  - name: 统计与概率
+    topics:
+    - title: 数据的收集与整理
+      content: stat-data-collection
+      term: 下
+  - name: 综合与实践
+    topics:
+    - title: 两步复合应用题
+      content: wp-composite
+      term: 下
+    - title: 数学广角——搭配（一）
+      content: null
+      term: 上
+    - title: 数学广角——推理
+      content: null
+      term: 下
+- key: g1
+  label: 一年级
+  short: 一
+  kind: grade
+  color: '#D96C4F'
+  intro: 数数、20 以内加减法、认识图形与人民币，建立最初的数感。
+  domains:
+  - name: 数与代数
+    topics:
+    - title: 数位与计数单位
+      content: nc-counting-units
+      term: 上
+    - title: 整数加法与减法
+      content: nc-int-add-sub
+      term: 上
+    - title: 20 以内的进位加法
+      content: null
+      term: 上
+    - title: 20 以内的退位减法
+      content: null
+      term: 下
+    - title: 100 以内数的认识
+      content: null
+      term: 下
+    - title: 100 以内的加减法（口算）
+      content: null
+      term: 下
+    - title: 认识人民币
+      content: null
+      term: 下
+    - title: 认识钟表
+      content: null
+      term: 上
+  - name: 图形与几何
+    topics:
+    - title: 认识立体图形
+      content: null
+      term: 上
+    - title: 认识平面图形
+      content: null
+      term: 下
+    - title: 位置（上下前后左右）
+      content: null
+      term: 上
+  - name: 统计与概率
+    topics:
+    - title: 分类与整理
+      content: null
+      term: 下
+  - name: 综合与实践
+    topics:
+    - title: 找规律
+      content: null
+      term: 下
