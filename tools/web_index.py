@@ -193,6 +193,7 @@ a{color:inherit}
 .kp-body h3{font-size:14.5px;margin:1.2em 0 .4em}
 .kp-body .example{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:14px 0}
 .kp-body .problem{background:#f7f4ec;border-radius:8px;padding:8px 12px}
+.kp-body img{display:block;max-width:100%;height:auto;margin:18px auto;border-radius:8px}
 .kp-body .answer{color:#a4472f}
 .kp-body details summary{color:var(--accent);cursor:pointer}
 .kp-body .covers{color:#9aa39d}

@@ -34,6 +34,7 @@ ROOT = Path(__file__).resolve().parent.parent
 CONTENT_DIR = ROOT / "content"
 DIST_DIR = ROOT / "dist"
 CURRICULUM_FILE = CONTENT_DIR / "curriculum.yaml"
+ASSETS_DIR = ROOT / "assets"
 KATEX_SRC = ROOT / "assets" / "katex"  # 本地化 KaTeX 运行时（含字体），构建时拷入各输出目录
 
 REQUIRED_FIELDS = ["id", "title", "module", "grade", "tags", "difficulty", "skills", "related"]
@@ -254,6 +255,18 @@ def copy_katex(dst_dir: Path):
     shutil.copytree(KATEX_SRC, dst_dir / "katex", dirs_exist_ok=True)
 
 
+def copy_figures(dst_dir: Path):
+    """把 assets/geometry 拷入输出目录，几何示意图用相对路径 assets/geometry/... 引用。"""
+    src = ASSETS_DIR / "geometry"
+    if src.exists():
+        shutil.copytree(src, dst_dir / "assets" / "geometry", dirs_exist_ok=True)
+
+
+def fix_asset_urls(html: str) -> str:
+    """内容里的 /assets/... 改为相对路径，网页/打印/Pages 子路径都能用。"""
+    return html.replace('src="/assets/', 'src="assets/')
+
+
 def render_md(text: str) -> str:
     return md.render(text)
 
@@ -273,7 +286,7 @@ def kp_to_html(k, for_print=False):
                          f'<div class="analysis">{render_md(ex["analysis"])}</div>'
                          f'<div class="answer">答案：{render_md(ex["answer"])}</div></details>')
         parts.append('</div>')
-    return "\n".join(parts)
+    return fix_asset_urls("\n".join(parts))
 
 
 def answers_to_html(k):
@@ -282,7 +295,7 @@ def answers_to_html(k):
         parts.append(f'<div class="example"><h3>{k["title"]} · {ex["title"]}</h3>'
                      f'<div class="analysis">{render_md(ex["analysis"])}</div>'
                      f'<div class="answer">答案：{render_md(ex["answer"])}</div></div>')
-    return "\n".join(parts)
+    return fix_asset_urls("\n".join(parts))
 
 
 HEAD = """<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">
@@ -307,9 +320,11 @@ h2{margin-top:1.6em}h3{font-size:1.05em}
 .problem{background:#f7f7f9;border-radius:6px;padding:8px 12px}
 details{margin-top:.6em}summary{cursor:pointer;color:#36c}
 .answer{color:#b30;font-weight:bold}
+img{max-width:100%;height:auto}
 """
 
 PRINT_CSS = BASE_CSS + """
+.kp img{display:block;margin:14px auto}
 .answer-ref{color:#999;font-size:.85em}
 @page{size:A4;margin:2cm}
 @media print{
@@ -364,6 +379,7 @@ def build_print(kps):
         p.write_text(html, encoding="utf-8")
         files.append(p)
     copy_katex(out_dir)
+    copy_figures(out_dir)
     return files
 
 
@@ -391,6 +407,7 @@ def build_web(kps, boards):
     app = app.replace("__DATA__", json.dumps(data, ensure_ascii=False))
     (out_dir / "index.html").write_text(app, encoding="utf-8")
     copy_katex(out_dir)
+    copy_figures(out_dir)
     return out_dir / "index.html"
 
 

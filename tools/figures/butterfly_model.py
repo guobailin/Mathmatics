@@ -7,7 +7,7 @@
   assets/geometry/butterfly-model.png  （审阅 / 小程序备用，白底）
 """
 import os
-os.environ.setdefault("MPLCONFIGDIR", "/tmp/mplconfig")
+os.environ["MPLCONFIGDIR"] = "/tmp/mplconfig"
 
 import matplotlib
 matplotlib.use("Agg")

@@ -18,7 +18,9 @@ h2{margin-top:1.6em}h3{font-size:1.05em}
 .problem{background:#f7f7f9;border-radius:6px;padding:8px 12px}
 details{margin-top:.6em}summary{cursor:pointer;color:#36c}
 .answer{color:#b30;font-weight:bold}
+img{max-width:100%;height:auto}
 
+.kp img{display:block;margin:14px auto}
 .answer-ref{color:#999;font-size:.85em}
 @page{size:A4;margin:2cm}
 @media print{
@@ -123,7 +125,11 @@ $$(a+b)^2+(a-b)^2=2c^2 .$$<br />
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
-<section class="kp"><h2>勾股定理</h2><p class="meta"><span>年级：4、5、6</span><span>难度：★★★</span></p><h3>一、模型：直角三角形的三边关系</h3>
+<section class="kp"><h2>勾股定理</h2><p class="meta"><span>年级：4、5、6</span><span>难度：★★★</span></p><p><img src="assets/geometry/pythagoras.svg" alt="勾股定理：以三边为边长的正方形面积关系" /></p>
+<blockquote>
+<p>图中 $3^2+4^2=5^2$，即 $a^2+b^2=c^2$。</p>
+</blockquote>
+<h3>一、模型：直角三角形的三边关系</h3>
 <p>直角三角形中，两条直角边记作 $a$、$b$，斜边（直角所对的最长边）记作 $c$，则</p>
 <p>$$a^{2}+b^{2}=c^{2}.$$</p>
 <p>逆命题同样常用：若三角形三边满足 $a^{2}+b^{2}=c^{2}$（$c$ 为最长边），则它必是直角三角形，且 $c$ 所对的角是直角。</p>
@@ -221,7 +227,11 @@ $$(a+b)^2+(a-b)^2=2c^2 .$$<br />
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
-<section class="kp"><h2>圆与扇形</h2><p class="meta"><span>年级：4、5、6</span><span>难度：★★★</span></p><h3>一、模型：一个比例统管弧与扇形</h3>
+<section class="kp"><h2>圆与扇形</h2><p class="meta"><span>年级：4、5、6</span><span>难度：★★★</span></p><p><img src="assets/geometry/circle-sector.svg" alt="圆与扇形：圆心角占周角的比例" /></p>
+<blockquote>
+<p>图中圆心角为 $n^\circ$，弧长与扇形面积都按 $\frac{n}{360}$ 的比例计算。</p>
+</blockquote>
+<h3>一、模型：一个比例统管弧与扇形</h3>
 <p>圆上两点之间的曲线段叫<strong>弧</strong>，两条半径与一段弧围成的图形叫<strong>扇形</strong>，两条半径的夹角叫<strong>圆心角</strong>。设半径为 $r$，圆心角为 $n^\circ$，则整圆周长 $C=2\pi r$，整圆面积 $S=\pi r^2$，而</p>
 <p>$$l=\frac{n}{360}\times 2\pi r,\qquad S_{\text{扇}}=\frac{n}{360}\times \pi r^2.$$</p>
 <p>这两个公式的共同骨架是“<strong>圆心角占周角的几分之几，弧长和面积就占整圆的几分之几</strong>”。适用条件是：图形的边界由圆弧、半径或弦组成，且圆心角已知或能通过直角、平角、对称性求出。解题时先找分数 $\frac{n}{360}$，再决定乘周长还是乘面积；若已知弧长求面积，则用第二形式</p>
@@ -414,7 +424,11 @@ $$(a+b)^2+(a-b)^2=2c^2 .$$<br />
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
-<section class="kp"><h2>燕尾模型</h2><p class="meta"><span>年级：4、5、6</span><span>难度：★★★</span></p><p><strong>模型与适用条件</strong>：在 $\triangle ABC$ 内取一点 $P$，三条连线 $AP$、$BP$、$CP$ 分别交对边于 $D$、$E$、$F$。记三块小三角形<br />
+<section class="kp"><h2>燕尾模型</h2><p class="meta"><span>年级：4、5、6</span><span>难度：★★★</span></p><p><img src="assets/geometry/swallow-tail.svg" alt="燕尾模型：内一点与三条顶点连线" /></p>
+<blockquote>
+<p>图中 $x=S_{\triangle PBC}$，$y=S_{\triangle PCA}$，$z=S_{\triangle PAB}$，且 $BD:DC=z:y$。</p>
+</blockquote>
+<p><strong>模型与适用条件</strong>：在 $\triangle ABC$ 内取一点 $P$，三条连线 $AP$、$BP$、$CP$ 分别交对边于 $D$、$E$、$F$。记三块小三角形<br />
 $$x=S_{\triangle PBC},\quad y=S_{\triangle PCA},\quad z=S_{\triangle PAB}.$$<br />
 则有<br />
 $$\frac{BD}{DC}=\frac{z}{y},\qquad \frac{CE}{EA}=\frac{x}{z},\qquad \frac{AF}{FB}=\frac{y}{x}.$$<br />
@@ -458,7 +472,11 @@ $$S_{\triangle ABP}=S_{\triangle ABD}-S_{\triangle PBD},\quad S_{\triangle APC}=
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
-<section class="kp"><h2>相似模型</h2><p class="meta"><span>年级：4、5、6</span><span>难度：★★★</span></p><p><strong>模型是什么</strong>：两个三角形形状相同、大小可以不同，就说它们<strong>相似</strong>，记作 $\triangle ABC\sim\triangle A'B'C'$。相似包含两件事：对应角相等，对应边成比例。对应边之比叫<strong>相似比</strong> $k$。图形里所有&quot;一维量&quot;——周长、对应高、对应中线——都按 $k$ 缩放，而面积按 $k^{2}$ 缩放：</p>
+<section class="kp"><h2>相似模型</h2><p class="meta"><span>年级：4、5、6</span><span>难度：★★★</span></p><p><img src="assets/geometry/similarity.svg" alt="相似模型：A 字型" /></p>
+<blockquote>
+<p>图中 $DE\parallel BC$，$AD:DB=3:2$，面积比 $9:25$。</p>
+</blockquote>
+<p><strong>模型是什么</strong>：两个三角形形状相同、大小可以不同，就说它们<strong>相似</strong>，记作 $\triangle ABC\sim\triangle A'B'C'$。相似包含两件事：对应角相等，对应边成比例。对应边之比叫<strong>相似比</strong> $k$。图形里所有&quot;一维量&quot;——周长、对应高、对应中线——都按 $k$ 缩放，而面积按 $k^{2}$ 缩放：</p>
 <p>$$\frac{\text{周长}_1}{\text{周长}_2}=k,\qquad \frac{S_1}{S_2}=k^{2}$$</p>
 <p><strong>为什么是平方</strong>：面积 $=\frac12\times$ 底 $\times$ 高。底放大 $k$ 倍，对应的高也放大 $k$ 倍，两次相乘就是 $k^{2}$ 倍。用 $k=\frac12$ 验一下：连接两腰中点得到的小三角形，把原三角形分成四个全等的小三角形，面积正好是原来的 $\frac14=\left(\frac12\right)^{2}$，对得上。反过来，题目给面积比时，必须先<strong>开方</strong>才能拿到 $k$。</p>
 <p><strong>怎么判定相似</strong>：主要靠两条。一是 <strong>两组角分别相等</strong>：第三个角由内角和自动相等，形状就被彻底锁死；平行线提供的同位角、内错角，以及&quot;公共角 + 另一组等角&quot;，是最常见的送角方式。二是<strong>两边成比例且夹角相等</strong>：如 $\frac{AB}{A'B'}=\frac{AC}{A'C'}$ 且 $\angle A=\angle A'$。第三条&quot;三组对应边之比相等&quot;用得少，但三边数据都给全时可以一试（例1的验算就用它）。注意：$k$ 是&quot;谁比谁&quot;要提前说清，$\triangle ADE$ 与 $\triangle ABC$ 的相似比写作 $\frac{AD}{AB}$ 还是 $\frac{AB}{AD}$，后面的面积比会跟着变成 $k^{2}$ 或 $\frac{1}{k^{2}}$，一步定错，全题翻车。</p>
@@ -584,7 +602,11 @@ $$\underbrace{-\pi r^{2}}<em>{\text{洞口}}+\underbrace{2\pi rh}</em>{\text{洞
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
-<section class="kp"><h2>等积模型</h2><p class="meta"><span>年级：4、5、6</span><span>难度：★★★</span></p><h3>一、模型：面积怎样“搬家”</h3>
+<section class="kp"><h2>等积模型</h2><p class="meta"><span>年级：4、5、6</span><span>难度：★★★</span></p><p><img src="assets/geometry/equal-area.svg" alt="等积模型：同底等高，面积相等" /></p>
+<blockquote>
+<p>图中 $l_1\parallel l_2$，$\triangle ABC$ 与 $\triangle DBC$ 同底 $BC$、等高，面积相等。</p>
+</blockquote>
+<h3>一、模型：面积怎样“搬家”</h3>
 <p>等积模型研究的不是“怎样算面积”，而是“面积怎样搬家”。它的适用条件很明确：图中有平行线，或两个三角形共顶点、底在同一条直线上；核心结论只有“等积”与“面积比 $=$ 底（高）比”两条。它只靠这两条基本事实，却能把底和高都算不出的阴影题绕出来。</p>
 <p>三角形面积 $S=\frac12\times$ 底 $\times$ 高。由此得：</p>
 <p>（1）<strong>等底等高，面积相等</strong>；反过来，面积相等且同底，则高相等。</p>
@@ -638,7 +660,11 @@ $$S_{\triangle AOB}=S_{\triangle COD},\qquad S_{\triangle AOD}:S_{\triangle BOC}
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
-<section class="kp"><h2>蝴蝶模型</h2><p class="meta"><span>年级：4、5、6</span><span>难度：★★★</span></p><p><strong>一、模型是什么</strong></p>
+<section class="kp"><h2>蝴蝶模型</h2><p class="meta"><span>年级：4、5、6</span><span>难度：★★★</span></p><p><img src="assets/geometry/butterfly-model.svg" alt="蝴蝶模型：$ABarallel CD$，对角线交于 $O$" /></p>
+<blockquote>
+<p>图中 $S_1=S_{\triangle AOB}$（上块），$S_2=S_{\triangle BOC}$（右翅），$S_3=S_{\triangle COD}$（下块），$S_4=S_{\triangle AOD}$（左翅）。</p>
+</blockquote>
+<p><strong>一、模型是什么</strong></p>
 <p>任意四边形 $ABCD$ 的两条对角线 $AC$、$BD$ 交于 $O$，就把它分成四个两两共边的小三角形，形状像一只展开翅膀的蝴蝶，所以叫<strong>蝴蝶模型</strong>（也叫对角线面积模型）。含 $AB$ 的一块习惯叫上块，含 $CD$ 的叫下块，另外两块叫左右翅。四块都以 $O$ 为公共顶点，这正是&quot;共高&quot;能被反复使用的原因。它管两件事：一般四边形里四块面积满足&quot;上下之积等于两翅之积&quot;；只要有一组对边平行（梯形、平行四边形），四块的份数就被两底之比完全锁死，不必再一个个算高。</p>
 <p><strong>二、结论一：乘积式（任意四边形）</strong></p>
 <p>同高的两个三角形，面积比等于底之比。上块与右翅共用高（底是 $AC$ 上的 $AO$、$OC$），所以上块比右翅等于 $AO:OC$；左翅与下块也共高，左翅比下块同样等于 $AO:OC$。两式相除去分母，得到<br />
@@ -729,7 +755,11 @@ $$\text{两面}=4(A+B+C),\quad \text{一面}=2(AB+BC+CA),\quad \text{零面}=ABC
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
-<section class="kp"><h2>面积比</h2><p class="meta"><span>年级：4、5、6</span><span>难度：★★★</span></p><p>面积比题考的不是背公式，而是判断“哪两个三角形共顶点、共底，或共角”。小学奥数里绝大多数面积比题，都能拆成两个基本模型，再用设份数或设未知面积收尾。记三角形 $XYZ$ 的面积为 $S_{XYZ}$。</p>
+<section class="kp"><h2>面积比</h2><p class="meta"><span>年级：4、5、6</span><span>难度：★★★</span></p><p><img src="assets/geometry/area-ratio.svg" alt="面积比：同高的两个三角形，面积比等于底边比" /></p>
+<blockquote>
+<p>图中 $BD:DC=3:2$，所以 $S_{\triangle ABD}:S_{\triangle ADC}=3:2$。</p>
+</blockquote>
+<p>面积比题考的不是背公式，而是判断“哪两个三角形共顶点、共底，或共角”。小学奥数里绝大多数面积比题，都能拆成两个基本模型，再用设份数或设未知面积收尾。记三角形 $XYZ$ 的面积为 $S_{XYZ}$。</p>
 <h3>一、模型定义</h3>
 <p><strong>等高模型</strong>：两个三角形的高相同——公共顶点，或两个顶点在同一条平行于底的直线上——则<br />
 $$\frac{S_1}{S_2}=\frac{a_1}{a_2}.$$<br />
@@ -830,7 +860,11 @@ $$\frac{S_{ABP}}{S_{BDP}}=\frac{AP}{PD},\qquad \frac{S_{ABP}}{S_{AEP}}=\frac{BP}
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
-<section class="kp"><h2>鸟头模型</h2><p class="meta"><span>年级：4、5、6</span><span>难度：★★★</span></p><p><strong>模型是什么</strong>：两个三角形如果有一个角相等——公共角、对顶角、两个角都是直角都算——或者两个角互补（和为 180°），就说它们对这个角&quot;共角&quot;。当小三角形以这个角为顶点，&quot;咬&quot;在大三角形的一个角上，两条夹边分别落在对方的两条夹边上，图形像鸟头，所以叫<strong>鸟头模型</strong>。它专门解决&quot;已知夹边之比、求面积之比&quot;的问题，也常反过来由面积求线段。</p>
+<section class="kp"><h2>鸟头模型</h2><p class="meta"><span>年级：4、5、6</span><span>难度：★★★</span></p><p><img src="assets/geometry/bird-head.svg" alt="鸟头模型：共角三角形面积比等于夹边乘积比" /></p>
+<blockquote>
+<p>图中 $\angle A$ 公共，$AD:AB=AE:AC=2:3$，所以面积比 $4:9$。</p>
+</blockquote>
+<p><strong>模型是什么</strong>：两个三角形如果有一个角相等——公共角、对顶角、两个角都是直角都算——或者两个角互补（和为 180°），就说它们对这个角&quot;共角&quot;。当小三角形以这个角为顶点，&quot;咬&quot;在大三角形的一个角上，两条夹边分别落在对方的两条夹边上，图形像鸟头，所以叫<strong>鸟头模型</strong>。它专门解决&quot;已知夹边之比、求面积之比&quot;的问题，也常反过来由面积求线段。</p>
 <p><strong>核心结论</strong>：面积比等于夹边乘积比，<br />
 $$\frac{S_{小}}{S_{大}}=\frac{小边_1\times 小边_2}{大边_1\times 大边_2}$$<br />
 四个量必须两两落在同一条直线上：AD 与 AB 在一条边，AE 与 AC 在另一条边，不能交叉配对。分点都在线段上时，写完先看比值是否小于 1 自检。</p>
