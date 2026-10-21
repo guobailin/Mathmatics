@@ -278,12 +278,12 @@ WEB_INDEX_BODY = r"""
     <div class="hero-copy">
       <p class="eyebrow">1–6 年级 · 课内 + 奥数</p>
       <h1>小学数学<br><em>知识地图</em></h1>
-      <p class="lede">按年级找到每一个知识点：从数感、运算到图形与推理，再到奥数七大模块。已上线内容可直接阅读讲解与例题，未上线的知识点也已列入地图。</p>
+      <p class="lede">按年级找到每一个知识点：从数感、运算到图形与推理，再到奥数七大模块。已更新内容可直接阅读讲解与例题，待补充的知识点也已列入地图。</p>
       <div class="stats">
         <div class="stat"><b>6</b><span>年级</span></div>
         <div class="stat"><b>7</b><span>大板块</span></div>
         <div class="stat"><b id="statTotal">216</b><span>知识点</span></div>
-        <div class="stat"><b id="statOnline">107</b><span>已上线</span></div>
+        <div class="stat"><b id="statOnline">107</b><span>已更新</span></div>
       </div>
     </div>
     <div class="hero-side">
@@ -300,7 +300,7 @@ WEB_INDEX_BODY = r"""
     <p id="mapSummary">正在加载知识地图…</p>
     <div class="seg" role="group" aria-label="内容状态筛选">
       <button data-f="all" class="on" onclick="setFilter('all')">全部</button>
-      <button data-f="online" onclick="setFilter('online')">已上线</button>
+      <button data-f="online" onclick="setFilter('online')">已更新</button>
       <button data-f="soon" onclick="setFilter('soon')">待补充</button>
     </div>
   </div>
@@ -312,7 +312,7 @@ WEB_INDEX_BODY = r"""
 
   <footer class="site-foot">
     <p>课程大纲依据人教版（2024）小学数学 1–6 年级 12 册，以及小学奥数计算、数论、计数、几何、行程、应用题、组合七大模块整理。</p>
-    <p>已上线内容来自仓库 <code>content/</code>；标为“待补充”的知识点已列入建设清单。 · <a href="https://github.com/guobailin/Mathmatics" target="_blank" rel="noreferrer">GitHub 仓库 ↗</a></p>
+    <p>内容来自仓库 <code>content/</code>；标为“待补充”的知识点已列入建设清单。 · <a href="https://github.com/guobailin/Mathmatics" target="_blank" rel="noreferrer">GitHub 仓库 ↗</a></p>
   </footer>
 </main>
 
@@ -372,7 +372,7 @@ function renderIndex() {
   const pct = STATS.total ? Math.round(STATS.online / STATS.total * 100) : 0;
   $('#coverageRing').style.setProperty('--p', pct);
   $('#coverageNum').textContent = pct + '%';
-  $('#mapSummary').textContent = `共 ${STATS.total} 个知识点 · 已上线 ${STATS.online} 个 · 待补充 ${STATS.stubs} 个`;
+  $('#mapSummary').textContent = `共 ${STATS.total} 个知识点 · 已更新 ${STATS.online} 个 · 待补充 ${STATS.stubs} 个`;
   applyFilter();
   observeBoards();
 }
@@ -388,7 +388,7 @@ function boardHTML(b) {
         <p>${esc(b.intro)}</p>
       </div>
       <div class="board-meta">
-        <div><b>${b.online}</b> / ${b.count} 已上线</div>
+        <div><b>${b.online}</b> / ${b.count} 已更新</div>
         <div class="progress"><i style="width:${pct}%"></i></div>
       </div>
     </div>
@@ -405,12 +405,13 @@ function domainHTML(b, dm) {
 
 function topicHTML(b, dm, t) {
   const ready = !!t.content;
+  const d = ready ? DATA_BY_ID[t.content] : null;
   return `<button class="topic ${ready ? 'ready' : 'soon'}"
       data-board="${esc(b.key)}" data-domain="${esc(dm.name)}"
       data-title="${esc(t.title)}" data-content="${esc(t.content || '')}"
       onclick="openTopic(this)">
     <span class="topic-title">${esc(t.title)}</span>
-    <span class="topic-sub">${t.term ? `<span class="term">${t.term}</span>` : ''}<span class="status ${ready ? 'ready' : 'soon'}">${ready ? '已上线' : '待补充'}</span></span>
+    <span class="topic-sub">${t.term ? `<span class="term">${t.term}</span>` : ''}<span class="status ${ready ? 'ready' : 'soon'}">${ready ? '更新 ' + (d && d.updated ? d.updated.slice(5) : '已更新') : '待补充'}</span></span>
     <span class="arrow">→</span>
   </button>`;
 }
@@ -439,6 +440,7 @@ function openContent(id) {
       <div class="kp-meta">
         <span class="chip">难度 ${stars(d.difficulty)}</span>
         <span class="chip">适用年级 ${d.grade.join('、')}</span>
+        <span class="chip">更新于 ${esc(d.updated || '')}</span>
         ${tags}
       </div>
       <div class="kp-body">${d.html}</div>
@@ -468,7 +470,7 @@ function openSoon(boardKey, domain, title) {
       <div class="soon-icon">✎</div>
       <div class="kp-kicker">${esc(b.label)} · ${esc(domain)}</div>
       <h2>${esc(title)}</h2>
-      <p>这个知识点已经列入知识地图，讲解与 ★3 / ★4 / ★5 例题正在补充中。可以先看看同领域已上线的内容。</p>
+      <p>这个知识点已经列入知识地图，讲解与 ★3 / ★4 / ★5 例题正在补充中。可以先看看同领域已更新的内容。</p>
       ${related.length ? `<div class="soon-related">${related.map(t => `<button data-content="${esc(t.content)}" onclick="openContent(this.dataset.content)">${esc(t.title)}</button>`).join('')}</div>` : ''}
     </div>
     <div class="detail-foot"><button class="back" onclick="goHome()">← 返回知识地图</button></div>
@@ -552,7 +554,7 @@ function hitHTML({ b, dm, t, d }) {
       <span class="hit-title">${esc(t.title)}</span>
       <span class="hit-meta">${esc(b.label)} · ${esc(dm.name)}${t.term ? ' · ' + t.term + '册' : ''}${d ? ' · 难度 ' + stars(d.difficulty) : ''}</span>
     </span>
-    <span class="status ${d ? 'ready' : 'soon'}">${d ? '已上线' : '待补充'}</span>
+    <span class="status ${d ? 'ready' : 'soon'}">${d ? '更新 ' + (d.updated ? d.updated.slice(5) : '已更新') : '待补充'}</span>
   </button>`;
 }
 

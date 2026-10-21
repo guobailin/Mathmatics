@@ -19,7 +19,9 @@ import json
 import os
 import re
 import shutil
+import subprocess
 import sys
+from datetime import datetime
 from pathlib import Path
 
 import yaml
@@ -67,6 +69,24 @@ def parse_examples(text: str):
             "answer": fields.get("答案", ""),
         })
     return examples
+
+
+
+def file_updated(rel_path: str) -> str:
+    """取知识点文件最后一次 git 提交日期；无 git 时退回文件 mtime。"""
+    try:
+        out = subprocess.check_output(
+            ["git", "log", "-1", "--format=%cs", "--", rel_path],
+            cwd=ROOT, stderr=subprocess.DEVNULL)
+        value = out.decode().strip()
+        if value:
+            return value
+    except Exception:
+        pass
+    try:
+        return datetime.fromtimestamp((ROOT / rel_path).stat().st_mtime).strftime("%Y-%m-%d")
+    except Exception:
+        return ""
 
 
 def load_knowledge_points():
@@ -143,6 +163,7 @@ def load_knowledge_points():
             "file": str(rel),
             "lecture": lecture,
             "examples": examples,
+            "updated": file_updated(str(rel)),
         })
 
     id_set = {k["id"] for k in kps}
@@ -355,6 +376,7 @@ def build_web(kps, boards):
             "id": k["id"], "title": k["title"], "module": k["module"],
             "moduleSlug": k["moduleSlug"], "grade": k["grade"], "tags": k["tags"],
             "difficulty": k["difficulty"], "skills": k["skills"],
+            "updated": k.get("updated", ""),
             "html": kp_to_html(k),
             "text": " ".join([k["title"], " ".join(k["tags"] or []),
                               " ".join(k["skills"] or []), k["lecture"],
