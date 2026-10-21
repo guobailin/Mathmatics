@@ -224,6 +224,27 @@ a{color:inherit}
 #toast.on{opacity:1;transform:translate(-50%,0)}
 
 
+
+/* ---------- 复习统计 ---------- */
+.review-panel{max-width:1180px;margin:16px auto 0;padding:0 clamp(16px,3vw,32px)}
+.review-card{display:flex;align-items:center;gap:18px;flex-wrap:wrap;padding:13px 16px;border:1px solid var(--line);border-radius:16px;background:var(--card)}
+.review-stats{display:flex;gap:clamp(14px,2.5vw,30px);flex-wrap:wrap}
+.review-stat{display:flex;flex-direction:column;min-width:0}
+.review-stat b{font-size:17px;font-weight:800;letter-spacing:-.02em;line-height:1.25;white-space:nowrap}
+.review-stat span{font-size:9.5px;color:var(--muted);letter-spacing:.06em}
+.review-stat b#reviewTop{max-width:130px;overflow:hidden;text-overflow:ellipsis}
+.review-progress{flex:1;min-width:160px}
+.review-bar{height:6px;border-radius:99px;background:#e4dfd3;overflow:hidden}
+.review-bar i{display:block;height:100%;width:0;border-radius:99px;background:var(--accent);transition:width .3s}
+.review-hint{margin:4px 0 0;font-size:9.5px;color:#9aa39d}
+.review-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.review-toggle{display:flex;align-items:center;gap:4px;font-size:10.5px;color:var(--muted);cursor:pointer;white-space:nowrap}
+.review-toggle input{accent-color:var(--accent);margin:0}
+.review-reset{border:0;background:transparent;padding:0;font-size:9.5px;color:#a3aaa4;text-decoration:underline;cursor:pointer;white-space:nowrap}
+.review-reset:hover{color:#b5525c}
+.view-badge{display:inline-flex;align-items:center;align-self:flex-start;margin-top:3px;padding:1px 7px;border-radius:99px;background:#f1ede4;color:#9aa39d;font-size:9px;line-height:1.65;letter-spacing:.02em}
+.view-badge.has{background:#e3efec;color:#2f6f6b;font-weight:600}
+
 /* ---------- 响应式 ---------- */
 @media(max-width:860px){
   .hero{grid-template-columns:1fr;gap:24px;padding-top:36px}
@@ -305,6 +326,26 @@ WEB_INDEX_BODY = r"""
     </div>
   </div>
 
+
+  <section class="review-panel" id="reviewPanel" aria-label="复习统计">
+    <div class="review-card">
+      <div class="review-stats">
+        <div class="review-stat"><b id="reviewTotal">0</b><span>总复习次数</span></div>
+        <div class="review-stat"><b id="reviewedCount">0</b><span>已复习知识点</span></div>
+        <div class="review-stat"><b id="reviewRate">0%</b><span>复习覆盖率</span></div>
+        <div class="review-stat"><b id="reviewTop">—</b><span>最常复习</span></div>
+      </div>
+      <div class="review-progress">
+        <div class="review-bar"><i id="reviewBar"></i></div>
+        <p class="review-hint" id="reviewHint">点击知识点即计一次，统计保存在本机浏览器。</p>
+      </div>
+      <div class="review-actions">
+        <label class="review-toggle"><input type="checkbox" id="onlyUnreviewed" onchange="setOnlyUnreviewed(this.checked)"> 只看未复习</label>
+        <button type="button" class="review-reset" onclick="resetViews()">清空统计</button>
+      </div>
+    </div>
+  </section>
+
   <div id="boards"></div>
   <div id="emptyFilter" hidden>当前筛选下暂无知识点，切换到“全部”看看完整地图。</div>
 
@@ -344,6 +385,28 @@ for (const b of BOARDS) {
 }
 
 
+
+const VIEW_KEY = 'mathkb_review_v1';
+function loadViews() {
+  try {
+    const obj = JSON.parse(localStorage.getItem(VIEW_KEY) || '{}');
+    return obj && typeof obj === 'object' ? obj : {};
+  } catch (e) { return {}; }
+}
+let VIEWS = loadViews();
+let onlyUnreviewed = false;
+function saveViews() {
+  try { localStorage.setItem(VIEW_KEY, JSON.stringify(VIEWS)); } catch (e) { /* 隐私模式忽略 */ }
+}
+function viewCount(id) { return id ? (Number(VIEWS[id]) || 0) : 0; }
+function reviewLabel(id) { const n = viewCount(id); return n ? `复习 ${n} 次` : '未复习'; }
+function recordView(id) {
+  if (!id) return;
+  VIEWS[id] = viewCount(id) + 1;
+  saveViews();
+}
+
+
 function setHash(h) {
   try { history.replaceState(null, '', h); } catch (e) { /* file:// 下忽略 */ }
 }
@@ -373,6 +436,7 @@ function renderIndex() {
   $('#coverageRing').style.setProperty('--p', pct);
   $('#coverageNum').textContent = pct + '%';
   $('#mapSummary').textContent = `共 ${STATS.total} 个知识点 · 已更新 ${STATS.online} 个 · 待补充 ${STATS.stubs} 个`;
+  refreshReviewUI();
   applyFilter();
   observeBoards();
 }
@@ -412,6 +476,7 @@ function topicHTML(b, dm, t) {
       onclick="openTopic(this)">
     <span class="topic-title">${esc(t.title)}</span>
     <span class="topic-sub">${t.term ? `<span class="term">${t.term}</span>` : ''}<span class="status ${ready ? 'ready' : 'soon'}">${ready ? '更新 ' + (d && d.updated ? d.updated.slice(5) : '已更新') : '待补充'}</span></span>
+    ${ready ? `<span class="view-badge ${viewCount(t.content) ? 'has' : ''}" data-view="${esc(t.content)}">${reviewLabel(t.content)}</span>` : ''}
     <span class="arrow">→</span>
   </button>`;
 }
@@ -425,6 +490,8 @@ function openTopic(el) {
 function openContent(id) {
   const d = DATA_BY_ID[id];
   if (!d) { toast('内容未找到'); return; }
+  recordView(id);
+  const reviewCount = viewCount(id);
   const loc = LOC[id] || { board: { label: d.module, color: '#2F6F6B' }, domain: '', term: '' };
   restoreY = window.scrollY;
   const tags = (d.tags || []).map(t => `<span class="chip">${esc(t)}</span>`).join('');
@@ -441,6 +508,7 @@ function openContent(id) {
         <span class="chip">难度 ${stars(d.difficulty)}</span>
         <span class="chip">适用年级 ${d.grade.join('、')}</span>
         <span class="chip">更新于 ${esc(d.updated || '')}</span>
+        <span class="chip" id="reviewChip">已复习 ${reviewCount} 次</span>
         ${tags}
       </div>
       <div class="kp-body">${d.html}</div>
@@ -450,6 +518,7 @@ function openContent(id) {
   </div>`;
   $('#app').hidden = true;
   $('#detailView').hidden = false;
+  refreshReviewUI();
   scrollToY(0, true);
   renderMath($('#detailView'));
   document.title = `${d.title} · 小学数学知识地图`;
@@ -503,8 +572,10 @@ function showMap() {
   $('#gradeNav').hidden = false;
   $('.toolbar').hidden = false;
   $('#boards').hidden = false;
+  $('.review-panel').hidden = false;
   $('#searchPanel').hidden = true;
   $('#searchPanel').innerHTML = '';
+  refreshReviewUI();
   applyFilter();
 }
 
@@ -518,6 +589,7 @@ function runSearch() {
   $('#gradeNav').hidden = true;
   $('.toolbar').hidden = true;
   $('#boards').hidden = true;
+  $('.review-panel').hidden = true;
   $('#searchPanel').hidden = false;
   const hits = [];
   BOARDS.forEach((b, order) => {
@@ -526,6 +598,7 @@ function runSearch() {
         const d = t.content ? DATA_BY_ID[t.content] : null;
         if (currentFilter === 'online' && !d) continue;
         if (currentFilter === 'soon' && d) continue;
+        if (onlyUnreviewed && d && viewCount(d.id) > 0) continue;
         const title = t.title.toLowerCase();
         const hay = [t.title, b.label, dm.name, t.term || '', d ? (d.text || '') : '',
                      d ? (d.tags || []).join(' ') : ''].join(' ').toLowerCase();
@@ -552,7 +625,7 @@ function hitHTML({ b, dm, t, d }) {
       data-title="${esc(t.title)}" onclick="openTopic(this)">
     <span class="hit-main">
       <span class="hit-title">${esc(t.title)}</span>
-      <span class="hit-meta">${esc(b.label)} · ${esc(dm.name)}${t.term ? ' · ' + t.term + '册' : ''}${d ? ' · 难度 ' + stars(d.difficulty) : ''}</span>
+      <span class="hit-meta">${esc(b.label)} · ${esc(dm.name)}${t.term ? ' · ' + t.term + '册' : ''}${d ? ' · 难度 ' + stars(d.difficulty) + ' · ' + reviewLabel(d.id) : ''}</span>
     </span>
     <span class="status ${d ? 'ready' : 'soon'}">${d ? '更新 ' + (d.updated ? d.updated.slice(5) : '已更新') : '待补充'}</span>
   </button>`;
@@ -583,7 +656,9 @@ function setFilter(f) {
 function applyFilter() {
   $$('#boards .topic').forEach(el => {
     const ready = el.classList.contains('ready');
-    el.hidden = (currentFilter === 'online' && !ready) || (currentFilter === 'soon' && ready);
+    const viewed = el.dataset.content ? viewCount(el.dataset.content) : 0;
+    el.hidden = (currentFilter === 'online' && !ready) || (currentFilter === 'soon' && ready) ||
+                (onlyUnreviewed && viewed > 0);
   });
   $$('#boards .domain').forEach(dm => {
     const topics = Array.from(dm.querySelectorAll('.topic'));
@@ -600,6 +675,53 @@ function applyFilter() {
   const empty = $('#emptyFilter');
   if (empty) empty.hidden = visible > 0 || $('#boards').hidden;
 }
+
+
+function setOnlyUnreviewed(value) {
+  onlyUnreviewed = !!value;
+  if ($('#q').value.trim()) runSearch();
+  else applyFilter();
+}
+
+function refreshReviewUI() {
+  const total = Object.values(VIEWS).reduce((sum, n) => sum + (Number(n) || 0), 0);
+  const reviewed = Object.keys(VIEWS).filter(id => viewCount(id) > 0).length;
+  const top = Object.entries(VIEWS).filter(([, n]) => Number(n) > 0)
+    .sort((a, b) => Number(b[1]) - Number(a[1]))[0];
+  const rawRate = STATS.total ? reviewed / STATS.total * 100 : 0;
+  const rate = reviewed ? Math.max(1, Math.round(rawRate)) : 0;
+  const set = (id, text) => { const el = document.getElementById(id); if (el) el.textContent = text; };
+  set('reviewTotal', total);
+  set('reviewedCount', reviewed);
+  set('reviewRate', rate + '%');
+  set('reviewTop', top ? (DATA_BY_ID[top[0]]?.title || '—') : '—');
+  const bar = document.getElementById('reviewBar');
+  if (bar) bar.style.width = rawRate + '%';
+  set('reviewHint', `已复习 ${reviewed} / ${STATS.total} 个知识点 · 统计保存在本机浏览器`);
+  $$('.view-badge[data-view]').forEach(badge => {
+    const n = viewCount(badge.dataset.view);
+    badge.textContent = n ? `复习 ${n} 次` : '未复习';
+    badge.classList.toggle('has', n > 0);
+  });
+}
+
+function resetViews() {
+  if (!confirm('确定清空全部复习统计吗？此操作不可撤销。')) return;
+  VIEWS = {};
+  saveViews();
+  refreshReviewUI();
+  const chip = document.getElementById('reviewChip');
+  if (chip) chip.textContent = '已复习 0 次';
+  applyFilter();
+}
+
+window.addEventListener('storage', event => {
+  if (event.key !== VIEW_KEY) return;
+  VIEWS = loadViews();
+  refreshReviewUI();
+  applyFilter();
+});
+
 
 function observeBoards() {
   if (observer) observer.disconnect();
