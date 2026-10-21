@@ -43,6 +43,21 @@ boards:
     - title: 范围估算
       content: oc-range-estimate
       term: null
+    - title: 方程与方程组
+      content: oc-equations
+      term: null
+    - title: 分数与小数的四则运算
+      content: oc-fraction-decimal-ops
+      term: null
+    - title: 公式类计算
+      content: oc-formula-calc
+      term: null
+    - title: 特殊数计算
+      content: oc-special-numbers
+      term: null
+    - title: 数列与数表
+      content: oc-sequences-tables
+      term: null
   - name: 数论
     topics:
     - title: 整除的概念与性质
@@ -107,6 +122,15 @@ boards:
       term: null
     - title: 韩信点兵与最值
       content: nt-hanxin-extremum
+      term: null
+    - title: 不定方程
+      content: nt-diophantine
+      term: null
+    - title: 尾数与末位
+      content: nt-last-digits
+      term: null
+    - title: 数论综合
+      content: nt-comprehensive
       term: null
   - name: 计数
     topics:
@@ -202,6 +226,15 @@ boards:
     - title: 周长问题
       content: oge-perimeter
       term: null
+    - title: 勾股定理
+      content: oge-pythagorean
+      term: null
+    - title: 立体几何综合
+      content: oge-solid-geometry
+      term: null
+    - title: 几何思想方法
+      content: oge-geometry-methods
+      term: null
   - name: 行程
     topics:
     - title: 相遇问题
@@ -233,6 +266,18 @@ boards:
       term: null
     - title: 变速问题
       content: otr-variable-speed
+      term: null
+    - title: 基本公式与平均速度
+      content: otr-basic-average
+      term: null
+    - title: 多人相遇
+      content: otr-multi-person
+      term: null
+    - title: 发车问题
+      content: otr-bus-departure
+      term: null
+    - title: 扶梯问题
+      content: otr-escalator
       term: null
   - name: 应用题
     topics:
@@ -277,6 +322,9 @@ boards:
       term: null
     - title: 假设法
       content: owp-assumption
+      term: null
+    - title: 应用题思想方法
+      content: owp-methods
       term: null
   - name: 组合
     topics:
