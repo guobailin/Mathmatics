@@ -224,18 +224,6 @@ a{color:inherit}
 #toast.on{opacity:1;transform:translate(-50%,0)}
 
 
-/* ---------- 七大模块体系 ---------- */
-.system-map{margin:0 0 22px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.62);overflow:hidden}
-.system-map summary{display:flex;align-items:center;gap:10px;padding:12px 16px;cursor:pointer;list-style:none;font-size:11.5px;font-weight:700;letter-spacing:.06em;color:var(--muted)}
-.system-map summary::-webkit-details-marker{display:none}
-.system-map summary .hint{margin-left:auto;font-weight:400;font-size:9.5px;letter-spacing:0;color:#9aa39d}
-.system-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;padding:0 14px 14px}
-.system-card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:11px 12px;min-width:0}
-.system-card h4{margin:0 0 7px;font-size:11.5px;font-weight:800;letter-spacing:.04em;color:var(--c)}
-.branches{display:flex;flex-wrap:wrap;gap:4px}
-.branch{display:inline-block;padding:2px 6px;border-radius:99px;background:#f0ece2;color:#66706a;font-size:9.5px;line-height:1.6;white-space:nowrap}
-@media(max-width:860px){.system-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-
 /* ---------- 响应式 ---------- */
 @media(max-width:860px){
   .hero{grid-template-columns:1fr;gap:24px;padding-top:36px}
@@ -356,29 +344,6 @@ for (const b of BOARDS) {
 }
 
 
-const SYSTEM = [
-  {name:'计算', color:'#8A5A9E', branches:['方程与方程组','比较与估算','分数小数四则','循环小数','速算与巧算','裂项','等差数列','公式类计算','特殊数','定义新运算','数列与数表']},
-  {name:'几何', color:'#B5525C', branches:['面积模型','直线型几何','曲线型几何','立体几何','五大模型','勾股定理','几何思想方法']},
-  {name:'行程', color:'#2F6F6B', branches:['基本公式','相遇追及','多人相遇','多次相遇','环形跑道','火车过桥','流水行船','时钟问题','发车问题','扶梯问题','变速问题','比例行程','平均速度']},
-  {name:'应用题', color:'#C08A2E', branches:['牛吃草','方阵','植树','鸡兔同笼','盈亏','平均数','年龄','和差倍','还原','利润利息税收','浓度','工程','比例','分数百分数','思想方法']},
-  {name:'数论', color:'#4F7D4A', branches:['完全平方数','位值原理','进位制','不定方程','余数问题','整除','质数合数','因数倍数','奇偶分析','尾数与末位','质数判定','综合应用']},
-  {name:'计数', color:'#3D6E8A', branches:['几何计数','递推与归纳','容斥原理','组合','乘法原理','加法原理','加乘综合','概率','枚举','计数思想']},
-  {name:'组合', color:'#A45A3A', branches:['逻辑推理','数字谜','策略','数阵图','抽屉原理','幻方','最值问题','统筹优化','组合原理与构造']}
-];
-
-function systemHTML() {
-  return `<details class="system-map" open>
-    <summary>七大模块体系<span class="hint">按教材体系整理 · 点击收起</span></summary>
-    <div class="system-grid">
-      ${SYSTEM.map(m => `<div class="system-card" style="--c:${m.color}">
-        <h4>${esc(m.name)}</h4>
-        <div class="branches">${m.branches.map(x => `<span class="branch">${esc(x)}</span>`).join('')}</div>
-      </div>`).join('')}
-    </div>
-  </details>`;
-}
-
-
 function setHash(h) {
   try { history.replaceState(null, '', h); } catch (e) { /* file:// 下忽略 */ }
 }
@@ -427,7 +392,6 @@ function boardHTML(b) {
         <div class="progress"><i style="width:${pct}%"></i></div>
       </div>
     </div>
-    ${b.kind === 'olympiad' ? systemHTML() : ''}
     ${b.domains.map(dm => domainHTML(b, dm)).join('')}
   </section>`;
 }
