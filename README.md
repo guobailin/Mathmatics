@@ -22,6 +22,7 @@ python3 tools/build.py --check  # 只校验
 ```
 
 - 查询/浏览：打开 `dist/web/index.html`。首页是按「年级 → 领域 → 知识点」组织的知识地图（1–6 年级 + 奥数），支持搜索与状态筛选。
+- 奥数专题按竞赛难度编排：每个知识点含 4 道 ★4–★7 例题，讲解含模型推导、高级变形与竞赛视角；课内知识点保持 2–4 道 ★3–★5 例题。
 - 打印：打开 `dist/print/<模块>.html`，浏览器 Cmd+P 出 PDF
 - 小程序：微信开发者工具导入 `miniprogram/` 目录（选测试号即可预览；命令行调用需在 工具→设置→安全设置 中开启"服务端口"）
 - H5 预览：`cd h5-preview && npm run dev`（或 `python3 tools/build_h5_preview.py` 重新生成）
