@@ -225,6 +225,25 @@ a{color:inherit}
 
 
 
+
+/* ---------- 竞赛真题入口 ---------- */
+.hero-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:20px}
+.hero-link{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;background:var(--accent);color:#fff;font-size:12.5px;font-weight:700;letter-spacing:.04em;text-decoration:none;box-shadow:0 6px 16px rgba(47,111,107,.18)}
+.hero-link span{font-size:10.5px;font-weight:500;opacity:.82}
+.hero-link:hover{background:#245a56;transform:translateY(-1px)}
+.exam-home{max-width:1180px;margin:26px auto 0;padding:0 clamp(16px,3vw,32px)}
+.exam-home-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:10px}
+.exam-home-head .eyebrow{margin:0 0 2px}
+.exam-home-head h2{margin:0;font-size:18px;letter-spacing:-.01em}
+.exam-home-head p{margin:2px 0 0;color:var(--muted);font-size:11px}
+.exam-home-more{font-size:11px;color:var(--accent);text-decoration:none;font-weight:600;white-space:nowrap}
+.exam-home-more:hover{text-decoration:underline}
+.exam-home-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px}
+.exam-home-card{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:11px 13px;border:1px solid var(--line);border-radius:12px;background:var(--card);color:var(--ink);text-decoration:none;transition:border-color .15s,transform .15s}
+.exam-home-card:hover{border-color:var(--accent);transform:translateY(-1px)}
+.exam-home-card b{font-size:12px;font-weight:700}
+.exam-home-card span{font-size:10px;color:var(--muted);white-space:nowrap}
+
 /* ---------- 复习统计 ---------- */
 .review-panel{max-width:1180px;margin:16px auto 0;padding:0 clamp(16px,3vw,32px)}
 .review-card{display:flex;align-items:center;gap:18px;flex-wrap:wrap;padding:13px 16px;border:1px solid var(--line);border-radius:16px;background:var(--card)}
@@ -275,6 +294,9 @@ a{color:inherit}
   .detail-wrap{padding:18px 14px 40px}
   .crumbs{display:none}
   .board{padding-top:30px;scroll-margin-top:20px}
+  .exam-home-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .exam-home{padding:0 16px}
+  .hero-actions{margin-top:16px}
 }
 """
 
@@ -304,6 +326,9 @@ WEB_INDEX_BODY = r"""
         <div class="stat"><b>7</b><span>大板块</span></div>
         <div class="stat"><b id="statTotal">216</b><span>知识点</span></div>
         <div class="stat"><b id="statOnline">107</b><span>已更新</span></div>
+      </div>
+      <div class="hero-actions">
+        <a class="hero-link" href="exam/index.html">竞赛真题 <span>8 套 · 137 题 →</span></a>
       </div>
     </div>
     <div class="hero-side">
@@ -347,6 +372,8 @@ WEB_INDEX_BODY = r"""
 
   <div id="boards"></div>
   <div id="emptyFilter" hidden>当前筛选下暂无知识点，切换到“全部”看看完整地图。</div>
+
+  __EXAM_HOME__
 
   <div id="searchPanel" hidden></div>
 
@@ -572,6 +599,7 @@ function showMap() {
   $('.toolbar').hidden = false;
   $('#boards').hidden = false;
   $('.review-panel').hidden = false;
+  $('.exam-home').hidden = false;
   $('#searchPanel').hidden = true;
   $('#searchPanel').innerHTML = '';
   refreshReviewUI();
@@ -589,6 +617,7 @@ function runSearch() {
   $('.toolbar').hidden = true;
   $('#boards').hidden = true;
   $('.review-panel').hidden = true;
+  $('.exam-home').hidden = true;
   $('#searchPanel').hidden = false;
   const hits = [];
   BOARDS.forEach((b, order) => {

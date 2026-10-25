@@ -1,0 +1,656 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2024 秋·走美 · 真题解答</title>
+<link rel="stylesheet" href="../katex/katex.min.css">
+<script defer src="../katex/katex.min.js"></script>
+<script defer src="../katex/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+<style>
+body{font-family:-apple-system,"PingFang SC","Source Han Serif SC",serif;
+max-width:760px;margin:0 auto;padding:24px;line-height:1.8;color:#222}
+h1{border-bottom:2px solid #333;padding-bottom:8px}
+h2{margin-top:1.6em}h3{font-size:1.05em}
+.meta{color:#666;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.example{border:1px solid #ddd;border-radius:8px;padding:12px 16px;margin:14px 0}
+.example h3{margin:.2em 0 .6em}
+.covers{font-size:.75em;color:#888;font-weight:normal;margin-left:1em}
+.problem{background:#f7f7f9;border-radius:6px;padding:8px 12px}
+details{margin-top:.6em}summary{cursor:pointer;color:#36c}
+.answer{color:#b30;font-weight:bold}
+img{max-width:100%;height:auto}
+
+body{max-width:920px;margin:0 auto;padding:26px 22px 64px;background:#fffdf8;
+font-family:-apple-system,"PingFang SC","Source Han Serif SC",serif;line-height:1.85;color:#222}
+.exam-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;
+flex-wrap:wrap;font-size:12px;color:#5f6a64;margin-bottom:22px}
+.exam-nav a{color:#2f6f6b;text-decoration:none;font-weight:600}
+.exam-nav a:hover{text-decoration:underline}
+.exam-kicker{font-size:10.5px;letter-spacing:.16em;color:#2f6f6b;font-weight:700;margin-bottom:4px}
+.exam-body h1{font-size:25px;line-height:1.3;margin:0 0 18px;padding-bottom:12px;border-bottom:2px solid #2f6f6b}
+.exam-body h2{font-size:19px;margin:30px 0 12px;color:#1f2a26}
+.exam-body h3{font-size:15px;margin:24px 0 8px;color:#2f6f6b}
+.exam-body table{width:100%;border-collapse:collapse;margin:14px 0;font-size:12.5px}
+.exam-body th,.exam-body td{border:1px solid #ddd6c8;padding:6px 8px;text-align:left;vertical-align:top}
+.exam-body th{background:#f4efe3;font-weight:700}
+.exam-body blockquote{margin:14px 0;padding:8px 14px;border-left:3px solid #2f6f6b;background:#f7f4ec;color:#4d5651}
+.exam-body code{background:#f1ece1;padding:1px 5px;border-radius:4px;font-size:.9em}
+.exam-body img{max-width:100%;height:auto;display:block;margin:16px auto}
+.exam-body hr{border:0;border-top:1px solid #e4ddcf;margin:22px 0}
+.exam-foot{margin-top:40px;padding-top:16px;border-top:1px solid #e4ddcf;font-size:12px;color:#8a928d}
+.exam-index-head{max-width:920px;margin:0 auto 20px}
+.exam-index-head h1{font-size:28px;margin:0 0 8px}
+.exam-index-head p{margin:0;color:#5f6a64;font-size:13px}
+.exam-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:18px 0 28px}
+.exam-grid a{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:12px 13px;
+border:1px solid #ddd6c8;border-radius:12px;background:#fffdf8;color:#1f2a26;text-decoration:none}
+.exam-grid a:hover{border-color:#2f6f6b}
+.exam-grid b{font-size:12px}.exam-grid span{font-size:10px;color:#5f6a64;white-space:nowrap}
+.exam-table{width:100%;border-collapse:collapse;font-size:12.5px}
+.exam-table th,.exam-table td{border:1px solid #ddd6c8;padding:6px 8px;text-align:left}
+.exam-table th{background:#f4efe3}
+@media(max-width:720px){.exam-grid{grid-template-columns:repeat(2,minmax(0,1fr))}body{padding:18px 15px 50px}}
+@media print{.exam-nav,.exam-foot{display:none}body{max-width:none;padding:0}.exam-grid{display:none}}
+</style></head><body><div class="exam-nav"><a href="../index.html">← 知识地图</a><span><a href="index.html">全部真题</a></span></div><div class="exam-kicker">竞赛真题 · 六年级 · 12 题</div><article class="exam-body"><h1>2024 年秋季走美六年级组试卷 全卷解答</h1>
+<blockquote>
+<p>来源：<code>exam/2024年秋季走美六年级-学生版.pdf</code>（4 页）<br />
+说明：第 4 页为该卷的参考答案页，本解答已逐题核对答案；图形题（第 5、6、12 题）以页面图片为准，并用 PDF 矢量数据复核了几何尺寸。</p>
+</blockquote>
+<h2>试卷概览</h2>
+<ul>
+<li><strong>题量</strong>：12 题（全部为填空题；第 11 题含 2 个小问，第 12 题要求完成 3 个 4 阶幻方）。</li>
+<li><strong>题型与板块</strong>：
+<ul>
+<li>计算与数论：第 1、3、9、10、11 题（循环小数、质数、整数拆分、分数数列、无平方因子数）</li>
+<li>图形与几何：第 5、6、8 题（圆面积、星形转角和、折纸与圆柱体积）</li>
+<li>计数与概率：第 4、7 题（概率、天平称重枚举）</li>
+<li>应用题与组合：第 2、12 题（利润与百分数、幻方）</li>
+</ul>
+</li>
+<li><strong>难度分布</strong>：★1 共 1 题，★2 共 1 题，★3 共 5 题，★4 共 5 题。整体属于&quot;基础填空 + 少量竞赛技巧&quot;的难度结构，无偏难怪题。</li>
+<li><strong>本卷特点</strong>：绝大多数题只考一个&quot;关键转化&quot;——第 5 题考割补（面积加减），第 6 题考转角 3 圈，第 8 题考&quot;自相似长宽比 $\sqrt2:1$&quot;，第 10 题考逆推，第 9 题考&quot;多拆 3&quot;。</li>
+</ul>
+<h2>逐题解答</h2>
+<h3>第 1 题</h3>
+<p><strong>题目</strong>：$0.\dot{2}\dot{5}=$ ________（用最简分数表示）。</p>
+<p><strong>答案</strong>：$\dfrac{25}{99}$</p>
+<p><strong>解析</strong>：</p>
+<ol>
+<li>循环节是&quot;25&quot;（两个数字循环），记 $x=0.25252525\cdots$。</li>
+<li>循环节有 2 位，把 $x$ 乘 $100$ 让小数点后对齐：</li>
+</ol>
+<p>$$100x=25.252525\cdots,\qquad x=0.252525\cdots$$</p>
+<ol start="3">
+<li>两式相减，小数部分全部消掉：</li>
+</ol>
+<p>$$100x-x=25\ \Longrightarrow\ 99x=25\ \Longrightarrow\ x=\frac{25}{99}.$$</p>
+<ol start="4">
+<li>验算：$25\div 99=0.2525\cdots$，与 $0.\dot{2}\dot{5}$ 一致；又 $25=5^2$，$99=9\times 11$，分子分母没有公因数，已是最简分数。</li>
+</ol>
+<p><strong>知识点</strong>：循环小数、循环小数化分数</p>
+<p><strong>思路/方法</strong>：错位相减法（设 $x$，用 $10^n$ 倍&quot;对齐相减&quot;消去无限循环部分）</p>
+<p><strong>难度</strong>：★1</p>
+<hr />
+<h3>第 2 题</h3>
+<p><strong>题目</strong>：某商品今年的生产成本比去年增加了 10%，仍保持原来的销售价格，则每件产品的利润下降了 5%。那么，去年每件产品的成本在销售价格中所占的百分比约为 ________%。</p>
+<p><strong>答案</strong>：$33.3$（即约 $\dfrac13$，填 33.3）</p>
+<p><strong>解析</strong>：</p>
+<ol>
+<li>设去年每件成本为 $C$，销售价格为 $P$（价格不变）。
+<ul>
+<li>去年利润 $=P-C$；</li>
+<li>今年成本 $=(1+10%)C=1.1C$，今年利润 $=P-1.1C$。</li>
+</ul>
+</li>
+<li>&quot;利润下降了 5%&quot;是<strong>相对去年利润</strong>下降 5%（这是本题最关键的理解）：</li>
+</ol>
+<p>$$P-1.1C=0.95(P-C).$$</p>
+<ol start="3">
+<li>去括号整理：</li>
+</ol>
+<p>$$P-1.1C=0.95P-0.95C\ \Longrightarrow\ 0.05P=0.15C\ \Longrightarrow\ C=\frac13P.$$</p>
+<ol start="4">
+<li>
+<p>所以 $\dfrac{C}{P}\times 100%=\dfrac13\times100%\approx 33.3%$。</p>
+</li>
+<li>
+<p>验算（设数法）：令 $C=1$，$P=3$。去年利润 $2$；今年成本 $1.1$，利润 $1.9$；下降了 $(2-1.9)\div 2=0.1\div 2=5%$ ✓，成本占售价 $1\div 3=33.3%$ ✓。</p>
+</li>
+</ol>
+<p><strong>知识点</strong>：百分数应用题、经济问题、百分数</p>
+<p><strong>思路/方法</strong>：设数法（把成本、售价设成具体数）+ 列方程</p>
+<p><strong>难度</strong>：★3</p>
+<hr />
+<h3>第 3 题</h3>
+<p><strong>题目</strong>：只能被 1 和自身整除的大于 1 的自然数叫做质数，比如 2、3、5、7、11。如果将 118 分拆成 10 个质数之和，要求其中最大的质数尽可能大，那么，这个最大的质数为 ________。</p>
+<p><strong>答案</strong>：$97$</p>
+<p><strong>解析</strong>：</p>
+<ol>
+<li>要让其中<strong>一个</strong>质数尽量大，其余 9 个质数就必须尽量小。质数最小是 $2$，所以其余 9 个质数的和至少是</li>
+</ol>
+<p>$$9\times 2=18.$$</p>
+<ol start="2">
+<li>设最大的质数为 $p$，则</li>
+</ol>
+<p>$$p\le 118-18=100.$$</p>
+<ol start="3">
+<li>在不超过 100 的质数里从大到小试：$97,\ 89,\ 83,\cdots$（101、103、107、109、113 都超过 100，留给其余 9 个数的和不足 17，不可能的）。</li>
+<li>试 $p=97$：其余 9 个质数的和 $=118-97=21$。而 $21=8\times 2+5$，即</li>
+</ol>
+<p>$$118=97+5+\underbrace{2+2+\cdots+2}_{8\ \text{个}},$$</p>
+<p>正好是 10 个质数 ✓。所以 $p=97$ 可以达到，又不可能更大，最大值就是 97。</p>
+<p><strong>知识点</strong>：质数与合数、质数枚举、最值问题</p>
+<p><strong>思路/方法</strong>：极端分析（用&quot;其余数至少多大&quot;给出上界）+ 具体构造验证</p>
+<p><strong>难度</strong>：★3</p>
+<hr />
+<h3>第 4 题</h3>
+<p><strong>题目</strong>：如图所示的骰子是非标准的，其上的点数分别为 3、3、3、3、3、6。用这样两个骰子一起投掷一次，点数之和恰好等于 9 的概率为 ________（用最简分数表示）。</p>
+<p><strong>答案</strong>：$\dfrac{5}{18}$</p>
+<p><strong>解析</strong>：</p>
+<ol>
+<li>两个骰子的点数都是 3 或 6，和为 9 只可能是</li>
+</ol>
+<p>$$3+6\quad\text{或}\quad 6+3.$$</p>
+<ol start="2">
+<li>一个骰子有 6 个面，其中 6 点只有 1 个面，3 点有 5 个面，所以</li>
+</ol>
+<p>$$P(\text{掷出}\ 3)=\frac56,\qquad P(\text{掷出}\ 6)=\frac16.$$</p>
+<ol start="3">
+<li>两个骰子互不影响（乘法原理），两种情况都要算上：</li>
+</ol>
+<p>$$P=2\times\frac16\times\frac56=\frac{10}{36}=\frac{5}{18}.$$</p>
+<ol start="4">
+<li>验算（数总情况）：两个骰子共有 $6\times 6=36$ 种等可能结果。和为 9 的有：（第一个 3、第二个 6）共 $5\times1=5$ 种，加上（第一个 6、第二个 3）共 $1\times5=5$ 种，合计 10 种，$\dfrac{10}{36}=\dfrac{5}{18}$ ✓。</li>
+</ol>
+<p><strong>知识点</strong>：概率初步、可能性的大小、加乘原理</p>
+<p><strong>思路/方法</strong>：分类列举 + 乘法原理</p>
+<p><strong>难度</strong>：★2</p>
+<hr />
+<h3>第 5 题</h3>
+<p><strong>题目</strong>：如下图所示，已知两个同心圆中，大圆的半径 $R=3$，小圆的半径 $r=2$，则阴影部分的面积为 ________（圆周率用 $\pi$ 表示）。</p>
+<blockquote>
+<p>图形说明（按页面图片）：两个同心圆半径 $R=3$、$r=2$。阴影由三块拼成（两加一减）——<br />
+① 大圆的<strong>上半圆</strong>（上半部分整块都是阴影，含内部）；<br />
+② 小圆的<strong>下半圆</strong>；<br />
+③ 在水平直径的左右两端，各以&quot;从小圆到大圆的那一段（长为 $R-r=1$）&quot;为直径、向<strong>上</strong>鼓出一个小半圆，这两个小半圆是<strong>空白</strong>的（要从①里挖掉）。</p>
+</blockquote>
+<p><strong>答案</strong>：$6.25\pi$</p>
+<p><strong>解析</strong>：</p>
+<ol>
+<li>大圆上半圆面积：</li>
+</ol>
+<p>$$S_1=\frac12\pi R^2=\frac12\pi\times 3^2=4.5\pi.$$</p>
+<ol start="2">
+<li>小圆下半圆面积：</li>
+</ol>
+<p>$$S_2=\frac12\pi r^2=\frac12\pi\times 2^2=2\pi.$$</p>
+<ol start="3">
+<li>两端被挖去的两个小半圆：它们的直径正好是从大圆到小圆的那段半径，长 $R-r=3-2=1$，所以每个小半圆的半径是</li>
+</ol>
+<p>$$\frac{R-r}{2}=\frac12=0.5.$$</p>
+<p>两个小半圆面积共</p>
+<p>$$S_3=2\times\frac12\pi\times\left(\frac12\right)^2=\pi\times\frac14=0.25\pi.$$</p>
+<ol start="4">
+<li>阴影面积 = 上半大圆 + 下半小圆 − 两个小半圆：</li>
+</ol>
+<p>$$S=S_1+S_2-S_3=4.5\pi+2\pi-0.25\pi=6.25\pi.$$</p>
+<ol start="5">
+<li>合理性检查：大圆面积 $9\pi\approx28.3$，小圆面积 $4\pi\approx12.6$，阴影 $6.25\pi\approx19.6$，界于两者之间，符合图形大小 ✓。也可写成 $S=\dfrac{25}{4}\pi$。</li>
+</ol>
+<p><strong>知识点</strong>：圆与扇形、圆的面积、组合图形的面积</p>
+<p><strong>思路/方法</strong>：割补法（面积加减：整块相加再挖去空白，不重叠不遗漏）</p>
+<p><strong>难度</strong>：★4</p>
+<hr />
+<h3>第 6 题</h3>
+<p><strong>题目</strong>：如下图所示，$\angle A+\angle B+\angle C+\angle D+\angle E+\angle F+\angle G+\angle H=$ ________$^\circ$。</p>
+<blockquote>
+<p>图形说明（按页面图片）：一个 8 个尖角的星形，8 个尖角依次标为 $A、B、C、D、E、F、G、H$。图中每个尖角与&quot;隔两个尖角&quot;的尖角连线，即按 $D\to A\to F\to C\to H\to E\to B\to G\to D$ 连成一个一笔画的星形（每条边跨过 2 个尖角）。</p>
+</blockquote>
+<p><strong>答案</strong>：$360$</p>
+<p><strong>解析</strong>：</p>
+<ol>
+<li>沿星形的边按 $D\to A\to F\to C\to H\to E\to B\to G\to D$ 走一圈，一共经过 8 个尖角。</li>
+<li>在每一个尖角处，前进的方向会&quot;拐弯&quot;，拐的角度 $=180^\circ-$（这个尖角的度数）。例如在 $A$ 处拐 $180^\circ-\angle A$。</li>
+<li>因为每条边都跨过 2 个尖角（相当于每次跨越 3 个位置），所以绕回起点 $D$ 时，方向一共转了 <strong>3 整圈</strong>：</li>
+</ol>
+<p>$$\text{总拐角}=3\times 360^\circ=1080^\circ.$$</p>
+<ol start="4">
+<li>另一方面，8 个尖角处拐角的总和是</li>
+</ol>
+<p>$$8\times180^\circ-(\angle A+\angle B+\cdots+\angle H).$$</p>
+<ol start="5">
+<li>两式相等：</li>
+</ol>
+<p>$$1440^\circ-(\angle A+\cdots+\angle H)=1080^\circ\ \Longrightarrow\ \angle A+\cdots+\angle H=360^\circ.$$</p>
+<ol start="6">
+<li>检验（取特殊情形）：若 8 个尖角均匀分布（正八星），每个尖角处拐 $1080^\circ\div8=135^\circ$，所以每个尖角是 $180^\circ-135^\circ=45^\circ$，$8\times45^\circ=360^\circ$ ✓，与公式一致。</li>
+</ol>
+<p><strong>知识点</strong>：三角形内角和与三边关系、线与角</p>
+<p><strong>思路/方法</strong>：转角法（外角法）——&quot;总拐角 = 圈数 × 360°&quot;</p>
+<p><strong>难度</strong>：★4</p>
+<hr />
+<h3>第 7 题</h3>
+<p><strong>题目</strong>：用一台天平和重 1 克、2 克、5 克、10 克的砝码各一个，可以称量不同的重量（不算 0 克）有 ________ 种。</p>
+<p><strong>答案</strong>：$18$ 种</p>
+<p><strong>解析</strong>：</p>
+<ol>
+<li>天平称量时，砝码可以放在<strong>两边</strong>，所以每个砝码有三种状态：放在物品同侧（相当于&quot;减&quot;）、放在另一侧（相当于&quot;加&quot;）、不放。四个砝码最多产生 $3^4=81$ 种放法，我们关心能称出哪些重量。</li>
+<li>先看 1 克、2 克两个砝码（两边都可放）：能表示 $-3,-2,-1,0,1,2,3$，即能称 $1,2,3$ 克。</li>
+<li>再加 5 克砝码：$0\sim3$ 与 $5$ 相加减，可覆盖 $0\sim8$ 克。例如</li>
+</ol>
+<p>$$4=5-1,\quad 7=5+2,\quad 8=5+2+1.$$</p>
+<ol start="4">
+<li>再加 10 克砝码：$0\sim8$ 与 $10$ 相加减，可覆盖 $0\sim18$ 克。例如</li>
+</ol>
+<p>$$9=10-1,\quad 14=10+5-1,\quad 18=10+5+2+1.$$</p>
+<ol start="5">
+<li>所以 1 克到 18 克都能称出，18 克以上不可能（四个砝码全放一边也只有 $1+2+5+10=18$ 克）。因此不同重量共</li>
+</ol>
+<p>$$18\ \text{种}.$$</p>
+<ol start="6">
+<li>验算：最大可称 $18$ 克；且 $1\sim18$ 克全部可实现（上面归纳已说明区间连续不断）✓。</li>
+</ol>
+<p><strong>知识点</strong>：枚举与分类、分类列举</p>
+<p><strong>思路/方法</strong>：分类枚举 + &quot;砝码放两边&quot;（每个砝码三种状态）的区间覆盖法</p>
+<p><strong>难度</strong>：★3</p>
+<hr />
+<h3>第 8 题</h3>
+<p><strong>题目</strong>：一张长方形纸片 $ABCD$，宽为 1，沿着它的长边折叠成两个小长方形，每个小长方形的长宽之比仍然与原来的长方形的长宽之比相等。如果以这个纸片作为侧面展开图形，围成一个圆柱，使圆柱的高等于长方形纸片的宽，那么，得到的这个圆柱的体积为 ________（圆周率用 $\pi$ 表示）。</p>
+<p><strong>答案</strong>：$\dfrac{1}{2\pi}$（体积单位，约 $0.159$）</p>
+<p><strong>解析</strong>：</p>
+<ol>
+<li>设原长方形长为 $x$（$x&gt;1$），宽为 1，长宽之比为 $x:1$。</li>
+<li>对折后小长方形的长宽之比要与原来相同，只有&quot;把长折半&quot;这一种可能（折半后两边为 $\dfrac{x}{2}$ 和 $1$，且 $\dfrac{x}{2}&lt;1$）：</li>
+</ol>
+<p>$$\text{原长方形}\quad x:1;\qquad \text{小长方形}\quad 1:\frac{x}{2}.$$</p>
+<ol start="3">
+<li>长宽之比相等：</li>
+</ol>
+<p>$$\frac{x}{1}=\frac{1}{x/2}\ \Longrightarrow\ x\cdot\frac{x}{2}=1\ \Longrightarrow\ x^2=2\ \Longrightarrow\ x=\sqrt2.$$</p>
+<p>（检验：$\dfrac{x}{2}=\dfrac{\sqrt2}{2}\approx0.707&lt;1$，所以小长方形的长确实是 1，长宽比 $1:0.707\approx\sqrt2:1$ ✓，与原长方形 $\sqrt2:1$ 相同。）</p>
+<ol start="4">
+<li>用这张纸围成圆柱，圆柱的高 = 纸片的宽 = 1，底面周长 = 纸片的长 = $\sqrt2$。</li>
+<li>底面半径：</li>
+</ol>
+<p>$$2\pi r=\sqrt2\ \Longrightarrow\ r=\frac{\sqrt2}{2\pi}.$$</p>
+<ol start="6">
+<li>圆柱体积：</li>
+</ol>
+<p>$$V=\pi r^2h=\pi\times\left(\frac{\sqrt2}{2\pi}\right)^2\times1=\pi\times\frac{2}{4\pi^2}=\frac{1}{2\pi}.$$</p>
+<ol start="7">
+<li>合理性检查：底面半径 $r\approx\dfrac{1.414}{6.283}\approx0.225$，底面积约 $0.159$，高 1，体积约 $0.159$，与 $\dfrac{1}{2\pi}\approx0.159$ 一致 ✓。</li>
+</ol>
+<p><strong>知识点</strong>：圆柱的体积、比的意义、圆的周长</p>
+<p><strong>思路/方法</strong>：设未知数 + 利用&quot;自相似长宽比&quot;列方程；再用圆柱体积公式</p>
+<p><strong>难度</strong>：★4</p>
+<hr />
+<h3>第 9 题</h3>
+<p><strong>题目</strong>：将 2015 分解为若干自然数的和，使这些自然数的乘积取得最大值，则这个最大值为 ________。</p>
+<p><strong>答案</strong>：$2\times 3^{671}$</p>
+<p><strong>解析</strong>：</p>
+<ol>
+<li>拆分原则一：<strong>不拆出 1</strong>。因为 $1\times a=a&lt;1+a$（$a\ge2$），把 1 并入其它数乘积更大。</li>
+<li>拆分原则二：<strong>尽量多拆出 3</strong>。比较 $3(n-3)$ 与 $n$：当 $n\ge5$ 时 $3(n-3)=3n-9&gt;n$，所以大于 3 的数继续拆成 3 加另一个数，乘积会变大。又如 $4=2+2$ 时 $2\times2=4$，与 4 相等但不变大，所以拆 4 不划算（$3+1$ 的 1 要改成 $2+2$）。</li>
+<li>结论：整数 $n$ 拆成若干个 3，余 1 时改成 $2+2$，余 2 时保留一个 2，乘积最大。</li>
+<li>对 2015 做带余除法：</li>
+</ol>
+<p>$$2015=3\times671+2.$$</p>
+<p>所以应拆成&quot;1 个 2 + 671 个 3&quot;：</p>
+<p>$$2015=2+\underbrace{3+3+\cdots+3}_{671\ \text{个}},$$</p>
+<p>乘积最大值为</p>
+<p>$$2\times\underbrace{3\times3\times\cdots\times3}_{671\ \text{个}}=2\times3^{671}.$$</p>
+<ol start="5">
+<li>验算：$2+3\times671=2+2013=2015$ ✓；个数与和都正确。</li>
+</ol>
+<p><strong>知识点</strong>：最值问题、构造与论证</p>
+<p><strong>思路/方法</strong>：整数拆分（&quot;多拆 3&quot;原则）——先把&quot;大于 3 就继续拆&quot;的收益比较清楚，再按余数分类</p>
+<p><strong>难度</strong>：★3</p>
+<hr />
+<h3>第 10 题</h3>
+<p><strong>题目</strong>：我们可以将正整数和正分数按照如图所示的方式，从 1 开始，一层层地&quot;生长&quot;出来：$\dfrac11$ 是第一层；第二层是 $\dfrac21,\dfrac12$；第三层是 $\dfrac31,\dfrac23,\dfrac32,\dfrac13$。按照规律，$\dfrac{7}{20}$ 在第 ________ 层。</p>
+<p><strong>答案</strong>：第 $9$ 层</p>
+<p><strong>解析</strong>：</p>
+<ol>
+<li>观察&quot;生长&quot;规律：每个 $\dfrac{a}{b}$ 在下一层长出两个孩子</li>
+</ol>
+<p>$$\frac{a+b}{b}\quad\text{和}\quad\frac{a}{a+b}.$$</p>
+<p>例如 $\dfrac21$ 的孩子是 $\dfrac31$ 与 $\dfrac23$；$\dfrac12$ 的孩子是 $\dfrac32$ 与 $\dfrac13$，与题目给出的第三层完全一致。</p>
+<ol start="2">
+<li>
+<p>要求 $\dfrac7{20}$ 的层数，就从 $\dfrac7{20}$ 往回收（逆推）：</p>
+<ul>
+<li>若分子 &lt; 分母：上一层的数是 $\dfrac{a}{b-a}$（分子不变，分母减分子）；</li>
+<li>若分子 &gt; 分母：上一层的数是 $\dfrac{a-b}{b}$（分母不变，分子减分母）。</li>
+</ul>
+</li>
+<li>
+<p>一路倒推：</p>
+</li>
+</ol>
+<p>$$\frac{7}{20}\to\frac{7}{13}\to\frac{7}{6}\to\frac{1}{6}\to\frac{1}{5}\to\frac{1}{4}\to\frac{1}{3}\to\frac{1}{2}\to\frac{1}{1}.$$</p>
+<p>共走了 $8$ 步到达第一层的 $\dfrac11$，所以 $\dfrac{7}{20}$ 在第</p>
+<p>$$1+8=9\ \text{层}.$$</p>
+<ol start="4">
+<li>另一条更快的算法（欧几里得算法）：$\dfrac{7}{20}$ 反复做带余除法</li>
+</ol>
+<p>$$20\div7=2\cdots6,\qquad 7\div6=1\cdots1,\qquad 6\div1=6\cdots0,$$</p>
+<p>各次商的和 $2+1+6=9$，正是层数 ✓。</p>
+<ol start="5">
+<li>验算：从 $\dfrac11$ 顺向走 8 步（沿逆推路径反着走）可回到 $\dfrac{7}{20}$，层数 9 与题目给的第三层（如 $\dfrac31$ 按此算：$3\div1=3$，商和 3，第 3 层 ✓）规律一致。</li>
+</ol>
+<p><strong>知识点</strong>：数列与数表、递推与归纳</p>
+<p><strong>思路/方法</strong>：逆推法（辗转相减 / 欧几里得算法）</p>
+<p><strong>难度</strong>：★4</p>
+<hr />
+<h3>第 11 题</h3>
+<p><strong>题目</strong>：古希腊时代的数学家就开始研究三角形数、四边形数，…… 所谓四边形数就是以下直观形式的自然数：$\boxed{1}\ \boxed{4}\ \boxed{9}\ \boxed{16}$（图中用小圆点排成正方形，点数依次为 1、4、9、16，都是平方数）。</p>
+<p>不能被除 1 之外的正方形数整除的自然数称为<strong>无平方因子数</strong>，容易理解正方形数中只有 1 是无平方因子数，而 1，2，3 是按照从小到大的顺序排在最前面的 3 个无平方因子数。</p>
+<p>（1）按照从小到大的顺序，第 8 个无平方因子数为 ________，第 11 个无平方因子数为 ________。</p>
+<p>（2）质数显然都是无平方因子数。最小的不是质数的无平方因子数是 ________，100 以内最大的不是质数的无平方因子数是 ________。</p>
+<p><strong>答案</strong>：</p>
+<p>（1）$11$；$15$　　（2）$1$；$95$</p>
+<p><strong>解析</strong>：</p>
+<p>（1）&quot;无平方因子数&quot;就是<strong>不含因子 $4,9,16,25,\cdots$</strong>（平方数）的数。按从小到大逐个检查：</p>
+<ul>
+<li>$1,2,3$ ✓（题目已给）</li>
+<li>$4=2^2$ ✗（含 4）</li>
+<li>$5$ ✓，$6=2\times3$ ✓，$7$ ✓</li>
+<li>$8=2^3$ 含 $4$ ✗</li>
+<li>$9=3^2$ ✗，$10=2\times5$ ✓，$11$ ✓</li>
+<li>$12$ 含 $4$ ✗，$13$ ✓，$14=2\times7$ ✓，$15=3\times5$ ✓</li>
+<li>$16$ ✗，$17$ ✓，……</li>
+</ul>
+<p>把合格的数从小到大排：</p>
+<p>$$1,\ 2,\ 3,\ 5,\ 6,\ 7,\ 10,\ 11,\ 13,\ 14,\ 15,\ 17,\ \cdots$$</p>
+<p>数一数：第 8 个是 $11$，第 11 个是 $15$。</p>
+<p>（2）① 最小的不是质数的无平方因子数：<br />
+$1$ 不能被除 1 之外的平方数整除，所以 1 是无平方因子数；而 1 不是质数。所以最小的是 $1$。（注意：如果把 1 排除在外，下一个是 $6$，本题答案按&quot;包含 1&quot;记。）</p>
+<p>② 100 以内最大的不是质数的无平方因子数：从 100 往下查</p>
+<ul>
+<li>$100=2^2\times25$ 含 4 ✗</li>
+<li>$99=9\times11$ 含 9 ✗</li>
+<li>$98=2\times7^2$ 含 49 ✗</li>
+<li>$97$ 是质数（不合&quot;不是质数&quot;）</li>
+<li>$96=2^5\times3$ 含 4 ✗</li>
+<li>$95=5\times19$ ✓ 无平方因子，且 95 不是质数</li>
+</ul>
+<p>所以是 $95$。</p>
+<p><strong>知识点</strong>：质数与合数、完全平方数、质数枚举</p>
+<p><strong>思路/方法</strong>：枚举 + 排除法（用平方数 $4,9,16,\cdots$ 去筛）</p>
+<p><strong>难度</strong>：★3</p>
+<hr />
+<h3>第 12 题</h3>
+<p><strong>题目</strong>：将自然数 1 到 16 排成 $4\times4$ 的方阵，每行每列以及对角线上数的和均相等，这样的方阵称为 4 阶幻方。南宋数学家杨辉是最早系统研究幻方的中国古代数学家。请根据已经给定的数字提供的信息，完成 3 个不同的 4 阶幻方：</p>
+<p>每个方阵已给出的数（三张图相同位置）：</p>
+<ul>
+<li>左上角：分别给出 $1$、$2$、$3$；</li>
+<li>中间 $2\times2$：$\begin{matrix}10 &amp; 7\ 8 &amp; 9\end{matrix}$。</li>
+</ul>
+<p>即第 1 个幻方已知 $a_{11}=1$；第 2 个已知 $a_{11}=2$；第 3 个已知 $a_{11}=3$；三个幻方都已知 $a_{22}=10,\ a_{23}=7,\ a_{32}=8,\ a_{33}=9$。</p>
+<p><strong>答案</strong>：（答案册给出的 3 个幻方，均已逐行逐列逐对角验证）</p>
+<p><strong>幻方 1</strong></p>
+<table>
+<thead>
+<tr>
+<th>1</th>
+<th>13</th>
+<th>16</th>
+<th>4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6</td>
+<td>10</td>
+<td>7</td>
+<td>11</td>
+</tr>
+<tr>
+<td>12</td>
+<td>8</td>
+<td>9</td>
+<td>5</td>
+</tr>
+<tr>
+<td>15</td>
+<td>3</td>
+<td>2</td>
+<td>14</td>
+</tr>
+</tbody>
+</table>
+<p><strong>幻方 2</strong></p>
+<table>
+<thead>
+<tr>
+<th>2</th>
+<th>15</th>
+<th>14</th>
+<th>3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>11</td>
+<td>10</td>
+<td>7</td>
+<td>6</td>
+</tr>
+<tr>
+<td>5</td>
+<td>8</td>
+<td>9</td>
+<td>12</td>
+</tr>
+<tr>
+<td>16</td>
+<td>1</td>
+<td>4</td>
+<td>13</td>
+</tr>
+</tbody>
+</table>
+<p><strong>幻方 3</strong></p>
+<table>
+<thead>
+<tr>
+<th>3</th>
+<th>11</th>
+<th>14</th>
+<th>6</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>10</td>
+<td>7</td>
+<td>15</td>
+</tr>
+<tr>
+<td>16</td>
+<td>8</td>
+<td>9</td>
+<td>1</td>
+</tr>
+<tr>
+<td>13</td>
+<td>5</td>
+<td>4</td>
+<td>12</td>
+</tr>
+</tbody>
+</table>
+<p><strong>解析</strong>：</p>
+<p><strong>第 1 步：求幻和。</strong> $1+2+\cdots+16=\dfrac{16\times17}{2}=136$，4 行相等，所以每行（每列、每条对角线）的和都是</p>
+<p>$$136\div4=34.$$</p>
+<p><strong>第 2 步：用对角线定出右下角。</strong> 主对角线经过左上角、$a_{22}=10$、$a_{33}=9$、右下角 $a_{44}$：</p>
+<p>$$a_{11}+10+9+a_{44}=34\ \Longrightarrow\ a_{44}=15-a_{11}.$$</p>
+<p>所以三个幻方的右下角分别是 $14,\ 13,\ 12$（与答案一致）。</p>
+<p><strong>第 3 步：用&quot;互补数对&quot;加速。</strong> $1\sim16$ 可配成 8 对和为 17 的数：</p>
+<p>$$(1,16),(2,15),(3,14),(4,13),(5,12),(6,11),(7,10),(8,9).$$</p>
+<p>两个这样的数对之和正好是 34。题中已知的 $10+7=17$、$8+9=17$，它们各自已经凑成一对，说明第 2 行、第 3 行剩下的两个数也必须<strong>成对（和为 17）</strong>。</p>
+<p><strong>第 4 步：以幻方 1 为例试填。</strong><br />
+由第 2 列：$a_{12}+10+8+a_{42}=34$，得 $a_{12}+a_{42}=16$；<br />
+由第 3 列：$a_{13}+7+9+a_{43}=34$，得 $a_{13}+a_{43}=18$；<br />
+由副对角线：$a_{14}+7+8+a_{41}=34$，得 $a_{14}+a_{41}=19$。<br />
+先试 $a_{41}=15,\ a_{14}=4$（和为 19）。则第 1 行：$1+a_{12}+a_{13}+4=34$，即 $a_{12}+a_{13}=29$，取 $a_{12}=13,\ a_{13}=16$ 恰好合适；于是<br />
+$a_{42}=16-13=3$，$a_{43}=18-16=2$。<br />
+再由第 1 列：$1+a_{21}+a_{31}+15=34$，得 $a_{21}+a_{31}=18$；第 2 行 $a_{21}+a_{24}=17$，第 3 行 $a_{31}+a_{34}=17$，取 $a_{21}=6,\ a_{31}=12,\ a_{24}=11,\ a_{34}=5$ 即可。其余用幻和补齐，得到幻方 1。</p>
+<p><strong>第 5 步：逐条验算（三个幻方都验，幻和都是 34）。</strong></p>
+<p>幻方 1：</p>
+<ul>
+<li>行：$1+13+16+4=34$，$6+10+7+11=34$，$12+8+9+5=34$，$15+3+2+14=34$ ✓</li>
+<li>列：$1+6+12+15=34$，$13+10+8+3=34$，$16+7+9+2=34$，$4+11+5+14=34$ ✓</li>
+<li>对角线：$1+10+9+14=34$，$4+7+8+15=34$ ✓</li>
+</ul>
+<p>幻方 2：</p>
+<ul>
+<li>行：$2+15+14+3=34$，$11+10+7+6=34$，$5+8+9+12=34$，$16+1+4+13=34$ ✓</li>
+<li>列：$2+11+5+16=34$，$15+10+8+1=34$，$14+7+9+4=34$，$3+6+12+13=34$ ✓</li>
+<li>对角线：$2+10+9+13=34$，$3+7+8+16=34$ ✓</li>
+</ul>
+<p>幻方 3：</p>
+<ul>
+<li>行：$3+11+14+6=34$，$2+10+7+15=34$，$16+8+9+1=34$，$13+5+4+12=34$ ✓</li>
+<li>列：$3+2+16+13=34$，$11+10+8+5=34$，$14+7+9+4=34$，$6+15+1+12=34$ ✓</li>
+<li>对角线：$3+10+9+12=34$，$6+7+8+13=34$ ✓</li>
+</ul>
+<p>另外三张图都满足已知条件：左上角分别为 $1、2、3$，中间 $2\times2$ 块均为 $\begin{matrix}10&amp;7\8&amp;9\end{matrix}$ ✓。</p>
+<p><strong>知识点</strong>：幻方、数阵图</p>
+<p><strong>思路/方法</strong>：先求幻和（和 ÷ 阶数）+ 互补数对（和为 17）+ 逐格试填并验证</p>
+<p><strong>难度</strong>：★4</p>
+<hr />
+<h2>知识点与思路总结表</h2>
+<table>
+<thead>
+<tr>
+<th>题号</th>
+<th>知识点</th>
+<th>方法</th>
+<th>难度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>循环小数、循环小数化分数</td>
+<td>错位相减法</td>
+<td>★1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>百分数应用题、经济问题、百分数</td>
+<td>设数法 + 方程</td>
+<td>★3</td>
+</tr>
+<tr>
+<td>3</td>
+<td>质数与合数、质数枚举、最值问题</td>
+<td>极端分析 + 构造验证</td>
+<td>★3</td>
+</tr>
+<tr>
+<td>4</td>
+<td>概率初步、可能性的大小、加乘原理</td>
+<td>分类列举 + 乘法原理</td>
+<td>★2</td>
+</tr>
+<tr>
+<td>5</td>
+<td>圆与扇形、圆的面积、组合图形的面积</td>
+<td>割补法（面积加减）</td>
+<td>★4</td>
+</tr>
+<tr>
+<td>6</td>
+<td>三角形内角和与三边关系、线与角</td>
+<td>转角法（外角法）</td>
+<td>★4</td>
+</tr>
+<tr>
+<td>7</td>
+<td>枚举与分类、分类列举</td>
+<td>分状态枚举 + 区间覆盖</td>
+<td>★3</td>
+</tr>
+<tr>
+<td>8</td>
+<td>圆柱的体积、比的意义、圆的周长</td>
+<td>自相似长宽比列方程</td>
+<td>★4</td>
+</tr>
+<tr>
+<td>9</td>
+<td>最值问题、构造与论证</td>
+<td>整数拆分（多拆 3）</td>
+<td>★3</td>
+</tr>
+<tr>
+<td>10</td>
+<td>数列与数表、递推与归纳</td>
+<td>逆推（欧几里得算法）</td>
+<td>★4</td>
+</tr>
+<tr>
+<td>11</td>
+<td>质数与合数、完全平方数、质数枚举</td>
+<td>枚举 + 平方数排除法</td>
+<td>★3</td>
+</tr>
+<tr>
+<td>12</td>
+<td>幻方、数阵图</td>
+<td>幻和 + 互补数对 + 试填验证</td>
+<td>★4</td>
+</tr>
+</tbody>
+</table>
+<p><strong>方法归类</strong>：</p>
+<ul>
+<li><strong>&quot;设数/设元&quot;类</strong>：第 1、2、8 题——都是&quot;未知的东西先设成字母或具体数，再按条件列式&quot;。</li>
+<li><strong>&quot;面积加减&quot;类</strong>：第 5 题——把不规则阴影拆成&quot;整块 − 空白块&quot;。</li>
+<li><strong>&quot;数角/转角&quot;类</strong>：第 6 题——拐角总和 = 圈数 × 360°，是数角题的通用模型。</li>
+<li><strong>&quot;枚举 + 排除&quot;类</strong>：第 3、7、11 题——先把范围压小（极端分析、区间覆盖、平方数筛），再一一列举。</li>
+<li><strong>&quot;规律/逆推&quot;类</strong>：第 9、10 题——一个从&quot;拆法收益&quot;找规律，一个从结果往回倒推。</li>
+</ul>
+<h2>易错点与教学建议</h2>
+<ol>
+<li>
+<p><strong>第 1 题（循环小数）</strong>：错误写法 $0.2525\ldots=\dfrac{2525}{10000}$ 或 $\dfrac{25}{100}$。要讲清&quot;循环节有 2 位就乘 100 再相减&quot;；口诀：循环节几位就乘 $10^{\text{几位}}$。本题 $25/99$ 已最简，若学生写 $50/198$ 提醒约分。</p>
+</li>
+<li>
+<p><strong>第 2 题（利润与百分数）</strong>：本题最大陷阱是&quot;利润下降 5%&quot;——是<strong>相对去年利润</strong>下降 5%，不是&quot;占售价的 5 个百分点&quot;。教学中建议先用设数法（$C=1,P=3$）验证，再回到方程；也可用&quot;份数&quot;讲：成本 : 售价 = 1 : 3，直接得 $33.3%$。另外结果 $33.3%$ 是&quot;约&quot;，不是精确 $1/3$。</p>
+</li>
+<li>
+<p><strong>第 3 题（质数分拆）</strong>：常见错误是&quot;最大的质数取不超过 118 的最大质数 113&quot;。要强调<strong>其余 9 个数每个至少是 2</strong>，从而最大质数 $\le 118-18=100$，这是本题的&quot;卡点&quot;；再由 $21=8\times2+5$ 完成构造。要让学生养成&quot;先给上界、再验证能取到&quot;的两步思维。</p>
+</li>
+<li>
+<p><strong>第 4 题（概率）</strong>：容易漏算 $(6,3)$ 只算 $(3,6)$，得 $5/36$。提醒：两个骰子要分&quot;第一个、第二个&quot;，两种情况都要算；也可以用&quot;36 种结果表&quot;数一数。</p>
+</li>
+<li>
+<p><strong>第 5 题（圆面积割补）</strong>：易错在把两个小半圆的<strong>直径当成 1</strong> 而半径又除以 2（正确半径是 $(R-r)/2=0.5$），或把整个小圆都挖掉。教学时让学生先在图上一块块标号（上半大圆、下半小圆、两个小半圆），再写&quot;加、加、减&quot;；最后用&quot;阴影比大圆小、比小圆大&quot;做合理性检查。</p>
+</li>
+<li>
+<p><strong>第 6 题（星形角度和）</strong>：学生常凭&quot;正八星每个 45°&quot;来算，但图中星形并不是正八星。要讲清&quot;不管正不正，8 个尖角之和不变&quot;，方法是转角法；&quot;转 3 圈&quot;可用数形结合演示（在纸上用笔沿边走过一遍，体会方向累计转了 3 整圈）。</p>
+</li>
+<li>
+<p><strong>第 7 题（天平称重）</strong>：最易错是&quot;只把砝码放一边&quot;，这样只能称 15 种（$1,2,3,5,6,7,8,10,11,12,13,15,16,17,18$）。本题既然给&quot;天平&quot;，就要允许砝码放<strong>两边</strong>（如 $4=5-1$）。教学建议：先只用 1、2 克砝码玩一玩（能称 1、2、3），再逐步加 5 克、10 克，体会&quot;区间不断扩展&quot;。</p>
+</li>
+<li>
+<p><strong>第 8 题（折纸与圆柱）</strong>：两个易错点：① 误以为折后小长方形是 $x\times\dfrac12$，导致比例方程无解——要引导学生检验&quot;折后哪条边变短了&quot;；② 忘记把&quot;底面周长 = 纸片长 $\sqrt2$&quot;和&quot;高 = 宽 = 1&quot;对应清楚。另外 $x=\sqrt2$ 是初中才熟知的数，小学阶段只需用 $x^2=2$ 得到 $x=\sqrt2$ 并会用即可，可提示&quot;这就是 A4 纸的长宽比&quot;。</p>
+</li>
+<li>
+<p><strong>第 9 题（整数拆分）</strong>：常见错误是&quot;拆成尽量多的 2&quot;或&quot;留一个 1&quot;。要把 $1$ 的坏处（$1+a&gt;1\times a$）和 $3$ 的好处（$3(n-3)&gt;n$，$n\ge5$）比较清楚；最后注意 $2015\div3$ 的余数是 2，所以是 $2\times3^{671}$，不是 $3^{671}\times$ 别的东西。</p>
+</li>
+<li>
+<p><strong>第 10 题（分数数列层数）</strong>：易错在&quot;孩子规律&quot;看反，或把 $\dfrac{7}{20}$ 的层数算成 8。建议：先在小范围内验证规则（如 $\dfrac31$ 应在第 3 层、$\dfrac15$ 应在第 5 层），再逆推 $\dfrac{7}{20}$；最后可教&quot;商的和&quot;速算法并解释它等价于逆推步数。</p>
+</li>
+<li>
+<p><strong>第 11 题（无平方因子数）</strong>：① 忘记 1 也算无平方因子数（导致第 8、11 个数错位）；② 把&quot;无平方因子&quot;误解为&quot;不是平方数&quot;（如 8 不是平方数但含 4，不是无平方因子数）。教学中先带学生把 1~20 逐个筛一遍，体会&quot;用平方数去筛&quot;；第（2）问的&quot;100 以内&quot;要从 100 往下试，注意 97 是质数不满足&quot;不是质数&quot;。</p>
+</li>
+<li>
+<p><strong>第 12 题（4 阶幻方）</strong>：易错在只检查&quot;行&quot;忘了&quot;列、对角线&quot;；或把已知数位置抄错（本题已知的是中间 $2\times2$ 的 $10,7/8,9$）。教学建议：① 先算幻和 34；② 用互补数对（和 17）搭骨架；③ 每填一步就检查已填的整行整列整对角线；④ 完成后必须&quot;全检查一遍&quot;——本题答案不唯一，只要满足条件即可（答案册给出的三个不同幻方已全部验证）。</p>
+</li>
+</ol>
+</article><div class="exam-foot"><a href="../index.html">← 返回知识地图</a> · <a href="index.html">全部真题</a></div></body></html>

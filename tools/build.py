@@ -29,12 +29,14 @@ from markdown_it import MarkdownIt
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from web_index import WEB_INDEX_BODY, WEB_INDEX_CSS  # noqa: E402
+from exam_pages import build as build_exam_pages, exam_home_html  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 CONTENT_DIR = ROOT / "content"
 DIST_DIR = ROOT / "dist"
 CURRICULUM_FILE = CONTENT_DIR / "curriculum.yaml"
 ASSETS_DIR = ROOT / "assets"
+ANSWERS_DIR = ROOT / "exam" / "answers"
 KATEX_SRC = ROOT / "assets" / "katex"  # 本地化 KaTeX 运行时（含字体），构建时拷入各输出目录
 
 REQUIRED_FIELDS = ["id", "title", "module", "grade", "tags", "difficulty", "skills", "related"]
@@ -405,6 +407,7 @@ def build_web(kps, boards):
                          "stubs": total - online, "boards": len(boards)}}
     app = WEB_APP.replace("__OUTLINE__", json.dumps(outline, ensure_ascii=False))
     app = app.replace("__DATA__", json.dumps(data, ensure_ascii=False))
+    app = app.replace("__EXAM_HOME__", exam_home_html(ANSWERS_DIR))
     (out_dir / "index.html").write_text(app, encoding="utf-8")
     copy_katex(out_dir)
     copy_figures(out_dir)
@@ -470,10 +473,11 @@ def main():
     build_index(kps)
     prints = build_print(kps)
     web = build_web(kps, boards)
+    exam_count = build_exam_pages(DIST_DIR / "web", ANSWERS_DIR, HEAD, BASE_CSS)
     manifest = build_miniprogram(kps)
     n = sync_miniprogram_data()
     print(f"📄 打印页 {len(prints)} 个 → dist/print/")
-    print(f"🌐 网页版 → {web.relative_to(ROOT)}")
+    print(f"🌐 网页版 → {web.relative_to(ROOT)}（真题 {exam_count} 套）")
     print(f"📱 小程序数据包 {len(manifest)} 个 → dist/miniprogram/，已同步到 miniprogram/data/")
 
 
