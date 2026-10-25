@@ -46,6 +46,16 @@ $$1\le h_{ij}\le \min(c_j,r_i)\quad(\text{有方块的格子}).$$</p>
 <li>错：打洞时把三条通道的方块数直接相加。正：用容斥，交点只算一次。为什么：中心块被重复减掉。</li>
 <li>错：算出最大值就认为体积唯一。正：中间值往往也搭得出，要给出构造。为什么：上界不必每格都取到。</li>
 </ol>
+<h2>竞赛真题中的考察</h2>
+<ul>
+<li><strong>2025 秋·走美 第 12 题</strong>：俯视图定位、左视图定层数；表面积=上下底面积+底面周长×高（★★★★）</li>
+<li><strong>2026 春·走美 第 11 题</strong>：按生成树顺序贴块，每块最多新增2个投影格，得 3+19×2=41 并构造达到（★★★★★）</li>
+<li><strong>第 30 届 WMO 第 6 题</strong>：下界估计（每块每视图只贡献 1 格）+ 构造（★★★★）</li>
+<li><strong>第 34 届 WMO 第 4 题</strong>：三视图还原（透明能看穿）+ 试摆验证（★★★★）</li>
+</ul>
+<blockquote>
+<p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
+</blockquote>
 
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：由两张视图反推标数表再求体积（★★★★）<span class="covers">覆盖点：俯视图标数法求体积</span></h3><div class="problem"><p>用棱长 $2$ 厘米的小正方体搭成一个几何体，俯视图是 $3$ 排 $3$ 列，$9$ 个位置都放了方块。各位置摞的个数如下表，其中两格看不清，记作 $x,y$：</p>
@@ -257,6 +267,18 @@ $$(a+b)^2+(a-b)^2=2c^2 .$$<br />
 <li><strong>滚动扫过面积只算一层</strong>。错：把扫过条带宽度当成 $r$，转角半径也当成 $r$。对：圆盘向圆心轨迹两侧各伸 $r$，条带宽度是 $2r$，转角处圆盘扫过的是半径 $2r$ 的四分之一圆。</li>
 <li><strong>内滚与外滚混淆</strong>。错：外滚、内滚都用“直边 $+$ 圆弧”算圆心轨迹。对：外滚有转角圆弧，内滚的圆心轨迹在多边形内是缩小的多边形，转角处没有圆弧；因为内滚时圆心不能越过距边 $r$ 的界线，转角只能是尖角。两者的扫过面积也要用不同分解。</li>
 </ol>
+<h2>竞赛真题中的考察</h2>
+<ul>
+<li><strong>2024 秋·走美 第 5 题</strong>：割补法（面积加减）（★★★★）</li>
+<li><strong>2026 春·走美 第 2 题</strong>：90°弧长反求旋转半径，再用三角形中线公式求 PO（★★★★）</li>
+<li><strong>第 28 届 WMO 第 11 题</strong>：半圆面积减两个空白三角形（并用弓形+正方形互检）（★★★★）</li>
+<li><strong>第 30 届 WMO 第 8 题</strong>：割补 + 整体代换：两眼睛合为一整小圆，π 抵消（★★★★★★）</li>
+<li><strong>第 32 届 WMO 第 10 题</strong>：弧长公式 + 按块分解（6个外花瓣+6个内花瓣），60°弧长为2cm（★★★★★★）</li>
+<li><strong>第 34 届 WMO 第 10 题</strong>：割补法（大圆 − 三角形 + 两个半圆）（★★）</li>
+</ul>
+<blockquote>
+<p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
+</blockquote>
 
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：扇环的两段弧长（★★★★）<span class="covers">覆盖点：弧长与圆心角比例</span></h3><div class="problem"><p>如图，一个扇环由两条同心圆弧和两条半径围成，圆心角为 $120^\circ$，环宽（外半径与内半径之差）为 $6$ 厘米，两段弧长之和为 $37.68$ 厘米。求内弧和外弧各长多少厘米。（$\pi$ 取 $3.14$）</p>
@@ -301,6 +323,13 @@ $$(a+b)^2+(a-b)^2=2c^2 .$$<br />
 <li>没确认&quot;只截一段&quot;就套公式。错误做法：中间凹进一大块，仍写 $2(L+H)$。正确做法：有凹就改成 $2(L+H)+2\times$ 凹深。</li>
 <li>单位写成面积单位。错误做法：周长答成&quot;$38$ 平方厘米&quot;。正确做法：周长是长度，单位写厘米。</li>
 </ol>
+<h2>竞赛真题中的考察</h2>
+<ul>
+<li><strong>第 32 届 WMO 第 10 题</strong>：弧长公式 + 按块分解（6个外花瓣+6个内花瓣），60°弧长为2cm（★★★★★★）</li>
+</ul>
+<blockquote>
+<p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
+</blockquote>
 
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：十字形的周长反求边长（★★★★）<span class="covers">覆盖点：平移法与外接长方形</span></h3><div class="problem"><p>用 $5$ 个完全相同的小正方形拼成一个&quot;十&quot;字形（中间一个，上下左右各一个）。已知十字形的周长是 $60$ 厘米，求每个小正方形的边长，以及十字形的面积。</p>
@@ -584,6 +613,16 @@ $$\underbrace{-\pi r^{2}}<em>{\text{洞口}}+\underbrace{2\pi rh}</em>{\text{洞
 <li><strong>溢出题直接拿容量减水量</strong>。对：先算&quot;共需高度&quot;，超过容器高才溢；溢出体积 $=$ 超出高度 $\times$ 容器底面积，也可用&quot;投入总体积 $-$ 容器剩余容量&quot;。</li>
 <li><strong>展开时忘乘圈数</strong>。错：绕两圈仍按一圈的宽度算。对：水平宽度 $\times k$，再勾股。</li>
 </ol>
+<h2>竞赛真题中的考察</h2>
+<ul>
+<li><strong>2026 春·走美 第 9 题</strong>：按“切面与小正方体有公共点（含只碰到顶点/棱）即算切到”的口径，取平面 x+y+2z=10，数 i+j+2k∈[6,10] 的格子得 61 个被切到（★★★★★）</li>
+<li><strong>第 28 届 WMO 第 6 题</strong>：按“距离层数”分层计数灰块（★★★）</li>
+<li><strong>第 28 届 WMO 第 15 题</strong>：分段求体积，斜坡段按平均水深（★★★）</li>
+<li><strong>第 34 届 WMO 第 4 题</strong>：三视图还原（透明能看穿）+ 试摆验证（★★★★）</li>
+</ul>
+<blockquote>
+<p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
+</blockquote>
 
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：铁块入水后水面升高多少（★★★★）<span class="covers">覆盖点：排水法与水面升降</span></h3><div class="problem"><p>一个长方体水箱，内部长 $20$ 厘米、宽 $15$ 厘米、高 $15$ 厘米，里面水深 $9$ 厘米。把一个底面半径 $5$ 厘米、高 $12$ 厘米的圆柱形铁块竖直放入箱中，底面与箱底接触（$\pi$ 取 $3.14$）。（1）水面上升多少厘米？（2）放入后水面高多少？由此判断铁块是否真的完全浸没。（3）如果再放入一个同样的铁块（仍竖直放在箱底，与第一个铁块并排），水会溢出吗？溢出多少立方厘米？</p>
@@ -642,6 +681,15 @@ $$S_{\triangle AOB}=S_{\triangle COD},\qquad S_{\triangle AOD}:S_{\triangle BOC}
 <li><strong>分割不重不漏</strong>。错：阴影由几块拼成，只算一块就交卷。对：先标清各块，最后用“各部分之和=整体”核对。</li>
 <li><strong>忽略点的位置</strong>。错：默认交点一定在形内、分点一定在线段上。对：先判断点在线段上还是延长线上，必要时分类讨论，再看答案是否唯一。</li>
 </ol>
+<h2>竞赛真题中的考察</h2>
+<ul>
+<li><strong>2025 春·走美 第 5 题</strong>：等积变换＋分类枚举（凑完全平方面积）（★★★★★）</li>
+<li><strong>2025 春·走美 第 7 题</strong>：图形分割，利用45°找等腰直角三角形（★★★★★）</li>
+<li><strong>2025 春·走美 第 10 题</strong>：等高三角形面积比＋按比例分配（★★★★★）</li>
+</ul>
+<blockquote>
+<p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
+</blockquote>
 
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：长方形中两块三角形的面积和（★★★★）<span class="covers">覆盖点：等底等高与一半模型</span></h3><div class="problem"><p>长方形 $ABCD$ 中，$E$ 是边 $AD$ 上一点，连接 $BE$、$CE$。已知 $\triangle ABE$ 的面积是 $18$ 平方厘米，$\triangle CDE$ 的面积是 $30$ 平方厘米。求长方形 $ABCD$ 的面积。</p>
@@ -800,6 +848,14 @@ $$\frac{S_{ABP}}{S_{BDP}}=\frac{AP}{PD},\qquad \frac{S_{ABP}}{S_{AEP}}=\frac{BP}
 <li><strong>燕尾配对错误</strong>。错误做法是写 $S_{ABP}:S_{ACP}=AP:PD$；正确做法是配共顶点 $B$ 的 $S_{ABP}:S_{BDP}=AP:PD$，两个三角形必须共顶点、底共线。</li>
 <li><strong>面积比与周长比混用</strong>。错误做法是由面积比 $4:9$ 直接说边长比是 $4:9$；正确做法是先看有没有平行线截出的相似图形，只有这时面积比才等于对应边比的平方，$4:9$ 应对应边长比 $2:3$。</li>
 </ol>
+<h2>竞赛真题中的考察</h2>
+<ul>
+<li><strong>2025 春·走美 第 10 题</strong>：等高三角形面积比＋按比例分配（★★★★★）</li>
+<li><strong>第 32 届 WMO 第 4 题</strong>：折角（阴影）面积 = 折叠后图形减少的面积（★★★）</li>
+</ul>
+<blockquote>
+<p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
+</blockquote>
 
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：由三块面积反求整体（★★★★）<span class="covers">覆盖点：等高模型与底边比</span></h3><div class="problem"><p>点 $D$ 在边 $BC$ 上，点 $E$ 在 $AD$ 上。已知 $S_{ABE}=8$、$S_{BDE}=12$、$S_{CDE}=15$（单位：平方厘米），求 $S_{ABC}$。</p>
@@ -840,6 +896,15 @@ $$\frac{S_{ABP}}{S_{BDP}}=\frac{AP}{PD},\qquad \frac{S_{ABP}}{S_{AEP}}=\frac{BP}
 <li><strong>忽略“伸出”</strong>。错：覆盖面积比大正方形还大，仍认为重叠部分就是整个小正方形。对：先判断小正方形有没有露在外面，再定重叠的边长。</li>
 <li><strong>开方与单位</strong>。错：面积 $49$ 写成边长 $24.5$，或面积单位写“厘米”。对：$49=7\times7$，单位是平方厘米。</li>
 </ol>
+<h2>竞赛真题中的考察</h2>
+<ul>
+<li><strong>2025 春·走美 第 5 题</strong>：等积变换＋分类枚举（凑完全平方面积）（★★★★★）</li>
+<li><strong>第 28 届 WMO 第 11 题</strong>：半圆面积减两个空白三角形（并用弓形+正方形互检）（★★★★）</li>
+<li><strong>第 30 届 WMO 第 8 题</strong>：割补 + 整体代换：两眼睛合为一整小圆，π 抵消（★★★★★★）</li>
+</ul>
+<blockquote>
+<p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
+</blockquote>
 
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：正方形里三个空白与一个斜三角形（★★★★）<span class="covers">覆盖点：割补法求组合图形面积</span></h3><div class="problem"><p>正方形 $ABCD$ 的边长是 $12$ 厘米，$E$ 是边 $AB$ 上一点且 $AE=4$ 厘米，$F$ 是边 $BC$ 上一点且 $BF=6$ 厘米。求三角形 $DEF$ 的面积。</p>
