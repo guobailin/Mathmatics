@@ -3,3 +3,6 @@ __pycache__/
 .workbuddy/
 .deploy-gh-pages/
 miniprogram/project.private.config.json
+
+# 真题渲染缓存（可重新生成）
+exam/_rendered/
