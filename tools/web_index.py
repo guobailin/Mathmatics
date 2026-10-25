@@ -46,6 +46,7 @@ a{color:inherit}
 .searchbox .clear{position:absolute;right:8px;top:50%;transform:translateY(-50%);width:25px;height:25px;border:0;border-radius:50%;background:#eee9df;color:var(--muted);cursor:pointer;font-size:15px;line-height:1;padding:0}
 .repo{font-size:11.5px;color:var(--muted);text-decoration:none;white-space:nowrap;letter-spacing:.02em}
 .repo:hover{color:var(--ink)}
+.exam-top{color:var(--accent)!important;font-weight:700;margin-right:2px}
 
 /* ---------- Hero ---------- */
 .hero{
@@ -313,6 +314,7 @@ WEB_INDEX_BODY = r"""
     <input id="q" type="search" placeholder="搜索知识点、年级或关键词…" autocomplete="off" aria-label="搜索知识点">
     <button id="clearSearch" class="clear" type="button" aria-label="清空搜索" hidden>×</button>
   </div>
+  <a class="repo exam-top" href="exam/index.html">真题</a>
   <a class="repo" href="https://github.com/guobailin/Mathmatics" target="_blank" rel="noreferrer">GitHub ↗</a>
 </header>
 
