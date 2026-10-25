@@ -1,0 +1,90 @@
+{
+  "source": "exam/2024年秋季走美六年级-学生版.pdf",
+  "total": 12,
+  "items": [
+    {
+      "no": "1",
+      "knowledge": ["循环小数", "循环小数化分数"],
+      "method": "错位相减法（设元）",
+      "difficulty": 1,
+      "answer": "25/99"
+    },
+    {
+      "no": "2",
+      "knowledge": ["百分数应用题", "经济问题", "百分数"],
+      "method": "设数法 + 方程",
+      "difficulty": 3,
+      "answer": "33.3（约 1/3）"
+    },
+    {
+      "no": "3",
+      "knowledge": ["质数与合数", "质数枚举", "最值问题"],
+      "method": "极端分析 + 构造验证",
+      "difficulty": 3,
+      "answer": "97"
+    },
+    {
+      "no": "4",
+      "knowledge": ["概率初步", "可能性的大小", "加乘原理"],
+      "method": "分类列举 + 乘法原理",
+      "difficulty": 2,
+      "answer": "5/18"
+    },
+    {
+      "no": "5",
+      "knowledge": ["圆与扇形", "圆的面积", "组合图形的面积"],
+      "method": "割补法（面积加减）",
+      "difficulty": 4,
+      "answer": "6.25π"
+    },
+    {
+      "no": "6",
+      "knowledge": ["三角形内角和与三边关系", "线与角"],
+      "method": "转角法（外角法）",
+      "difficulty": 4,
+      "answer": "360°"
+    },
+    {
+      "no": "7",
+      "knowledge": ["枚举与分类", "分类列举"],
+      "method": "分状态枚举 + 区间覆盖",
+      "difficulty": 3,
+      "answer": "18 种"
+    },
+    {
+      "no": "8",
+      "knowledge": ["圆柱的体积", "比的意义", "圆的周长"],
+      "method": "自相似长宽比列方程 + 圆柱体积公式",
+      "difficulty": 4,
+      "answer": "1/(2π)"
+    },
+    {
+      "no": "9",
+      "knowledge": ["最值问题", "构造与论证"],
+      "method": "整数拆分（多拆 3）",
+      "difficulty": 3,
+      "answer": "2×3^671"
+    },
+    {
+      "no": "10",
+      "knowledge": ["数列与数表", "递推与归纳"],
+      "method": "逆推法（欧几里得算法）",
+      "difficulty": 4,
+      "answer": "第 9 层"
+    },
+    {
+      "no": "11",
+      "knowledge": ["质数与合数", "完全平方数", "质数枚举"],
+      "method": "枚举 + 平方数排除法",
+      "difficulty": 3,
+      "answer": "（1）11，15；（2）1，95"
+    },
+    {
+      "no": "12",
+      "knowledge": ["幻方", "数阵图"],
+      "method": "幻和 + 互补数对 + 试填验证",
+      "difficulty": 4,
+      "answer": "见解答中的三个 4 阶幻方（幻和均为 34）"
+    }
+  ]
+}

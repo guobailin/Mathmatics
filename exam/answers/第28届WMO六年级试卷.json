@@ -1,0 +1,26 @@
+{
+  "source": "exam/第28届WMO六年级试卷.pdf",
+  "total": 20,
+  "items": [
+    {"no": "1", "knowledge": ["分数的加法和减法", "分数的基本性质与约分"], "method": "先分别求和再约分相减", "difficulty": 1, "answer": "1"},
+    {"no": "2", "knowledge": ["比的意义", "比的基本性质与化简"], "method": "密度=人口÷面积，再化最简整数比", "difficulty": 2, "answer": "7:6"},
+    {"no": "3", "knowledge": ["逻辑推理", "构造与论证"], "method": "三色染色：同时与两个异色点相连者必为第三色", "difficulty": 3, "answer": "A（⑤⑧）"},
+    {"no": "4", "knowledge": ["定义新运算", "分数乘法"], "method": "先翻译新运算规则（连续项相乘）再代入", "difficulty": 2, "answer": "1/180"},
+    {"no": "5", "knowledge": ["浓度问题", "百分数应用题"], "method": "只追踪变化的黄色颜料与总量", "difficulty": 2, "answer": "40%"},
+    {"no": "6", "knowledge": ["立体几何综合", "分类列举"], "method": "按“距离层数”分层计数灰块", "difficulty": 3, "answer": "17"},
+    {"no": "7", "knowledge": ["分数应用题", "比的意义"], "method": "份数法（设全班14份）逐层转成份数", "difficulty": 2, "answer": "5/14"},
+    {"no": "8", "knowledge": ["分解质因数"], "method": "将8925分解质因数后按指数对号入座", "difficulty": 2, "answer": "1571"},
+    {"no": "9", "knowledge": ["抽屉原理", "枚举与分类"], "method": "先数出4行诗的15种韵律结构，再用抽屉原理", "difficulty": 4, "answer": "3"},
+    {"no": "10", "knowledge": ["带余除法与余数性质", "余数问题物不知数"], "method": "余数=除数−1统一为“加1被整除”，化为60k−1", "difficulty": 3, "answer": "15"},
+    {"no": "11", "knowledge": ["圆与扇形", "面积综合"], "method": "半圆面积减两个空白三角形（并用弓形+正方形互检）", "difficulty": 4, "answer": "107"},
+    {"no": "12", "knowledge": ["浓度问题"], "method": "分步追踪溶液质量与溶质质量", "difficulty": 2, "answer": "22"},
+    {"no": "13", "knowledge": ["经济问题", "百分数应用题"], "method": "设进价、售价列方程（利润率=利润÷进价）", "difficulty": 4, "answer": "26"},
+    {"no": "14", "knowledge": ["位值原理", "最值问题"], "method": "算各位置权重，最大数配最大权重", "difficulty": 4, "answer": "43180"},
+    {"no": "15", "knowledge": ["立体几何综合", "体积与容积单位"], "method": "分段求体积，斜坡段按平均水深", "difficulty": 3, "answer": "1950"},
+    {"no": "16", "knowledge": ["逻辑推理", "分类列举"], "method": "由7、8只满足两个条件锁定条件分组，再行列排列计数", "difficulty": 5, "answer": "72"},
+    {"no": "17", "knowledge": ["按比例分配", "比的意义"], "method": "份数法 + 设3k、7k列比例方程", "difficulty": 3, "answer": "（1）12只；（2）应补充山羊，24只"},
+    {"no": "18", "knowledge": ["分解质因数", "尾数与末位"], "method": "质因数分解取最低次幂求最大公因数；去掉末尾0求末位", "difficulty": 4, "answer": "（1）120960；（2）8"},
+    {"no": "19", "knowledge": ["游戏策略", "构造与论证"], "method": "把图案化为链/树，用对称配对与胜负值（P/N局面）分析，穷举验证", "difficulty": 5, "answer": "（1）8、10；（2）8、9"},
+    {"no": "20", "knowledge": ["逻辑推理", "游戏策略"], "method": "边框标识反推：先由“命中”定行列，再由“原路返回”定重叠，逐格试放验证", "difficulty": 6, "answer": "（1）(e,E)；（2）(f,C)"}
+  ]
+}

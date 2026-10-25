@@ -45,6 +45,13 @@ img{max-width:100%;height:auto}
 <li>起点或步长不对还硬套：$3^2+6^2+\cdots+30^2$ 直接用 $n=30$ 的公式。正确：先提 $9$，化成 $1^2+\cdots+10^2$ 的 $9$ 倍。</li>
 <li>端点判断错：算 $1^3+\cdots+n^3&lt;10^6$ 时把 $n=45$ 也收进来。正确：$T_{45}=1035$，平方已超过 $10^6$，必须代回卡边界。</li>
 </ol>
+<h2>竞赛真题中的考察</h2>
+<ul>
+<li><strong>第 32 届 WMO 第 3 题</strong>：连续自然数乘积求和公式 n(n+1)(n+2)/3 + 质因数分解约分（★★★★）</li>
+</ul>
+<blockquote>
+<p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
+</blockquote>
 
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：相邻平方相减，配对化成等差（★★★★）<span class="covers">覆盖点：平方差公式与相邻配对</span></h3><div class="problem"><p>计算 $100^2-99^2+98^2-97^2+\cdots+2^2-1^2$。</p>
@@ -99,6 +106,13 @@ img{max-width:100%;height:auto}
 <li><strong>小数位数补错</strong>：$\frac{3}{40}=0.075$ 写成 $0.75$ 或 $0.0075$。位数由 $\max(\alpha,\beta)$ 定，$2^3$ 要求三位。</li>
 <li><strong>把 $0.33$ 当作 $\frac13$ 参与运算</strong>：$\frac13$ 是无限循环小数，四舍五入后代入会带误差；竞赛中要求精确结果时必须用分数。</li>
 </ol>
+<h2>竞赛真题中的考察</h2>
+<ul>
+<li><strong>2025 秋·走美 第 1 题</strong>：分项取极端值再检验数字互异（★★★）</li>
+</ul>
+<blockquote>
+<p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
+</blockquote>
 
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：分母 80 的最简真分数与有限小数（★★★★）<span class="covers">覆盖点：有限小数判定与分小互化</span></h3><div class="problem"><p>分母是 80 的最简真分数共有多少个？把它们全部化成小数，所得这些小数之和是多少？</p>
@@ -134,6 +148,13 @@ img{max-width:100%;height:auto}
 <li>项数数错：项数用&quot;末减首、除以间隔、再加一&quot;，它不改变裂项结果，却决定端点判断与验算是否可信。</li>
 <li>拆完不化简：只写到两个分数的差就交卷。正确：化成最简分数，再用小数估值核对量级。</li>
 </ol>
+<h2>竞赛真题中的考察</h2>
+<ul>
+<li><strong>第 34 届 WMO 第 5 题</strong>：通项化简 + 等差数列求和（★★★）</li>
+</ul>
+<blockquote>
+<p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
+</blockquote>
 
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：间隔为3的裂差，首尾相消（★★★★）<span class="covers">覆盖点：裂差与间隔系数</span></h3><div class="problem"><p>计算 $\dfrac{1}{1\times4}+\dfrac{1}{4\times7}+\dfrac{1}{7\times10}+\cdots+\dfrac{1}{97\times100}$。</p>
@@ -176,6 +197,15 @@ img{max-width:100%;height:auto}
 <li><strong>变形漏项</strong>：把 $(a+1)(b+1)-1$ 写成 $(a+1)(b+1)$。→ 展开回验 $ab+a+b$，看是否还原。</li>
 <li><strong>因数对漏边界</strong>：解 $(x+1)(y+1)=M$ 时把 $x+1=1$ 也算进去，多出 $x=0$ 这种不合格的解。→ 用&quot;正整数&quot;这个条件把边界筛掉。</li>
 </ol>
+<h2>竞赛真题中的考察</h2>
+<ul>
+<li><strong>2025 春·走美 第 6 题</strong>：分类讨论（枚举四种运算符）（★★★★）</li>
+<li><strong>2025 秋·走美 第 6 题</strong>：按定义翻译成普通方程，因式分解与试算（★★）</li>
+<li><strong>第 28 届 WMO 第 4 题</strong>：先翻译新运算规则（连续项相乘）再代入（★★）</li>
+</ul>
+<blockquote>
+<p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
+</blockquote>
 
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：两层符号嵌套，先内后外（★★★★）<span class="covers">覆盖点：嵌套替换与多层求值</span></h3><div class="problem"><p>规定 $a\oplus b=2a+3b$，并且规定 $a\otimes b=a\oplus(a+b)$。</p>
@@ -233,6 +263,14 @@ img{max-width:100%;height:auto}
 <li><strong>不约分就当答案</strong>：算出 $\frac{36}{99}$ 就停手。正确：约到最简 $\frac4{11}$，否则&quot;分子分母之和&quot;一类条件会整体算错。</li>
 <li><strong>把 $0.\overline9$ 当成比 1 小</strong>：套公式得 $\frac99=1$，它不是&quot;差一点点&quot;；方程法同样给出 $10x=9+x$，$x=1$。</li>
 </ol>
+<h2>竞赛真题中的考察</h2>
+<ul>
+<li><strong>2024 秋·走美 第 1 题</strong>：错位相减法（设元）（★）</li>
+<li><strong>2025 春·走美 第 12 题</strong>：长除法找循环节＋周期定位（★★★）</li>
+</ul>
+<blockquote>
+<p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
+</blockquote>
 
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：纯循环的循环移位与约分（★★★★）<span class="covers">覆盖点：纯循环小数化分数与全9分母</span></h3><div class="problem"><p>已知 $\frac17=0.\overline{142857}$。(1) 把 $0.\overline{285714}$ 与 $0.\overline{428571}$ 化成最简分数；(2) 观察 $142857\times2$、$142857\times3$ 的结果，说明为什么这两个最简分数的分母都是 7。</p>
@@ -274,6 +312,13 @@ img{max-width:100%;height:auto}
 <li>小数位数出错：$3.75\times10=37.5$，不是 $375$；提公因数不改变原式大小，可用估算兜底。</li>
 <li>换元后忘记代回：设 $A$ 只是临时手段，题目问的是原数的值，最后一步必须把 $A$、$B$ 换回具体数。</li>
 </ol>
+<h2>竞赛真题中的考察</h2>
+<ul>
+<li><strong>2025 秋·走美 第 9 题</strong>：构造不变量：a+b+ab=(a+1)(b+1)-1（★★★）</li>
+</ul>
+<blockquote>
+<p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
+</blockquote>
 
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：分组凑整与整体提取（★★★★）<span class="covers">覆盖点：分组凑整与整体提取</span></h3><div class="problem"><p>计算 $3.75\times4.8+6.25\times4.8+3.75\times5.2+6.25\times5.2$。</p>
@@ -325,6 +370,16 @@ img{max-width:100%;height:auto}
 <li><strong>周期结论用错</strong>：步长 $3$ 与个数 $2024$ 互质时所有位置的奇偶同类；若个数是 $3$ 的倍数，三类各自独立，结论完全不同。</li>
 <li><strong>构造漏掉边界</strong>：圆周上&quot;连续 $3$ 枚&quot;包括跨过起点的那两组，列举时别漏。</li>
 </ol>
+<h2>竞赛真题中的考察</h2>
+<ul>
+<li><strong>2025 秋·走美 第 9 题</strong>：构造不变量：a+b+ab=(a+1)(b+1)-1（★★★）</li>
+<li><strong>第 30 届 WMO 第 14 题</strong>：构造 7 次 + 奇偶性证明每个按钮须按奇数次（★★★★★★）</li>
+<li><strong>第 30 届 WMO 第 20 题</strong>：规则翻译为直行/命中/转90°/原路返回，由重叠与网内不对齐反推位置（★★★★★★★）</li>
+<li><strong>第 32 届 WMO 第 20 题</strong>：按反射规则（90°反射、命中线过中心、两网重叠原路返回）逐段逆推定位战舰（作图题）（★★★★★★★）</li>
+</ul>
+<blockquote>
+<p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
+</blockquote>
 
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：100 盏灯拉开关（★★★★）<span class="covers">覆盖点：奇偶性分析与配对</span></h3><div class="problem"><p>100 盏灯编号 $1,2,\dots,100$，初始全部熄灭。第 $k$ 个人（$k=1,2,\dots,100$）把编号是 $k$ 的倍数的灯都拉一下开关（拉一次：灭变亮、亮变灭）。100 个人依次做完后，亮着的灯有多少盏？这些灯的编号之和是多少？</p>
@@ -379,6 +434,17 @@ img{max-width:100%;height:auto}
 <li><strong>反求后不回代</strong>：解出中心数就交卷，忘了检查它是否落在月末、右列是否出界，于是凭空多出一个“不存在的答案”。</li>
 <li><strong>把“前 $n$ 项和”当成“整组和”</strong>：$n$ 常常落在最后一组的中间，最后那组只取一部分，项数要单独数。</li>
 </ol>
+<h2>竞赛真题中的考察</h2>
+<ul>
+<li><strong>2024 秋·走美 第 10 题</strong>：逆推法（欧几里得算法）（★★★★）</li>
+<li><strong>2025 秋·走美 第 7 题</strong>：分组求和定位第2025项，再按组统计（★★★★）</li>
+<li><strong>第 30 届 WMO 第 9 题</strong>：相邻和相等相减得周期 3，再用每盘非空定上界并构造（★★★★）</li>
+<li><strong>第 30 届 WMO 第 16 题</strong>：10≡1(mod 3) 化数字和判定，按 3 个两位数=2 组分块枚举（★★★★★）</li>
+<li><strong>第 32 届 WMO 第 12 题</strong>：每次操作总和×3（递推）+ 分解质因数求因数个数（★★★★）</li>
+</ul>
+<blockquote>
+<p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
+</blockquote>
 
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：每个偶数重复出现的数列，用三角数夹逼定位（★★★★）<span class="covers">覆盖点：数列通项与分组求和</span></h3><div class="problem"><p>把偶数按“$2$ 出现 $1$ 次、$4$ 出现 $2$ 次、$6$ 出现 $3$ 次……”的规则排成一列：</p>
@@ -590,6 +656,13 @@ img{max-width:100%;height:auto}
 <li><strong>缺 8 数规律越界</strong>：$12345679\times9k$ 的九位重码结论只对 $k=1,\dots,9$ 成立。$k=10$ 时积为 $1111111110$，是十位数，末位还多了 0。</li>
 <li><strong>最小性只证一半</strong>：算出 $81\mid R_{81}$ 就收笔。正确：还要说明 $k&lt;81$ 时，要么 $9\nmid R_k$，要么分组后余数不为 0。</li>
 </ol>
+<h2>竞赛真题中的考察</h2>
+<ul>
+<li><strong>2025 春·走美 第 11 题</strong>：尾数周期规律（★★★）</li>
+</ul>
+<blockquote>
+<p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
+</blockquote>
 
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：重码数乘全 9 数的借位结构（★★★★）<span class="covers">覆盖点：重码数的拆分与凑整</span></h3><div class="problem"><p>不列竖式，计算：(1) $8888888\times9999999$；(2) $8888888\times9999999+8888888$；(3) 由此直接写出 $7777777\times9999999$ 的积，并说明积中 7、6、2、3 各有几个。</p>
@@ -643,6 +716,16 @@ img{max-width:100%;height:auto}
 <li><strong>公共项间隔取成公差之积</strong>：$d_1=6,d_2=8$ 时公共项间隔是 $24$，不是 $48$，应取最小公倍数。</li>
 <li><strong>把“和”当“项”</strong>：“前 $n$ 项和是……的几倍”这类话，先写清说的是 $S_n$ 还是 $a_n$，两者差着 $n$ 倍量级。</li>
 </ol>
+<h2>竞赛真题中的考察</h2>
+<ul>
+<li><strong>2025 秋·走美 第 7 题</strong>：分组求和定位第2025项，再按组统计（★★★★）</li>
+<li><strong>2025 秋·走美 第 11 题</strong>：把镜像最小数转化为原数最大数的极端取值（★★★★★）</li>
+<li><strong>2026 春·走美 第 13 题</strong>：设初草量与首日生长量，列两方程求 g=10、G=45，再算5天总草量÷5（★★★★）</li>
+<li><strong>第 34 届 WMO 第 16 题</strong>：连续奇数和（平均数=n²）+ 范围估算（★★★★）</li>
+</ul>
+<blockquote>
+<p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
+</blockquote>
 
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：两项定出数列，再数项数（★★★★）<span class="covers">覆盖点：通项与项数</span></h3><div class="problem"><p>一个等差数列的第 $4$ 项是 $21$，第 $10$ 项是 $57$。</p>
@@ -761,6 +844,14 @@ img{max-width:100%;height:auto}
 <li><strong>设元时差项写反</strong>：$B=A-\frac{1}{2004}$ 写成 $B=A+\frac{1}{2004}$。长括号少一项还是多一项，要逐字比对原式。</li>
 <li><strong>为巧算而巧算</strong>：变形后更繁，说明模型选错，应立刻回到直接计算。</li>
 </ol>
+<h2>竞赛真题中的考察</h2>
+<ul>
+<li><strong>2025 春·走美 第 1 题</strong>：换元法（整体代换）（★★）</li>
+<li><strong>第 34 届 WMO 第 5 题</strong>：通项化简 + 等差数列求和（★★★）</li>
+</ul>
+<blockquote>
+<p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
+</blockquote>
 
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：一串 9 的平方加上一串 9（★★★★）<span class="covers">覆盖点：补数凑整与回补</span></h3><div class="problem"><p>计算 $9999\times9999+19999$。</p>

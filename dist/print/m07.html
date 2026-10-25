@@ -58,6 +58,13 @@ img{max-width:100%;height:auto}
 <li><strong>斜正方形漏算。</strong> $4\times4$ 网格只数正放的 $30$ 个，漏掉斜放的 $20$ 个；要按外接框的边长分类。</li>
 <li><strong>分类标准中途更换。</strong> 一会儿按大小、一会儿按位置，同一图形被数两次；应全程只用一个标准。</li>
 </ol>
+<h2>竞赛真题中的考察</h2>
+<ul>
+<li><strong>2026 春·走美 第 5 题</strong>：弦长&gt;半径化为间隔≥3，按三段间隔 (4,4,4)(3,3,6)(3,4,5) 分类计数（★★★★）</li>
+</ul>
+<blockquote>
+<p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
+</blockquote>
 
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：直线上的线段与长度筛选（★★★★）<span class="covers">覆盖点：线段计数与端点对应</span></h3><div class="problem"><p>一条直线上依次有 $A、B、C、D、E$ 五个点，相邻两点间的距离为 $AB=1$ 厘米，$BC=2$ 厘米，$CD=3$ 厘米，$DE=4$ 厘米。以这五个点为端点的线段中：(1) 一共有多少条？(2) 长度不超过 $5$ 厘米的有多少条？</p>
@@ -103,6 +110,26 @@ img{max-width:100%;height:auto}
 <li><strong>对称配对留下自配</strong>。错：不问奇偶直接除以 $2$。对：先看总和奇偶、有没有两和相等的情况；例3 靠 $21$ 为奇数才敢取半。</li>
 <li><strong>只分类不检验</strong>。对：换标准、总数减补集、或某类逐个列出对个数，两条路对上才收笔。</li>
 </ol>
+<h2>竞赛真题中的考察</h2>
+<ul>
+<li><strong>2024 秋·走美 第 7 题</strong>：分状态枚举 + 区间覆盖（★★★）</li>
+<li><strong>2025 春·走美 第 2 题</strong>：正难则反（补集法）（★★★）</li>
+<li><strong>2025 秋·走美 第 3 题</strong>：把可能性比较转化为计数比较（★★）</li>
+<li><strong>2025 秋·走美 第 13 题</strong>：开关次数奇偶性判断亮灭，再分段计数（★★★★★）</li>
+<li><strong>2026 春·走美 第 4 题</strong>：a=1~9 逐一构造或反证：最大值上界 / 最后一步分组反推（★★★）</li>
+<li><strong>2026 春·走美 第 5 题</strong>：弦长&gt;半径化为间隔≥3，按三段间隔 (4,4,4)(3,3,6)(3,4,5) 分类计数（★★★★）</li>
+<li><strong>2026 春·走美 第 10 题</strong>：每面和18；证空间对角线两端数字差相等，3种配对×4!×2（★★★★★★）</li>
+<li><strong>2026 春·走美 第 12 题</strong>：排序后只看最小的8个之和≥13，再取第8小的最小值定下界并构造（★★★★★）</li>
+<li><strong>2026 春·走美 第 15 题</strong>：设答对c题，连击加分 S 满足 c≤S≤2c，夹出 c=12 或13 再检验（★★★★★）</li>
+<li><strong>第 28 届 WMO 第 6 题</strong>：按“距离层数”分层计数灰块（★★★）</li>
+<li><strong>第 28 届 WMO 第 16 题</strong>：由7、8只满足两个条件锁定条件分组，再行列排列计数（★★★★★）</li>
+<li><strong>第 32 届 WMO 第 16 题</strong>：按“选哪4行”分类枚举，用排列数 P(5,4) 扣除不合法的行列配对（★★★★★）</li>
+<li><strong>第 34 届 WMO 第 15 题</strong>：插板法（可重复组合）（★★★★）</li>
+<li><strong>第 34 届 WMO 第 20 题</strong>：光线追踪 + 序号配对检验（★★★★★★）</li>
+</ul>
+<blockquote>
+<p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
+</blockquote>
 
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：四个不同数字组成的四位数中能被 3 整除的（★★★★）<span class="covers">覆盖点：分类标准的选择与不重不漏</span></h3><div class="problem"><p>从 $0,1,2,3,4,5$ 这六个数字中选出四个互不相同的数字组成四位数，其中能被 $3$ 整除的有多少个？</p>
@@ -149,6 +176,17 @@ img{max-width:100%;height:auto}
 <li><strong>补集减漏</strong>：只减了一种违规，忘了违规之间还有重叠；或忘了“全部”里含首位为 0 的假数（直接用 $5\times24=120$ 就会错，还要减 24）。</li>
 <li><strong>配对不成立</strong>：没检查“相等、配不上对”的情形就套“占一半”。若允许数字重复，“百位大于十位”就不再是全部的一半。</li>
 </ol>
+<h2>竞赛真题中的考察</h2>
+<ul>
+<li><strong>2024 秋·走美 第 4 题</strong>：分类列举 + 乘法原理（★★）</li>
+<li><strong>2025 春·走美 第 2 题</strong>：正难则反（补集法）（★★★）</li>
+<li><strong>2026 春·走美 第 10 题</strong>：每面和18；证空间对角线两端数字差相等，3种配对×4!×2（★★★★★★）</li>
+<li><strong>第 32 届 WMO 第 16 题</strong>：按“选哪4行”分类枚举，用排列数 P(5,4) 扣除不合法的行列配对（★★★★★）</li>
+<li><strong>第 34 届 WMO 第 15 题</strong>：插板法（可重复组合）（★★★★）</li>
+</ul>
+<blockquote>
+<p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
+</blockquote>
 
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：数字之积为 24 的三位数（★★★★）<span class="covers">覆盖点：分类加法计数</span></h3><div class="problem"><p>一个三位数，它各位数字的乘积是 $24$。这样的三位数共有多少个？</p>
@@ -201,6 +239,16 @@ img{max-width:100%;height:auto}
 <li><strong>周期的零头越界</strong>：$n$ 恰为周期倍数时，零头是满块而不是 $0$ 个；&quot;第 $k$ 个&quot;要数满 $k$ 个位置，不能数成 $k+1$ 个。</li>
 <li><strong>先并后筛时直接减 $|C|$</strong>：如&quot;能被 $4$ 或 $6$ 整除但不能被 $3$ 整除&quot;，减 $|C|$ 会误伤只满足 $C$ 的数，应减 $|(A\cup B)\cap C|$。</li>
 </ol>
+<h2>竞赛真题中的考察</h2>
+<ul>
+<li><strong>2025 秋·走美 第 3 题</strong>：把可能性比较转化为计数比较（★★）</li>
+<li><strong>2025 秋·走美 第 13 题</strong>：开关次数奇偶性判断亮灭，再分段计数（★★★★★）</li>
+<li><strong>第 30 届 WMO 第 3 题</strong>：容斥：并 = 85%+75%-65% = 95%（★★）</li>
+<li><strong>第 32 届 WMO 第 7 题</strong>：把面积化成份数，主视图叠加后减去重叠部分（★★★★）</li>
+</ul>
+<blockquote>
+<p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
+</blockquote>
 
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：1~2016 中能被 7 或 11 整除但不能被 77 整除的数（★★★★）<span class="covers">覆盖点：两量容斥与交叉剔除</span></h3><div class="problem"><p>在 $1$ 到 $2016$ 这 $2016$ 个自然数中，能被 $7$ 或 $11$ 整除、但不能被 $77$ 整除的数有多少个？</p>
@@ -297,6 +345,18 @@ $$n\left\lfloor\frac{m-1}{n}\right\rfloor\le m-1&lt;m,$$<br />
 <li><strong>只证存在不证最紧</strong>：只说&quot;至少 $505$&quot;却不构造，无法排除&quot;其实至少 $600$&quot;；必须补出每组 $505$ 的分法，答案才封口。</li>
 <li><strong>同链判断错</strong>：链式抽屉中，只有同一奇数部分 $q$ 的两个数才一定成倍数；把不同链的数当成同链，或忘记&quot;$51\sim100$ 中任一数的 $2$ 倍都超过 $100$&quot;，都会把最紧性证错。</li>
 </ol>
+<h2>竞赛真题中的考察</h2>
+<ul>
+<li><strong>2025 秋·走美 第 5 题</strong>：分割成9个2×2小正方形用抽屉原理，再构造反例说明2不成立（★★★★★）</li>
+<li><strong>2026 春·走美 第 1 题</strong>：按平方自由部分分组，用抽屉原理找临界抽屉数（★★★★）</li>
+<li><strong>2026 春·走美 第 12 题</strong>：排序后只看最小的8个之和≥13，再取第8小的最小值定下界并构造（★★★★★）</li>
+<li><strong>第 28 届 WMO 第 9 题</strong>：先数出4行诗的15种韵律结构，再用抽屉原理（★★★★）</li>
+<li><strong>第 32 届 WMO 第 13 题</strong>：构造无差18配对的最大集合（6+12=18），再加1（★★★）</li>
+<li><strong>第 34 届 WMO 第 6 题</strong>：最不利原则（★★★★）</li>
+</ul>
+<blockquote>
+<p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
+</blockquote>
 
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：分成十组后必有一组之和不小于 505（★★★★）<span class="covers">覆盖点：抽屉原理基本形式</span></h3><div class="problem"><p>将 $1,2,3,\dots,100$ 这 $100$ 个自然数任意分成 $10$ 组（允许有空组）。证明：必有一组中所有数的和不少于 $505$，并说明 $505$ 不能再提高。</p>
@@ -448,6 +508,16 @@ $$n\left\lfloor\frac{m-1}{n}\right\rfloor\le m-1&lt;m,$$<br />
 <li><strong>数字排列忘首位不为 0</strong>：应先算全部，再减去 0 排在首位的情形。</li>
 <li><strong>至少问题硬分类</strong>：“至少 2 人”拆成 2、3、4 人逐个算，往往不如用全部减去 0 人、1 人。</li>
 </ol>
+<h2>竞赛真题中的考察</h2>
+<ul>
+<li><strong>2026 春·走美 第 3 题</strong>：按子序列长度分类枚举去重，再用去重递推验算（★★★）</li>
+<li><strong>2026 春·走美 第 7 题</strong>：中心对称⇒第6步必到网格中心，前6步决定全路，C(6,3)（★★★）</li>
+<li><strong>第 32 届 WMO 第 16 题</strong>：按“选哪4行”分类枚举，用排列数 P(5,4) 扣除不合法的行列配对（★★★★★）</li>
+<li><strong>第 34 届 WMO 第 15 题</strong>：插板法（可重复组合）（★★★★）</li>
+</ul>
+<blockquote>
+<p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
+</blockquote>
 
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：中间位置固定后安排两个禁区（★★★★）<span class="covers">覆盖点：排列与特殊位置优先</span></h3><div class="problem"><p>7 名同学排成一排照相，其中甲不站排头，乙不站排尾，丙必须站在正中间（第 4 个位置），共有多少种不同的排法？</p>
@@ -547,6 +617,19 @@ $$N=n_1+n_2+\cdots+n_k .$$<br />
 <li><strong>错误做法</strong>：用补集时忘掉&quot;本身算不算&quot;。<strong>正确做法</strong>：先分清&quot;大于&quot;与&quot;不小于&quot;。如 $43215$ 本身是奇数，数偶数时它既不在&quot;大于&quot;里，也不在&quot;小于等于&quot;的偶数里，最后要用总数核对。</li>
 <li><strong>错误做法</strong>：只算不验。<strong>正确做法</strong>：换标准再数一遍，或用总数 $-$ 另一类核对，差一个数就回去找边界。</li>
 </ol>
+<h2>竞赛真题中的考察</h2>
+<ul>
+<li><strong>2024 秋·走美 第 7 题</strong>：分状态枚举 + 区间覆盖（★★★）</li>
+<li><strong>2025 春·走美 第 8 题</strong>：正难则反＋按最大数分类枚举（★★★★）</li>
+<li><strong>2025 春·走美 第 9 题</strong>：估算范围后分类枚举（★★★★）</li>
+<li><strong>2025 春·走美 第 15 题</strong>：整除特征＋分类枚举＋构造最小数（★★★★★★）</li>
+<li><strong>2026 春·走美 第 3 题</strong>：按子序列长度分类枚举去重，再用去重递推验算（★★★）</li>
+<li><strong>第 28 届 WMO 第 9 题</strong>：先数出4行诗的15种韵律结构，再用抽屉原理（★★★★）</li>
+<li><strong>第 30 届 WMO 第 15 题</strong>：跳过的关卡互不相邻，f(n)=f(n-1)+f(n-2)，f(8)=55（★★★★★）</li>
+</ul>
+<blockquote>
+<p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
+</blockquote>
 
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：先定个位再定首位（★★★★）<span class="covers">覆盖点：有序枚举与首位定序</span></h3><div class="problem"><p>用 $0,1,2,3,4$ 这五个数字组成没有重复数字的三位偶数，一共可以组成多少个？</p>
@@ -597,6 +680,13 @@ $$N=n_1+n_2+\cdots+n_k .$$<br />
 <li><strong>&quot;至少一个&quot;直接相加</strong>：两站都经过的路被数了两次。正确：减去交集。</li>
 <li><strong>分段相乘用错段</strong>：把 $P\to B$ 的步数当成 $A\to B$ 的。正确：每段都重新数横向、纵向格数。</li>
 </ol>
+<h2>竞赛真题中的考察</h2>
+<ul>
+<li><strong>2026 春·走美 第 7 题</strong>：中心对称⇒第6步必到网格中心，前6步决定全路，C(6,3)（★★★）</li>
+</ul>
+<blockquote>
+<p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
+</blockquote>
 
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：允许斜走一格的走法（★★★★）<span class="covers">覆盖点：三向标数与分类验算</span></h3><div class="problem"><p>在方格纸上，从 $A$ 到 $B$ 要向右 $3$ 格、向上 $2$ 格。每步只能向右走一格、向上走一格，或向右上斜走一格（不能向左、向下）。从 $A$ 到 $B$ 共有多少种走法？</p>
@@ -645,6 +735,15 @@ $$N=n_1+n_2+\cdots+n_k .$$<br />
 <li><strong>互斥与分步混淆</strong>：同色与异色互斥（相加），&quot;第一球红、第二球红&quot;是分步（相乘），不能一律相加或相乘。</li>
 <li><strong>默认&quot;任取&quot;就等可能</strong>：若球的大小不同、或摸球时偏向某色，等可能前提不成立，$m/n$ 不能用。</li>
 </ol>
+<h2>竞赛真题中的考察</h2>
+<ul>
+<li><strong>2024 秋·走美 第 4 题</strong>：分类列举 + 乘法原理（★★）</li>
+<li><strong>2025 春·走美 第 8 题</strong>：正难则反＋按最大数分类枚举（★★★★）</li>
+<li><strong>第 30 届 WMO 第 4 题</strong>：不放回分步相乘 2/5 × 3/4（★★）</li>
+</ul>
+<blockquote>
+<p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
+</blockquote>
 
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：九人中选三人，恰有两名女生（★★★★）<span class="covers">覆盖点：古典概型与等可能计数</span></h3><div class="problem"><p>某小组有 $5$ 名男生和 $4$ 名女生，从中任意选出 $3$ 人参加比赛，每人被选中的机会相同。求选出的 $3$ 人中恰有 $2$ 名女生的概率。</p>
@@ -740,6 +839,13 @@ $$N=n_1+n_2+\cdots+n_k .$$<br />
 <li>求&quot;至少一条轴&quot;时直接算 4×64。四条轴各有 64 个图案，但同一图案可能被数 2 次甚至 4 次，必须按轴的条数分类。</li>
 <li>数量方程忘验 $a\le t$。解出 $p$ 后不检查轴上格够不够用，会多算。</li>
 </ol>
+<h2>竞赛真题中的考察</h2>
+<ul>
+<li><strong>2026 春·走美 第 7 题</strong>：中心对称⇒第6步必到网格中心，前6步决定全路，C(6,3)（★★★）</li>
+</ul>
+<blockquote>
+<p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
+</blockquote>
 
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：五行黑格数依次为 1、2、3、2、1 的对称染色（★★★★）<span class="covers">覆盖点：对称配对与不动点</span></h3><div class="problem"><p>在 $5\times5$ 的方格表中把若干小格涂黑，其余留白。要求整个图案关于中间一列（第 3 列）所在的直线对称，并且从上到下每一行的黑格数依次为 $1,2,3,2,1$。共有多少种不同的涂法？</p>
@@ -789,6 +895,17 @@ $$a_n-a_1=(a_n-a_{n-1})+(a_{n-1}-a_{n-2})+\cdots+(a_2-a_1),$$<br />
 <li><strong>&quot;最多&quot;忘了交代一般位置</strong>：三线共点、圆过同一交点都会让区域变少，答&quot;最多&quot;时要写明两两相交且无三线共点。</li>
 <li><strong>双状态只列一半</strong>：汉诺塔只设&quot;相邻柱&quot;的步数，遇到&quot;隔一柱&quot;就无法列式；或把 $a_n,b_n$ 代换写反，答案就差一个常数。</li>
 </ol>
+<h2>竞赛真题中的考察</h2>
+<ul>
+<li><strong>2024 秋·走美 第 10 题</strong>：逆推法（欧几里得算法）（★★★★）</li>
+<li><strong>2025 春·走美 第 14 题</strong>：奇偶性周期（每3项一循环）＋计数公式（★★★★）</li>
+<li><strong>2026 春·走美 第 3 题</strong>：按子序列长度分类枚举去重，再用去重递推验算（★★★）</li>
+<li><strong>第 30 届 WMO 第 15 题</strong>：跳过的关卡互不相邻，f(n)=f(n-1)+f(n-2)，f(8)=55（★★★★★）</li>
+<li><strong>第 32 届 WMO 第 12 题</strong>：每次操作总和×3（递推）+ 分解质因数求因数个数（★★★★）</li>
+</ul>
+<blockquote>
+<p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
+</blockquote>
 
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：每步可跨 1、2、3 级的上楼梯（★★★★）<span class="covers">覆盖点：建立递推与初始值</span></h3><div class="problem"><p>小明从地面出发登第 $10$ 级台阶，每步可以跨 $1$ 级、$2$ 级或 $3$ 级。他登上第 $10$ 级共有多少种不同的走法？</p>

@@ -1,0 +1,111 @@
+{
+  "source": "exam/2025年春季走美六年级-学生版.pdf",
+  "total": 15,
+  "items": [
+    {
+      "no": "1",
+      "knowledge": ["速算与巧算", "乘法分配律"],
+      "method": "换元法（整体代换）",
+      "difficulty": 2,
+      "answer": "40494050"
+    },
+    {
+      "no": "2",
+      "knowledge": ["奇数与偶数", "加乘原理", "分类列举"],
+      "method": "正难则反（补集法）",
+      "difficulty": 3,
+      "answer": "145"
+    },
+    {
+      "no": "3",
+      "knowledge": ["最大公因数与最小公倍数", "整除的概念与性质"],
+      "method": "求最大公因数",
+      "difficulty": 2,
+      "answer": "32"
+    },
+    {
+      "no": "4",
+      "knowledge": ["追及问题"],
+      "method": "追及问题基本公式（路程差÷速度差）",
+      "difficulty": 3,
+      "answer": "上午8:00（8时）"
+    },
+    {
+      "no": "5",
+      "knowledge": ["等积模型", "面积综合"],
+      "method": "等积变换＋分类枚举（凑完全平方面积）",
+      "difficulty": 5,
+      "answer": "3"
+    },
+    {
+      "no": "6",
+      "knowledge": ["定义新运算", "不定方程"],
+      "method": "分类讨论（枚举四种运算符）",
+      "difficulty": 4,
+      "answer": "a可能的数值有2、8、10；*的运算符不可能是减、除、乘（只能是加）"
+    },
+    {
+      "no": "7",
+      "knowledge": ["等积模型", "组合图形的面积", "三角形的面积"],
+      "method": "图形分割，利用45°找等腰直角三角形",
+      "difficulty": 5,
+      "answer": "（1）14；（2）68"
+    },
+    {
+      "no": "8",
+      "knowledge": ["概率初步", "三角形内角和与三边关系", "枚举与分类"],
+      "method": "正难则反＋按最大数分类枚举",
+      "difficulty": 4,
+      "answer": "17/42"
+    },
+    {
+      "no": "9",
+      "knowledge": ["完全平方数", "枚举与分类"],
+      "method": "估算范围后分类枚举",
+      "difficulty": 4,
+      "answer": "13；24"
+    },
+    {
+      "no": "10",
+      "knowledge": ["面积比", "等积模型"],
+      "method": "等高三角形面积比＋按比例分配",
+      "difficulty": 5,
+      "answer": "94.5克；54克"
+    },
+    {
+      "no": "11",
+      "knowledge": ["尾数与末位", "特殊数计算"],
+      "method": "尾数周期规律",
+      "difficulty": 3,
+      "answer": "7"
+    },
+    {
+      "no": "12",
+      "knowledge": ["循环小数化分数", "找规律"],
+      "method": "长除法找循环节＋周期定位",
+      "difficulty": 3,
+      "answer": "6"
+    },
+    {
+      "no": "13",
+      "knowledge": ["质数与合数", "质数枚举"],
+      "method": "枚举＋试除法",
+      "difficulty": 3,
+      "answer": "3"
+    },
+    {
+      "no": "14",
+      "knowledge": ["奇数与偶数", "递推与归纳"],
+      "method": "奇偶性周期（每3项一循环）＋计数公式",
+      "difficulty": 4,
+      "answer": "（1）1350；（2）3038"
+    },
+    {
+      "no": "15",
+      "knowledge": ["数的整除特征", "最小公倍数与最值", "枚举与分类"],
+      "method": "整除特征＋分类枚举＋构造最小数",
+      "difficulty": 6,
+      "answer": "1123449768"
+    }
+  ]
+}

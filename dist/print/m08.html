@@ -56,6 +56,15 @@ $$x=x_0+\frac bd t,\qquad y=y_0-\frac ad t\qquad(t\in\mathbb Z).$$<br />
 <li>三元题固定变量时漏掉 $0$。按 $z$ 分类要从 $0$ 开始，上限取 $\lfloor N/7\rfloor$，少一个端点就少一族解。</li>
 <li>最值题只取端点不回代。区间端点未必满足整除，要代回原方程确认后才算答案。</li>
 </ol>
+<h2>竞赛真题中的考察</h2>
+<ul>
+<li><strong>2025 春·走美 第 6 题</strong>：分类讨论（枚举四种运算符）（★★★★）</li>
+<li><strong>第 30 届 WMO 第 13 题</strong>：位值展开 x-y=99(A-C)=396，逐位枚举（★★★）</li>
+<li><strong>第 32 届 WMO 第 19 题</strong>：（1）镜像策略保持两方向剩余距离相等；（2）设未知量+同余判断整除+求最大斜走次数（★★★★★★★）</li>
+</ul>
+<blockquote>
+<p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
+</blockquote>
 
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：先把解排成一列再数个数（★★★★）<span class="covers">覆盖点：二元一次不定方程通解</span></h3><div class="problem"><p>求方程 $7x+11y=2026$ 的正整数解共有多少组，并写出其中 $x$ 最小的那组解。</p>
@@ -143,6 +152,17 @@ $$\overline{abc}=100a+10b+c,\qquad \overline{abcd}=1000a+100b+10c+d,$$<br />
 <li>分类只试一个值 → 数字和可能是 $9$、$18$、$27$ 等多个值 → 范围不写全必漏解。</li>
 <li>解出字母就交卷 → 还要查 $0\le$ 数字 $\le9$、首位非零、排列数是否真的是 $6$ 个 → 方程的解不一定是合法数字。</li>
 </ol>
+<h2>竞赛真题中的考察</h2>
+<ul>
+<li><strong>2025 秋·走美 第 1 题</strong>：分项取极端值再检验数字互异（★★★）</li>
+<li><strong>2026 春·走美 第 6 题</strong>：设前两位为 m 化为 N=101m−1=k²，解同余 k²≡−1 (mod 101)（★★★★）</li>
+<li><strong>第 28 届 WMO 第 14 题</strong>：算各位置权重，最大数配最大权重（★★★★）</li>
+<li><strong>第 30 届 WMO 第 13 题</strong>：位值展开 x-y=99(A-C)=396，逐位枚举（★★★）</li>
+<li><strong>第 34 届 WMO 第 12 题</strong>：11的整除特征（奇位和 − 偶位和）（★★★）</li>
+</ul>
+<blockquote>
+<p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
+</blockquote>
 
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：按商余关系还原三位数（★★★★）<span class="covers">覆盖点：位值展开与数位设元</span></h3><div class="problem"><p>一个三位数，百位数字的 $3$ 倍恰好等于个位数字，十位数字是百位数字的 $2$ 倍。已知这个三位数除以它的各位数字之和，商是 $20$，余数是 $9$。求这个三位数。</p>
@@ -198,6 +218,13 @@ $$\overline{abc}=100a+10b+c,\qquad \overline{abcd}=1000a+100b+10c+d,$$<br />
 <li><strong>错</strong>：不互质时照旧凑数，硬算出个“解”。<strong>对</strong>：先用公因数检验 $r_1\equiv r_2\pmod g$，不等就判无解。<strong>为什么</strong>：相容是解存在的前提，前提不成立时后面每一步都无意义。</li>
 <li><strong>错</strong>：数个数时端点算重或漏掉，项数用“末项减首项”忘了加 $1$。<strong>对</strong>：写清 $k$ 的首末值再数。<strong>为什么</strong>：$k$ 从 $0$ 开始时，第 $n$ 项对应 $k=n-1$，差一个就整题错。</li>
 </ol>
+<h2>竞赛真题中的考察</h2>
+<ul>
+<li><strong>第 28 届 WMO 第 10 题</strong>：余数=除数−1统一为“加1被整除”，化为60k−1（★★★）</li>
+</ul>
+<blockquote>
+<p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
+</blockquote>
 
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：两条件定位与区间列举（★★★★）<span class="covers">覆盖点：列举筛选与周期定位</span></h3><div class="problem"><p>一个正整数除以 $4$ 余 $3$，除以 $7$ 余 $5$。（1）这个数最小是多少？（2）$200$ 到 $400$ 之间（含 $200$ 与 $400$）所有这样的数是多少？</p>
@@ -283,6 +310,19 @@ $$v_p(n!)=\left\lfloor\frac n p\right\rfloor+\left\lfloor\frac n{p^2}\right\rflo
 <li>反向构造时把大指数配给大质数，得到的不是最小数；也有人漏掉某一种指数形状。</li>
 <li>把“因数个数”与“质因数个数”混为一谈：前者看指数加 1 后相乘，后者是各指数相加，两者一般不等。</li>
 </ol>
+<h2>竞赛真题中的考察</h2>
+<ul>
+<li><strong>2025 秋·走美 第 8 题</strong>：利用因数和=15×因数个数，按因数个数分类枚举（★★★★★）</li>
+<li><strong>2025 秋·走美 第 10 题</strong>：面积不定方程求最大块数，再逐种长宽验证可拼（★★★★★）</li>
+<li><strong>2026 春·走美 第 1 题</strong>：按平方自由部分分组，用抽屉原理找临界抽屉数（★★★★）</li>
+<li><strong>2026 春·走美 第 8 题</strong>：n⁴+n²+1=(n²+n+1)(n²−n+1)，模7筛余数后逐项检验（★★★★★）</li>
+<li><strong>第 28 届 WMO 第 8 题</strong>：将8925分解质因数后按指数对号入座（★★）</li>
+<li><strong>第 28 届 WMO 第 18 题</strong>：质因数分解取最低次幂求最大公因数；去掉末尾0求末位（★★★★）</li>
+<li><strong>第 32 届 WMO 第 3 题</strong>：连续自然数乘积求和公式 n(n+1)(n+2)/3 + 质因数分解约分（★★★★）</li>
+</ul>
+<blockquote>
+<p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
+</blockquote>
 
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：拆成 720×1001 再短除（★★★★）<span class="covers">覆盖点：短除法与标准分解式</span></h3><div class="problem"><p>把 $720720$ 分解质因数，写出标准分解式，并求它的质因数个数（带重数）。</p>
@@ -329,6 +369,16 @@ $$N\equiv(\text{奇数位数字和})-(\text{偶数位数字和})\pmod{11}.$$<br 
 <li>大数硬算不逐步取余。$2026^{2026}$ 除以 $35$，先把底数换成 $-4$，计算量立刻降下来。</li>
 <li>把&quot;模 $m$&quot;与&quot;被 $m$ 整除&quot;混为一谈。$a\equiv b\pmod m$ 只说明 $a-b$ 是 $m$ 的倍数，并不说明 $a$、$b$ 是 $m$ 的倍数；$37\equiv2\pmod5$ 中两数都不被 $5$ 整除。</li>
 </ol>
+<h2>竞赛真题中的考察</h2>
+<ul>
+<li><strong>2026 春·走美 第 6 题</strong>：设前两位为 m 化为 N=101m−1=k²，解同余 k²≡−1 (mod 101)（★★★★）</li>
+<li><strong>2026 春·走美 第 14 题</strong>：相遇化为同余方程 s≡−12k (mod 60)，−12k 只能是12的倍数（★★★★★）</li>
+<li><strong>第 32 届 WMO 第 14 题</strong>：圆上位置用同余表示，解同余方程 18k≡0 (mod 24)（★★★）</li>
+<li><strong>第 34 届 WMO 第 12 题</strong>：11的整除特征（奇位和 − 偶位和）（★★★）</li>
+</ul>
+<blockquote>
+<p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
+</blockquote>
 
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：两个同余条件锁住同一个数字和（★★★★）<span class="covers">覆盖点：同余定义与条件转化</span></h3><div class="problem"><p>五位数 $\overline{12a3b}$ 除以 $9$ 余 $3$，除以 $11$ 余 $2$，其中 $a$、$b$ 是数字。求满足条件的最大五位数。</p>
@@ -361,6 +411,15 @@ $$N\equiv(\text{奇数位数字和})-(\text{偶数位数字和})\pmod{11}.$$<br 
 <li>平方数判别只查到完全平方数就收手 → 别忘 2 倍平方数 → 质数 2 对应的括号恒为奇数，它不限制指数。</li>
 <li>由 $\sigma(N)=2N$ 直接断定 $N=28$ → 先用因数个数锁定指数模式再解方程 → 条件不足时答案不唯一。</li>
 </ol>
+<h2>竞赛真题中的考察</h2>
+<ul>
+<li><strong>2025 秋·走美 第 8 题</strong>：利用因数和=15×因数个数，按因数个数分类枚举（★★★★★）</li>
+<li><strong>2026 春·走美 第 8 题</strong>：n⁴+n²+1=(n²+n+1)(n²−n+1)，模7筛余数后逐项检验（★★★★★）</li>
+<li><strong>第 32 届 WMO 第 12 题</strong>：每次操作总和×3（递推）+ 分解质因数求因数个数（★★★★）</li>
+</ul>
+<blockquote>
+<p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
+</blockquote>
 
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：2520 的因数个数与"6 的倍数又不是 28 的倍数"（★★★★）<span class="covers">覆盖点：标准分解与限定因数计数</span></h3><div class="problem"><p>求 $2520$ 的因数个数；并求 $2520$ 的因数中，是 $6$ 的倍数但不是 $28$ 的倍数的有多少个？</p>
@@ -401,6 +460,18 @@ $$N\equiv(\text{奇数位数字和})-(\text{偶数位数字和})\pmod{11}.$$<br 
 <li>忘了 0 是偶数、1 是奇数，或忘了 n! 在 n=1 处并不偶。→ 边界值单独检验。→ 周期结论常在小 n 处失效。</li>
 <li>染色只染两色。→ 要&quot;分布&quot;信息就改四色。→ 两色看不出各类是否同步变化。</li>
 </ol>
+<h2>竞赛真题中的考察</h2>
+<ul>
+<li><strong>2025 春·走美 第 2 题</strong>：正难则反（补集法）（★★★）</li>
+<li><strong>2025 春·走美 第 14 题</strong>：奇偶性周期（每3项一循环）＋计数公式（★★★★）</li>
+<li><strong>2025 秋·走美 第 13 题</strong>：开关次数奇偶性判断亮灭，再分段计数（★★★★★）</li>
+<li><strong>第 30 届 WMO 第 14 题</strong>：构造 7 次 + 奇偶性证明每个按钮须按奇数次（★★★★★★）</li>
+<li><strong>第 34 届 WMO 第 6 题</strong>：最不利原则（★★★★）</li>
+<li><strong>第 34 届 WMO 第 16 题</strong>：连续奇数和（平均数=n²）+ 范围估算（★★★★）</li>
+</ul>
+<blockquote>
+<p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
+</blockquote>
 
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：三个长算式的奇偶整体判定（★★★★）<span class="covers">覆盖点：奇偶运算律与整体判定</span></h3><div class="problem"><p>设<br />
@@ -447,6 +518,17 @@ $$C=1^1+2^2+3^3+\cdots+2024^{2024}.$$<br />
 ⑤ 用数字和模 $9$ 反推平方。数字和是 $9$ 的倍数只说明原数被 $9$ 整除，$999$ 也满足，却不是平方数；还要看指数或范围。<br />
 ⑥ 算 $v_p(n!)$ 漏掉 $p^2$、$p^3$ 的倍数。$v_2(20!)=10+5+2+1=18$，漏一项就会把奇偶判反。<br />
 ⑦ 夹逼时漏掉端点。判断 $N$ 是不是平方数，要比较 $k^2\le N&lt;(k+1)^2$ 的两端，等号情形要单独看。</p>
+<h2>竞赛真题中的考察</h2>
+<ul>
+<li><strong>2024 秋·走美 第 11 题</strong>：枚举 + 平方数排除法（★★★）</li>
+<li><strong>2025 春·走美 第 9 题</strong>：估算范围后分类枚举（★★★★）</li>
+<li><strong>2026 春·走美 第 1 题</strong>：按平方自由部分分组，用抽屉原理找临界抽屉数（★★★★）</li>
+<li><strong>2026 春·走美 第 6 题</strong>：设前两位为 m 化为 N=101m−1=k²，解同余 k²≡−1 (mod 101)（★★★★）</li>
+<li><strong>第 30 届 WMO 第 19 题</strong>：逐句排除：甲∈{25,32,35,52} → 乙∈{14,46} → 甲=35 → 乙=14（★★★★★★）</li>
+</ul>
+<blockquote>
+<p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
+</blockquote>
 
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：四位数 aabb 型的平方数（★★★★）<span class="covers">覆盖点：平方数判定与数位特征</span></h3><div class="problem"><p>一个四位数，它的千位与百位数字相同，十位与个位数字相同，并且它是完全平方数。求这个四位数。</p>
@@ -500,6 +582,14 @@ $$a^n=(10m+d)^n=d^n+10\times\text{整数},$$<br />
 <li>数尾零只数 $5$ 的倍数。错：$2025!$ 末尾 $405$ 个 $0$；对：$405+81+16+3=505$。</li>
 <li>分组求和时组数乘组和后忘了取个位。错：$101\times94+23$ 直接答 $9517$；对：只留个位 $7$（这是&quot;个位&quot;题，任何中间和都不许越出 $0\sim9$ 的循环）。</li>
 </ol>
+<h2>竞赛真题中的考察</h2>
+<ul>
+<li><strong>2025 春·走美 第 11 题</strong>：尾数周期规律（★★★）</li>
+<li><strong>第 28 届 WMO 第 18 题</strong>：质因数分解取最低次幂求最大公因数；去掉末尾0求末位（★★★★）</li>
+</ul>
+<blockquote>
+<p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
+</blockquote>
 
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：指数很大，只看末位循环表（★★★★）<span class="covers">覆盖点：幂的末位周期定位</span></h3><div class="problem"><p>求下列各数的个位数字：（1）$2^{2025}$；（2）$3^{2025}$；（3）$2025^{2025}$；（4）$2^{2025}+3^{2025}+2025^{2025}$。</p>
@@ -548,6 +638,14 @@ $$a\pm c=b(q_1\pm q_2)+(r_1\pm r_2),\qquad ac=b(bq_1q_2+q_1r_2+q_2r_1)+r_1r_2.$$
 <li>指数除以周期余 $0$ 时取第 $0$ 项。正确：取第 $t$ 项；恰好许多题的末项是 $1$，蒙对不代表方法对。</li>
 <li>&quot;四量之和&quot;漏项或重项。正确：先写出 $a=bq+r$ 再整体代入，代入后逐项点一遍。</li>
 </ol>
+<h2>竞赛真题中的考察</h2>
+<ul>
+<li><strong>第 28 届 WMO 第 10 题</strong>：余数=除数−1统一为“加1被整除”，化为60k−1（★★★）</li>
+<li><strong>第 32 届 WMO 第 15 题</strong>：先减去余数化为整除，再求最大公因数（42篮）（★★★）</li>
+</ul>
+<blockquote>
+<p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
+</blockquote>
 
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：四量之和反求两数（★★★★）<span class="covers">覆盖点：四量关系与商余互推</span></h3><div class="problem"><p>两个自然数相除，商是 $8$，余数是 $11$，并且被除数、除数、商、余数这四个数的和是 $543$。（1）求被除数和除数。（2）若被除数和除数同时乘 $3$，商和余数各是多少？（3）至少给被除数加多少，就能被除数整除？</p>
@@ -580,6 +678,13 @@ $$a\pm c=b(q_1\pm q_2)+(r_1\pm r_2),\qquad ac=b(bq_1q_2+q_1r_2+q_2r_1)+r_1r_2.$$
 ④ 平方差忽略同奇偶。$(1,2016)$ 一奇一偶，乘积虽是 2016，也凑不出整数 $n$，必须舍去。<br />
 ⑤ 做除法型题时把指数减成负数。指数不能为负，减到 0 就是&quot;这个质因数被取光&quot;。<br />
 ⑥ 算出答案不代回原式验算。开方是否为整数、指数是否达标，都要用具体数字回代一次，例如算出 $n=3$ 后要真的算 $3^2+2016=2025=45^2$。</p>
+<h2>竞赛真题中的考察</h2>
+<ul>
+<li><strong>第 34 届 WMO 第 16 题</strong>：连续奇数和（平均数=n²）+ 范围估算（★★★★）</li>
+</ul>
+<blockquote>
+<p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
+</blockquote>
 
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：用指数给四个数定性（★★★★）<span class="covers">覆盖点：指数奇偶判定</span></h3><div class="problem"><p>把 $1296$、$5832$、$2160$、$46656$ 分解质因数，指出哪些是完全平方数、哪些是完全立方数；对两者都不是的，说明它夹在哪两个相邻平方数之间。</p>
@@ -646,6 +751,17 @@ $$6=2\times3,\quad12=4\times3,\quad15=3\times5,\quad36=4\times9,\quad72=8\times9
 <li><strong>两数字之和只枚举到 9</strong>：设 $a,b$ 是数字，$a+b$ 的范围是 $0\sim18$；余数为 $3$ 时 $a+b$ 可能是 $3$，也可能是 $12$，漏掉后者就少一半解。</li>
 <li><strong>忘记末两位可以是 $04$、首位不能是 $0$</strong>：判 $4$ 时 $04=4$ 合法，但千位写 $0$ 就不是四位数；填数字题最后必须代回原数验算。</li>
 </ol>
+<h2>竞赛真题中的考察</h2>
+<ul>
+<li><strong>2025 春·走美 第 15 题</strong>：整除特征＋分类枚举＋构造最小数（★★★★★★）</li>
+<li><strong>2025 秋·走美 第 15 题</strong>：分类讨论恰好缺哪一个，用最小公倍数求候选并排序（★★★★）</li>
+<li><strong>第 30 届 WMO 第 16 题</strong>：10≡1(mod 3) 化数字和判定，按 3 个两位数=2 组分块枚举（★★★★★）</li>
+<li><strong>第 34 届 WMO 第 3 题</strong>：统一比（连比）+ 枚举倍数（★★）</li>
+<li><strong>第 34 届 WMO 第 12 题</strong>：11的整除特征（奇位和 − 偶位和）（★★★）</li>
+</ul>
+<blockquote>
+<p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
+</blockquote>
 
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：末三位分层与首位陷阱（★★★★）<span class="covers">覆盖点：末位分层判定</span></h3><div class="problem"><p>从 $0,1,2,3,4,5$ 中选出四个不同的数字组成四位数，要求能被 $8$ 整除。求这样的四位数中最大的和最小的。</p>
@@ -738,6 +854,13 @@ $$a=b\times k,$$<br />
 <li>枚举因数漏项：只试到一半就停，漏掉配对的另一半；$72$ 的因数要按 $1\times72,2\times36,3\times24,4\times18,6\times12,8\times9$ 成对写全。</li>
 <li>夹逼时端点误判：把&quot;$&lt;$&quot;当成&quot;$\le$&quot;会多解；$\frac{2a}{b}=2$ 意味着 $b=a$，与 $a&lt;b$ 矛盾，必须排除。</li>
 </ol>
+<h2>竞赛真题中的考察</h2>
+<ul>
+<li><strong>2025 春·走美 第 3 题</strong>：求最大公因数（★★）</li>
+</ul>
+<blockquote>
+<p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
+</blockquote>
 
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：两个因数条件同时成立时逐个查表（★★★★）<span class="covers">覆盖点：整除定义与因数倍数关系</span></h3><div class="problem"><p>求所有正整数 $n$，使 $n\mid 72$ 且 $n+3\mid 72$。</p>
@@ -788,6 +911,15 @@ $$(a,b)=p_1^{\min(\alpha_1,\beta_1)}p_2^{\min(\alpha_2,\beta_2)}\cdots,\qquad [a
 <li>短除时用合数作除数，或分解时漏掉指数；判断互质时把&quot;有公因数 $2$&quot;当成互质。</li>
 <li>把&quot;块数最少&quot;与&quot;边长最大&quot;当成两个独立目标。对同一块长方形，边长是因数、块数是 $\frac{\text{面积}}{s^2}$，边长越大块数越少，两者由同一个 $s$ 决定；一旦加了边长上限，就要先列因数再比较。</li>
 </ol>
+<h2>竞赛真题中的考察</h2>
+<ul>
+<li><strong>2025 春·走美 第 3 题</strong>：求最大公因数（★★）</li>
+<li><strong>2025 秋·走美 第 15 题</strong>：分类讨论恰好缺哪一个，用最小公倍数求候选并排序（★★★★）</li>
+<li><strong>第 32 届 WMO 第 15 题</strong>：先减去余数化为整除，再求最大公因数（42篮）（★★★）</li>
+</ul>
+<blockquote>
+<p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
+</blockquote>
 
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：三个数的公因数公倍数与公有因数个数（★★★★）<span class="covers">覆盖点：分解质因数法求公因数与公倍数</span></h3><div class="problem"><p>求 $108$、$144$、$180$ 的最大公因数与最小公倍数；这三个数公有的因数一共有多少个？</p>
@@ -838,6 +970,14 @@ $$(a,b)=p_1^{\min(\alpha_1,\beta_1)}p_2^{\min(\alpha_2,\beta_2)}\cdots,\qquad [a
 <li>只压上界不验证取等。→ 检查三数是否两两互质、和是否等于给定值。→ 上界不一定够得着。</li>
 <li>忽略&quot;互不相同、正整数&quot;等限制。→ 先写清 $a&lt;b&lt;c$ 再枚举。→ 允许相等时答案会变。</li>
 </ol>
+<h2>竞赛真题中的考察</h2>
+<ul>
+<li><strong>2025 春·走美 第 15 题</strong>：整除特征＋分类枚举＋构造最小数（★★★★★★）</li>
+<li><strong>2025 秋·走美 第 15 题</strong>：分类讨论恰好缺哪一个，用最小公倍数求候选并排序（★★★★）</li>
+</ul>
+<blockquote>
+<p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
+</blockquote>
 
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：余数都差 2：把"除以"翻译成"整除"（★★★★）<span class="covers">覆盖点：同差余数转公倍数与夹逼</span></h3><div class="problem"><p>求满足下列条件的正整数 $n$：$n$ 除以 $6$ 余 $4$，除以 $8$ 余 $6$，除以 $15$ 余 $13$。（1）求最小的 $n$；（2）求最小的四位 $n$；（3）求 $1\le n\le 2016$ 中这样的 $n$ 的个数与最大的 $n$。</p>
@@ -928,6 +1068,17 @@ $$[a_1,a_2,\dots,a_m]=(\text{左列连乘})\times(\text{末行连乘})$$<br />
 ⑤ 奇偶分析时忘了&quot;偶质数只有 2&quot;。→ 和为奇数就写&quot;一奇一偶&quot;，再锁定 2。→ 2 是唯一偶质数。<br />
 ⑥ 解出 (q−1)(r−1)=k+1 后不回头验证。→ 如 (q−1,r−1)=(2,3) 得 q=3、r=4，4 不是质数，必须舍去。→ 方程的解要放回原条件筛。<br />
 ⑦ 认为&quot;两个质数之和一定是偶数&quot;。→ 2 加奇质数得奇数。→ 只有两个奇质数之和才是偶数。</p>
+<h2>竞赛真题中的考察</h2>
+<ul>
+<li><strong>2024 秋·走美 第 3 题</strong>：极端分析 + 构造验证（★★★）</li>
+<li><strong>2024 秋·走美 第 11 题</strong>：枚举 + 平方数排除法（★★★）</li>
+<li><strong>2025 春·走美 第 13 题</strong>：枚举＋试除法（★★★）</li>
+<li><strong>2025 秋·走美 第 8 题</strong>：利用因数和=15×因数个数，按因数个数分类枚举（★★★★★）</li>
+<li><strong>第 30 届 WMO 第 19 题</strong>：逐句排除：甲∈{25,32,35,52} → 乙∈{14,46} → 甲=35 → 乙=14（★★★★★★）</li>
+</ul>
+<blockquote>
+<p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
+</blockquote>
 
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：个位是 7 的质数有几个（★★★★）<span class="covers">覆盖点：质数与合数的定义边界</span></h3><div class="problem"><p>在 1 到 100 的自然数中，个位数字是 7 的数共有多少个？其中质数有几个？把它们全部写出来。</p>
@@ -980,6 +1131,16 @@ $$2,\ 3,\ 5,\ 7,\ 11,\ 13,\ 17,\ 19,\ 23,\ 29,\ 31,\ 37,\ 41,\ 43,\ 47,\ 53,\ 59
 <li><strong>把 $1$ 当质数、把 $2$ 当合数</strong>。→ $1$ 既不是质数也不是合数，$2$ 是唯一的偶质数。→ 枚举前先把 $1$ 划掉。</li>
 <li><strong>用&quot;奇数个数&quot;代替&quot;候选个数&quot;</strong>。→ 候选是划掉 $2,3,5$ 倍数后剩下的数，起点就不一样。→ 先数奇数，再逐个减法。</li>
 </ol>
+<h2>竞赛真题中的考察</h2>
+<ul>
+<li><strong>2024 秋·走美 第 3 题</strong>：极端分析 + 构造验证（★★★）</li>
+<li><strong>2024 秋·走美 第 11 题</strong>：枚举 + 平方数排除法（★★★）</li>
+<li><strong>2025 春·走美 第 13 题</strong>：枚举＋试除法（★★★）</li>
+<li><strong>2026 春·走美 第 8 题</strong>：n⁴+n²+1=(n²+n+1)(n²−n+1)，模7筛余数后逐项检验（★★★★★）</li>
+</ul>
+<blockquote>
+<p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
+</blockquote>
 
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：筛到 100：7 划掉了谁，为什么不用 11（★★★★）<span class="covers">覆盖点：埃氏筛法与划界</span></h3><div class="problem"><p>用埃氏筛法列出 $100$ 以内的全部质数，并回答四个问题：（1）筛子只需用到哪几个质数？（2）质数 $7$ 在筛的过程中划掉了哪些数？（3）为什么不必再用 $11$ 去划？（4）$100$ 以内共有多少个质数？</p>
