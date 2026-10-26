@@ -1,0 +1,579 @@
+{
+  "source": "exam/六年级奥林匹克思维能力测评考前60题.pdf",
+  "total": 60,
+  "items": [
+    {
+      "no": "1",
+      "knowledge": [
+        "分数与小数的四则运算"
+      ],
+      "method": "先算括号（小数化分数）再除",
+      "difficulty": 1,
+      "answer": "$\\dfrac57$"
+    },
+    {
+      "no": "2",
+      "knowledge": [
+        "分数与小数的四则运算"
+      ],
+      "method": "通分合并后整体约分",
+      "difficulty": 1,
+      "answer": "$\\dfrac{13}{8}$"
+    },
+    {
+      "no": "3",
+      "knowledge": [
+        "分数裂项"
+      ],
+      "method": "裂项相消",
+      "difficulty": 1,
+      "answer": "240"
+    },
+    {
+      "no": "4",
+      "knowledge": [
+        "分数与小数的四则运算"
+      ],
+      "method": "带分数化假分数+约分",
+      "difficulty": 1,
+      "answer": "123"
+    },
+    {
+      "no": "5",
+      "knowledge": [
+        "速算与巧算"
+      ],
+      "method": "平方差公式/整体代换",
+      "difficulty": 1,
+      "answer": "1"
+    },
+    {
+      "no": "6",
+      "knowledge": [
+        "分数乘法"
+      ],
+      "method": "连续求一个数的几分之几（连乘）",
+      "difficulty": 1,
+      "answer": "0.05 厘米/秒"
+    },
+    {
+      "no": "7",
+      "knowledge": [
+        "三角形的面积",
+        "直角三角形的性质"
+      ],
+      "method": "特殊角（30°-60°-90°）+斜边中线性质",
+      "difficulty": 1,
+      "answer": "96"
+    },
+    {
+      "no": "8",
+      "knowledge": [
+        "圆与扇形"
+      ],
+      "method": "面积差（环形模型）",
+      "difficulty": 1,
+      "answer": "2826 平方厘米"
+    },
+    {
+      "no": "9",
+      "knowledge": [
+        "比的应用"
+      ],
+      "method": "连比统一＋按比例分配",
+      "difficulty": 1,
+      "answer": "小明 105 张，小华 90 张，小刚 168 张"
+    },
+    {
+      "no": "10",
+      "knowledge": [
+        "比例尺"
+      ],
+      "method": "比例尺换算（实际距离不变）",
+      "difficulty": 1,
+      "answer": "12.88 厘米"
+    },
+    {
+      "no": "11",
+      "knowledge": [
+        "比的应用"
+      ],
+      "method": "设份数列函数方程",
+      "difficulty": 1,
+      "answer": "7 粒"
+    },
+    {
+      "no": "12",
+      "knowledge": [
+        "浓度问题"
+      ],
+      "method": "铁量守恒列方程",
+      "difficulty": 1,
+      "answer": "19 千克"
+    },
+    {
+      "no": "13",
+      "knowledge": [
+        "分数应用题"
+      ],
+      "method": "连续取几分之几（逆推）",
+      "difficulty": 1,
+      "answer": "$10\\dfrac{15}{16}$ 斗（即 $\\dfrac{175}{16}$ 斗）"
+    },
+    {
+      "no": "14",
+      "knowledge": [
+        "分数应用题"
+      ],
+      "method": "列方程（分数关系）",
+      "difficulty": 1,
+      "answer": "144 分钟"
+    },
+    {
+      "no": "15",
+      "knowledge": [
+        "可能性的大小"
+      ],
+      "method": "列举（和的组合数）",
+      "difficulty": 1,
+      "answer": "7"
+    },
+    {
+      "no": "16",
+      "knowledge": [
+        "百分数应用题"
+      ],
+      "method": "百分率＋不等式取整",
+      "difficulty": 1,
+      "answer": "572 人"
+    },
+    {
+      "no": "17",
+      "knowledge": [
+        "平均数应用题"
+      ],
+      "method": "估算+四舍五入反推整数和",
+      "difficulty": 1,
+      "answer": "12.46"
+    },
+    {
+      "no": "18",
+      "knowledge": [
+        "平均数应用题"
+      ],
+      "method": "设平均分列方程",
+      "difficulty": 1,
+      "answer": "84 分"
+    },
+    {
+      "no": "19",
+      "knowledge": [
+        "长方形的面积",
+        "组合图形的周长"
+      ],
+      "method": "分类讨论（去不同顶点）",
+      "difficulty": 1,
+      "answer": "24 或 28 或 10 平方厘米"
+    },
+    {
+      "no": "20",
+      "knowledge": [
+        "牛吃草问题"
+      ],
+      "method": "牛吃草模型（消元求涌水与原有量）",
+      "difficulty": 1,
+      "answer": "31 台"
+    },
+    {
+      "no": "21",
+      "knowledge": [
+        "牛吃草问题"
+      ],
+      "method": "牛吃草模型（增长量=可持续量）",
+      "difficulty": 1,
+      "answer": "70 亿人"
+    },
+    {
+      "no": "22",
+      "knowledge": [
+        "行程问题（变速问题）"
+      ],
+      "method": "比例（时间与速度成反比）＋列方程",
+      "difficulty": 1,
+      "answer": "270 千米"
+    },
+    {
+      "no": "23",
+      "knowledge": [
+        "差倍问题"
+      ],
+      "method": "列方程（差倍）",
+      "difficulty": 1,
+      "answer": "水岸剩 90 套，阳光剩 360 套"
+    },
+    {
+      "no": "24",
+      "knowledge": [
+        "百分数应用题"
+      ],
+      "method": "百分率（不合格数反推产量）",
+      "difficulty": 1,
+      "answer": "490 个"
+    },
+    {
+      "no": "25",
+      "knowledge": [
+        "不定方程",
+        "经济问题"
+      ],
+      "method": "列方程组+整数解枚举",
+      "difficulty": 1,
+      "answer": "14 人"
+    },
+    {
+      "no": "26",
+      "knowledge": [
+        "格点面积"
+      ],
+      "method": "格点面积公式＋分类枚举",
+      "difficulty": 1,
+      "answer": "4 个"
+    },
+    {
+      "no": "27",
+      "knowledge": [
+        "百分数应用题"
+      ],
+      "method": "增长率正推与逆推",
+      "difficulty": 1,
+      "answer": "92.5 万件"
+    },
+    {
+      "no": "28",
+      "knowledge": [
+        "百分数应用题"
+      ],
+      "method": "体积不变（底面积与高成反比）",
+      "difficulty": 1,
+      "answer": "36%"
+    },
+    {
+      "no": "29",
+      "knowledge": [
+        "工程问题"
+      ],
+      "method": "效率与时间成反比",
+      "difficulty": 1,
+      "answer": "10 小时"
+    },
+    {
+      "no": "30",
+      "knowledge": [
+        "浓度问题"
+      ],
+      "method": "浓度连乘（每次保留 $\\frac35$ 的盐）",
+      "difficulty": 1,
+      "answer": "7.2%"
+    },
+    {
+      "no": "31",
+      "knowledge": [
+        "工程问题",
+        "周期问题"
+      ],
+      "method": "设总工程量为 1，按周期计算工效",
+      "difficulty": 4,
+      "answer": "104 天"
+    },
+    {
+      "no": "32",
+      "knowledge": [
+        "分数应用题",
+        "比和比例"
+      ],
+      "method": "设总票数为单位 1，比例运算",
+      "difficulty": 2,
+      "answer": "$3/5$"
+    },
+    {
+      "no": "33",
+      "knowledge": [
+        "圆柱体积",
+        "排水法测体积"
+      ],
+      "method": "水面上升体积 = 石子体积",
+      "difficulty": 2,
+      "answer": "314 立方厘米"
+    },
+    {
+      "no": "34",
+      "knowledge": [
+        "行程问题",
+        "比例"
+      ],
+      "method": "步长×步频求速度比",
+      "difficulty": 3,
+      "answer": "50 米"
+    },
+    {
+      "no": "35",
+      "knowledge": [
+        "分数应用题",
+        "方程"
+      ],
+      "method": "列一元一次方程",
+      "difficulty": 2,
+      "answer": "苹果 2000 kg，梨 5400 kg"
+    },
+    {
+      "no": "36",
+      "knowledge": [
+        "行程问题",
+        "火车过桥/超车"
+      ],
+      "method": "相对速度公式",
+      "difficulty": 4,
+      "answer": "16 秒"
+    },
+    {
+      "no": "37",
+      "knowledge": [
+        "多次相遇",
+        "追及问题"
+      ],
+      "method": "设速列式 + 分段计数",
+      "difficulty": 5,
+      "answer": "7 次"
+    },
+    {
+      "no": "38",
+      "knowledge": [
+        "圆锥体积",
+        "相似比"
+      ],
+      "method": "相似立体体积比 = 边长比立方",
+      "difficulty": 3,
+      "answer": "1750 克"
+    },
+    {
+      "no": "39",
+      "knowledge": [
+        "扇形面积",
+        "柱体表面积与体积"
+      ],
+      "method": "扇形占整圆的 $\\frac34$，分块计算",
+      "difficulty": 4,
+      "answer": "表面积 2484 cm²，体积 7065 cm³"
+    },
+    {
+      "no": "40",
+      "knowledge": [
+        "图形的运动",
+        "圆的周长"
+      ],
+      "method": "分段找旋转中心与半径，弧长公式",
+      "difficulty": 5,
+      "answer": "129 cm"
+    },
+    {
+      "no": "41",
+      "knowledge": [
+        "圆柱表面积",
+        "圆环面积"
+      ],
+      "method": "分块计算再相加",
+      "difficulty": 4,
+      "answer": "4082 cm²"
+    },
+    {
+      "no": "42",
+      "knowledge": [
+        "组合图形面积",
+        "圆与三角形"
+      ],
+      "method": "割补法（面积加减）",
+      "difficulty": 4,
+      "answer": "32.125 cm²"
+    },
+    {
+      "no": "43",
+      "knowledge": [
+        "立体几何综合",
+        "表面积与体积"
+      ],
+      "method": "补形/挖洞法，注意重叠",
+      "difficulty": 5,
+      "answer": "表面积 785.12 cm²，体积 668.64 cm³"
+    },
+    {
+      "no": "44",
+      "knowledge": [
+        "多次相遇",
+        "比例行程"
+      ],
+      "method": "分段设全程为 1，比例求位置",
+      "difficulty": 5,
+      "answer": "245 km"
+    },
+    {
+      "no": "45",
+      "knowledge": [
+        "周期问题",
+        "年月日"
+      ],
+      "method": "星期差 = 天数 mod 7，分类讨论",
+      "difficulty": 2,
+      "answer": "星期五"
+    },
+    {
+      "no": "46",
+      "knowledge": [
+        "百分数应用题",
+        "分数应用题"
+      ],
+      "method": "列方程",
+      "difficulty": 3,
+      "answer": "192 人"
+    },
+    {
+      "no": "47",
+      "knowledge": [
+        "和差问题",
+        "等量代换"
+      ],
+      "method": "统一基准量比较",
+      "difficulty": 1,
+      "answer": "甲比戊高 4 厘米"
+    },
+    {
+      "no": "48",
+      "knowledge": [
+        "比例行程",
+        "平行四边形周长"
+      ],
+      "method": "设未知数列比例式",
+      "difficulty": 4,
+      "answer": "148 米"
+    },
+    {
+      "no": "49",
+      "knowledge": [
+        "逻辑推理"
+      ],
+      "method": "假设法+列表验证",
+      "difficulty": 3,
+      "answer": "B 和 D"
+    },
+    {
+      "no": "50",
+      "knowledge": [
+        "分数应用题",
+        "方程"
+      ],
+      "method": "列方程",
+      "difficulty": 3,
+      "answer": "60000 元"
+    },
+    {
+      "no": "51",
+      "knowledge": [
+        "图形的运动",
+        "圆的周长",
+        "周期"
+      ],
+      "method": "找周期，分段算弧长",
+      "difficulty": 4,
+      "answer": "5400 cm"
+    },
+    {
+      "no": "52",
+      "knowledge": [
+        "圆柱的体积",
+        "圆柱侧面展开"
+      ],
+      "method": "侧面展开图周长关系",
+      "difficulty": 4,
+      "answer": "100.48 立方分米"
+    },
+    {
+      "no": "53",
+      "knowledge": [
+        "圆与三角形",
+        "组合图形面积"
+      ],
+      "method": "30° 直角三角形 + 割补",
+      "difficulty": 4,
+      "answer": "81 平方厘米"
+    },
+    {
+      "no": "54",
+      "knowledge": [
+        "分数应用题",
+        "比"
+      ],
+      "method": "比例法/方程",
+      "difficulty": 2,
+      "answer": "380 人"
+    },
+    {
+      "no": "55",
+      "knowledge": [
+        "行程问题",
+        "接送问题"
+      ],
+      "method": "往返时间差 ÷2 求单程省时",
+      "difficulty": 4,
+      "answer": "12 倍（答案页）"
+    },
+    {
+      "no": "56",
+      "knowledge": [
+        "余数问题",
+        "不定方程"
+      ],
+      "method": "枚举参数 + 同余检验",
+      "difficulty": 3,
+      "answer": "90 人"
+    },
+    {
+      "no": "57",
+      "knowledge": [
+        "工程问题",
+        "比例"
+      ],
+      "method": "设效率为分数，列方程",
+      "difficulty": 4,
+      "answer": "12 分钟"
+    },
+    {
+      "no": "58",
+      "knowledge": [
+        "长方体体积",
+        "等积变形"
+      ],
+      "method": "倾斜前后体积守恒 + 割补",
+      "difficulty": 5,
+      "answer": "40 厘米"
+    },
+    {
+      "no": "59",
+      "knowledge": [
+        "长方体/圆柱体积",
+        "等积变形"
+      ],
+      "method": "两个放置状态列等体积方程",
+      "difficulty": 5,
+      "answer": "650 立方厘米"
+    },
+    {
+      "no": "60",
+      "knowledge": [
+        "钟表问题",
+        "追及问题"
+      ],
+      "method": "分针追时针（相对速度 5.5°/分）",
+      "difficulty": 4,
+      "answer": "$4\\frac{10}{11}$ 小时"
+    }
+  ]
+}

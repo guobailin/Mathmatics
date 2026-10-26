@@ -26,6 +26,7 @@ PAPERS = [
     ("2025 IHC J-6发布版", "2025 IHC J-6", "ihc-2025-j"),
     ("2025年奥林匹克思维能力测评活动六年级试题", "2025 思维能力测评", "shishaosai-2025"),
     ("2026 IHC S-6发布版", "2026 IHC S-6", "ihc-2026-s"),
+    ("六年级奥林匹克思维能力测评考前60题", "考前 60 题", "kaoqian-60"),
 ]
 
 EXAM_MD = MarkdownIt("commonmark", {"html": True, "breaks": True}).enable("table")
