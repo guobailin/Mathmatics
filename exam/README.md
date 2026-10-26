@@ -37,7 +37,8 @@
 - `answers/`：逐题 Markdown 解答 + 机器可读 JSON（题号、知识点、方法、难度、答案）。
 - `answers/_review-*.md`：交叉复核记录（如有）。
 - `answers/2024思维能力全国总测评六年级答案.md`：2024 全国总测评纯答案转录。
-- `answers/_book-part2/3/4.md`：88 页世少赛备考资料合集的分段索引（part1 待补）。
+- `answers/【六年级】世少赛备考资料2024版-index.md`：88 页世少赛备考资料合集索引（6 真题卷 + 8 模拟卷 + 答案页）。
+- `answers/_book-part1..4.md`：合集索引的分段底稿。
 - `_rendered/`：逐页 PNG 与文本层缓存，由 `tools/render_exam.py` 生成，已 gitignore。
 
 ## 重新生成
