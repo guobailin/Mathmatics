@@ -124,6 +124,19 @@ img{max-width:100%;height:auto}
 <li>从中间列硬试。末位与首位只受少数数字影响，先攻两头永远比中间穷举快。</li>
 <li>横式题直接试数。应先位值展开、消元，再用整除缩小范围。</li>
 </ol>
+<h2>竞赛真题中的考察</h2>
+<ul>
+<li><strong>2022-23 全国总测评 第 一试10 题</strong>：按位值列方程+整除性排除（★★★★）</li>
+<li><strong>2024 IHC A-6 第 6 题</strong>：分母范围 + 最大分母试填（★★★★★）</li>
+<li><strong>2024 IHC A-6 第 12 题</strong>：9个数字恰为1~9，排列枚举并倒推一位数（★★★★★）</li>
+<li><strong>2024 IHC A-6 第 13 题</strong>：循环小数化为(9p+r)/9后枚举数字（★★★★★）</li>
+<li><strong>2024 IHC A-6 第 24 题</strong>：按被5整除分d=0/5两类枚举验证（★★★★★）</li>
+<li><strong>2025 IHC J-6 第 11 题</strong>：把竖式的末位/位数条件化，枚举三位数×两位数取最大积（★★★★）</li>
+<li><strong>2026 IHC S-6 第 4 题</strong>：有序枚举（★★★）</li>
+</ul>
+<blockquote>
+<p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
+</blockquote>
 
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：倒序数相加的进位链（★★★★）<span class="covers">覆盖点：加减竖式的进位借位与首末位夹逼</span></h3><div class="problem"><p>四位数 $\overline{ABCD}$ 与它的倒序数 $\overline{DCBA}$ 之和恰好是 $12221$，$A,B,C,D$ 互不相同，且 $A\ne 0$、$D\ne 0$。求 $\overline{ABCD}$ 的最大值。</p>
@@ -181,6 +194,8 @@ $$N=(x+y)^2,$$<br />
 <h2>竞赛真题中的考察</h2>
 <ul>
 <li><strong>2024 秋·走美 第 12 题</strong>：幻和 + 互补数对 + 试填验证（★★★★）</li>
+<li><strong>2024 IHC 6 培训 第 2 题</strong>：分类枚举（九宫格+等差数列）（★★★★）</li>
+<li><strong>2024 IHC 6 培训 第 68 题</strong>：数阵图（线和相等+最值）（★★★★）</li>
 </ul>
 <blockquote>
 <p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
@@ -251,6 +266,28 @@ $$N=(x+y)^2,$$<br />
 <li><strong>第 32 届 WMO 第 19 题</strong>：（1）镜像策略保持两方向剩余距离相等；（2）设未知量+同余判断整除+求最大斜走次数（★★★★★★★）</li>
 <li><strong>第 34 届 WMO 第 6 题</strong>：最不利原则（★★★★）</li>
 <li><strong>第 34 届 WMO 第 13 题</strong>：逆推法（必胜格/必败格）+ 对称检查（★★★★★）</li>
+<li><strong>2022-23 全国总测评 第 二试2 题</strong>：最不利原则（按最低合格率80%）（★★★）</li>
+<li><strong>2024 IHC 6 培训 第 60 题</strong>：由数据反推方案（比较取优）（★★★★）</li>
+<li><strong>2024 IHC 6 培训 第 65 题</strong>：最值论证（补集份额上限）（★★★★★）</li>
+<li><strong>2024 IHC 6 培训 第 68 题</strong>：数阵图（线和相等+最值）（★★★★）</li>
+<li><strong>2024 IHC 6 培训 第 73 题</strong>：最值论证（任意三袋之和）（★★★★）</li>
+<li><strong>2024 IHC 6 培训 第 75 题</strong>：不定方程+最值分析（★★★★★）</li>
+<li><strong>2024 IHC 6 培训 第 77 题</strong>：枚举+构造最大（乘法算式）（★★★★★）</li>
+<li><strong>2024 IHC 6 培训 第 78 题</strong>：括号添加（连除变连乘）（★★★★）</li>
+<li><strong>2024 IHC A-6 第 13 题</strong>：循环小数化为(9p+r)/9后枚举数字（★★★★★）</li>
+<li><strong>2024 IHC A-6 第 18 题</strong>：容积函数 + 和定积最大（★★★★）</li>
+<li><strong>2024 IHC A-6 第 21 题</strong>：化为整数比21:20后用总分上限求最大值（★★★）</li>
+<li><strong>2024 IHC A-6 第 22 题</strong>：极端原理 + 构造实例/枚举反例（★★★★★）</li>
+<li><strong>2024 IHC C-6 第 23 题</strong>：假设每篮≤22，则22k与2023比较，k≤91保证、k=92可避开（★★★）</li>
+<li><strong>2024 IHC D-6 第 3 题</strong>：按除以5的余数分类，互补两类取多的一类（★★★）</li>
+<li><strong>2024 IHC D-6 第 8 题</strong>：已投票数只增不减列不等式，再按整数（50的倍数）取最小（★★★）</li>
+<li><strong>2024 IHC D-6 第 13 题</strong>：构造边与格线平行的15×15；斜放比较取小（★★★★）</li>
+<li><strong>2024 IHC D-6 第 18 题</strong>：面积互异推出1+2+…+n≤15的上界，再构造达到（★★★★）</li>
+<li><strong>2024.1 世少赛 第 12 题</strong>：按速度大小分两种情况算追及时间≤到达时间；位置100k米处速度为k米/秒，匀速模型中最小3只（u≈10米/秒）（★★★★★★）</li>
+<li><strong>2024.1 世少赛 第 18 题</strong>：原计划得A=20、B=30；5根同时注满6小时得漏水5/3；(1)20/(10-5/3)=2.4h=144分钟；(2)14根分配x根给A，枚举x使max(tA,tB)最小，x=7时…（★★★★★★★）</li>
+<li><strong>2025 IHC J-6 第 6 题</strong>：条件化为“8 个最小和 &gt; 7 个最大和”，放缩得 x8≥2011，再构造验证（★★★★★★）</li>
+<li><strong>2025 IHC J-6 第 25 题</strong>：路网标权求各点最短路，统计 d(A,C)+d(C,B)≥200 的位置数（★★★★★★）</li>
+<li><strong>2026 IHC S-6 第 20 题</strong>：冗余比较验证（★★★★★★）</li>
 </ul>
 <blockquote>
 <p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
@@ -314,6 +351,8 @@ $$N=(x+y)^2,$$<br />
 <li><strong>第 28 届 WMO 第 19 题</strong>：把图案化为链/树，用对称配对与胜负值（P/N局面）分析，穷举验证（★★★★★）</li>
 <li><strong>第 32 届 WMO 第 2 题</strong>：顺流路线覆盖模型：分叉点计数求下界 + 构造6条甲到乙的路线（★★★★★★）</li>
 <li><strong>第 32 届 WMO 第 20 题</strong>：按反射规则（90°反射、命中线过中心、两网重叠原路返回）逐段逆推定位战舰（作图题）（★★★★★★★）</li>
+<li><strong>2024 IHC A-6 第 22 题</strong>：极端原理 + 构造实例/枚举反例（★★★★★）</li>
+<li><strong>2025 IHC J-6 第 6 题</strong>：条件化为“8 个最小和 &gt; 7 个最大和”，放缩得 x8≥2011，再构造验证（★★★★★★）</li>
 </ul>
 <blockquote>
 <p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
@@ -368,6 +407,7 @@ $$N=(x+y)^2,$$<br />
 <li><strong>第 30 届 WMO 第 10 题</strong>：作差把 6+6 个数化为甲+丙-乙-丁，再把最小数 2 塞进对方得分格（★★★★★）</li>
 <li><strong>第 32 届 WMO 第 19 题</strong>：（1）镜像策略保持两方向剩余距离相等；（2）设未知量+同余判断整除+求最大斜走次数（★★★★★★★）</li>
 <li><strong>第 34 届 WMO 第 13 题</strong>：逆推法（必胜格/必败格）+ 对称检查（★★★★★）</li>
+<li><strong>2026 IHC S-6 第 25 题</strong>：约瑟夫问题（队列模拟）（★★★★★）</li>
 </ul>
 <blockquote>
 <p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
@@ -425,6 +465,8 @@ $$N=(x+y)^2,$$<br />
 <ul>
 <li><strong>2025 秋·走美 第 4 题</strong>：关键路径定下界，再排两人并行时间条验证（★★）</li>
 <li><strong>2025 秋·走美 第 14 题</strong>：坐标化后用曼哈顿距离，枚举6种访问顺序（★★★）</li>
+<li><strong>2024 IHC 6 培训 第 51 题</strong>：统筹优化（分工+最小完工时间）（★★★★★）</li>
+<li><strong>2024.1 世少赛 第 18 题</strong>：原计划得A=20、B=30；5根同时注满6小时得漏水5/3；(1)20/(10-5/3)=2.4h=144分钟；(2)14根分配x根给A，枚举x使max(tA,tB)最小，x=7时…（★★★★★★★）</li>
 </ul>
 <blockquote>
 <p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
@@ -492,6 +534,15 @@ $$N=(x+y)^2,$$<br />
 <li><strong>第 34 届 WMO 第 7 题</strong>：奇偶性分析（折痕翻面）+ 排除法（★★★★）</li>
 <li><strong>第 34 届 WMO 第 13 题</strong>：逆推法（必胜格/必败格）+ 对称检查（★★★★★）</li>
 <li><strong>第 34 届 WMO 第 20 题</strong>：光线追踪 + 序号配对检验（★★★★★★）</li>
+<li><strong>2022-23 全国总测评 第 一试6 题</strong>：假设法逐一检验（★★★）</li>
+<li><strong>2022-23 全国总测评 第 二试12 题</strong>：列表排除法（★★★★）</li>
+<li><strong>2024 IHC 6 培训 第 65 题</strong>：最值论证（补集份额上限）（★★★★★）</li>
+<li><strong>2024 IHC 6 培训 第 79 题</strong>：赛程安排（唯一性推理）（★★★★）</li>
+<li><strong>2024 IHC 6 培训 第 82 题</strong>：假设法（逐个检验真假）（★★★）</li>
+<li><strong>2024 IHC A-6 第 4 题</strong>：列条件表逐条枚举筛选（★★★）</li>
+<li><strong>2024.1 世少赛 第 11 题</strong>：枚举6门课选3门的20种组合，只有{语文,数学,体育}满足恰好一人说错（E错）（★★★★）</li>
+<li><strong>2025 思维能力测评 第 7 题</strong>：圆圈报数取余（★★★）</li>
+<li><strong>2026 IHC S-6 第 20 题</strong>：冗余比较验证（★★★★★★）</li>
 </ul>
 <blockquote>
 <p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>

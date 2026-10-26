@@ -122,6 +122,13 @@ img{max-width:100%;height:auto}
 <li><strong>提速点之后的剩余路程用错</strong>。错误：把提速前走的那段路程也算进&quot;提速省时&quot;的范围。正确：提速前那段一点时间都省不下，全部提前量只由提速后的路段产生。</li>
 <li><strong>往返平均速度的分母用单程路程</strong>。错误：$\bar v=\frac{S}{t_{去}+t_{回}}$。正确：总路程是 $2S$，少乘 $2$ 会让答案偏小一半。</li>
 </ol>
+<h2>竞赛真题中的考察</h2>
+<ul>
+<li><strong>2024 IHC 6 培训 第 64 题</strong>：变速行程（两次提前时间列方程）（★★★★）</li>
+</ul>
+<blockquote>
+<p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
+</blockquote>
 
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：三段等长的变速行程（★★★★）<span class="covers">覆盖点：分段求总路程与平均速度</span></h3><div class="problem"><p>一辆汽车从甲地开往乙地，全程被分成相等的三段。第一段每小时行 $60$ 千米，第二段每小时行 $40$ 千米，第三段每小时行 $30$ 千米。已知第三段比第一段多用 $2$ 小时。求甲、乙两地的距离和全程的平均速度。</p>
@@ -186,6 +193,10 @@ img{max-width:100%;height:auto}
 <ul>
 <li><strong>第 34 届 WMO 第 9 题</strong>：时间轴 + 线段图（时间差换成分数路程）（★★★）</li>
 <li><strong>第 34 届 WMO 第 19 题</strong>：图象分段 + 列方程求相遇（★★★★）</li>
+<li><strong>2024 IHC A-6 第 10 题</strong>：位置-时间图（三角波）求交点（★★★★★）</li>
+<li><strong>2024 IHC C-6 第 18 题</strong>：第n次迎面相遇合走2nD，爷爷路程成倍，折返位置用2D折算列方程（★★★★★★）</li>
+<li><strong>2024 IHC D-6 第 15 题</strong>：追及与相向两段分别列式联立求队伍长（★★★★）</li>
+<li><strong>2025 思维能力测评 第 16 题</strong>：设速度与全程，按时间差列方程（★★★★）</li>
 </ul>
 <blockquote>
 <p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
@@ -295,6 +306,18 @@ img{max-width:100%;height:auto}
 <li><strong>只算迎面、漏掉追及</strong>。错误：问&quot;共相遇几次&quot;只列 $(2n-1)S$。正确：速度差较大时还要列 $|v_甲-v_乙|t=(2k-1)S$，两族时刻合并后剔除重复。错因是以为&quot;位置相同&quot;只有迎面一种，忘了快者从后赶上也是同地同时。</li>
 <li><strong>算完不检验</strong>。错误：算出 $S$ 或位置就交卷。正确：代回核对两人位置是否一致、路程和是否为奇数倍 $S$（迎面族）或路程差是否为奇数倍（追及族）。错因是折返换算容易把 $r$ 与 $2S-r$ 取反，不检验就发现不了。</li>
 </ol>
+<h2>竞赛真题中的考察</h2>
+<ul>
+<li><strong>2024 IHC 6 培训 第 40 题</strong>：往返相遇（分段列式）（★★★★★）</li>
+<li><strong>2024 IHC 6 培训 第 42 题</strong>：环形追及+周期分析（★★★★★★）</li>
+<li><strong>2024 IHC 6 培训 第 49 题</strong>：流水行船（相对运动）（★★★★★★）</li>
+<li><strong>2024 IHC A-6 第 10 题</strong>：位置-时间图（三角波）求交点（★★★★★）</li>
+<li><strong>2024 IHC C-6 第 18 题</strong>：第n次迎面相遇合走2nD，爷爷路程成倍，折返位置用2D折算列方程（★★★★★★）</li>
+<li><strong>2025 思维能力测评 第 12 题</strong>：分段速度 + 相对路程累计一圈（★★★★★）</li>
+</ul>
+<blockquote>
+<p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
+</blockquote>
 
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：第四次相遇的时刻与地点（★★★★）<span class="covers">覆盖点：路程和与相遇次数</span></h3><div class="problem"><p>A、B 两地相距 $150$ 千米。甲车从 A 地、乙车从 B 地同时出发相向而行，到达对方出发点后立即返回，在两地间不断往返。甲车每小时行 $45$ 千米，乙车每小时行 $30$ 千米。两车第 $4$ 次相遇是出发后几小时？相遇点距 A 地多少千米？前 $4$ 次相遇中，哪一次恰好发生在端点？</p>
@@ -395,6 +418,9 @@ $$N=a+e_1=\frac{2ab}{a+b},\qquad \frac{v}{u}=\frac{e_1}{a}=\frac{b-a}{a+b}.$$<br
 <h2>竞赛真题中的考察</h2>
 <ul>
 <li><strong>第 34 届 WMO 第 9 题</strong>：时间轴 + 线段图（时间差换成分数路程）（★★★）</li>
+<li><strong>2024 IHC 6 培训 第 59 题</strong>：时针分针位置互换（角度方程）（★★★★）</li>
+<li><strong>2024 IHC D-6 第 23 题</strong>：相对角速度5.5°/分，180°每720/11分钟出现一次（★★★）</li>
+<li><strong>2025 思维能力测评 第 8 题</strong>：两针转角度数取模求夹角（★★★★）</li>
 </ul>
 <blockquote>
 <p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
@@ -431,6 +457,13 @@ $$N=a+e_1=\frac{2ab}{a+b},\qquad \frac{v}{u}=\frac{e_1}{a}=\frac{b-a}{a+b}.$$<br
 <li>错误做法：算出相遇点落在端点之外也不回头检查。正确做法：先分类讨论谁先到端点、是否已经折返。为什么：折返改变运动方向，位置公式随之改变。</li>
 <li>错误做法：米/分与千米/时混着代入比例式。正确做法：先统一单位再设份数。为什么：单位不同会让&quot;份&quot;失去意义，比出来的数不是同一个量。</li>
 </ol>
+<h2>竞赛真题中的考察</h2>
+<ul>
+<li><strong>2024 IHC D-6 第 15 题</strong>：追及与相向两段分别列式联立求队伍长（★★★★）</li>
+</ul>
+<blockquote>
+<p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
+</blockquote>
 
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：相遇点分全程，再用剩余路段反求速度（★★★★）<span class="covers">覆盖点：时间相同下的路程比与速度比</span></h3><div class="problem"><p>甲、乙两车同时从 A、B 两地相向开出，两车速度比是 $4:3$。相遇时甲车比乙车多行 $24$ 千米；相遇后甲车继续行驶 $2$ 小时到达 B 地。求 A、B 两地的距离及甲、乙两车的速度。</p>
@@ -472,6 +505,17 @@ $$\bar v=\frac{2s}{\frac{s}{v_{顺}}+\frac{s}{v_{逆}}}=\frac{2v_{顺}v_{逆}}{v
 <li><strong>二次相遇直接套&quot;路程和÷速度和&quot;</strong>：两船掉头后可能同向同速，距离不变，根本不在&quot;相向&quot;状态；正确按到达港口的时刻分段，逐段判断运动方向。</li>
 <li><strong>水速变大以为往返更快</strong>：由 $\bar v=v_{船}-\frac{v_{水}^2}{v_{船}}$，水速越大平均速度越小，往返用时越长；错误来自只盯着顺水变快，忘了逆水变慢。</li>
 </ol>
+<h2>竞赛真题中的考察</h2>
+<ul>
+<li><strong>2024 IHC 6 培训 第 40 题</strong>：往返相遇（分段列式）（★★★★★）</li>
+<li><strong>2024 IHC 6 培训 第 49 题</strong>：流水行船（相对运动）（★★★★★★）</li>
+<li><strong>2024 IHC C-6 第 20 题</strong>：去程不到2小时，前2小时含到岸后逆水段，列差方程求时间，再求静水速度（★★★★★★）</li>
+<li><strong>2024 IHC C-6 第 21 题</strong>：顺水20、逆水16，设掉头时间t，去回路程相等列方程（★★★）</li>
+<li><strong>2025 思维能力测评 第 12 题</strong>：分段速度 + 相对路程累计一圈（★★★★★）</li>
+</ul>
+<blockquote>
+<p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
+</blockquote>
 
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：两船同速的顺逆速度合成（★★★★）<span class="covers">覆盖点：顺流逆流的速度合成与分解</span></h3><div class="problem"><p>甲、乙两船在静水中的速度相同。甲船顺水航行 $4$ 小时行了 $152$ 千米，乙船逆水航行 $6$ 小时行了 $108$ 千米。（1）求水流速度和两船的静水速度。（2）若两船从同一码头同时出发，甲顺水、乙逆水，$3$ 小时后两船相距多少千米？（3）出发多少小时后两船相距 $280$ 千米？</p>
@@ -626,6 +670,7 @@ $$\bar v=\frac{2s}{\frac{s}{v_{顺}}+\frac{s}{v_{逆}}}=\frac{2v_{顺}v_{逆}}{v
 <ul>
 <li><strong>2026 春·走美 第 14 题</strong>：相遇化为同余方程 s≡−12k (mod 60)，−12k 只能是12的倍数（★★★★★）</li>
 <li><strong>第 32 届 WMO 第 14 题</strong>：圆上位置用同余表示，解同余方程 18k≡0 (mod 24)（★★★）</li>
+<li><strong>2024 IHC 6 培训 第 42 题</strong>：环形追及+周期分析（★★★★★★）</li>
 </ul>
 <blockquote>
 <p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
