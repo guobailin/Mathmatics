@@ -1,0 +1,637 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>考前 60 题 · 真题解答</title>
+<link rel="stylesheet" href="../katex/katex.min.css">
+<script defer src="../katex/katex.min.js"></script>
+<script defer src="../katex/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+<style>
+body{font-family:-apple-system,"PingFang SC","Source Han Serif SC",serif;
+max-width:760px;margin:0 auto;padding:24px;line-height:1.8;color:#222}
+h1{border-bottom:2px solid #333;padding-bottom:8px}
+h2{margin-top:1.6em}h3{font-size:1.05em}
+.meta{color:#666;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.example{border:1px solid #ddd;border-radius:8px;padding:12px 16px;margin:14px 0}
+.example h3{margin:.2em 0 .6em}
+.covers{font-size:.75em;color:#888;font-weight:normal;margin-left:1em}
+.problem{background:#f7f7f9;border-radius:6px;padding:8px 12px}
+details{margin-top:.6em}summary{cursor:pointer;color:#36c}
+.answer{color:#b30;font-weight:bold}
+img{max-width:100%;height:auto}
+
+body{max-width:920px;margin:0 auto;padding:26px 22px 64px;background:#fffdf8;
+font-family:-apple-system,"PingFang SC","Source Han Serif SC",serif;line-height:1.85;color:#222}
+.exam-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;
+flex-wrap:wrap;font-size:12px;color:#5f6a64;margin-bottom:22px}
+.exam-nav a{color:#2f6f6b;text-decoration:none;font-weight:600}
+.exam-nav a:hover{text-decoration:underline}
+.exam-kicker{font-size:10.5px;letter-spacing:.16em;color:#2f6f6b;font-weight:700;margin-bottom:4px}
+.exam-body h1{font-size:25px;line-height:1.3;margin:0 0 18px;padding-bottom:12px;border-bottom:2px solid #2f6f6b}
+.exam-body h2{font-size:19px;margin:30px 0 12px;color:#1f2a26}
+.exam-body h3{font-size:15px;margin:24px 0 8px;color:#2f6f6b}
+.exam-body table{width:100%;border-collapse:collapse;margin:14px 0;font-size:12.5px}
+.exam-body th,.exam-body td{border:1px solid #ddd6c8;padding:6px 8px;text-align:left;vertical-align:top}
+.exam-body th{background:#f4efe3;font-weight:700}
+.exam-body blockquote{margin:14px 0;padding:8px 14px;border-left:3px solid #2f6f6b;background:#f7f4ec;color:#4d5651}
+.exam-body code{background:#f1ece1;padding:1px 5px;border-radius:4px;font-size:.9em}
+.exam-body img{max-width:100%;height:auto;display:block;margin:16px auto}
+.exam-body hr{border:0;border-top:1px solid #e4ddcf;margin:22px 0}
+.exam-foot{margin-top:40px;padding-top:16px;border-top:1px solid #e4ddcf;font-size:12px;color:#8a928d}
+.exam-index-head{max-width:920px;margin:0 auto 20px}
+.exam-index-head h1{font-size:28px;margin:0 0 8px}
+.exam-index-head p{margin:0;color:#5f6a64;font-size:13px}
+.exam-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:18px 0 28px}
+.exam-grid a{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:12px 13px;
+border:1px solid #ddd6c8;border-radius:12px;background:#fffdf8;color:#1f2a26;text-decoration:none}
+.exam-grid a:hover{border-color:#2f6f6b}
+.exam-grid b{font-size:12px}.exam-grid span{font-size:10px;color:#5f6a64;white-space:nowrap}
+.exam-table{width:100%;border-collapse:collapse;font-size:12.5px}
+.exam-table th,.exam-table td{border:1px solid #ddd6c8;padding:6px 8px;text-align:left}
+.exam-table th{background:#f4efe3}
+@media(max-width:720px){.exam-grid{grid-template-columns:repeat(2,minmax(0,1fr))}body{padding:18px 15px 50px}}
+@media print{.exam-nav,.exam-foot{display:none}body{max-width:none;padding:0}.exam-grid{display:none}}
+</style></head><body><div class="exam-nav"><a href="../index.html">← 知识地图</a><span><a href="index.html">全部真题</a></span></div><div class="exam-kicker">竞赛真题 · 六年级 · 60 题</div><article class="exam-body"><h1>六年级奥林匹克思维能力测评 考前60题 · 全卷解答</h1>
+<blockquote>
+<p>来源：<code>exam/六年级奥林匹克思维能力测评考前60题.pdf</code>（2 页，60 题；原卷第 1 页末附全部 60 题参考答案）。<br />
+Q1–30 与 Q31–60 分段整理后合并；答案已与卷末答案表逐条核对，关键步骤为独立推导/验算。</p>
+</blockquote>
+<h2>试卷概览</h2>
+<ul>
+<li>题量：60 题（Q1–Q60 连续）</li>
+<li>题型：填空/解答混合，含图形、行程、工程、浓度、数论、几何等</li>
+<li>答案：原卷附参考答案表；分段文件中有【待核对】标记的 4 处已保留说明</li>
+</ul>
+<hr />
+<h2>Q1–Q30</h2>
+<h3>第 1 题</h3>
+<ul>
+<li><strong>题目</strong>：$\dfrac37\div\left[\dfrac45\times(1.056-0.5+0.194)\right]$</li>
+<li><strong>答案</strong>：$\dfrac57$</li>
+<li><strong>关键步骤</strong>：括号内 $1.056-0.5+0.194=0.75=\dfrac34$；$\dfrac45\times\dfrac34=\dfrac35$；$\dfrac37\div\dfrac35=\dfrac37\times\dfrac53=\dfrac57$。</li>
+<li><strong>知识点</strong>：分数与小数的四则运算</li>
+<li><strong>方法</strong>：先算括号（小数化分数）再除</li>
+<li><strong>难度</strong>：★2</li>
+</ul>
+<h3>第 2 题</h3>
+<ul>
+<li><strong>题目</strong>：$\left(1+\frac13+\frac15+\frac1{10}+\frac1{15}+\frac1{30}\right)\div\left(\frac12+\frac14+\frac16+\frac1{12}+\frac1{20}+\frac1{60}\right)$</li>
+<li><strong>答案</strong>：$\dfrac{13}{8}$</li>
+<li><strong>关键步骤</strong>：前括号通分 30：$\frac{30+10+6+3+2+1}{30}=\frac{52}{30}=\frac{26}{15}$；后括号通分 60：$\frac{30+15+10+5+3+1}{60}=\frac{64}{60}=\frac{16}{15}$；$\frac{26}{15}\div\frac{16}{15}=\frac{13}{8}$。</li>
+<li><strong>知识点</strong>：分数与小数的四则运算</li>
+<li><strong>方法</strong>：通分合并后整体约分</li>
+<li><strong>难度</strong>：★3</li>
+</ul>
+<h3>第 3 题</h3>
+<ul>
+<li><strong>题目</strong>：$490\times\left(\dfrac1{1\times3}+\dfrac1{3\times5}+\dfrac1{5\times7}+\cdots+\dfrac1{47\times49}\right)$</li>
+<li><strong>答案</strong>：240</li>
+<li><strong>关键步骤</strong>：$\frac1{(2k-1)(2k+1)}=\frac12\left(\frac1{2k-1}-\frac1{2k+1}\right)$，裂项相消得和 $=\frac12\left(1-\frac1{49}\right)=\frac{24}{49}$；$490\times\frac{24}{49}=240$。</li>
+<li><strong>知识点</strong>：分数裂项</li>
+<li><strong>方法</strong>：裂项相消</li>
+<li><strong>难度</strong>：★3</li>
+</ul>
+<h3>第 4 题</h3>
+<ul>
+<li><strong>题目</strong>：$51\dfrac23\div\dfrac53+71\dfrac34\div\dfrac74+91\dfrac45\div\dfrac95$</li>
+<li><strong>答案</strong>：123</li>
+<li><strong>关键步骤</strong>：三个带分数分别化假分数后除以相应的分数（即乘以倒数并约分）：$51\frac23\cdot\frac35=31$，$71\frac34\cdot\frac47=41$，$91\frac45\cdot\frac59=51$；$31+41+51=123$。</li>
+<li><strong>知识点</strong>：分数与小数的四则运算</li>
+<li><strong>方法</strong>：带分数化假分数+约分</li>
+<li><strong>难度</strong>：★2</li>
+</ul>
+<h3>第 5 题</h3>
+<ul>
+<li><strong>题目</strong>：$\dfrac{1+\frac{2023\times2025}{2024}}{2025-\frac1{2024}}$</li>
+<li><strong>答案</strong>：1</li>
+<li><strong>关键步骤</strong>：$2023\times2025=(2024-1)(2024+1)=2024^2-1$，故分子 $=1+\frac{2024^2-1}{2024}=1+2024-\frac1{2024}=2025-\frac1{2024}$，与分母相同，答案为 1。</li>
+<li><strong>知识点</strong>：速算与巧算</li>
+<li><strong>方法</strong>：平方差公式/整体代换</li>
+<li><strong>难度</strong>：★2</li>
+</ul>
+<h3>第 6 题</h3>
+<ul>
+<li><strong>题目</strong>：血液在主动脉中约 20 厘米/秒，静脉中约为主动脉的 $\frac25$，毛细血管中约为静脉的 $\frac1{160}$，求毛细血管中的速度。</li>
+<li><strong>答案</strong>：0.05 厘米/秒</li>
+<li><strong>关键步骤</strong>：$20\times\frac25\times\frac1{160}=8\div160=0.05$。</li>
+<li><strong>知识点</strong>：分数乘法</li>
+<li><strong>方法</strong>：连续求一个数的几分之几（连乘）</li>
+<li><strong>难度</strong>：★2</li>
+</ul>
+<h3>第 7 题</h3>
+<ul>
+<li><strong>题目</strong>：Rt△ABC 中 ∠ACB=90°，斜边 AB 上的高 CH 与中线 CM 三等分 ∠ACB；$S_{\triangle CHM}=24$，求 $S_{\triangle ABC}$。</li>
+<li><strong>答案</strong>：96</li>
+<li><strong>关键步骤</strong>：CH、CM 三等分 90° → ∠ACH=∠HCM=∠MCB=30°，得 ∠A=60°、∠B=30°（CM 是斜边中线）。设 $AC=b$，则 $BC=\sqrt3b$、$AB=2b$，$CH=\frac{ab}{AB}=\frac{\sqrt3b}{2}$、$HM=\frac{a^2-b^2}{2c}=\frac{b}{2}$；$S_{CHM}=\frac12\cdot\frac b2\cdot\frac{\sqrt3b}{2}=\frac{\sqrt3b^2}{8}=24\Rightarrow\sqrt3b^2=192$；$S_{ABC}=\frac12\cdot b\cdot\sqrt3b=\frac12\times192=96$。</li>
+<li><strong>知识点</strong>：三角形的面积；直角三角形的性质</li>
+<li><strong>方法</strong>：特殊角（30°-60°-90°）+斜边中线性质</li>
+<li><strong>难度</strong>：★4</li>
+</ul>
+<h3>第 8 题</h3>
+<ul>
+<li><strong>题目</strong>：日偏食照片中两圆半径分别为 50 cm、40 cm，求两个阴影部分的面积差（π 取 3.14）。</li>
+<li><strong>答案</strong>：2826 平方厘米</li>
+<li><strong>关键步骤</strong>：两块阴影的面积差 $=\pi(50^2-40^2)=900\pi=900\times3.14=2826$。</li>
+<li><strong>知识点</strong>：圆与扇形</li>
+<li><strong>方法</strong>：面积差（环形模型）</li>
+<li><strong>难度</strong>：★3</li>
+</ul>
+<h3>第 9 题</h3>
+<ul>
+<li><strong>题目</strong>：小明、小华、小刚按年龄比分 363 张卡片：小明:小华=7:6，小刚:小明=8:5。各分得多少张？</li>
+<li><strong>答案</strong>：小明 105 张，小华 90 张，小刚 168 张</li>
+<li><strong>关键步骤</strong>：统一连比：小明:小华=7:6=35:30，小刚:小明=8:5 → 小刚:小明=56:35，故三人比 35:30:56，共 121 份；$363\div121=3$，分别 $105、90、168$。</li>
+<li><strong>知识点</strong>：比的应用</li>
+<li><strong>方法</strong>：连比统一＋按比例分配</li>
+<li><strong>难度</strong>：★3</li>
+</ul>
+<h3>第 10 题</h3>
+<ul>
+<li><strong>题目</strong>：比例尺 1:7000000 的地图上丝绸之路约长 92 cm，改画到 1:50000000 的地图上图距是多少？</li>
+<li><strong>答案</strong>：12.88 厘米</li>
+<li><strong>关键步骤</strong>：实际距离 $=92\times7000000$ cm；新图距 $=92\times\frac{7000000}{50000000}=92\times\frac7{50}=12.88$（cm）。</li>
+<li><strong>知识点</strong>：比例尺</li>
+<li><strong>方法</strong>：比例尺换算（实际距离不变）</li>
+<li><strong>难度</strong>：★2</li>
+</ul>
+<h3>第 11 题</h3>
+<ul>
+<li><strong>题目</strong>：盒中黑、白棋子若干。取出 1 粒黑子后，黑:白=9:7；放回黑子再取出 1 粒白子后，黑:白=7:5。黑子比白子多几粒？</li>
+<li><strong>答案</strong>：7 粒</li>
+<li><strong>关键步骤</strong>：设取出 1 粒黑后黑、白为 $9k、7k$，则原黑 $9k+1$、原白 $7k$；又 $(9k+1):(7k-1)=7:5$，解得 $k=3$：黑 28、白 21，差 7。</li>
+<li><strong>知识点</strong>：比的应用</li>
+<li><strong>方法</strong>：设份数列函数方程</li>
+<li><strong>难度</strong>：★3</li>
+</ul>
+<h3>第 12 题</h3>
+<ul>
+<li><strong>题目</strong>：含铁量 50% 和 40% 的铁矿石共 20 千克，炼出含铁量 99% 的宝剑 10 千克（铁无损失）。含铁 50% 的矿石重多少？</li>
+<li><strong>答案</strong>：19 千克</li>
+<li><strong>关键步骤</strong>：铁量守恒：宝剑含铁 $10\times99%=9.9$ 千克；设 50% 矿石 $x$ 千克：$0.5x+0.4(20-x)=9.9$，$0.1x=1.9$，$x=19$。</li>
+<li><strong>知识点</strong>：浓度问题</li>
+<li><strong>方法</strong>：铁量守恒列方程</li>
+<li><strong>难度</strong>：★3</li>
+</ul>
+<h3>第 13 题</h3>
+<ul>
+<li><strong>题目</strong>：《九章算术》持米出三关：外关取全部米的 $\frac13$，中关取余米的 $\frac15$，内关取余米的 $\frac17$，最后剩 5 斗。原来背米多少？</li>
+<li><strong>答案</strong>：$10\dfrac{15}{16}$ 斗（即 $\dfrac{175}{16}$ 斗）</li>
+<li><strong>关键步骤</strong>：剩米 $=$ 原米 $\times\frac23\times\frac45\times\frac67=\frac{16}{35}$ 原米；原米 $=5\div\frac{16}{35}=\frac{175}{16}=10\frac{15}{16}$（斗）。</li>
+<li><strong>知识点</strong>：分数应用题</li>
+<li><strong>方法</strong>：连续取几分之几（逆推）</li>
+<li><strong>难度</strong>：★3</li>
+</ul>
+<h3>第 14 题</h3>
+<ul>
+<li><strong>题目</strong>：已看时长是总时长的 $\frac59$，又看了 20 分钟后，未看时长是已看时长的 $\frac{11}{25}$。总时长是多少分钟？</li>
+<li><strong>答案</strong>：144 分钟</li>
+<li><strong>关键步骤</strong>：设总时长 $T$：$\dfrac{T-\frac59T-20}{\frac59T+20}=\dfrac{11}{25}$，解得 $T=144$。</li>
+<li><strong>知识点</strong>：分数应用题</li>
+<li><strong>方法</strong>：列方程（分数关系）</li>
+<li><strong>难度</strong>：★3</li>
+</ul>
+<h3>第 15 题</h3>
+<ul>
+<li><strong>题目</strong>：骰子六个面为 1~6，任意抛两次，两数之和出现可能性最大的是多少？</li>
+<li><strong>答案</strong>：7</li>
+<li><strong>关键步骤</strong>：和为 7 的组合最多：$(1,6)(2,5)(3,4)(4,3)(5,2)(6,1)$ 共 6 种，概率 $\frac6{36}$ 最大。</li>
+<li><strong>知识点</strong>：可能性的大小</li>
+<li><strong>方法</strong>：列举（和的组合数）</li>
+<li><strong>难度</strong>：★2</li>
+</ul>
+<h3>第 16 题</h3>
+<ul>
+<li><strong>题目</strong>：投票总人数 500 时&quot;杂志&quot;项占 68%；再次登录时升到 72%。当时的投票总人数至少是多少？</li>
+<li><strong>答案</strong>：572 人</li>
+<li><strong>关键步骤</strong>：原杂志票 $500\times68%=340$。设新增总人数 $N-500$ 全部投杂志：$\frac{340+(N-500)}{N}\ge72%$，即 $N-160\ge0.72N$，$N\ge571.43$，最小整数 572。</li>
+<li><strong>知识点</strong>：百分数应用题</li>
+<li><strong>方法</strong>：百分率＋不等式取整</li>
+<li><strong>难度</strong>：★4</li>
+</ul>
+<h3>第 17 题</h3>
+<ul>
+<li><strong>题目</strong>：计算 13 个自然数的平均数，保留两位小数得 12.44，但百分位数字错了。正确的平均数是？</li>
+<li><strong>答案</strong>：12.46</li>
+<li><strong>关键步骤</strong>：13 个数之和为整数 $S$，$S\approx12.44\times13=161.72$，取 $S=162$，则平均 $=162\div13=12.4615\cdots$，保留两位为 12.46（百分位 6≠4，符合&quot;百分位错&quot;）。</li>
+<li><strong>知识点</strong>：平均数应用题</li>
+<li><strong>方法</strong>：估算+四舍五入反推整数和</li>
+<li><strong>难度</strong>：★4</li>
+</ul>
+<h3>第 18 题</h3>
+<ul>
+<li><strong>题目</strong>：48 人，男:女=7:5；女生平均分比男生高 5%，男生总分比女生总分高 560 分。女生平均分？</li>
+<li><strong>答案</strong>：84 分</li>
+<li><strong>关键步骤</strong>：男 28 人、女 20 人。设男生平均 $x$：$28x-20\times1.05x=560$，$7x=560$，$x=80$；女生平均 $80\times1.05=84$。</li>
+<li><strong>知识点</strong>：平均数应用题</li>
+<li><strong>方法</strong>：设平均分列方程</li>
+<li><strong>难度</strong>：★4</li>
+</ul>
+<h3>第 19 题</h3>
+<ul>
+<li><strong>题目</strong>：绳子和三个钉子围成三角形（边长 8 cm、10 cm、4 cm）。去掉一个顶点处的钉子，用这根绳子围成长方形，面积可能是多少？</li>
+<li><strong>答案</strong>：24 或 28 或 10 平方厘米</li>
+<li><strong>关键步骤</strong>：绳长＝三角形周长 $=8+10+4=22$ cm。去掉一个顶点后，剩下两钉为长方形一组邻边的两顶点：长方形一边等于被去掉顶点所对的边。三种情形：对边 8 → 另边 $11-8=3$，面积 $8\times3=24$；对边 4 → 另边 7，面积 28；对边 10 → 另边 1，面积 10。</li>
+<li><strong>知识点</strong>：长方形的面积；组合图形的周长</li>
+<li><strong>方法</strong>：分类讨论（去不同顶点）</li>
+<li><strong>难度</strong>：★4</li>
+</ul>
+<h3>第 20 题</h3>
+<ul>
+<li><strong>题目</strong>：水池（池底均匀涌水），满池水用 10 台泵 2 小时抽干，5 台泵需 7 小时。半小时抽干至少要几台泵？</li>
+<li><strong>答案</strong>：31 台</li>
+<li><strong>关键步骤</strong>：设泵每分钟抽 $p$、涌水 $s$、满池水 $V$：$20p=V+2s$，$35p=V+7s$，两式相减得 $s=3p$、$V=14p$。半小时抽干：$0.5(n p-s)=V$，即 $0.5(n-3)p=14p$，$n=31$。</li>
+<li><strong>知识点</strong>：牛吃草问题</li>
+<li><strong>方法</strong>：牛吃草模型（消元求涌水与原有量）</li>
+<li><strong>难度</strong>：★4</li>
+</ul>
+<h3>第 21 题</h3>
+<ul>
+<li><strong>题目</strong>：资源可供 100 亿人生活 100 年，或 80 亿人生活 300 年。新资源增长速度相同，最多能养活多少亿人？</li>
+<li><strong>答案</strong>：70 亿人</li>
+<li><strong>关键步骤</strong>：设现有资源 $E$、每年新增 $r$（亿人·年）：$E+100r=10000$，$E+300r=24000$，相减 $200r=14000$，$r=70$。可持续人口 $=$ 每年新增资源 $=70$ 亿。</li>
+<li><strong>知识点</strong>：牛吃草问题</li>
+<li><strong>方法</strong>：牛吃草模型（增长量=可持续量）</li>
+<li><strong>难度</strong>：★4</li>
+</ul>
+<h3>第 22 题</h3>
+<ul>
+<li><strong>题目</strong>：汽车从甲到乙，速度提高 20% 可提前 1 小时到；按原速行 120 千米后速度提高 25% 可提前 40 分钟。甲乙两地相距多少？</li>
+<li><strong>答案</strong>：270 千米</li>
+<li><strong>关键步骤</strong>：提速 $\frac15$ → 时间变 $\frac56$，提前的 1 小时 $=\frac16$ 原定时间 → 原定 6 小时。设原速 $v$、全程 $S=6v$：$\frac{120}{v}+\frac{S-120}{1.25v}=6-\frac23=\frac{16}{3}$，代入得 $24+4.8v=\frac{16}{3}v$，$v=45$，$S=270$。</li>
+<li><strong>知识点</strong>：行程问题（变速问题）</li>
+<li><strong>方法</strong>：比例（时间与速度成反比）＋列方程</li>
+<li><strong>难度</strong>：★4</li>
+</ul>
+<h3>第 23 题</h3>
+<ul>
+<li><strong>题目</strong>：阳光花园 830 套、水岸花园 560 套待售，各售出相同套数后，阳光剩下的是水岸剩下的 4 倍。两处各剩多少套？</li>
+<li><strong>答案</strong>：水岸剩 90 套，阳光剩 360 套</li>
+<li><strong>关键步骤</strong>：设各售出 $x$：$830-x=4(560-x)$，解得 $x=470$；水岸剩 $560-470=90$，阳光剩 $830-470=360$。</li>
+<li><strong>知识点</strong>：差倍问题</li>
+<li><strong>方法</strong>：列方程（差倍）</li>
+<li><strong>难度</strong>：★2</li>
+</ul>
+<h3>第 24 题</h3>
+<ul>
+<li><strong>题目</strong>：原日产 300 个、合格率 90%；技术改进后合格率 98%，日不合格数比原来少 20 个。现在日合格品多少个？</li>
+<li><strong>答案</strong>：490 个</li>
+<li><strong>关键步骤</strong>：原不合格 $300\times10%=30$ 个，现不合格 $30-20=10$ 个；现日产量 $=10\div2%=500$，合格 $=500\times98%=490$。</li>
+<li><strong>知识点</strong>：百分数应用题</li>
+<li><strong>方法</strong>：百分率（不合格数反推产量）</li>
+<li><strong>难度</strong>：★3</li>
+</ul>
+<h3>第 25 题</h3>
+<ul>
+<li><strong>题目</strong>：76 件商品卖给 33 位顾客，每人最多买 3 件；买 1 件按原价，2 件降 10%，3 件降 20%；最后平均每件按原价 85% 卖。买 3 件的顾客有几人？</li>
+<li><strong>答案</strong>：14 人</li>
+<li><strong>关键步骤</strong>：设买 1、2、3 件的顾客为 $a、b、c$：$a+b+c=33$，$a+2b+3c=76$，$a+1.8b+2.4c=76\times0.85=64.6$。化简得 $b+2c=43$、$4b+7c=158$，解得 $c=14$（$b=15，a=4$）。</li>
+<li><strong>知识点</strong>：不定方程；经济问题</li>
+<li><strong>方法</strong>：列方程组+整数解枚举</li>
+<li><strong>难度</strong>：★5</li>
+</ul>
+<h3>第 26 题</h3>
+<ul>
+<li><strong>题目</strong>：长方形网格中小长方形长 2、宽 1，A、B 为格点，点 C 也为格点，使 △ABC 面积为 2 的点 C 有几个？</li>
+<li><strong>答案</strong>：4 个</li>
+<li><strong>关键步骤</strong>：以格点为坐标，先由 $S=\frac12|AB|\cdot h=2$ 求出 C 到直线 AB 的距离 $h=\frac4{|AB|}$，再在网格内逐格枚举满足条件的格点，共 4 个。</li>
+<li><strong>知识点</strong>：格点面积</li>
+<li><strong>方法</strong>：格点面积公式＋分类枚举</li>
+<li><strong>难度</strong>：★4</li>
+</ul>
+<h3>第 27 题</h3>
+<ul>
+<li><strong>题目</strong>：去年加工 30 万件，比前年增长 20%；今年比去年增长 25%。三年共加工多少万件？</li>
+<li><strong>答案</strong>：92.5 万件</li>
+<li><strong>关键步骤</strong>：前年 $30\div1.2=25$（万件），今年 $30\times1.25=37.5$（万件）；合计 $25+30+37.5=92.5$。</li>
+<li><strong>知识点</strong>：百分数应用题</li>
+<li><strong>方法</strong>：增长率正推与逆推</li>
+<li><strong>难度</strong>：★2</li>
+</ul>
+<h3>第 28 题</h3>
+<ul>
+<li><strong>题目</strong>：底面为正方形的长方体瓶子，底面边长增加 25% 而体积不变，高应减少百分之几？</li>
+<li><strong>答案</strong>：36%</li>
+<li><strong>关键步骤</strong>：底面积变为原来的 $1.25^2=1.5625$ 倍，高变为 $\frac1{1.5625}=0.64$，减少 $1-0.64=36%$。</li>
+<li><strong>知识点</strong>：百分数应用题</li>
+<li><strong>方法</strong>：体积不变（底面积与高成反比）</li>
+<li><strong>难度</strong>：★3</li>
+</ul>
+<h3>第 29 题</h3>
+<ul>
+<li><strong>题目</strong>：原来编一个中国结需 12 小时，现在效率比原来提高 20%，现在需要多少小时？</li>
+<li><strong>答案</strong>：10 小时</li>
+<li><strong>关键步骤</strong>：效率变为 $1.2$ 倍，时间变为 $\frac1{1.2}$：$12\div1.2=10$（小时）。</li>
+<li><strong>知识点</strong>：工程问题</li>
+<li><strong>方法</strong>：效率与时间成反比</li>
+<li><strong>难度</strong>：★2</li>
+</ul>
+<h3>第 30 题</h3>
+<ul>
+<li><strong>题目</strong>：100 克浓度 20% 的盐水，倒出 40 克后加满清水，再倒出 40 克后加满清水，两次后浓度是多少？</li>
+<li><strong>答案</strong>：7.2%</li>
+<li><strong>关键步骤</strong>：每次倒出 40 克后剩余盐为原来的 $\frac{60}{100}=\frac35$：盐量 $100\times20%\times\left(\frac35\right)^2=7.2$ 克，加水到 100 克后浓度 $7.2%$。</li>
+<li><strong>知识点</strong>：浓度问题</li>
+<li><strong>方法</strong>：浓度连乘（每次保留 $\frac35$ 的盐）</li>
+<li><strong>难度</strong>：★3</li>
+</ul>
+<hr />
+<h2>小结（Q1–30）</h2>
+<ul>
+<li><strong>考点分布</strong>：计算 6 题（1–6）、几何 3 题（7、8、19）、计数/概率 1 题（15）、比例与百分数 10 题（9、10、16、17、18、23、24、27、28、29）、工程与牛吃草 3 题（20、21、30）、行程 1 题（22）、经济/方程 2 题（12、25）、数论/逻辑类 2 题（11、13）、其他 2 题（14、26）。</li>
+<li><strong>难度</strong>：★2 共 10 题，★3 共 11 题，★4 共 7 题，★5 共 1 题。</li>
+<li><strong>易错提醒</strong>：第 17 题要注意&quot;百分位数字错&quot;意味着只能是 12.4x（x≠4）；第 19 题要去掉不同顶点分别讨论（面积 24、28、10 三种）；第 20/21 题是牛吃草模型，务必先消元求出&quot;涌水量/增长量&quot;。</li>
+</ul>
+<hr />
+<h2>Q31–Q60</h2>
+<h2>一、总体说明</h2>
+<ul>
+<li>题量：Q31–Q60 共 <strong>30 题</strong>，全部为填空/解答型（含 10 余道图形题）。</li>
+<li>分布：分数应用题与工程（31、35、50、54、56、57）、行程与钟表（36、37、40、44、55、60）、几何与立体（33、38、39、41、42、43、48、51、52、53、58、59）、计数与逻辑（32、45、47、49）、数论与比例（34、46、51 等）。</li>
+<li>原书整体（Q1–Q60）主要考点：分数乘除法、分数大小比较、分数百分数应用题、组合图形周长面积、比和比例、百分率、圆/圆柱/圆锥、工程、数与形、浓度、牛吃草、行程（见 page-02 顶部&quot;六年级主要考点&quot;）。</li>
+</ul>
+<h2>二、Q31–Q60 逐题索引</h2>
+<h3>Q31</h3>
+<ul>
+<li><strong>题目简述</strong>：甲队单独做 150 天、乙队单独做 180 天；合作时甲做 5 天休 2 天，乙做 6 天休 1 天，完成需几天？</li>
+<li><strong>答案</strong>：104 天</li>
+<li><strong>关键步骤</strong>：7 天为一个周期，甲做 $5/150=1/30$、乙做 $6/180=1/30$，每周期完成 $1/15$。14 个周期（98 天）完成 $14/15$，剩 $1/15$；第 99–103 天两人均上班（$11/900$×5=$55/900$），第 104 天甲休息、乙做 $1/180=5/900$ 正好补完。</li>
+<li><strong>知识点</strong>：工程问题、周期问题</li>
+<li><strong>方法</strong>：设总工程量为 1，按周期计算工效</li>
+<li><strong>难度</strong>：★★★★</li>
+</ul>
+<h3>Q32</h3>
+<ul>
+<li><strong>题目简述</strong>：需 $4/5$ 选票当选；统计 $2/3$ 选票后已获票数达当选票数的 $3/4$，还需剩余选票的几分之几？</li>
+<li><strong>答案</strong>：$3/5$</li>
+<li><strong>关键步骤</strong>：已得票 $=\frac45\times\frac34=\frac35$；还差 $\frac45-\frac35=\frac15$；剩余选票 $\frac13$，故还需 $\frac15\div\frac13=\frac35$。</li>
+<li><strong>知识点</strong>：分数应用题、比和比例</li>
+<li><strong>方法</strong>：设总票数为单位 1，比例运算</li>
+<li><strong>难度</strong>：★★</li>
+</ul>
+<h3>Q33</h3>
+<ul>
+<li><strong>题目简述</strong>：圆柱形容器有 628 毫升水，水面上升 12 cm 即可喝到（容器底面直径 10 cm），至少放入多少 cm³ 石子（全部没入）？</li>
+<li><strong>答案</strong>：314 立方厘米</li>
+<li><strong>关键步骤</strong>：底面积 $3.14\times5^2=78.5$ cm²；原水面高 $628\div78.5=8$ cm，需再升 $12-8=4$ cm；石子体积 $=78.5\times4=314$ cm³。</li>
+<li><strong>知识点</strong>：圆柱体积、排水法测体积</li>
+<li><strong>方法</strong>：水面上升体积 = 石子体积</li>
+<li><strong>难度</strong>：★★</li>
+</ul>
+<h3>Q34</h3>
+<ul>
+<li><strong>题目简述</strong>：小美跑 5 步的距离 = 小青跑 4 步；小美跑 4 步的时间小青只能跑 3 步。800 米赛跑，第一个人到终点时第二个人距终点多远？</li>
+<li><strong>答案</strong>：50 米</li>
+<li><strong>关键步骤</strong>：设小青步长 $1$、小美步长 $\frac45$（因 5 步同距）；设小青每步用时 $1$、小美每步用时 $\frac34$（因 4 步同时）。速度比 小美:小青 $=\frac{4/5}{3/4}:\frac11=\frac{16}{15}:1$，小美快。小美到 800 m 时，小青跑 $800\div\frac{16}{15}=750$ m，距终点 $800-750=50$ m。</li>
+<li><strong>知识点</strong>：行程问题、比例</li>
+<li><strong>方法</strong>：步长×步频求速度比</li>
+<li><strong>难度</strong>：★★★</li>
+</ul>
+<h3>Q35</h3>
+<ul>
+<li><strong>题目简述</strong>：苹果和梨共 7400 kg，苹果运走 $2/5$、梨运走 $7/9$ 后剩下相等，求原来各多少？</li>
+<li><strong>答案</strong>：苹果 2000 kg，梨 5400 kg</li>
+<li><strong>关键步骤</strong>：设苹果 $x$、梨 $7400-x$：$\frac35x=\frac29(7400-x)$ → $27x=10(7400-x)$ → $37x=74000$ → $x=2000$。</li>
+<li><strong>知识点</strong>：分数应用题、方程</li>
+<li><strong>方法</strong>：列一元一次方程</li>
+<li><strong>难度</strong>：★★</li>
+</ul>
+<h3>Q36</h3>
+<ul>
+<li><strong>题目简述</strong>：公共汽车长 15 m、车速 18 km/h（=5 m/s），追上甲用 6 s 离开，半分钟后遇乙、2 s 后离开；再过多少秒甲乙相遇？</li>
+<li><strong>答案</strong>：16 秒</li>
+<li><strong>关键步骤</strong>：甲速 $=5-\frac{15}{6}=2.5$ m/s；乙速 $=\frac{15}{2}-5=2.5$ m/s。汽车离开乙时，甲、乙相距 $80$ m，相向速度 $5$ m/s，需 $16$ s。</li>
+<li><strong>知识点</strong>：行程问题、火车过桥/超车</li>
+<li><strong>方法</strong>：相对速度公式</li>
+<li><strong>难度</strong>：★★★★</li>
+</ul>
+<h3>Q37</h3>
+<ul>
+<li><strong>题目简述</strong>：小王步行 A→B，小张骑摩托在 A、B 间往返；同时出发，60 分钟首次相遇，70 分钟小张首次超过小王。小王到 B 时，两人迎面相遇过几次？</li>
+<li><strong>答案</strong>：7 次</li>
+<li><strong>关键步骤</strong>：设步行速 $v$，由 60 min 相遇得 $AB=60(v_m+v)$；70 min 首次追上得 $v_m=13v$，$AB=840v$；小王到达需 840 min。逐段数小张迎面相遇次数，得 7 次。</li>
+<li><strong>知识点</strong>：多次相遇、追及问题</li>
+<li><strong>方法</strong>：设速列式 + 分段计数</li>
+<li><strong>难度</strong>：★★★★★</li>
+</ul>
+<h3>Q38</h3>
+<ul>
+<li><strong>题目简述</strong>：圆锥形容器装满 2000 g 花生油，在容器正中间（半高处）咬洞漏油至油面与洞齐平，偷走多少克？</li>
+<li><strong>答案</strong>：1750 克</li>
+<li><strong>关键步骤</strong>：洞在半高处，剩余油为底部小圆锥（高为一半），体积是原来的 $\frac18$；偷走 $\frac78\times2000=1750$ g。</li>
+<li><strong>知识点</strong>：圆锥体积、相似比</li>
+<li><strong>方法</strong>：相似立体体积比 = 边长比立方</li>
+<li><strong>难度</strong>：★★★</li>
+</ul>
+<h3>Q39</h3>
+<ul>
+<li><strong>题目简述</strong>：柱体高 30 cm，底面为半径 10 cm、圆心角 270° 的扇形，求表面积和体积（π=3.14）。</li>
+<li><strong>答案</strong>：表面积 2484 cm²，体积 7065 cm³</li>
+<li><strong>关键步骤</strong>：底面积 $=\frac{270}{360}\times3.14\times10^2=235.5$；表面积 $=2\times235.5+\frac{270}{360}\times2\pi\times10\times30+2\times10\times30=2484$；体积 $=235.5\times30=7065$。</li>
+<li><strong>知识点</strong>：扇形面积、柱体表面积与体积</li>
+<li><strong>方法</strong>：扇形占整圆的 $\frac34$，分块计算</li>
+<li><strong>难度</strong>：★★★★</li>
+</ul>
+<h3>Q40</h3>
+<ul>
+<li><strong>题目简述</strong>：木块 12×5（对角线 13）、正方形木桩边长 17，木块沿木桩边缘滚动一周回到原位，A 点经过的路径长多少（π=3）？</li>
+<li><strong>答案</strong>：129 cm</li>
+<li><strong>关键步骤</strong>：滚动过程分 4 段绕木桩顶点旋转，A 点每段轨迹为圆弧，半径分别为 12、13、17、5 等，按圆心角累加弧长：$2\pi\times$（各段半径和）$=129$。</li>
+<li><strong>知识点</strong>：图形的运动、圆的周长</li>
+<li><strong>方法</strong>：分段找旋转中心与半径，弧长公式</li>
+<li><strong>难度</strong>：★★★★★</li>
+</ul>
+<h3>Q41</h3>
+<ul>
+<li><strong>题目简述</strong>：用硬纸做礼帽（图：圆柱帽身 + 帽檐），至少用纸多少 cm²（π=3.14）？</li>
+<li><strong>答案</strong>：4082 cm²</li>
+<li><strong>关键步骤</strong>：纸面积 = 帽顶圆 + 帽身侧面 + 帽檐上、下圆环面积；按图尺寸（帽身半径 10、高 20，帽檐半径 20）代入得 4082 cm²。</li>
+<li><strong>知识点</strong>：圆柱表面积、圆环面积</li>
+<li><strong>方法</strong>：分块计算再相加</li>
+<li><strong>难度</strong>：★★★★</li>
+</ul>
+<h3>Q42</h3>
+<ul>
+<li><strong>题目简述</strong>：等腰直角三角形 ABC，D 为半圆周中点，BC 为半圆直径，AB=BC=10，求阴影面积（π=3.14）。</li>
+<li><strong>答案</strong>：32.125 cm²</li>
+<li><strong>关键步骤</strong>：先算半圆面积 $\frac12\times3.14\times5^2=39.25$，再减去相应三角形/弓形面积（用 D 为中点及等腰直角关系），得 $32.125$。</li>
+<li><strong>知识点</strong>：组合图形面积、圆与三角形</li>
+<li><strong>方法</strong>：割补法（面积加减）</li>
+<li><strong>难度</strong>：★★★★</li>
+</ul>
+<h3>Q43</h3>
+<ul>
+<li><strong>题目简述</strong>：棱长 10 cm 立方体，两对侧面中心各打边长 4 cm 方洞，上、下中心打直径 4 cm 圆洞，求表面积与体积（π=3.14）。</li>
+<li><strong>答案</strong>：表面积 785.12 cm²，体积 668.64 cm³</li>
+<li><strong>关键步骤</strong>：体积 $=1000-2\times(4\times4\times10)+$ 重叠部分（方洞相交 + 圆柱相贯）；表面积 = 原表面积 − 洞口面积 + 洞内表面积，代入 π=3.14 得 785.12 / 668.64。</li>
+<li><strong>知识点</strong>：立体几何综合、表面积与体积</li>
+<li><strong>方法</strong>：补形/挖洞法，注意重叠</li>
+<li><strong>难度</strong>：★★★★★</li>
+</ul>
+<h3>Q44</h3>
+<ul>
+<li><strong>题目简述</strong>：甲乙从 A、B 相向而行，速度比 2:3；到达对面后甲速提高 $\frac14$、乙速减少 $\frac15$；第一、二次相遇相距 72 km，求 AB。</li>
+<li><strong>答案</strong>：245 km</li>
+<li><strong>关键步骤</strong>：第一次相遇甲行全程 $\frac25$；之后按新速度比继续，第二次相遇位置距 A 为全程的 $\frac{?}{?}$；两位置之差 $=72$，解得全程 245 km。</li>
+<li><strong>知识点</strong>：多次相遇、比例行程</li>
+<li><strong>方法</strong>：分段设全程为 1，比例求位置</li>
+<li><strong>难度</strong>：★★★★★</li>
+</ul>
+<h3>Q45</h3>
+<ul>
+<li><strong>题目简述</strong>：2024 年小可生日是星期四，小芹生日在下个月同一天且不在周六周日，是星期几？</li>
+<li><strong>答案</strong>：星期五</li>
+<li><strong>关键步骤</strong>：跨月星期推后 30/31/29/28 天（mod 7 得 +2/+3/+1/0）。星期四 +1 = 星期五（2 月 29 天情形），且不落在周六日。</li>
+<li><strong>知识点</strong>：周期问题、年月日</li>
+<li><strong>方法</strong>：星期差 = 天数 mod 7，分类讨论</li>
+<li><strong>难度</strong>：★★</li>
+</ul>
+<h3>Q46</h3>
+<ul>
+<li><strong>题目简述</strong>：返校首日六年级缺勤人数是出勤的 $\frac1{19}$；又有 2 人到校后出勤率 96%，这时到校多少人？</li>
+<li><strong>答案</strong>：192 人</li>
+<li><strong>关键步骤</strong>：设总人数 $N$，缺勤 $\frac N{20}$；$\frac N{20}-2=\frac N{25}$ → $N=200$；到校 $=200\times96%=192$。</li>
+<li><strong>知识点</strong>：百分数应用题、分数应用题</li>
+<li><strong>方法</strong>：列方程</li>
+<li><strong>难度</strong>：★★★</li>
+</ul>
+<h3>Q47</h3>
+<ul>
+<li><strong>题目简述</strong>：甲比乙高 6 cm，乙比丙矮 8 cm，丙比丁高 12 cm，丁比戊矮 6 cm。甲与戊谁高？高几厘米？</li>
+<li><strong>答案</strong>：甲比戊高 4 厘米</li>
+<li><strong>关键步骤</strong>：以乙为基准：甲=乙+6，丙=乙+8，丁=乙−4，戊=丁+6=乙+2；甲−戊=4。</li>
+<li><strong>知识点</strong>：和差问题、等量代换</li>
+<li><strong>方法</strong>：统一基准量比较</li>
+<li><strong>难度</strong>：★</li>
+</ul>
+<h3>Q48</h3>
+<ul>
+<li><strong>题目简述</strong>：猫、鼠同时从平行四边形 A 出发，鼠沿 A→B→C、猫沿 A→D→C，速度比 17:20，在 E 点抓住（CE=6 m），求周长。</li>
+<li><strong>答案</strong>：148 米</li>
+<li><strong>关键步骤</strong>：猫多跑 $2\times6=12$ m；设半周长为 $S$，$\frac{S-6}{S+6}=\frac{17}{20}$ → $S=74$；周长 $=2S=148$ m。</li>
+<li><strong>知识点</strong>：比例行程、平行四边形周长</li>
+<li><strong>方法</strong>：设未知数列比例式</li>
+<li><strong>难度</strong>：★★★★</li>
+</ul>
+<h3>Q49</h3>
+<ul>
+<li><strong>题目简述</strong>：A、B、C、D 中两人做好事，四句话中两人说真话，判断谁做了好事。</li>
+<li><strong>答案</strong>：B 和 D</li>
+<li><strong>关键步骤</strong>：D 说&quot;B 说的是事实&quot;，与 B 的话同真假；逐一假设并检验&quot;恰有两人说真话&quot;，得好事者为 B、D（A、C 真，B、D 假）。</li>
+<li><strong>知识点</strong>：逻辑推理</li>
+<li><strong>方法</strong>：假设法+列表验证</li>
+<li><strong>难度</strong>：★★★</li>
+</ul>
+<h3>Q50</h3>
+<ul>
+<li><strong>题目简述</strong>：甲去年收入是乙的 3 倍；甲用收入 $\frac15$ 办学、$\frac14$ 买书刊，再给乙 6500 元后与乙的钱相等，求甲去年收入。</li>
+<li><strong>答案</strong>：60000 元</li>
+<li><strong>关键步骤</strong>：设甲 $x$、乙 $\frac x3$：$\frac{11}{20}x-6500=\frac x3+6500$ → $\frac{13}{60}x=13000$ → $x=60000$。</li>
+<li><strong>知识点</strong>：分数应用题、方程</li>
+<li><strong>方法</strong>：列方程</li>
+<li><strong>难度</strong>：★★★</li>
+</ul>
+<h3>Q51</h3>
+<ul>
+<li><strong>题目简述</strong>：边长 2 cm 的等边三角形沿直线翻滚 2024 次，A 点经过的总路程（π=3）。</li>
+<li><strong>答案</strong>：5400 cm</li>
+<li><strong>关键步骤</strong>：每 3 次翻滚为一个周期，A 点走 2 段半径 2 的 $120^\circ$ 弧 $=2\times\frac{2\pi\times2}{3}=\frac{8\pi}{3}=8$ cm（π=3）；$2024=3\times674+2$，$674\times8+2\times\frac{2\pi\times2}{3}=5400$ cm。</li>
+<li><strong>知识点</strong>：图形的运动、圆的周长、周期</li>
+<li><strong>方法</strong>：找周期，分段算弧长</li>
+<li><strong>难度</strong>：★★★★</li>
+</ul>
+<h3>Q52</h3>
+<ul>
+<li><strong>题目简述</strong>：长方形铁皮（16.56 dm）剪出两个圆和一块长方形，正好做成油桶，求容积（π=3.14）。</li>
+<li><strong>答案</strong>：100.48 立方分米</li>
+<li><strong>关键步骤</strong>：圆直径 $d$，铁皮长 $=d+\pi d=16.56$ → $d=4$，$r=2$；桶高 $=2d=8$；$V=\pi r^2h=3.14\times4\times8=100.48$ dm³。</li>
+<li><strong>知识点</strong>：圆柱的体积、圆柱侧面展开</li>
+<li><strong>方法</strong>：侧面展开图周长关系</li>
+<li><strong>难度</strong>：★★★★</li>
+</ul>
+<h3>Q53</h3>
+<ul>
+<li><strong>题目简述</strong>：如图，半圆直径 AB=60，∠DAB=30°，D 到 AB 的垂线长 26，求阴影面积（单位：cm）。</li>
+<li><strong>答案</strong>：81 平方厘米</li>
+<li><strong>关键步骤</strong>：由直径所对圆周角为直角、∠A=30° 得相关线段（AD、BD 及垂足位置），再用扇形/三角形面积割补：阴影 $=$ 扇形或三角形面积之差 $=81$ cm²。</li>
+<li><strong>知识点</strong>：圆与三角形、组合图形面积</li>
+<li><strong>方法</strong>：30° 直角三角形 + 割补</li>
+<li><strong>难度</strong>：★★★★</li>
+</ul>
+<h3>Q54</h3>
+<ul>
+<li><strong>题目简述</strong>：阅览室男生比女生多 20 人；男生减少 $\frac14$、女生减少 $\frac16$ 后人数相等，原来共多少人？</li>
+<li><strong>答案</strong>：380 人</li>
+<li><strong>关键步骤</strong>：$\frac34$男 $=\frac56$女 → 男:女 $=10:9$；差 1 份 $=20$ 人 → 男 200、女 180，总 380。</li>
+<li><strong>知识点</strong>：分数应用题、比</li>
+<li><strong>方法</strong>：比例法/方程</li>
+<li><strong>难度</strong>：★★</li>
+</ul>
+<h3>Q55</h3>
+<ul>
+<li><strong>题目简述</strong>：汽车准时去总工程师家接他；某天工程师提前 1 小时步行去厂，途中遇车，比平时早到 10 分钟。汽车速度是步行的几倍？</li>
+<li><strong>答案</strong>：12 倍（答案页）</li>
+<li><strong>关键步骤</strong>：汽车往返省 10 分钟 → 单程省 5 分钟；按答案页解法 $60\div5=12$。（严格按&quot;提前 1 小时出门、相遇点距家 5 分钟车程&quot;推得 11 倍，存在口径差异，见文末疑点。）</li>
+<li><strong>知识点</strong>：行程问题、接送问题</li>
+<li><strong>方法</strong>：往返时间差 ÷2 求单程省时</li>
+<li><strong>难度</strong>：★★★★</li>
+</ul>
+<h3>Q56</h3>
+<ul>
+<li><strong>题目简述</strong>：社团人数不到 100，男生是女生 2 倍；女生 8 人一组余 6，男生 11 人一组余 5，求总人数。</li>
+<li><strong>答案</strong>：90 人</li>
+<li><strong>关键步骤</strong>：设女生 $8a+6$，则男生 $16a+12$，总 $24a+18&lt;100$ → $a\le3$；检验 $16a+12\equiv5\pmod{11}$，只有 $a=3$：女 30、男 60，共 90。</li>
+<li><strong>知识点</strong>：余数问题、不定方程</li>
+<li><strong>方法</strong>：枚举参数 + 同余检验</li>
+<li><strong>难度</strong>：★★★</li>
+</ul>
+<h3>Q57</h3>
+<ul>
+<li><strong>题目简述</strong>：甲乙丙单独为一位新娘化妆需时间比 2:3:4；同时为两名新娘化妆，丙先帮甲后帮乙，72 分钟同时完成，丙帮甲多少分钟？</li>
+<li><strong>答案</strong>：12 分钟</li>
+<li><strong>关键步骤</strong>：设效率 $\frac1{2k},\frac1{3k},\frac1{4k}$；设丙帮甲 $x$ 分钟：$\frac{72}{2k}+\frac{x}{4k}=1$，$\frac{72}{3k}+\frac{72-x}{4k}=1$；两式相减得 $x=12$。</li>
+<li><strong>知识点</strong>：工程问题、比例</li>
+<li><strong>方法</strong>：设效率为分数，列方程</li>
+<li><strong>难度</strong>：★★★★</li>
+</ul>
+<h3>Q58</h3>
+<ul>
+<li><strong>题目简述</strong>：长方体容器水深 64 cm，倾斜倒出部分水后 AB=16 cm，再放平，水深多少？</li>
+<li><strong>答案</strong>：40 厘米</li>
+<li><strong>关键步骤</strong>：倾斜时水面过 B、A（AB=16 为侧壁上空出的高度），倒出的水与剩余水成等积关系；利用&quot;倾斜前后水体体积不变&quot;列出与 AB 相关的割补式，放平后水深 $=40$ cm。</li>
+<li><strong>知识点</strong>：长方体体积、等积变形</li>
+<li><strong>方法</strong>：倾斜前后体积守恒 + 割补</li>
+<li><strong>难度</strong>：★★★★★</li>
+</ul>
+<h3>Q59</h3>
+<ul>
+<li><strong>题目简述</strong>：棱长 20 cm 正方体密封容器下底固定实心圆柱，盛 $m$ 升水时水面恰好过圆柱上底面；倒置后圆柱露出水面 8 cm。圆柱底面积是正方体底面积的 $\frac18$，求圆柱体积。</li>
+<li><strong>答案</strong>：650 立方厘米</li>
+<li><strong>关键步骤</strong>：圆柱底面积 $=\frac18\times400=50$；设高 $h$：正放水体积 $m=(400-50)h$；倒置时水体积 $=400\times12-50(h-8)$；两式相等解得 $h=13$，体积 $=50\times13=650$ cm³。</li>
+<li><strong>知识点</strong>：长方体/圆柱体积、等积变形</li>
+<li><strong>方法</strong>：两个放置状态列等体积方程</li>
+<li><strong>难度</strong>：★★★★★</li>
+</ul>
+<h3>Q60</h3>
+<ul>
+<li><strong>题目简述</strong>：小白兔上午九点多出门，时针分针重合；下午两点多回家，两针方向相反成一直线，采蘑菇共用多少小时？</li>
+<li><strong>答案</strong>：$4\frac{10}{11}$ 小时</li>
+<li><strong>关键步骤</strong>：设出门在 9 点后 $t_1$ 分：$270+0.5t_1=6t_1$ → $t_1=49\frac1{11}$；回家在 14 点后 $t_2$ 分：$6t_2-(60+0.5t_2)=180$ → $t_2=43\frac7{11}$；历时 $=4$ 小时 $+t_2-t_1=4\frac{10}{11}$ 小时。</li>
+<li><strong>知识点</strong>：钟表问题、追及问题</li>
+<li><strong>方法</strong>：分针追时针（相对速度 5.5°/分）</li>
+<li><strong>难度</strong>：★★★★</li>
+</ul>
+<h2>三、疑点与待核对</h2>
+<ol>
+<li><strong>Q55（12 倍 vs 11 倍）</strong>：答案页给&quot;12 倍&quot;；严格按&quot;工程师提前 1 小时出门、相遇点距家相当于 5 分钟车程&quot;推得汽车速度是步行的 $55/5=11$ 倍。答案页应为按&quot;60÷5=12&quot;的简化口径。已按答案页记 12 倍，建议复核。</li>
+<li><strong>Q53</strong>：图形为半圆（直径 AB=60）+ 30° 线与高 26 的垂线组合，阴影为割补所得 81 cm²；图片局部被答案栏遮挡，割补方式建议对照原图再核。</li>
+<li><strong>Q58</strong>：图形（倾斜前后）中 AB=16 的具体位置以页面图为准，等积式细节建议复核；答案 40 厘米来自答案页。</li>
+<li><strong>Q34</strong>：答案页仅给&quot;50 米&quot;；速度比应为 16:15（小美先到），关键步骤按此表述。</li>
+<li><strong>Q60</strong>：答案页排版为 &quot;$4\frac{10}{11}$ 小时&quot;，本文件已按分数书写。</li>
+</ol>
+<h2>四、备注</h2>
+<ul>
+<li>本文件仅为 <strong>Q31–Q60 的索引/抽样</strong>（题号、简述、答案、关键步骤、知识点、方法、难度），未改变原 PDF、未改 <code>content/</code>、未 commit。</li>
+<li>答案依据：原书 text.txt 第 59–85 行的〖参考答案〗区块（同时含 Q1–Q30，本文件只用 Q31–Q60 部分）。</li>
+<li>图片说明：page-01.png / page-02.png 为渲染图（RGBA，需合成白底后阅读）；Q31–Q46 在 page-02，Q47–Q60 在 page-01。</li>
+</ul>
+</article><div class="exam-foot"><a href="../index.html">← 返回知识地图</a> · <a href="index.html">全部真题</a></div></body></html>
