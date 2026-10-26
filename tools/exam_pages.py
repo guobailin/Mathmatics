@@ -17,6 +17,15 @@ PAPERS = [
     ("第30届WMO六年级试卷", "第 30 届 WMO", "wmo-30"),
     ("第32届WMO六年级试卷", "第 32 届 WMO", "wmo-32"),
     ("第34届WMO六年级试卷", "第 34 届 WMO", "wmo-34"),
+    ("2022-2023年思维能力全国总测评六年级试题", "2022-23 全国总测评", "2022-2023-quanguo"),
+    ("2024 IHC 6培训题-学生版", "2024 IHC 6 培训", "ihc-2024-training"),
+    ("2024 IHC A-6发布版", "2024 IHC A-6", "ihc-2024-a"),
+    ("2024 IHC C-6发布版", "2024 IHC C-6", "ihc-2024-c"),
+    ("2024 IHC D-6发布版", "2024 IHC D-6", "ihc-2024-d"),
+    ("2024年1月世少赛思维能力地区六年级试题", "2024.1 世少赛", "shishaosai-2024-01"),
+    ("2025 IHC J-6发布版", "2025 IHC J-6", "ihc-2025-j"),
+    ("2025年奥林匹克思维能力测评活动六年级试题", "2025 思维能力测评", "shishaosai-2025"),
+    ("2026 IHC S-6发布版", "2026 IHC S-6", "ihc-2026-s"),
 ]
 
 EXAM_MD = MarkdownIt("commonmark", {"html": True, "breaks": True}).enable("table")
@@ -82,7 +91,7 @@ def exam_home_html(answers_dir: Path) -> str:
   <div class="exam-home-head">
     <div>
       <p class="eyebrow">竞赛真题</p>
-      <h2>8 套六年级走美 / WMO，共 {total} 题</h2>
+      <h2>{len(PAPERS)} 套六年级竞赛真题，共 {total} 题</h2>
       <p>逐题录入 + 详细解答 + 知识点索引，答案已与卷末官方答案页核对。</p>
     </div>
     <a class="exam-home-more" href="exam/index.html">全部真题 →</a>
@@ -140,7 +149,7 @@ def build(web_dir: Path, answers_dir: Path, head_template: str, base_css: str) -
     index_page = (exam_head("六年级竞赛真题", head_template, base_css) +
                   '<div class="exam-nav"><a href="../index.html">← 知识地图</a></div>'
                   '<div class="exam-index-head"><p class="exam-kicker">竞赛真题</p>'
-                  f'<h1>六年级竞赛真题</h1><p>8 套走美 / WMO 真题，共 {total} 题；'
+                  f'<h1>六年级竞赛真题</h1><p>{len(PAPERS)} 套走美 / WMO / IHC / 世少赛真题，共 {total} 题；'
                   '逐题录入、详细解答，按知识点写回知识地图。</p></div>'
                   f'<div class="exam-grid">{cards}</div>'
                   '<h2>高频知识点</h2>'

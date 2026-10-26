@@ -1,0 +1,848 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2024 IHC C-6 · 真题解答</title>
+<link rel="stylesheet" href="../katex/katex.min.css">
+<script defer src="../katex/katex.min.js"></script>
+<script defer src="../katex/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+<style>
+body{font-family:-apple-system,"PingFang SC","Source Han Serif SC",serif;
+max-width:760px;margin:0 auto;padding:24px;line-height:1.8;color:#222}
+h1{border-bottom:2px solid #333;padding-bottom:8px}
+h2{margin-top:1.6em}h3{font-size:1.05em}
+.meta{color:#666;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.example{border:1px solid #ddd;border-radius:8px;padding:12px 16px;margin:14px 0}
+.example h3{margin:.2em 0 .6em}
+.covers{font-size:.75em;color:#888;font-weight:normal;margin-left:1em}
+.problem{background:#f7f7f9;border-radius:6px;padding:8px 12px}
+details{margin-top:.6em}summary{cursor:pointer;color:#36c}
+.answer{color:#b30;font-weight:bold}
+img{max-width:100%;height:auto}
+
+body{max-width:920px;margin:0 auto;padding:26px 22px 64px;background:#fffdf8;
+font-family:-apple-system,"PingFang SC","Source Han Serif SC",serif;line-height:1.85;color:#222}
+.exam-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;
+flex-wrap:wrap;font-size:12px;color:#5f6a64;margin-bottom:22px}
+.exam-nav a{color:#2f6f6b;text-decoration:none;font-weight:600}
+.exam-nav a:hover{text-decoration:underline}
+.exam-kicker{font-size:10.5px;letter-spacing:.16em;color:#2f6f6b;font-weight:700;margin-bottom:4px}
+.exam-body h1{font-size:25px;line-height:1.3;margin:0 0 18px;padding-bottom:12px;border-bottom:2px solid #2f6f6b}
+.exam-body h2{font-size:19px;margin:30px 0 12px;color:#1f2a26}
+.exam-body h3{font-size:15px;margin:24px 0 8px;color:#2f6f6b}
+.exam-body table{width:100%;border-collapse:collapse;margin:14px 0;font-size:12.5px}
+.exam-body th,.exam-body td{border:1px solid #ddd6c8;padding:6px 8px;text-align:left;vertical-align:top}
+.exam-body th{background:#f4efe3;font-weight:700}
+.exam-body blockquote{margin:14px 0;padding:8px 14px;border-left:3px solid #2f6f6b;background:#f7f4ec;color:#4d5651}
+.exam-body code{background:#f1ece1;padding:1px 5px;border-radius:4px;font-size:.9em}
+.exam-body img{max-width:100%;height:auto;display:block;margin:16px auto}
+.exam-body hr{border:0;border-top:1px solid #e4ddcf;margin:22px 0}
+.exam-foot{margin-top:40px;padding-top:16px;border-top:1px solid #e4ddcf;font-size:12px;color:#8a928d}
+.exam-index-head{max-width:920px;margin:0 auto 20px}
+.exam-index-head h1{font-size:28px;margin:0 0 8px}
+.exam-index-head p{margin:0;color:#5f6a64;font-size:13px}
+.exam-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:18px 0 28px}
+.exam-grid a{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:12px 13px;
+border:1px solid #ddd6c8;border-radius:12px;background:#fffdf8;color:#1f2a26;text-decoration:none}
+.exam-grid a:hover{border-color:#2f6f6b}
+.exam-grid b{font-size:12px}.exam-grid span{font-size:10px;color:#5f6a64;white-space:nowrap}
+.exam-table{width:100%;border-collapse:collapse;font-size:12.5px}
+.exam-table th,.exam-table td{border:1px solid #ddd6c8;padding:6px 8px;text-align:left}
+.exam-table th{background:#f4efe3}
+@media(max-width:720px){.exam-grid{grid-template-columns:repeat(2,minmax(0,1fr))}body{padding:18px 15px 50px}}
+@media print{.exam-nav,.exam-foot{display:none}body{max-width:none;padding:0}.exam-grid{display:none}}
+</style></head><body><div class="exam-nav"><a href="../index.html">← 知识地图</a><span><a href="index.html">全部真题</a></span></div><div class="exam-kicker">竞赛真题 · 六年级 · 25 题</div><article class="exam-body"><h1>2024 IHC C-6 中文卷 全卷解答</h1>
+<blockquote>
+<p>来源：<code>exam/2024 IHC C-6发布版.pdf</code>（共 5 页，第 5 页为参考答案页）<br />
+说明：第 3、9 题为选择题（五选一），其余为填空题；图形题（第 7、8、9 题）以逐页图片为准。全卷 25 题答案已与第 5 页参考答案页逐题核对并一致。</p>
+</blockquote>
+<h2>试卷概览</h2>
+<ul>
+<li>题量：25 题；其中选择题 2 题（第 3、9 题），填空题 23 题。</li>
+<li>内容分布：
+<ul>
+<li>计算与速算：第 1、2 题；</li>
+<li>数论（进位制、末位、因数、余数）：第 5、6、11、12、13 题；</li>
+<li>计数与组合：第 3、14、22、23、24 题；</li>
+<li>几何与图形：第 7、8 题；</li>
+<li>立体与体积：第 9 题；</li>
+<li>数字规律与位值：第 4 题；</li>
+<li>取整与整数解：第 15 题；</li>
+<li>应用题（工程、浓度）：第 16、17 题；</li>
+<li>行程（相遇、往返、流水）：第 18、19、20、21 题；</li>
+<li>质数（互质、因数乘积）：第 10、11、12 题；</li>
+<li>分数与不定方程：第 25 题。</li>
+</ul>
+</li>
+<li>难度分布：★2 共 1 题（2）；★3 共 9 题（1、3、5、11、13、14、17、21、23）；★4 共 7 题（6、7、10、12、15、16、22）；★5 共 5 题（4、8、9、24、25）；★6 共 3 题（18、19、20）。全卷无 ★1、★7。</li>
+<li>第 5 页参考答案：1～5 题 2023、20825、B、9、5；6～10 题 625、15、110、E、4；11～15 题 28、72、5、64、674；16～20 题 15、6、140、10、16.9；21～25 题 16、96、91、272、12。</li>
+</ul>
+<hr />
+<h2>逐题解答</h2>
+<h3>第 1 题</h3>
+<p><strong>题目</strong>：计算：<br />
+$$\frac{\left(1+\frac16\right)\times\left(\frac17+\frac1{10}\right)\times\left(\frac18+\frac19\right)}{\frac16\times\frac17\times\frac18\times\frac19\times\frac1{10}}=\underline{\quad\quad}$$</p>
+<p><strong>答案</strong>：$2023$</p>
+<p><strong>解析</strong>：</p>
+<ol>
+<li>先算三个括号：$1+\frac16=\frac76$，$\frac17+\frac1{10}=\frac{17}{70}$，$\frac18+\frac19=\frac{17}{72}$。</li>
+<li>分母 $=\dfrac{1}{6\times7\times8\times9\times10}=\dfrac{1}{30240}$，所以原式 $=\dfrac76\times\dfrac{17}{70}\times\dfrac{17}{72}\times30240$。</li>
+<li>观察分母 $6\times70\times72$：<br />
+$$6\times70\times72=6\times(7\times10)\times(8\times9)=6\times7\times8\times9\times10=30240$$<br />
+所以 $\dfrac{30240}{6\times70\times72}=1$。</li>
+<li>原式 $=7\times17\times17=2023$。</li>
+</ol>
+<p><strong>验算</strong>：$7\times17\times17=7\times289=2023$ ✓；把结果代回也可验证：$\frac76\times\frac{17}{70}\times\frac{17}{72}\times30240=2023$。</p>
+<p><strong>知识点</strong>：分数与小数的四则运算；速算与巧算；提取公因数<br />
+<strong>思路/方法</strong>：先算括号再统一成乘法，抓住 $6\times70\times72=6\times7\times8\times9\times10$ 这个&quot;凑整&quot;关系约分。<br />
+<strong>难度</strong>：★3</p>
+<h3>第 2 题</h3>
+<p><strong>题目</strong>：已知从 $1$ 到 $n$ 的连续自然数的平方和<br />
+$$1^2+2^2+3^2+\cdots+n^2=\frac{n(n+1)(2n+1)}{6}$$<br />
+计算：$1^2+3^2+5^2+\cdots+49^2=\underline{\quad\quad}$</p>
+<p><strong>答案</strong>：$20825$</p>
+<p><strong>解析</strong>：</p>
+<ol>
+<li>这些是连续奇数的平方：$1,3,5,\dots,49$ 共 $25$ 个（第 $k$ 个是 $2k-1$，$2k-1=49\Rightarrow k=25$）。</li>
+<li>用 $(2k-1)^2=4k^2-4k+1$ 拆开：<br />
+$$\sum_{k=1}^{25}(2k-1)^2=4\sum_{k=1}^{25}k^2-4\sum_{k=1}^{25}k+25$$</li>
+<li>代入公式：$\sum k^2=\dfrac{25\times26\times51}{6}=5525$，$\sum k=\dfrac{25\times26}{2}=325$。<br />
+所以原式 $=4\times5525-4\times325+25=22100-1300+25=20825$。</li>
+</ol>
+<p><strong>验算</strong>：也可直接用&quot;连续奇数平方和&quot;公式 $\dfrac{n(4n^2-1)}{3}$：$n=25$ 时 $\dfrac{25\times(4\times625-1)}{3}=\dfrac{25\times2499}{3}=25\times833=20825$ ✓。</p>
+<p><strong>知识点</strong>：公式类计算；特殊数计算；等差数列<br />
+<strong>思路/方法</strong>：把&quot;奇数平方和&quot;用 $(2k-1)^2=4k^2-4k+1$ 化为普通平方和，套题目给出的公式。<br />
+<strong>难度</strong>：★2</p>
+<h3>第 3 题</h3>
+<p><strong>题目</strong>：有一列分数，分子均为 $1$，分母依次为 $15,16,17,18,\cdots$，且分母为 $n$ 的分数恰有 $n$ 个。则这列分数的前 $2023$ 个数的和是（　　）。<br />
+A．$50\dfrac{22}{63}$　B．$50\dfrac{48}{65}$　C．$62\dfrac{62}{63}$　D．$63\dfrac{1}{32}$　E．$63\dfrac{31}{32}$</p>
+<p><strong>答案</strong>：B（$50\dfrac{48}{65}$）</p>
+<p><strong>解析</strong>：</p>
+<ol>
+<li>分母为 $n$ 的那一段有 $n$ 个数，每个都是 $\frac1n$，整段的和 $=n\times\frac1n=1$。</li>
+<li>分母从 $15$ 起，前若干段一共多少个？算连续和：<br />
+$15+16+\cdots+64=\dfrac{(15+64)\times(64-14)}{2}=\dfrac{79\times50}{2}=1975$；<br />
+$15+16+\cdots+65=1975+65=2040&gt;2023$。<br />
+所以前 $2023$ 个数 = 分母 $15\sim64$ 的全部 $1975$ 个数 + 分母为 $65$ 的前 $2023-1975=48$ 个数。</li>
+<li>和 $=50\times1+48\times\dfrac1{65}=50+\dfrac{48}{65}=50\dfrac{48}{65}$。</li>
+</ol>
+<p><strong>验算</strong>：$1975+48=2023$ ✓；分母 $15\sim64$ 共 $64-15+1=50$ 段、每段和为 $1$，共 $50$ ✓。</p>
+<p><strong>知识点</strong>：等差数列；分数与小数的四则运算；分组求和<br />
+<strong>思路/方法</strong>：把&quot;同分母的一段&quot;打包求和（每段和为 $1$），再用等差数列求和定位到第 $2023$ 个数在第几段。<br />
+<strong>难度</strong>：★3</p>
+<h3>第 4 题</h3>
+<p><strong>题目</strong>：$A=\underbrace{66\cdots6}<em>{2023个6}\times\underbrace{66\cdots67}</em>{2022个6}\times24$，$A$ 的数字和为 $B$，则 $B$ 除以 $2023$ 的商是______。</p>
+<p><strong>答案</strong>：$9$</p>
+<p><strong>解析</strong>：</p>
+<ol>
+<li>记 $n=2023$，$a=\underbrace{66\cdots6}<em>{n个6}$。注意 $\underbrace{66\cdots67}</em>{2022个6}=a+1$。</li>
+<li>观察 $a(a+1)$ 的规律：
+<ul>
+<li>$n=1$：$6\times7=42$；</li>
+<li>$n=2$：$66\times67=4422$；</li>
+<li>$n=3$：$666\times667=444222$；<br />
+即 $a(a+1)$ 是&quot;$n$ 个 $4$ 后面接 $n$ 个 $2$&quot;。</li>
+</ul>
+</li>
+<li>再乘 $24$，直接算小情形：
+<ul>
+<li>$n=1$：$42\times24=1008$；</li>
+<li>$n=2$：$4422\times24=106128$；</li>
+<li>$n=3$：$444222\times24=10661328$；</li>
+<li>$n=4$：$44442222\times24=1066613328$。<br />
+规律：$A$ 的数字为<br />
+$$\underbrace{10}<em>{}\underbrace{66\cdots6}</em>{n-1个}\underbrace{1}<em>{}\underbrace{33\cdots3}</em>{n-2个}\underbrace{28}_{}$$<br />
+（可用竖式乘法归纳证明：每补一个 $6$，数字结构保持这个形状。）</li>
+</ul>
+</li>
+<li>于是 $A$ 的数字和<br />
+$$B=1+0+6(n-1)+1+3(n-2)+2+8=9n$$<br />
+代入 $n=2023$：$B=9\times2023=18207$。</li>
+<li>所以 $B$ 除以 $2023$ 的商是 $\dfrac{18207}{2023}=9$。</li>
+</ol>
+<p><strong>验算</strong>：$n=1,2,3,4,\dots,7$ 时 $B$ 分别是 $9,18,27,36,45,54,63$，均等于 $9n$ ✓；本题 $n=2023$ 时 $B=18207=2023\times9$，恰好整除，商为 $9$。</p>
+<p><strong>知识点</strong>：位值原理；特殊数计算；数字和<br />
+<strong>思路/方法</strong>：把第二个因数看成 $a+1$，先找 $a(a+1)$ 与再乘 $24$ 后十进制数字的规律，再由&quot;数字和 = $9n$&quot;求商。<br />
+<strong>难度</strong>：★5</p>
+<h3>第 5 题</h3>
+<p><strong>题目</strong>：若 $\overline{(abc)}_8+\overline{(abc)}<em>6=\overline{(abc)}</em>{10}$，其中 $\overline{(abc)}<em>8,\overline{(abc)}<em>6,\overline{(abc)}</em>{10}$ 分别表示八进制、六进制和十进制下的三位数，不同的字母可以表示相同的数字，这样的十进制数 $\overline{(abc)}</em>{10}$ 有______个。</p>
+<p><strong>答案</strong>：$5$</p>
+<p><strong>解析</strong>：</p>
+<ol>
+<li>按进位制展开：<br />
+$$\overline{(abc)}_8=64a+8b+c,\qquad \overline{(abc)}<em>6=36a+6b+c,\qquad \overline{(abc)}</em>{10}=100a+10b+c$$</li>
+<li>代入等式：<br />
+$$64a+8b+c+36a+6b+c=100a+10b+c$$<br />
+化简：$100a+14b+2c=100a+10b+c$，即 $4b+c=0$。</li>
+<li>因为 $b,c$ 是非负数字，所以 $b=0$，$c=0$。</li>
+<li>又因为 $\overline{(abc)}_6$ 是三位数，数字必须都小于 $6$，首位 $a\ne0$，故 $a=1,2,3,4,5$，共 $5$ 个：<br />
+$(100)_10,(200)_10,(300)_10,(400)_10,(500)_10$。</li>
+</ol>
+<p><strong>验算</strong>：以 $a=5$ 为例：$(500)_8=320$，$(500)<em>6=180$，$320+180=500=(500)</em>{10}$ ✓。</p>
+<p><strong>知识点</strong>：进位制；位值原理；不定方程<br />
+<strong>思路/方法</strong>：按进位制定义把三个数都写成 $a,b,c$ 的式子，比较系数得 $4b+c=0$，再由六进制数字范围定出 $a$。<br />
+<strong>难度</strong>：★3</p>
+<h3>第 6 题</h3>
+<p><strong>题目</strong>：$1\times3\times5\times7\times9\times\cdots\times2023$ 计算结果的末三位数是______。</p>
+<p><strong>答案</strong>：$625$</p>
+<p><strong>解析</strong>：</p>
+<ol>
+<li>记这个乘积为 $N$。$N$ 是奇数（全是奇数相乘），所以 $N$ 是奇数。</li>
+<li>数一数 $N$ 中因数 $5$ 的个数（即 $N$ 能被 $5$ 的几次方整除）：<br />
+$$#{奇数m\le2023:5\mid m}+#{5^2\mid m}+#{125\mid m}+#{625\mid m}$$<br />
+其中&quot;奇数倍数&quot;的个数：$5$ 的奇数倍有 $\dfrac{404}{2}=202$ 个，$25$ 的奇数倍有 $\dfrac{80}{2}=40$ 个，$125$ 的奇数倍有 $8$ 个，$625$ 的奇数倍有 $2$ 个，共<br />
+$$202+40+8+2=252$$<br />
+所以 $125=5^3$ 能整除 $N$，即 $N\equiv0\pmod{125}$。</li>
+<li>再看模 $8$：把奇数按 $1,3,5,7$ 四个一组，其乘积 $1\times3\times5\times7=105\equiv1\pmod8$。$1\sim2023$ 共有 $1012$ 个奇数，$1012\div4=253$ 组，所以<br />
+$$N\equiv1^{253}=1\pmod8$$</li>
+<li>在 $0,125,250,\dots,875$ 中找 $\equiv1\pmod8$ 的数：$125k\equiv1\pmod8$，而 $125\equiv5\pmod8$，$5k\equiv1\pmod8\Rightarrow k\equiv5\pmod8$，故 $125\times5=625$。</li>
+<li>末三位是 $625$。</li>
+</ol>
+<p><strong>验算</strong>：$625$ 是 $125$ 的倍数 ✓，$625=8\times78+1$，模 $8$ 余 $1$ ✓，符合两个条件，故末三位 $625$。</p>
+<p><strong>知识点</strong>：尾数与末位；同余初步；奇数与偶数<br />
+<strong>思路/方法</strong>：分别求模 $8$ 与模 $125$ 的余数，再用中国剩余思想（在 $125$ 的倍数里找模 $8$ 余 $1$ 的）定出末三位。<br />
+<strong>难度</strong>：★4</p>
+<h3>第 7 题</h3>
+<p><strong>题目</strong>：两个正六边形和一个正方形拼接在一起，如图所示。则 $\angle ABC$ 的度数为______$^\circ$。</p>
+<p><strong>答案</strong>：$15$</p>
+<p><strong>解析</strong>：</p>
+<ol>
+<li>正六边形每个内角 $\dfrac{(6-2)\times180^\circ}{6}=120^\circ$，正方形每个内角 $90^\circ$；三个图形边长相等（拼接处边与边重合）。</li>
+<li>两个正六边形与正方形共用一个点 $T$（图中两个正六边形的公共点，也是正方形的上顶点）。围绕 $T$ 一圈 $360^\circ$：<br />
+$$120^\circ+90^\circ+120^\circ=330^\circ$$<br />
+剩下 $360^\circ-330^\circ=30^\circ$ 是上方两正六边形之间的&quot;缺口&quot;。</li>
+<li>图形左右对称，对称轴竖直，所以缺口被对称轴平分：上方每条边与竖直方向成 $15^\circ$，即左正六边形在 $T$ 处的边与水平方向成 $75^\circ$。</li>
+<li>正六边形相邻两边夹角 $60^\circ$。从 $T$ 出发的边（方向 $75^\circ$）转 $60^\circ$ 得到下一条边，方向为 $15^\circ$；这条边正是 $BC$（$C$ 是右正六边形在 $T$ 旁边相邻的顶点，$B$ 是再下一个顶点）。</li>
+<li>$AB$ 是左右对称的两点连线，是水平线。从 $B$ 看，$BC$ 与水平方向成 $15^\circ$，所以 $\angle ABC=15^\circ$。</li>
+</ol>
+<p><strong>验算</strong>：图形由正六边形、正方形按固定角度拼接，角度全部由内角决定；取边长 $1$ 建坐标可算出 $BA$ 水平、$BC$ 与水平成 $15^\circ$，与答案页一致。</p>
+<p><strong>知识点</strong>：线与角；三角形内角和与三边关系；轴对称图形<br />
+<strong>思路/方法</strong>：用&quot;围绕公共点一圈 $360^\circ$&quot;和&quot;左右对称&quot;求出缺口的 $30^\circ$ 被平分，再用正六边形 $60^\circ$ 转角推出 $BC$ 的方向。<br />
+<strong>难度</strong>：★4</p>
+<h3>第 8 题</h3>
+<p><strong>题目</strong>：将两个等腰直角三角形纸片放置如下图，顶点 $B$，$F$ 都在 $AD$ 上，且 $B$ 是 $AD$ 的中点。若 $GC=9$，$GE=11$，则四边形 $ACED$ 的面积是______。</p>
+<p><strong>答案</strong>：$110$</p>
+<p><strong>解析</strong>：</p>
+<ol>
+<li>由图中直角记号：$\triangle ACB$ 和 $\triangle FDE$ 都是等腰直角三角形，
+<ul>
+<li>$\angle A=90^\circ$，$AC=AB$；</li>
+<li>$\angle D=90^\circ$，$DF=DE$。<br />
+$B$ 是 $AD$ 中点，所以 $AB=BD$。</li>
+</ul>
+</li>
+<li>设 $AC=AB=a$，则 $AD=2a$；设 $DE=DF=e$，则 $F$ 在 $D$ 左边 $e$ 处，$AF=2a-e$。</li>
+<li>取 $A$ 为原点、$AD$ 为 $x$ 轴建坐标：<br />
+$$A(0,0),\ C(0,a),\ B(a,0),\ D(2a,0),\ F(2a-e,0),\ E(2a,e)$$</li>
+<li>直线 $CB$：$x+y=a$；直线 $FE$：$y=x-(2a-e)$。解交点 $G$：<br />
+$$x+y=a,\quad y=x-2a+e\ \Longrightarrow\ G\left(\frac{3a-e}{2},\ \frac{e-a}{2}\right)$$</li>
+<li>算 $GC$ 与 $GE$：<br />
+$$GC=\sqrt{\left(\frac{3a-e}{2}\right)^2+\left(\frac{3a-e}{2}\right)^2}=\frac{(3a-e)\sqrt2}{2}=9\ \Rightarrow\ 3a-e=9\sqrt2$$<br />
+$$GE=\sqrt{\left(\frac{a+e}{2}\right)^2+\left(\frac{a+e}{2}\right)^2}=\frac{(a+e)\sqrt2}{2}=11\ \Rightarrow\ a+e=11\sqrt2$$</li>
+<li>两式相加：$4a=20\sqrt2$，得 $a=5\sqrt2$，$e=6\sqrt2$。</li>
+<li>四边形 $ACED$ 是直角梯形（$AC\parallel DE$，$AD\perp$ 两边），面积<br />
+$$S=\frac{AC+DE}{2}\times AD=\frac{a+e}{2}\times2a=(11\sqrt2)\times(5\sqrt2)=110$$</li>
+</ol>
+<p><strong>验算</strong>：$a=5\sqrt2\approx7.07$，$e=6\sqrt2\approx8.49$，$GC=\dfrac{(15\sqrt2-6\sqrt2)\sqrt2}{2}=9$ ✓，$GE=\dfrac{(11\sqrt2)\sqrt2}{2}=11$ ✓，面积 $=110$ ✓。</p>
+<p><strong>知识点</strong>：梯形的面积；勾股定理；面积综合<br />
+<strong>思路/方法</strong>：用两个等腰直角三角形设出 $a,e$，建坐标求交点 $G$，把 $GC,GE$ 列成方程解出 $a,e$，再用直角梯形面积公式。<br />
+<strong>难度</strong>：★5</p>
+<h3>第 9 题</h3>
+<p><strong>题目</strong>：如图，在一个底面积为 $180\text{ cm}^2$，高为 $30\text{ cm}$ 的长方形水箱中装有 $15\text{ cm}$ 高的水。若将一个高为 $12\text{ cm}$ 的圆锥底面向下放入水中，则水面高度会上升 $0.2\text{ cm}$；若取出这个小圆锥，改为放入一个底面半径为原来 $3$ 倍的圆锥，则水面高度刚好为新放入圆锥高度的 $\dfrac23$（且水并未溢出）。那么，新放入的圆锥高是（　　）$\text{cm}$。<br />
+A．$18$　B．$24$　C．$\dfrac{4050}{167}$　D．$\dfrac{3850}{153}$　E．$\dfrac{1350}{47}$</p>
+<p><strong>答案</strong>：E（$\dfrac{1350}{47}$）</p>
+<p><strong>解析</strong>：</p>
+<ol>
+<li>小圆锥高 $12\text{ cm}$，而水深 $15\text{ cm}$，所以它<strong>完全浸没</strong>。排水体积<br />
+$$V_1=180\times0.2=36\text{ cm}^3$$<br />
+又 $V_1=\dfrac13\pi r^2\times12=4\pi r^2$，所以 $\pi r^2=9$。</li>
+<li>新圆锥底面半径 $3r$，底面积 $\pi(3r)^2=9\pi r^2=81\text{ cm}^2$。</li>
+<li>设新圆锥高 $H$，水面高 $\dfrac23H$（未溢出）。浸在水中的部分是从底面到高 $\dfrac23H$ 的&quot;小圆锥&quot;，它与整个圆锥相似，相似比 $\dfrac23$，体积比 $\left(\dfrac23\right)^3=\dfrac{8}{27}$，故浸没体积<br />
+$$V_{\text{浸}}=\left(1-\frac{8}{27}\right)\times\dfrac13\times81\times H=\frac{26}{27}\times27H=26H$$</li>
+<li>水的体积不变：水面下的总体积 $=$ 原来的水 $+$ 浸没的圆锥<br />
+$$180\times\frac23H=180\times15+26H$$<br />
+$$120H=2700+26H\ \Longrightarrow\ 94H=2700\ \Longrightarrow\ H=\frac{2700}{94}=\frac{1350}{47}$$</li>
+<li>选 E。</li>
+</ol>
+<p><strong>验算</strong>：$H=\dfrac{1350}{47}\approx28.7&lt;30$，水未溢出 ✓；$\dfrac23H\approx19.1\text{ cm}$，$180\times\dfrac23H\approx3446$，$2700+26H\approx3446$ ✓。</p>
+<p><strong>知识点</strong>：圆锥的体积；体积与容积单位；相似图形<br />
+<strong>思路/方法</strong>：先用&quot;排水体积 $=$ 底面积 $\times$ 上升高度&quot;求小圆锥，再用浸没部分是相似圆锥（体积比 $=$ 相似比立方）列出水量守恒方程。<br />
+<strong>难度</strong>：★5</p>
+<h3>第 10 题</h3>
+<p><strong>题目</strong>：从 $2020\sim2025$ 中最多可以取出______个自然数，使得取出的数两两互质。</p>
+<p><strong>答案</strong>：$4$</p>
+<p><strong>解析</strong>：</p>
+<ol>
+<li>先把六个数的质因数分解：<br />
+$$2020=2^2\times5\times101,\quad2021=43\times47,\quad2022=2\times3\times337,$$<br />
+$$2023=7\times17^2,\quad2024=2^3\times11\times23,\quad2025=3^4\times5^2$$</li>
+<li>三个偶数 $2020,2022,2024$ 两两都有公因数 $2$，所以最多只能取其中一个。</li>
+<li>构造 $4$ 个：取 $2021,2023,2024,2025$。
+<ul>
+<li>$2021=43\times47$ 与另外三个都互质；</li>
+<li>$2023=7\times17^2$ 与另外三个都互质；</li>
+<li>$2024=2^3\times11\times23$ 与 $2025=3^4\times5^2$ 没有公共质因数。<br />
+所以这 $4$ 个两两互质 ✓。</li>
+</ul>
+</li>
+<li>不能取 $5$ 个：若取 $5$ 个，必含至少两个偶数（三个偶数中取了两个），两个偶数有公因数 $2$，不互质，矛盾。所以最多 $4$ 个。</li>
+</ol>
+<p><strong>验算</strong>：逐一检查 $2021,2023,2024,2025$ 两两的最大公因数：$\gcd(2021,2023)=1$、$\gcd(2021,2024)=1$、$\gcd(2021,2025)=1$、$\gcd(2023,2024)=1$、$\gcd(2023,2025)=1$、$\gcd(2024,2025)=1$ ✓。</p>
+<p><strong>知识点</strong>：质数与合数；最大公因数与最小公倍数；抽屉原理<br />
+<strong>思路/方法</strong>：利用&quot;三个偶数最多取一个&quot;给出上界，再构造 $4$ 个两两互质的数证明能取到。<br />
+<strong>难度</strong>：★4</p>
+<h3>第 11 题</h3>
+<p><strong>题目</strong>：$2023$ 的所有因数的乘积为 $A$，则 $A$ 有______个因数。</p>
+<p><strong>答案</strong>：$28$</p>
+<p><strong>解析</strong>：</p>
+<ol>
+<li>$2023=7\times289=7\times17^2$，因数个数为 $(1+1)(2+1)=6$ 个：<br />
+$1,7,17,119,289,2023$。</li>
+<li>一个数的因数总是成对出现（$d$ 与 $\frac nd$ 配对），$6$ 个因数可配成 $3$ 对，每对乘积都是 $2023$，所以<br />
+$$A=2023^3=7^3\times17^6$$</li>
+<li>$A$ 的因数个数 $=(3+1)\times(6+1)=4\times7=28$。</li>
+</ol>
+<p><strong>验算</strong>：$2023^3=7^3\cdot17^6$，指数加 $1$ 相乘得 $4\times7=28$ ✓。</p>
+<p><strong>知识点</strong>：因数个数与因数和；分解质因数；平方数与立方数分解质因数<br />
+<strong>思路/方法</strong>：先用&quot;因数成对&quot;得&quot;所有因数之积 $=n^{\text{因数个数}/2}$&quot;，再按指数加一相乘求因数个数。<br />
+<strong>难度</strong>：★3</p>
+<h3>第 12 题</h3>
+<p><strong>题目</strong>：既是 $600600$ 的因数又是 $6$ 的倍数的数有______个。</p>
+<p><strong>答案</strong>：$72$</p>
+<p><strong>解析</strong>：</p>
+<ol>
+<li>分解质因数：$600600=2^3\times3\times5^2\times7\times11\times13$。</li>
+<li>一个数同时满足&quot;是 $600600$ 的因数&quot;和&quot;是 $6=2\times3$ 的倍数&quot;，当且仅当它的质因数分解为<br />
+$$2^a\times3^b\times5^c\times7^d\times11^e\times13^f$$<br />
+其中 $1\le a\le3$（$a$ 至少 $1$），$b=1$，$0\le c\le2$，$d,e,f\in{0,1}$。</li>
+<li>各指数的取法数相乘：<br />
+$$3\times1\times3\times2\times2\times2=72$$</li>
+</ol>
+<p><strong>验算</strong>：$a$ 有 $3$ 种、$c$ 有 $3$ 种、$d,e,f$ 各 $2$ 种，$b$ 只能取 $1$，故 $3\times3\times2^3=72$ ✓。</p>
+<p><strong>知识点</strong>：因数个数与因数和；数的整除特征；分解质因数<br />
+<strong>思路/方法</strong>：先把&quot;是 $6$ 的倍数&quot;翻译成&quot;$2$ 的指数与 $3$ 的指数都至少为 $1$&quot;，再数各质因数指数的取法。<br />
+<strong>难度</strong>：★4</p>
+<h3>第 13 题</h3>
+<p><strong>题目</strong>：$2023^{2023}$ 除以 $13$ 的余数是______。</p>
+<p><strong>答案</strong>：$5$</p>
+<p><strong>解析</strong>：</p>
+<ol>
+<li>先化底数：$2023=13\times155+8$，所以 $2023\equiv8\pmod{13}$。</li>
+<li>找 $8$ 的幂的循环：$8^2=64=13\times4+12\equiv-1\pmod{13}$，因此 $8^4\equiv1\pmod{13}$。</li>
+<li>$2023=4\times505+3$，所以<br />
+$$2023^{2023}\equiv8^{2023}=8^{4\times505+3}\equiv(8^4)^{505}\times8^3\equiv1\times512\pmod{13}$$</li>
+<li>$512=13\times39+5$，所以余数为 $5$。</li>
+</ol>
+<p><strong>验算</strong>：$8^3=512\equiv5$；$8^4\equiv5\times8=40\equiv1$ ✓，循环周期为 $4$，$2023\equiv3\pmod4$，故结果与 $8^3$ 同余 ✓。</p>
+<p><strong>知识点</strong>：同余初步；尾数与末位；余数问题<br />
+<strong>思路/方法</strong>：先化底数取余，再找&quot;模 $13$ 下 $8$ 的幂&quot;的循环周期（$4$），用指数除以周期定余数。<br />
+<strong>难度</strong>：★3</p>
+<h3>第 14 题</h3>
+<p><strong>题目</strong>：从 $0,1,2,3,4,5$ 中任选 $3$ 个数字，可以组成______个不能被 $5$ 整除的三位数。</p>
+<p><strong>答案</strong>：$64$</p>
+<p><strong>解析</strong>：</p>
+<ol>
+<li>先数&quot;任选 $3$ 个数字组成的三位数&quot;总数：百位不能是 $0$，有 $5$ 种；十位从剩下的 $5$ 个数字中选（含 $0$），$5$ 种；个位从剩余 $4$ 个中选，$4$ 种：<br />
+$$5\times5\times4=100$$</li>
+<li>数&quot;能被 $5$ 整除&quot;的：个位必须是 $0$ 或 $5$。
+<ul>
+<li>个位是 $0$：百位 $5$ 种、十位 $4$ 种，共 $5\times4=20$ 个；</li>
+<li>个位是 $5$：百位不能是 $0$，有 $4$ 种（$1,2,3,4$），十位从剩下 $4$ 个中选，共 $4\times4=16$ 个。<br />
+共 $20+16=36$ 个。</li>
+</ul>
+</li>
+<li>不能被 $5$ 整除的：$100-36=64$ 个。</li>
+</ol>
+<p><strong>验算</strong>：也可直接数：个位只能从 ${1,2,3,4}$ 中选，按百位是否为 $0$ 分类，结果同为 $64$ ✓。</p>
+<p><strong>知识点</strong>：加乘原理；排列组合；分类列举<br />
+<strong>思路/方法</strong>：用&quot;总数 $-$ 能被 $5$ 整除的&quot;间接计数，注意百位不能为 $0$、数字不能重复。<br />
+<strong>难度</strong>：★3</p>
+<h3>第 15 题</h3>
+<p><strong>题目</strong>：若 $[x]$ 表示不大于 $x$ 的最大整数，例如 $[2.7]=2$，$[4]=4$，则方程<br />
+$$\left[\frac1x\right]+\left[\frac2x\right]+\left[\frac3x\right]+\cdots+\left[\frac{2021}{x}\right]=2022$$<br />
+的整数解是 $x=$______。</p>
+<p><strong>答案</strong>：$x=674$</p>
+<p><strong>解析</strong>：</p>
+<ol>
+<li>若 $x&lt;0$，则每项 $\left[\frac kx\right]\le-1$，和是负数，不可能等于 $2022$；$x=0$ 无意义。所以只考虑正整数 $x$。</li>
+<li>对正整数 $x$，把和按&quot;商的值&quot;分类：<br />
+$$\left[\frac kx\right]\ge j\iff k\ge jx$$<br />
+所以<br />
+$$\sum_{k=1}^{2021}\left[\frac kx\right]=\sum_{j=1}^{\left\lfloor\frac{2021}{x}\right\rfloor}\left(2021-jx+1\right)$$</li>
+<li>试 $x=674$：$\left\lfloor\frac{2021}{674}\right\rfloor=2$（$2021\div674\approx2.998$），于是<br />
+$$j=1:\ 2021-674+1=1348,\qquad j=2:\ 2021-1348+1=674$$<br />
+和 $=1348+674=2022$ ✓。</li>
+<li>唯一性：$x$ 变大时每一项 $\left[\frac kx\right]$ 都不增，且至少有一项减少（如 $k=x$ 时 $\left[\frac xx\right]=1$、$\left[\frac{x}{x+1}\right]=0$），所以和随 $x$ 严格递减，整数解只有一个。</li>
+<li>所以 $x=674$。</li>
+</ol>
+<p><strong>验算</strong>：$x=674$ 时，$k=1\sim673$ 的项为 $0$；$k=674\sim1347$ 的 $674$ 项为 $1$；$k=1348\sim2021$ 的 $674$ 项为 $2$；和 $=674\times1+674\times2=2022$ ✓。</p>
+<p><strong>知识点</strong>：定义新运算；取整函数；分类列举<br />
+<strong>思路/方法</strong>：把取整之和转化为&quot;数有多少个 $k$ 使 $\left[\frac kx\right]\ge j$&quot;的计数，再试算定 $x$ 并用单调性说明唯一。<br />
+<strong>难度</strong>：★4</p>
+<h3>第 16 题</h3>
+<p><strong>题目</strong>：某工程队修一条公路，开工 $5$ 天后，工人数量增加了一半，结果比原计划的完工时间提前了 $\dfrac14$。修这条公路实际用了______天。</p>
+<p><strong>答案</strong>：$15$</p>
+<p><strong>解析</strong>：</p>
+<ol>
+<li>设原计划 $T$ 天完成，原工作效率为&quot;每天完成 $\frac1T$&quot;。</li>
+<li>开工 $5$ 天完成 $\frac{5}{T}$，还剩 $1-\frac{5}{T}$。</li>
+<li>工人增加一半，效率变为原来的 $1.5$ 倍，即每天完成 $\frac{1.5}{T}$。完成剩余工程需要<br />
+$$\frac{1-\frac5T}{\frac{1.5}{T}}=\frac{T-5}{1.5}$$</li>
+<li>实际总天数 $=5+\dfrac{T-5}{1.5}$，比原计划提前 $\frac14$，即实际用时为原计划的 $\frac34$：<br />
+$$5+\frac{T-5}{1.5}=\frac34T$$<br />
+两边乘 $1.5$：$7.5+T-5=1.125T$，即 $2.5+T=1.125T$，得 $0.125T=2.5$，$T=20$。</li>
+<li>实际用时 $=5+\dfrac{20-5}{1.5}=5+10=15$ 天。</li>
+</ol>
+<p><strong>验算</strong>：$15$ 天比原计划 $20$ 天少 $5$ 天，$5\div20=\frac14$ ✓；前 $5$ 天完成 $\frac{5}{20}=\frac14$，后 $10$ 天效率 $1.5$ 倍完成 $\frac{10\times1.5}{20}=\frac34$，合计 $1$ ✓。</p>
+<p><strong>知识点</strong>：工程问题；列方程解应用题；分数应用题<br />
+<strong>思路/方法</strong>：设原计划天数 $T$，用&quot;效率 $\times$ 时间 $=$ 工作量&quot;表示实际用时，再由&quot;提前 $\frac14$&quot;列方程。<br />
+<strong>难度</strong>：★4</p>
+<h3>第 17 题</h3>
+<p><strong>题目</strong>：现有浓度为 $20%$ 的甲种盐水 $300$ 克，浓度为 $40%$ 的乙种盐水 $600$ 克，如果给甲种盐水每分钟加盐 $10$ 克，给乙种盐水每分钟加水 $20$ 克，______分钟后两种盐水的浓度将相同。</p>
+<p><strong>答案</strong>：$6$</p>
+<p><strong>解析</strong>：</p>
+<ol>
+<li>原来：甲含盐 $300\times20%=60$ 克；乙含盐 $600\times40%=240$ 克。</li>
+<li>经过 $t$ 分钟：
+<ul>
+<li>甲：盐 $60+10t$ 克，盐水 $300+10t$ 克，浓度 $\dfrac{60+10t}{300+10t}$；</li>
+<li>乙：盐仍 $240$ 克，盐水 $600+20t$ 克，浓度 $\dfrac{240}{600+20t}$。</li>
+</ul>
+</li>
+<li>浓度相同：<br />
+$$\frac{60+10t}{300+10t}=\frac{240}{600+20t}$$<br />
+交叉相乘：$(60+10t)(600+20t)=240(300+10t)$。<br />
+即 $200(6+t)(30+t)=2400(30+t)$，约去 $200(30+t)$ 得 $6+t=12$，$t=6$。</li>
+<li>所以 $6$ 分钟后浓度相同。</li>
+</ol>
+<p><strong>验算</strong>：$t=6$ 时甲浓度 $\dfrac{120}{360}=\dfrac13$，乙浓度 $\dfrac{240}{720}=\dfrac13$ ✓。</p>
+<p><strong>知识点</strong>：浓度问题；列方程解应用题；百分数应用题<br />
+<strong>思路/方法</strong>：分别写出 $t$ 分钟后两种盐水的&quot;盐/盐水&quot;，用浓度相等列方程，注意约分技巧。<br />
+<strong>难度</strong>：★3</p>
+<h3>第 18 题</h3>
+<p><strong>题目</strong>：希希和爷爷在步道的 $AB$ 两地之间往返锻炼，爷爷以每分钟 $60$ 米的速度散步，希希跑步。两人同时从 $A$ 地出发，第一次迎面相遇在 $C$ 地；爷爷从 $B$ 地返回后，在 $BC$ 之间距 $B$ 地 $50$ 米处和希希第二次迎面相遇；爷爷第三次和希希迎面相遇时，爷爷还没回到 $A$ 地，此时两人距 $A$ 地 $50$ 米。希希跑步的速度是每分钟______米。</p>
+<p><strong>答案</strong>：$140$</p>
+<p><strong>解析</strong>：</p>
+<ol>
+<li>设 $AB=D$，希希速度为 $v$，第一次迎面相遇前爷爷走了 $x$（即 $AC=x$）。</li>
+<li>关键规律：第 $n$ 次迎面相遇时，两人合走 $2nD$，而爷爷、希希的路程比固定为 $60:v$，所以爷爷走的路程成倍增长，第 $n$ 次相遇时爷爷共走了 $n\cdot x$。</li>
+<li>把爷爷&quot;往返&quot;的路程按&quot;从 $A$ 到 $B$ 是 $D$，再折回&quot;来折算位置：
+<ul>
+<li>第 $2$ 次相遇：爷爷走了 $2x$，已从 $B$ 折返，位置距 $B$ 为 $50$，所以<br />
+$$2x=D+50\tag{1}$$</li>
+<li>第 $3$ 次相遇：爷爷走了 $3x$，还没回到 $A$，位置距 $A$ 为 $50$，即从 $A$ 到 $B$ 再回到距 $A$ 50 处：<br />
+$$3x=2D-50\tag{2}$$</li>
+</ul>
+</li>
+<li>由 $(1)$ 得 $x=\dfrac{D+50}{2}$，代入 $(2)$：$\dfrac{3(D+50)}{2}=2D-50$，解得 $D=250$，$x=150$。</li>
+<li>第一次相遇：爷爷走 $150$ 米用 $150\div60=2.5$ 分钟；这段时间希希从 $A$ 跑到 $B$ 再返回到 $C$：<br />
+$AB+BC=250+(250-150)=350$ 米，所以<br />
+$$v=\frac{350}{2.5}=140\text{ 米/分}$$</li>
+<li>希希速度是每分钟 $140$ 米。</li>
+</ol>
+<p><strong>验算</strong>：逐次验证：第 $1$ 次相遇在距 $A$ $150$ 米处（$C$）；第 $2$ 次在距 $A$ $200$ 米处（距 $B$ $50$，在 $BC$ 之间）✓；第 $3$ 次在距 $A$ $50$ 米处（爷爷未回到 $A$）✓，均符合题意。</p>
+<p><strong>知识点</strong>：多次相遇；基本公式与平均速度；行程问题<br />
+<strong>思路/方法</strong>：用&quot;第 $n$ 次迎面相遇两人合走 $2nD$&quot;得爷爷路程成倍，再用&quot;折返折算位置&quot;列方程。<br />
+<strong>难度</strong>：★6</p>
+<h3>第 19 题</h3>
+<p><strong>题目</strong>：悟空和八戒两人从 $A,B$ 两地同时出发，相向而行，$6$ 小时后相遇；如果悟空提前 $1$ 小时出发，则两人在距 $A,B$ 中点 $15$ 千米处相遇，此时悟空尚未到达中点；如果八戒提前 $1$ 小时出发，则两人在距 $A,B$ 中点 $45$ 千米处相遇。那么，八戒比悟空每小时多走______千米。</p>
+<p><strong>答案</strong>：$10$</p>
+<p><strong>解析</strong>：</p>
+<ol>
+<li>设悟空速度 $w$、八戒速度 $b$，$AB=D=6(w+b)$，记 $m=\dfrac D2=3(w+b)$（中点到 $A$ 的距离）。</li>
+<li>第一次情形（悟空提前 $1$ 小时）：相遇点距中点 $15$ 千米且悟空未到中点，所以
+<ul>
+<li>悟空走 $m-15$，八戒走 $m+15$；</li>
+<li>悟空比八戒多走 $1$ 小时（悟空先出发）。<br />
+设相遇时悟空走了 $t$ 小时，则八戒走了 $t-1$ 小时：<br />
+$$\frac{m-15}{w}=t=\frac{m+15}{b}+1\tag{1}$$</li>
+</ul>
+</li>
+<li>第二次情形（八戒提前 $1$ 小时）：八戒先出发，走的路程多，相遇点在中点靠 $A$ 的一侧（距中点 $45$）：
+<ul>
+<li>八戒走 $m+45$，悟空走 $m-45$；</li>
+<li>八戒比悟空多走 $1$ 小时：<br />
+$$\frac{m+45}{b}=\frac{m-45}{w}+1\tag{2}$$</li>
+</ul>
+</li>
+<li>把 $(1)(2)$ 分别乘 $wb$ 整理：<br />
+$$(1):\ b(m-15)=w(m+15)+wb\ \Longrightarrow\ m(b-w)=15(w+b)+wb$$<br />
+$$(2):\ w(m+45)=b(m-45)+wb\ \Longrightarrow\ m(b-w)=45(w+b)-wb$$</li>
+<li>两式相减：$15(w+b)+wb=45(w+b)-wb$，得<br />
+$$wb=15(w+b)\tag{3}$$<br />
+代回第一式：$m(b-w)=15(w+b)+15(w+b)=30(w+b)$。又 $m=3(w+b)$，所以<br />
+$$3(w+b)(b-w)=30(w+b)\ \Longrightarrow\ b-w=10$$</li>
+<li>所以八戒比悟空每小时多走 $10$ 千米。</li>
+</ol>
+<p><strong>验算</strong>：可取 $w=10+5\sqrt{10}$、$b=20+5\sqrt{10}$（满足 $b-w=10$、$wb=15(w+b)$）代入检验，两种情形的相遇点确实分别距中点 $15$、$45$ 千米，且总路程 $D=6(w+b)$ 成立。</p>
+<p><strong>知识点</strong>：相遇问题；列方程解应用题；行程问题<br />
+<strong>思路/方法</strong>：设中点距离 $m$ 与两速度，利用&quot;提前 $1$ 小时 $\Rightarrow$ 一人多走 $1$ 小时&quot;列两个方程，相减消去 $m$ 得速度差。<br />
+<strong>难度</strong>：★6</p>
+<h3>第 20 题</h3>
+<p><strong>题目</strong>：长江上有相距 $40\text{ km}$ 的两个景点，观光游轮在两个景点之间往返一次共用 $5$ 小时，若前 $2$ 小时比后 $2$ 小时多走 $15\text{ km}$，则观光游轮的速度是______$\text{km/h}$。</p>
+<p><strong>答案</strong>：$16.9$</p>
+<p><strong>解析</strong>：</p>
+<ol>
+<li>设顺水（去程）用 $t$ 小时、逆水（回程）速度 $q\ \text{km/h}$，则回程用 $5-t$ 小时，<br />
+$$(5-t)q=40\tag{1}$$</li>
+<li>由于&quot;前 $2$ 小时比后 $2$ 小时多走 $15$&quot;，说明去程不到 $2$ 小时就到达（$t&lt;2$）：
+<ul>
+<li>前 $2$ 小时的路程 $=40+(2-t)q$（先顺水 $40$ km，再逆水 $(2-t)$ 小时）；</li>
+<li>后 $2$ 小时全在逆水：$2q$。<br />
+所以<br />
+$$40+(2-t)q-2q=40-tq=15\ \Longrightarrow\ tq=25\tag{2}$$</li>
+</ul>
+</li>
+<li>由 $(1)(2)$：$\dfrac{5-t}{t}=\dfrac{40}{25}=\dfrac85$，解得 $5-t=1.6t$，$t=\dfrac{25}{13}$（约 $1.92$ 小时，确实小于 $2$ ✓）。</li>
+<li>于是逆水速度 $q=\dfrac{25}{t}=13$，顺水速度 $p=\dfrac{40}{t}=40\times\dfrac{13}{25}=20.8$。</li>
+<li>游轮在静水中的速度 $=\dfrac{p+q}{2}=\dfrac{20.8+13}{2}=16.9\text{ km/h}$。</li>
+</ol>
+<p><strong>验算</strong>：$t_1=\frac{40}{20.8}=1.923$，$t_2=\frac{40}{13}=3.077$，合计 $5$ ✓；前 $2$ 小时走 $40+(2-1.923)\times13\approx41$，后 $2$ 小时走 $26$，差 $15$ ✓。</p>
+<p><strong>知识点</strong>：流水行船；列方程解应用题；行程问题<br />
+<strong>思路/方法</strong>：抓住&quot;前 $2$ 小时包含了到岸后的逆水段&quot;，用它和&quot;后 $2$ 小时全逆水&quot;的差列方程，先求时间再求速度。<br />
+<strong>难度</strong>：★6</p>
+<h3>第 21 题</h3>
+<p><strong>题目</strong>：一艘轮船携带的燃料最多可用 $36$ 小时，它在静水中每小时行驶 $18$ 千米。一天，轮船顺水驶出，返回时逆水，水速为每小时 $2$ 千米，那么这艘轮船出发后最多行驶______小时就应该掉头返回。（掉头时间忽略不计）</p>
+<p><strong>答案</strong>：$16$</p>
+<p><strong>解析</strong>：</p>
+<ol>
+<li>顺水速度 $=18+2=20\text{ km/h}$，逆水速度 $=18-2=16\text{ km/h}$。</li>
+<li>设出发后行驶 $t$ 小时掉头，则去程 $20t$ 千米；回程用 $36-t$ 小时，走 $16(36-t)$ 千米。</li>
+<li>去、回路程相等：<br />
+$$20t=16(36-t)$$<br />
+$$20t=576-16t\ \Longrightarrow\ 36t=576\ \Longrightarrow\ t=16$$</li>
+<li>所以最多行驶 $16$ 小时就应掉头。</li>
+</ol>
+<p><strong>验算</strong>：$t=16$：去程 $320$ km，用时 $16$ h；回程 $320$ km，用时 $320\div16=20$ h，合计 $36$ h ✓。</p>
+<p><strong>知识点</strong>：流水行船；列方程解应用题；相遇问题（往返）<br />
+<strong>思路/方法</strong>：设掉头时间 $t$，用&quot;去程路程 $=$ 回程路程&quot;列方程，燃料总时间 $36$ 小时是约束。<br />
+<strong>难度</strong>：★3</p>
+<h3>第 22 题</h3>
+<p><strong>题目</strong>：猫、狗、兔、狐、鸡、鸭六只动物排成一行，其中猫、狗不能相邻，兔、狐不能相邻，鸡、鸭必须相邻，共有______种不同的排队方式。</p>
+<p><strong>答案</strong>：$96$</p>
+<p><strong>解析</strong>：</p>
+<ol>
+<li>鸡、鸭必须相邻，把它们捆成&quot;一个整体&quot;，内部有 $2$ 种顺序（鸡鸭、鸭鸡）。</li>
+<li>此时相当于 $5$ 个&quot;单位&quot;：鸡鸭整体、猫、狗、兔、狐，先不管相邻限制，共 $5!=120$ 种。</li>
+<li>用容斥去掉&quot;猫狗相邻&quot;与&quot;兔狐相邻&quot;：
+<ul>
+<li>猫狗相邻：把猫狗捆在一起（$2$ 种内部顺序），与其余 $3$ 个单位共 $4!$ 种排列：$2\times4!=48$ 种；</li>
+<li>兔狐相邻：同理 $48$ 种；</li>
+<li>两者都相邻：猫狗捆一个、兔狐捆一个，与鸡鸭整体共 $3$ 个单位：$3!\times2\times2=24$ 种。<br />
+满足&quot;猫狗不相邻且兔狐不相邻&quot;的排法<br />
+$$120-48-48+24=48$$</li>
+</ul>
+</li>
+<li>再乘鸡鸭内部的 $2$ 种顺序：$48\times2=96$ 种。</li>
+</ol>
+<p><strong>验算</strong>：也可用&quot;插空/逐对排除&quot;的另一路径得到同一结果 $96$（答案页一致）。</p>
+<p><strong>知识点</strong>：捆绑法与除序法；容斥原理；排列组合<br />
+<strong>思路/方法</strong>：先把&quot;必须相邻&quot;的鸡鸭捆绑，再用容斥原理处理两对&quot;不能相邻&quot;。<br />
+<strong>难度</strong>：★4</p>
+<h3>第 23 题</h3>
+<p><strong>题目</strong>：将 $2023$ 个苹果放入若干个篮子，若要保证苹果数最多的篮子里至少有 $23$ 个苹果，则最多有______个篮子。</p>
+<p><strong>答案</strong>：$91$</p>
+<p><strong>解析</strong>：</p>
+<ol>
+<li>若篮子数为 $k$，平均每个篮子 $2023\div k$ 个苹果。</li>
+<li>反证：如果每个篮子都不超过 $22$ 个，那么 $k$ 个篮子最多放 $22k$ 个苹果。
+<ul>
+<li>当 $k\le91$ 时，$22k\le22\times91=2002&lt;2023$，装不下，所以必有篮子至少 $23$ 个（保证成立）；</li>
+<li>当 $k=92$ 时，$22\times92=2024\ge2023$，可以这样放：$91$ 个篮子各放 $22$ 个（共 $2002$ 个），最后一个篮子放 $21$ 个，此时最多的篮子只有 $22$ 个，不能保证 $23$ 个（保证不成立）。</li>
+</ul>
+</li>
+<li>所以最多有 $91$ 个篮子。</li>
+</ol>
+<p><strong>验算</strong>：$91$ 个篮子时 $2023\div91\approx22.23&gt;22$，故必有一个篮子 $\ge23$ ✓；$92$ 个篮子时 $2023&lt;2024$，可以避开来 ✓。</p>
+<p><strong>知识点</strong>：抽屉原理；最值问题；分类列举<br />
+<strong>思路/方法</strong>：用&quot;若都 $\le22$ 则总数有上限&quot;的反证（抽屉原理），比较 $22k$ 与 $2023$ 定临界 $k$。<br />
+<strong>难度</strong>：★3</p>
+<h3>第 24 题</h3>
+<p><strong>题目</strong>：给自然数定义一个&quot;身高&quot;的概念：若这个自然数是一位数，则它的&quot;身高&quot;就是它本身（如：$5$ 的&quot;身高&quot;是 $5$）；若这个自然数是多位数，则它的&quot;身高&quot;就等于组成这个自然数的最大数字和最小数字的差（如：$3125$ 的&quot;身高&quot;是 $5-1=4$）。那么不超过 $2023$ 的自然数中，&quot;身高&quot;是 $5$ 的有______个。</p>
+<p><strong>答案</strong>：$272$</p>
+<p><strong>解析</strong>：</p>
+<p>按位数分类数。</p>
+<ol>
+<li><strong>一位数</strong>：只有 $5$ 本身，共 $1$ 个。</li>
+<li><strong>两位数</strong>：最大数字 $-$ 最小数字 $=5$，可能的数字对是 ${0,5},{1,6},{2,7},{3,8},{4,9}$。每对可排成 $2$ 个两位数，但 ${0,5}$ 中&quot;$05$&quot;不是两位数，只有 $50$ 一个。故<br />
+$$1+2\times4=9$$</li>
+<li><strong>三位数</strong>：设最小数字为 $m$、最大数字为 $m+5$（$m=0,1,\dots,4$），数字必须都落在 $m\sim m+5$ 中且同时出现 $m$ 与 $m+5$。
+<ul>
+<li>$m=0$：数字取自 ${0,1,2,3,4,5}$，且 $0$、$5$ 都出现，百位非 $0$：<br />
+$$5\times6\times6-5^3-4\times5\times5+4^3=180-125-100+64=19$$</li>
+<li>$m=1,2,3,4$：数字取自 $m\sim m+5$（共 $6$ 个非零数字），且 $m$、$m+5$ 都出现：<br />
+$$6^3-5^3-5^3+4^3=216-125-125+64=30$$<br />
+三位数共 $19+30\times4=139$ 个。</li>
+</ul>
+</li>
+<li><strong>四位且不超过 $2023$</strong>：
+<ul>
+<li>$1000\sim1999$：首位是 $1$。
+<ul>
+<li>最小 $0$、最大 $5$（数字在 $0\sim5$，$0$ 与 $5$ 都出现）：$6^3-5^3-5^3+4^3=30$ 个；</li>
+<li>最小 $1$、最大 $6$（后三位在 $1\sim6$ 中且至少一个 $6$）：$6^3-5^3=91$ 个；<br />
+共 $30+91=121$ 个。</li>
+</ul>
+</li>
+<li>$2000\sim2023$：数字中要有 $0$ 和 $5$（$2-0=2\ne5$ 不行），只有 $2005$、$2015$ 符合，共 $2$ 个。<br />
+四位数共 $123$ 个。</li>
+</ul>
+</li>
+<li>合计：<br />
+$$1+9+139+123=272$$</li>
+</ol>
+<p><strong>验算</strong>：用程序枚举 $1\sim2023$ 逐个算&quot;身高&quot;再统计，结果正好 $272$ ✓。</p>
+<p><strong>知识点</strong>：分类列举；数位与计数单位；加乘原理<br />
+<strong>思路/方法</strong>：按位数分类，用&quot;数字只能取自 $m\sim m+5$ 且 $m$、$m+5$ 都要出现&quot;计数（容斥），四位数再分段处理。<br />
+<strong>难度</strong>：★5</p>
+<h3>第 25 题</h3>
+<p><strong>题目</strong>：自然数 $a,b,c$ 互不相同且满足 $\dfrac1a+\dfrac1b+\dfrac1c=\dfrac45$，那么有序数组 $(a,b,c)$ 共有______组。</p>
+<p><strong>答案</strong>：$12$</p>
+<p><strong>解析</strong>：</p>
+<ol>
+<li>由对称性，先只考虑 $a&lt;b&lt;c$，最后乘 $3!=6$ 种排列。</li>
+<li>估计最小数 $a$：
+<ul>
+<li>$\dfrac1a&lt;\dfrac45$（其余两项为正），得 $a\ge2$；</li>
+<li>$\dfrac3a&gt;\dfrac1a+\dfrac1b+\dfrac1c=\dfrac45$（因为 $\dfrac1b,\dfrac1c&lt;\dfrac1a$），得 $a&lt;\dfrac{15}{4}=3.75$，所以 $a\le3$。<br />
+故 $a=2$ 或 $3$。</li>
+</ul>
+</li>
+<li><strong>$a=2$</strong>：$\dfrac1b+\dfrac1c=\dfrac45-\dfrac12=\dfrac3{10}$，且 $b&gt;2$。<br />
+由 $\dfrac2b&gt;\dfrac3{10}$ 得 $b&lt;\dfrac{20}{3}\approx6.67$，所以 $b=3,4,5,6$：
+<ul>
+<li>$b=3$：$\dfrac1c=\dfrac3{10}-\dfrac13&lt;0$，不行；</li>
+<li>$b=4$：$\dfrac1c=\dfrac3{10}-\dfrac14=\dfrac1{20}$，$c=20$ ✓；</li>
+<li>$b=5$：$\dfrac1c=\dfrac3{10}-\dfrac15=\dfrac1{10}$，$c=10$ ✓；</li>
+<li>$b=6$：$\dfrac1c=\dfrac3{10}-\dfrac16=\dfrac4{30}=\dfrac2{15}$，$c=\dfrac{15}{2}$ 不是整数，不行。<br />
+得两组：$(2,4,20)$、$(2,5,10)$。</li>
+</ul>
+</li>
+<li><strong>$a=3$</strong>：$\dfrac1b+\dfrac1c=\dfrac45-\dfrac13=\dfrac7{15}$，且 $b&gt;3$。<br />
+由 $\dfrac2b&gt;\dfrac7{15}$ 得 $b&lt;\dfrac{30}{7}\approx4.29$，所以 $b=4$：<br />
+$\dfrac1c=\dfrac7{15}-\dfrac14=\dfrac{13}{60}$，$c=\dfrac{60}{13}$ 不是整数，不行。</li>
+<li>所以无序解只有 $2$ 组，有序数组共 $2\times3!=12$ 组。</li>
+</ol>
+<p><strong>验算</strong>：$\frac12+\frac14+\frac1{20}=0.5+0.25+0.05=0.8=\frac45$ ✓；$\frac12+\frac15+\frac1{10}=0.5+0.2+0.1=0.8$ ✓；程序枚举验证有序解正好 $12$ 组 ✓。</p>
+<p><strong>知识点</strong>：不定方程；分数与小数的四则运算；分类列举<br />
+<strong>思路/方法</strong>：先排序估计最小数 $a$ 的范围（用 $\frac1a&lt;\frac45$、$\frac3a&gt;\frac45$ 夹逼），再逐个小范围枚举 $b$。<br />
+<strong>难度</strong>：★5</p>
+<hr />
+<h2>知识点与思路总结</h2>
+<table>
+<thead>
+<tr>
+<th>题号</th>
+<th>知识点</th>
+<th>方法</th>
+<th>难度</th>
+<th>答案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>分数与小数的四则运算、速算与巧算、提取公因数</td>
+<td>先算括号，抓 $6\times70\times72=6\times7\times8\times9\times10$ 约分</td>
+<td>★3</td>
+<td>2023</td>
+</tr>
+<tr>
+<td>2</td>
+<td>公式类计算、特殊数计算、等差数列</td>
+<td>$(2k-1)^2=4k^2-4k+1$ 化为平方和</td>
+<td>★2</td>
+<td>20825</td>
+</tr>
+<tr>
+<td>3</td>
+<td>等差数列、分数与小数的四则运算、分组求和</td>
+<td>同分母打包成&quot;和为 $1$&quot;的段，等差数列定位</td>
+<td>★3</td>
+<td>B（$50\frac{48}{65}$）</td>
+</tr>
+<tr>
+<td>4</td>
+<td>位值原理、特殊数计算、数字和</td>
+<td>找 $A$ 的十进制数字规律，数字和 $=9n$</td>
+<td>★5</td>
+<td>9</td>
+</tr>
+<tr>
+<td>5</td>
+<td>进位制、位值原理、不定方程</td>
+<td>按进位制展开比较系数，$4b+c=0$</td>
+<td>★3</td>
+<td>5</td>
+</tr>
+<tr>
+<td>6</td>
+<td>尾数与末位、同余初步、奇数与偶数</td>
+<td>求模 $8$、模 $125$ 的余数再合并</td>
+<td>★4</td>
+<td>625</td>
+</tr>
+<tr>
+<td>7</td>
+<td>线与角、三角形内角和、轴对称图形</td>
+<td>公共点一圈 $360^\circ$ 求 $30^\circ$ 缺口，对称平分</td>
+<td>★4</td>
+<td>15</td>
+</tr>
+<tr>
+<td>8</td>
+<td>梯形的面积、勾股定理、面积综合</td>
+<td>设 $a,e$ 建系求交点 $G$，列方程解，梯形面积</td>
+<td>★5</td>
+<td>110</td>
+</tr>
+<tr>
+<td>9</td>
+<td>圆锥的体积、体积与容积单位、相似图形</td>
+<td>排水体积法 + 相似圆锥体积比</td>
+<td>★5</td>
+<td>E（$\frac{1350}{47}$）</td>
+</tr>
+<tr>
+<td>10</td>
+<td>质数与合数、最大公因数与最小公倍数、抽屉原理</td>
+<td>三个偶数至多取一 + 构造 $4$ 个互质</td>
+<td>★4</td>
+<td>4</td>
+</tr>
+<tr>
+<td>11</td>
+<td>因数个数与因数和、分解质因数</td>
+<td>因数成对 ⇒ $A=2023^3$，再数因数</td>
+<td>★3</td>
+<td>28</td>
+</tr>
+<tr>
+<td>12</td>
+<td>因数个数与因数和、数的整除特征、分解质因数</td>
+<td>指数取法计数（$a\ge1,b=1$）</td>
+<td>★4</td>
+<td>72</td>
+</tr>
+<tr>
+<td>13</td>
+<td>同余初步、尾数与末位、余数问题</td>
+<td>模 $13$ 下 $8$ 的幂周期为 $4$</td>
+<td>★3</td>
+<td>5</td>
+</tr>
+<tr>
+<td>14</td>
+<td>加乘原理、排列组合、分类列举</td>
+<td>总数减&quot;被 $5$ 整除&quot;，注意首位非零</td>
+<td>★3</td>
+<td>64</td>
+</tr>
+<tr>
+<td>15</td>
+<td>定义新运算、取整函数、分类列举</td>
+<td>按商分组计数，试算 + 单调性定唯一解</td>
+<td>★4</td>
+<td>674</td>
+</tr>
+<tr>
+<td>16</td>
+<td>工程问题、列方程解应用题</td>
+<td>设原计划 $T$ 天，效率×时间列方程</td>
+<td>★4</td>
+<td>15</td>
+</tr>
+<tr>
+<td>17</td>
+<td>浓度问题、列方程解应用题、百分数应用题</td>
+<td>写出 $t$ 分钟后的盐/盐水，浓度相等列方程</td>
+<td>★3</td>
+<td>6</td>
+</tr>
+<tr>
+<td>18</td>
+<td>多次相遇、基本公式与平均速度、行程问题</td>
+<td>第 $n$ 次迎面相遇合走 $2nD$，爷爷路程成倍</td>
+<td>★6</td>
+<td>140</td>
+</tr>
+<tr>
+<td>19</td>
+<td>相遇问题、列方程解应用题、行程问题</td>
+<td>两情形各列方程，相减消去中点距离</td>
+<td>★6</td>
+<td>10</td>
+</tr>
+<tr>
+<td>20</td>
+<td>流水行船、列方程解应用题、行程问题</td>
+<td>前 $2$ 小时含&quot;到岸后逆水段&quot;，列差方程</td>
+<td>★6</td>
+<td>16.9</td>
+</tr>
+<tr>
+<td>21</td>
+<td>流水行船、列方程解应用题</td>
+<td>顺水 $20$、逆水 $16$，去回路程相等列方程</td>
+<td>★3</td>
+<td>16</td>
+</tr>
+<tr>
+<td>22</td>
+<td>捆绑法与除序法、容斥原理、排列组合</td>
+<td>鸡鸭捆绑 + 容斥去两对相邻</td>
+<td>★4</td>
+<td>96</td>
+</tr>
+<tr>
+<td>23</td>
+<td>抽屉原理、最值问题、分类列举</td>
+<td>若都 $\le22$，比较 $22k$ 与 $2023$</td>
+<td>★3</td>
+<td>91</td>
+</tr>
+<tr>
+<td>24</td>
+<td>分类列举、数位与计数单位、加乘原理</td>
+<td>按位数分类 + 容斥数&quot;含最小/最大数字&quot;的个数</td>
+<td>★5</td>
+<td>272</td>
+</tr>
+<tr>
+<td>25</td>
+<td>不定方程、分数与小数的四则运算、分类列举</td>
+<td>排序后夹逼最小数 $a$，逐项枚举 $b$</td>
+<td>★5</td>
+<td>12</td>
+</tr>
+</tbody>
+</table>
+<h2>易错点与教学建议</h2>
+<ol>
+<li><strong>第 1 题</strong>：容易直接硬算通分。教学时要引导观察&quot;分母是五个分数的积&quot;，把括号里的结果写成分子、再与分母的倒数约分，抓住 $6\times70\times72=6\times7\times8\times9\times10$ 这个巧合。</li>
+<li><strong>第 2 题</strong>：忘记奇数的个数（$49=2\times25-1$，共 $25$ 个）是常见错误；另外拆 $(2k-1)^2$ 时符号易错，建议写成 $4k^2-4k+1$ 代公式。</li>
+<li><strong>第 3 题</strong>：关键是把&quot;同分母 $n$ 个 $\frac1n$&quot;打包成和为 $1$ 的整段；定位第 $2023$ 个数时要用等差数列求和，注意段数 $=64-15+1=50$，余下 $48$ 个。</li>
+<li><strong>第 4 题</strong>：本题是整卷技巧性最强的一题。要引导孩子先算 $n=1,2,3$ 的小情形找规律，再相信&quot;数字和为 $9n$&quot;的结构；同时提醒 $66\cdots67=66\cdots6+1$ 这个转化。</li>
+<li><strong>第 5 题</strong>：进位制展开式要写对（八进制 $64a+8b+c$、六进制 $36a+6b+c$）；还要注意六进制中数字 $a,b,c$ 都必须小于 $6$ 且 $a\ne0$。</li>
+<li><strong>第 6 题</strong>：只算&quot;有几个 $5$&quot;会漏掉 $25,125,625$ 的额外贡献；只算模 $8$ 也不够，必须再用模 $125$ 综合（中国剩余思想）。</li>
+<li><strong>第 7 题</strong>：知道&quot;正六边形内角 $120^\circ$、正方形 $90^\circ$&quot;后，难点在&quot;围绕公共点一圈 $360^\circ$&quot;和&quot;左右对称平分 $30^\circ$ 缺口&quot;，建议让孩子用三角板摆一摆。</li>
+<li><strong>第 8 题</strong>：要看清两个等腰直角三角形的直角分别在 $A$、$D$（图中有直角记号），$B$ 是中点给出 $AB=BD$；建坐标是&quot;万能&quot;办法，注意 $G$ 的坐标求解和 $GC,GE$ 的长度计算。</li>
+<li><strong>第 9 题</strong>：先判断&quot;小圆锥完全浸没&quot;（$12&lt;15$）是关键；新圆锥浸没部分是相似圆锥，体积比是相似比的立方（$1-\left(\frac13\right)^3=\frac{26}{27}$），不要误用面积比。</li>
+<li><strong>第 10 题</strong>：容易只凭&quot;看起来互质&quot;取数；正确做法是分解质因数，用&quot;三个偶数两两有公因数 $2$&quot;给出上界，再构造达到。</li>
+<li><strong>第 11 题</strong>：忘记&quot;因数成对&quot;这一性质会直接去算 $2023$ 的所有因数之积；记住 $n$ 的因数个数为 $d$ 时，所有因数之积为 $n^{d/2}$。</li>
+<li><strong>第 12 题</strong>：注意&quot;是 $6$ 的倍数&quot;要求 $2$ 和 $3$ 的指数都至少为 $1$，$600600$ 中 $3$ 的指数只有 $1$，所以 $b$ 只能取 $1$。</li>
+<li><strong>第 13 题</strong>：先化底数（$2023\equiv8$）再找周期，别直接算 $2023^{2023}$；注意 $8^2\equiv-1$，周期是 $4$ 而不是 $2$。</li>
+<li><strong>第 14 题</strong>：两个易错点：百位不能为 $0$；&quot;任选 $3$ 个数字&quot;意味着数字不重复。用&quot;总数减能被 $5$ 整除&quot;更稳。</li>
+<li><strong>第 15 题</strong>：要先说明 $x&gt;0$；按商分组计数时注意 $k$ 的上界是 $2021$；最后要用单调性说明解唯一。</li>
+<li><strong>第 16 题</strong>：易错点是&quot;提前 $\frac14$&quot;理解成&quot;少用 $\frac14$ 天&quot;（应为原计划时间的 $\frac14$）；另外注意工人增加一半是效率变 $1.5$ 倍。</li>
+<li><strong>第 17 题</strong>：甲加盐、乙加水，一个是溶质增加一个是溶液增加，要分别写清&quot;盐&quot;和&quot;盐水&quot;的总量；列方程后先约分再解。</li>
+<li><strong>第 18 题</strong>：本题是难点。核心规律是&quot;第 $n$ 次迎面相遇两人合走 $2nD$&quot;，于是爷爷走的路程是 $nx$；再用&quot;折返&quot;把位置写成 $2D$ 的补数。</li>
+<li><strong>第 19 题</strong>：两种&quot;提前出发&quot;的方向容易搞反；注意第二次情形相遇点在中点靠 $A$ 一侧（八戒走得多）；相减消去 $m$ 是关键。</li>
+<li><strong>第 20 题</strong>：最容易误以为&quot;前 $2$ 小时全顺水&quot;，实际上游轮不到 $2$ 小时就到达并开始返程；要分段写路程再作差。</li>
+<li><strong>第 21 题</strong>：燃料时间 $36$ 小时是&quot;去 $+$ 回&quot;的总时间；顺水 $20$、逆水 $16$ 要先算出来，再去回路程相等列方程。</li>
+<li><strong>第 22 题</strong>：鸡鸭&quot;必须相邻&quot;用捆绑；两对&quot;不能相邻&quot;用容斥（加回两组都相邻的情况），不要漏乘鸡鸭内部的 $2$。</li>
+<li><strong>第 23 题</strong>：注意&quot;要保证&quot;是指无论怎么放都成立，所以要用抽屉原理算临界值；$92$ 个篮子时可以避开 $23$，说明答案不是 $92$。</li>
+<li><strong>第 24 题</strong>：一位数、两位数、三位数、四位数要分别数；三位数要用&quot;在 $m\sim m+5$ 中且 $m$、$m+5$ 都出现&quot;的容斥；四位数要分段（$1000\sim1999$ 与 $2000\sim2023$）。</li>
+<li><strong>第 25 题</strong>：先排序可以避免重复计数；用 $\frac1a&lt;\frac45$ 和 $\frac3a&gt;\frac45$ 夹出 $a\le3$ 是关键一步；最后别忘了乘 $3!=6$（有序数组）。</li>
+</ol>
+</article><div class="exam-foot"><a href="../index.html">← 返回知识地图</a> · <a href="index.html">全部真题</a></div></body></html>

@@ -1,0 +1,24 @@
+{
+  "source": "exam/2025年奥林匹克思维能力测评活动六年级试题.pdf",
+  "total": 18,
+  "items": [
+    {"no": "1", "knowledge": ["年、月、日", "找规律"], "method": "分段推算（第几九换算成第几天）", "difficulty": 2, "answer": "2月4日"},
+    {"no": "2", "knowledge": ["百分数应用题", "列方程解应用题"], "method": "设总钱数 + 消元", "difficulty": 3, "answer": "198元"},
+    {"no": "3", "knowledge": ["分数的基本性质与约分", "列方程解应用题"], "method": "设x/y + 倍数关系", "difficulty": 3, "answer": "44/2025"},
+    {"no": "4", "knowledge": ["排列组合", "加乘原理", "捆绑法与除序法"], "method": "捆绑法", "difficulty": 2, "answer": "12种"},
+    {"no": "5", "knowledge": ["圆与扇形", "组合图形的面积", "面积综合"], "method": "容斥/割补（花瓣+月牙）", "difficulty": 4, "answer": "28.5平方米（25π−50）【待核对：原图印刷比例有出入，按几何取28.5】"},
+    {"no": "6", "knowledge": ["定义新运算", "小数的意义与性质", "用字母表示数"], "method": "整数性判定 + 反代", "difficulty": 4, "answer": "2005"},
+    {"no": "7", "knowledge": ["有余数的除法", "找规律", "逻辑推理"], "method": "圆圈报数取余", "difficulty": 3, "answer": "12名"},
+    {"no": "8", "knowledge": ["时钟问题", "线与角"], "method": "两针转角度数取模求夹角", "difficulty": 4, "answer": "159度"},
+    {"no": "9", "knowledge": ["按比例分配", "百分数应用题"], "method": "份数法（两次比例串联）", "difficulty": 3, "answer": "1500万元"},
+    {"no": "10", "knowledge": ["工程问题", "列方程解应用题"], "method": "三式相加消元", "difficulty": 3, "answer": "18375元"},
+    {"no": "11", "knowledge": ["平均数应用题", "百分数应用题"], "method": "加权平均", "difficulty": 2, "answer": "1:2"},
+    {"no": "12", "knowledge": ["流水行船", "多次相遇", "相遇问题"], "method": "分段速度 + 相对路程累计一圈", "difficulty": 5, "answer": "5次"},
+    {"no": "13", "knowledge": ["圆与扇形", "组合图形的面积", "面积综合"], "method": "对称性 + 透镜面积（4花瓣=4π−8）", "difficulty": 4, "answer": "4.56平方厘米（4π−8）"},
+    {"no": "14", "knowledge": ["位值原理", "列方程解应用题"], "method": "位值原理列方程", "difficulty": 3, "answer": "14"},
+    {"no": "15", "knowledge": ["立体几何综合", "体积与容积单位", "折线统计图"], "method": "图象分段求注水速率并联立", "difficulty": 5, "answer": "2分钟"},
+    {"no": "16", "knowledge": ["基本公式与平均速度", "追及问题", "列方程解应用题"], "method": "设速度与全程，按时间差列方程", "difficulty": 4, "answer": "280千米"},
+    {"no": "17", "knowledge": ["工程问题", "比的意义"], "method": "设效率与阶段时间，两式相除", "difficulty": 4, "answer": "27小时"},
+    {"no": "18", "knowledge": ["平均数应用题", "枚举与分类", "数的整除特征"], "method": "前缀和整除 + 全枚举", "difficulty": 4, "answer": "87"}
+  ]
+}

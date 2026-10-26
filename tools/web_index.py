@@ -330,7 +330,7 @@ WEB_INDEX_BODY = r"""
         <div class="stat"><b id="statOnline">107</b><span>已更新</span></div>
       </div>
       <div class="hero-actions">
-        <a class="hero-link" href="exam/index.html">竞赛真题 <span>8 套 · 137 题 →</span></a>
+        <a class="hero-link" href="exam/index.html">竞赛真题 <span>全部真题 →</span></a>
       </div>
     </div>
     <div class="hero-side">

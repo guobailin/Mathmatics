@@ -1,0 +1,965 @@
+{
+  "source": "exam/2024 IHC 6培训题-学生版.pdf",
+  "total": 100,
+  "items": [
+    {
+      "no": "1",
+      "knowledge": [
+        "速算与巧算",
+        "分数裂项"
+      ],
+      "method": "相邻项约分（连乘裂项）",
+      "difficulty": 3,
+      "answer": "1006"
+    },
+    {
+      "no": "2",
+      "knowledge": [
+        "等差数列",
+        "数阵图"
+      ],
+      "method": "分类枚举（九宫格+等差数列）",
+      "difficulty": 4,
+      "answer": "15"
+    },
+    {
+      "no": "3",
+      "knowledge": [
+        "速算与巧算"
+      ],
+      "method": "分组凑整（四项一组）",
+      "difficulty": 2,
+      "answer": "1"
+    },
+    {
+      "no": "4",
+      "knowledge": [
+        "找规律",
+        "数与形"
+      ],
+      "method": "图形规律（差分法）",
+      "difficulty": 3,
+      "answer": "29"
+    },
+    {
+      "no": "5",
+      "knowledge": [
+        "循环小数化分数"
+      ],
+      "method": "循环小数化分数",
+      "difficulty": 3,
+      "answer": "16"
+    },
+    {
+      "no": "6",
+      "knowledge": [
+        "定义新运算"
+      ],
+      "method": "代入定义式",
+      "difficulty": 2,
+      "answer": "65"
+    },
+    {
+      "no": "7",
+      "knowledge": [
+        "分数裂项"
+      ],
+      "method": "裂项相消（k/(k+1)! = 1/k! - 1/(k+1)!）",
+      "difficulty": 3,
+      "answer": "A"
+    },
+    {
+      "no": "8",
+      "knowledge": [
+        "尾数与末位"
+      ],
+      "method": "幂的尾数周期",
+      "difficulty": 4,
+      "answer": "1"
+    },
+    {
+      "no": "9",
+      "knowledge": [
+        "循环小数化分数",
+        "找规律"
+      ],
+      "method": "循环节周期定位",
+      "difficulty": 4,
+      "answer": "8"
+    },
+    {
+      "no": "10",
+      "knowledge": [
+        "位值原理"
+      ],
+      "method": "位值展开+约数枚举",
+      "difficulty": 4,
+      "answer": "792"
+    },
+    {
+      "no": "11",
+      "knowledge": [
+        "加乘原理"
+      ],
+      "method": "分步乘法计数",
+      "difficulty": 2,
+      "answer": "27"
+    },
+    {
+      "no": "12",
+      "knowledge": [
+        "组合计数",
+        "抽屉原理"
+      ],
+      "method": "组合计数（两面涂色按翻转去重）",
+      "difficulty": 4,
+      "answer": "7"
+    },
+    {
+      "no": "13",
+      "knowledge": [
+        "加乘原理",
+        "组合计数"
+      ],
+      "method": "环形染色（分步+周期对称）",
+      "difficulty": 5,
+      "answer": "264"
+    },
+    {
+      "no": "14",
+      "knowledge": [
+        "格点面积"
+      ],
+      "method": "分类枚举（格点三角形）",
+      "difficulty": 5,
+      "answer": "420"
+    },
+    {
+      "no": "15",
+      "knowledge": [
+        "位值原理",
+        "枚举与分类"
+      ],
+      "method": "按位数分类枚举",
+      "difficulty": 4,
+      "answer": "39"
+    },
+    {
+      "no": "16",
+      "knowledge": [
+        "立体几何综合"
+      ],
+      "method": "容斥计数（打洞）",
+      "difficulty": 4,
+      "answer": "【待核对】"
+    },
+    {
+      "no": "17",
+      "knowledge": [
+        "加乘原理",
+        "枚举与分类"
+      ],
+      "method": "分步乘法计数（数字互异）",
+      "difficulty": 4,
+      "answer": "840"
+    },
+    {
+      "no": "18",
+      "knowledge": [
+        "组合计数",
+        "几何计数"
+      ],
+      "method": "组合数（圆内交点）",
+      "difficulty": 3,
+      "answer": "70"
+    },
+    {
+      "no": "19",
+      "knowledge": [
+        "圆与扇形",
+        "等积模型"
+      ],
+      "method": "等积变换",
+      "difficulty": 4,
+      "answer": "【待核对】"
+    },
+    {
+      "no": "20",
+      "knowledge": [
+        "勾股定理",
+        "三角形的面积"
+      ],
+      "method": "坐标/割补法求面积",
+      "difficulty": 4,
+      "answer": "784"
+    },
+    {
+      "no": "21",
+      "knowledge": [
+        "面积比",
+        "等积模型"
+      ],
+      "method": "比例+面积公式（正六边形）",
+      "difficulty": 4,
+      "answer": "33"
+    },
+    {
+      "no": "22",
+      "knowledge": [
+        "圆与扇形",
+        "旋转"
+      ],
+      "method": "滚动+转角（无滑动）",
+      "difficulty": 4,
+      "answer": "4"
+    },
+    {
+      "no": "23",
+      "knowledge": [
+        "轴对称图形"
+      ],
+      "method": "观察图形判断对称轴",
+      "difficulty": 2,
+      "answer": "【待核对】"
+    },
+    {
+      "no": "24",
+      "knowledge": [
+        "长方体和正方体的认识"
+      ],
+      "method": "展开图还原（折叠判断）",
+      "difficulty": 3,
+      "answer": "【待核对】"
+    },
+    {
+      "no": "25",
+      "knowledge": [
+        "长方体和正方体的认识"
+      ],
+      "method": "正方体展开图还原",
+      "difficulty": 4,
+      "answer": "【待核对】"
+    },
+    {
+      "no": "26",
+      "knowledge": [
+        "圆锥的体积"
+      ],
+      "method": "圆锥体积公式逆用",
+      "difficulty": 2,
+      "answer": "9"
+    },
+    {
+      "no": "27",
+      "knowledge": [
+        "梯形的面积"
+      ],
+      "method": "周长转化求上下底和",
+      "difficulty": 2,
+      "answer": "88"
+    },
+    {
+      "no": "28",
+      "knowledge": [
+        "面积比",
+        "等积模型"
+      ],
+      "method": "等底等高面积比",
+      "difficulty": 3,
+      "answer": "45"
+    },
+    {
+      "no": "29",
+      "knowledge": [
+        "圆与扇形",
+        "等积模型"
+      ],
+      "method": "等积代换+圆的面积",
+      "difficulty": 4,
+      "answer": "【待核对】"
+    },
+    {
+      "no": "30",
+      "knowledge": [
+        "长方体和正方体的体积"
+      ],
+      "method": "排水法（溢出体积）",
+      "difficulty": 3,
+      "answer": "6.4"
+    },
+    {
+      "no": "31",
+      "knowledge": [
+        "圆柱的体积",
+        "等积变形"
+      ],
+      "method": "体积不变+高度差列方程",
+      "difficulty": 4,
+      "answer": "25"
+    },
+    {
+      "no": "32",
+      "knowledge": [
+        "立体几何综合",
+        "表面染色"
+      ],
+      "method": "容斥+表面积增减",
+      "difficulty": 6,
+      "answer": "【待核对】"
+    },
+    {
+      "no": "33",
+      "knowledge": [
+        "面积比"
+      ],
+      "method": "相似/等积（正六边形拼接）",
+      "difficulty": 5,
+      "answer": "【待核对】"
+    },
+    {
+      "no": "34",
+      "knowledge": [
+        "三视图求体积"
+      ],
+      "method": "三视图还原几何体",
+      "difficulty": 4,
+      "answer": "【待核对】"
+    },
+    {
+      "no": "35",
+      "knowledge": [
+        "面积比",
+        "组合图形的面积"
+      ],
+      "method": "面积比（六角星与正六边形）",
+      "difficulty": 4,
+      "answer": "【待核对】"
+    },
+    {
+      "no": "36",
+      "knowledge": [
+        "面积比",
+        "燕尾模型"
+      ],
+      "method": "面积比（分点连线）",
+      "difficulty": 4,
+      "answer": "【待核对】"
+    },
+    {
+      "no": "37",
+      "knowledge": [
+        "对称与最短路径"
+      ],
+      "method": "轴对称求最短路径",
+      "difficulty": 4,
+      "answer": "作甲关于AB的对称点甲′、乙关于CD的对称点乙′，连甲′乙′交AB于P、交CD于Q，路线甲→P→Q→乙最短"
+    },
+    {
+      "no": "38",
+      "knowledge": [
+        "行程问题"
+      ],
+      "method": "接送问题（等时到达+最优调度）",
+      "difficulty": 5,
+      "answer": "2.6"
+    },
+    {
+      "no": "39",
+      "knowledge": [
+        "工程问题"
+      ],
+      "method": "设效率列方程（整体求出效率和）",
+      "difficulty": 4,
+      "answer": "25"
+    },
+    {
+      "no": "40",
+      "knowledge": [
+        "流水行船",
+        "多次相遇"
+      ],
+      "method": "往返相遇（分段列式）",
+      "difficulty": 5,
+      "answer": "14"
+    },
+    {
+      "no": "41",
+      "knowledge": [
+        "浓度问题",
+        "平均量"
+      ],
+      "method": "比例方程（交换后比例相同）",
+      "difficulty": 5,
+      "answer": "1600/89"
+    },
+    {
+      "no": "42",
+      "knowledge": [
+        "环形跑道",
+        "多次相遇"
+      ],
+      "method": "环形追及+周期分析",
+      "difficulty": 6,
+      "answer": "【待核对】"
+    },
+    {
+      "no": "43",
+      "knowledge": [
+        "百分数应用题"
+      ],
+      "method": "指数递减比较",
+      "difficulty": 3,
+      "answer": "7"
+    },
+    {
+      "no": "44",
+      "knowledge": [
+        "经济问题",
+        "百分数应用题"
+      ],
+      "method": "利润率+加权平均",
+      "difficulty": 4,
+      "answer": "62.5"
+    },
+    {
+      "no": "45",
+      "knowledge": [
+        "差倍问题"
+      ],
+      "method": "差倍问题",
+      "difficulty": 2,
+      "answer": "320"
+    },
+    {
+      "no": "46",
+      "knowledge": [
+        "归一问题",
+        "不定方程"
+      ],
+      "method": "归一+不定方程枚举",
+      "difficulty": 4,
+      "answer": "E种原料；A原料10吨"
+    },
+    {
+      "no": "47",
+      "knowledge": [
+        "行程问题"
+      ],
+      "method": "时间差（路程÷速度）",
+      "difficulty": 2,
+      "answer": "3"
+    },
+    {
+      "no": "48",
+      "knowledge": [
+        "工程问题"
+      ],
+      "method": "效率比+按比例分配",
+      "difficulty": 3,
+      "answer": "180"
+    },
+    {
+      "no": "49",
+      "knowledge": [
+        "流水行船",
+        "多次相遇"
+      ],
+      "method": "流水行船（相对运动）",
+      "difficulty": 6,
+      "answer": "6"
+    },
+    {
+      "no": "50",
+      "knowledge": [
+        "浓度问题"
+      ],
+      "method": "浓度十字/方程（两次混合）",
+      "difficulty": 4,
+      "answer": "甲12升，乙30升"
+    },
+    {
+      "no": "51",
+      "knowledge": [
+        "工程问题",
+        "统筹优化"
+      ],
+      "method": "统筹优化（分工+最小完工时间）",
+      "difficulty": 5,
+      "answer": "8"
+    },
+    {
+      "no": "52",
+      "knowledge": [
+        "归一问题"
+      ],
+      "method": "归一（人均效率）",
+      "difficulty": 2,
+      "answer": "8"
+    },
+    {
+      "no": "53",
+      "knowledge": [
+        "比的应用",
+        "按比例分配"
+      ],
+      "method": "面积比+按比例分配",
+      "difficulty": 2,
+      "answer": "132、110"
+    },
+    {
+      "no": "54",
+      "knowledge": [
+        "分数应用题",
+        "列方程解应用题"
+      ],
+      "method": "列方程（数量关系变化）",
+      "difficulty": 3,
+      "answer": "男生36人，女生48人"
+    },
+    {
+      "no": "55",
+      "knowledge": [
+        "工程问题",
+        "牛吃草"
+      ],
+      "method": "进水排水（设未知效率列方程）",
+      "difficulty": 4,
+      "answer": "5/6"
+    },
+    {
+      "no": "56",
+      "knowledge": [
+        "工程问题"
+      ],
+      "method": "全员合作+请假天数方程",
+      "difficulty": 3,
+      "answer": "17"
+    },
+    {
+      "no": "57",
+      "knowledge": [
+        "还原问题",
+        "分数应用题"
+      ],
+      "method": "逆推还原",
+      "difficulty": 3,
+      "answer": "210"
+    },
+    {
+      "no": "58",
+      "knowledge": [
+        "牛吃草"
+      ],
+      "method": "排队问题（牛吃草模型）",
+      "difficulty": 5,
+      "answer": "8:52"
+    },
+    {
+      "no": "59",
+      "knowledge": [
+        "时钟问题"
+      ],
+      "method": "时针分针位置互换（角度方程）",
+      "difficulty": 4,
+      "answer": "55又5/13分钟（720/13分钟）"
+    },
+    {
+      "no": "60",
+      "knowledge": [
+        "行程问题",
+        "最值问题"
+      ],
+      "method": "由数据反推方案（比较取优）",
+      "difficulty": 4,
+      "answer": "28"
+    },
+    {
+      "no": "61",
+      "knowledge": [
+        "不定方程",
+        "鸡兔同笼"
+      ],
+      "method": "不定方程（整数解）",
+      "difficulty": 3,
+      "answer": "老师3人，男生3人，女生8人"
+    },
+    {
+      "no": "62",
+      "knowledge": [
+        "分段计费",
+        "不定方程"
+      ],
+      "method": "分段计费+整数枚举",
+      "difficulty": 3,
+      "answer": "李家36元，张家69元"
+    },
+    {
+      "no": "63",
+      "knowledge": [
+        "行程问题",
+        "列方程解应用题"
+      ],
+      "method": "列方程组（去回两程）",
+      "difficulty": 4,
+      "answer": "步行4千米/时，自行车12千米/时"
+    },
+    {
+      "no": "64",
+      "knowledge": [
+        "行程问题",
+        "变速问题"
+      ],
+      "method": "变速行程（两次提前时间列方程）",
+      "difficulty": 4,
+      "answer": "216"
+    },
+    {
+      "no": "65",
+      "knowledge": [
+        "最值问题",
+        "逻辑推理"
+      ],
+      "method": "最值论证（补集份额上限）",
+      "difficulty": 5,
+      "answer": "100/3（约33.3）"
+    },
+    {
+      "no": "66",
+      "knowledge": [
+        "奇数与偶数",
+        "周期规律"
+      ],
+      "method": "奇偶分析+周期（4次一循环）",
+      "difficulty": 5,
+      "answer": "D"
+    },
+    {
+      "no": "67",
+      "knowledge": [
+        "抽屉原理",
+        "最不利原则"
+      ],
+      "method": "抽屉原理（最不利情形）",
+      "difficulty": 4,
+      "answer": "35"
+    },
+    {
+      "no": "68",
+      "knowledge": [
+        "数阵图",
+        "最值问题"
+      ],
+      "method": "数阵图（线和相等+最值）",
+      "difficulty": 4,
+      "answer": "【待核对】"
+    },
+    {
+      "no": "69",
+      "knowledge": [
+        "工程问题",
+        "最小公倍数"
+      ],
+      "method": "设总量为最小公倍数",
+      "difficulty": 3,
+      "answer": "5"
+    },
+    {
+      "no": "70",
+      "knowledge": [
+        "概率初步"
+      ],
+      "method": "枚举（和为奇数的情形）",
+      "difficulty": 2,
+      "answer": "1/2"
+    },
+    {
+      "no": "71",
+      "knowledge": [
+        "排列组合",
+        "枚举与分类"
+      ],
+      "method": "枚举+互质约束（相邻互质）",
+      "difficulty": 5,
+      "answer": "1728"
+    },
+    {
+      "no": "72",
+      "knowledge": [
+        "分解质因数",
+        "枚举与分类"
+      ],
+      "method": "分解质因数+枚举（环数组合）",
+      "difficulty": 4,
+      "answer": "28"
+    },
+    {
+      "no": "73",
+      "knowledge": [
+        "最值问题",
+        "不等式"
+      ],
+      "method": "最值论证（任意三袋之和）",
+      "difficulty": 4,
+      "answer": "82"
+    },
+    {
+      "no": "74",
+      "knowledge": [
+        "约瑟夫问题",
+        "周期规律"
+      ],
+      "method": "模拟+找规律（约瑟夫环）",
+      "difficulty": 5,
+      "answer": "（1）1333；（2）407"
+    },
+    {
+      "no": "75",
+      "knowledge": [
+        "不定方程",
+        "最值问题"
+      ],
+      "method": "不定方程+最值分析",
+      "difficulty": 5,
+      "answer": "31"
+    },
+    {
+      "no": "76",
+      "knowledge": [
+        "概率初步"
+      ],
+      "method": "几何概率（时间段占比）",
+      "difficulty": 2,
+      "answer": "1/10"
+    },
+    {
+      "no": "77",
+      "knowledge": [
+        "最值问题",
+        "枚举与分类"
+      ],
+      "method": "枚举+构造最大（乘法算式）",
+      "difficulty": 5,
+      "answer": "60483"
+    },
+    {
+      "no": "78",
+      "knowledge": [
+        "计算综合",
+        "最值问题"
+      ],
+      "method": "括号添加（连除变连乘）",
+      "difficulty": 4,
+      "answer": "10080"
+    },
+    {
+      "no": "79",
+      "knowledge": [
+        "逻辑推理",
+        "比赛问题"
+      ],
+      "method": "赛程安排（唯一性推理）",
+      "difficulty": 4,
+      "answer": "B"
+    },
+    {
+      "no": "80",
+      "knowledge": [
+        "排列组合"
+      ],
+      "method": "特殊位置优先（容斥）",
+      "difficulty": 2,
+      "answer": "18"
+    },
+    {
+      "no": "81",
+      "knowledge": [
+        "带余除法与余数性质"
+      ],
+      "method": "余数互异+同余（中国剩余思想）",
+      "difficulty": 4,
+      "answer": "119"
+    },
+    {
+      "no": "82",
+      "knowledge": [
+        "逻辑推理"
+      ],
+      "method": "假设法（逐个检验真假）",
+      "difficulty": 3,
+      "answer": "A（许兵）"
+    },
+    {
+      "no": "83",
+      "knowledge": [
+        "染色问题",
+        "加乘原理"
+      ],
+      "method": "区域染色（分步计数）",
+      "difficulty": 4,
+      "answer": "【待核对】"
+    },
+    {
+      "no": "84",
+      "knowledge": [
+        "取整函数（高斯符号）"
+      ],
+      "method": "整数部分与小数部分性质",
+      "difficulty": 4,
+      "answer": "2001"
+    },
+    {
+      "no": "85",
+      "knowledge": [
+        "数的整除特征",
+        "最大公因数"
+      ],
+      "method": "最大公因数（数字和+枚举验证）",
+      "difficulty": 4,
+      "answer": "9"
+    },
+    {
+      "no": "86",
+      "knowledge": [
+        "小数与分数",
+        "不定方程"
+      ],
+      "method": "有限小数条件+整除枚举",
+      "difficulty": 5,
+      "answer": "0.81"
+    },
+    {
+      "no": "87",
+      "knowledge": [
+        "进位制",
+        "不定方程"
+      ],
+      "method": "进位制互化+不定方程",
+      "difficulty": 4,
+      "answer": "20"
+    },
+    {
+      "no": "88",
+      "knowledge": [
+        "分数拆分",
+        "不定方程"
+      ],
+      "method": "单位分数拆分（枚举+约分）",
+      "difficulty": 6,
+      "answer": "1/5，1/15，1/45，1/385"
+    },
+    {
+      "no": "89",
+      "knowledge": [
+        "数的整除特征"
+      ],
+      "method": "枚举修改+整除检验",
+      "difficulty": 4,
+      "answer": "33743"
+    },
+    {
+      "no": "90",
+      "knowledge": [
+        "排列组合",
+        "位值原理"
+      ],
+      "method": "枚举数字组+排序条件",
+      "difficulty": 6,
+      "answer": "7543"
+    },
+    {
+      "no": "91",
+      "knowledge": [
+        "进位制"
+      ],
+      "method": "进位制互化（列方程）",
+      "difficulty": 4,
+      "answer": "248"
+    },
+    {
+      "no": "92",
+      "knowledge": [
+        "位值原理",
+        "分解质因数"
+      ],
+      "method": "分解质因数+枚举",
+      "difficulty": 3,
+      "answer": "606"
+    },
+    {
+      "no": "93",
+      "knowledge": [
+        "带余除法与余数性质"
+      ],
+      "method": "余数性质+枚举除数",
+      "difficulty": 4,
+      "answer": "20"
+    },
+    {
+      "no": "94",
+      "knowledge": [
+        "质数与合数",
+        "不定方程"
+      ],
+      "method": "奇偶分析+因数分解",
+      "difficulty": 4,
+      "answer": "154"
+    },
+    {
+      "no": "95",
+      "knowledge": [
+        "尾数与末位"
+      ],
+      "method": "幂的尾数周期",
+      "difficulty": 2,
+      "answer": "8"
+    },
+    {
+      "no": "96",
+      "knowledge": [
+        "带余除法与余数性质"
+      ],
+      "method": "被除数=除数×商+余数",
+      "difficulty": 2,
+      "answer": "21"
+    },
+    {
+      "no": "97",
+      "knowledge": [
+        "质数与合数",
+        "枚举与分类"
+      ],
+      "method": "枚举+质数判定",
+      "difficulty": 4,
+      "answer": "1090"
+    },
+    {
+      "no": "98",
+      "knowledge": [
+        "容斥原理"
+      ],
+      "method": "容斥+数字计数",
+      "difficulty": 4,
+      "answer": "622"
+    },
+    {
+      "no": "99",
+      "knowledge": [
+        "质数与合数",
+        "枚举与分类"
+      ],
+      "method": "枚举+质数判定",
+      "difficulty": 4,
+      "answer": "52"
+    },
+    {
+      "no": "100",
+      "knowledge": [
+        "完全平方数",
+        "分解质因数"
+      ],
+      "method": "分解质因数奇偶分析+最优化删除",
+      "difficulty": 6,
+      "answer": "5"
+    }
+  ]
+}

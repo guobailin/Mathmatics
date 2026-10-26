@@ -1,0 +1,776 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2024.1 世少赛 · 真题解答</title>
+<link rel="stylesheet" href="../katex/katex.min.css">
+<script defer src="../katex/katex.min.js"></script>
+<script defer src="../katex/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+<style>
+body{font-family:-apple-system,"PingFang SC","Source Han Serif SC",serif;
+max-width:760px;margin:0 auto;padding:24px;line-height:1.8;color:#222}
+h1{border-bottom:2px solid #333;padding-bottom:8px}
+h2{margin-top:1.6em}h3{font-size:1.05em}
+.meta{color:#666;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.example{border:1px solid #ddd;border-radius:8px;padding:12px 16px;margin:14px 0}
+.example h3{margin:.2em 0 .6em}
+.covers{font-size:.75em;color:#888;font-weight:normal;margin-left:1em}
+.problem{background:#f7f7f9;border-radius:6px;padding:8px 12px}
+details{margin-top:.6em}summary{cursor:pointer;color:#36c}
+.answer{color:#b30;font-weight:bold}
+img{max-width:100%;height:auto}
+
+body{max-width:920px;margin:0 auto;padding:26px 22px 64px;background:#fffdf8;
+font-family:-apple-system,"PingFang SC","Source Han Serif SC",serif;line-height:1.85;color:#222}
+.exam-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;
+flex-wrap:wrap;font-size:12px;color:#5f6a64;margin-bottom:22px}
+.exam-nav a{color:#2f6f6b;text-decoration:none;font-weight:600}
+.exam-nav a:hover{text-decoration:underline}
+.exam-kicker{font-size:10.5px;letter-spacing:.16em;color:#2f6f6b;font-weight:700;margin-bottom:4px}
+.exam-body h1{font-size:25px;line-height:1.3;margin:0 0 18px;padding-bottom:12px;border-bottom:2px solid #2f6f6b}
+.exam-body h2{font-size:19px;margin:30px 0 12px;color:#1f2a26}
+.exam-body h3{font-size:15px;margin:24px 0 8px;color:#2f6f6b}
+.exam-body table{width:100%;border-collapse:collapse;margin:14px 0;font-size:12.5px}
+.exam-body th,.exam-body td{border:1px solid #ddd6c8;padding:6px 8px;text-align:left;vertical-align:top}
+.exam-body th{background:#f4efe3;font-weight:700}
+.exam-body blockquote{margin:14px 0;padding:8px 14px;border-left:3px solid #2f6f6b;background:#f7f4ec;color:#4d5651}
+.exam-body code{background:#f1ece1;padding:1px 5px;border-radius:4px;font-size:.9em}
+.exam-body img{max-width:100%;height:auto;display:block;margin:16px auto}
+.exam-body hr{border:0;border-top:1px solid #e4ddcf;margin:22px 0}
+.exam-foot{margin-top:40px;padding-top:16px;border-top:1px solid #e4ddcf;font-size:12px;color:#8a928d}
+.exam-index-head{max-width:920px;margin:0 auto 20px}
+.exam-index-head h1{font-size:28px;margin:0 0 8px}
+.exam-index-head p{margin:0;color:#5f6a64;font-size:13px}
+.exam-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:18px 0 28px}
+.exam-grid a{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:12px 13px;
+border:1px solid #ddd6c8;border-radius:12px;background:#fffdf8;color:#1f2a26;text-decoration:none}
+.exam-grid a:hover{border-color:#2f6f6b}
+.exam-grid b{font-size:12px}.exam-grid span{font-size:10px;color:#5f6a64;white-space:nowrap}
+.exam-table{width:100%;border-collapse:collapse;font-size:12.5px}
+.exam-table th,.exam-table td{border:1px solid #ddd6c8;padding:6px 8px;text-align:left}
+.exam-table th{background:#f4efe3}
+@media(max-width:720px){.exam-grid{grid-template-columns:repeat(2,minmax(0,1fr))}body{padding:18px 15px 50px}}
+@media print{.exam-nav,.exam-foot{display:none}body{max-width:none;padding:0}.exam-grid{display:none}}
+</style></head><body><div class="exam-nav"><a href="../index.html">← 知识地图</a><span><a href="index.html">全部真题</a></span></div><div class="exam-kicker">竞赛真题 · 六年级 · 18 题</div><article class="exam-body"><h1>2023-2024 年度世界少年奥林匹克思维能力地区总测评（2024 年 1 月）· 六年级 · 逐题解答</h1>
+<h2>试卷概览</h2>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>试卷</td>
+<td>2023-2024 年度世界少年奥林匹克思维能力地区总测评（2024 年 1 月）· 六年级试题</td>
+</tr>
+<tr>
+<td>源文件</td>
+<td><code>exam/2024年1月世少赛思维能力地区六年级试题.pdf</code>（共 2 页，只有试题、<strong>没有官方答案页</strong>）</td>
+</tr>
+<tr>
+<td>题量</td>
+<td>18 题：<strong>一、填空题 12 题</strong>（每题 5 分，共 60 分）；<strong>二、解答题 6 题</strong>（12+15+15+15+15+18＝90 分）</td>
+</tr>
+<tr>
+<td>满分/时间</td>
+<td>150 分 / 90 分钟</td>
+</tr>
+<tr>
+<td>说明</td>
+<td>原卷无答案页，本文件全部答案均由独立推导得出；其中<strong>第 10、12 题</strong>受扫描图形/条件辨识限制，答案标【待核对】并给出推理依据</td>
+</tr>
+<tr>
+<td>难度分布</td>
+<td>★2：1 题　★3：6 题　★4：7 题　★5：2 题　★6：1 题　★7：1 题</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>编号约定：填空题按 1～12 编号；解答题 6 题在本文件与 JSON 中顺序编号为 <strong>13～18</strong>（即解答题第 n 题 ↔ 编号 12+n）。</p>
+</blockquote>
+<h3>答案速览</h3>
+<table>
+<thead>
+<tr>
+<th>编号</th>
+<th>题型</th>
+<th>答案</th>
+<th>编号</th>
+<th>题型</th>
+<th>答案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>填空</td>
+<td>$\dfrac{130}{1893}$</td>
+<td>10</td>
+<td>填空</td>
+<td>$50\pi$（≈157.08 平方厘米）【待核对】</td>
+</tr>
+<tr>
+<td>2</td>
+<td>填空</td>
+<td>10 人</td>
+<td>11</td>
+<td>填空</td>
+<td>E 说错了</td>
+</tr>
+<tr>
+<td>3</td>
+<td>填空</td>
+<td>68%</td>
+<td>12</td>
+<td>填空</td>
+<td>【待核对】（小偷速度未给出，见解析）</td>
+</tr>
+<tr>
+<td>4</td>
+<td>填空</td>
+<td>240 天</td>
+<td>13</td>
+<td>解答1</td>
+<td>2000 个</td>
+</tr>
+<tr>
+<td>5</td>
+<td>填空</td>
+<td>72 种</td>
+<td>14</td>
+<td>解答2</td>
+<td>30 天</td>
+</tr>
+<tr>
+<td>6</td>
+<td>填空</td>
+<td>30 分钟</td>
+<td>15</td>
+<td>解答3</td>
+<td>158 人</td>
+</tr>
+<tr>
+<td>7</td>
+<td>填空</td>
+<td>7 小时</td>
+<td>16</td>
+<td>解答4</td>
+<td>370 颗</td>
+</tr>
+<tr>
+<td>8</td>
+<td>填空</td>
+<td>第 3 行第 45 列</td>
+<td>17</td>
+<td>解答5</td>
+<td>10%</td>
+</tr>
+<tr>
+<td>9</td>
+<td>填空</td>
+<td>12 天</td>
+<td>18</td>
+<td>解答6</td>
+<td>（1）144 分钟；（2）257 分钟</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>逐题解答</h2>
+<h2>一、填空题（每题 5 分，共 60 分）</h2>
+<h3>第 1 题</h3>
+<p><strong>题目</strong>：若 $A=\dfrac{1}{1893\times1894}+\dfrac{1}{1894\times1895}+\dfrac{1}{1895\times1896}+\cdots+\dfrac{1}{2021\times2022}+\dfrac{1}{2022\times2023}$，则 $2023A$ 等于 ________。</p>
+<p><strong>答案</strong>：$\dfrac{130}{1893}$</p>
+<p><strong>解析</strong>：<br />
+利用裂项 $\dfrac{1}{n(n+1)}=\dfrac1n-\dfrac1{n+1}$，逐项相消：</p>
+<p>$$A=\left(\frac1{1893}-\frac1{1894}\right)+\left(\frac1{1894}-\frac1{1895}\right)+\cdots+\left(\frac1{2022}-\frac1{2023}\right)=\frac1{1893}-\frac1{2023}.$$</p>
+<p>于是</p>
+<p>$$2023A=\frac{2023}{1893}-\frac{2023}{2023}=\frac{2023-1893}{1893}=\frac{130}{1893}.$$</p>
+<p><strong>验算</strong>：分子 $2023-1893=130$，恰是&quot;武大 130 周年&quot;的 130；用程序精确求和 $2023A=0.068674\cdots=\dfrac{130}{1893}$ ✓（$1893=3\times631$，$130=2\times5\times13$，不可再约）。</p>
+<p><strong>知识点</strong>：分数裂项；公式类计算</p>
+<p><strong>思路/方法</strong>：$\frac{1}{n(n+1)}$ 型裂项相消（&quot;拆成两半、中间全消&quot;）</p>
+<p><strong>难度</strong>：★4</p>
+<hr />
+<h3>第 2 题</h3>
+<p><strong>题目</strong>：2023 年 CMO 参赛选手总计 678 名。我市派出的学生中，男生获奖人数比获奖总人数的 75% 还多 1 人，女生获奖人数是男生获奖人数的 $\dfrac15$，我市男生有 ________ 人获奖。</p>
+<p><strong>答案</strong>：10 人</p>
+<p><strong>解析</strong>：<br />
+设我市获奖总人数为 $T$，男生 $B$ 人、女生 $G$ 人。</p>
+<ul>
+<li>$B=75%T+1=\dfrac34T+1$；</li>
+<li>$G=\dfrac15B$，故 $T=B+G=\dfrac65B$，即 $B=\dfrac56T$。</li>
+</ul>
+<p>联立：$\dfrac56T=\dfrac34T+1\Rightarrow\left(\dfrac56-\dfrac34\right)T=1\Rightarrow\dfrac{T}{12}=1\Rightarrow T=12$，所以 $B=\dfrac56\times12=10$。</p>
+<p><strong>验算</strong>：总 12 人 → 男生 $12\times75%+1=10$ 人，女生 $10\times\frac15=2$ 人，$10+2=12$ ✓。</p>
+<p><strong>知识点</strong>：百分数应用题；和倍问题</p>
+<p><strong>思路/方法</strong>：设总量为&quot;1&quot;（或用字母），把&quot;比 75% 多 1&quot;和&quot;女生是男生的 $\frac15$&quot;两条关系都写成等式</p>
+<p><strong>难度</strong>：★3</p>
+<hr />
+<h3>第 3 题</h3>
+<p><strong>题目</strong>：演唱会看台上有 80% 的人坐着，其余的人站了起来。中场休息后，站着的人中的 20% 坐下，同时原来坐着的人中的 20% 站起来了。这时坐着的人占看台上总人数的 ________%。</p>
+<p><strong>答案</strong>：68%</p>
+<p><strong>解析</strong>：<br />
+设总人数为 100 份。</p>
+<ul>
+<li>原来：坐 80 份，站 20 份；</li>
+<li>中场：站着的 $20%$ 坐下 $=20\times20%=4$ 份；坐着的 $20%$ 站起 $=80\times20%=16$ 份；</li>
+<li>现在坐着：$80-16+4=68$ 份。</li>
+</ul>
+<p><strong>验算</strong>：现在站着 $20-4+16=32$ 份，$68+32=100$ ✓；也可以看成&quot;坐的人变化量 = 站着坐下的人 − 坐着站起的人 = 4−16 = −12&quot;，$80-12=68$ ✓。</p>
+<p><strong>知识点</strong>：百分数应用题</p>
+<p><strong>思路/方法</strong>：&quot;设总人数为 100 份&quot;，把百分数变成份数直接加减</p>
+<p><strong>难度</strong>：★2</p>
+<hr />
+<h3>第 4 题</h3>
+<p><strong>题目</strong>：一台时钟每天快 15 分钟，另一台每天慢 24 分钟。刘师傅将两台时钟同时调到标准时间，则至少需要 ________ 天才能同时显示出标准时间。</p>
+<p><strong>答案</strong>：240 天</p>
+<p><strong>解析</strong>：<br />
+时钟每过 12 小时（720 分钟）指针回到同一位置，所以&quot;显示标准时间&quot;要求<strong>累计误差是 720 分钟的整数倍</strong>。</p>
+<ul>
+<li>快钟：$15t\equiv0\pmod{720}$，最小 $t=\dfrac{720}{15}=48$（天）；</li>
+<li>慢钟：$24t\equiv0\pmod{720}$，最小 $t=\dfrac{720}{24}=30$（天）。</li>
+</ul>
+<p>两者同时满足：$t$ 是 48 与 30 的公倍数，最小为 $\mathrm{lcm}(48,30)=240$（天）。</p>
+<p><strong>验算</strong>：240 天后快钟累计快 $15\times240=3600$ 分钟 $=5$ 个 12 小时，慢钟累计慢 $24\times240=5760$ 分钟 $=8$ 个 12 小时，两者都回到标准时间 ✓；且 48、30 的最小公倍数确实是 240 ✓。</p>
+<blockquote>
+<p>注：本题按<strong>钟面 12 小时制</strong>理解（普通时钟指针每 12 小时回到同一位置）。若按&quot;24 小时显示&quot;理解，则误差要凑成 1440 分钟的整数倍，答案会变为 480 天，不符常规出题意图。</p>
+</blockquote>
+<p><strong>知识点</strong>：最小公倍数与最大公因数；时间问题</p>
+<p><strong>思路/方法</strong>：把&quot;显示标准时间&quot;翻译成&quot;误差是 12 小时的整数倍&quot;，再分别求最小天数、取公倍数</p>
+<p><strong>难度</strong>：★4</p>
+<hr />
+<h3>第 5 题</h3>
+<p><strong>题目</strong>：短跑队有 9 名运动员，其中 2 人起跑技术好，另外有 3 人跑弯道技术好，还有 2 人冲刺技术好。要从中选 4 人组队参加 $4\times100$ 米接力赛，为使每人充分发挥特长，共有 ________ 种组队方式。（注：第一棒起跑，第二棒跑直道，第三棒跑弯道，第四棒冲刺。）</p>
+<p><strong>答案</strong>：72 种</p>
+<p><strong>解析</strong>：<br />
+四个棒次的分工：第一棒必须从 2 名&quot;起跑好&quot;的人中选；第三棒从 3 名&quot;弯道好&quot;的人中选；第四棒从 2 名&quot;冲刺好&quot;的人中选；第二棒（直道）没有特长要求，从剩下的人中选。</p>
+<ul>
+<li>三个特长棒次：$2\times3\times2=12$ 种；</li>
+<li>第二棒：已用掉 3 人，还剩 $9-3=6$ 人，6 种。</li>
+</ul>
+<p>共 $12\times6=72$ 种。</p>
+<p><strong>验算</strong>：四人分配到四个不同棒次，棒次不同则局面不同，直接用乘法原理无重复；$2\times3\times2\times6=72$ ✓。</p>
+<p><strong>知识点</strong>：加乘原理；排列组合</p>
+<p><strong>思路/方法</strong>：先安排有特长要求的三个棒次，再安排无要求的第二棒（分步乘法原理）</p>
+<p><strong>难度</strong>：★3</p>
+<hr />
+<h3>第 6 题</h3>
+<p><strong>题目</strong>：运送一批快递。途中若遇到下雨，车速会比原计划速度减少 $\dfrac14$，结果比原计划晚 50 分钟送达。若途中没有下雨，且车速比原计划速度增加 $\dfrac14$，则会比原计划时间提前 ________ 分钟送达。</p>
+<p><strong>答案</strong>：30 分钟</p>
+<p><strong>解析</strong>：<br />
+路程不变，<strong>时间与速度成反比</strong>。设原计划用时 $t$ 分钟。</p>
+<ul>
+<li>速度减少 $\frac14$（变为原来的 $\frac34$）→ 时间变为原来的 $\frac43$，多用 $\frac13t=50$，故 $t=150$ 分钟；</li>
+<li>速度增加 $\frac14$（变为原来的 $\frac54$）→ 时间变为原来的 $\frac45$，少用 $\left(1-\frac45\right)t=\frac15\times150=30$ 分钟。</li>
+</ul>
+<p><strong>验算</strong>：原速 $v$、原时 150 分钟；减速到 $\frac34v$ 时用时 $\frac{150}{3/4}=200$ 分钟，晚 50 分钟 ✓；加速到 $\frac54v$ 时用时 120 分钟，提前 30 分钟 ✓。</p>
+<p><strong>知识点</strong>：行程问题中的比例关系（时间与速度成反比）</p>
+<p><strong>思路/方法</strong>：抓&quot;路程一定&quot;，速度比 ↔ 时间比（倒数），再用同一原计划时间 $t$ 换算</p>
+<p><strong>难度</strong>：★3</p>
+<hr />
+<h3>第 7 题</h3>
+<p><strong>题目</strong>：甲、乙两车间一起完成一批汽车配件共用 $2\dfrac13$ 小时。现在按先让甲车间生产 1 小时、然后乙车间再生产 1 小时，如此下去，刚好整数个小时完成。如果这批汽车配件只由甲车间来完成，需要 ________ 小时。</p>
+<p><strong>答案</strong>：7 小时</p>
+<p><strong>解析</strong>：<br />
+设甲、乙每小时各完成总量的 $a,b$。由&quot;合做 $2\frac13$ 小时完成&quot;：</p>
+<p>$$a+b=\frac{1}{2\frac13}=\frac{3}{7}.$$</p>
+<p>轮流做（甲 1 小时、乙 1 小时……）&quot;刚好整数个小时完成&quot;，设共做了 $2k$ 或 $2k+1$ 小时：</p>
+<ul>
+<li>若 $2k$ 小时完成：$k(a+b)=1\Rightarrow k=\frac73$ 不是整数，不行；</li>
+<li>若 $2k+1$ 小时完成（最后一小时是甲做）：$k(a+b)+a=1\Rightarrow a=1-\frac{3k}{7}$。</li>
+</ul>
+<p>又需 $a&lt;a+b=\frac37$（甲一小时做的少于两人合做一小时），即 $1-\frac{3k}{7}&lt;\frac37\Rightarrow 7-3k&lt;3\Rightarrow k&gt;\frac43\Rightarrow k\ge2$。</p>
+<p>取 $k=2$：$a=1-\frac67=\frac17$，$b=\frac37-\frac17=\frac27$。检验：4 小时后完成 $2\times\frac37=\frac67$，第 5 小时甲做 $\frac17$，刚好在整 5 小时完成 ✓。</p>
+<p>所以甲单独完成需要 $1\div\frac17=7$ 小时。</p>
+<p><strong>验算</strong>：甲 $1/7$、乙 $2/7$，合做 $\frac{1}{3/7}=2\frac13$ 小时 ✓；轮流做 5 小时完成 ✓（且不会提前完成）。</p>
+<p><strong>知识点</strong>：工程问题；列方程解应用题</p>
+<p><strong>思路/方法</strong>：设效率为未知数 + 用&quot;整数小时&quot;列方程，再用&quot;甲效率必须小于合效率&quot;筛选</p>
+<p><strong>难度</strong>：★4</p>
+<hr />
+<h3>第 8 题</h3>
+<p><strong>题目</strong>：将连续的正整数按下图规律排列，则 2023 所在的位置是第 ________ 行第 ________ 列。</p>
+<p>（排列规律：第一行 1、2、9、10……；第二行 4、3、8、11……；第三行 5、6、7、12……；第四行 16、15、14、13……；第五行 17……）</p>
+<p><strong>答案</strong>：第 3 行第 45 列</p>
+<p><strong>解析</strong>：<br />
+这是&quot;方螺旋&quot;数阵：第 $k$ 层（$2k-1$ 个数）从上一个平方数数到 $k^2$，且</p>
+<ul>
+<li>$k$ 为奇数时，$k^2$ 位于<strong>第 1 行第 $k$ 列</strong>，本层从第 $k$ 行第 1 列开始；</li>
+<li>$k$ 为偶数时，$k^2$ 位于<strong>第 $k$ 行第 1 列</strong>，本层从第 1 行第 $k$ 列开始。</li>
+</ul>
+<p>因为 $44^2=1936&lt;2023&lt;2025=45^2$，2023 在第 45 层。45 是奇数：$45^2=2025$ 在第 1 行第 45 列，本层从 $(45,1)$ 上的 1937 开始沿第 45 行向右到 $(45,45)=1981$，再沿第 45 列向上到 $(1,45)=2025$。</p>
+<p>2023 比 2025 小 2，沿第 45 列向下退 2 格：$(1,45)=2025$、$(2,45)=2024$、$(3,45)=2023$。</p>
+<p><strong>验算</strong>：$(3,45)=2023$；同层 $(45,45)=1981$，从 $(45,45)$ 向上 $45-3=42$ 格 → $1981+42=2023$ ✓。</p>
+<p><strong>知识点</strong>：数列与数表（方螺旋规律）；图形找规律</p>
+<p><strong>思路/方法</strong>：先找&quot;平方数的位置规律&quot;（奇偶层不同），再用&quot;同层内相差多少格&quot;定位</p>
+<p><strong>难度</strong>：★4</p>
+<hr />
+<h3>第 9 题</h3>
+<p><strong>题目</strong>：A、B、C 三座储气库容积比是 $1:2:6$，且全部装满。甲、乙两船运空 A 库需 24 天；乙、丙两船运空 B 库需 40 天；甲、丙两船运空 C 库需 80 天。假如甲、乙、丙三船都去 A 库，需要 ________ 天才能运空 A 库。</p>
+<p><strong>答案</strong>：12 天</p>
+<p><strong>解析</strong>：<br />
+把三库容积看作 $A=1$、$B=2$、$C=6$（份），设甲、乙、丙每天各运 $a,b,c$ 份，则</p>
+<p>$$24(a+b)=1\Rightarrow a+b=\frac1{24};\qquad 40(b+c)=2\Rightarrow b+c=\frac1{20};\qquad 80(a+c)=6\Rightarrow a+c=\frac3{40}.$$</p>
+<p>三式相加：$2(a+b+c)=\dfrac1{24}+\dfrac1{20}+\dfrac3{40}=\dfrac{5+6+9}{120}=\dfrac{20}{120}=\dfrac16$，所以 $a+b+c=\dfrac1{12}$。</p>
+<p>三船同运 A 库：$1\div\dfrac1{12}=12$ 天。</p>
+<p><strong>验算</strong>：$a+b+c=\frac1{12}$；由三式可解出 $a=\frac1{12}-\frac1{20}=\frac1{30}$、$b=\frac1{12}-\frac3{40}=\frac1{120}$、$c=\frac1{12}-\frac1{24}=\frac1{24}$，代回三式均成立 ✓。</p>
+<p><strong>知识点</strong>：工程问题（多对象效率）；比的应用</p>
+<p><strong>思路/方法</strong>：按容积比设&quot;份数&quot;统一总量，再&quot;三式相加除以 2&quot;求效率和</p>
+<p><strong>难度</strong>：★4</p>
+<hr />
+<h3>第 10 题</h3>
+<p><strong>题目</strong>：图中阴影部分的面积是 ________ 平方厘米。（图中圆上标注&quot;20 厘米&quot;；圆周上一条水平直径 $AB$，从 $A$、$B$ 向圆的最低点 $P$ 引两条弦，$P$ 处标有直角符号；圆外上方左右各有一片由圆弧围成的&quot;月牙&quot;，圆内下方两条弦与圆弧之间各有一条弓形，均为阴影。）</p>
+<p><strong>答案</strong>：$50\pi\approx157.08$ 平方厘米（若 $\pi$ 取 3.14 则为 157）　<strong>【待核对】</strong></p>
+<p><strong>解析</strong>：</p>
+<ul>
+<li>由 $P$ 处标直角，$AB$ 是直径（直径所对圆周角为直角），圆直径 $20$，半径 $R=10$。</li>
+<li><strong>下方两条弓形</strong>：$P$ 为圆的最低点，$\angle AOP=\angle BOP=90^\circ$，每条弓形是 $90^\circ$ 圆心角对应的弓形，面积<br />
+$$S_{\text{弓}}=\frac14\pi R^2-\frac12R^2=25\pi-50,$$<br />
+两条共 $50\pi-100$。</li>
+<li><strong>上方两片&quot;月牙&quot;</strong>：以 $AB$ 为斜边的直角三角形 $APB$（$P$ 在圆上）的两条直角边 $AP$、$PB$ 向外各作半圆，半圆与大圆之间围成的正是&quot;希波克拉底月牙&quot;。由经典结论：<strong>两片月牙面积之和 = 该直角三角形的面积</strong>。<br />
+$$\triangle APB:\ \angle APB=90^\circ,\ AP=PB=10\sqrt2\ (\text{对称摆放}),\ S_\triangle=\frac12\times10\sqrt2\times10\sqrt2=100.$$</li>
+<li>所以阴影总面积<br />
+$$S=S_{\text{月牙}}+S_{\text{弓}}=100+(50\pi-100)=50\pi\approx157.08\ (\text{平方厘米}).$$</li>
+</ul>
+<p><strong>验算</strong>：$50\pi\approx157.08$；若 $\pi=3.14$ 得 $157$。答案中 $\pi$ 恰好消去一半、结果干净，符合竞赛题设计；且&quot;两月牙之和 = 直角三角形面积&quot;是标准结论（月牙 $=\frac12\pi\left(\frac{AP}{2}\right)^2-\left(\frac14\pi R^2-\frac12R^2\right)$，两条相加即得 $\frac12 AP\cdot PB$）。</p>
+<blockquote>
+<p><strong>【待核对】</strong>：原卷为扫描件、该图仅约 230×140 像素，无法百分百确认&quot;上方两片是由 $AP$、$PB$ 向外作半圆形成的月牙&quot;。若上方两弧不是这种月牙（例如是别的弧），答案会变。<strong>建议对照原卷图形复核</strong>；本答案 50π 是按最自然、且结果最工整的读法给出。</p>
+</blockquote>
+<p><strong>知识点</strong>：圆与扇形；组合图形的面积（弓形与月牙）；面积综合</p>
+<p><strong>思路/方法</strong>：希波克拉底月牙（两月牙面积和 = 直角三角形面积）+ 弓形面积公式；$\pi$ 项相互抵消</p>
+<p><strong>难度</strong>：★5</p>
+<hr />
+<h3>第 11 题</h3>
+<p><strong>题目</strong>：今天上午有语文、数学、美术、音乐、体育、科学中的三门课，A、B、C、D、E 五人争论是哪三门。<br />
+A 说：&quot;肯定没有音乐课。&quot;<br />
+B 说：&quot;有语文课和体育课。&quot;<br />
+C 说：&quot;音乐课和数学课只有一门。&quot;<br />
+D 说：&quot;没有科学课和美术课。&quot;<br />
+E 说：&quot;C、D 中有一人说错了。&quot;<br />
+其中只有一人说错了。________ 说错了。</p>
+<p><strong>答案</strong>：E 说错了</p>
+<p><strong>解析</strong>：<br />
+对 6 门课中任选 3 门的 20 种情况逐一检验（下表只列判断要点）：只有&quot;语文、数学、体育&quot;这一种情况满足&quot;恰好一人说错&quot;：</p>
+<ul>
+<li>A：&quot;没有音乐课&quot; ——音乐确实没有 ✔（对）</li>
+<li>B：&quot;有语文也有体育&quot; ——两门都有 ✔（对）</li>
+<li>C：&quot;音乐和数学只有一门&quot; ——数学有、音乐没有，正好一门 ✔（对）</li>
+<li>D：&quot;没有科学、没有美术&quot; ——两者都没有 ✔（对）</li>
+<li>E：&quot;C、D 中有一人说错了&quot; ——C、D 都对了，所以 E 这句话本身错了 ✘</li>
+</ul>
+<p>于是只有 E 一人说错，满足题设。</p>
+<p><strong>验算</strong>：其余 19 种组合的说错人数都不是 1（例如&quot;语文、数学、美术&quot;时 B、D 错两人；&quot;语文、音乐、体育&quot;时 A、E 错两人），所以答案唯一：E。</p>
+<p><strong>知识点</strong>：逻辑推理；枚举与分类</p>
+<p><strong>思路/方法</strong>：把三门课的可能组合全部枚举，统计每句话真假，用&quot;恰好一人说错&quot;筛选</p>
+<p><strong>难度</strong>：★4</p>
+<hr />
+<h3>第 12 题</h3>
+<p><strong>题目</strong>：圆形湖泊周长 1200 米，除了 A 点和 B 点之外，每隔 100 米就有一只蜜蜂，一共十只蜜蜂，它们按照顺时针的方向飞行，各个蜜蜂的速度均标在了图上（图上标注：A 在湖的最上方、B 在正下方；从 A 顺时针数第 1、2、3、4、5 个点上的蜜蜂速度依次为 1、2、3、4、5 米/秒，从 B 顺时针数第 1、2、3、4 个点上的蜜蜂速度为 7、8、9、10、11 米/秒，即位于距 A 点 $100k$ 米处的蜜蜂速度为 $k$ 米/秒）。小偷从 A 点出发沿湖顺时针逃到位于 B 点的家中。只要被沿途的蜜蜂碰到，小偷就会被蛰一下。请问：小偷最少会被 ________ 只蜜蜂蛰到。</p>
+<p><strong>答案</strong>：【待核对】——题面未给出小偷的奔跑速度，答案依赖于小偷的策略；若小偷以约 10 米/秒匀速奔跑，最少被 <strong>3</strong> 只蜜蜂蛰到（位于 100 米、200 米、300 米处的三只）。</p>
+<p><strong>解析</strong>：<br />
+把位置按&quot;从 A 沿顺时针的距离&quot;记（0～1200 米），A 在 0 米、B 在 600 米；蜜蜂位置与速度：</p>
+<table>
+<thead>
+<tr>
+<th>位置（米）</th>
+<th>100</th>
+<th>200</th>
+<th>300</th>
+<th>400</th>
+<th>500</th>
+<th>700</th>
+<th>800</th>
+<th>900</th>
+<th>1000</th>
+<th>1100</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>速度（米/秒）</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+<td>10</td>
+<td>11</td>
+</tr>
+</tbody>
+</table>
+<p>设小偷匀速 $u$ 米/秒，从 A 跑到 B 用时 $T=600/u$。蜜蜂 $i$（位置 $p$、速度 $v$）与小偷相遇当且仅当</p>
+<ul>
+<li>若 $v&lt;u$（小偷更快）：追上时间 $t=\dfrac{p}{u-v}$（需 $t\le T$）；</li>
+<li>若 $v&gt;u$（蜜蜂更快）：蜜蜂绕一圈追上时间 $t=\dfrac{1200-p}{v-u}$（需 $t\le T$）。</li>
+</ul>
+<p>逐个 $u$ 计算可得：</p>
+<table>
+<thead>
+<tr>
+<th>小偷速度 $u$（米/秒）</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th><strong>10</strong></th>
+<th>12</th>
+<th>15</th>
+<th>20</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>被蛰只数</td>
+<td>5</td>
+<td>6</td>
+<td>5</td>
+<td>4</td>
+<td>4</td>
+<td><strong>3</strong></td>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p>最小为 <strong>3</strong>（$u\approx9.5\sim11$ 时）：只被 100、200、300 米处的三只蜜蜂蛰到；400 米、500 米处的蜜蜂速度比小偷慢、又在小偷前方，小偷跑到 B 时它们还没被追上；身后的 7～11 米/秒的蜜蜂也来不及绕一圈追上小偷。</p>
+<p><strong>另一条线索</strong>：由于&quot;位置 $100k$ 米处的蜜蜂速度为 $k$ 米/秒&quot;，在 $t=500$ 秒时，10 只蜜蜂恰好都位于 A 点或 B 点（$100k(1+5)=600k$，$k$ 偶在 A、奇在 B）。这像是题目刻意设计的巧合，暗示原题可能还缺一个条件（例如小偷的速度，或&quot;小偷与蜜蜂同时出发时的具体规则&quot;）。</p>
+<blockquote>
+<p><strong>【待核对】</strong>：题目原文没有给出小偷的速度，&quot;最少&quot;缺少比较基准，严格说不能唯一作答。上面给出的是&quot;小偷匀速奔跑、可自选速度&quot;下的最小值 3。<strong>建议核对原卷是否有遗漏条件或官方答案</strong>（例如原题可能规定小偷速度为某值）。</p>
+</blockquote>
+<p><strong>知识点</strong>：行程问题（环形、追及）；最值问题；环形跑道</p>
+<p><strong>思路/方法</strong>：把&quot;相遇&quot;翻译成&quot;追及&quot;，按速度大小分两种情况算追及时间，再用&quot;追上时刻 ≤ 到达时间&quot;判断是否被蛰</p>
+<p><strong>难度</strong>：★6</p>
+<hr />
+<h2>二、解答题（12+15+15+15+15+18＝90 分）</h2>
+<h3>第 13 题（解答题第 1 题，12 分）</h3>
+<p><strong>题目</strong>：核动力集装箱船上有甲、乙两种货箱，它们的个数比是 $3:8$。如果每次搬运甲货箱 150 个、乙货箱 360 个，若干次后，甲货箱刚好搬完，乙货箱还剩 200 个。乙货箱原有多少个？</p>
+<p><strong>答案</strong>：2000 个</p>
+<p><strong>解析</strong>：<br />
+设甲 $3k$ 个、乙 $8k$ 个，共搬 $n$ 次。</p>
+<ul>
+<li>甲搬完：$150n=3k\Rightarrow k=50n$；</li>
+<li>乙搬了 $360n$ 个，还剩 200：$360n=8k-200=400n-200\Rightarrow40n=200\Rightarrow n=5$。</li>
+</ul>
+<p>所以 $k=50\times5=250$，乙原有 $8k=8\times250=2000$ 个。</p>
+<p><strong>验算</strong>：甲 $750$ 个（$150\times5$ 搬完 ✓）；乙 $2000$ 个，搬 $360\times5=1800$ 个，剩 $200$ 个 ✓；$750:2000=3:8$ ✓。</p>
+<p><strong>知识点</strong>：比的应用；列方程解应用题</p>
+<p><strong>思路/方法</strong>：设份数 $k$ + 设搬运次数 $n$，两条信息各列一式</p>
+<p><strong>难度</strong>：★3</p>
+<hr />
+<h3>第 14 题（解答题第 2 题，15 分）</h3>
+<p><strong>题目</strong>：甲、乙两个车间合作赶制一批军大衣，15 天可以完成。如果甲车间单独做 4 天，乙车间单独做 3 天，可以完成这批军大衣的 $\dfrac{7}{30}$。现在由甲车间单独做需要多少天完成？</p>
+<p><strong>答案</strong>：30 天</p>
+<p><strong>解析</strong>：<br />
+设甲、乙每天各完成总量的 $a,b$。</p>
+<p>$$15(a+b)=1\Rightarrow a+b=\frac1{15};\qquad 4a+3b=\frac7{30}.$$</p>
+<p>由 $b=\frac1{15}-a$ 代入：$4a+3\left(\frac1{15}-a\right)=\frac7{30}\Rightarrow a+\frac15=\frac7{30}\Rightarrow a=\frac7{30}-\frac6{30}=\frac1{30}$。</p>
+<p>所以甲单独做要 $1\div\frac1{30}=30$ 天。</p>
+<p><strong>验算</strong>：$a=\frac1{30}$，$b=\frac1{30}$；$15\left(\frac1{30}+\frac1{30}\right)=1$ ✓；$4\times\frac1{30}+3\times\frac1{30}=\frac7{30}$ ✓。</p>
+<p><strong>知识点</strong>：工程问题；列方程解应用题</p>
+<p><strong>思路/方法</strong>：设效率、列二元一次方程组（消元）</p>
+<p><strong>难度</strong>：★3</p>
+<hr />
+<h3>第 15 题（解答题第 3 题，15 分）</h3>
+<p><strong>题目</strong>：解放军某部四支队伍参加救灾。从第一队抽调一半人去支援第二队，抽调 35 人支援第三队，又抽调剩下的一半支援第四队，后来又调进 8 人，这时第一队还有 30 人。第一队原来有多少人？</p>
+<p><strong>答案</strong>：158 人</p>
+<p><strong>解析</strong>：<br />
+设第一队原有 $x$ 人，按顺序追踪：</p>
+<ol>
+<li>抽调一半：剩 $\dfrac x2$ 人；</li>
+<li>再抽 35 人：剩 $\dfrac x2-35$ 人；</li>
+<li>又抽剩下的一半：剩 $\dfrac12\left(\dfrac x2-35\right)$ 人；</li>
+<li>调进 8 人后为 30 人：</li>
+</ol>
+<p>$$\frac12\left(\frac x2-35\right)+8=30\Rightarrow\frac12\left(\frac x2-35\right)=22\Rightarrow\frac x2-35=44\Rightarrow\frac x2=79\Rightarrow x=158.$$</p>
+<p><strong>验算</strong>：158 → 抽一半剩 79 → 抽 35 剩 44 → 抽一半剩 22 → 调进 8 得 30 ✓。</p>
+<p><strong>知识点</strong>：还原问题（逆推法）；列方程解应用题</p>
+<p><strong>思路/方法</strong>：顺着操作列式（或从最后一步倒推）</p>
+<p><strong>难度</strong>：★3</p>
+<hr />
+<h3>第 16 题（解答题第 4 题，15 分）</h3>
+<p><strong>题目</strong>：圣诞老人的袋子里装有巧克力和水果糖，数量比为 $22:15$。给花花一把巧克力后，袋中巧克力与水果糖之比为 $4:3$；随后又给亮亮一把水果糖，袋中巧克力与水果糖之比为 $5:3$。已知亮亮拿到的水果糖比花花的巧克力多 10 颗，那么袋子里原来共有巧克力和水果糖多少颗？</p>
+<p><strong>答案</strong>：370 颗</p>
+<p><strong>解析</strong>：<br />
+设原有巧克力 $22u$ 颗、水果糖 $15u$ 颗（$u$ 为每份数），花花拿巧克力 $x$ 颗、亮亮拿水果糖 $y$ 颗。</p>
+<ol>
+<li>给花花后：$\dfrac{22u-x}{15u}=\dfrac43\Rightarrow66u-3x=60u\Rightarrow3x=6u\Rightarrow x=2u$；</li>
+<li>给亮亮后（此时巧克力为 $22u-2u=20u$）：$\dfrac{20u}{15u-y}=\dfrac53\Rightarrow60u=75u-5y\Rightarrow5y=15u\Rightarrow y=3u$；</li>
+<li>$y-x=10\Rightarrow3u-2u=u=10$。</li>
+</ol>
+<p>原来共有 $22u+15u=37u=37\times10=370$ 颗。</p>
+<p><strong>验算</strong>：原 $220:150$；给花花 20 颗巧克力 → $200:150=4:3$ ✓；再给亮亮 30 颗水果糖 → $200:120=5:3$ ✓；$30-20=10$ ✓。</p>
+<p><strong>知识点</strong>：比的应用；列方程解应用题</p>
+<p><strong>思路/方法</strong>：设份数 $u$ + 两个&quot;比的变化&quot;各列一式，最后用差求 $u$</p>
+<p><strong>难度</strong>：★4</p>
+<hr />
+<h3>第 17 题（解答题第 5 题，15 分）</h3>
+<p><strong>题目</strong>：老师让小糊涂在&quot;给他的一瓶盐水&quot;里加入 15% 的盐水 200 克。小糊涂错加成了 200 克水。小机灵说：&quot;你再加入 300 克 20% 的盐水，混合均匀，然后再倒掉 300 克就好了。&quot;老师让小糊涂配成的盐水浓度是多少？</p>
+<p><strong>答案</strong>：10%</p>
+<p><strong>解析</strong>：<br />
+设原来那瓶盐水有 $m$ 克、浓度为 $p$（含盐 $mp$ 克）。&quot;加 200 克水 + 加 300 克 20% 盐水 + 倒掉 300 克&quot;最终：</p>
+<ul>
+<li>质量：$m+200+300-300=m+200$（与老师要求的最终质量 $m+200$ 相同 ✓）；</li>
+<li>倒溶液不改变浓度，最终含盐：$mp+300\times20%=mp+60$，最终质量 $m+500$（倒之前），所以最终浓度<br />
+$$c=\frac{mp+60}{m+500}.$$</li>
+</ul>
+<p>老师要求的浓度（加 200 克 15% 盐水）：<br />
+$$c_0=\frac{mp+200\times15%}{m+200}=\frac{mp+30}{m+200}.$$</p>
+<p>要&quot;配成一样&quot;，令 $c=c_0$：</p>
+<p>$$(mp+60)(m+200)=(mp+30)(m+500)$$<br />
+$$200mp+60m+12000=500mp+30m+15000\Rightarrow 30m-300mp=3000\Rightarrow m(1-10p)=100.$$</p>
+<p>代入化简 $c_0$：<br />
+$$mp+30=\frac{100p}{1-10p}+30=\frac{30-200p}{1-10p},\qquad m+200=\frac{300-2000p}{1-10p},$$<br />
+$$c_0=\frac{30-200p}{300-2000p}=\frac{30-200p}{10(30-200p)}=\frac1{10}=10%.$$</p>
+<p><strong>验算</strong>（取具体例子）：若原瓶是 $200$ 克 $5%$ 的盐水（$m=200$ 满足 $m(1-10p)=200\times0.5=100$ ✓）：</p>
+<ul>
+<li>老师方案：加 200 克 15% → 400 克、含盐 $10+30=40$ → $10%$ ✓；</li>
+<li>小糊涂方案：加 200 克水 → 400 克、含盐 10；加 300 克 20% → 700 克、含盐 $10+60=70$ → $10%$；倒掉 300 克 → 400 克，浓度仍是 $10%$ ✓。</li>
+</ul>
+<p><strong>知识点</strong>：浓度问题；列方程解应用题</p>
+<p><strong>思路/方法</strong>：用&quot;盐量÷溶液量&quot;分别表示两种做法，令浓度相等；倒出溶液浓度不变这一关键性质</p>
+<p><strong>难度</strong>：★5</p>
+<hr />
+<h3>第 18 题（解答题第 6 题，18 分）</h3>
+<p><strong>题目</strong>：有 10 根大小相同的进水管给 A、B 两个水池注水，原计划用 4 根进水管给 A 水池注水，其余 6 根给 B 水池注水，那么 5 小时可同时注满。因为发现 A 水池以一定的速度漏水，所以改为各用 5 根进水管给两水池注水，结果也是同时注满。<br />
+（1）如果用 10 根进水管给漏水的 A 水池注水，需要多少分钟注满？<br />
+（2）如果增加 4 根同样的进水管，A 水池仍然漏水，并且要求在注水过程中每个水池的进水管数量保持不变，那么要把两个水池注满最少需要多少分钟？（结果四舍五入到个位）</p>
+<p><strong>答案</strong>：（1）144 分钟；（2）257 分钟</p>
+<p><strong>解析</strong>：<br />
+设每根进水管每小时注水 1 份，A 池容积 $A$、B 池容积 $B$、A 池每小时漏掉 $l$ 份。</p>
+<p><strong>（1）先求 A、B 与 $l$：</strong></p>
+<ul>
+<li>原计划（未计入漏水时）4 根 5 小时注满 A、6 根 5 小时注满 B：$A=4\times5=20$，$B=6\times5=30$；</li>
+<li>改为各 5 根后同时注满：B 池 5 根需 $\dfrac{30}{5}=6$ 小时；同一时刻 A 池注满，故<br />
+$$(5-l)\times6=20\Rightarrow5-l=\frac{10}{3}\Rightarrow l=\frac53\ (\text{份/小时}).$$</li>
+<li>10 根进水管给漏水的 A 池：净注水速度 $10-\frac53=\frac{25}{3}$，需<br />
+$$\frac{20}{25/3}=\frac{60}{25}=2.4\ \text{小时}=144\ \text{分钟}.$$</li>
+</ul>
+<p><strong>（2）14 根管 分给两池（管数固定），使&quot;都注满&quot;的最短总时间最小：</strong><br />
+设分给 A 池 $x$ 根、B 池 $14-x$ 根，则</p>
+<p>$$t_A=\frac{20}{x-\frac53}\ (x&gt;\tfrac53),\qquad t_B=\frac{30}{14-x},\qquad T=\max(t_A,t_B).$$</p>
+<p>逐个检验 $x=2,3,\dots,13$：</p>
+<table>
+<thead>
+<tr>
+<th>$x$</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th><strong>7</strong></th>
+<th>8</th>
+<th>9</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$t_A$（小时）</td>
+<td>8.57</td>
+<td>6</td>
+<td>4.62</td>
+<td><strong>3.75</strong></td>
+<td>3.16</td>
+<td>2.73</td>
+</tr>
+<tr>
+<td>$t_B$（小时）</td>
+<td>3</td>
+<td>3.33</td>
+<td>3.75</td>
+<td><strong>4.29</strong></td>
+<td>5</td>
+<td>6</td>
+</tr>
+<tr>
+<td>$T$（小时）</td>
+<td>8.57</td>
+<td>6</td>
+<td>4.62</td>
+<td><strong>4.29</strong></td>
+<td>5</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+<p>最小在 $x=7$（A、B 各 7 根）：$T=\dfrac{30}{7}$ 小时 $=\dfrac{30}{7}\times60\approx257.1$ 分钟，四舍五入为 <strong>257 分钟</strong>。</p>
+<p><strong>验算</strong>：<br />
+（1）$x=10$ 根时 A 净速度 $\frac{25}{3}$，$20\div\frac{25}{3}=2.4$ 小时 $=144$ 分钟 ✓。<br />
+（2）$x=7$：A 需 $\dfrac{20}{7-\frac53}=\dfrac{20}{16/3}=3.75$ 小时 $=225$ 分钟；B 需 $\dfrac{30}{7}$ 小时 $\approx257.1$ 分钟。两池同时进行、互不影响，总时间取较大者 $257.1$ 分钟，约为 257 分钟 ✓。取 $x=6$ 或 $x=8$ 都更大，故 7/7 分配最优。</p>
+<p><strong>知识点</strong>：工程问题（含漏水）；最值问题；统筹优化</p>
+<p><strong>思路/方法</strong>：（1）&quot;原计划&quot;求容积、&quot;改 5 根&quot;求漏水速度；（2）枚举管数分配，取两池时间的较大者的最小值（&quot;短板&quot;思想）</p>
+<p><strong>难度</strong>：★7</p>
+<hr />
+<h2>知识点与思路总结表</h2>
+<table>
+<thead>
+<tr>
+<th>编号</th>
+<th>知识点</th>
+<th>方法</th>
+<th>难度</th>
+<th>答案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>分数裂项、公式类计算</td>
+<td>$\frac1{n(n+1)}=\frac1n-\frac1{n+1}$ 相消</td>
+<td>★4</td>
+<td>$\frac{130}{1893}$</td>
+</tr>
+<tr>
+<td>2</td>
+<td>百分数应用题、和倍问题</td>
+<td>设总量，两条关系联立</td>
+<td>★3</td>
+<td>10 人</td>
+</tr>
+<tr>
+<td>3</td>
+<td>百分数应用题</td>
+<td>设 100 份，直接加减</td>
+<td>★2</td>
+<td>68%</td>
+</tr>
+<tr>
+<td>4</td>
+<td>最小公倍数、时间问题</td>
+<td>误差须为 12 小时整数倍，取 lcm</td>
+<td>★4</td>
+<td>240 天</td>
+</tr>
+<tr>
+<td>5</td>
+<td>加乘原理、排列组合</td>
+<td>先排有特长要求的三个棒次</td>
+<td>★3</td>
+<td>72 种</td>
+</tr>
+<tr>
+<td>6</td>
+<td>行程中的比例（时间与速度成反比）</td>
+<td>路程一定，速度比 ↔ 时间比</td>
+<td>★3</td>
+<td>30 分钟</td>
+</tr>
+<tr>
+<td>7</td>
+<td>工程问题、列方程</td>
+<td>设效率 + &quot;整数小时完成&quot;列式筛选</td>
+<td>★4</td>
+<td>7 小时</td>
+</tr>
+<tr>
+<td>8</td>
+<td>数列与数表（方螺旋）</td>
+<td>平方数定位 + 同层格数差</td>
+<td>★4</td>
+<td>第3行第45列</td>
+</tr>
+<tr>
+<td>9</td>
+<td>工程问题（多对象）、比的应用</td>
+<td>按容积比设份数，三式相加÷2</td>
+<td>★4</td>
+<td>12 天</td>
+</tr>
+<tr>
+<td>10</td>
+<td>圆与扇形、弓形与月牙</td>
+<td>希波克拉底月牙 + 弓形公式，$\pi$ 抵消</td>
+<td>★5</td>
+<td>$50\pi$【待核对】</td>
+</tr>
+<tr>
+<td>11</td>
+<td>逻辑推理、枚举与分类</td>
+<td>20 种组合逐一验真</td>
+<td>★4</td>
+<td>E 说错了</td>
+</tr>
+<tr>
+<td>12</td>
+<td>环形追及、最值</td>
+<td>追及时间 ≤ 到达时间判断</td>
+<td>★6</td>
+<td>【待核对】（匀速模型最少 3 只）</td>
+</tr>
+<tr>
+<td>13</td>
+<td>比的应用、列方程</td>
+<td>设份数 + 设次数</td>
+<td>★3</td>
+<td>2000 个</td>
+</tr>
+<tr>
+<td>14</td>
+<td>工程问题、列方程</td>
+<td>二元一次方程组</td>
+<td>★3</td>
+<td>30 天</td>
+</tr>
+<tr>
+<td>15</td>
+<td>还原问题（逆推）</td>
+<td>顺列式或逆推</td>
+<td>★3</td>
+<td>158 人</td>
+</tr>
+<tr>
+<td>16</td>
+<td>比的应用、列方程</td>
+<td>设份数 $u$，两个比各列一式</td>
+<td>★4</td>
+<td>370 颗</td>
+</tr>
+<tr>
+<td>17</td>
+<td>浓度问题、列方程</td>
+<td>盐量÷溶液量，倒出浓度不变</td>
+<td>★5</td>
+<td>10%</td>
+</tr>
+<tr>
+<td>18</td>
+<td>工程问题（漏水）、最值、统筹</td>
+<td>求容积与漏水速度 + 枚举管数分配取短板</td>
+<td>★7</td>
+<td>144 分钟；257 分钟</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>易错点与教学建议</h2>
+<ol>
+<li><strong>第 1 题</strong>：项数容易数错（从 1893 到 2022 共 130 项），要用&quot;首项分母的第一因数、末项分母的第二因数&quot;确认相消后的两端是 $\frac1{1893}-\frac1{2023}$。</li>
+<li><strong>第 2 题</strong>：注意&quot;比总人数的 75% 还多 1 人&quot;是&quot;总数的 75%再加 1&quot;，不是&quot;（总人数+1）的 75%&quot;。设总量为 $T$ 列式最稳。</li>
+<li><strong>第 3 题</strong>：两个 20% 的基数不同（一个以站着的人为基数、一个以坐着的人为基数），不能直接相减 20%−20%=0。设 100 份最清楚。</li>
+<li><strong>第 4 题</strong>：关键是把&quot;显示标准时间&quot;理解为&quot;误差为 12 小时（720 分钟）的整数倍&quot;，而不是&quot;误差为 0&quot;；再求两个天数的最小公倍数。</li>
+<li><strong>第 5 题</strong>：漏掉&quot;第二棒也要有人，且从剩下 6 人中选&quot;是常见错误（只算 2×3×2=12）。强调四个棒次都要安排人。</li>
+<li><strong>第 6 题</strong>：速度减少 $\frac14$ 后时间是原来的 $\frac43$（不是 $\frac43$ 倍的原速）；&quot;晚 50 分钟&quot;对应的是原计划时间的 $\frac13$。</li>
+<li><strong>第 7 题</strong>：容易忽略&quot;整数个小时完成&quot;意味着最后一小时是甲在做（奇数小时），也容易漏掉&quot;甲效率必须小于合效率&quot;的筛选条件。</li>
+<li><strong>第 8 题</strong>：方螺旋要先判断 $k$ 的奇偶决定平方数的位置；建议先写 1、4、9、16、25 的坐标找规律再推广。</li>
+<li><strong>第 9 题</strong>：三库容积不同（1:2:6），不能把三式直接当成同一总量；要先按比设份数，再&quot;三式相加÷2&quot;。</li>
+<li><strong>第 10 题</strong>：月牙面积 = 半圆面积 − 弓形面积，两片相加恰好等于直角三角形面积（希波克拉底定理）；弓形要记得减掉三角形（$\frac14\pi R^2-\frac12R^2$）。<strong>本题图形需对照原卷确认（见解析中的【待核对】）。</strong></li>
+<li><strong>第 11 题</strong>：这类题必须逐一检验；最容易错的是把&quot;只有一门&quot;理解成&quot;至少一门&quot;。</li>
+<li><strong>第 12 题</strong>：环形追及要分&quot;谁追谁&quot;两种情况（小偷快 / 蜜蜂快），并检查追上时刻是否在到达 B 之前。<strong>题面未给小偷速度，需核对原卷条件。</strong></li>
+<li><strong>第 13 题</strong>：比与&quot;每次搬运量&quot;要分开设（份数 $k$ + 次数 $n$），不要只设一个未知数。</li>
+<li><strong>第 14 题</strong>：注意&quot;甲单独 4 天 + 乙单独 3 天&quot;是分别做的天数，不是合作的 7 天。</li>
+<li><strong>第 15 题</strong>：逆推时&quot;抽调剩下的一半&quot;要乘 $\frac12$，且每一步的&quot;剩下&quot;基准不同，建议画流程图。</li>
+<li><strong>第 16 题</strong>：两次给糖后&quot;巧克力/水果糖&quot;的基数都在变，设份数 $u$ 并逐个代回最清楚。</li>
+<li><strong>第 17 题</strong>：本题结论与原来那瓶盐水的浓度无关（$p$ 被消掉），可以举具体数值验证；关键是&quot;倒出溶液浓度不变&quot;。</li>
+<li><strong>第 18 题</strong>：先要理解&quot;原计划 5 小时&quot;是未漏水的计划，改 5 根后同时注满用来求漏水速度；第（2）问是&quot;枚举 + 取两池时间的较大者的最小&quot;（短板效应）。</li>
+</ol>
+<p><strong>整体建议</strong>：本卷 18 题里工程/浓度/比与百分数占了大半（第 2、3、6、7、9、13、14、16、17、18 题），是典型的小升初重点；第 10、12 题属图形与策略类，难度高，适合作为压轴训练。教学时建议：</p>
+<ul>
+<li>把&quot;设份数/设总量为 1&quot;作为工程、浓度、比三类题的统一入口；</li>
+<li>训练&quot;读题翻译&quot;：把&quot;晚 50 分钟&quot;&quot;整数小时&quot;&quot;显示标准时间&quot;等生活语言翻译成等式或整除条件；</li>
+<li>图形题（第 10 题）建议动手画半圆、标出弓形，并用&quot;割补/月牙&quot;模型；策略题（第 12 题）建议画时间—位置图帮助理解追及。</li>
+</ul>
+</article><div class="exam-foot"><a href="../index.html">← 返回知识地图</a> · <a href="index.html">全部真题</a></div></body></html>

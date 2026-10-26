@@ -1,0 +1,31 @@
+{
+  "source": "exam/2024 IHC D-6发布版.pdf",
+  "total": 25,
+  "items": [
+    {"no": "1", "knowledge": ["分数的基本性质与约分", "分解质因数"], "method": "辗转相除求最大公因数后约分", "difficulty": 1, "answer": "19/47"},
+    {"no": "2", "knowledge": ["带余除法与余数性质", "同余初步"], "method": "连续奇数和=n²，再用幂的模3周期", "difficulty": 2, "answer": "1"},
+    {"no": "3", "knowledge": ["带余除法与余数性质", "最值问题"], "method": "按除以5的余数分类，互补两类取多的一类", "difficulty": 3, "answer": "42"},
+    {"no": "4", "knowledge": ["比较大小与估算", "范围估算"], "method": "用平均值夹住分母，取倒数夹出整数部分", "difficulty": 2, "answer": "95"},
+    {"no": "5", "knowledge": ["浓度问题", "分数应用题"], "method": "抓住倒回后甲中只有2kg水反推所取酒精量", "difficulty": 3, "answer": "2.4"},
+    {"no": "6", "knowledge": ["枚举与分类", "加乘原理"], "method": "符号问题转化为选子和为17，再分类枚举", "difficulty": 3, "answer": "10"},
+    {"no": "7", "knowledge": ["面积比", "燕尾模型"], "method": "面积比=底边比 + 梅涅劳斯定理定交点", "difficulty": 5, "answer": "1620"},
+    {"no": "8", "knowledge": ["百分数应用题", "最值问题"], "method": "已投票数只增不减列不等式，再按整数（50的倍数）取最小", "difficulty": 3, "answer": "550"},
+    {"no": "9", "knowledge": ["周期规律", "分类列举"], "method": "同月4/14/24日星期差3天，逐月确定4日的星期", "difficulty": 2, "answer": "4"},
+    {"no": "10", "knowledge": ["面积比", "燕尾模型"], "method": "直角坐标定交点（证O为两线中点）+面积比=底边比", "difficulty": 5, "answer": "2:5"},
+    {"no": "11", "knowledge": ["因数个数与因数和", "分解质因数"], "method": "按约数个数16拆指数形态，再用个位是7筛质因数", "difficulty": 3, "answer": "2457"},
+    {"no": "12", "knowledge": ["立体几何综合", "体积与容积单位"], "method": "圆台体积公式求高，再用勾股定理求斜腰", "difficulty": 3, "answer": "13"},
+    {"no": "13", "knowledge": ["格点面积", "最值问题"], "method": "构造边与格线平行的15×15；斜放比较取小", "difficulty": 4, "answer": "225"},
+    {"no": "14", "knowledge": ["递推与归纳", "分类列举"], "method": "按偶偶奇奇循环逐轮隔一取一，列表推进", "difficulty": 3, "answer": "77"},
+    {"no": "15", "knowledge": ["基本公式与平均速度", "比例行程"], "method": "追及与相向两段分别列式联立求队伍长", "difficulty": 4, "answer": "4"},
+    {"no": "16", "knowledge": ["圆与扇形", "面积综合"], "method": "扫过面积=周长×2r+角上扇形拼成整圆", "difficulty": 4, "answer": "4060"},
+    {"no": "17", "knowledge": ["因数个数与因数和", "短除模型"], "method": "用质因数指数表示lcm/gcd，按指数范围分类计数", "difficulty": 4, "answer": "48"},
+    {"no": "18", "knowledge": ["操作与探究", "最值问题"], "method": "面积互异推出1+2+…+n≤15的上界，再构造达到", "difficulty": 4, "answer": "5"},
+    {"no": "19", "knowledge": ["位值原理", "加乘原理"], "method": "化简为20(d−a)，条件化为d−a=1后计数", "difficulty": 3, "answer": "648"},
+    {"no": "20", "knowledge": ["数的整除特征", "尾数与末位"], "method": "对2、3、5、7用幂的周期与同余逐一检验", "difficulty": 3, "answer": "D"},
+    {"no": "21", "knowledge": ["不定方程", "分类列举"], "method": "按x3分类，x1+x2=N有N+1组非负解", "difficulty": 2, "answer": "40"},
+    {"no": "22", "knowledge": ["排列组合", "几何计数"], "method": "每6个圆周点对应唯一一个圆内三角形，C(10,6)", "difficulty": 4, "answer": "210"},
+    {"no": "23", "knowledge": ["时钟问题"], "method": "相对角速度5.5°/分，180°每720/11分钟出现一次", "difficulty": 3, "answer": "16时54又6/11分"},
+    {"no": "24", "knowledge": ["速算与巧算", "公式类计算"], "method": "拆成整数减真分数去取整，化为等差数列求和", "difficulty": 3, "answer": "2045253"},
+    {"no": "25", "knowledge": ["面积综合", "几何思想方法"], "method": "连对角线分三块，两个直角三角形和50，证△ACE面积恒为50", "difficulty": 4, "answer": "100"}
+  ]
+}

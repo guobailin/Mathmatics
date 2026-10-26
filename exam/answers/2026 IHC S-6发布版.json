@@ -1,0 +1,31 @@
+{
+  "source": "exam/2026 IHC S-6发布版.pdf",
+  "total": 25,
+  "items": [
+    {"no": "1", "knowledge": ["分数裂项", "速算与巧算"], "method": "整体记号 + 分组求和", "difficulty": 4, "answer": "2025"},
+    {"no": "2", "knowledge": ["完全平方数", "公式类计算"], "method": "设元配方", "difficulty": 3, "answer": "4106701"},
+    {"no": "3", "knowledge": ["循环小数", "分解质因数"], "method": "不循环位数+循环节长", "difficulty": 4, "answer": "4"},
+    {"no": "4", "knowledge": ["数字谜"], "method": "有序枚举", "difficulty": 3, "answer": "2"},
+    {"no": "5", "knowledge": ["百分数应用题"], "method": "逐次×0.4递推", "difficulty": 2, "answer": "4"},
+    {"no": "6", "knowledge": ["分数应用题", "比的应用"], "method": "设份数+列方程", "difficulty": 3, "answer": "48"},
+    {"no": "7", "knowledge": ["时间问题", "分数应用题"], "method": "设速度列时间方程", "difficulty": 2, "answer": "12"},
+    {"no": "8", "knowledge": ["分数应用题", "百分数应用题"], "method": "两次还原+列方程", "difficulty": 3, "answer": "42"},
+    {"no": "9", "knowledge": ["分数应用题", "数的整除特征"], "method": "不等式+整除筛选", "difficulty": 3, "answer": "57"},
+    {"no": "10", "knowledge": ["圆的面积", "长方形和正方形的面积"], "method": "直径=对角线", "difficulty": 3, "answer": "10"},
+    {"no": "11", "knowledge": ["加乘原理", "分类列举"], "method": "分类计数", "difficulty": 3, "answer": "35"},
+    {"no": "12", "knowledge": ["组合图形的面积"], "method": "坐标法（鞋带公式）", "difficulty": 4, "answer": "14"},
+    {"no": "13", "knowledge": ["分类列举", "容斥原理"], "method": "枚举+旋转去重", "difficulty": 4, "answer": "12"},
+    {"no": "14", "knowledge": ["三角形的面积", "等积模型"], "method": "坐标设参+面积比", "difficulty": 5, "answer": "67"},
+    {"no": "15", "knowledge": ["同余初步", "尾数与末位"], "method": "分数化+同余", "difficulty": 4, "answer": "30"},
+    {"no": "16", "knowledge": ["数的整除特征", "位值原理"], "method": "枚举筛选", "difficulty": 4, "answer": "68884"},
+    {"no": "17", "knowledge": ["概率初步", "几何计数"], "method": "概率→计数", "difficulty": 5, "answer": "B（7/11）"},
+    {"no": "18", "knowledge": ["分类列举", "加乘原理"], "method": "余数分类+去序", "difficulty": 4, "answer": "26"},
+    {"no": "19", "knowledge": ["递推与归纳", "标数法"], "method": "步长1/2枚举路径和", "difficulty": 5, "answer": "6"},
+    {"no": "20", "knowledge": ["逻辑推理", "最值问题"], "method": "冗余比较验证", "difficulty": 6, "answer": "9"},
+    {"no": "21", "knowledge": ["定义新运算", "尾数与末位"], "method": "转化+个位周期", "difficulty": 4, "answer": "17"},
+    {"no": "22", "knowledge": ["数列与数表", "找规律"], "method": "按位数分段定位", "difficulty": 4, "answer": "9"},
+    {"no": "23", "knowledge": ["相遇问题", "找规律"], "method": "展开法+相遇点周期", "difficulty": 6, "answer": "80"},
+    {"no": "24", "knowledge": ["因数个数与因数和", "质数与合数"], "method": "因数和公式+枚举质数对", "difficulty": 4, "answer": "398"},
+    {"no": "25", "knowledge": ["递推与归纳", "游戏策略"], "method": "约瑟夫问题（队列模拟）", "difficulty": 5, "answer": "D（黑桃Q）"}
+  ]
+}

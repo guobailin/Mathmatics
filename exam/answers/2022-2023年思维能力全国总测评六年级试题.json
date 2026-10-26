@@ -1,0 +1,30 @@
+{
+  "source": "exam/2022-2023年思维能力全国总测评六年级试题.pdf",
+  "total": 24,
+  "items": [
+    {"no": "一试1", "knowledge": ["百分数应用题", "百分数"], "method": "增减量÷原量", "difficulty": 1, "answer": "50"},
+    {"no": "一试2", "knowledge": ["按比例分配", "比的意义"], "method": "按比分配（先求总份数）", "difficulty": 2, "answer": "225"},
+    {"no": "一试3", "knowledge": ["分数应用题", "百分数"], "method": "量率对应（量÷分率=单位1）", "difficulty": 2, "answer": "12"},
+    {"no": "一试4", "knowledge": ["分数乘法", "分数应用题"], "method": "求一个数的几分之几", "difficulty": 1, "answer": "45"},
+    {"no": "一试5", "knowledge": ["比的意义", "分数应用题"], "method": "由“几分之几相等”转化为比", "difficulty": 2, "answer": "600"},
+    {"no": "一试6", "knowledge": ["逻辑推理"], "method": "假设法逐一检验", "difficulty": 3, "answer": "妈妈"},
+    {"no": "一试7", "knowledge": ["分数应用题", "比的意义"], "method": "设份数+列方程", "difficulty": 3, "answer": "25"},
+    {"no": "一试8", "knowledge": ["圆的面积", "组合图形的面积"], "method": "圆减内接正方形，半径逐层×√2", "difficulty": 4, "answer": "8"},
+    {"no": "一试9", "knowledge": ["比的应用", "分数应用题"], "method": "设份数+用离场人数列等式", "difficulty": 3, "answer": "630"},
+    {"no": "一试10", "knowledge": ["数字谜", "位值原理"], "method": "按位值列方程+整除性排除", "difficulty": 4, "answer": "【待核对】按印刷原样无解；若按倒序题型（积为年兔迎喜欢）则迎兔年=978"},
+    {"no": "一试11", "knowledge": ["工程问题", "分数应用题"], "method": "工作总量设为1列方程", "difficulty": 3, "answer": "3"},
+    {"no": "一试12", "knowledge": ["分数应用题", "认识方程与解方程"], "method": "设未知数+两式消元", "difficulty": 4, "answer": "11.2"},
+    {"no": "二试1", "knowledge": ["比的应用", "分数应用题"], "method": "由比还原，再求一个数的几分之几", "difficulty": 2, "answer": "137.2厘米"},
+    {"no": "二试2", "knowledge": ["百分数应用题", "最值问题"], "method": "最不利原则（按最低合格率80%）", "difficulty": 3, "answer": "75个"},
+    {"no": "二试3", "knowledge": ["分数应用题"], "method": "设总页数列方程", "difficulty": 2, "answer": "480页"},
+    {"no": "二试4", "knowledge": ["圆的周长", "近似数与四舍五入"], "method": "人数×臂展=周长，再由周长求半径", "difficulty": 3, "answer": "约2米"},
+    {"no": "二试5", "knowledge": ["比的应用", "分数应用题"], "method": "两次比列两个方程", "difficulty": 4, "answer": "49只"},
+    {"no": "二试6", "knowledge": ["分数应用题", "比的应用"], "method": "剩余相等求男女比，再求总量", "difficulty": 3, "answer": "190人"},
+    {"no": "二试7", "knowledge": ["经济问题", "百分数应用题"], "method": "设数法（设原观众数）", "difficulty": 3, "answer": "980元"},
+    {"no": "二试8", "knowledge": ["分数应用题", "比的应用"], "method": "设总数，用“少三分之一”列方程", "difficulty": 3, "answer": "9000套"},
+    {"no": "二试9", "knowledge": ["追及问题", "行程问题"], "method": "设速度与路程，按时间轴分段", "difficulty": 5, "answer": "7:25"},
+    {"no": "二试10", "knowledge": ["列方程解应用题", "经济问题"], "method": "两种情况列方程后相除消元", "difficulty": 4, "answer": "20千克"},
+    {"no": "二试11", "knowledge": ["长方体和正方体的表面积"], "method": "增量法（每刀增加2个切面）", "difficulty": 4, "answer": "48平方厘米"},
+    {"no": "二试12", "knowledge": ["逻辑推理"], "method": "列表排除法", "difficulty": 4, "answer": "开开：小画家、歌唱家；心心：跳高冠军、短跑健将；乐乐：数学博士、大作家"}
+  ]
+}

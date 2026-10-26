@@ -1,0 +1,181 @@
+{
+  "source": "exam/2024 IHC A-6发布版.pdf",
+  "total": 25,
+  "items": [
+    {
+      "no": "1",
+      "knowledge": ["分解质因数", "完全平方数", "质数与合数"],
+      "method": "阶乘连乘化为质因数幂，检验指数奇偶",
+      "difficulty": 4,
+      "answer": "B（10!）"
+    },
+    {
+      "no": "2",
+      "knowledge": ["工程问题"],
+      "method": "设工作总量为1，效率相加",
+      "difficulty": 2,
+      "answer": "12"
+    },
+    {
+      "no": "3",
+      "knowledge": ["概率初步", "可能性的大小"],
+      "method": "组合计数（或分步乘法）",
+      "difficulty": 2,
+      "answer": "D（89/110）"
+    },
+    {
+      "no": "4",
+      "knowledge": ["逻辑推理", "分类列举"],
+      "method": "列条件表逐条枚举筛选",
+      "difficulty": 3,
+      "answer": "6"
+    },
+    {
+      "no": "5",
+      "knowledge": ["面积比", "组合图形的面积", "燕尾模型"],
+      "method": "坐标法求交点 + 面积叉积",
+      "difficulty": 5,
+      "answer": "80"
+    },
+    {
+      "no": "6",
+      "knowledge": ["数字谜", "位值原理", "枚举与分类"],
+      "method": "分母范围 + 最大分母试填",
+      "difficulty": 5,
+      "answer": "975"
+    },
+    {
+      "no": "7",
+      "knowledge": ["加乘原理", "枚举与分类"],
+      "method": "按数字和分类后平方求和",
+      "difficulty": 3,
+      "answer": "669"
+    },
+    {
+      "no": "8",
+      "knowledge": ["数的整除特征", "带余除法与余数性质"],
+      "method": "弃九法（数字和模9）",
+      "difficulty": 3,
+      "answer": "3"
+    },
+    {
+      "no": "9",
+      "knowledge": ["进位制", "位值原理"],
+      "method": "阶乘进制位值展开",
+      "difficulty": 4,
+      "answer": "40319"
+    },
+    {
+      "no": "10",
+      "knowledge": ["多次相遇", "基本公式与平均速度"],
+      "method": "位置-时间图（三角波）求交点",
+      "difficulty": 5,
+      "answer": "60"
+    },
+    {
+      "no": "11",
+      "knowledge": ["分数与小数的四则运算", "速算与巧算", "提取公因数"],
+      "method": "化简括号后与2024约分",
+      "difficulty": 3,
+      "answer": "96"
+    },
+    {
+      "no": "12",
+      "knowledge": ["数字谜", "加乘原理", "枚举与分类"],
+      "method": "9个数字恰为1~9，排列枚举并倒推一位数",
+      "difficulty": 5,
+      "answer": "288"
+    },
+    {
+      "no": "13",
+      "knowledge": ["循环小数化分数", "数字谜", "最值问题"],
+      "method": "循环小数化为(9p+r)/9后枚举数字",
+      "difficulty": 5,
+      "answer": "64"
+    },
+    {
+      "no": "14",
+      "knowledge": ["组合图形的面积", "面积综合", "面积比"],
+      "method": "方格分割+三角形拼补（以14cm定比例）",
+      "difficulty": 5,
+      "answer": "994【待核对】"
+    },
+    {
+      "no": "15",
+      "knowledge": ["不定方程", "假设法", "数论综合"],
+      "method": "列方程组，用内高外低的整数范围筛选",
+      "difficulty": 4,
+      "answer": "6"
+    },
+    {
+      "no": "16",
+      "knowledge": ["等差数列", "找规律"],
+      "method": "先求全部之和再作差",
+      "difficulty": 2,
+      "answer": "E（S24）"
+    },
+    {
+      "no": "17",
+      "knowledge": ["不定方程", "数的整除特征", "因数和倍数"],
+      "method": "模5定参数，再数参数个数",
+      "difficulty": 3,
+      "answer": "18"
+    },
+    {
+      "no": "18",
+      "knowledge": ["最值问题", "长方体和正方体的体积"],
+      "method": "容积函数 + 和定积最大",
+      "difficulty": 4,
+      "answer": "C（379）"
+    },
+    {
+      "no": "19",
+      "knowledge": ["概率初步", "递推与归纳"],
+      "method": "概率树按下一分分类",
+      "difficulty": 4,
+      "answer": "7/8"
+    },
+    {
+      "no": "20",
+      "knowledge": ["工程问题"],
+      "method": "公倍数设总量，分段列方程",
+      "difficulty": 4,
+      "answer": "27"
+    },
+    {
+      "no": "21",
+      "knowledge": ["分数应用题", "比的意义", "最值问题"],
+      "method": "化为整数比21:20后用总分上限求最大值",
+      "difficulty": 3,
+      "answer": "14"
+    },
+    {
+      "no": "22",
+      "knowledge": ["最值问题", "构造与论证", "枚举与分类"],
+      "method": "极端原理 + 构造实例/枚举反例",
+      "difficulty": 5,
+      "answer": "17"
+    },
+    {
+      "no": "23",
+      "knowledge": ["圆与扇形", "组合图形的面积"],
+      "method": "方中圆（内切圆）面积 + 图形割补",
+      "difficulty": 3,
+      "answer": "C（48.52）"
+    },
+    {
+      "no": "24",
+      "knowledge": ["数的整除特征", "数字谜", "枚举与分类"],
+      "method": "按被5整除分d=0/5两类枚举验证",
+      "difficulty": 5,
+      "answer": "4"
+    },
+    {
+      "no": "25",
+      "knowledge": ["立体几何综合", "排列组合", "分类列举"],
+      "method": "按两绿面位置关系（相对/共棱/共顶点）分类",
+      "difficulty": 5,
+      "answer": "3"
+    }
+  ]
+}
