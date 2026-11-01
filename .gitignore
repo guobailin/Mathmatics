@@ -6,3 +6,8 @@ miniprogram/project.private.config.json
 
 # 真题渲染缓存（可重新生成）
 exam/_rendered/
+
+# 速查卡：构建产物可一键重建（python3 tools/cards/render.py --pdf）
+tools/cards/build/
+# 速查卡 JSON 的历史备份
+tools/cards/content.bak*/
