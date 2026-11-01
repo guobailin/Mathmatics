@@ -34,7 +34,8 @@ img{max-width:100%;height:auto}
 $$N=\sum_{i,j}h_{ij},\qquad V=N,a^{3}.$$<br />
 三张视图各管一件事：<strong>俯视图管&quot;底&quot;</strong>（哪些格子有方块）；<strong>主视图管&quot;列高&quot;</strong>，从左到右第 $j$ 列的高度 $c_j=\max_i h_{ij}$；<strong>左视图管&quot;排高&quot;</strong>，俯视图第 $i$ 排（从前往后）的最高层数 $r_i=\max_j h_{ij}$ 决定左视图，且左视图从左到右依次对应最后一排到第一排。三件事合起来，还给出每格的双重上界<br />
 $$1\le h_{ij}\le \min(c_j,r_i)\quad(\text{有方块的格子}).$$</p>
-<p><strong>为什么</strong>：主视图是把物体沿前后方向&quot;压扁&quot;——第 $j$ 列里最高的那摞露在最外面，矮的全被挡住，所以主视图只记得列最大值，记不得每格究竟几层。左视图同理只记排最大值，俯视图只记有无。一格同时住在第 $j$ 列和第 $i$ 排里，两把尺子都不许它超高，所以只能取较小者。反过来，单看一张图一定还原不出立体图形：主视图相同的搭法可以有很多种，俯视图只说明有几摞，要靠主视图与左视图一起才把每摞的高度卡出来。求最多个数时每格都顶到上界，$N_{\max}=\sum\min(c_j,r_i)$；求最少个数时先&quot;铺底&quot;每格记 $1$，再让每一列、每一排各派一个格子长高到规定高度，能一格兼管列和排的就让它兼管，这样加得最少。</p>
+<p><img src="assets/geometry/three-views.svg" alt="三视图还原立体：主视、俯视、左视" /><br />
+<strong>为什么</strong>：主视图是把物体沿前后方向&quot;压扁&quot;——第 $j$ 列里最高的那摞露在最外面，矮的全被挡住，所以主视图只记得列最大值，记不得每格究竟几层。左视图同理只记排最大值，俯视图只记有无。一格同时住在第 $j$ 列和第 $i$ 排里，两把尺子都不许它超高，所以只能取较小者。反过来，单看一张图一定还原不出立体图形：主视图相同的搭法可以有很多种，俯视图只说明有几摞，要靠主视图与左视图一起才把每摞的高度卡出来。求最多个数时每格都顶到上界，$N_{\max}=\sum\min(c_j,r_i)$；求最少个数时先&quot;铺底&quot;每格记 $1$，再让每一列、每一排各派一个格子长高到规定高度，能一格兼管列和排的就让它兼管，这样加得最少。</p>
 <p><strong>三个高级变形</strong>：①<strong>缺格</strong>：俯视图有空格时 $h=0$，既不求和也不参与取最大，它会让某列、某排的&quot;顶格&quot;无处安放，最值随之改变；②<strong>打通洞</strong>：一条洞沿视线贯穿，等价于把整条线上的 $h$ 全记 $0$，先按每条线各减一次，再把重复减掉的交点加回来；③<strong>视图不全或三视图相同</strong>：答案常常不唯一，要问&quot;可能值&quot;，就先定上界 $\sum\min(c_j,r_i)$ 与下界（铺底加抬升），再证明中间每个值都能靠&quot;给某些格子加 $1$&quot;搭出来。</p>
 <p><strong>竞赛视角</strong>：题目出现&quot;最多/最少&quot;&quot;至少&quot;&quot;能否搭出&quot;&quot;共有几种&quot;，先想&quot;每格上界 + 极值构造&quot;；出现&quot;打洞、贯穿、通道&quot;，先画三条互相垂直的通道并找交点；出现&quot;三视图相同&quot;，先把三张图翻译成 $c_j$ 与 $r_i$ 的相等关系。最易混的三对概念是：列高之和与总体积（不是一回事）、左视图的左右与俯视图的左右（对应的是前后）、体积最大与表面积最大（两回事）。构造时优先让&quot;最高的格子&quot;同时充当列代表和排代表，这是压榨个数的关键。</p>
 <p><strong>易错点</strong>：</p>
@@ -57,7 +58,34 @@ $$1\le h_{ij}\le \min(c_j,r_i)\quad(\text{有方块的格子}).$$</p>
 <blockquote>
 <p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
 </blockquote>
-
+<!-- card:auto -->
+<h2>速查卡</h2>
+<blockquote>
+<p>裁剪即用：本页对应速查卡「几何 44正」。下面是本节最紧的一版摘要，公式与结论与正文完全一致，用于做题前扫一遍。全套卡片见 <code>tools/cards/build/cards.html</code>。</p>
+</blockquote>
+<p><strong>视图含义</strong></p>
+<p>$$V=Na^{3}$$</p>
+<ul>
+<li>俯视图每格记层数 $h$，$N$ 为总块数、$a$ 为棱长</li>
+<li>俯视图管底（哪格有方块）；主视图给各列最高层</li>
+<li>左视图给各排最高层，其左右对应俯视图的前后</li>
+</ul>
+<p><strong>每格上界</strong></p>
+<ul>
+<li>每格层数不超过所在列高、排高的较小者</li>
+<li>求最多：每格顶到上界求和，空格记 $0$ 不参与</li>
+<li>求最少：每格先铺 $1$，再让每列每排各有一格长高</li>
+</ul>
+<p><strong>变形</strong></p>
+<ul>
+<li>打通洞：整条线记 $0$，重复减掉的交点要加回</li>
+<li>视图不全或三视图相同：先定上下界再证可搭</li>
+</ul>
+<blockquote>
+<p>✅ 信号：最多/最少、至少、能否搭出、打洞贯穿、三视图相同<br />
+⚠️ 易错：左视图最左对应俯视图最后一排；列高和 $\ne$ 体积</p>
+</blockquote>
+<!-- /card:auto -->
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：由两张视图反推标数表再求体积（★★★★）<span class="covers">覆盖点：俯视图标数法求体积</span></h3><div class="problem"><p>用棱长 $2$ 厘米的小正方体搭成一个几何体，俯视图是 $3$ 排 $3$ 列，$9$ 个位置都放了方块。各位置摞的个数如下表，其中两格看不清，记作 $x,y$：</p>
 <p>| | 左列 | 中列 | 右列 |<br />
@@ -82,7 +110,8 @@ $$1\le h_{ij}\le \min(c_j,r_i)\quad(\text{有方块的格子}).$$</p>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
 <section class="kp"><h2>几何思想方法</h2><p class="meta"><span>年级：4、5、6</span><span>难度：★★★</span></p><h3>一、模型：五把&quot;搬运&quot;的钥匙</h3>
-<p>几何题卡住，多半不是不会算，而是图形站的位置不好：斜边、凹角、断开的线段。<strong>几何思想方法</strong>研究的正是&quot;把图形搬到好算的地方&quot;的五种手段，它们的共同前提是只做保形或保积的变换。</p>
+<p><img src="assets/geometry/geometry-method.svg" alt="割补：三角形补成平行四边形" /><br />
+几何题卡住，多半不是不会算，而是图形站的位置不好：斜边、凹角、断开的线段。<strong>几何思想方法</strong>研究的正是&quot;把图形搬到好算的地方&quot;的五种手段，它们的共同前提是只做保形或保积的变换。</p>
 <p>（1）<strong>平移</strong>：图形沿一条直线整体移动。对应线段平行且相等、对应角相等、面积不变，用途是把散落的线段拼成一条、把&quot;阶梯&quot;拉直。</p>
 <p>（2）<strong>旋转</strong>：图形绕定点转过一个角。对应线段相等、对应角相等、面积不变；旋转中心一定在对应点连线的中垂线上。</p>
 <p>（3）<strong>割补</strong>：把图形切开重拼。依据是&quot;整体面积 $=$ 各部分面积之和&quot;，切开再拼，面积一分不差。</p>
@@ -125,7 +154,34 @@ $$(a+b)^2+(a-b)^2=2c^2 .$$<br />
 <blockquote>
 <p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
 </blockquote>
-
+<!-- card:auto -->
+<h2>速查卡</h2>
+<blockquote>
+<p>裁剪即用：本页对应速查卡「几何 40背」。下面是本节最紧的一版摘要，公式与结论与正文完全一致，用于做题前扫一遍。全套卡片见 <code>tools/cards/build/cards.html</code>。</p>
+</blockquote>
+<p><strong>五把钥匙</strong></p>
+<ul>
+<li>平移：沿直线整体移动，把散落的线段拼成一条</li>
+<li>旋转：绕定点转过一个角，共顶点 + 等长 + 半角时最好用</li>
+<li>割补：切开重拼，依据是整体 = 各部分之和</li>
+<li>等积：顶点沿平行线滑动面积不变（拉车模型）</li>
+<li>代数：设 $x$ 或 $x,y$，把面积、勾股、周长条件翻译成方程</li>
+</ul>
+<p><strong>关键变形</strong></p>
+<ul>
+<li>半角旋转：正方形中 $\angle EAF=45^\circ$，则 $EF=BE+DF$</li>
+<li>并排正方形：对角线平行，$S_{BDF}=\frac{1}{2}a^2$ 与小正方形边长无关</li>
+</ul>
+<p>$$(a+b)^2+(a-b)^2=2c^2$$</p>
+<ul>
+<li>弦图两次拼：已知 $a+b$ 与 $a-b$（或 $c$）可反求各边</li>
+<li>设元解出后回图检查点是否还在线段上，增根要舍</li>
+</ul>
+<blockquote>
+<p>✅ 识别：$45^\circ$、$60^\circ$ 配等长线段想旋转；平行与中点想等积<br />
+⚠️ 易错：只保面积不保周长；旋转要先证全等再用结论</p>
+</blockquote>
+<!-- /card:auto -->
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：正方形里 45° 角留下的那一段（★★★★）<span class="covers">覆盖点：平移旋转构造</span></h3><div class="problem"><p>正方形 $ABCD$ 的边长为 $6$ 厘米，$E$ 是边 $BC$ 上一点，$BE=2$ 厘米，$F$ 是边 $CD$ 上一点，且 $\angle EAF=45^\circ$。求 $DF$ 的长。</p>
 </div>
@@ -162,8 +218,9 @@ $$(a+b)^2+(a-b)^2=2c^2 .$$<br />
 <p>两式相等，即得 $a^{2}+b^{2}=c^{2}$。</p>
 <p>还有“风车”拼法：4 个三角形围成边长 $a+b$ 的大正方形，中间空出的正方形边长恰为 $c$。按部分算 $(a+b)^{2}=4\cdot\frac{ab}{2}+c^{2}=2ab+c^{2}$，即 $a^{2}+2ab+b^{2}=2ab+c^{2}$，同样得到 $a^{2}+b^{2}=c^{2}$。</p>
 <p>第三种证法是梯形：把两个全等直角三角形与一个直角边为 $c$ 的等腰直角三角形拼成上底 $a$、下底 $b$、高 $a+b$ 的直角梯形，梯形面积 $\frac{(a+b)^{2}}{2}$，按部分算却是 $2\cdot\frac{ab}{2}+\frac{c^{2}}{2}$，两边乘 $2$ 仍得 $a^{2}+b^{2}=c^{2}$。三种拼法共同说明：勾股定理不是量出来的，而是面积守恒逼出来的恒等式——凡是能割能拼的地方，勾股就能用。</p>
+<p><strong>毕达哥拉斯树</strong>：把弦图一层层往外长——每长一层，就在新露出的边上再立一个直角三角形和它自己的正方形。这棵树有个漂亮的性质：<strong>每长一层，增加的面积恰好等于最初那个正方形的面积</strong>。</p>
 <h3>三、三个高级变形</h3>
-<p><strong>变形1（勾股数与缩放）</strong>：三边均为整数的直角三角形叫勾股数，(3,4,5)、(5,12,13)、(8,15,17)、(7,24,25)、(20,21,29) 要熟。整组同乘 $k$ 仍是勾股数；反过来，三边有公因数先约掉再查表，$(6,8,10)$ 是 $(3,4,5)$ 乘 $2$，$(9,12,15)$ 乘 $3$，$(10,24,26)$ 是 $(5,12,13)$ 乘 $2$。本原勾股数（三边互质）中两直角边一奇一偶，斜边为奇数；斜边出现 $25$，要立刻想到 $(7,24,25)$ 与 $(15,20,25)$ 两组。</p>
+<p><strong>变形1（勾股数与缩放）</strong>：三边均为整数的直角三角形叫勾股数，(3,4,5)、(5,12,13)、(8,15,17)、(7,24,25)、(20,21,29) 要熟；$(3,4,5)$ 整组放大成 $(3n,4n,5n)$ 仍是勾股数，其余各组同理。整组同乘 $k$ 仍是勾股数；反过来，三边有公因数先约掉再查表，$(6,8,10)$ 是 $(3,4,5)$ 乘 $2$，$(9,12,15)$ 乘 $3$，$(10,24,26)$ 是 $(5,12,13)$ 乘 $2$。本原勾股数（三边互质）中两直角边一奇一偶，斜边为奇数；斜边出现 $25$，要立刻想到 $(7,24,25)$ 与 $(15,20,25)$ 两组。</p>
 <p><strong>变形2（双勾股：作高列方程）</strong>：没有直角的三角形（如 13、14、15）作高劈成两个直角三角形，公共高相等，于是 $13^{2}-x^{2}=15^{2}-(14-x)^{2}$，解出 $x=5$、高 $12$。这是把斜三角形问题归入勾股的通用接口，也是后面“折叠求折痕”的基本功。</p>
 <p><strong>变形3（展开最短路径）</strong>：长方体表面从 $A$ 到对顶点 $G$，把经过的两个面剪开展平，折线变直线，再用勾股。三边 $a\le b\le c$ 时三个候选为 $\sqrt{(a+b)^{2}+c^{2}}$、$\sqrt{(a+c)^{2}+b^{2}}$、$\sqrt{(b+c)^{2}+a^{2}}$，且恒以第一个最小（例3给证明）。圆柱沿母线剪开，横向是底面周长：底面周长 $12$、高 $5$ 的圆柱上绕半圈并升高 $5$，展开后横向 $6$、纵向 $5$，最短路程 $\sqrt{61}$。</p>
 <h3>四、竞赛视角</h3>
@@ -191,7 +248,34 @@ $$(a+b)^2+(a-b)^2=2c^2 .$$<br />
 <blockquote>
 <p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
 </blockquote>
-
+<!-- card:auto -->
+<h2>速查卡</h2>
+<blockquote>
+<p>裁剪即用：本页对应速查卡「几何 41正」。下面是本节最紧的一版摘要，公式与结论与正文完全一致，用于做题前扫一遍。全套卡片见 <code>tools/cards/build/cards.html</code>。</p>
+</blockquote>
+<p><strong>基本定理</strong></p>
+<p>$$a^{2}+b^{2}=c^{2}$$</p>
+<ul>
+<li>直角边 $a,b$，斜边 $c$ 取最长边；逆用可判直角</li>
+</ul>
+<p><strong>勾股数</strong></p>
+<p>$$(3,4,5)\quad(5,12,13)\quad(8,15,17)\quad(7,24,25)$$</p>
+<ul>
+<li>整组同乘 $k$ 仍是勾股数；有公因数先约掉再查</li>
+</ul>
+<p><strong>三种用法</strong></p>
+<ul>
+<li>网格斜线长 $=\sqrt{m^{2}+n^{2}}$，$m,n$ 为横纵差</li>
+<li>作高双勾股：公共高相等，列平方差方程求解</li>
+<li>展开最短：展平后连线，三种搭配逐一比较</li>
+<li>判形状：比 $c^{2}$ 与 $a^{2}+b^{2}$，大钝小锐</li>
+<li>毕达哥拉斯树：每长一层，新增加的面积 = 最初正方形面积</li>
+</ul>
+<blockquote>
+<p>✅ 信号：直角、垂直、高、对角线、网格斜线、整数边、最短<br />
+⚠️ 易错：只用于直角三角形；先定最长边为 $c$，保留根号</p>
+</blockquote>
+<!-- /card:auto -->
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：13、14、15 的三角形，高落在哪里（★★★★）<span class="covers">覆盖点：勾股定理正用与逆用</span></h3><div class="problem"><p>三角形 $ABC$ 中，$AB=13$，$BC=14$，$CA=15$。（1）求 $BC$ 边上的高 $AD$；（2）求 $\triangle ABC$ 的面积；（3）求三条边上的高分别是多少。</p>
 </div>
@@ -209,8 +293,9 @@ $$(a+b)^2+(a-b)^2=2c^2 .$$<br />
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
-<section class="kp"><h2>周长问题</h2><p class="meta"><span>年级：4、5、6</span><span>难度：★★★</span></p><p><strong>模型是什么</strong>：周长是封闭图形一周边线的总长度，单位是长度单位（厘米、米），它只回答&quot;边界有多长&quot;，不回答&quot;里面有多大&quot;。本专题三类结构：长方形、正方形及其逆用；拼、剪、挖之后边界被重新分配；一个大长方形被分成若干块，由其中几块的周长反求其余。三类的共同动作只有一个——<strong>数边界</strong>：一条线段在最终边界上算一次，藏进内部就不算，下面所有公式都是这句话的推论。</p>
-<p><strong>结论一（公式与逆用）</strong>：$C_{\text{长方形}}=2(a+b)$，$C_{\text{正方形}}=4a$；反过来 $a+b=C\div2$，$a=C\div4$。由此得全篇最要紧的一句：<strong>周长一定，长与宽的和一定</strong>。铁丝改围的题，第一步永远先求铁丝总长（周长），之后不论围成什么，这个数不变，面积却必须用新边长重算。</p>
+<section class="kp"><h2>周长问题</h2><p class="meta"><span>年级：4、5、6</span><span>难度：★★★</span></p><p><strong>模型是什么</strong>：周长是封闭图形一周边线的总长度，单位是长度单位（厘米、米），它只回答&quot;边界有多长&quot;，不回答&quot;里面有多大&quot;。本专题三类结构：长方形、正方形及其逆用；拼、剪、挖之后边界被重新分配；一个大长方形被分成若干块，由其中几块的周长反求其余。三类的共同动作只有一个——<strong>数边界</strong>：一条线段在最终边界上算一次，藏进内部就不算，下面所有公式都是这句话的推论。边太多、一条条数不过来时，还有平移、拉角、标向这类&quot;巧求&quot;的旁路（另见「巧求周长」专题）；本专题先把公式本身与常规题型守稳。</p>
+<p><img src="assets/geometry/perimeter-problem.svg" alt="拼割：剪一刀周长增加两条拼接边" /><br />
+<strong>结论一（公式与逆用）</strong>：$C_{\text{长方形}}=2(a+b)$，$C_{\text{正方形}}=4a$；反过来 $a+b=C\div2$，$a=C\div4$。由此得全篇最要紧的一句：<strong>周长一定，长与宽的和一定</strong>。铁丝改围的题，第一步永远先求铁丝总长（周长），之后不论围成什么，这个数不变，面积却必须用新边长重算。同一张公式表还要配上圆与弧：圆 $C=2\pi r=\pi d$，圆心角 $n^\circ$ 所对的弧 $l=\dfrac{n^\circ\pi r}{180^\circ}$。</p>
 <p><strong>结论二（拼与切）</strong>：设两块图形的周长分别为 $C_1$、$C_2$，公共边长 $d$。公共边在两块周长里各数过一次，拼好后却进了内部，所以扣两次：</p>
 <p>$$C_{\text{拼}}=C_1+C_2-2d$$</p>
 <p>沿长 $d$ 的线剪开正相反，一刀多出两条长 $d$ 的新边界：$C_{\text{切}}=C_{\text{原}}+2d$，剪 $n$ 刀加 $2\times$（各刀长之和）。为什么是 $2$ 倍？公共边&quot;原本数两次，现在一次也不算&quot;，差额就是 $2d$。于是拼得越紧周长越短——要最短，就拿最长的边去拼。</p>
@@ -232,7 +317,33 @@ $$(a+b)^2+(a-b)^2=2c^2 .$$<br />
 <li>认为周长相等面积就相等。正确：和相等、积不等，越接近正方形越大。为什么：$4\times4$ 与 $5\times3$ 周长都 $16$，面积是 $16$ 与 $15$。</li>
 <li>单位写错，把周长答成&quot;平方厘米&quot;。正确：周长用厘米。为什么：平方厘米量面，不量线。</li>
 </ol>
-
+<!-- card:auto -->
+<h2>速查卡</h2>
+<blockquote>
+<p>裁剪即用：本页对应速查卡「几何 43正」。下面是本节最紧的一版摘要，公式与结论与正文完全一致，用于做题前扫一遍。全套卡片见 <code>tools/cards/build/cards.html</code>。</p>
+</blockquote>
+<p><strong>基本公式</strong></p>
+<ul>
+<li>长方形 $C=2(a+b)$，正方形 $C=4a$</li>
+<li>周长一定则长宽和一定，改围先求铁丝总长</li>
+</ul>
+<p><strong>拼与切</strong></p>
+<p>$$C_{\text{拼}}=C_1+C_2-2d$$</p>
+<ul>
+<li>剪开相反：每刀加 $2\times$ 剪痕长；拼得越紧越短</li>
+<li>接缝两侧等长才拼得齐，据此列长宽比（按份数设）</li>
+</ul>
+<p><strong>分割与最值</strong></p>
+<ul>
+<li>内周长 $=$ 外周长 $-8d$，周长差 $\div8$ 得框宽</li>
+<li>各块周长和减拼后周长 $=2\times$ 公共边总长</li>
+<li>周长相等时越接近正方形，面积越大</li>
+</ul>
+<blockquote>
+<p>✅ 信号：同一根铁丝、拼剪挖、给几块周长、拼成大长方形<br />
+⚠️ 易错：公共边要扣 $2d$；角上剪不变、边上挖加 $2h$</p>
+</blockquote>
+<!-- /card:auto -->
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：铁丝改围，先抓长宽和（★★★★）<span class="covers">覆盖点：周长公式的正用与逆用</span></h3><div class="problem"><p>一根铁丝恰好围成一个长方形，周长是 $48$ cm，且长比宽的 $2$ 倍少 $3$ cm。（1）求这个长方形的长和宽；（2）把这根铁丝改围成一个正方形，正方形的面积比原长方形的面积大多少？</p>
 </div>
@@ -260,6 +371,7 @@ $$(a+b)^2+(a-b)^2=2c^2 .$$<br />
 <h3>一、模型：一个比例统管弧与扇形</h3>
 <p>圆上两点之间的曲线段叫<strong>弧</strong>，两条半径与一段弧围成的图形叫<strong>扇形</strong>，两条半径的夹角叫<strong>圆心角</strong>。设半径为 $r$，圆心角为 $n^\circ$，则整圆周长 $C=2\pi r$，整圆面积 $S=\pi r^2$，而</p>
 <p>$$l=\frac{n}{360}\times 2\pi r,\qquad S_{\text{扇}}=\frac{n}{360}\times \pi r^2.$$</p>
+<p>把圆心角的角度写进分母，就是这两条公式的标准形式：$l=\dfrac{n^\circ\pi r}{180^\circ}$，$S_{\text{扇}}=\dfrac{n^\circ\pi r^2}{360^\circ}$——$n^\circ$ 占周角 $360^\circ$ 的几分之几，弧长和面积就占整圆的几分之几。</p>
 <p>这两个公式的共同骨架是“<strong>圆心角占周角的几分之几，弧长和面积就占整圆的几分之几</strong>”。适用条件是：图形的边界由圆弧、半径或弦组成，且圆心角已知或能通过直角、平角、对称性求出。解题时先找分数 $\frac{n}{360}$，再决定乘周长还是乘面积；若已知弧长求面积，则用第二形式</p>
 <p>$$S_{\text{扇}}=\frac12 l r,$$</p>
 <p>它把扇形看成“底为弧长 $l$、高为半径 $r$ 的三角形”。</p>
@@ -304,7 +416,32 @@ $$(a+b)^2+(a-b)^2=2c^2 .$$<br />
 <blockquote>
 <p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
 </blockquote>
-
+<!-- card:auto -->
+<h2>速查卡</h2>
+<blockquote>
+<p>裁剪即用：本页对应速查卡「几何 42正」。下面是本节最紧的一版摘要，公式与结论与正文完全一致，用于做题前扫一遍。全套卡片见 <code>tools/cards/build/cards.html</code>。</p>
+</blockquote>
+<p><strong>基本公式</strong></p>
+<p>$$l=\frac{n^\circ\pi r}{180^\circ},\quad S_{\text{扇}}=\frac{n^\circ\pi r^{2}}{360^\circ}=\frac{1}{2}lr$$</p>
+<ul>
+<li>骨架：圆心角占周角的几分之几，弧与面积就占几分之几</li>
+<li>已知弧长求面积用 $S=\frac{1}{2}lr$，$l$ 只是弧长</li>
+</ul>
+<p><strong>弓形扇环</strong></p>
+<ul>
+<li>弓形面积 $=$ 扇形减三角形；叶形 $=2$ 个弓形</li>
+<li>扇环面积差：$R^{2}-r^{2}=(R-r)(R+r)$，别只用环宽</li>
+</ul>
+<p><strong>滚动扫过</strong></p>
+<ul>
+<li>外滚：圆心轨迹为直边加转角弧，转角共 $360^\circ$</li>
+<li>扫过条带宽 $2r$，转角处半径也是 $2r$</li>
+</ul>
+<blockquote>
+<p>✅ 信号：弧、扇形、圆心角、滚动、旋转、两半圆重叠<br />
+⚠️ 易错：直径先除 $2$；弧长乘 $2\pi r$，面积乘 $\pi r^{2}$</p>
+</blockquote>
+<!-- /card:auto -->
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：扇环的两段弧长（★★★★）<span class="covers">覆盖点：弧长与圆心角比例</span></h3><div class="problem"><p>如图，一个扇环由两条同心圆弧和两条半径围成，圆心角为 $120^\circ$，环宽（外半径与内半径之差）为 $6$ 厘米，两段弧长之和为 $37.68$ 厘米。求内弧和外弧各长多少厘米。（$\pi$ 取 $3.14$）</p>
 </div>
@@ -322,8 +459,9 @@ $$(a+b)^2+(a-b)^2=2c^2 .$$<br />
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
-<section class="kp"><h2>巧求周长</h2><p class="meta"><span>年级：4、5、6</span><span>难度：★★★</span></p><p><strong>模型是什么</strong>：巧求周长处理的是<strong>边只有横、竖两个方向</strong>的图形：长方形、正方形、台阶形、L 形、十字形，以及从长方形上剪去、挖去几块后剩下的图形。这类图形边多，一条条加又慢又易漏。全篇的方法只有一句话：<strong>横边只管横向走，竖边只管纵向走，把同方向的边搬到一起量。</strong></p>
-<p><strong>核心结论</strong>：如果图形在横竖两个方向上都&quot;鼓&quot;——每条横线、每条竖线去截它，都只截到完整的一段（台阶形、L 形、十字形、缺角长方形都属于这一类）——那么</p>
+<section class="kp"><h2>巧求周长</h2><p class="meta"><span>年级：4、5、6</span><span>难度：★★★</span></p><p><strong>模型是什么</strong>：巧求周长处理的是<strong>边只有横、竖两个方向</strong>的图形：长方形、正方形、台阶形、L 形、十字形，以及从长方形上剪去、挖去几块后剩下的图形。这类图形边多，一条条加又慢又易漏。全篇的方法只有一句话：**横边只管横向走，竖边只管纵向走，把同方向的边搬到一起量。**这套办法有三个常用的名字：平移——把散在各处的横边（或竖边）搬到同一条直线上；拉角——把凹进去的角向外拉直，缺口两侧的回头路就露出来了；标向——给每条边标上&quot;横&quot;或&quot;竖&quot;，分向求和。</p>
+<p><img src="assets/geometry/perimeter-tricks.svg" alt="平移法：凹边平移后周长等于外沿长方形周长" /><br />
+<strong>核心结论</strong>：如果图形在横竖两个方向上都&quot;鼓&quot;——每条横线、每条竖线去截它，都只截到完整的一段（台阶形、L 形、十字形、缺角长方形都属于这一类）——那么</p>
 <p>$$C=2(L+H)$$</p>
 <p>其中 $L$ 是最宽处的横向跨度，$H$ 是最高的竖向跨度：周长就等于&quot;外接长方形&quot;的周长。</p>
 <p><strong>为什么成立</strong>：先看横边。从最左端到最右端，边界分成上、下两条线。上面那条从最左端走到最右端，中途只会向右、不会向左（若某处向左，同一高度上就出现两段，与&quot;只截一段&quot;矛盾），所以它横着走的总长正好是 $L$；下面那条从右往左走，横向也是 $L$。于是所有横边合起来是 $2L$。再看竖边：从最下端到最上端，边界分成左、右两条线，同理它们竖着走的总长各是 $H$，所有竖边合起来是 $2H$。横边与竖边分别统计，正好拼成整个周长 $2L+2H$。记住这句：<strong>边界不走回头路，横的凑成 $L$，竖的凑成 $H$。</strong></p>
@@ -334,7 +472,7 @@ $$(a+b)^2+(a-b)^2=2c^2 .$$<br />
 </ul>
 <p><strong>变形二：拼与切</strong>。两块拼在一起，公共边从外边界消失，而它在两块的周长里各算过一次，所以</p>
 <p>$$C_{\text{拼}}=C_1+C_2-2\times\text{公共边}$$</p>
-<p>反过来，已知周长减少量，公共边 = 减少量 $\div 2$；一刀切开则相反，周长增加 $2\times$ 切线长。二级结论：四个全等小长方形绕圈围成带孔大正方形时，大正方形边长 = 长 + 宽，孔边长 = 长 − 宽。</p>
+<p>反过来，已知周长减少量，公共边 = 减少量 $\div 2$；一刀切开则相反，周长增加 $2\times$ 切线长。二级结论：四个全等小长方形绕圈围成带孔大正方形时，大正方形边长 = 长 + 宽，孔边长 = 长 − 宽。通法只有一句：<strong>每剪一刀就增加两条拼接处的边长，每拼一次就减少对应拼接处的两条边长</strong>，先数清&quot;这一刀（这一拼）动了哪条边&quot;，再加减。</p>
 <p><strong>变形三：周长一定</strong>。同一根铁丝围成什么图形，周长都相等：</p>
 <p>$$2(a+b)=4a_{\text{正}}=C$$</p>
 <p>由周长反求：$a+b=C\div 2$，正方形边长 $=C\div 4$。周长固定时长与宽越接近面积越大，正方形最大——这是&quot;围得最大&quot;一类题的落脚点。</p>
@@ -355,7 +493,34 @@ $$(a+b)^2+(a-b)^2=2c^2 .$$<br />
 <blockquote>
 <p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
 </blockquote>
-
+<!-- card:auto -->
+<h2>速查卡</h2>
+<blockquote>
+<p>裁剪即用：本页对应速查卡「几何 43背」。下面是本节最紧的一版摘要，公式与结论与正文完全一致，用于做题前扫一遍。全套卡片见 <code>tools/cards/build/cards.html</code>。</p>
+</blockquote>
+<p><strong>核心结论</strong></p>
+<p>$$C=2(L+H)$$</p>
+<ul>
+<li>横边凑 $L$、竖边凑 $H$，取最宽与最高跨度</li>
+<li>条件：横、竖线去截都只截一段，边界不走回头路</li>
+</ul>
+<p><strong>凹槽剪角</strong></p>
+<ul>
+<li>边中挖深 $h$ 的缺口：周长加 $2h$，与宽无关</li>
+<li>角上剪去矩形：少的两段正好被新边补满，周长不变</li>
+</ul>
+<p><strong>拼切改围</strong></p>
+<p>$$C_{\text{拼}}=C_1+C_2-2\times(\text{公共边})$$</p>
+<ul>
+<li>由周长减少量 $\div2$ 反求公共边；切开加 $2d$</li>
+<li>同根铁丝：周长不变，$a+b=C\div2$，越方越大</li>
+<li>四小长方形围成带孔正方形：大边长 $=$ 长 $+$ 宽</li>
+</ul>
+<blockquote>
+<p>✅ 信号：台阶、十字、缺角、挖去、拼成、同一根铁丝<br />
+⚠️ 易错：有凹就加 $2\times$ 凹深；斜边不能平移进 $L,H$</p>
+</blockquote>
+<!-- /card:auto -->
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：十字形的周长反求边长（★★★★）<span class="covers">覆盖点：平移法与外接长方形</span></h3><div class="problem"><p>用 $5$ 个完全相同的小正方形拼成一个&quot;十&quot;字形（中间一个，上下左右各一个）。已知十字形的周长是 $60$ 厘米，求每个小正方形的边长，以及十字形的面积。</p>
 </div>
@@ -377,11 +542,12 @@ $$(a+b)^2+(a-b)^2=2c^2 .$$<br />
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
 <section class="kp"><h2>斜三角形面积</h2><p class="meta"><span>年级：4、5、6</span><span>难度：★★★</span></p><h3>一、模型：斜三角形的面积靠“造高”</h3>
-<p>斜三角形指没有现成直角边可以当高的三角形，锐角、钝角都算。它的面积公式仍是</p>
+<p><img src="assets/geometry/oblique-triangle.svg" alt="钝角三角形：高落在对边延长线上" /><br />
+斜三角形指没有现成直角边可以当高的三角形，锐角、钝角都算。它的面积公式仍是</p>
 <p>$$S=\frac12\times\text{底}\times\text{高},$$</p>
 <p>难点不在公式，而在<strong>高必须自己造出来</strong>：或者作出垂线，或者把图形补成能算的规则图形。设三边 $a,b,c$ 上的高分别为 $h_a,h_b,h_c$，同一个三角形面积只有一个值，于是</p>
 <p>$$ah_a=bh_b=ch_c=2S.$$</p>
-<p>这条“等面积法”有两个方向：已知面积和底，反求高 $h=\dfrac{2S}{a}$；已知同一三角形的两组底高，底与高成反比。它还能当“求线段”的工具：把同一个面积用两种底高写法表示，缺的那条线段就解出来了。判断高落在形内还是形外，只看最长边：若最长边 $c$ 满足 $a^2+b^2&lt;c^2$，最大角就是钝角，从两个锐角顶点作出的高会落到形外，必须把底<strong>延长</strong>。</p>
+<p>这条“等面积法”有两个方向：已知面积和底，反求高 $h=\dfrac{2S}{a}$；已知同一三角形的两组底高，底与高成反比。它还能当“求线段”的工具：把同一个面积用两种底高写法表示，缺的那条线段就解出来了。判断高落在形内还是形外，只看最长边：若最长边 $c$ 满足 $a^2+b^2&lt;c^2$，最大角就是钝角，从两个锐角顶点作出的高会落到形外，必须把底<strong>延长</strong>。还有两个可以跳过作高的特例：对角线互相垂直的四边形（筝形、菱形都算），面积 $=$ 两条对角线的乘积 $\div2$；等腰直角三角形，面积 $=$ 斜边 $^2\div4$（斜边上的高恰好是斜边的一半）。</p>
 <h3>二、推导：三条路为什么都通</h3>
 <p>第一条，等面积法。面积是同一个数，换个底算结果不变，所以 $ah_a=bh_b$。若 $D$ 在 $BC$ 上，$\triangle ABD$ 与 $\triangle ACD$ 从 $A$ 出发的高相同，面积比就等于 $BD:DC$——高不变，面积随底走。</p>
 <p>第二条，补形割补。把斜三角形放进长方形或直角梯形，用整体减去角上的直角三角形。依据是面积可加：不重不漏地拼回原图，总和必须相等。点在延长线上时，包围它的规则图形要<strong>先补大再减</strong>，边长写成“整条边 $=$ 段 $+$ 段”或“整条边 $=$ 段 $-$ 段”。</p>
@@ -405,7 +571,31 @@ $$(a+b)^2+(a-b)^2=2c^2 .$$<br />
 <li><strong>比例点用反</strong>。错：$AE:ED=1:3$ 就把高当成 $\frac13\times$ 原高。对：$E$ 离 $D$ 近、离 $A$ 远，高是原高的 $\frac34$。</li>
 <li><strong>面积比当成高之比</strong>。错：两个三角形不同底也直接比面积。对：先找公共的高或公共的底，再写比例。</li>
 </ol>
-
+<!-- card:auto -->
+<h2>速查卡</h2>
+<blockquote>
+<p>裁剪即用：本页对应速查卡「几何 39正」。下面是本节最紧的一版摘要，公式与结论与正文完全一致，用于做题前扫一遍。全套卡片见 <code>tools/cards/build/cards.html</code>。</p>
+</blockquote>
+<p><strong>等面积法</strong></p>
+<p>$$ah_a=bh_b=ch_c=2S$$</p>
+<ul>
+<li>已知面积和底反求高 $h=\frac{2S}{a}$；同一三角形底与高成反比</li>
+</ul>
+<p><strong>作高与补形</strong></p>
+<ul>
+<li>判钝角：最长边 $c$ 有 $a^2+b^2&lt;c^2$ 时高落形外，底要延长</li>
+</ul>
+<p>$$h^2=AB^2-x^2=AC^2-(BC-x)^2$$</p>
+<p><strong>两条特例</strong></p>
+<p>$$S=\frac{d_1d_2}{2},\quad S_{\text{等腰直角}}=\frac{c^{2}}{4}$$</p>
+<ul>
+<li>对角线须垂直（筝形、菱形）；等腰直角三角形中 $c$ 为斜边</li>
+</ul>
+<blockquote>
+<p>✅ 识别信号：只给三边、点在延长线上、方格纸上的三角形<br />
+⚠️ 易错：底高要配对，$\frac{1}{2}\times$ 两条斜边只对直角三角形成立</p>
+</blockquote>
+<!-- /card:auto -->
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：两条边上的高相差 4 厘米（★★★★）<span class="covers">覆盖点：底高配对与等面积法</span></h3><div class="problem"><p>三角形 $ABC$ 中，$AB=15$ 厘米，$AC=10$ 厘米，$AB$ 边上的高比 $AC$ 边上的高短 $4$ 厘米。求 $\triangle ABC$ 的面积与这两条高。</p>
 </div>
@@ -424,10 +614,14 @@ $$(a+b)^2+(a-b)^2=2c^2 .$$<br />
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
 <section class="kp"><h2>格点面积</h2><p class="meta"><span>年级：4、5、6</span><span>难度：★★★</span></p><h3>一、模型：什么时候可以“数点算面积”</h3>
-<p>方格纸上，横线与竖线的交点叫<strong>格点</strong>；若一个多边形的每个顶点都落在格点上，就叫<strong>格点多边形</strong>。皮克定理说：只要图形是“简单”的（边不自交、内部不挖洞），它的面积就是</p>
+<p><img src="assets/geometry/lattice-area.svg" alt="格点多边形：内部格点 $N$ 与边界格点 $B$" /><br />
+方格纸上，横线与竖线的交点叫<strong>格点</strong>；若一个多边形的每个顶点都落在格点上，就叫<strong>格点多边形</strong>。皮克定理说：只要图形是“简单”的（边不自交、内部不挖洞），它的面积就是</p>
 <p>$$S=N+\frac{B}{2}-1$$</p>
 <p>其中 $N$ 是内部格点数，$B$ 是边界格点数（含全部顶点），面积以一个小方格为 $1$。两个基本块先验一遍：单位正方形 $N=0$、$B=4$、$S=1$；占半个小方格的三角形 $N=0$、$B=3$、$S=\frac12$，都满足公式。</p>
 <p>用之前必须同时满足三个条件：① 每个顶点都是格点；② 边不自交；③ 内部没有“洞”。缺一条，公式立刻失效，只能回到割补。</p>
+<p><strong>三角形格点</strong>：把方格换成等边三角形网格，同样可以数点算面积。若单位小三角形的面积为 $1$，则</p>
+<p>$$S=2N+L-2.$$</p>
+<p>两条式子长得不一样，来历却是同一套——都是割补。</p>
 <h3>二、两个量怎么数</h3>
 <p><strong>边界 $B$</strong>：两端都是格点的线段，若横差 $a$、纵差 $b$，则它上面（含两端）有 $\gcd(a,b)+1$ 个格点，它对 $B$ 的“新贡献”是 $\gcd(a,b)$。把各边的 $\gcd$ 相加就是 $B$，这样顶点不会被重复计算。例如横差 $6$、纵差 $0$ 的边贡献 $6$，边上共 $7$ 个点；横差 $4$、纵差 $2$ 的边贡献 $2$，边上共 $3$ 个点，中间那个是中点。</p>
 <p><strong>内部 $N$</strong>：可以逐行数——令 $y=1,2,\ldots$，用<strong>严格</strong>不等式卡出每一行的左右边界再相加；也可以先割补求出 $S$，再由 $N=S-\frac{B}{2}+1$ 反解。前者慢而直观，后者快但要求 $B$ 数得准。</p>
@@ -469,7 +663,30 @@ $$(a+b)^2+(a-b)^2=2c^2 .$$<br />
 <blockquote>
 <p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
 </blockquote>
-
+<!-- card:auto -->
+<h2>速查卡</h2>
+<blockquote>
+<p>裁剪即用：本页对应速查卡「几何 41背」。下面是本节最紧的一版摘要，公式与结论与正文完全一致，用于做题前扫一遍。全套卡片见 <code>tools/cards/build/cards.html</code>。</p>
+</blockquote>
+<p><strong>皮克定理</strong></p>
+<p>$$S=N+\frac{B}{2}-1$$</p>
+<ul>
+<li>$N$ 内部格点、$B$ 边界格点（含顶点），单位为小方格</li>
+</ul>
+<p><strong>三角格点</strong></p>
+<p>$$S=2N+L-2$$</p>
+<ul>
+<li>单位三角形面积为 $1$；$N$、$L$ 含义同上，思想仍是割补</li>
+</ul>
+<p><strong>点数与放缩</strong></p>
+<ul>
+<li>每边贡献 $=$ 横纵差的 $\text{gcd}$，各边相加得 $B$</li>
+</ul>
+<blockquote>
+<p>✅ 信号：方格纸、格点、坐标、只给点数、半整数面积<br />
+⚠️ 易错：面积必为 $0.5$ 的整数倍；有洞或顶点非格点失效</p>
+</blockquote>
+<!-- /card:auto -->
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：四边形先割补，再用皮克对账（★★★★）<span class="covers">覆盖点：皮克定理与割补求面积</span></h3><div class="problem"><p>方格纸上（小方格边长 $1$），格点四边形 $ABCD$ 的顶点为 $A(0,0)$、$B(8,0)$、$C(6,6)$、$D(2,4)$。（1）用割补求它的面积；（2）求边界格点数 $B$；（3）求内部格点数 $N$，并用逐行数点验算。</p>
 </div>
@@ -495,7 +712,7 @@ $$(a+b)^2+(a-b)^2=2c^2 .$$<br />
 $$x=S_{\triangle PBC},\quad y=S_{\triangle PCA},\quad z=S_{\triangle PAB}.$$<br />
 则有<br />
 $$\frac{BD}{DC}=\frac{z}{y},\qquad \frac{CE}{EA}=\frac{x}{z},\qquad \frac{AF}{FB}=\frac{y}{x}.$$<br />
-这三条式子合称燕尾模型。适用条件是：$P$ 在三角形内部，$D,E,F$ 在对应的边上，且连线经过顶点。只要图中有“内一点 + 三条顶点连线”，就可以先找燕尾。若图中只画出一条顶点连线，也不必急着补全三条，先用已有的那一条；关键不是线多，而是找准“同一个顶点两侧”的两块面积。</p>
+这三条式子合称燕尾模型。适用条件是：$P$ 在三角形内部，$D,E,F$ 在对应的边上，且连线经过顶点。只要图中有“内一点 + 三条顶点连线”，就可以先找燕尾。若图中只画出一条顶点连线，也不必急着补全三条，先用已有的那一条；关键不是线多，而是找准&quot;同一个顶点两侧&quot;的两块面积。一句话记住它：过顶点 $A$ 的连线 $AD$ 两侧那两块面积之比，等于 $D$ 分底边所得两段之比，即 $S_{\triangle ABP}:S_{\triangle ACP}=BD:DC$。</p>
 <p><strong>为什么成立</strong>：以 $\frac{BD}{DC}=\frac{z}{y}$ 为例。因为 $D$ 在 $BC$ 上，$\triangle ABD$ 与 $\triangle ACD$ 同高，所以 $S_{\triangle ABD}:S_{\triangle ACD}=BD:DC$；同理 $\triangle PBD$ 与 $\triangle PCD$ 也同高，$S_{\triangle PBD}:S_{\triangle PCD}=BD:DC$。两对比相等，把对应部分相减：<br />
 $$S_{\triangle ABP}=S_{\triangle ABD}-S_{\triangle PBD},\quad S_{\triangle APC}=S_{\triangle ACD}-S_{\triangle PCD},$$<br />
 差的比仍等于 $BD:DC$，即 $\frac{z}{y}=\frac{BD}{DC}$。关键动作是“相减”：用大三角形减去贴着 $P$ 的小三角形，才得到燕尾的两块。这里默认 $P$ 在三角形内部，两个差都是正面积；若 $P$ 跑到形外，就要先判断哪块大、哪块小，公式会变成面积之差而不是和。另外两条同理轮换顶点即可。三式相乘得 $\frac{BD}{DC}\cdot\frac{CE}{EA}\cdot\frac{AF}{FB}=1$，这是检验答案的“乘积为 1”法则。</p>
@@ -527,7 +744,32 @@ $$S_{\triangle ABP}=S_{\triangle ABD}-S_{\triangle PBD},\quad S_{\triangle APC}=
 <blockquote>
 <p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
 </blockquote>
-
+<!-- card:auto -->
+<h2>速查卡</h2>
+<blockquote>
+<p>裁剪即用：本页对应速查卡「几何 37正」。下面是本节最紧的一版摘要，公式与结论与正文完全一致，用于做题前扫一遍。全套卡片见 <code>tools/cards/build/cards.html</code>。</p>
+</blockquote>
+<p><strong>核心结论</strong></p>
+<ul>
+<li>记 $x=S_{PBC}$、$y=S_{PCA}$、$z=S_{PAB}$（$P$ 在三角形内）</li>
+</ul>
+<p>$$\frac{BD}{DC}=\frac{z}{y},\quad \frac{CE}{EA}=\frac{x}{z},\quad \frac{AF}{FB}=\frac{y}{x}$$</p>
+<p>$$\frac{BD}{DC}\cdot\frac{CE}{EA}\cdot\frac{AF}{FB}=1$$</p>
+<p><strong>常用套路</strong></p>
+<ul>
+<li>双燕尾：由两条边比定 $x:y:z$，再按 $x+y+z=S$ 分配</li>
+<li>逆用：已知面积直接读线段比；贴边小块先用同高拆开</li>
+<li>中点给出两组等面积，与燕尾联立可定线段比</li>
+</ul>
+<p><strong>易错</strong></p>
+<ul>
+<li>分母是另一段不是整条；$BD$ 配含 $B$ 的 $z$，$DC$ 配含 $C$ 的 $y$</li>
+</ul>
+<blockquote>
+<p>✅ 识别：三角形内一点 + 过顶点的连线，先找连线两侧那两块<br />
+⚠️ $S_{ABP}=S_{ABD}-S_{PBD}$，必须相减，不能相加</p>
+</blockquote>
+<!-- /card:auto -->
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：由底边比求燕尾面积（★★★★）<span class="covers">覆盖点：燕尾比例求面积</span></h3><div class="problem"><p>在 $\triangle ABC$ 中，$P$ 是内部一点，射线 $AP$ 交 $BC$ 于点 $D$。已知 $BD:DC=2:3$，$S_{\triangle ABP}=12$ 平方厘米，$S_{\triangle PBC}=30$ 平方厘米。求 $S_{\triangle APC}$、$S_{\triangle ABC}$ 和 $S_{\triangle ABD}$。</p>
 </div>
@@ -555,10 +797,11 @@ $$S_{\triangle ABP}=S_{\triangle ABD}-S_{\triangle PBD},\quad S_{\triangle APC}=
 <p><strong>怎么判定相似</strong>：主要靠两条。一是 <strong>两组角分别相等</strong>：第三个角由内角和自动相等，形状就被彻底锁死；平行线提供的同位角、内错角，以及&quot;公共角 + 另一组等角&quot;，是最常见的送角方式。二是<strong>两边成比例且夹角相等</strong>：如 $\frac{AB}{A'B'}=\frac{AC}{A'C'}$ 且 $\angle A=\angle A'$。第三条&quot;三组对应边之比相等&quot;用得少，但三边数据都给全时可以一试（例1的验算就用它）。注意：$k$ 是&quot;谁比谁&quot;要提前说清，$\triangle ADE$ 与 $\triangle ABC$ 的相似比写作 $\frac{AD}{AB}$ 还是 $\frac{AB}{AD}$，后面的面积比会跟着变成 $k^{2}$ 或 $\frac{1}{k^{2}}$，一步定错，全题翻车。</p>
 <p><strong>三个基本图形</strong>：</p>
 <ul>
-<li>
-<p><strong>A 字型（金字塔型）</strong>：$DE\parallel BC$，则 $\triangle ADE\sim\triangle ABC$，<br />
-$$\frac{AD}{AB}=\frac{AE}{AC}=\frac{DE}{BC}=k,\qquad AD:DB=AE:EC$$</p>
-</li>
+<li><strong>A 字型（金字塔型）</strong>：$DE\parallel BC$，则 $\triangle ADE\sim\triangle ABC$，<br />
+$$\frac{AD}{AB}=\frac{AE}{AC}=\frac{DE}{BC}=\frac{AF}{AG}=k,\qquad AD:DB=AE:EC$$</li>
+</ul>
+<p>其中 $AF$、$AG$ 是两个三角形对应高上从顶点量到对边的那一段；比式里每一项都等于 $k$，所以面积比也等于 $AF^2:AG^2$。</p>
+<ul>
 <li>
 <p><strong>X 字型（沙漏型）</strong>：$AB\parallel CD$，$AC$ 与 $BD$ 交于点 $O$，则 $\triangle AOB\sim\triangle COD$，<br />
 $$\frac{AO}{OC}=\frac{BO}{OD}=\frac{AB}{CD}=k$$</p>
@@ -592,7 +835,32 @@ $$AC^{2}=AD\cdot AB$$</p>
 <li><strong>对应高也当平方</strong>。面积比为 $\frac{9}{25}$ 时，对应高之比是 $\frac35$，不是 $\frac{9}{25}$。</li>
 <li><strong>分类漏解</strong>。求 $AE$ 时只按一种对应算出 $\frac{9}{4}$，忘了另一组对应也能相似，答案可能有两个。</li>
 </ol>
-
+<!-- card:auto -->
+<h2>速查卡</h2>
+<blockquote>
+<p>裁剪即用：本页对应速查卡「几何 36背」。下面是本节最紧的一版摘要，公式与结论与正文完全一致，用于做题前扫一遍。全套卡片见 <code>tools/cards/build/cards.html</code>。</p>
+</blockquote>
+<p><strong>核心换算</strong></p>
+<p>$$\frac{S_1}{S_2}=k^2,\quad \frac{C_1}{C_2}=k$$</p>
+<ul>
+<li>周长、对应高按 $k$ 缩放；给面积比先开方才得 $k$</li>
+</ul>
+<p><strong>三个图形</strong></p>
+<ul>
+<li>A 字型：$DE\parallel BC$，$\triangle ADE\sim\triangle ABC$</li>
+<li>X 字型：$AB\parallel CD$ 交于 $O$，四块 $m^2:mn:n^2:mn$</li>
+<li>反 A 型：$\angle ACD=\angle ABC$，对应错位（$D$ 配 $C$）</li>
+</ul>
+<p>$$AC^2=AD\cdot AB$$</p>
+<p><strong>常用变形</strong></p>
+<ul>
+<li>梯形只给上下两块 $a,b$：总面积 $=(\sqrt{a}+\sqrt{b})^2$</li>
+</ul>
+<blockquote>
+<p>✅ 识别：平行线找 A/X 型；公共角 + 一组等角想反 A 型<br />
+⚠️ 易错：$k=\frac{AD}{AB}$ 不是 $\frac{AD}{DB}$；面积比别忘平方</p>
+</blockquote>
+<!-- /card:auto -->
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：等角却错位的相似（★★★★）<span class="covers">覆盖点：相似判定与对应关系定位</span></h3><div class="problem"><p>在 $\triangle ABC$ 中，$AB=12$ 厘米，$AC=9$ 厘米。点 $D$ 在边 $AB$ 上，$AD=3$ 厘米；点 $E$ 在边 $AC$ 上，且 $\angle AED=\angle ABC$。<br />
 （1）写出 $\triangle AED$ 与 $\triangle ABC$ 的对应关系，并求 $AE$ 与 $DE:BC$；<br />
@@ -625,10 +893,12 @@ $$AC^{2}=AD\cdot AB$$</p>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
 <section class="kp"><h2>立体几何综合</h2><p class="meta"><span>年级：4、5、6</span><span>难度：★★★</span></p><h3>一、模型：三张表加两条守恒</h3>
-<p>立体几何的竞赛题看着花样多，其实只在调三类量：体积、表面积、展开图。先把下面三张表练成条件反射。</p>
+<p><img src="assets/geometry/solid-geometry.svg" alt="圆柱与圆锥：$V=i r^2h$、$V=rac13i r^2h$" /><br />
+立体几何的竞赛题看着花样多，其实只在调三类量：体积、表面积、展开图。先把下面三张表练成条件反射。</p>
 <p><strong>柱体</strong>：$V=S_{\text{底}}h$。长方体 $V=abc$、$S=2(ab+bc+ca)$；圆柱 $V=\pi r^{2}h$、侧面积 $2\pi rh$、表面积 $2\pi r^{2}+2\pi rh$。</p>
 <p><strong>锥体</strong>：$V=\frac{1}{3}S_{\text{底}}h$。圆锥侧面积 $\pi rl$，母线 $l=\sqrt{r^{2}+h^{2}}$。</p>
 <p><strong>展开图</strong>：圆柱侧面展开是长方形，长 $=2\pi r$（恰是底面周长）、宽 $=h$；圆锥侧面展开是扇形，弧长 $=2\pi r$、半径 $=l$、圆心角 $=360^{\circ}\cdot\dfrac{r}{l}$。</p>
+<p><strong>正方体与三视图</strong>：正方体 $S=6a^{2}$、$V=a^{3}$；沿棱剪开摊平就是正方体的展开图，从正面、上面、左面三个方向看过去分别得到主视图、俯视图、左视图，合称三视图。</p>
 <p>三张表都有适用条件：柱体要&quot;上下底面一样大、侧面与底面垂直&quot;，锥体要&quot;一个顶点加一个底面&quot;；展开图只在侧面能摊平时才好用，求的是侧面上的路线，底面上的段要另算。</p>
 <p>两条守恒贯穿全章：形状变了<strong>体积不变</strong>（熔铸、捏、倒水）；切一刀<strong>多两个面</strong>（表面积增加 $2S_{\text{切}}$）。压轴题几乎都是这两句话的推论。</p>
 <h3>二、推导：公式为什么是这样</h3>
@@ -673,7 +943,32 @@ $$\underbrace{-\pi r^{2}}<em>{\text{洞口}}+\underbrace{2\pi rh}</em>{\text{洞
 <blockquote>
 <p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
 </blockquote>
-
+<!-- card:auto -->
+<h2>速查卡</h2>
+<blockquote>
+<p>裁剪即用：本页对应速查卡「几何 42背」。下面是本节最紧的一版摘要，公式与结论与正文完全一致，用于做题前扫一遍。全套卡片见 <code>tools/cards/build/cards.html</code>。</p>
+</blockquote>
+<p><strong>柱锥公式</strong></p>
+<p>$$V_{\text{柱}}=S_{\text{底}}h,\quad V_{\text{锥}}=\frac{1}{3}S_{\text{底}}h$$</p>
+<p>$$S_{\text{柱侧}}=2\pi rh,\quad S_{\text{锥侧}}=\pi rl$$</p>
+<ul>
+<li>圆柱 $V=\pi r^{2}h$、圆锥母线 $l=\sqrt{r^{2}+h^{2}}$</li>
+<li>长方体 $V=abc$、$S=2(ab+bc+ca)$</li>
+</ul>
+<p><strong>展开图</strong></p>
+<ul>
+<li>圆柱侧展为长方形：长 $=2\pi r$、宽 $=h$</li>
+</ul>
+<p><strong>守恒与变形</strong></p>
+<ul>
+<li>熔铸倒水体积不变；切一刀表面积加 $2S_{\text{切}}$</li>
+<li>排水法：上升高度 $=\frac{V_{\text{浸}}}{S_{\text{容底}}}$，先判完全浸没</li>
+</ul>
+<blockquote>
+<p>✅ 信号：水面上升、熔铸倒入、切后表面积增加、绕柱最短<br />
+⚠️ 易错：先判是否浸没；洞口别重复加；表面积体积单位分清</p>
+</blockquote>
+<!-- /card:auto -->
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：铁块入水后水面升高多少（★★★★）<span class="covers">覆盖点：排水法与水面升降</span></h3><div class="problem"><p>一个长方体水箱，内部长 $20$ 厘米、宽 $15$ 厘米、高 $15$ 厘米，里面水深 $9$ 厘米。把一个底面半径 $5$ 厘米、高 $12$ 厘米的圆柱形铁块竖直放入箱中，底面与箱底接触（$\pi$ 取 $3.14$）。（1）水面上升多少厘米？（2）放入后水面高多少？由此判断铁块是否真的完全浸没。（3）如果再放入一个同样的铁块（仍竖直放在箱底，与第一个铁块并排），水会溢出吗？溢出多少立方厘米？</p>
 </div>
@@ -701,14 +996,14 @@ $$\underbrace{-\pi r^{2}}<em>{\text{洞口}}+\underbrace{2\pi rh}</em>{\text{洞
 <p>（1）<strong>等底等高，面积相等</strong>；反过来，面积相等且同底，则高相等。</p>
 <p>（2）<strong>同底或同高时，面积比等于另一条对应边的比</strong>。若 $D$ 在 $BC$ 上，则<br />
 $$\frac{S_{\triangle ABD}}{S_{\triangle ACD}}=\frac{BD}{DC}.$$<br />
-因为两个三角形从 $A$ 到 $BC$ 的高是同一条，写面积时公共的 $\frac12$ 和高一起约掉，只剩底之比。于是“面积比”与“线段比”可以互相翻译，这是本专题所有计算的骨架。</p>
+因为两个三角形从 $A$ 到 $BC$ 的高是同一条，写面积时公共的 $\frac12$ 和高一起约掉，只剩底之比。于是“面积比”与“线段比”可以互相翻译，这是本专题所有计算的骨架。这条&quot;同高比&quot;也常简记成 $S_1:S_2=a:b$——等高时 $a,b$ 是两条底，等底时是两条高。</p>
 <h3>二、推导：顶点为什么可以“滑动”</h3>
 <p>若 $l_1\parallel l_2$，$A$、$B$ 在 $l_1$ 上，$C$ 在 $l_2$ 上，则 $C$ 到 $l_1$ 的距离恒等于两平行线间的距离 $h$，于是<br />
 $$S_{\triangle ABC}=\frac12\times AB\times h$$<br />
 与 $C$ 在 $l_2$ 上的位置无关。也就是说，顶点沿着与底平行的直线滑动，面积不变。这个动作叫<strong>等积变形</strong>（拉车模型）：把不好算的斜三角形“推”成好算的三角形，面积一分不差。它也是“构造辅助线”的来源。</p>
 <p>由此得到<strong>一半模型</strong>：平行四边形 $ABCD$ 中，$E$ 在 $AB$ 上，则<br />
 $$S_{\triangle CDE}=\frac12\times CD\times h=\frac12 S_{ABCD};$$<br />
-例如 $S_{ABCD}=48$ 时，无论 $E$ 在 $AB$ 上哪里，$S_{\triangle CDE}$ 都是 $24$。梯形中，$E$ 在下底 $BC$ 上滑动时，$S_{\triangle ADE}=\frac12\times AD\times h$ 为定值。反过来，已知面积和底，也能反求高；这是“面积条件”与“线段条件”之间的桥梁。</p>
+例如 $S_{ABCD}=48$ 时，无论 $E$ 在 $AB$ 上哪里，$S_{\triangle CDE}$ 都是 $24$。梯形中，$E$ 在下底 $BC$ 上滑动时，$S_{\triangle ADE}=\frac12\times AD\times h$ 为定值。反过来，已知面积和底，也能反求高；这是&quot;面积条件&quot;与&quot;线段条件&quot;之间的桥梁。一半模型在平行四边形、任意四边形、梯形这三种图形上都成立，看到它们先问一句&quot;哪一块恰好是整体的一半&quot;。</p>
 <p>注意“滑动”只改变顶点位置，不改变它到对边的距离；如果图中没有现成的平行线，可以自己作一条平行线，把顶点“请”到方便计算的位置。这是构造辅助线最常用的理由。</p>
 <h3>三、三个高级变形</h3>
 <p><strong>变形1（共顶点分面积）</strong>：$D$ 在 $BC$ 上，则 $S_{\triangle ABD}:S_{\triangle ACD}=BD:DC$。若再有 $E$ 在 $AC$ 上，$AD$ 与 $BE$ 交于 $O$，可设最小的一块为 $x$，把其余各块用 $x$ 与总面积表示，再用比例列方程。这是杯赛最常用的“设元法”。设元时优先选只属于一个三角形、位置最“靠边”的那一块，这样其他块不容易重复计算。</p>
@@ -747,7 +1042,29 @@ $$S_{\triangle AOB}=S_{\triangle COD},\qquad S_{\triangle AOD}:S_{\triangle BOC}
 <blockquote>
 <p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
 </blockquote>
-
+<!-- card:auto -->
+<h2>速查卡</h2>
+<blockquote>
+<p>裁剪即用：本页对应速查卡「几何 38背」。下面是本节最紧的一版摘要，公式与结论与正文完全一致，用于做题前扫一遍。全套卡片见 <code>tools/cards/build/cards.html</code>。</p>
+</blockquote>
+<p><strong>两条根基</strong></p>
+<p>$$\frac{S_{ABD}}{S_{ACD}}=\frac{BD}{DC}$$</p>
+<ul>
+<li>等底等高则等积；同底或同高时面积比等于另一边之比</li>
+<li>顶点沿与底平行的直线滑动，面积不变——等积变形（拉车）</li>
+</ul>
+<p><strong>常用结论</strong></p>
+<ul>
+<li>一半模型：平行四边形内 $E$ 在一边上，$S_{CDE}=\frac{1}{2}S$</li>
+<li>平行四边形内一点：$S_{ABP}+S_{CDP}=\frac{1}{2}S$（对角两块）</li>
+<li>设最小块为 $x$，用整体 = 部分和列方程；中点想 $1:1$</li>
+<li>找不到共底共高，就作平行线或延长线造出等高</li>
+</ul>
+<blockquote>
+<p>✅ 识别信号：平行线、平行四边形、梯形、中点、只给面积不给长度<br />
+⚠️ 易错：顶点只能沿平行线滑；面积比大底配大面积</p>
+</blockquote>
+<!-- /card:auto -->
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：长方形中两块三角形的面积和（★★★★）<span class="covers">覆盖点：等底等高与一半模型</span></h3><div class="problem"><p>长方形 $ABCD$ 中，$E$ 是边 $AD$ 上一点，连接 $BE$、$CE$。已知 $\triangle ABE$ 的面积是 $18$ 平方厘米，$\triangle CDE$ 的面积是 $30$ 平方厘米。求长方形 $ABCD$ 的面积。</p>
 </div>
@@ -774,11 +1091,11 @@ $$S_{\triangle AOB}=S_{\triangle COD},\qquad S_{\triangle AOD}:S_{\triangle BOC}
 <p><strong>二、结论一：乘积式（任意四边形）</strong></p>
 <p>同高的两个三角形，面积比等于底之比。上块与右翅共用高（底是 $AC$ 上的 $AO$、$OC$），所以上块比右翅等于 $AO:OC$；左翅与下块也共高，左翅比下块同样等于 $AO:OC$。两式相除去分母，得到<br />
 $$S_{\text{上}}\times S_{\text{下}}=S_{\text{右}}\times S_{\text{左}}$$<br />
-这条式子只用到&quot;共高&quot;，与是否平行无关。它的用法有两面：知三块求第四块；反过来把面积比当尺子，$AO:OC$ 直接读作上块比右翅，$BO:OD$ 读作上块比左翅。一般四边形中，已知&quot;三块面积&quot;（第四块用乘积式求），或&quot;一块面积加两条线段比&quot;，就能把整张图补齐；在梯形中两条线段比相等，一块面积加一个线段比就够了。</p>
+这条式子只用到&quot;共高&quot;，与是否平行无关。它的用法有两面：知三块求第四块；反过来把面积比当尺子，$AO:OC$ 直接读作上块比右翅，$BO:OD$ 读作上块比左翅。一般四边形中，已知&quot;三块面积&quot;（第四块用乘积式求），或&quot;一块面积加两条线段比&quot;，就能把整张图补齐；在梯形中两条线段比相等，一块面积加一个线段比就够了。用下标把四块记足：上块 $S_1$、右翅 $S_2$、下块 $S_3$、左翅 $S_4$，则 $S_1:S_4=S_2:S_3$，也就是 $S_1\times S_3=S_2\times S_4$；而 $AO:OC=(S_1+S_2):(S_4+S_3)$。</p>
 <p><strong>三、结论二：梯形份数（$AB\parallel CD$）</strong></p>
 <p>先证两翅相等：以 $AB$ 为底的两个三角形 $ABD$、$ABC$ 同底等高，面积相等，各自减去公共的上块，剩下的左右两翅自然相等。再设 $AB:CD=a:b$。由平行得三角形 $AOB$ 与 $COD$ 相似、相似比 $a:b$，于是上下两块面积比为 $a^2:b^2$，同时 $AO:OC=BO:OD=a:b$。为什么是平方？相似的两个三角形底按 $a:b$ 缩放、高也按 $a:b$ 缩放，面积是底与高乘积的一半，两个 $a:b$ 相乘就是平方。上块与右翅共高、底之比正是 $AO:OC=a:b$，所以右翅取 $ab$ 份；上块与左翅共高、底之比是 $BO:OD=a:b$，左翅同样 $ab$ 份。四块份数为<br />
 $$a^2:ab:b^2:ab$$<br />
-把四块相加，总份数是 $a^2+2ab+b^2$，是一个<strong>完全平方</strong> $(a+b)^2$，不是 $a^2+ab+b^2$——这是本模型最容易丢分的一步。再代入梯形的高 $h$ 可以验出 $k=h\div 2(a+b)$，总面积 $(a+b)h\div 2$，与梯形面积公式严丝合缝，说明份数不是凑出来的，而是被平行条件唯一确定的。</p>
+把四块相加，总份数是 $a^2+2ab+b^2$，是一个<strong>完全平方</strong> $(a+b)^2$，不是 $a^2+ab+b^2$——这是本模型最容易丢分的一步。再代入梯形的高 $h$ 可以验出 $k=h\div 2(a+b)$，总面积 $(a+b)h\div 2$，与梯形面积公式严丝合缝，说明份数不是凑出来的，而是被平行条件唯一确定的。连起来写就是 $S_1:S_3=a^2:b^2$，$S_1:S_2:S_3:S_4=a^2:ab:b^2:ab$。</p>
 <p><strong>四、三个高级变形</strong></p>
 <p>（1）<strong>腰延长</strong>：不妨设 $a&lt;b$（若 $a&gt;b$，把 $a,b$ 对调即可），延长 $AD$、$BC$ 交于 $P$，三角形 $PAB$ 与 $PDC$ 相似、比 $a:b$，于是 $PA:PD=a:b$、$PA:AD=a:(b-a)$，两三角形面积比 $a^2:b^2$，且大三角形减小三角形恰好等于梯形面积；求 $P$ 到上底的高时，只需把梯形的高按 $a:(b-a)$ 放大。（2）<strong>和差还原</strong>：上块加下块为 $(a^2+b^2)k$，两翅和为 $2abk$，相减得 $(a-b)^2k$；把它与总面积 $(a+b)^2k$ 联立，先开方、再用和差公式，就能由面积还原两底之比。（3）<strong>面积读线段</strong>：$AO:OC$、$BO:OD$ 都能从四块面积里读出来，已知线段比和一块面积，整张图就定了。</p>
 <p><strong>五、竞赛视角</strong></p>
@@ -793,7 +1110,38 @@ $$a^2:ab:b^2:ab$$<br />
 <li>腰延长后写 $PA:AD=a:b$：应为 $a:(b-a)$，差了一段。</li>
 <li>同高面积比量错端点：先写清从哪端量、对应哪条底。</li>
 </ol>
-
+<!-- card:auto -->
+<h2>速查卡</h2>
+<blockquote>
+<p>裁剪即用：本页对应速查卡「几何 38正」。下面是本节最紧的一版摘要，公式与结论与正文完全一致，用于做题前扫一遍。全套卡片见 <code>tools/cards/build/cards.html</code>。</p>
+</blockquote>
+<p><strong>乘积式</strong></p>
+<ul>
+<li>记四块：上块 $S_1$、右翅 $S_2$、下块 $S_3$、左翅 $S_4$</li>
+</ul>
+<p>$$S_1\times S_3=S_2\times S_4$$</p>
+<ul>
+<li>任意四边形都成立，只用共高；知三块可求第四块</li>
+<li>$AO:OC=(S_1+S_2):(S_4+S_3)$，即同侧两块相加再比</li>
+</ul>
+<p><strong>梯形份数</strong></p>
+<ul>
+<li>条件：$AB\parallel CD$ 时两翅才相等（一般四边形不成立）</li>
+</ul>
+<p>$$S_1:S_3=a^2:b^2,\quad S_1:S_2:S_3:S_4=a^2:ab:b^2:ab$$</p>
+<ul>
+<li>设 $AB:CD=a:b$，总份数 $(a+b)^2$，定 $k$ 后分配四块</li>
+</ul>
+<p><strong>变形</strong></p>
+<ul>
+<li>腰延长交于 $P$：$PA:AD=a:(b-a)$，两三角形面积比 $a^2:b^2$</li>
+<li>和差还原：$(a+b)^2k$ 与 $(a-b)^2k$ 联立，开方再用和差求 $a:b$</li>
+</ul>
+<blockquote>
+<p>✅ 识别信号：对角线交点、梯形四块、同底共高<br />
+⚠️ 易错：总份数是 $(a+b)^2$；底比 $2:3$ 对应面积比 $4:9$</p>
+</blockquote>
+<!-- /card:auto -->
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：由两条对角线的比推四块面积（★★★★）<span class="covers">覆盖点：对角线乘积式与共高比</span></h3><div class="problem"><p>四边形 $ABCD$ 的对角线 $AC$、$BD$ 相交于点 $O$。已知 $AO:OC=2:3$，$BO:OD=3:4$，$S_{\triangle AOB}=12$ 平方厘米。求另外三块的面积和四边形 $ABCD$ 的面积。</p>
 </div>
@@ -812,7 +1160,8 @@ $$a^2:ab:b^2:ab$$<br />
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
 <section class="kp"><h2>表面染色</h2><p class="meta"><span>年级：4、5、6</span><span>难度：★★★</span></p><h3>一、模型：位置定，答案就定</h3>
-<p>表面染色题的结构是固定的：给一个大正方体（或长方体）的表面涂色，再沿三个方向把它切成棱长 $1$ 的小正方体，问&quot;恰好三面、两面、一面、零面涂色&quot;的各有多少块。适用条件很明确——三个方向都切成整数份，每块都是单位小正方体。核心结论只有一句：<strong>一块小正方体涂到几面，完全由它在大立体中的位置决定</strong>，与颜色、涂色先后、切割顺序都无关。</p>
+<p><img src="assets/geometry/surface-coloring.svg" alt="表面染色：顶点三面、棱上两面、面内一面" /><br />
+表面染色题的结构是固定的：给一个大正方体（或长方体）的表面涂色，再沿三个方向把它切成棱长 $1$ 的小正方体，问&quot;恰好三面、两面、一面、零面涂色&quot;的各有多少块。适用条件很明确——三个方向都切成整数份，每块都是单位小正方体。核心结论只有一句：<strong>一块小正方体涂到几面，完全由它在大立体中的位置决定</strong>，与颜色、涂色先后、切割顺序都无关。</p>
 <p>位置与面数是&quot;由外向内&quot;的四层：$8$ 个顶点处→三面；棱上除两端→两面；面的内部除边框→一面；剥掉外壳剩下的内核→零面。设大正方体棱长为 $n$，记内棱长 $m=n-2$，则</p>
 <p>$$\text{三面}=8,\qquad \text{两面}=12m,\qquad \text{一面}=6m^{2},\qquad \text{零面}=m^{3}.$$</p>
 <p>这四类把 $n^{3}$ 块小正方体不重不漏地分完，所以<br />
@@ -825,8 +1174,9 @@ $$8+12m+6m^{2}+m^{3}=(m+2)^{3}=n^{3}.$$</p>
 $$3\times8+2\times12m+1\times6m^{2}=6n^{2}.$$<br />
 取 $n=7$ 检验：$24+120+150=294=6\times49$。任何一类数错，这条式子立刻失衡。注意&quot;红面数&quot;与&quot;块数&quot;是两套计数，前者才乘每块的面数。</p>
 <h3>三、三个高级变形</h3>
-<p><strong>变形1（长方体）</strong>：设 $A=a-2$、$B=b-2$、$C=c-2$（三个棱长都至少为 $2$）。$12$ 条棱分成三组、每组 $4$ 条，净长分别是 $A,B,C$；$6$ 个面两两相对，净面积分别是 $AB,BC,CA$。故<br />
-$$\text{两面}=4(A+B+C),\quad \text{一面}=2(AB+BC+CA),\quad \text{零面}=ABC.$$<br />
+<p><strong>变形1（长方体）</strong>：设 $A=a-2$、$B=b-2$、$C=c-2$（三个棱长都至少为 $2$）。$12$ 条棱分成三组、每组 $4$ 条，净长分别是 $A,B,C$；$6$ 个面两两相对，净面积分别是 $AB,BC,CA$，顶点处的三面块仍是 $8$ 个。故<br />
+$$\text{两面}=4(A+B+C),\quad \text{一面}=2(AB+BC+CA),\quad \text{零面}=ABC,$$<br />
+也就是 $\text{两面}=4[(a-2)+(b-2)+(c-2)]$、$\text{一面}=2[(a-2)(b-2)+(b-2)(c-2)+(c-2)(a-2)]$、$\text{零面}=(a-2)(b-2)(c-2)$。<br />
 要紧的是次数：&quot;两面&quot;对 $A+B+C$ 是一次式，&quot;一面&quot;是二次式。所以题目给两面板数时，可以直接列一元一次方程反解棱长；给一面块数时，通常先解出棱长再代入。</p>
 <p><strong>变形2（缺面与补差）</strong>：有面不涂时，绝不照搬六面公式。做法是先按六面全涂算，再把缺掉的那个面逐块&quot;降级&quot;：该面的角块 $3\to2$、棱中块 $2\to1$、面内块 $1\to0$。若缺的是两个相对的面，则沿这一方向的各层结构完全相同（这一方向根本没涂色），可以把立体压扁成一排 $n\times n$ 的柱子，先在一层里分类，再乘层数。这个&quot;降维法&quot;是压轴题最省事的入口。</p>
 <p><strong>变形3（拼合与重分类）</strong>：两个立体分别涂色后再粘合，贴缝处的红色被夹在内部，看不见但确实涂过。此时等价于在标准答案上给贴缝两侧的块各加一面，但必须回到贴缝那一层重新分类，不能只把总数加一，因为一层之内不同位置的块原本的等级并不相同。</p>
@@ -849,7 +1199,34 @@ $$\text{两面}=4(A+B+C),\quad \text{一面}=2(AB+BC+CA),\quad \text{零面}=ABC
 <blockquote>
 <p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
 </blockquote>
-
+<!-- card:auto -->
+<h2>速查卡</h2>
+<blockquote>
+<p>裁剪即用：本页对应速查卡「几何 44背」。下面是本节最紧的一版摘要，公式与结论与正文完全一致，用于做题前扫一遍。全套卡片见 <code>tools/cards/build/cards.html</code>。</p>
+</blockquote>
+<p><strong>四类公式</strong></p>
+<ul>
+<li>设内棱长 $m=n-2$，则三面 $=8$ 块（全在顶点）</li>
+<li>两面 $=12m$（棱上除两端）</li>
+<li>一面 $=6m^{2}$（面内除边框）、零面 $=m^{3}$（内核）</li>
+<li>四类之和 $=n^{3}$；至少一面用补集 $n^{3}-(n-2)^{3}$</li>
+</ul>
+<p><strong>长方体</strong></p>
+<p>$$A=a-2,\quad B=b-2,\quad C=c-2$$</p>
+<ul>
+<li>两面 $=4(A+B+C)$ 为一次式，可直接反解棱长</li>
+<li>一面 $=2(AB+BC+CA)$、零面 $=ABC$ 为二次、三次式</li>
+</ul>
+<p><strong>变形</strong></p>
+<ul>
+<li>缺面：先按六面算再逐块降级；两相对面不涂可降维成一排</li>
+<li>粘合：贴缝处红色仍在，须回该层重新分类</li>
+</ul>
+<blockquote>
+<p>✅ 信号：表面涂色后切成小正方体、至少一面、没涂色<br />
+⚠️ 易错：棱上只数 $n-2$ 块，两端属顶点；长方体别套正方体</p>
+</blockquote>
+<!-- /card:auto -->
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：正方体切开后的四类块数与红面总数（★★★★）<span class="covers">覆盖点：染色块位置分类</span></h3><div class="problem"><p>把一个棱长 $7$ 厘米的正方体的六个面全部涂成红色，再切成 $343$ 个棱长 $1$ 厘米的小正方体。（1）恰好三面、两面、一面涂色以及没有涂色的小正方体各有多少块？（2）至少一面涂色的有多少块？（3）所有小正方体上红色小正方形面的总数是多少？用第（3）问检验前三问。</p>
 </div>
@@ -929,7 +1306,29 @@ $$\frac{S_{ABP}}{S_{BDP}}=\frac{AP}{PD},\qquad \frac{S_{ABP}}{S_{AEP}}=\frac{BP}
 <blockquote>
 <p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
 </blockquote>
-
+<!-- card:auto -->
+<h2>速查卡</h2>
+<blockquote>
+<p>裁剪即用：本页对应速查卡「几何 37背」。下面是本节最紧的一版摘要，公式与结论与正文完全一致，用于做题前扫一遍。全套卡片见 <code>tools/cards/build/cards.html</code>。</p>
+</blockquote>
+<p><strong>等高模型</strong></p>
+<p>$$\frac{S_{ABD}}{S_{ADC}}=\frac{BD}{DC},\quad S_{ABD}=\frac{BD}{BC}S_{ABC}$$</p>
+<p><strong>等底模型</strong></p>
+<p>$$\frac{S_{EBC}}{S_{ABC}}=\frac{ED}{AD}$$</p>
+<ul>
+<li>底相同则面积比 = 高之比；$E$ 在 $AD$ 上取 $ED$ 不是 $AE$</li>
+</ul>
+<p><strong>三个变形</strong></p>
+<ul>
+<li>共角（鸟头）：面积比 = 两条夹边比的乘积</li>
+<li>燕尾：$\frac{S_{ABP}}{S_{BDP}}=\frac{AP}{PD}$，须共顶点且底共线</li>
+<li>给一块求整体：设总面积 $S$、最小块 $x$，用各块和 = 整体列方程</li>
+</ul>
+<blockquote>
+<p>✅ 识别：中点 $1:1$、三等分点 $1:2$，先找公共底或公共高<br />
+⚠️ 易错：没共顶点、底没共线别套比例；面积比 $4:9$ 是边长 $2:3$</p>
+</blockquote>
+<!-- /card:auto -->
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：由三块面积反求整体（★★★★）<span class="covers">覆盖点：等高模型与底边比</span></h3><div class="problem"><p>点 $D$ 在边 $BC$ 上，点 $E$ 在 $AD$ 上。已知 $S_{ABE}=8$、$S_{BDE}=12$、$S_{CDE}=15$（单位：平方厘米），求 $S_{ABC}$。</p>
 </div>
@@ -948,8 +1347,10 @@ $$\frac{S_{ABP}}{S_{BDP}}=\frac{AP}{PD},\qquad \frac{S_{ABP}}{S_{AEP}}=\frac{BP}
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
 <section class="kp"><h2>面积综合</h2><p class="meta"><span>年级：4、5、6</span><span>难度：★★★</span></p><h3>一、模型：四把“改造图形”的刀</h3>
-<p>面积综合不引入新公式，它只研究一件事：<strong>图形算不出来时，怎样把它改造成算得出来的图形，而面积一分不差</strong>。四把刀各有适用条件。割补法用于边界弯折、缺角的组合图形，动作是“整体减空白”或“切下补上”。旋转与翻折用于图中有正方形、相等的邻边和 $45^\circ$、$90^\circ$，把分散的短线段接到一条直线上。重叠容斥用于两个或三个图形叠放，公式是 $S_{\text{并}}=S_1+S_2-S_{\text{交}}$。等积变换用于图中有平行线，把三角形的顶点沿着平行线“滑”到好算的位置。四把刀的依据只有一句：面积由底和高决定，与图形摆在哪里无关。</p>
+<p><img src="assets/geometry/area-synthesis.svg" alt="割与补：$S=S_1+S_2$ 或 $S=S_{big}-S_{gap}$" /><br />
+面积综合不引入新公式，它只研究一件事：<strong>图形算不出来时，怎样把它改造成算得出来的图形，而面积一分不差</strong>。四把刀各有适用条件。割补法用于边界弯折、缺角的组合图形，动作是“整体减空白”或“切下补上”。旋转与翻折用于图中有正方形、相等的邻边和 $45^\circ$、$90^\circ$，把分散的短线段接到一条直线上。重叠容斥用于两个或三个图形叠放，公式是 $S_{\text{并}}=S_1+S_2-S_{\text{交}}$。等积变换用于图中有平行线，把三角形的顶点沿着平行线“滑”到好算的位置。四把刀的依据只有一句：面积由底和高决定，与图形摆在哪里无关。</p>
 <h3>二、推导：面积为什么“搬得动”</h3>
+<p><strong>基本公式</strong>：先把几张常用的摆在一起——长方形 $S=ab$，正方形 $S=a^{2}$，三角形 $S=\dfrac{ah}{2}$，平行四边形 $S=ah$，梯形 $S=\dfrac{(a+b)h}{2}$，圆 $S=\pi r^{2}$。这几条不必死记，三角形那条是根子，其余都能由它割补出来；本专题所有的&quot;改造&quot;，最后都要落回这几张公式上。</p>
 <p>根子是三角形面积 $S=\frac12 ah$。把图形切开再拼，每一块的面积不变，拼成的整体等于各块之和，所以“割补”不改变总面积，割补法就建立在这一句话上。绕定点旋转、沿直线翻折，对应线段相等、对应角相等，旋转前后的图形能完全重合，面积当然相等；在正方形中绕顶点转 $90^\circ$，还能把 $BE$ 这样的短线段搬到 $AD$ 的延长线上，与 $DF$ 接成一条线段。等积变换的依据是：若 $l_1\parallel l_2$，$A$、$B$ 在 $l_1$ 上，$C$ 在 $l_2$ 上，则 $C$ 到 $l_1$ 的距离恒等于两线间的距离 $h$，于是 $S_{\triangle ABC}=\frac12 AB\cdot h$ 与 $C$ 在 $l_2$ 上的位置无关。容斥的依据是“数重的要减掉”：$S_1+S_2$ 把重叠部分数了两遍，减去一次 $S_{\text{交}}$ 正好；三个图形叠放时，三交在三个单图形里被算了三次，在两两交里又被减了三次，正好抵消，所以最后必须再加回一次三交，即 $S_{\text{并}}=S_1+S_2+S_3-S_{12}-S_{23}-S_{13}+S_{123}$。</p>
 <p><strong>一个关键提醒</strong>：割补、旋转、等积都只保证“面积”不变，图形的形状、周长、边长都可能变。所以凡是问长度、问周长，必须另找全等、比例或方程，不能顺着面积相等往下推。</p>
 <h3>三、三个高级变形</h3>
@@ -987,7 +1388,34 @@ $$\frac{S_{ABP}}{S_{BDP}}=\frac{AP}{PD},\qquad \frac{S_{ABP}}{S_{AEP}}=\frac{BP}
 <blockquote>
 <p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
 </blockquote>
-
+<!-- card:auto -->
+<h2>速查卡</h2>
+<blockquote>
+<p>裁剪即用：本页对应速查卡「几何 40正」。下面是本节最紧的一版摘要，公式与结论与正文完全一致，用于做题前扫一遍。全套卡片见 <code>tools/cards/build/cards.html</code>。</p>
+</blockquote>
+<p><strong>四把刀</strong></p>
+<ul>
+<li>割补：边界弯折、缺角，用整体减空白或切下补上</li>
+<li>旋转翻折：正方形、$45^\circ$、相等邻边，把短线段接到一条直线</li>
+<li>容斥：并集 = 两块之和减重叠；三块按加单、减双、加三</li>
+<li>等积变换：有平行线就把顶点沿平行线滑到好算的位置</li>
+</ul>
+<p><strong>关键变形</strong></p>
+<ul>
+<li>两块拼补：$S=S_1+S_2-S_3$，两块分居对角线两侧时更省事</li>
+<li>$45^\circ$ 旋转：正方形中转后拼出 $BE+DF$ 一条线段，两块等积</li>
+<li>滑动出定值：平行关系不变则面积恒定，把顶点请到特殊位置</li>
+</ul>
+<p><strong>判断与易错</strong></p>
+<ul>
+<li>看已知量选刀：长度多用割补，角多用旋转，求长度就设元列方程</li>
+<li>旋转、割补、等积只保面积，周长和边长都可能变</li>
+</ul>
+<blockquote>
+<p>✅ 识别信号：阴影弯折或缺角、$45^\circ$ 配正方形、两块叠放、平行线<br />
+⚠️ 斜边不能直接当高；容斥漏加三交；旋转要整体转</p>
+</blockquote>
+<!-- /card:auto -->
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：正方形里三个空白与一个斜三角形（★★★★）<span class="covers">覆盖点：割补法求组合图形面积</span></h3><div class="problem"><p>正方形 $ABCD$ 的边长是 $12$ 厘米，$E$ 是边 $AB$ 上一点且 $AE=4$ 厘米，$F$ 是边 $BC$ 上一点且 $BF=6$ 厘米。求三角形 $DEF$ 的面积。</p>
 </div>
@@ -1014,7 +1442,7 @@ $$\frac{S_{ABP}}{S_{BDP}}=\frac{AP}{PD},\qquad \frac{S_{ABP}}{S_{AEP}}=\frac{BP}
 <p><strong>模型是什么</strong>：两个三角形如果有一个角相等——公共角、对顶角、两个角都是直角都算——或者两个角互补（和为 180°），就说它们对这个角&quot;共角&quot;。当小三角形以这个角为顶点，&quot;咬&quot;在大三角形的一个角上，两条夹边分别落在对方的两条夹边上，图形像鸟头，所以叫<strong>鸟头模型</strong>。它专门解决&quot;已知夹边之比、求面积之比&quot;的问题，也常反过来由面积求线段。</p>
 <p><strong>核心结论</strong>：面积比等于夹边乘积比，<br />
 $$\frac{S_{小}}{S_{大}}=\frac{小边_1\times 小边_2}{大边_1\times 大边_2}$$<br />
-四个量必须两两落在同一条直线上：AD 与 AB 在一条边，AE 与 AC 在另一条边，不能交叉配对。分点都在线段上时，写完先看比值是否小于 1 自检。</p>
+四个量必须两两落在同一条直线上：AD 与 AB 在一条边，AE 与 AC 在另一条边，不能交叉配对。分点都在线段上时，写完先看比值是否小于 1 自检。写成字母就是 $$S_{\triangle ABC}:S_{\triangle ADE}=(AB\times AC):(AD\times AE),$$ 角相等与角互补两种情形用的是同一条式子。</p>
 <p><strong>为什么成立</strong>：连 DC。三角形 ADE 与 ADC 的底 AE、AC 在同一条直线上，高都是 D 到 AC 的距离，所以面积比是 AE:AC；同理三角形 ADC 与 ABC 的底 AD、AB 在同一条直线上，高都是 C 到 AB 的距离，面积比是 AD:AB。两式相乘，中间那块面积约掉，就得到乘积比。这条&quot;连一条线、两次同高&quot;的辅助线，推导、检查都可靠。</p>
 <p><strong>为什么互补角也行</strong>：若两个角互补，把其中一个角的一条边反向延长。新角与原角互为邻补角，所以新角 = 180° − 原角，正好等于另一个角；而反向延长只是把那条边上的点搬到顶点的另一侧，&quot;这一点到另一条边的距离&quot;与&quot;它到顶点的距离&quot;之比并不改变。换句话说，&quot;高 ÷ 斜边&quot;只由角的大小决定，角相等或互补时这个比值相同。所以面积比仍是夹边乘积比，平行四边形相邻两角、两条直线相交所成的邻角，都能直接套模型，不必另记公式。</p>
 <p><strong>三个高级变形</strong>：</p>
@@ -1033,7 +1461,33 @@ $$\frac{S_{小}}{S_{大}}=\frac{小边_1\times 小边_2}{大边_1\times 大边_2
 <li>算出比值大于 1 还不检查。分点都在线段上时，小三角形在分子，比值必定小于 1，大于 1 一定是配错边或把大小写反了；若分点落到延长线上，比值才可能大于 1。</li>
 <li>忘了整体减空白。求四边形面积时，别把中间那块重复计算或漏掉。</li>
 </ol>
-
+<!-- card:auto -->
+<h2>速查卡</h2>
+<blockquote>
+<p>裁剪即用：本页对应速查卡「几何 36正」。下面是本节最紧的一版摘要，公式与结论与正文完全一致，用于做题前扫一遍。全套卡片见 <code>tools/cards/build/cards.html</code>。</p>
+</blockquote>
+<p><strong>核心结论</strong></p>
+<p>$$\frac{S_1}{S_2}=\frac{AD}{AB}\times\frac{AE}{AC}$$</p>
+<ul>
+<li>两三角形共角（公共角、对顶角、直角）或互补，小三角咬在大三角一角上</li>
+<li>四个量两两落在同一直线：$AD$ 配 $AB$，$AE$ 配 $AC$，不可交叉</li>
+<li>互补角把一边反向延长即化成等角，面积比仍是夹边乘积比</li>
+</ul>
+<p><strong>变形与逆用</strong></p>
+<ul>
+<li>对顶角型：交叉两三角形面积比 $=OA\times OC:OB\times OD$</li>
+<li>与同高联用：先鸟头求大块，再同高细分，两次比值相乘</li>
+<li>逆用：未知边比 = 面积比 $\div$ 已知边比；求四边形用整体减空白</li>
+</ul>
+<p><strong>易错</strong></p>
+<ul>
+<li>$AD:DB=1:3$ 时 $AD:AB=1:4$，先换算成占全长再相乘</li>
+</ul>
+<blockquote>
+<p>✅ 识别信号：一个角被两个三角形共用，且两条夹边上都有分点<br />
+⚠️ 只乘一条边；分点都在线段上时比值必小于 $1$</p>
+</blockquote>
+<!-- /card:auto -->
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：咬在大角上的小三角形（★★★★）<span class="covers">覆盖点：共角三角形面积比</span></h3><div class="problem"><p>在 $\triangle ABC$ 中，$AB=20$ 厘米，$AC=25$ 厘米，$S_{\triangle ABC}=200$ 平方厘米。$D$ 在 $AB$ 上且 $AD:DB=1:3$，$E$ 在 $AC$ 上且 $AE:EC=2:3$。求 $S_{\triangle ADE}$ 和四边形 $DBCE$ 的面积。</p>
 </div>

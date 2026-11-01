@@ -31,8 +31,10 @@ img{max-width:100%;height:auto}
 </style></head><body><h1>奥数-计算</h1>
 <p class="meta">小学数学知识库 · 打印版</p>
 <section class="kp"><h2>公式类计算</h2><p class="meta"><span>年级：4、5、6</span><span>难度：★★★</span></p><p><strong>模型</strong>：公式类计算只有四件兵器。平方差 $a^2-b^2=(a+b)(a-b)$，把&quot;平方的差&quot;换成&quot;和乘差&quot;；完全平方 $(a\pm b)^2=a^2\pm2ab+b^2$，把&quot;平方的和&quot;与&quot;积&quot;互相翻译；平方和 $1^2+2^2+\cdots+n^2=\dfrac{n(n+1)(2n+1)}{6}$，把一串平方压成一个乘积；立方和 $1^3+2^3+\cdots+n^3=\left(\dfrac{n(n+1)}{2}\right)^2$，把一串立方压成三角数的平方。四件的适用条件要分清：平方差要求两项都是完全平方且相减；完全平方要求出现 $2ab$ 这个&quot;中间项&quot;，没有它就只是两个平方相加；两个求和公式只认&quot;从 $1$ 开始、连续、步长为 $1$&quot;，起点不是 $1$、步长不是 $1$ 时，必须先提公因数或补项。四件兵器还有一条总原则：能配对就先配对，能提公因数就先提，把陌生的串化归成标准形再代公式——顺序颠倒，系数就会错。</p>
+<p><strong>乘法公式</strong>：常备的几条一并列出——$(a+b)^2=a^2+2ab+b^2$；$(a-b)^2=a^2-2ab+b^2$；$(a+b)(a-b)=a^2-b^2$；$(a+1)(b+1)=ab+a+b+1$；$(a+b)^3=a^3+3a^2b+3ab^2+b^3$；$a^3-b^3=(a-b)(a^2+ab+b^2)$；$a^3+b^3=(a+b)(a^2-ab+b^2)$。</p>
+<p><strong>多位数乘法</strong>：$M\times\underbrace{99\cdots9}<em>{n}=M\times(10^n-1)$；当 $M\le\underbrace{99\cdots9}</em>{n}$ 时，积的数字和为 $9n$，可用来验算。</p>
 <p><strong>推导</strong>：平方差可以割补——边长 $a$ 的正方形挖掉边长 $b$ 的小正方形，剩下的曲尺形沿对角线剪开，正好拼成 $(a+b)$ 乘 $(a-b)$ 的长方形，所以 $a^2-b^2=(a+b)(a-b)$。完全平方就是面积图：边长 $a+b$ 的正方形被分成 $a^2$、$b^2$ 和两个 $ab$，中间那两项不是凭空来的；把其中一块 $ab$ 改成&quot;挖去&quot;，同一条式子就给出 $(a-b)^2=a^2-2ab+b^2$，所以完全平方的两种形式是同一张图的两种剪法。平方和的分母 $6$ 从哪来？把 $1^2+2^2+\cdots+n^2$ 看成 $n$ 层阶梯方块，六个同样的阶梯恰好拼成 $n\times(n+1)\times(2n+1)$ 的长方体，故总和是 $\dfrac{n(n+1)(2n+1)}{6}$；取 $n=2$，$2\times3\times5\div6=5=1+4$，对得上。立方和不必另记：令 $T_n=1+2+\cdots+n$，则 $T_n^2-T_{n-1}^2=(T_n-T_{n-1})(T_n+T_{n-1})=n\cdot n^2=n^3$，把 $n=1,2,\cdots$ 的这些式子相加，左边成串抵消，只剩 $T_n^2$——立方和公式其实是平方差公式累加出来的。</p>
-<p><strong>高级变形</strong>：① 奇偶分组：$2^2+4^2+\cdots+(2m)^2=4\left(1^2+2^2+\cdots+m^2\right)$，奇数的平方和则用&quot;总和减偶数部分&quot;；边界是末项必须成对，若末项是奇数，偶数部分要少算一项。② 反复平方：知道 $a+b$ 与 $ab$，先算 $a^2+b^2=(a+b)^2-2ab$，再平方一次得 $a^4+b^4=(a^2+b^2)^2-2(ab)^2$；若 $ab=1$，就是 $x+\dfrac1x$ 那一串经典题。次数每翻一倍，就再套一次完全平方，系数永远是 $2$；若给的是 $a-b$ 与 $ab$，把 $(a+b)^2=(a-b)^2+4ab$ 反用即可。③ 连乘裂项与差分降次：$1-\dfrac1{k^2}=\dfrac{(k-1)(k+1)}{k^2}$，连乘时分子分母斜着约，只剩 $\dfrac12$ 与 $\dfrac{n+1}{n}$，边界是 $k\ge2$，若从 $k=1$ 起乘，因式为 $0$，整串乘积直接是 $0$；同一思路还能降次，$k(k+1)=k^2+k$、$k(k+1)(k+2)$ 都可拆成平方和与等差和，把陌生求和拉回这四个公式。</p>
+<p><strong>高级变形</strong>：① 奇偶分组：$2^2+4^2+\cdots+(2m)^2=4\left(1^2+2^2+\cdots+m^2\right)$，奇数的平方和则用&quot;总和减偶数部分&quot;；边界是末项必须成对，若末项是奇数，偶数部分要少算一项。② 反复平方：知道 $a+b$ 与 $ab$，先算 $a^2+b^2=(a+b)^2-2ab$，再平方一次得 $a^4+b^4=(a^2+b^2)^2-2(ab)^2$；若 $ab=1$，就是 $x+\dfrac1x$ 那一串经典题。次数每翻一倍，就再套一次完全平方，系数永远是 $2$；若给的是 $a-b$ 与 $ab$，把 $(a+b)^2=(a-b)^2+4ab$ 反用即可。③ 连乘裂项与差分降次：$1-\dfrac1{k^2}=\dfrac{(k-1)(k+1)}{k^2}$，连乘时分子分母斜着约，只剩 $\dfrac12$ 与 $\dfrac{n+1}{n}$，边界是 $k\ge2$，若从 $k=1$ 起乘，因式为 $0$，整串乘积直接是 $0$；同一思路还能降次，$k(k+1)=k^2+k$、$k(k+1)(k+2)$ 都可拆成平方和与等差和，把陌生求和拉回这四个公式。④ <strong>整数裂项</strong>：相邻两数之积、三数之积连加也有闭式——$1\times2+2\times3+\cdots+n(n+1)=\dfrac{n(n+1)(n+2)}3$；$1\times2\times3+2\times3\times4+\cdots+n(n+1)(n+2)=\dfrac{n(n+1)(n+2)(n+3)}4$；$1\times3+3\times5+\cdots+(2n-1)(2n+1)=\dfrac{n(4n^2+6n-1)}3$（末式原版面字符残缺，由 $\sum(4k^2-1)$ 推得，已用 $n=1,2$ 验证）。</p>
 <p><strong>竞赛视角</strong>：看到&quot;连续整数的平方或立方&quot;&quot;$a+b$ 与 $ab$ 同时出现&quot;&quot;一大串平方相减&quot;，先想公式，不要硬算。最易混的两处：平方差与完全平方都含 $a^2,b^2$，差别在有没有 $2ab$；平方和与等差求和都叫&quot;求和&quot;，前者二次、后者一次，别把 $\dfrac{n(n+1)}{2}$ 套到平方上。压轴题常把&quot;公式＋分类＋边界&quot;叠在一起：先用公式把和压成一个关于 $n$ 的式子，再把不等式化成能试算的乘法，最后代回验算。构造手法不外三种：补一项再减掉、按奇偶分组、把相邻两项配对。算完也别急着收笔，把 $n$ 换成 $2$ 或 $3$ 做一次小规模核对，或用小数估一估量级，往往比重新算一遍更省时。</p>
 <h3>易错点</h3>
 <ol>
@@ -56,7 +58,24 @@ img{max-width:100%;height:auto}
 <blockquote>
 <p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
 </blockquote>
-
+<!-- card:auto -->
+<h2>速查卡</h2>
+<blockquote>
+<p>裁剪即用：本页对应速查卡「计算 08正」。下面是本节最紧的一版摘要，公式与结论与正文完全一致，用于做题前扫一遍。全套卡片见 <code>tools/cards/build/cards.html</code>。</p>
+</blockquote>
+<p><strong>四大公式</strong></p>
+<p>$$a^2-b^2=(a+b)(a-b)$$</p>
+<p>$$(a\pm b)^2=a^2\pm 2ab+b^2$$</p>
+<p>$$1^2+2^2+\cdots+n^2=\frac{n(n+1)(2n+1)}{6},\quad 1^3+2^3+\cdots+n^3=(\frac{n(n+1)}{2})^2$$</p>
+<p>$$a^3-b^3=(a-b)(a^2+ab+b^2),\quad a^3+b^3=(a+b)(a^2-ab+b^2)$$</p>
+<p><strong>整数裂项</strong></p>
+<p>$$1\times2+2\times3+\cdots+n(n+1)=\frac{n(n+1)(n+2)}{3}$$</p>
+<p>$$1\times2\times3+\cdots+n(n+1)(n+2)=\frac{n(n+1)(n+2)(n+3)}{4}$$</p>
+<blockquote>
+<p>✅ 识别信号：连续整数的平方立方、$a+b$ 与 $ab$ 同时出现<br />
+⚠️ 易错：平方差与完全平方区别只在中间项 $2ab$</p>
+</blockquote>
+<!-- /card:auto -->
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：相邻平方相减，配对化成等差（★★★★）<span class="covers">覆盖点：平方差公式与相邻配对</span></h3><div class="problem"><p>计算 $100^2-99^2+98^2-97^2+\cdots+2^2-1^2$。</p>
 </div>
@@ -78,6 +97,7 @@ img{max-width:100%;height:auto}
 <h3>一、模型与定义</h3>
 <p><strong>分小互化</strong>：$0.\underbrace{a_1\cdots a_k}_{k\text{位}}=\dfrac{a_1\cdots a_k}{10^k}$；反过来，分母是 $10^k$ 的分数直接点小数点。一般分数化小数用&quot;分子 ÷ 分母&quot;，或把分母<strong>扩</strong>成 $10^k$（分子分母同乘同一个数），如 $\frac38=\frac{3\times125}{8\times125}=\frac{375}{1000}=0.375$。</p>
 <p><strong>有限小数判定</strong>（核心结论）：最简分数 $\frac ab$ 能化成有限小数 $\iff$ $b$ 的质因数只有 2 和 5。写成 $b=2^\alpha5^\beta$ 时，小数位数恰为 $\max(\alpha,\beta)$。</p>
+<p><strong>循环类型的判定</strong>（上一条的另一半）：最简分数的分母只含 2、5 以外的质因数 $\Rightarrow$ 纯循环小数；既含 2 或 5、又含其他质因数 $\Rightarrow$ 混循环小数。三条合起来，看分母的质因数构成就能定下小数的形态。</p>
 <h3>二、为什么只认 2 和 5</h3>
 <p>设 $\frac ab$ 已最简。它是有限小数 $\iff$ 存在 $k$ 使 $\frac ab=\frac{m}{10^k}$ $\iff$ $10^k a=mb$，即 $b\mid 10^k a$。因为 $a,b$ 互质，必有 $b\mid 10^k$。而 $10^k=2^k5^k$ 只含质因数 2、5，所以 $b$ 也只能含 2、5。</p>
 <p>反之若 $b=2^\alpha5^\beta$，取 $k=\max(\alpha,\beta)$，则 $\frac ab=\dfrac{a\cdot2^{k-\alpha}5^{k-\beta}}{10^k}$ 是有限小数。$k$ 必须同时补足 2 与 5 中较多的那一边，所以位数是 $\max(\alpha,\beta)$。注意这条判定是<strong>分母定性、分子定量</strong>：能不能化成有限小数只看分母，具体等于几才看分子。</p>
@@ -124,7 +144,33 @@ img{max-width:100%;height:auto}
 <blockquote>
 <p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
 </blockquote>
-
+<!-- card:auto -->
+<h2>速查卡</h2>
+<blockquote>
+<p>裁剪即用：本页对应速查卡「计算 09背」。下面是本节最紧的一版摘要，公式与结论与正文完全一致，用于做题前扫一遍。全套卡片见 <code>tools/cards/build/cards.html</code>。</p>
+</blockquote>
+<p><strong>核心判定</strong></p>
+<ul>
+<li>最简分数化有限小数，当且仅当分母只含质因数 2 和 5</li>
+<li>分母含 $\alpha$ 个 2、$\beta$ 个 5 时，位数取两者较大者</li>
+<li>只含 2、5 外质因数 → 纯循环；含 2 或 5 且有其他 → 混循环</li>
+</ul>
+<p><strong>混合运算</strong></p>
+<ul>
+<li>加减统一成分数；乘除先化分数再约分，除法变乘倒数</li>
+<li>要精确值就守分数；只有比大小、估大概才换小数</li>
+</ul>
+<p><strong>繁分数</strong></p>
+<ul>
+<li>先找最长的分数线定主除号，从最底层往上算</li>
+<li>逆推：每步取倒数、再分离整数部分，末尾要求 $\ge2$</li>
+<li>分子分母同加一正数，分数朝 1 靠近（真假方向相反）</li>
+</ul>
+<blockquote>
+<p>✅ 识别信号：0.125、0.375、0.875 读成 1/8、3/8、7/8<br />
+⚠️ 易错：$\frac{3}{40}=0.075$ 不是 $0.75$</p>
+</blockquote>
+<!-- /card:auto -->
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：分母 80 的最简真分数与有限小数（★★★★）<span class="covers">覆盖点：有限小数判定与分小互化</span></h3><div class="problem"><p>分母是 80 的最简真分数共有多少个？把它们全部化成小数，所得这些小数之和是多少？</p>
 </div>
@@ -147,6 +193,13 @@ img{max-width:100%;height:auto}
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
 <section class="kp"><h2>分数裂项</h2><p class="meta"><span>年级：4、5、6</span><span>难度：★★★</span></p><p><strong>模型</strong>：裂项相消，是把一项拆成两项（或三项）的和差，让相邻两项出现&quot;大小相同、符号相反&quot;的部分，求和时成串抵消，只剩首尾。最核心的一条是间隔为 $k$ 的裂差 $\frac1{n(n+k)}=\frac1k(\frac1n-\frac1{n+k})$；若分子恰是分母两因数之和，就改拆成两个分数相加；若分母是三个连续因数连乘，就拆成相邻两个&quot;两因数积&quot;之差，再乘 $\frac12$。适用条件只有一条：本项拆出的尾，要能与下一项拆出的头对上，也就是分母的因数首尾相接。</p>
+<p><strong>两条标准答案形</strong>：把上面的两种拆法从 $1$ 一直写到 $n$，就是裂项题最常见的两个结果——</p>
+<p>$$\frac1{1\times2}+\frac1{2\times3}+\cdots+\frac1{n(n+1)}=1-\frac1{n+1}=\frac n{n+1}$$</p>
+<p>$$\frac1{1\times2\times3}+\cdots+\frac1{n(n+1)(n+2)}=\frac12\left[\frac12-\frac1{(n+1)(n+2)}\right]$$</p>
+<p>两式的头与尾都要留下：第一式留下 $1$ 与 $\dfrac1{n+1}$，第二式留下 $\dfrac12$ 与 $\dfrac1{(n+1)(n+2)}$。</p>
+<p><strong>六种常见类型</strong>：按分母与分子的形状，裂项题通常落进六类——基础差型 $\dfrac1{n(n+1)}=\dfrac1n-\dfrac1{n+1}$；间隔差型 $\dfrac1{n(n+k)}=\dfrac1k\Bigl(\dfrac1n-\dfrac1{n+k}\Bigr)$，经典例题如 $\dfrac1{1\times3}+\dfrac1{3\times5}+\cdots+\dfrac1{9\times11}$（间隔 $2$，整体除以 $2$）；母积子和型 $\dfrac{a+b}{ab}=\dfrac1a+\dfrac1b$，经典例题如 $\dfrac8{15}+\dfrac{12}{35}+\dfrac{16}{63}+\cdots+\dfrac{24}{143}$，分母是相邻奇数之积 $3\times5,5\times7,\cdots,11\times13$、分子恰为两因数之和；三项乘积型，即上面的第二个标准形；整数裂项型 $n(n+1)=\dfrac13\bigl[n(n+1)(n+2)-(n-1)n(n+1)\bigr]$，如 $1\times2+2\times3+\cdots+9\times10$（公式与例题见「公式类计算」）；以及<strong>阶乘裂项型</strong></p>
+<p>$$\frac{n}{(n+1)!}=\frac{1}{n!}-\frac{1}{(n+1)!},\qquad \frac1{2!}+\frac2{3!}+\frac3{4!}+\cdots+\frac{n}{(n+1)!}=1-\frac{1}{(n+1)!}$$</p>
+<p>把分子写成 $(n+1)-1$ 再拆成两个阶乘分数，中间照样成对相消，只剩头 $1$ 与尾 $-\dfrac1{(n+1)!}$。要注意母积子和型拆开后是<strong>相加</strong>：中间的 $\dfrac15,\dfrac17,\cdots$ 各出现两次，结果是首尾各留一次、中间翻倍，不再单纯抵消，这是六类里唯一&quot;越裂越多&quot;的一类，写答案前先把前两项展开核对结构。</p>
 <p><strong>推导</strong>：公式不是背出来的。裂差右边通分后，分子多出一个 $k$，比原式多乘了一个 $k$，所以要除以 $k$ 补回；三因数相减时分子多出 $2$，故乘 $\frac12$。系数的作用始终是&quot;把多出来的因子除掉&quot;，分子多几就除几。为什么只剩首尾？把拆开的项竖着排，中间每个分数都出现两次，一次为负、一次为正，合起来是 $0$；首项的头前面没有项与它配对，末项的尾后面也没有项与它配对，于是结果就是头减尾。项数再多也只是中间消得多，结构不变，这正是它比通分快的地方：通分要造巨大的公分母，裂项只做加减。</p>
 <p><strong>高级变形</strong>：① 分子不是 $1$ 时先约分，如 $\frac{k+1}{k(k+1)(k+2)}=\frac1{k(k+2)}$，三因数问题立刻降为间隔为 $2$ 的裂差；约不掉的，再把分子拆成分母两因数之和，改用裂和。约分与裂项的顺序不能颠倒，否则系数会算错。② 整数分离：$\frac{a^2+b^2}{ab}=\frac ab+\frac ba$，当两个因数相差 $1$（设 $b=a+1$）时，$\frac ba=1+\frac1a$ 是假分数，$\frac ab=1-\frac1{a+1}$ 是真分数，两个都写成&quot;$1$ 加或减一个单位分数&quot;，整数部分单独累加，分数部分照样抵消。边界：只有分子不小于分母才分得出整数 $1$；写成&quot;$1$ 减一个分数&quot;时，要确认减掉的那个分数小于 $1$，否则符号与端点都要重算。③ 乘法版：把 $1-\frac1{k^2}$ 写成 $\frac{(k-1)(k+1)}{k^2}$，连乘时分子分母斜着约掉，只剩最左与最右两个因数；这是裂项思想在乘除中的移植，约分方向要逐项核对。</p>
 <p><strong>竞赛视角</strong>：看到分母是连续整数之积、分子恰是两因数之和、项很多而每项都很小，先别通分，先问这一项能不能拆。它容易与等差数列求和混：等差靠首尾配对，裂项靠相邻抵消；也容易与提取公因数混，后者抽出共同因数，前者把一项拆开。分母间隔不整齐时，先用倍数把间隔统一；首项不从 $1$ 开始、末项不落在整数边界时，务必写出前三项与后三项，看清谁留谁消。压轴题常是&quot;先分离整数、再裂项、后处理端点&quot;的三段式，也会把两种间隔混在同一串里，逼你先分类再动笔。</p>
@@ -171,7 +224,22 @@ img{max-width:100%;height:auto}
 <blockquote>
 <p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
 </blockquote>
-
+<!-- card:auto -->
+<h2>速查卡</h2>
+<blockquote>
+<p>裁剪即用：本页对应速查卡「计算 08背」。下面是本节最紧的一版摘要，公式与结论与正文完全一致，用于做题前扫一遍。全套卡片见 <code>tools/cards/build/cards.html</code>。</p>
+</blockquote>
+<p><strong>核心公式</strong></p>
+<p>$$\frac{1}{n(n+k)}=\frac{1}{k}(\frac{1}{n}-\frac{1}{n+k})$$</p>
+<p>$$\frac{a+b}{ab}=\frac{1}{a}+\frac{1}{b}$$</p>
+<p>$$\frac{n}{(n+1)!}=\frac{1}{n!}-\frac{1}{(n+1)!}$$</p>
+<p>$$\frac{1}{1\times2}+\cdots+\frac{1}{n(n+1)}=\frac{n}{n+1}$$</p>
+<p>$$\frac{1}{1\times2\times3}+\cdots=\frac{1}{2}[\frac{1}{2}-\frac{1}{(n+1)(n+2)}]$$</p>
+<blockquote>
+<p>✅ 识别信号：连续整数之积、分母含阶乘、项多每项都小<br />
+⚠️ 易错：间隔是几就除以几；母积子和是相加不抵消；首尾必须留下</p>
+</blockquote>
+<!-- /card:auto -->
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：间隔为3的裂差，首尾相消（★★★★）<span class="covers">覆盖点：裂差与间隔系数</span></h3><div class="problem"><p>计算 $\dfrac{1}{1\times4}+\dfrac{1}{4\times7}+\dfrac{1}{7\times10}+\cdots+\dfrac{1}{97\times100}$。</p>
 </div>
@@ -226,7 +294,35 @@ img{max-width:100%;height:auto}
 <blockquote>
 <p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
 </blockquote>
-
+<!-- card:auto -->
+<h2>速查卡</h2>
+<blockquote>
+<p>裁剪即用：本页对应速查卡「计算 10背」。下面是本节最紧的一版摘要，公式与结论与正文完全一致，用于做题前扫一遍。全套卡片见 <code>tools/cards/build/cards.html</code>。</p>
+</blockquote>
+<p><strong>模型</strong></p>
+<ul>
+<li>新符号只是四则运算的缩写：按位置塞进规则，从最内层算起</li>
+<li>左边是 $a$、右边是 $b$，位置决定身份，不可凭直觉交换</li>
+<li>边界：定义域、除数不为 0、括号决定运算顺序</li>
+</ul>
+<p><strong>四类问题</strong></p>
+<ul>
+<li>嵌套求值：逐层替换；逆运算：代入定义式化普通方程</li>
+<li>运算律：交换律比左右互换，结合律比括号位置</li>
+<li>证成立用字母推导；推翻只需一个反例，挑差别大的数</li>
+</ul>
+<p><strong>变形</strong></p>
+<p>$$ab+a+b=(a+1)(b+1)-1$$</p>
+<ul>
+<li>恒等变形：连算即各加 1 相乘再减 1；反解变成找因数对</li>
+<li>加权型：平均数运算满足交换律、不满足结合律</li>
+<li>周期型：涉及个位、余数、数字和时先找循环节</li>
+</ul>
+<blockquote>
+<p>✅ 识别信号：见规定、对于任意两个数就翻译；系数未知用两组数据定<br />
+⚠️ 易错：左右错位、默认结合律；解完要代回检验定义域</p>
+</blockquote>
+<!-- /card:auto -->
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：两层符号嵌套，先内后外（★★★★）<span class="covers">覆盖点：嵌套替换与多层求值</span></h3><div class="problem"><p>规定 $a\oplus b=2a+3b$，并且规定 $a\otimes b=a\oplus(a+b)$。</p>
 <p>（1）求 $3\otimes4$ 的值；（2）求 $(3\otimes4)\oplus(1\otimes2)$ 的值。</p>
@@ -258,6 +354,8 @@ img{max-width:100%;height:auto}
 <p>设循环节对应的整数为 $N$（<strong>允许以 0 开头</strong>：&quot;07&quot;记作 $N=7$，但它占 2 位），则</p>
 <p>$$0.\overline{N}=\frac{N}{\underbrace{99\cdots9}<em>{n\text{个}}},\qquad 0.\underbrace{x_1\cdots x_m}</em>{m\text{位}}\overline{N}=\frac{(\text{不循环部分接上循环节})-(\text{不循环部分})}{\underbrace{99\cdots9}<em>{n\text{个}}\underbrace{00\cdots0}</em>{m\text{个}}}$$</p>
 <p>一句话记法：<strong>分母位数 $=n+m$，9 在前、0 在后；分子是&quot;整体&quot;减&quot;不循环部分&quot;。</strong></p>
+<p><strong>最短的三条</strong>（一位循环节、两位循环节、一位不循环），可直接套用：</p>
+<p>$$0.\overline a=\frac a9,\qquad 0.\overline{ab}=\frac{\overline{ab}}{99},\qquad 0.a\overline{bc}=\frac{\overline{abc}-a}{990}$$</p>
 <h3>二、分母为什么是 9 和 0</h3>
 <p>设 $x=0.\overline{a_1a_2\cdots a_n}$。两边乘 $10^n$，小数点右移 $n$ 位，正好跳过一整个循环节：</p>
 <p>$$10^n x=\underbrace{a_1a_2\cdots a_n}_{N}.\overline{a_1a_2\cdots a_n}=N+x$$</p>
@@ -295,7 +393,30 @@ img{max-width:100%;height:auto}
 <blockquote>
 <p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
 </blockquote>
-
+<!-- card:auto -->
+<h2>速查卡</h2>
+<blockquote>
+<p>裁剪即用：本页对应速查卡「计算 09正」。下面是本节最紧的一版摘要，公式与结论与正文完全一致，用于做题前扫一遍。全套卡片见 <code>tools/cards/build/cards.html</code>。</p>
+</blockquote>
+<p><strong>核心公式</strong></p>
+<p>$$0.\overline{N}=\frac{N}{99\cdots9}$$</p>
+<p>$$0.a\overline{b}=\frac{\overline{ab}-a}{90}$$</p>
+<ul>
+<li>纯循环：分母是 $n$ 个 9，分子就是循环节</li>
+<li>混循环：分母 $n$ 个 9 接 $m$ 个 0，9 在前 0 在后</li>
+<li>分子 = 不循环部分接上循环节，再减不循环部分</li>
+<li>循环节里的 0 要占位：$0.\overline{07}$ 是两位</li>
+</ul>
+<p><strong>变形</strong></p>
+<ul>
+<li>循环移位：分母相同只换分子，可直接比分子大小</li>
+<li>逆推：先化分数列方程，再用数字范围与整除筛</li>
+</ul>
+<blockquote>
+<p>✅ 识别信号：循环节、化成分数、分子分母之和<br />
+⚠️ 易错：混循环分子忘减不循环部分；纯循环分母不是 90</p>
+</blockquote>
+<!-- /card:auto -->
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：纯循环的循环移位与约分（★★★★）<span class="covers">覆盖点：纯循环小数化分数与全9分母</span></h3><div class="problem"><p>已知 $\frac17=0.\overline{142857}$。(1) 把 $0.\overline{285714}$ 与 $0.\overline{428571}$ 化成最简分数；(2) 观察 $142857\times2$、$142857\times3$ 的结果，说明为什么这两个最简分数的分母都是 7。</p>
 </div>
@@ -345,7 +466,33 @@ img{max-width:100%;height:auto}
 <blockquote>
 <p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
 </blockquote>
-
+<!-- card:auto -->
+<h2>速查卡</h2>
+<blockquote>
+<p>裁剪即用：本页对应速查卡「计算 12正」。下面是本节最紧的一版摘要，公式与结论与正文完全一致，用于做题前扫一遍。全套卡片见 <code>tools/cards/build/cards.html</code>。</p>
+</blockquote>
+<p><strong>依据</strong></p>
+<p>$$a\times c+b\times c=(a+b)\times c$$</p>
+<p>$$a\times c-b\times c=(a-b)\times c$$</p>
+<ul>
+<li>公因数可整数、小数或一整块括号；单独一项 $a$ 是 $a\times1$</li>
+<li>提公因数是恒等变形，只改样子不改值</li>
+</ul>
+<p><strong>四步法</strong></p>
+<ul>
+<li>一看找同因数或倍数，二变统一，三提写清符号，四查再提</li>
+</ul>
+<p><strong>变形</strong></p>
+<ul>
+<li>小数点移动：一因数乘 10、另一除以 10，积不变</li>
+<li>拆数造倍数：$9999=3\times3333$、$2025=2024+1$</li>
+<li>换元：把重复的长块记作 $A$，算完必须代回</li>
+</ul>
+<blockquote>
+<p>✅ 识别信号：几项相乘再加减、数字相近或成倍数<br />
+⚠️ 易错：漏掉隐藏的 1；括号内每项符号都要带进去</p>
+</blockquote>
+<!-- /card:auto -->
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：分组凑整与整体提取（★★★★）<span class="covers">覆盖点：分组凑整与整体提取</span></h3><div class="problem"><p>计算 $3.75\times4.8+6.25\times4.8+3.75\times5.2+6.25\times5.2$。</p>
 </div>
@@ -407,7 +554,32 @@ img{max-width:100%;height:auto}
 <blockquote>
 <p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
 </blockquote>
-
+<!-- card:auto -->
+<h2>速查卡</h2>
+<blockquote>
+<p>裁剪即用：本页对应速查卡「计算 15正」。下面是本节最紧的一版摘要，公式与结论与正文完全一致，用于做题前扫一遍。全套卡片见 <code>tools/cards/build/cards.html</code>。</p>
+</blockquote>
+<p><strong>模型</strong></p>
+<ul>
+<li>记状态 $S$、一步操作 $T$，盯住观测量 $Q$ 的每步变化量</li>
+<li>变化量为 0 是不变量；恒为 $c$ 则 $Q_n=Q_0+nc$</li>
+<li>变化量恒非负是单调量；奇偶固定则是模 2 不变量</li>
+<li>常用量：总和、个数、正面数、奇偶、交错和、最大最小值</li>
+<li>翻 $j$ 枚正面时变化量 $=4-2j$ 恒为偶数，奇偶不变</li>
+<li>擦 $a,b$ 写 $a+b-1$：总和每步减 1，终值 $=S_0-(n-1)$</li>
+</ul>
+<p><strong>手法</strong></p>
+<ul>
+<li>加权不变量：给位置配权，按余数分类比只看总和细</li>
+<li>周期定位：步长与总数互质时局部规律可扩成整体结论</li>
+<li>逆推还原：操作可逆时从终态倒推，对方先减半</li>
+<li>问最少：先计数估下界，再构造达到下界的方案</li>
+</ul>
+<blockquote>
+<p>✅ 识别信号：每次可以……、能否、最少几次、最后剩下<br />
+⚠️ 易错：不变量只能否定，对得上还要写出整套操作方案</p>
+</blockquote>
+<!-- /card:auto -->
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：100 盏灯拉开关（★★★★）<span class="covers">覆盖点：奇偶性分析与配对</span></h3><div class="problem"><p>100 盏灯编号 $1,2,\dots,100$，初始全部熄灭。第 $k$ 个人（$k=1,2,\dots,100$）把编号是 $k$ 的倍数的灯都拉一下开关（拉一次：灭变亮、亮变灭）。100 个人依次做完后，亮着的灯有多少盏？这些灯的编号之和是多少？</p>
 </div>
@@ -440,6 +612,18 @@ img{max-width:100%;height:auto}
 <p>其二，<strong>斜线上前 $n$ 个数之和，等于下一条斜线上的第 $n$ 个数</strong>。斜线 $1,3,6,10,15,\dots$ 正是三角数；把前 $n$ 个相加时，每加一项都被“上方两数之和”的递推搬到下一斜线，逐项抵消，只剩一项，于是</p>
 <p>$$1+3+6+\dots+T_n=\frac{n(n+1)(n+2)}{6}$$</p>
 <p>记不住时可用平方和公式验：$\sum T_n=\frac12\left[\frac{n(n+1)(2n+1)}{6}+\frac{n(n+1)}{2}\right]=\frac{n(n+1)(n+2)}{6}$。</p>
+<p><strong>等比数列</strong>：这一类认的是&quot;倍数相同&quot;，公比记作 $q$，则</p>
+<p>$$a_n=a_1q^{n-1}$$</p>
+<p>$q\ne1$ 时 $S_n=\dfrac{a_1(1-q^n)}{1-q}$；$q=1$ 时 $S_n=na_1$。</p>
+<p><strong>常用数列</strong>：下面几串数可以直接写通项——</p>
+<ul>
+<li>$1,4,9,16,25,36,\dots$ → $a_n=n^2$</li>
+<li>$0,3,8,15,24,35,\dots$ → $a_n=n^2-1$</li>
+<li>$1,3,7,13,21,31,\dots$ → $a_n=n^2-n+1$</li>
+<li>$1,2,4,8,16,32,\dots$ → $a_n=2^{n-1}$</li>
+<li>$1,1,2,3,5,8,13,\dots$ → $a_n=a_{n-1}+a_{n-2}$</li>
+<li>$1,3,6,10,15,21,\dots$ → $a_n=\dfrac{n(n+1)}2$</li>
+</ul>
 <p><strong>五、三个高级变形</strong></p>
 <p>① <strong>蛇形数表</strong>：奇数行从左往右、偶数行从右往左。定位必须按行号奇偶分类：顺排的行用 $m(r-1)+c$，倒排的行用 $mr-c+1$。先判奇偶，再代公式，顺序不能反。</p>
 <p>② <strong>方框和反求</strong>：由“和 = 个数 × 中心”解出中心后，还要过三关——中心是不是整数、方框有没有跨行、有没有超出表里最大的数。有一关不过，答案就是“不存在”。</p>
@@ -473,7 +657,30 @@ img{max-width:100%;height:auto}
 <blockquote>
 <p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
 </blockquote>
-
+<!-- card:auto -->
+<h2>速查卡</h2>
+<blockquote>
+<p>裁剪即用：本页对应速查卡「计算 11背」。下面是本节最紧的一版摘要，公式与结论与正文完全一致，用于做题前扫一遍。全套卡片见 <code>tools/cards/build/cards.html</code>。</p>
+</blockquote>
+<p><strong>定位</strong></p>
+<ul>
+<li>数表每行 $m$ 个：第 $r$ 行第 $c$ 列 $=m(r-1)+c$</li>
+</ul>
+<p><strong>等比数列</strong></p>
+<p>$$a_n=a_1q^{n-1},\quad S_n=\frac{a_1(1-q^n)}{1-q}\quad (q\ne1)$$</p>
+<ul>
+<li>常用数列：$n^2$、$n^2-1$、$n^2-n+1$、$2^{n-1}$</li>
+<li>斐波那契 $a_n=a_{n-1}+a_{n-2}$；三角数 $T_n=\frac{n(n+1)}{2}$</li>
+</ul>
+<p><strong>杨辉三角</strong></p>
+<ul>
+<li>每数 = 左上 + 右上；第 $n$ 行和为 $2^{n-1}$</li>
+</ul>
+<blockquote>
+<p>✅ 识别信号：第 100 个、第几行第几列、框出的和是<br />
+⚠️ 易错：第 $r$ 行首数是 $m(r-1)+1$；组内序号别多写 1</p>
+</blockquote>
+<!-- /card:auto -->
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：每个偶数重复出现的数列，用三角数夹逼定位（★★★★）<span class="covers">覆盖点：数列通项与分组求和</span></h3><div class="problem"><p>把偶数按“$2$ 出现 $1$ 次、$4$ 出现 $2$ 次、$6$ 出现 $3$ 次……”的规则排成一列：</p>
 <p>$$2,\ 4,4,\ 6,6,6,\ 8,8,8,8,\ \dots$$</p>
@@ -582,7 +789,34 @@ $$</p>
 <blockquote>
 <p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
 </blockquote>
-
+<!-- card:auto -->
+<h2>速查卡</h2>
+<blockquote>
+<p>裁剪即用：本页对应速查卡「计算 10正」。下面是本节最紧的一版摘要，公式与结论与正文完全一致，用于做题前扫一遍。全套卡片见 <code>tools/cards/build/cards.html</code>。</p>
+</blockquote>
+<p><strong>三个思路</strong></p>
+<ul>
+<li>设元：把文字变成式子，抓全程不变的那个量</li>
+<li>消元：两式相加、相减或代入，两边同样处理</li>
+<li>整体求值：求 $x+y$、$x-y$ 时整体加减，不先拆</li>
+</ul>
+<p><strong>常用方法</strong></p>
+<ul>
+<li>轮换对称：系数互换先加减；对称式先定 $x\le y\le z$</li>
+<li>看错系数：用没被看错的那条式子定系数再解原题</li>
+<li>设而不求：用和、差、积、平方的关系直接变形</li>
+<li>整数解：先由不等式定范围（如 $x\le3$）再分类枚举</li>
+</ul>
+<p><strong>关键原则</strong></p>
+<ul>
+<li>变形不能只动一边；移项变号；去分母两边同乘</li>
+<li>解完检验：人数、长度、分数须符合实际意义</li>
+</ul>
+<blockquote>
+<p>✅ 识别信号：系数轮换先加减，问组合值别先单独求<br />
+⚠️ 易错：移项不变号，相减时括号内每项都要变号</p>
+</blockquote>
+<!-- /card:auto -->
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：两次"卖出"的还原与建模（★★★★）<span class="covers">覆盖点：设元与等量关系翻译</span></h3><div class="problem"><p>一筐苹果，第一天卖出总数的 $\frac13$ 又 $4$ 个，第二天卖出剩下的一半少 $2$ 个，最后还剩 $20$ 个。这筐苹果原有多少个？</p>
 </div>
@@ -626,7 +860,32 @@ $$</p>
 <li><strong>前导零丢掉</strong>：$088$ 写成 $88$ 就变成两位数，题目要“三个数字”必须补零。</li>
 <li><strong>分类漏解</strong>：解 $1000\mid n(n-1)$ 只想到 $1000\mid n$ 与 $1000\mid(n-1)$，漏掉“$8$ 归一方、$125$ 归另一方”，就会丢掉 $376$ 与 $625$；相邻两数互质，$2$ 与 $5$ 的幂只能整块落户。</li>
 </ol>
-
+<!-- card:auto -->
+<h2>速查卡</h2>
+<blockquote>
+<p>裁剪即用：本页对应速查卡「计算 13正」。下面是本节最紧的一版摘要，公式与结论与正文完全一致，用于做题前扫一遍。全套卡片见 <code>tools/cards/build/cards.html</code>。</p>
+</blockquote>
+<p><strong>模型</strong></p>
+<p>$$a\equiv b,\ c\equiv d\ \Rightarrow\ a+c\equiv b+d,\ ac\equiv bd$$</p>
+<ul>
+<li>末三位 = 除以 1000 的余数；末两位模 100、末一位模 10</li>
+<li>边乘边砍：每步保留三位，砍成两位会漏掉高位</li>
+<li>幂必循环；底数含因子 2 或 5 时有过渡期</li>
+</ul>
+<p><strong>两个工具</strong></p>
+<ul>
+<li>倍增找周期：每步留三位，出现 001 即找到周期</li>
+<li>拆 $1000=8\times125$（互质）：分求模 8、模 125 再拼合</li>
+<li>拼合：写 $x=125k+r$，在 $k=0$ 到 7 中挑被 8 整除的</li>
+<li>因子清零：凑够三个 2 与三个 5，末三位就是 000</li>
+<li>不变量：1000 整除 $n(n-1)$ 只有四类（相邻两数互质）</li>
+<li>自乘后末三位不变、反复操作回到原样 → 分类构造</li>
+</ul>
+<blockquote>
+<p>✅ 识别信号：末三位换模 1000，指数很大先找周期<br />
+⚠️ 易错：指数除尽应回到 $a^{T}$，不是 $a^0=1$</p>
+</blockquote>
+<!-- /card:auto -->
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：平方差配对后只留后三位（★★★★）<span class="covers">覆盖点：末三位取余与边乘边砍</span></h3><div class="problem"><p>求 $2024\times2025\times2026\times2027$ 的末三位。</p>
 </div>
@@ -686,7 +945,27 @@ $$</p>
 <blockquote>
 <p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
 </blockquote>
-
+<!-- card:auto -->
+<h2>速查卡</h2>
+<blockquote>
+<p>裁剪即用：本页对应速查卡「计算 14背」。下面是本节最紧的一版摘要，公式与结论与正文完全一致，用于做题前扫一遍。全套卡片见 <code>tools/cards/build/cards.html</code>。</p>
+</blockquote>
+<p><strong>三条路线</strong></p>
+<p>$$\frac{a}{b}-\frac{c}{d}=\frac{ad-bc}{bd}$$</p>
+<ul>
+<li>基准数：找 $M$（常取 1、$\frac{1}{2}$）改比离它有多远</li>
+</ul>
+<p><strong>两个原理</strong></p>
+<p>$$\frac{a}{b}&lt;\frac{a+c}{b+c}\quad(0&lt;a&lt;b,\ c&gt;0)$$</p>
+<ul>
+<li>糖水原理只对真分数成立；假分数同加一正数反而变小</li>
+</ul>
+<p>$$\frac{a}{b}&lt;\frac{a+c}{b+d}&lt;\frac{c}{d}$$</p>
+<blockquote>
+<p>✅ 识别信号：分母很大、分子分母差很小，先想基准数<br />
+⚠️ 易错：放缩两边混用；基准数比较时方向别弄反</p>
+</blockquote>
+<!-- /card:auto -->
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：四个有规律的分数排队（★★★★）<span class="covers">覆盖点：通分与交叉相乘比较</span></h3><div class="problem"><p>把 $\frac38,\frac5{13},\frac7{18},\frac9{23}$ 从小到大排列；并说明对任意正整数 $n$，$\frac{2n+1}{5n+3}$ 随 $n$ 增大而增大。</p>
 </div>
@@ -712,6 +991,10 @@ $$</p>
 <p><strong>全 9 数</strong>：$\underbrace{99\cdots9}_{k\text{个}9}=10^k-1$，这是一切&quot;凑整&quot;速算的根。</p>
 <p><strong>缺 8 数</strong>：$12345679$（只有 8 位，恰好缺数字 8），核心恒等式</p>
 <p>$$12345679\times9=111111111.$$</p>
+<p>再乘 $k$（$k=1,\dots,9$）就是九个 $k$：$\times18=222222222$，$\cdots$，$\times81=999999999$；另有 $12345679\times8=98765432$。</p>
+<p><strong>走马灯数</strong>：$\tfrac17=0.\overline{142857}$，$\tfrac27=0.\overline{285714}$，$\tfrac37=0.\overline{428571}$，$\tfrac47=0.\overline{571428}$，$\tfrac57=0.\overline{714285}$，$\tfrac67=0.\overline{857142}$——六个分数只是同一个循环节在轮转。把循环节当整数看，$142857\times2=285714$，$\times3=428571$，$\times4=571428$，$\times5=714285$，$\times6=857142$，$\times7=999999$。</p>
+<p><strong>山顶数</strong>：$11\times11=121$，$111\times111=12321$，一般地 $\underbrace{11\cdots1}<em>{n}\times\underbrace{11\cdots1}</em>{n}=123\cdots n\cdots321$，积从中间向两边对称。山顶数列求和也有定式：$1+2+1=2^2$，$1+2+3+2+1=3^2$，即 $(1+2+\cdots+n+\cdots+2+1)=n^2$；连带恒等式 $121\times(1+2+1)=22^2$，$12321\times(1+2+3+2+1)=333^2$。</p>
+<p><strong>车轮数</strong>：把一个数的数字依次轮转再相加，每一位上都恰好轮到一次全部数字，所以 $1234+2341+3412+4123=1111\times(1+2+3+4)$。</p>
 <p><strong>11 与 111</strong>：$11=10+1$，所以乘 11 是&quot;错位相加&quot;；$111=3\times37$，$999=27\times37$，$1001=7\times11\times13$。这三条分解是整除判断与循环块化简的全部原料。</p>
 <h3>二、公式是怎么来的</h3>
 <p>先看全 9 数。$10^k$ 是 1 后面 $k$ 个 0，减 1 时从末尾借位，$k$ 个 0 全变成 9，所以 $10^k-1=99\cdots9$。两边除以 9 就得到 $R_k$ 的公式。于是</p>
@@ -729,7 +1012,7 @@ $$</p>
 <h3>三、三个高级变形</h3>
 <ol>
 <li><strong>重码数平方</strong>：$R_k^2$ 的积从中间向两边对称，如 $111111^2=12345654321$；把系数提出来，$333333^2=9R_6^2=111110888889$，$999999^2=81R_6^2=999998000001$。记住&quot;山形&quot;骨架，再按系数调整，答案可以直接写。</li>
-<li><strong>循环块</strong>：$\overline{abcabc}=1001\times\overline{abc}=7\times11\times13\times\overline{abc}$，$\overline{abab}=101\times\overline{ab}$，$\overline{abba}$ 恒被 11 整除。看到&quot;重复的块&quot;先拆块，再看分解式里有没有题目要的因子。</li>
+<li><strong>循环块</strong>：$\overline{ab}\times101=\overline{abab}$，$\overline{abc}\times1001=\overline{abcabc}=7\times11\times13\times\overline{abc}$，$\overline{ab}\times10101=\overline{ababab}$，$\overline{abba}$ 恒被 11 整除。看到&quot;重复的块&quot;先拆块，再看分解式里有没有题目要的因子。</li>
 <li><strong>最小 $k$ 问题</strong>：$7\mid R_k\iff6\mid k$，$11\mid R_k\iff2\mid k$，$37\mid R_k\iff3\mid k$，$81\mid R_k\iff81\mid k$。理由都是&quot;分组后每组的和是 0 或 9 的倍数&quot;，这是压轴题最常见的问法。遇到 $9k+m$ 这类倍数，不能把两段结果直接拼接，要先算 $9k$ 的整段再单独加 $m$ 段，并处理进位。</li>
 </ol>
 <h3>四、竞赛视角</h3>
@@ -754,7 +1037,28 @@ $$</p>
 <blockquote>
 <p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
 </blockquote>
-
+<!-- card:auto -->
+<h2>速查卡</h2>
+<blockquote>
+<p>裁剪即用：本页对应速查卡「计算 13背」。下面是本节最紧的一版摘要，公式与结论与正文完全一致，用于做题前扫一遍。全套卡片见 <code>tools/cards/build/cards.html</code>。</p>
+</blockquote>
+<p><strong>三类特殊数</strong></p>
+<p>$$R_k=11\cdots1=\frac{10^k-1}{9}$$</p>
+<p>$$12345679\times9=111111111,\quad 12345679\times8=98765432$$</p>
+<p>$$142857\times2=285714,\quad \times3=428571,\quad \cdots,\quad \times7=999999$$</p>
+<p>$$111\cdots1\times111\cdots1=123\cdots n\cdots321,\quad 1+2+\cdots+n+\cdots+2+1=n^2$$</p>
+<p>$$1234+2341+3412+4123=1111\times(1+2+3+4)$$</p>
+<p><strong>分解整除</strong></p>
+<p>$$1001=7\times11\times13$$</p>
+<p>$$\overline{ab}\times101=\overline{abab},\quad \overline{abc}\times1001=\overline{abcabc},\quad \overline{ab}\times10101=\overline{ababab}$$</p>
+<ul>
+<li>重码数 $=d\cdot R_k$，全 9 数 $=10^k-1$；11 看奇偶位数字和之差</li>
+</ul>
+<blockquote>
+<p>✅ 识别信号：数字成串重复、全 9、缺 8 数、求最小 $k$<br />
+⚠️ 易错：交替和须从个位往左数；缺 8 数是 12345679 不是 123456789</p>
+</blockquote>
+<!-- /card:auto -->
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：重码数乘全 9 数的借位结构（★★★★）<span class="covers">覆盖点：重码数的拆分与凑整</span></h3><div class="problem"><p>不列竖式，计算：(1) $8888888\times9999999$；(2) $8888888\times9999999+8888888$；(3) 由此直接写出 $7777777\times9999999$ 的积，并说明积中 7、6、2、3 各有几个。</p>
 </div>
@@ -786,6 +1090,8 @@ $$</p>
 <p><strong>求和公式为什么成立（首尾配对）</strong></p>
 <p>把首项与末项相加：$a_1+a_n=2a_1+(n-1)d$。往里挪一步，$a_2$ 比 $a_1$ 多 $d$，$a_{n-1}$ 比 $a_n$ 少 $d$，一多一少正好抵消，所以 $a_2+a_{n-1}=2a_1+(n-1)d$，与首尾之和分毫不差。继续往里挪，每一对的和都不变。</p>
 <p>于是：$n$ 为偶数时恰好配成 $\dfrac{n}{2}$ 对，和为 $\dfrac{(a_1+a_n)n}{2}$；$n$ 为奇数时配完还剩正中间一项，它恰好是 $\dfrac{a_1+a_n}{2}$，总和就是“项数乘中项”。<strong>求和公式与中项公式是同一件事的两种说法</strong>，不必当成两条公式去背。</p>
+<p><strong>三个常用求和</strong>：从 $1$ 开始的连续整数，和可以直接背下来：</p>
+<p>$$1+2+\cdots+n=\frac{n(n+1)}2,\qquad 1+3+\cdots+(2n-1)=n^2,\qquad 2+4+\cdots+2n=n(n+1)$$</p>
 <p><strong>三个竞赛变形</strong></p>
 <p>① <strong>分段和成等差</strong>：把前 $kn$ 项切成 $k$ 段，每段 $n$ 项。第 $i+1$ 段的每一项都比第 $i$ 段的对应项大 $nd$，$n$ 项一共大 $n^2d$，所以“每一段之和”这列数本身是等差数列，公差 $n^2d$。看到“前 10 项和”“前 20 项和”就切段，常常一步见底。</p>
 <p>② <strong>奇偶项和之比</strong>：项数为 $2n-1$ 时，奇数项、偶数项各自抽出来仍是等差数列，平均值都等于中间项 $a_n$，个数分别是 $n$ 与 $n-1$，故 奇和 $=n a_n$、偶和 $=(n-1)a_n$，比值 $n:(n-1)$。反过来，由比值可定项数，由和可定中项；注意<strong>这个比值与公差无关</strong>，公差再大也不影响。</p>
@@ -821,7 +1127,28 @@ $$</p>
 <blockquote>
 <p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
 </blockquote>
-
+<!-- card:auto -->
+<h2>速查卡</h2>
+<blockquote>
+<p>裁剪即用：本页对应速查卡「计算 11正」。下面是本节最紧的一版摘要，公式与结论与正文完全一致，用于做题前扫一遍。全套卡片见 <code>tools/cards/build/cards.html</code>。</p>
+</blockquote>
+<p><strong>四条关系</strong></p>
+<p>$$a_n=a_1+(n-1)d,\quad n=\frac{a_n-a_1}{d}+1$$</p>
+<p>$$S_n=\frac{(a_1+a_n)n}{2}=na_1+\frac{n(n-1)}{2}d$$</p>
+<p>$$1+2+\cdots+n=\frac{n(n+1)}{2},\quad 1+3+\cdots+(2n-1)=n^2,\quad 2+4+\cdots+2n=n(n+1)$$</p>
+<ul>
+<li>两项作差 $a_m-a_n=(m-n)d$，与首项无关</li>
+<li>奇数项和 = 项数 × 中项，中项 $=\frac{a_1+a_n}{2}$</li>
+</ul>
+<p><strong>三个变形</strong></p>
+<ul>
+<li>分段和成等差：每 $n$ 项一段，段和公差为 $n^2d$</li>
+<li>公共项仍成等差，公差取两公差的最小公倍数</li>
+</ul>
+<blockquote>
+<p>⚠️ 易错：项数 =（末项−首项）÷公差 + 1，别少算 1</p>
+</blockquote>
+<!-- /card:auto -->
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：两项定出数列，再数项数（★★★★）<span class="covers">覆盖点：通项与项数</span></h3><div class="problem"><p>一个等差数列的第 $4$ 项是 $21$，第 $10$ 项是 $57$。</p>
 <p>（1）求它的公差与首项；</p>
@@ -882,7 +1209,28 @@ $$</p>
 <blockquote>
 <p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
 </blockquote>
-
+<!-- card:auto -->
+<h2>速查卡</h2>
+<blockquote>
+<p>裁剪即用：本页对应速查卡「计算 14正」。下面是本节最紧的一版摘要，公式与结论与正文完全一致，用于做题前扫一遍。全套卡片见 <code>tools/cards/build/cards.html</code>。</p>
+</blockquote>
+<p><strong>三步</strong></p>
+<ul>
+<li>换项 → 求和 → 夹逼：$nm\le S\le nM$</li>
+<li>整数 $k&lt;S&lt;k+1$ 则整数部分为 $k$，界须落进同一区间</li>
+</ul>
+<p><strong>四种形态</strong></p>
+<ul>
+<li>抓最大最小项：每项不小于 $m$、不大于 $M$，直接乘项数</li>
+<li>分组：按 1、1、2、4、8 切段，上界取段内最大、下界取最小</li>
+<li>裂项配对：只剩首尾两个根号，上下界端点要错开一位</li>
+</ul>
+<p>$$\frac{1}{\sqrt{k+1}}&lt;2(\sqrt{k+1}-\sqrt{k})&lt;\frac{1}{\sqrt{k}}$$</p>
+<blockquote>
+<p>✅ 识别信号：整数部分、在哪两个整数之间、项多而每项有规律<br />
+⚠️ 易错：一次只朝一个方向放缩；取倒数时大小方向要翻转</p>
+</blockquote>
+<!-- /card:auto -->
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：十项倒数和再取倒数，两边都要卡住（★★★★）<span class="covers">覆盖点：抓最大最小项放缩</span></h3><div class="problem"><p>求 $\dfrac{1}{\dfrac{1}{21}+\dfrac{1}{22}+\cdots+\dfrac{1}{30}}$ 的整数部分。</p>
 </div>
@@ -901,6 +1249,8 @@ $$</p>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
 <section class="kp"><h2>速算与巧算</h2><p class="meta"><span>年级：4、5、6</span><span>难度：★★★</span></p><p><strong>一句话</strong>：速算与巧算不是&quot;算得快&quot;，而是<strong>先改形、后算值</strong>——在不改变结果的前提下，把数写成补数、把乘积拆成整百、把长串按周期捆成组、把重复出现的长括号打包成字母。判断巧算是否成立只有一条标准：<strong>每一步变形都保值</strong>。</p>
+<p><strong>运算律</strong>：巧算的每一步变形，合法性最终都落在这几条律上——加法交换律 $a+b=b+a$（也常写成 $a+b+c=a+c+b$）、加法结合律 $(a+b)+c=a+(b+c)$、乘法交换律 $a\times b=b\times a$（也常写成 $a\times b\times c=a\times c\times b$）、乘法结合律 $(a\times b)\times c=a\times(b\times c)$、乘法分配律 $(a+b)\times c=a\times c+b\times c$；与分配律配套的还有&quot;除法分配律&quot; $(a+b)\div c=a\div c+b\div c$。</p>
+<p><strong>运算性质</strong>：减法性质 $a-b-c=a-(b+c)$；除法性质 $a\div b\div c=a\div(b\times c)$；商不变性质 $a\div b=(a\times m)\div(b\times m)=(a\div n)\div(b\div n)$（$m,n\ne0$）；积不变性质 $a\times b=(a\times m)\times(b\div m)$（$m\ne0$）。前两条管&quot;去括号&quot;，后两条管&quot;一边乘、一边除&quot;，是造公因数的根据。</p>
 <h3>一、四个模型：定义、结构、适用条件</h3>
 <p><strong>模型 1｜补数</strong>：把 $10^k-d$ 看成&quot;整减零头&quot;。</p>
 <p>$$a+(10^k-d)=a+10^k-d,\qquad a-(10^k-d)=a-10^k+d$$</p>
@@ -961,7 +1311,31 @@ $$</p>
 <blockquote>
 <p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
 </blockquote>
-
+<!-- card:auto -->
+<h2>速查卡</h2>
+<blockquote>
+<p>裁剪即用：本页对应速查卡「计算 12背」。下面是本节最紧的一版摘要，公式与结论与正文完全一致，用于做题前扫一遍。全套卡片见 <code>tools/cards/build/cards.html</code>。</p>
+</blockquote>
+<p><strong>四个模型</strong></p>
+<ul>
+<li>补数：$a-(10^k-d)=a-10^k+d$，零头小才划算</li>
+<li>分配律：$ab+ac=a(b+c)$；一边乘 $m$、一边除 $m$ 积不变</li>
+<li>周期分组：每 $m$ 项捆一组，答每组定值、几组、有无尾项</li>
+<li>整体设元：两长括号只差一两项时记作 $A$、$B$</li>
+</ul>
+<p>$$A(1+B)-(1+A)B=A-B$$</p>
+<p><strong>运算律</strong></p>
+<p>$$a+b=b+a,\quad a\times b=b\times a,\quad (a+b)c=ac+bc,\quad (a+b)\div c=a\div c+b\div c$$</p>
+<p>$$(a+b)+c=a+(b+c),\quad (ab)c=a(bc),\quad a-b-c=a-(b+c),\quad a\div b\div c=a\div(bc)$$</p>
+<p>$$a\times b=(a\times m)\times(b\div m),\quad a\div b=(a\times m)\div(b\times m)$$</p>
+<ul>
+<li>见 25、125 找 4、8；$1001=7\times11\times13$</li>
+</ul>
+<blockquote>
+<p>✅ 识别信号：见 $1998$、$9.8$ 想补数，四个长括号先设元<br />
+⚠️ 易错：凑整要还账，多加的减掉、少加的补上</p>
+</blockquote>
+<!-- /card:auto -->
 <h2 class="ex-h">例题</h2>
 <div class="example"><h3>例1：一串 9 的平方加上一串 9（★★★★）<span class="covers">覆盖点：补数凑整与回补</span></h3><div class="problem"><p>计算 $9999\times9999+19999$。</p>
 </div>
