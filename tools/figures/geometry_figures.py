@@ -188,6 +188,110 @@ def pythagoras():
     save(fig, "pythagoras")
 
 
+def oblique_triangle():
+    fig, ax = new_fig(7.5, 5.1)
+    B, C = (-1.0, -1.2), (2.8, -1.2)
+    A = (-2.8, 1.4)
+    H = (-2.8, -1.2)
+    poly(ax, [A, B, C], TEAL2, 0.62)
+    outline(ax, [A, B, C])
+    seg(ax, (-3.9, -1.2), B, color=MUTED, lw=1.15, ls=(0, (5, 3)))
+    seg(ax, A, H, color=MUTED, lw=1.3, ls=(0, (5, 3)))
+    right_angle(ax, H, (0, 1), (1, 0), 0.26)
+    angle_arc(ax, B, 0.55, 0, 125, MUTED, 1.1)
+    text(ax, -2.8, 1.72, r"$A$", 16, weight="bold")
+    text(ax, -1.0, -1.62, r"$B$", 16, weight="bold")
+    text(ax, 2.8, -1.62, r"$C$", 16, weight="bold")
+    text(ax, -3.02, -1.62, r"$H$", 15, weight="bold", ha="right")
+    text(ax, 0.9, -1.62, r"$a$", 13, MUTED)
+    text(ax, -3.05, 0.15, r"$h$", 13, MUTED, ha="right")
+    text(ax, 0.0, -2.5, r"$S=\frac{1}{2}ah$", 13.5, MUTED)
+    finish(ax, (-4.3, 3.5), (-2.9, 2.2))
+    save(fig, "oblique-triangle")
+
+
+def perimeter_tricks():
+    fig, ax = new_fig(7.6, 5.1)
+    step = [(-2.8, -1.2), (2.8, -1.2), (2.8, -0.1), (0.0, -0.1),
+            (0.0, 1.2), (-2.8, 1.2)]
+    poly(ax, step, TEAL2, 0.6)
+    outline(ax, step)
+    corners = [(-2.8, -1.2), (2.8, -1.2), (2.8, 1.2), (-2.8, 1.2)]
+    for i in range(4):
+        seg(ax, corners[i], corners[(i + 1) % 4], color=MUTED, lw=1.15,
+            ls=(0, (5, 3)))
+    for x in (0.9, 1.9):
+        ax.annotate("", xy=(x, 1.12), xytext=(x, -0.06),
+                    arrowprops=dict(arrowstyle="-|>", color=MUTED, lw=1.3,
+                                    linestyle=(0, (5, 3)), shrinkA=0,
+                                    shrinkB=0, mutation_scale=13))
+    for y in (0.25, 0.85):
+        ax.annotate("", xy=(2.72, y), xytext=(0.08, y),
+                    arrowprops=dict(arrowstyle="-|>", color=MUTED, lw=1.3,
+                                    linestyle=(0, (5, 3)), shrinkA=0,
+                                    shrinkB=0, mutation_scale=13))
+    text(ax, 0.0, -1.55, r"$a$", 13, MUTED)
+    text(ax, 1.4, 1.55, r"$a$", 13, MUTED)
+    text(ax, -3.15, 0.0, r"$b$", 13, MUTED)
+    text(ax, 3.15, 0.0, r"$b$", 13, MUTED)
+    text(ax, 0.0, -2.35, r"$C=2(a+b)$", 13.5, MUTED)
+    finish(ax, (-3.9, 3.9), (-2.7, 2.3))
+    save(fig, "perimeter-tricks")
+
+
+def perimeter_problem():
+    fig, ax = new_fig(7.4, 5.1)
+    u = 1.15
+    L = [(-u, -u), (u, -u), (u, 0.0), (0.0, 0.0), (0.0, u), (-u, u)]
+    poly(ax, L, WARM2, 0.62)
+    outline(ax, L)
+    seg(ax, (0.0, -u), (0.0, 0.0), color=MUTED, lw=1.1)
+    seg(ax, (-u, 0.0), (0.0, 0.0), color=MUTED, lw=1.1)
+    seg(ax, (0.0, -u), (0.0, 0.0), color=INK, lw=2.4, ls=(0, (3, 2.5)), z=3)
+    text(ax, 0.28, -0.62, r"$+2$", 12.5, MUTED, ha="left")
+    text(ax, 0.0, -u - 0.32, r"$2$", 12.5, weight="bold")
+    text(ax, -u - 0.32, 0.0, r"$2$", 12.5, weight="bold", ha="right")
+    text(ax, u + 0.3, -0.575, r"$1$", 12, ha="left")
+    text(ax, 0.62, 0.32, r"$1$", 12)
+    text(ax, 0.3, 0.66, r"$1$", 12, ha="left")
+    text(ax, -0.575, u + 0.3, r"$1$", 12)
+    text(ax, 0.0, -u - 0.95, r"$C=8\ \to\ 10$", 13, MUTED)
+    finish(ax, (-2.5, 2.5), (-2.4, 2.1))
+    save(fig, "perimeter-problem")
+
+
+def geometry_method():
+    fig, ax = new_fig(7.6, 5.0)
+    B, C, A = (-3.8, -1.0), (-1.6, -1.0), (-2.3, 1.0)
+    Hf = (-2.3, -1.0)
+    poly(ax, [A, B, C], TEAL, 0.55)
+    outline(ax, [A, B, C])
+    seg(ax, A, Hf, color=MUTED, lw=1.15, ls=(0, (5, 3)))
+    right_angle(ax, Hf, (0, 1), (1, 0), 0.24)
+    text(ax, -2.7, -1.42, r"$a$", 13, MUTED)
+    text(ax, -2.55, 0.0, r"$h$", 13, MUTED, ha="right")
+
+    ax.annotate("", xy=(0.05, 0.0), xytext=(-1.3, 0.0),
+                arrowprops=dict(arrowstyle="-|>", color=MUTED, lw=1.7,
+                                shrinkA=0, shrinkB=0, mutation_scale=15))
+    text(ax, -0.62, 0.55, r"$\times 2$", 12.5, MUTED, box=True)
+
+    P1, P2 = (0.7, -1.0), (2.9, -1.0)
+    P4, P3 = (0.0, 1.0), (2.2, 1.0)
+    poly(ax, [P1, P2, P3], TEAL, 0.55)
+    poly(ax, [P1, P3, P4], WARM2, 0.62)
+    outline(ax, [P1, P2, P3, P4])
+    seg(ax, P1, P3, lw=1.5)
+    Hf2 = (2.2, -1.0)
+    seg(ax, P3, Hf2, color=MUTED, lw=1.15, ls=(0, (5, 3)))
+    right_angle(ax, Hf2, (0, 1), (-1, 0), 0.24)
+    text(ax, 1.8, -1.42, r"$a$", 13, MUTED)
+    text(ax, 1.92, 0.0, r"$h$", 13, MUTED, ha="right")
+    text(ax, -0.5, -2.1, r"$S=ah/2$", 13.5, MUTED)
+    finish(ax, (-4.4, 3.7), (-2.6, 2.1))
+    save(fig, "geometry-method")
+
+
 if __name__ == "__main__":
     area_ratio()
     equal_area()
@@ -196,3 +300,7 @@ if __name__ == "__main__":
     similarity()
     circle_sector()
     pythagoras()
+    oblique_triangle()
+    perimeter_tricks()
+    perimeter_problem()
+    geometry_method()

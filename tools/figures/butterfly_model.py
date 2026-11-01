@@ -121,4 +121,10 @@ out_svg = "assets/geometry/butterfly-model.svg"
 out_png = "assets/geometry/butterfly-model.png"
 fig.savefig(out_svg, transparent=True, bbox_inches="tight", pad_inches=0.05)
 fig.savefig(out_png, dpi=220, facecolor="white", bbox_inches="tight", pad_inches=0.05)
-print("saved", out_svg, out_png)
+# 速查卡版：缩小画布使字号/线宽相对放大，适配 34mm 宽的小卡片
+w, h = fig.get_size_inches()
+fig.set_size_inches(w * 0.35, h * 0.35)
+os.makedirs("assets/geometry/cards", exist_ok=True)
+fig.savefig("assets/geometry/cards/butterfly-model.svg",
+            transparent=True, bbox_inches="tight", pad_inches=0.04)
+print("saved", out_svg, out_png, "assets/geometry/cards/butterfly-model.svg")

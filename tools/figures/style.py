@@ -31,12 +31,24 @@ def new_fig(w=7.6, h=5.2):
 
 
 def save(fig, name):
+    """同时输出网页版（大画布）与速查卡版（小画布）。
+
+    卡片版原理：把画布物理尺寸缩到 0.35 倍再保存。字号/线宽是绝对单位（pt），
+    画布变小后它们相对图形就变大、变粗，正好适配 34mm 宽的小卡片——
+    直接用网页版缩到 34mm 时标注只有约 2pt，完全不可读。
+    """
     svg = f"assets/geometry/{name}.svg"
     png = f"assets/geometry/{name}.png"
     fig.savefig(svg, transparent=True, bbox_inches="tight", pad_inches=0.06)
     fig.savefig(png, dpi=220, facecolor="white", bbox_inches="tight", pad_inches=0.06)
+    w, h = fig.get_size_inches()
+    fig.set_size_inches(w * 0.35, h * 0.35)
+    os.makedirs("assets/geometry/cards", exist_ok=True)
+    csvg = f"assets/geometry/cards/{name}.svg"
+    fig.savefig(csvg, transparent=True, bbox_inches="tight", pad_inches=0.04)
+    fig.set_size_inches(w, h)
     plt.close(fig)
-    print("saved", svg, png)
+    print("saved", svg, png, csvg)
 
 
 def finish(ax, xlim, ylim):
