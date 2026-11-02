@@ -100,24 +100,24 @@ def fig_venn_three():
         ax.add_patch(Circle(c, r, facecolor="none", edgecolor=ec,
                             lw=1.7, zorder=3))
 
-    text(ax, 0.0, 2.52, "$A=30$", size=14, color=TEAL_D)
-    text(ax, -2.44, -1.66, "$B=26$", size=14, color=WARM_D)
-    text(ax, 2.44, -1.66, "$C=24$", size=14, color=GREY_D)
+    text(ax, 0.0, 2.56, "$A=30$", size=13, color=TEAL_D)
+    text(ax, -2.62, -1.80, "$B=26$", size=13, color=WARM_D)
+    text(ax, 2.62, -1.80, "$C=24$", size=13, color=GREY_D)
 
     # 只参加一项
-    text(ax, 0.0, 1.30, "11", size=15)
-    text(ax, -1.36, -0.82, "3", size=15)
-    text(ax, 1.36, -0.82, "5", size=15)
+    text(ax, 0.0, 1.34, "11", size=13)
+    text(ax, -1.40, -0.86, "3", size=13)
+    text(ax, 1.40, -0.86, "5", size=13)
     # 恰好两项
-    text(ax, -0.58, 0.60, "9", size=15)
-    text(ax, 0.58, 0.60, "5", size=15)
-    text(ax, 0.0, -1.02, "9", size=15)
+    text(ax, -0.60, 0.62, "9", size=13)
+    text(ax, 0.60, 0.62, "5", size=13)
+    text(ax, 0.0, -1.06, "9", size=13)
     # 三项都参加
-    text(ax, 0.0, 0.02, "5", size=16, weight="bold")
+    text(ax, 0.0, 0.02, "5", size=14, weight="bold")
     # 三项都不参加
-    text(ax, -2.52, 1.62, "$n=3$", size=14, color=MUTED)
+    text(ax, -2.70, 1.70, "$n=3$", size=13, color=MUTED)
 
-    text(ax, 0.0, -2.55, "$30+26+24-14-10-14+5=47$", size=13)
+    text(ax, 0.0, -2.62, "$30+26+24-14-10-14+5=47$", size=12)
 
     finish(ax, (-2.95, 2.95), (-2.95, 2.95))
     save(fig, "cnt-venn-three")
@@ -220,8 +220,8 @@ def fig_grid_path():
             else:
                 text(ax, i * s, j * s, "$%d$" % v, size=11, color=INK, box=True)
 
-    text(ax, -0.62, -0.55, "$A$", size=15)
-    text(ax, nx * s + 0.62, ny * s + 0.40, "$B$", size=15)
+    text(ax, -0.95, -0.05, "$A$", size=15)
+    text(ax, nx * s + 0.95, ny * s + 0.15, "$B$", size=15)
     text(ax, 1.15 * s, ny * s + 1.15, "$35=\\binom{7}{3}$", size=14)
     text(ax, 2 * s, -1.55, "$f(i,j)=f(i-1,j)+f(i,j-1)$", size=13)
 
@@ -355,15 +355,15 @@ def fig_gaps():
     for x in gx:
         ax.add_patch(Circle((x, 0), 0.30, facecolor="none", edgecolor=GRID,
                             lw=1.2, ls=(0, (3, 2.5)), zorder=2))
-        text(ax, x, 0.62, "$\\leq 1$", size=10, color=MUTED)
+        text(ax, x, 0.64, "$\\leq 1$", size=9, color=MUTED)
     for i, x in enumerate(xs):
         box(ax, x, 0, bw, bw, fc=TEAL, ec=TEAL_D, lw=1.5)
-        text(ax, x, 0, "$B$", size=15, color=TEAL_D, weight="bold")
+        text(ax, x, 0, "$B$", size=12, color=TEAL_D, weight="bold")
 
     for x, ch in zip((gx[0], gx[2], gx[3]), ("$a$", "$b$", "$c$")):
         ax.add_patch(Circle((x, 0), 0.20, facecolor=WARM, edgecolor=WARM_D,
                             lw=1.2, zorder=4))
-        text(ax, x, 0, ch, size=9, color=WARM_D)
+        text(ax, x, 0, ch, size=8, color=WARM_D)
 
     for i, x in enumerate(gx):
         text(ax, x, -0.72, "$%d$" % (i + 1), size=11, color=MUTED)
@@ -387,24 +387,24 @@ def fig_bundle():
     bx = xs_top[1]
     box(ax, bx, top_y, 3 * 1.10 + 0.14, s + 0.44, fc="none", ec=WARM_D,
         lw=1.8, ls=(0, (5, 3)), z=3)
-    text(ax, bx, top_y + 0.78, "$X$", size=15, color=WARM_D)
+    text(ax, bx, top_y + 0.92, "$X$", size=14, color=WARM_D)
 
     bot_y = 0.0
     ux = [bx, 4.75, 5.95]
-    box(ax, ux[0], bot_y, 1.55, s + 0.18, fc=WARM2, ec=WARM_D, lw=1.6)
-    text(ax, ux[0], bot_y + 0.14, "$X$", size=14, color=WARM_D, weight="bold")
-    text(ax, ux[0], bot_y - 0.18, "$3!$", size=12, color=WARM_D)
+    box(ax, ux[0], bot_y + 0.02, 1.55, 1.45, fc=WARM2, ec=WARM_D, lw=1.6)
+    text(ax, ux[0], bot_y + 0.34, "$X$", size=11, color=WARM_D, weight="bold")
+    text(ax, ux[0], bot_y - 0.34, "$3!$", size=10, color=WARM_D)
     for x, ch in zip(ux[1:], "de"):
         box(ax, x, bot_y, s, s, fc="white", ec=GREY_D, lw=1.4)
         text(ax, x, bot_y, "$%s$" % ch, size=13)
 
-    arrow(ax, (bx, top_y - 0.68), (bx, bot_y + 0.62), color=GREY_D,
+    arrow(ax, (bx, top_y - 0.68), (bx, bot_y + 0.80), color=GREY_D,
           lw=1.6, ms=14, ls=(0, (4, 2)))
 
-    hbracket(ax, ux[0] - 0.80, ux[2] + 0.46, bot_y - 0.72, "$3!$")
-    text(ax, (ux[0] + ux[2]) / 2, -1.72, "$3!\\times 3! = 36$", size=16)
+    hbracket(ax, ux[0] - 0.80, ux[2] + 0.46, bot_y - 0.90, "$3!$", dy=-0.52)
+    text(ax, (ux[0] + ux[2]) / 2, -2.60, "$3!\\times 3! = 36$", size=15)
 
-    finish(ax, (-0.25, 6.65), (-2.25, 3.60))
+    finish(ax, (-0.25, 6.65), (-3.10, 3.60))
     save(fig, "cnt-bundle")
 
 
@@ -459,10 +459,10 @@ def fig_dice_grid():
     text(ax, 6.35 * s, -1.02, "$i$", size=13, color=MUTED)
     text(ax, -0.95, 6.3 * s, "$j$", size=13, color=MUTED)
 
-    text(ax, 6.6 * s, 3.1 * s, "$\\dfrac{6}{36}=\\dfrac{1}{6}$", size=16)
-    text(ax, 6.6 * s, 1.6 * s, "$i+j=7$", size=13, color=WARM_D)
+    text(ax, 3.0 * s, 6.9 * s, "$i+j=7$", size=13, color=WARM_D)
+    text(ax, 3.0 * s, -3.15, "$\\dfrac{6}{36}=\\dfrac{1}{6}$", size=16)
 
-    finish(ax, (-1.20, 9.30), (-1.45, 6.9 * s + 0.35))
+    finish(ax, (-1.25, 6.9 * s), (-3.85, 7.6 * s))
     save(fig, "cnt-dice-grid")
 
 

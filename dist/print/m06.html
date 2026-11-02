@@ -30,7 +30,11 @@ img{max-width:100%;height:auto}
 }
 </style></head><body><h1>奥数-计算</h1>
 <p class="meta">小学数学知识库 · 打印版</p>
-<section class="kp"><h2>公式类计算</h2><p class="meta"><span>年级：5、6</span><span>难度：★★★</span></p><p><strong>模型</strong>：公式类计算只有四件兵器。平方差 $a^2-b^2=(a+b)(a-b)$，把&quot;平方的差&quot;换成&quot;和乘差&quot;；完全平方 $(a\pm b)^2=a^2\pm2ab+b^2$，把&quot;平方的和&quot;与&quot;积&quot;互相翻译；平方和 $1^2+2^2+\cdots+n^2=\dfrac{n(n+1)(2n+1)}{6}$，把一串平方压成一个乘积；立方和 $1^3+2^3+\cdots+n^3=\left(\dfrac{n(n+1)}{2}\right)^2$，把一串立方压成三角数的平方。四件的适用条件要分清：平方差要求两项都是完全平方且相减；完全平方要求出现 $2ab$ 这个&quot;中间项&quot;，没有它就只是两个平方相加；两个求和公式只认&quot;从 $1$ 开始、连续、步长为 $1$&quot;，起点不是 $1$、步长不是 $1$ 时，必须先提公因数或补项。四件兵器还有一条总原则：能配对就先配对，能提公因数就先提，把陌生的串化归成标准形再代公式——顺序颠倒，系数就会错。</p>
+<section class="kp"><h2>公式类计算</h2><p class="meta"><span>年级：5、6</span><span>难度：★★★</span></p><p><img src="assets/geometry/calc-square-diff.svg" alt="平方差：左边挖去 b²，右边拼成 (a+b)(a−b) 的长方形" /></p>
+<blockquote>
+<p>左边灰色小方块是被挖掉的 $b^2$，青色竖条与浅橙色横块就是剩下的曲尺形被虚线切成的两块；右边的长方形是把这两块转 90° 重拼的结果，长是 $a+b$、宽是 $a-b$，面积没变，所以 $a^2-b^2=(a+b)(a-b)$。</p>
+</blockquote>
+<p><strong>模型</strong>：公式类计算只有四件兵器。平方差 $a^2-b^2=(a+b)(a-b)$，把&quot;平方的差&quot;换成&quot;和乘差&quot;；完全平方 $(a\pm b)^2=a^2\pm2ab+b^2$，把&quot;平方的和&quot;与&quot;积&quot;互相翻译；平方和 $1^2+2^2+\cdots+n^2=\dfrac{n(n+1)(2n+1)}{6}$，把一串平方压成一个乘积；立方和 $1^3+2^3+\cdots+n^3=\left(\dfrac{n(n+1)}{2}\right)^2$，把一串立方压成三角数的平方。四件的适用条件要分清：平方差要求两项都是完全平方且相减；完全平方要求出现 $2ab$ 这个&quot;中间项&quot;，没有它就只是两个平方相加；两个求和公式只认&quot;从 $1$ 开始、连续、步长为 $1$&quot;，起点不是 $1$、步长不是 $1$ 时，必须先提公因数或补项。四件兵器还有一条总原则：能配对就先配对，能提公因数就先提，把陌生的串化归成标准形再代公式——顺序颠倒，系数就会错。</p>
 <p><strong>乘法公式</strong>：常备的几条一并列出——$(a+b)^2=a^2+2ab+b^2$；$(a-b)^2=a^2-2ab+b^2$；$(a+b)(a-b)=a^2-b^2$；$(a+1)(b+1)=ab+a+b+1$；$(a+b)^3=a^3+3a^2b+3ab^2+b^3$；$a^3-b^3=(a-b)(a^2+ab+b^2)$；$a^3+b^3=(a+b)(a^2-ab+b^2)$。</p>
 <p><strong>多位数乘法</strong>：$M\times\underbrace{99\cdots9}<em>{n}=M\times(10^n-1)$；当 $M\le\underbrace{99\cdots9}</em>{n}$ 时，积的数字和为 $9n$，可用来验算。</p>
 <p><strong>推导</strong>：平方差可以割补——边长 $a$ 的正方形挖掉边长 $b$ 的小正方形，剩下的曲尺形沿对角线剪开，正好拼成 $(a+b)$ 乘 $(a-b)$ 的长方形，所以 $a^2-b^2=(a+b)(a-b)$。完全平方就是面积图：边长 $a+b$ 的正方形被分成 $a^2$、$b^2$ 和两个 $ab$，中间那两项不是凭空来的；把其中一块 $ab$ 改成&quot;挖去&quot;，同一条式子就给出 $(a-b)^2=a^2-2ab+b^2$，所以完全平方的两种形式是同一张图的两种剪法。平方和的分母 $6$ 从哪来？把 $1^2+2^2+\cdots+n^2$ 看成 $n$ 层阶梯方块，六个同样的阶梯恰好拼成 $n\times(n+1)\times(2n+1)$ 的长方体，故总和是 $\dfrac{n(n+1)(2n+1)}{6}$；取 $n=2$，$2\times3\times5\div6=5=1+4$，对得上。立方和不必另记：令 $T_n=1+2+\cdots+n$，则 $T_n^2-T_{n-1}^2=(T_n-T_{n-1})(T_n+T_{n-1})=n\cdot n^2=n^3$，把 $n=1,2,\cdots$ 的这些式子相加，左边成串抵消，只剩 $T_n^2$——立方和公式其实是平方差公式累加出来的。</p>
@@ -192,7 +196,11 @@ img{max-width:100%;height:auto}
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
-<section class="kp"><h2>分数裂项</h2><p class="meta"><span>年级：5、6</span><span>难度：★★</span></p><p><strong>模型</strong>：裂项相消，是把一项拆成两项（或三项）的和差，让相邻两项出现&quot;大小相同、符号相反&quot;的部分，求和时成串抵消，只剩首尾。最核心的一条是间隔为 $k$ 的裂差 $\frac1{n(n+k)}=\frac1k(\frac1n-\frac1{n+k})$；若分子恰是分母两因数之和，就改拆成两个分数相加；若分母是三个连续因数连乘，就拆成相邻两个&quot;两因数积&quot;之差，再乘 $\frac12$。适用条件只有一条：本项拆出的尾，要能与下一项拆出的头对上，也就是分母的因数首尾相接。</p>
+<section class="kp"><h2>分数裂项</h2><p class="meta"><span>年级：5、6</span><span>难度：★★</span></p><p><img src="assets/geometry/calc-telescoping.svg" alt="裂项：每段长 1/(k(k+1))，首尾相接正好铺满 [1/(n+1), 1]" /></p>
+<blockquote>
+<p>五条色带自上而下是 $k=1$ 到 $k=5$ 的项，虚线把每一段的左端对齐到上一段的右端（$\frac12,\frac13,\dots$ 这些公共端点），说明“这一项拆出的尾”接住了“下一项的头”；灰色那段 $\frac{1}{n+1}$ 是唯一没人盖住的，所以整串之和只剩 $1-\frac{1}{n+1}$。</p>
+</blockquote>
+<p><strong>模型</strong>：裂项相消，是把一项拆成两项（或三项）的和差，让相邻两项出现&quot;大小相同、符号相反&quot;的部分，求和时成串抵消，只剩首尾。最核心的一条是间隔为 $k$ 的裂差 $\frac1{n(n+k)}=\frac1k(\frac1n-\frac1{n+k})$；若分子恰是分母两因数之和，就改拆成两个分数相加；若分母是三个连续因数连乘，就拆成相邻两个&quot;两因数积&quot;之差，再乘 $\frac12$。适用条件只有一条：本项拆出的尾，要能与下一项拆出的头对上，也就是分母的因数首尾相接。</p>
 <p><strong>两条标准答案形</strong>：把上面的两种拆法从 $1$ 一直写到 $n$，就是裂项题最常见的两个结果——</p>
 <p>$$\frac1{1\times2}+\frac1{2\times3}+\cdots+\frac1{n(n+1)}=1-\frac1{n+1}=\frac n{n+1}$$</p>
 <p>$$\frac1{1\times2\times3}+\cdots+\frac1{n(n+1)(n+2)}=\frac12\left[\frac12-\frac1{(n+1)(n+2)}\right]$$</p>
@@ -348,7 +356,11 @@ img{max-width:100%;height:auto}
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
-<section class="kp"><h2>循环小数化分数</h2><p class="meta"><span>年级：5、6</span><span>难度：★★</span></p><p><strong>一句话</strong>：循环小数写不完，但它的小数部分只是一个&quot;循环节&quot;在无限重复；用&quot;乘 10 的幂、再相减&quot;就能把这条无限长的尾巴整段消掉，剩下的分母一定是一串 9 后面接若干个 0。</p>
+<section class="kp"><h2>循环小数化分数</h2><p class="meta"><span>年级：5、6</span><span>难度：★★</span></p><p><img src="assets/geometry/calc-repeating-decimal.svg" alt="循环小数：小数点右移一个循环节，两行的小数部分完全相同" /></p>
+<blockquote>
+<p>上下两行里青绿色底纹盖住的是同一段 $142857$，橙色横线标出循环节、共 $n=6$ 位；第二行就是把第一行的小数点右移 6 位，两式相减时这段无限长的小数部分整段抵消，只剩整数 $142857$，分母于是是 6 个 9。</p>
+</blockquote>
+<p><strong>一句话</strong>：循环小数写不完，但它的小数部分只是一个&quot;循环节&quot;在无限重复；用&quot;乘 10 的幂、再相减&quot;就能把这条无限长的尾巴整段消掉，剩下的分母一定是一串 9 后面接若干个 0。</p>
 <h3>一、模型与公式</h3>
 <p>小数部分从某一位起，一段数字依次不断重复，这样的数叫<strong>循环小数</strong>，重复的那组数字叫<strong>循环节</strong>，循环节的位数记作 $n$，写法是在循环节上加一条横线。循环节从十分位就开始的叫<strong>纯循环小数</strong>，如 $0.\overline{36}$；前面先有 $m$ 位不循环的数字、然后才进入循环的叫<strong>混循环小数</strong>，如 $0.25\overline{3}$。</p>
 <p>设循环节对应的整数为 $N$（<strong>允许以 0 开头</strong>：&quot;07&quot;记作 $N=7$，但它占 2 位），则</p>
@@ -597,7 +609,11 @@ img{max-width:100%;height:auto}
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
-<section class="kp"><h2>数列与数表</h2><p class="meta"><span>年级：5、6</span><span>难度：★★</span></p><p><strong>一、四类对象，一条流水线</strong></p>
+<section class="kp"><h2>数列与数表</h2><p class="meta"><span>年级：5、6</span><span>难度：★★</span></p><p><img src="assets/geometry/calc-table-frame.svg" alt="日历 3×3 方框：九格相对中心的偏移相加为 0" /></p>
+<blockquote>
+<p>左边橙框圈住的九个数以中心的 $9$ 为基准，右边逐格给出相对它的偏移 $-8,-7,\dots,+8$；这些偏移两两相反、相加为 $0$，所以方框和恒等于 $9x$，这里就是 $9\times9=81$。</p>
+</blockquote>
+<p><strong>一、四类对象，一条流水线</strong></p>
 <p>数列研究的是“序号与数值的对应”：问第 $n$ 个数是几，或前 $n$ 个数之和是多少。数表把数列按行排开，一个数有了两个坐标，“求第 $n$ 项”就变成“求第几行第几列”。杨辉三角是“上一行拼出下一行”的递推数表，日历表是“七天一循环”的周期数表。</p>
 <p>四者外形不同，解法却是同一条流水线：<strong>先定位，再求和，最后验边界</strong>。定位，是确定目标落在第几组、第几行第几列；求和，是把一串数换成“项数乘平均数”或“个数乘中心”；验边界，是回头检查有没有跨行、有没有超出总个数、有没有跑出这个月。竞赛题与课本题的分水岭，几乎都卡在第三步。</p>
 <p><strong>二、定位的两把尺子</strong></p>
@@ -1091,7 +1107,11 @@ $$</p>
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
-<section class="kp"><h2>等差数列</h2><p class="meta"><span>年级：4、5</span><span>难度：★★</span></p><p><strong>这是什么样的数列</strong></p>
+<section class="kp"><h2>等差数列</h2><p class="meta"><span>年级：4、5</span><span>难度：★★</span></p><p><img src="assets/geometry/calc-arithmetic-sequence.svg" alt="等差数列：两条同样的阶梯咬成 n×(a₁+aₙ) 的长方形" /></p>
+<blockquote>
+<p>青绿色阶梯从左到右每列高出一截，那一截就是公差 $d$；浅橙色是同一串数倒过来铺的，两色在每一列恰好拼满 $a_1+a_n$ 的高度，所以整块长方形是 $n(a_1+a_n)$，阶梯只占它的一半，这就是求和公式。</p>
+</blockquote>
+<p><strong>这是什么样的数列</strong></p>
 <p>一列数，如果从第二项起，每一项减去它前面一项所得的差都相等，这列数就叫<strong>等差数列</strong>，这个固定的差叫<strong>公差</strong>，记作 $d$。一般写成</p>
 <p>$$a_1,\quad a_1+d,\quad a_1+2d,\quad \dots,\quad a_1+(n-1)d$$</p>
 <p>“相邻两项差相等”是这类题唯一的身份证：看到“每次多几”“每隔几取一个”“除以几余几排成的数”，都该想到它。公差可以是负数（越往后越小），也可以是 $0$（每项都一样），所以“等差”不等于“递增”。判断一列数是不是等差，最快的办法是<strong>三点检验</strong>：随便取连续三项，看中间一项的两倍是否恰好等于左右两项之和。</p>
@@ -1268,7 +1288,11 @@ $$</p>
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
-<section class="kp"><h2>速算与巧算</h2><p class="meta"><span>年级：4、5</span><span>难度：★</span></p><p><strong>一句话</strong>：速算与巧算不是&quot;算得快&quot;，而是<strong>先改形、后算值</strong>——在不改变结果的前提下，把数写成补数、把乘积拆成整百、把长串按周期捆成组、把重复出现的长括号打包成字母。判断巧算是否成立只有一条标准：<strong>每一步变形都保值</strong>。</p>
+<section class="kp"><h2>速算与巧算</h2><p class="meta"><span>年级：4、5</span><span>难度：★</span></p><p><img src="assets/geometry/calc-quick-pair.svg" alt="凑整配对：打乱顺序后按补数连成 10、100、1000" /></p>
+<blockquote>
+<p>橙色弧线把和为整十整百的两个数连起来：$2$ 配 $8$、$87$ 配 $13$、$124$ 配 $876$，每对都凑成一个整数，三个整数的和一眼可读；之所以能隔着连，是加法交换律允许把数重新配对。</p>
+</blockquote>
+<p><strong>一句话</strong>：速算与巧算不是&quot;算得快&quot;，而是<strong>先改形、后算值</strong>——在不改变结果的前提下，把数写成补数、把乘积拆成整百、把长串按周期捆成组、把重复出现的长括号打包成字母。判断巧算是否成立只有一条标准：<strong>每一步变形都保值</strong>。</p>
 <p><strong>运算律</strong>：巧算的每一步变形，合法性最终都落在这几条律上——加法交换律 $a+b=b+a$（也常写成 $a+b+c=a+c+b$）、加法结合律 $(a+b)+c=a+(b+c)$、乘法交换律 $a\times b=b\times a$（也常写成 $a\times b\times c=a\times c\times b$）、乘法结合律 $(a\times b)\times c=a\times(b\times c)$、乘法分配律 $(a+b)\times c=a\times c+b\times c$；与分配律配套的还有&quot;除法分配律&quot; $(a+b)\div c=a\div c+b\div c$。</p>
 <p><strong>运算性质</strong>：减法性质 $a-b-c=a-(b+c)$；除法性质 $a\div b\div c=a\div(b\times c)$；商不变性质 $a\div b=(a\times m)\div(b\times m)=(a\div n)\div(b\div n)$（$m,n\ne0$）；积不变性质 $a\times b=(a\times m)\times(b\div m)$（$m\ne0$）。前两条管&quot;去括号&quot;，后两条管&quot;一边乘、一边除&quot;，是造公因数的根据。</p>
 <h3>一、四个模型：定义、结构、适用条件</h3>

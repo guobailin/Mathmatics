@@ -30,7 +30,11 @@ img{max-width:100%;height:auto}
 }
 </style></head><body><h1>奥数-计数</h1>
 <p class="meta">小学数学知识库 · 打印版</p>
-<section class="kp"><h2>几何计数</h2><p class="meta"><span>年级：4、5</span><span>难度：★★</span></p><h3>一、模型：数图形就是数“选择”</h3>
+<section class="kp"><h2>几何计数</h2><p class="meta"><span>年级：4、5</span><span>难度：★★</span></p><p><img src="assets/geometry/cnt-rect-count.svg" alt="长方形计数：选 2 条竖线 $imes$ 选 2 条横线，就唯一确定一个长方形" /></p>
+<blockquote>
+<p>灰色是没被选中的线，黑色加粗的正是选中的两条竖线与两条横线，它们围出的浅色块就是这一个长方形。4 条竖线里选 2 条有 $C_4^2=6$ 种、3 条横线里选 2 条有 $C_3^2=3$ 种，两组选择彼此独立，所以长方形共 $6\times3=18$ 个——这就是&quot;长边线段数 $\times$ 宽边线段数&quot;。</p>
+</blockquote>
+<h3>一、模型：数图形就是数“选择”</h3>
 <p>几何计数问“图里有多少个某某图形”，答案只由图形的结构决定，与大小、位置无关。所有方法都建立在同一个想法上：<strong>给每个图形找一张“身份证”</strong>——一组能唯一确定它、又能独立挑选的关键元素。身份证找对了，数图形就变成数选择；找错了，就会重复或遗漏。常用的身份证有三张：两个端点或两条射线（线段、角）、三条直线（三角形）、两条横线加两条竖线（长方形）。</p>
 <h3>二、推导：三张身份证</h3>
 <p><strong>1. 线段与角。</strong> 直线上有 $n$ 个点，任取两点唯一确定一条线段，所以线段条数是“从 $n$ 个点中选 $2$ 个”：</p>
@@ -222,7 +226,11 @@ img{max-width:100%;height:auto}
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
-<section class="kp"><h2>加乘原理</h2><p class="meta"><span>年级：4、5</span><span>难度：★</span></p><h3>一、模型：什么算“把一件事做完”</h3>
+<section class="kp"><h2>加乘原理</h2><p class="meta"><span>年级：4、5</span><span>难度：★</span></p><p><img src="assets/geometry/cnt-tree.svg" alt="分类用加、分步用乘：树状图的叶子总数就是答案" /></p>
+<blockquote>
+<p>左图 (a) 的根分出两枝，各自长出 3 片、2 片叶子，两类互不相干、谁也不能替代谁，所以叶子数是 $3+2$；右图 (b) 的每条枝上都完整地挂着 3 个后续选择，2 组各 3 片，所以是 $2\times3$。看树时只问一句：这是&quot;在几组里挑一组&quot;，还是&quot;每组都得走完&quot;。</p>
+</blockquote>
+<h3>一、模型：什么算“把一件事做完”</h3>
 <p><strong>加法原理（分类计数）</strong>：完成一件事有 $k$ 类办法，第 $i$ 类有 $m_i$ 种；若各类<strong>互不重叠</strong>、合起来又<strong>覆盖全部</strong>情况，则</p>
 <p>$$N=m_1+m_2+\cdots+m_k .$$</p>
 <p><strong>乘法原理（分步计数）</strong>：完成这件事必须依次经过 $k$ 步，第 $i$ 步有 $n_i$ 种选择，且第 $i$ 步的选择数只与“前面用掉了什么、还剩什么”有关，与“前面具体选了哪一个”无关，则</p>
@@ -319,7 +327,15 @@ img{max-width:100%;height:auto}
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
-<section class="kp"><h2>容斥原理</h2><p class="meta"><span>年级：5、6</span><span>难度：★★</span></p><p><strong>一、模型：容斥在数什么</strong></p>
+<section class="kp"><h2>容斥原理</h2><p class="meta"><span>年级：5、6</span><span>难度：★★</span></p><p><img src="assets/geometry/cnt-venn-two.svg" alt="两量容斥：交集 6 在 $|A|$ 与 $|B|$ 里各被数了一遍" /></p>
+<blockquote>
+<p>青圆是 $|A|=33$（$1\sim100$ 中 3 的倍数）、橙圆是 $|B|=20$（5 的倍数），两圆重叠的那 6 个既是 3 的倍数又是 5 的倍数，所以在 $|A|$ 和 $|B|$ 里各被数一次（交集里标着 $\times2$）。$33+20$ 把它数了两遍，减掉一次才是并集的 $47$。</p>
+</blockquote>
+<p><img src="assets/geometry/cnt-venn-three.svg" alt="三量容斥：七个区域合起来才是一个并集" /></p>
+<blockquote>
+<p>三个圆分别代表 $A=30$、$B=26$、$C=24$，区域里的数就是例2 逐块反解出来的结果。正中间加粗的 $5$ 是三项都参加的 $t$，它同时落在三个&quot;两两交集&quot;里、被数了 3 次，所以求&quot;恰好两项&quot;要用 $P-3t$；左上角 $n=3$ 是三项都没参加的人，用来做 $a+b+t+n=50$ 的最后校验。</p>
+</blockquote>
+<p><strong>一、模型：容斥在数什么</strong></p>
 <p>计数题常有两种问法：一种是&quot;既满足 $A$ 又满足 $B$&quot;，用乘法原理或分类；另一种是&quot;满足 $A$ 或满足 $B$&quot;，也就是&quot;至少满足一个条件&quot;。后一种问法里，两个条件都满足的对象会被数两遍，不能把两类的个数直接相加。容斥原理就是专门处理&quot;或&quot;的计数工具。两个条件时，先把两个集合的个数相加，再减去被数了两遍的交集部分，即二元容斥：</p>
 <p>$$|A\cup B|=|A|+|B|-|A\cap B|$$</p>
 <p>三个条件时，先加三个单集合，再减三个两两交集，最后把被&quot;加 $3$ 减 $3$&quot;抹掉的三项交集补回来，即三元容斥：</p>
@@ -412,7 +428,11 @@ img{max-width:100%;height:auto}
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
-<section class="kp"><h2>容斥最值</h2><p class="meta"><span>年级：6</span><span>难度：★★★</span></p><p><strong>模型与分层</strong></p>
+<section class="kp"><h2>容斥最值</h2><p class="meta"><span>年级：6</span><span>难度：★★★</span></p><p><img src="assets/geometry/cnt-ie-overlap.svg" alt="两量交集的下界：$26$ 与 $22$ 两段在 40 人的框里必然重叠 8" /></p>
+<blockquote>
+<p>青色长条是 $|A|=26$、橙色长条是 $|B|=22$，虚线框是全班 $40$ 人。把两条尽量错开（让 $B$ 一路靠右对齐），中间那段也还剩 $26+22-40=8$ 人非重叠不可——&quot;多出来的人次只能压在重叠最多的人身上&quot;，这正是本专题所有下界题的来源。</p>
+</blockquote>
+<p><strong>模型与分层</strong></p>
 <p>题目给出总人数 $n$ 和几个集合的人数，却不说明谁和谁重叠，问&quot;都参加的至少几人&quot;&quot;只参加一项的最多几人&quot;。答案不是某个数，而是一个区间的两个端点，而且端点必须能用一份具体的分配摆出来。</p>
 <p>把全班按&quot;参加了几项&quot;分层：$n_0,n_1,n_2,n_3$ 分别表示参加 $0,1,2,3$ 项的人数，并集人数记 $m=n_1+n_2+n_3$，再记 $S_1=|A|+|B|+|C|$。参加 $k$ 项的人恰好被数了 $k$ 次，于是有两本账：</p>
 <p>$$S_1=n_1+2n_2+3n_3,\qquad n=n_0+m=n_0+n_1+n_2+n_3 .$$</p>
@@ -496,7 +516,11 @@ img{max-width:100%;height:auto}
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
-<section class="kp"><h2>抽屉原理</h2><p class="meta"><span>年级：5、6</span><span>难度：★★</span></p><p><strong>一句话理解</strong>：把 $m$ 个物体放进 $n$ 个抽屉，只要 $m&gt;n$，就一定有一只抽屉里至少放了 $\left\lceil m/n\right\rceil$ 个物体。它不告诉我们&quot;是哪一只抽屉&quot;，只保证&quot;<strong>一定存在</strong>&quot;。</p>
+<section class="kp"><h2>抽屉原理</h2><p class="meta"><span>年级：5、6</span><span>难度：★★</span></p><p><img src="assets/geometry/cnt-pigeonhole.svg" alt="抽屉原理：4 只抽屉各放 3 个是&quot;还不出现 4 个&quot;的最大规模" /></p>
+<blockquote>
+<p>前三只抽屉里都恰好放 3 个、共 12 个，此时还没有任何一只装到 4 个，这就是最坏情形能撑到的极限；再添第 13 个（橙色那个，沿箭头落进第二只抽屉），无论落进哪一只，都必然使某只抽屉凑满 4 个。所以 $4\times(4-1)+1=13$ 是&quot;保证出现 4 个&quot;的最小物体数，而 $12$ 是做不到的。</p>
+</blockquote>
+<p><strong>一句话理解</strong>：把 $m$ 个物体放进 $n$ 个抽屉，只要 $m&gt;n$，就一定有一只抽屉里至少放了 $\left\lceil m/n\right\rceil$ 个物体。它不告诉我们&quot;是哪一只抽屉&quot;，只保证&quot;<strong>一定存在</strong>&quot;。</p>
 <h3>一、模型：几种基本形式</h3>
 <p><strong>形式一</strong>：$n+1$ 个物体放进 $n$ 个抽屉，必有一只抽屉至少放 $2$ 个。这是&quot;苹果比抽屉多&quot;的最朴素版本。</p>
 <p><strong>形式二（一般形式）</strong>：$m$ 个物体放进 $n$ 个抽屉，必有一只抽屉至少放<br />
@@ -685,7 +709,11 @@ $$n\left\lfloor\frac{m-1}{n}\right\rfloor\le m-1&lt;m,$$<br />
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
-<section class="kp"><h2>捆绑法与除序法</h2><p class="meta"><span>年级：5、6</span><span>难度：★★</span></p><p><strong>两类要求，两个方向</strong>：排队计数里，“某几个人必须相邻”要把元素压紧，用乘法；“某几个人的先后已经定死”要把重复的顺序合并，用除法。前者叫捆绑法，后者叫除序法。杯赛题往往两条同时出现，先判断哪条约束更硬，再决定先乘还是先除。</p>
+<section class="kp"><h2>捆绑法与除序法</h2><p class="meta"><span>年级：5、6</span><span>难度：★★</span></p><p><img src="assets/geometry/cnt-bundle.svg" alt="捆绑：把 $a,b,c$ 压成一个整体 $X$，再乘回内部的 $3!$" /></p>
+<blockquote>
+<p>上排是原来的 5 个人，橙色虚线框把 $a,b,c$ 圈成&quot;一个整体&quot;；下排只剩 $X,d,e$ 三个单位排队，括号下的 $3!$ 是这三个单位的排法。$X$ 框里还写着 $3!$，那是框内三个人的内部排法——先压缩、再还原，忘乘它答案就只有一半。</p>
+</blockquote>
+<p><strong>两类要求，两个方向</strong>：排队计数里，“某几个人必须相邻”要把元素压紧，用乘法；“某几个人的先后已经定死”要把重复的顺序合并，用除法。前者叫捆绑法，后者叫除序法。杯赛题往往两条同时出现，先判断哪条约束更硬，再决定先乘还是先除。</p>
 <h3>一、模型</h3>
 <p><strong>捆绑</strong>：把必须相邻的 $k$ 个元素看成一个整体 $X$，让 $X$ 与其余元素一起排队，最后乘回 $X$ 内部的 $k!$ 种排法。</p>
 <p><strong>除序</strong>：若 $m$ 个元素“换顺序不算新情况”（先后被规定死、彼此完全相同、或分进没有标号的组），就先按“全不同”数，再除以被重复计算的 $m!$。</p>
@@ -862,7 +890,11 @@ $$n\left\lfloor\frac{m-1}{n}\right\rfloor\le m-1&lt;m,$$<br />
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
-<section class="kp"><h2>插空法</h2><p class="meta"><span>年级：5、6</span><span>难度：★★</span></p><h3>一、模型：把&quot;不相邻&quot;翻译成&quot;不同空&quot;</h3>
+<section class="kp"><h2>插空法</h2><p class="meta"><span>年级：5、6</span><span>难度：★★</span></p><p><img src="assets/geometry/cnt-gaps.svg" alt="插空法：4 个隔板留出 5 个空，每空至多放一个才不相邻" /></p>
+<blockquote>
+<p>4 个青色方块是&quot;没有限制的人&quot;，它们前后共留出 5 个虚线空位（编号 1–5）；橙色小球 $a,b,c$ 各占一个空，每个空上方都标着 $\le1$——同一个空里塞两个，它们就必然相邻，这正是插空法的命门。空有 5 个、要放 3 个不同的人，于是 $4!\times A_5^3=1440$。</p>
+</blockquote>
+<h3>一、模型：把&quot;不相邻&quot;翻译成&quot;不同空&quot;</h3>
 <p>插空法处理这样一类计数：若干元素排队，其中某 $k$ 个元素<strong>两两不能相邻</strong>（题面常写成&quot;互不相邻、彼此隔开、任意两人之间至少隔一人、不能挨着&quot;）。正面数几乎做不到，因为&quot;谁挨着谁&quot;要逐个排查；插空法把它整个翻过来：<strong>先让没有限制的元素站好，把它们当隔板，再把受限制的元素塞进隔板留下的空隙里。</strong></p>
 <p>$m$ 个隔板元素排成一排，前面、后面以及相邻两个之间共留下 $m+1$ 个空：</p>
 <p>$$_\ \boxed{1}\ _\ \boxed{2}\ _\ \cdots\ _\ \boxed{m}\ _$$</p>
@@ -1052,7 +1084,11 @@ $$N=n_1+n_2+\cdots+n_k .$$<br />
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
-<section class="kp"><h2>标数法</h2><p class="meta"><span>年级：4、5</span><span>难度：★</span></p><h3>一、模型：把&quot;数路&quot;换成&quot;数点&quot;</h3>
+<section class="kp"><h2>标数法</h2><p class="meta"><span>年级：4、5</span><span>难度：★</span></p><p><img src="assets/geometry/cnt-grid-path.svg" alt="标数表：每个路口写&quot;从 $A$ 到这个路口有几条路&quot;" /></p>
+<blockquote>
+<p>起点 $A$ 标 1，其余每点的数都等于&quot;左边一格 $+$ 下面一格&quot;，斜着看正是杨辉三角；向右 4 格、向上 3 格的终点 $B$ 上写着 35，与 $\binom{7}{3}$ 相等。图里每个数都只由它的两个前驱决定，这就是 $f(i,j)=f(i-1,j)+f(i,j-1)$ 的实物版。</p>
+</blockquote>
+<h3>一、模型：把&quot;数路&quot;换成&quot;数点&quot;</h3>
 <p>标数法处理这样一类计数：一张网格状（或街道状）的图，从起点 $A$ 走到终点 $B$，每一步只让横向或纵向坐标增加，绝不后退，问共有多少种走法。</p>
 <p>它不一条一条数路，而是给每个路口写一个数：<strong>从 $A$ 走到这个路口共有几条路</strong>。起点写 $1$，其余各点照&quot;前驱之和&quot;逐个填，填到 $B$，$B$ 上的数就是答案。</p>
 <p>能用标数法的题，一定满足三条：</p>
@@ -1140,7 +1176,11 @@ $$N=n_1+n_2+\cdots+n_k .$$<br />
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
-<section class="kp"><h2>概率初步</h2><p class="meta"><span>年级：5、6</span><span>难度：★★</span></p><p><strong>一、模型：什么时候才能&quot;数个数&quot;</strong></p>
+<section class="kp"><h2>概率初步</h2><p class="meta"><span>年级：5、6</span><span>难度：★★</span></p><p><img src="assets/geometry/cnt-dice-grid.svg" alt="两枚骰子的 36 个等可能结果，和为 7 的 6 格排在一条对角线上" /></p>
+<blockquote>
+<p>横轴是第一枚骰子的点数 $i$、纵轴是第二枚的 $j$，36 个格子大小一样、机会相同，所以分母是 36，而不是&quot;和只有 2 到 12 共 11 种&quot;；加深的 6 格满足 $i+j=7$，沿一条对角线排开，分子就是 6，于是 $P=\frac{6}{36}=\frac16$。</p>
+</blockquote>
+<p><strong>一、模型：什么时候才能&quot;数个数&quot;</strong></p>
 <p>一次试验的全部可能结果只有<strong>有限个</strong>，而且每个结果出现的<strong>机会完全相同</strong>，这样的模型叫<strong>古典概型</strong>。此时</p>
 <p>$$P(A)=\frac{A\text{ 包含的结果数}}{\text{全部等可能结果数}}=\frac{m}{n}.$$</p>
 <p>两个条件缺一不可：结果有限才能数，机会相同才能&quot;平分&quot;。题干里的&quot;任意&quot;&quot;随机&quot;&quot;除颜色外完全相同&quot;&quot;均匀的骰子&quot;，都是在保证等可能；一旦球的个头不同、转盘的扇形有大有小，&quot;等可能&quot;就断了，分母不能再用个数。</p>
@@ -1228,7 +1268,11 @@ $$N=n_1+n_2+\cdots+n_k .$$<br />
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
-<section class="kp"><h2>线分圆环</h2><p class="meta"><span>年级：5、6</span><span>难度：★★★</span></p><p><strong>模型与定义</strong></p>
+<section class="kp"><h2>线分圆环</h2><p class="meta"><span>年级：5、6</span><span>难度：★★★</span></p><p><img src="assets/geometry/cnt-circle-lines.svg" alt="线分圆：第 3 条弦被前两条切成 3 段，于是多出 3 块" /></p>
+<blockquote>
+<p>两根灰弦先画好，橙色的是最后画上去的第 3 条；它与前两条各交于一个黑点，被切成标着 1、2、3 的三段。每段都从某一块区域内部穿过、把它一分为二，所以新增的块数等于段数 3，而不是交点数 2——&quot;新增量 $=$ 圆内交点数 $+1$&quot;这句话，图上一目了然。</p>
+</blockquote>
+<p><strong>模型与定义</strong></p>
 <p>圆内画 $n$ 条直线，每条直线与圆交于两点，落在圆内的部分是一条弦。称这 $n$ 条直线处于<strong>一般位置</strong>：任意两条都在圆内相交，任意三条不共点。此时圆被分成的块数最多，记为 $R(n)$，并约定 $R(0)=1$（一条线也没画时，整个圆算 $1$ 块）。</p>
 <p>这里的&quot;直线&quot;指横穿圆面的整条直线，圆内部分才是参与分割的弦。若两条直线的交点落在圆外，这个交点对圆内分割毫无作用，所以本专题公式里的&quot;交点&quot;一律指<strong>圆内交点</strong>。另外，&quot;最多&quot;不是自动成立的：一般位置可以用&quot;先画一条、再逐条微调&quot;的办法摆出来，公式给出的上界确实能取到。</p>
 <p>要害不在&quot;一共画了几条&quot;，而在<strong>每画一条，它被已有的直线切成几段</strong>。一条新直线若在圆内被切成 $t$ 段，每一段都从某一块区域内部穿过，把那一块一分为二，于是恰好多出 $t$ 块。抓住这个&quot;新增量&quot;，分区问题就变成一道加法题。</p>
@@ -1332,7 +1376,11 @@ $$N=n_1+n_2+\cdots+n_k .$$<br />
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
-<section class="kp"><h2>轴对称情况计数</h2><p class="meta"><span>年级：6</span><span>难度：★★★</span></p><p><strong>模型是什么</strong>：把图形沿一条直线对折后能完全重合，就说它关于这条直线轴对称。要数&quot;满足对称要求的图案、染色或排法&quot;，不要逐一枚举，而要看这条轴把全部位置分成了几组：轴外的点与它的镜像必须同色（或同时被选、同性别），只能整组处理；落在轴上的点对折后与自己重合，称为不动点，可以单独决定。设轴外有 $m$ 对位置、轴上有 $t$ 个不动点，每个位置有 $k$ 种颜色可选，则对称染色共有 $k^{m+t}$ 种。</p>
+<section class="kp"><h2>轴对称情况计数</h2><p class="meta"><span>年级：6</span><span>难度：★★★</span></p><p><img src="assets/geometry/cnt-symmetry.svg" alt="$3imes3$ 棋盘关于中线对称：中间一列是不动点，两侧成对同色" /></p>
+<blockquote>
+<p>虚线 $l$ 是对称轴，左右两列里字母相同的两格（$a$/$a$、$b$/$b$、$c$/$c$）对折后重合，必须同色，只能整对决定；中间一列三格压在自己身上（标 $t$），可以各自决定。于是自由变量只剩 3 对加 3 个不动点，两色共 $2^{3+3}=64$ 种。</p>
+</blockquote>
+<p><strong>模型是什么</strong>：把图形沿一条直线对折后能完全重合，就说它关于这条直线轴对称。要数&quot;满足对称要求的图案、染色或排法&quot;，不要逐一枚举，而要看这条轴把全部位置分成了几组：轴外的点与它的镜像必须同色（或同时被选、同性别），只能整组处理；落在轴上的点对折后与自己重合，称为不动点，可以单独决定。设轴外有 $m$ 对位置、轴上有 $t$ 个不动点，每个位置有 $k$ 种颜色可选，则对称染色共有 $k^{m+t}$ 种。</p>
 <p><strong>为什么成立</strong>：轴外的对折把位置两两配对，且不重不漏——点 $P$ 的镜像是 $P'$，$P'$ 的镜像又回到 $P$，所以轴外位置恰好被分成 $m$ 个二元组；轴上每点的镜像就是自身，共 $t$ 个。一个方案由&quot;每一对染什么色&quot;和&quot;每一个不动点染什么色&quot;完全确定，这些选择彼此独立，由乘法原理得 $k^{m}\cdot k^{t}$。本质是：对称不是&quot;少了一半&quot;，而是自由变量只剩轴外的一半再加轴上那一列。</p>
 <p><strong>变形一：带数量限制</strong>。要求某色恰好 $n$ 格时，要按&quot;贡献&quot;记账：轴外一对同色贡献 2 格，轴上一点贡献 1 格。设该色占 $p$ 对、$a$ 个不动点，则 $a+2p=n$，且 $0\le a\le t$。先解这个不定方程，再用各色 $a$ 之和为 $t$、$p$ 之和为 $m$ 收紧。轴上没有不动点时，每种颜色的格数必须是偶数；不相容就直接 0 种，比枚举省事得多。</p>
 <p><strong>变形二：两条轴及以上</strong>。此时不能把两次&quot;减半&quot;相乘或连除，而要按&quot;翻来覆去能互相重合&quot;的位置分组（轨道），同组必须同色，组的大小可能是 1、2、4。$3\times3$ 关于两条中线都对称时，位置分成中心 1 格、四角 4 格、四边中点 4 格三组，两色只有 8 种。</p>
@@ -1399,7 +1447,11 @@ $$N=n_1+n_2+\cdots+n_k .$$<br />
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
-<section class="kp"><h2>递推与归纳</h2><p class="meta"><span>年级：5、6</span><span>难度：★★★</span></p><p><strong>一、模型：不问&quot;第 $n$ 个是几&quot;，改问&quot;第 $n$ 个比第 $n-1$ 个多了什么&quot;</strong></p>
+<section class="kp"><h2>递推与归纳</h2><p class="meta"><span>年级：5、6</span><span>难度：★★★</span></p><p><img src="assets/geometry/cnt-stairs.svg" alt="递推：到第 $n$ 级只有&quot;跨 1 级&quot;和&quot;跨 2 级&quot;两种最后一步" /></p>
+<blockquote>
+<p>五个方框依次是上楼梯的方案数 $1,2,3,5,8$。橙色实线箭头是&quot;最后一步跨 1 级&quot;（从 $a_{n-1}$ 到 $a_n$），灰色虚线绕过去的是&quot;最后一步跨 2 级&quot;（从 $a_{n-2}$ 到 $a_n$）：两种最后一步不同，所以互斥；任何走法又必属其一，所以完备。这正是 $a_n=a_{n-1}+a_{n-2}$ 的全部依据。</p>
+</blockquote>
+<p><strong>一、模型：不问&quot;第 $n$ 个是几&quot;，改问&quot;第 $n$ 个比第 $n-1$ 个多了什么&quot;</strong></p>
 <p>很多计数题的规模大到没法一个个数，但它的&quot;生长方式&quot;是固定的：第 $n$ 步的图形是在第 $n-1$ 步的基础上添一笔得到的，第 $n$ 步的状态只由前一步决定。把&quot;用前几项算后一项&quot;写成式子，就是<strong>递推关系</strong>；再补上前几项的具体值，也就是<strong>初始值</strong>，整列数才被唯一确定。</p>
 <p>常见形态有三种。一阶递推 $a_n=a_{n-1}+f(n)$，描述&quot;每步新增的量有规律&quot;；二阶递推 $a_n=a_{n-1}+a_{n-2}$（上楼梯、兔子繁殖），必须给两个初始值；状态递推，一步之内的状态不止一种（球在谁手里、最大盘在哪根柱上），要同时设两个数列联立。</p>
 <p>若某个量只由&quot;有限多种状态&quot;决定（个位数字、除以 $k$ 的余数、相邻两项的取值），走足够多步后状态必然重复，于是出现<strong>周期</strong>：$a_{n+T}=a_n$。</p>

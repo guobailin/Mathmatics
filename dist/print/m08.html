@@ -207,7 +207,11 @@ $$\varphi(n)=n\left(1-\frac1{p_1}\right)\left(1-\frac1{p_2}\right)\cdots\left(1-
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
-<section class="kp"><h2>位值原理</h2><p class="meta"><span>年级：4、5</span><span>难度：★</span></p><p><strong>一、模型定义：位值就是&quot;数字 × 10 的幂&quot;。</strong> 十进制的本质是位置决定大小：同一个数字 $7$ 写在个位是 $7$，写在百位就是 $700$。于是任何多位数都能拆成<br />
+<section class="kp"><h2>位值原理</h2><p class="meta"><span>年级：4、5</span><span>难度：★</span></p><p><img src="assets/geometry/num-place-value.svg" alt="位值展开与对调：数字乘所在位的位权，对调时十位那一列相减为 0" /></p>
+<blockquote>
+<p>上排三格下方的 $3\times100$、$6\times10$、$9\times1$ 就是「位值=数字×$10$ 的幂」，格间的 $\times10$ 箭头正是正文「左移一位乘 $10$」；下排青色竖带圈住十位，$60-60=0$ 说明对调时中间位自动抵消，所以差只剩 $99\times(9-3)$。</p>
+</blockquote>
+<p><strong>一、模型定义：位值就是&quot;数字 × 10 的幂&quot;。</strong> 十进制的本质是位置决定大小：同一个数字 $7$ 写在个位是 $7$，写在百位就是 $700$。于是任何多位数都能拆成<br />
 $$\overline{abc}=100a+10b+c,\qquad \overline{abcd}=1000a+100b+10c+d,$$<br />
 横线表示&quot;按数位拼成的数&quot;，不是乘法；$a$ 是首位，必须 $1\le a\le 9$，其余数位只要求 $0\le b,c,d\le 9$。这一步把&quot;数字之间的关系&quot;翻译成&quot;整数的等式&quot;，是位值类问题的总入口：题目给的商、余、倍数、整除、平均数，全都可以挂到同一个等式上。</p>
 <p>三条基本事实贯穿全篇。其一，展开是唯一的，反过来给定位值等式就能反解数字。其二，相邻两位相差 $10$ 倍：左移一位乘 $10$，右移一位是除以 $10$ 取商，被甩下的数字就是余数。其三，$10^k-1=\underbrace{99\cdots9}_{k\text{个}9}$ 是 $9$ 的倍数，所以一个数和它的数字和除以 $9$ 的余数相同——这条&quot;余数不变&quot;是后面筛解的主力。</p>
@@ -297,7 +301,11 @@ $$\overline{abc}=100a+10b+c,\qquad \overline{abcd}=1000a+100b+10c+d,$$<br />
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
-<section class="kp"><h2>余数问题（物不知数）</h2><p class="meta"><span>年级：5、6</span><span>难度：★★★</span></p><p><strong>一、模型：由余数反求原数</strong></p>
+<section class="kp"><h2>余数问题（物不知数）</h2><p class="meta"><span>年级：5、6</span><span>难度：★★★</span></p><p><img src="assets/geometry/num-congruence-lattice.svg" alt="两条等距刻度第一次对齐在 19，之后每隔 28 再对齐一次" /></p>
+<blockquote>
+<p>上面一行每隔 $4$ 一个点（除以 $4$ 余 $3$），下面一行每隔 $7$ 一个点（除以 $7$ 余 $5$），橙色大点 $19$ 是两条刻度第一次对齐处，橙色括号 $28=[4,7]$ 是之后的对齐间隔——这正是正文「定位一个解 + 用周期复制」。</p>
+</blockquote>
+<p><strong>一、模型：由余数反求原数</strong></p>
 <p>带余除法把“除以 $m$ 余 $r$”写成一个等式：$N=mq+r$，其中 $0\le r&lt;m$，$q$ 是整数。余数问题（古称“物不知数”，民间叫“韩信点兵”）给出一组这样的条件，反过来求 $N$：已知 $N$ 除以 $m_1,m_2,\dots,m_n$ 的余数分别是 $r_1,r_2,\dots,r_n$，求 $N$。记 $M=[m_1,m_2,\dots,m_n]$ 为各除数的最小公倍数，整章只有一条核心结论：</p>
 <blockquote>
 <p>若 $N_0$ 是一组解，则全部解恰为 $N=N_0+kM\ (k=0,1,2,\dots)$。</p>
@@ -656,7 +664,11 @@ $$N\equiv(\text{奇数位数字和})-(\text{偶数位数字和})\pmod{11}.$$<br 
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
-<section class="kp"><h2>因数个数与因数和</h2><p class="meta"><span>年级：5、6</span><span>难度：★★</span></p><p><strong>一、模型：把因数写成&quot;参数&quot;。</strong> 大于 1 的自然数都能唯一分解成质数之积，记作 $N=p_1^{a_1}\cdots p_k^{a_k}$，其中 $p_i$ 是互不相同的质数，$a_i\ge1$。$N$ 的每个因数都形如 $p_1^{b_1}\cdots p_k^{b_k}$，指数只须满足 $0\le b_i\le a_i$；反过来，任取一组这样的指数都恰好得到一个因数，不同的取法给出不同的因数。于是&quot;数因数&quot;被翻译成&quot;数指数方案&quot;，由此得到两条核心公式：因数个数 $d(N)=(a_1+1)(a_2+1)\cdots(a_k+1)$，因数和 $\sigma(N)=(1+p_1+\cdots+p_1^{a_1})\cdots(1+p_k+\cdots+p_k^{a_k})$。</p>
+<section class="kp"><h2>因数个数与因数和</h2><p class="meta"><span>年级：5、6</span><span>难度：★★</span></p><p><img src="assets/geometry/num-divisor-grid.svg" alt="因数个数 = 每行各挑一个指数的方案数（乘法原理）" /></p>
+<blockquote>
+<p>三行方块分别是 $2,5,7$ 能取的指数，每行格子数就是 $(a_i+1)$；橙色虚线每行只挑一个（$2^2,5^1,7^1$），乘起来恰好是一个因数 $140$，而右侧 $4\times3\times2=24$ 就是正文「各指数彼此独立，方案数相乘」。</p>
+</blockquote>
+<p><strong>一、模型：把因数写成&quot;参数&quot;。</strong> 大于 1 的自然数都能唯一分解成质数之积，记作 $N=p_1^{a_1}\cdots p_k^{a_k}$，其中 $p_i$ 是互不相同的质数，$a_i\ge1$。$N$ 的每个因数都形如 $p_1^{b_1}\cdots p_k^{b_k}$，指数只须满足 $0\le b_i\le a_i$；反过来，任取一组这样的指数都恰好得到一个因数，不同的取法给出不同的因数。于是&quot;数因数&quot;被翻译成&quot;数指数方案&quot;，由此得到两条核心公式：因数个数 $d(N)=(a_1+1)(a_2+1)\cdots(a_k+1)$，因数和 $\sigma(N)=(1+p_1+\cdots+p_1^{a_1})\cdots(1+p_k+\cdots+p_k^{a_k})$。</p>
 <p><strong>二、两条公式为什么成立。</strong> 因数个数用乘法原理：$b_1$ 有 $a_1+1$ 种取法，$b_2$ 有 $a_2+1$ 种取法，各指数彼此独立，方案数自然相乘。因数和则是一条&quot;展开即穷举&quot;的恒等式：把每个括号逐层展开，得到的每一项都是一个因数，而每种指数组合恰好出现一次，所以整个展开式就是全部因数之和，不必合并同类项。两条公式的唯一前提是标准分解，底数必须是互不相同的质数；底数重复或含合数，公式立刻失效。配上算例就一目了然：约数个数——$1400=2^3\times5^2\times7$，故 $(3+1)(2+1)(1+1)=24$ 个；约数和——$21000=2^3\times3\times5^3\times7$，故 $(1+2+4+8)(1+3)(1+5+25+125)(1+7)=15\times4\times156\times8=74880$。</p>
 <p><strong>三、三个高级变形。</strong> ①限定计数：问&quot;有多少个因数是 6 的倍数&quot;，只须把 2 和 3 的指数下界从 0 抬到 1，个数就从 $(a_1+1)(a_2+1)$ 变成 $a_1a_2$；问&quot;同时是 6 和 28 的倍数&quot;，要先把两个条件合成&quot;被 84 整除&quot;再数，绝不能各数一遍。②反推：已知 $d(N)=m$，把 $m$ 拆成若干大于 1 的整数之积，每种拆法对应一种指数模式；求最小数时把大指数配给小质数，求最大值时反过来，让指数 1 的位置坐大质数，再在给定的界内逐个模式比较。③奇偶：$d(N)$ 为奇数，等价于所有指数为偶数，等价于 $N$ 是完全平方数；$\sigma(N)$ 为奇数，等价于奇质数的指数全为偶数，等价于 $N$ 是平方数或平方数的 2 倍。</p>
 <p><strong>四、竞赛视角。</strong> 看到&quot;因数个数、因数和、因数之积&quot;，第一件事就是标准分解，这是唯一入口；看到&quot;最小、最大&quot;，走反推加指数模式加界；看到&quot;奇数个因数&quot;&quot;灯被按奇数次&quot;&quot;配对后剩一个&quot;，想平方数；看到&quot;因数和为奇数&quot;，必须想到还有 $2m^2$ 这一支，这是初赛与复赛的分水岭。因数之积有捷径：因数两两配成 $d(N)/2$ 对，每对乘积都是 $N$，故全部因数之积等于 $N^{d(N)/2}$，这也是由积反推个数的依据。最容易混的是 $d$ 的奇偶与 $\sigma$ 的奇偶并非一回事；另外 $\sigma$ 含 $N$ 本身，与&quot;真因数和&quot;相差一个 $N$。</p>
@@ -1003,7 +1015,11 @@ $$a^n=(10m+d)^n=d^n+10\times\text{整数},$$<br />
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
-<section class="kp"><h2>带余除法与余数性质</h2><p class="meta"><span>年级：4、5</span><span>难度：★</span></p><p><strong>一、模型定义：四量与一条隐藏不等式</strong></p>
+<section class="kp"><h2>带余除法与余数性质</h2><p class="meta"><span>年级：4、5</span><span>难度：★</span></p><p><img src="assets/geometry/num-remainder-line.svg" alt="a = bq + r 在数轴上的样子：刻度每隔 b 一个" /></p>
+<blockquote>
+<p>轴上刻度每隔 $7$ 一个（青色 $b=7$），$a=40$（橙色虚线）落在第 $5$ 个刻度 $35$ 之后，青色长括号是 $qb=35$、橙色小括号是余下的 $r=5$——正文的四量关系 $40=7\times5+5$ 就是这段长度关系，且 $r$ 一定落在 $0$ 与下一个刻度之间。</p>
+</blockquote>
+<p><strong>一、模型定义：四量与一条隐藏不等式</strong></p>
 <p>对任意整数 $a$ 和正整数 $b$，存在<strong>唯一</strong>的整数对 $(q,r)$，使<br />
 $$a=b\times q+r,\qquad 0\le r&lt;b.$$<br />
 $q$ 叫商，$r$ 叫余数。这里有两点必须分清：一是 $r$ 取半开区间，$r=0$ 允许（整除），但 $r\ge b$ 就说明商取小了；二是&quot;唯一&quot;，它保证后面所有反求都不会冒出两套答案。</p>
@@ -1166,7 +1182,11 @@ $$a\pm c=b(q_1\pm q_2)+(r_1\pm r_2),\qquad ac=b(bq_1q_2+q_1r_2+q_2r_1)+r_1r_2.$$
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
-<section class="kp"><h2>数的整除特征</h2><p class="meta"><span>年级：4、5</span><span>难度：★★</span></p><p><strong>模型</strong>：把整数按十进制拆开，<br />
+<section class="kp"><h2>数的整除特征</h2><p class="meta"><span>年级：4、5</span><span>难度：★★</span></p><p><img src="assets/geometry/num-div-rules.svg" alt="整除特征的三类判据：数尾只看末三位、数和逐位相加、数差分段交错作差" /></p>
+<blockquote>
+<p>第一行涂成青色的末三位块 $T$ 就是「数尾」要看的那一段——正文说 $m\mid10^3$ 时高位可整块删掉，所以前三格被划掉、右端写 $N\equiv T$；中间一行每两格之间标 $+$，对应「数和」；第三行前段标 $-$、后段标 $+$，正是 $N=1000M+T\equiv T-M$ 的截断差。</p>
+</blockquote>
+<p><strong>模型</strong>：把整数按十进制拆开，<br />
 $$N=\overline{a_na_{n-1}\cdots a_1a_0}=a_n10^n+\cdots+a_110+a_0$$<br />
 判断 $m\mid N$ 时，真正要问的只有一件事：$10^k$ 除以 $m$ 余几。余 $0$ 的那些高位可以整块删掉，余 $1$ 的系数变成 $1$，余 $-1$ 的系数正负交替，余一个&quot;小正数&quot;的就把大块不断往小里压。所以整除特征不是要背的表格，而是一张可以自己推出来的<strong>余数表</strong>：把 $10,100,1000$ 对 $m$ 取余，余数是几，特征就长成什么样。</p>
 <p><strong>四类特征的推导</strong>：</p>
@@ -1450,7 +1470,11 @@ $$a\mid(b+c),\qquad b\mid(c+a),\qquad c\mid(a+b).$$<br />
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
-<section class="kp"><h2>最大公因数与最小公倍数</h2><p class="meta"><span>年级：5、6</span><span>难度：★★</span></p><p><strong>一、模型定义</strong></p>
+<section class="kp"><h2>最大公因数与最小公倍数</h2><p class="meta"><span>年级：5、6</span><span>难度：★★</span></p><p><img src="assets/geometry/num-euclid-tiling.svg" alt="辗转相除的几何版：用正方形一路铺满，最后一格的边长就是 gcd" /></p>
+<blockquote>
+<p>先用两块 $18\times18$ 铺出长条，剩 $12\times18$；再铺一块 $12\times12$，剩 $12\times6$；最后两块 $6\times6$ 正好铺满。最后一格的边长 $6$ 就是 $(48,18)$，右侧 $48=2\cdot18+12$、$18=12+6$、$12=2\cdot6$ 正是正文「大数除以小数、小数除以余数」的逐步相除。</p>
+</blockquote>
+<p><strong>一、模型定义</strong></p>
 <p>设 $a,b$ 是正整数。$a$ 的因数中同时整除 $b$ 的，叫公因数，其中最大的记作 $(a,b)$；同时是 $a$、$b$ 的倍数的数叫公倍数，其中最小的记作 $[a,b]$。</p>
 <p>把每个数写成质因数幂的乘积：$a=p_1^{\alpha_1}p_2^{\alpha_2}\cdots$，$b=p_1^{\beta_1}p_2^{\beta_2}\cdots$（没有的质数补指数 $0$）。则<br />
 $$(a,b)=p_1^{\min(\alpha_1,\beta_1)}p_2^{\min(\alpha_2,\beta_2)}\cdots,\qquad [a,b]=p_1^{\max(\alpha_1,\beta_1)}p_2^{\max(\alpha_2,\beta_2)}\cdots$$<br />
@@ -1618,7 +1642,11 @@ $$(a,b)=p_1^{\min(\alpha_1,\beta_1)}p_2^{\min(\alpha_2,\beta_2)}\cdots,\qquad [a
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
-<section class="kp"><h2>短除模型</h2><p class="meta"><span>年级：4、5</span><span>难度：★</span></p><p><strong>一、模型定义</strong>：把几个正整数并排写成一行，左边画竖线，用同一个除数同时去除这一行，商写在下一行，除不尽的数<strong>原样落下</strong>。竖线左边的数叫<strong>左列</strong>，最后一行叫<strong>末行</strong>。一张表有三种读法，区别只在&quot;用谁去除&quot;和&quot;除到何时停&quot;：</p>
+<section class="kp"><h2>短除模型</h2><p class="meta"><span>年级：4、5</span><span>难度：★</span></p><p><img src="assets/geometry/num-short-division.svg" alt="短除表：左列连乘给最大公因数，左列乘末行给最小公倍数" /></p>
+<blockquote>
+<p>青色底色那一列是每一步提出的公因数，三个数除到没有公共因数就停，相乘得 $12$；橙色底色那一行是末行，已两两互质，所以最小公倍数是「左列 $\times$ 末行」$=12\times30=360$。</p>
+</blockquote>
+<p><strong>一、模型定义</strong>：把几个正整数并排写成一行，左边画竖线，用同一个除数同时去除这一行，商写在下一行，除不尽的数<strong>原样落下</strong>。竖线左边的数叫<strong>左列</strong>，最后一行叫<strong>末行</strong>。一张表有三种读法，区别只在&quot;用谁去除&quot;和&quot;除到何时停&quot;：</p>
 <ul>
 <li><strong>分解质因数</strong>：每步除数都取质数，除到末行全是 $1$，则<br />
 $$N=(\text{左列连乘})=p_1^{a_1}p_2^{a_2}\cdots$$</li>
@@ -1698,7 +1726,11 @@ $$[a_1,a_2,\dots,a_m]=(\text{左列连乘})\times(\text{末行连乘})$$<br />
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
-<section class="kp"><h2>质数与合数</h2><p class="meta"><span>年级：4、5</span><span>难度：★</span></p><h3>一、模型：质数是自然数的&quot;原子块&quot;</h3>
+<section class="kp"><h2>质数与合数</h2><p class="meta"><span>年级：4、5</span><span>难度：★</span></p><p><img src="assets/geometry/num-factor-pairs.svg" alt="36 的因数成对落在平方根两侧，只有平方数才有一对撞在 √n 上" /></p>
+<blockquote>
+<p>每条青色半圆弧连一对因数 $(1,36)$、$(2,18)$、$(3,12)$、$(4,9)$，橙色虚线 $\sqrt{36}=6$ 是它们的分界线——正文「较小的那个因数一定不超过 $\sqrt{n}$」讲的就是这条线，所以试除试到 $\sqrt n$ 就够。</p>
+</blockquote>
+<h3>一、模型：质数是自然数的&quot;原子块&quot;</h3>
 <p><strong>定义</strong>：大于 1 的自然数中，只有 1 和它本身两个因数的叫<strong>质数</strong>（素数）；除了 1 和本身还有别的因数的叫<strong>合数</strong>。所以 1 既不是质数也不是合数（它只有一个因数），0 不在讨论范围内；2 是唯一的偶质数，也是最小的质数，最小的合数是 4。</p>
 <p>把自然数想成一堆积木：质数是不能再拆的&quot;原子块&quot;，合数是由原子块拼起来的。<strong>质因数分解的唯一性</strong>（小学化说法）：每个大于 1 的自然数都能写成若干质数相乘，而且写法唯一（不计顺序），比如 84=2×2×3×7，换任何顺序拆都还是这四个质数。这句&quot;唯一&quot;极重要——它让质因数成了数的身份证，后面所有整除、约数个数、质数方程都靠它。</p>
 <p>再记一个配套事实：一个数的因数总是<strong>成对</strong>出现的（d 与 n÷d 配成一对），只有完全平方数会有一对&quot;撞&quot;在 √n 上，如 36=6×6。所以数因数个数时，数到 √n 再翻倍（平方数补 1 个）；这也顺便解释了为什么判定质数只需查到 √n。</p>
@@ -1787,7 +1819,11 @@ $$[a_1,a_2,\dots,a_m]=(\text{左列连乘})\times(\text{末行连乘})$$<br />
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
-<section class="kp"><h2>质数枚举</h2><p class="meta"><span>年级：5、6</span><span>难度：★★</span></p><h3>一、模型：枚举是&quot;可复查的清单&quot;</h3>
+<section class="kp"><h2>质数枚举</h2><p class="meta"><span>年级：5、6</span><span>难度：★★</span></p><p><img src="assets/geometry/num-sieve.svg" alt="100 以内埃氏筛：底色表示这个合数最先被哪个质数划掉" /></p>
+<blockquote>
+<p>灰色是被 $2$ 划掉的，浅青是被 $3$ 划掉的，浅橙是被 $5$ 划掉的，正橙只有 $49,77,91$——它们是被 $7$ 从 $7^2=49$ 起划掉的，对应正文「$7$ 只划它自己轮次还活着的倍数」；剩下深青底加粗的 $25$ 个数就是 $100$ 以内的质数。</p>
+</blockquote>
+<h3>一、模型：枚举是&quot;可复查的清单&quot;</h3>
 <p>质数枚举不是凭感觉报几个质数，而是：在给定范围或给定条件下，用一套别人能照着复查的流程，把质数<strong>一个不漏、一个不多</strong>地找出来。它由四件工具拼成。</p>
 <ul>
 <li><strong>质数表</strong>（记忆）：100 以内共 25 个质数，要熟到看一眼就认：<br />
@@ -1878,7 +1914,11 @@ $$2,\ 3,\ 5,\ 7,\ 11,\ 13,\ 17,\ 19,\ 23,\ 29,\ 31,\ 37,\ 41,\ 43,\ 47,\ 53,\ 59
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
-<section class="kp"><h2>进位制</h2><p class="meta"><span>年级：5、6</span><span>难度：★★★</span></p><p><strong>模型</strong>：$k$ 进制（$k\ge2$）只允许使用 $0,1,\dots,k-1$ 这 $k$ 个数字，计数规则是“满 $k$ 进一”。把数字从右往左编号 $0,1,2,\dots$，第 $i$ 位上的 $1$ 个单位代表 $k^i$ 个“一”，这个“位置代表的值”叫<strong>位值（权）</strong>。于是<br />
+<section class="kp"><h2>进位制</h2><p class="meta"><span>年级：5、6</span><span>难度：★★★</span></p><p><img src="assets/geometry/num-base-conversion.svg" alt="除 7 取余：余数自下而上读，才得到 (5621)₇" /></p>
+<blockquote>
+<p>橙色小方块里是每一步的余数，青色折线从最下面的余数 $5$ 向上再向右，读出的 $5,6,2,1$ 就是正文强调的「余数倒序读出」，最后一次得到的余数 $5$ 是最高位。</p>
+</blockquote>
+<p><strong>模型</strong>：$k$ 进制（$k\ge2$）只允许使用 $0,1,\dots,k-1$ 这 $k$ 个数字，计数规则是“满 $k$ 进一”。把数字从右往左编号 $0,1,2,\dots$，第 $i$ 位上的 $1$ 个单位代表 $k^i$ 个“一”，这个“位置代表的值”叫<strong>位值（权）</strong>。于是<br />
 $$(a_na_{n-1}\cdots a_1a_0)<em>k=a_nk^n+a</em>{n-1}k^{n-1}+\cdots+a_1k+a_0,$$<br />
 称为<strong>位值展开式</strong>。其他进制化十进制用的就是它，例如 $(123)_6=1\times6^2+2\times6+3=51$。十进制只是 $k=10$ 的特例，二进制、三进制、七进制不过是把“打包单位”换成 $2,3,7$；同一个数换一种进制，写法变了、大小丝毫不变。十六进制超过 $9$ 的数字借用字母 $A,B,\dots,F$ 表示 $10,11,\dots,15$，只是记号的补充，不改变规则。判断一个写法是否合法只需两条：每一位数字都小于 $k$，且最高位不为 $0$。</p>
 <p><strong>推导</strong>：展开式为什么成立？因为“满 $k$ 进一”意味着 $k$ 个第 $i$ 位的单位恰好换成 $1$ 个第 $i+1$ 位的单位，所以第 $i$ 位上的 $1$ 等于 $k^i$ 个一，$a_i$ 个就是 $a_ik^i$ 个一，各位相加即得。反过来，“除 $k$ 取余”为什么能把十进制写回 $k$ 进制？把 $N$ 除以 $k$：$N=kq+r_0$（$0\le r_0&lt;k$），右边 $kq$ 在 $k$ 进制下末位是 $0$，所以 $r_0$ 必是末位数字；再对 $q$ 重复同样动作，依次定出十位、百位……直到商为 $0$。<strong>位数</strong>也由幂次决定：$d$ 位的 $k$ 进制数范围是 $k^{d-1}\le N\le k^d-1$，最小是 $100\cdots0$，最大是各位全是 $k-1$。分组互化同样来自权：$8=2^3$、$16=2^4$，从右往左每 $3$（或 $4$）位二进制的权和 $1,2,4$ 相加，正好是 $8^0$ 起步的一整组，所以能直接合成一位八（十六）进制。验算可用一条同余性质：$N$ 与它的 $k$ 进制数字和模 $k-1$ 同余（十进制的“弃九法”就是 $k=10$）。</p>

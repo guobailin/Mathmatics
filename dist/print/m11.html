@@ -30,7 +30,11 @@ img{max-width:100%;height:auto}
 }
 </style></head><body><h1>奥数-组合</h1>
 <p class="meta">小学数学知识库 · 打印版</p>
-<section class="kp"><h2>幻方</h2><p class="meta"><span>年级：4、5</span><span>难度：★★</span></p><p>把 $1,2,\dots,n^2$ 不重不漏地填进 $n\times n$ 方格，使每行、每列、两条对角线上的 $n$ 个数之和都相等，这样的方格叫 <strong>$n$ 阶幻方</strong>，公共的和叫 <strong>幻和</strong> $S$。换一组数填时，&quot;每条线之和相等&quot;这条要求不变，变的只是和的大小。</p>
+<section class="kp"><h2>幻方</h2><p class="meta"><span>年级：4、5</span><span>难度：★★</span></p><p><img src="assets/geometry/comb-magic-square.svg" alt="三阶幻方：过中心的四条线把中心数多算了 3 次" /></p>
+<blockquote>
+<p>两条斜线（浅橙）与中行、中列（浅绿）都过中心，四条线加起来把九个数各数了一遍，只有中心的 $5$ 被数了 4 次、多算 3 次，于是 $4S=45+3c$，解出 $c=5$、$S=15$。</p>
+</blockquote>
+<p>把 $1,2,\dots,n^2$ 不重不漏地填进 $n\times n$ 方格，使每行、每列、两条对角线上的 $n$ 个数之和都相等，这样的方格叫 <strong>$n$ 阶幻方</strong>，公共的和叫 <strong>幻和</strong> $S$。换一组数填时，&quot;每条线之和相等&quot;这条要求不变，变的只是和的大小。</p>
 <h3>一、幻和只由&quot;总和&quot;决定</h3>
 <p>$n$ 行之和正好把 $n^2$ 个数各数一遍，所以 $nS=\dfrac{n^2(n^2+1)}{2}$，即 $S=\dfrac{n(n^2+1)}{2}$：三阶 $15$，五阶 $65$。若九个数是等差数列（中位数 $m$、公差 $d$），同样用&quot;总和 $\div n$&quot;得 $S=n\cdot m$，三阶就是 $S=3m$。<strong>任何幻方题，先算 $S$。</strong></p>
 <p>反过来，题目给了 $S$ 也能反求数组：九数等差时 $m=S\div3$ 就是第 5 个数，再由公差定出全部九个数——这是&quot;和 $\leftrightarrow$ 数&quot;的双向通道，杯赛里给和求中心、给中心求和都靠它。</p>
@@ -223,7 +227,11 @@ $$N=(x+y)^2,$$<br />
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
-<section class="kp"><h2>数阵图</h2><p class="meta"><span>年级：5、6</span><span>难度：★★★</span></p><p>数阵图是把一组数填进图中的圆圈，使若干条“线”（行、列、边、对角线、面）上的数之和都相等。动手前先数清三件事：线有几条 $m$、每条线几个数、每个位置被几条线共用，这个共用次数叫重数 $r$。题目难不难，全看重数是否统一。</p>
+<section class="kp"><h2>数阵图</h2><p class="meta"><span>年级：5、6</span><span>难度：★★★</span></p><p><img src="assets/geometry/comb-number-array.svg" alt="两种骨架的重数：辐射型中心 r=5，封闭型顶点 r=2" /></p>
+<blockquote>
+<p>左图五条线共用一个中心（橙色），它被数 5 次，其余圆圈各只被数 1 次，所以 $5S=T+4c$；右图三角形的三个顶点（橙色）分属两条边、被数 2 次，边中间的圆圈只数 1 次，所以 $3S=T+O$——$O$ 就是三个顶点之和。</p>
+</blockquote>
+<p>数阵图是把一组数填进图中的圆圈，使若干条“线”（行、列、边、对角线、面）上的数之和都相等。动手前先数清三件事：线有几条 $m$、每条线几个数、每个位置被几条线共用，这个共用次数叫重数 $r$。题目难不难，全看重数是否统一。</p>
 <p><strong>一、公式与理由</strong></p>
 <p>设公共线和为 $S$，全部数之和为 $T$。把 $m$ 条线的和相加：每条线贡献一个 $S$，某个数若在 $r$ 条线上就被数了 $r$ 次，而它在 $T$ 中只算一次，多算 $r-1$ 次。于是线和的总和等于总和加上多算的部分：$mS=T+\sum(r_i-1)a_i$。外圈数只算一次，不多算；封闭图的顶点被两条线共用，各多算一次；正方体顶点被三个面共用，各多算两次。重数要逐个位置数，不能凭感觉。</p>
 <p><strong>二、三种骨架</strong></p>
@@ -297,7 +305,11 @@ $$N=(x+y)^2,$$<br />
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
-<section class="kp"><h2>最值问题</h2><p class="meta"><span>年级：4、5、6</span><span>难度：★★★</span></p><h3>一、模型：先分清“和定”还是“积定”</h3>
+<section class="kp"><h2>最值问题</h2><p class="meta"><span>年级：4、5、6</span><span>难度：★★★</span></p><p><img src="assets/geometry/comb-extremum.svg" alt="和定积大：把顶上一条搬到右边，5×7 变成 6×6，多出一格" /></p>
+<blockquote>
+<p>周长固定就是 $a+b=12$ 不变：最左的 $1\times11$ 最悬殊、面积只有 $11$；中间 $5\times7$ 顶上那一条（橙色）搬到右侧竖起来，就成了右边的 $6\times6$，除了搬过去的 5 格，右上角还多出 1 格（浅橙），面积从 $35$ 涨到 $36$——两数越接近，积越大。</p>
+</blockquote>
+<h3>一、模型：先分清“和定”还是“积定”</h3>
 <p>最值问题的第一步不是算，而是<strong>找不变量</strong>：题目把哪个量钉死了？钉死的是和，就求积的极端；钉死的是积，就求和（或周长）的极端。两条主干是：</p>
 <ul>
 <li><strong>和定积大</strong>：$a+b=S$ 时 $ab\le S^2/4$，$a=b$ 时取等；</li>
@@ -507,7 +519,11 @@ $$N=(x+y)^2,$$<br />
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
-<section class="kp"><h2>游戏策略</h2><p class="meta"><span>年级：5、6</span><span>难度：★★★</span></p><h3>一、模型：给每个局面贴上 W 或 L</h3>
+<section class="kp"><h2>游戏策略</h2><p class="meta"><span>年级：5、6</span><span>难度：★★★</span></p><p><img src="assets/geometry/comb-game-strategy.svg" alt="补足法与双堆必败局：每 m+1 枚一捆；L 局都落在 b=a 上方第 d 格" /></p>
+<blockquote>
+<p>左边 11 枚棋子每 4 枚一捆，捆满两捆还剩 3 枚（橙色），先手取走这 3 枚就只给对手留下整捆；右边双堆图中虚线 $b=a$ 是两堆相等的参照，每个必败局 $(a,\ a+d)$ 都恰好落在它上方 $d$ 格，第 $d$ 个必败局的差正是 $d$。</p>
+</blockquote>
+<h3>一、模型：给每个局面贴上 W 或 L</h3>
 <p>游戏策略题只问两件事：先手有没有必胜策略；若有，第一步怎样走、之后每一轮怎样应对。办法是把&quot;轮到某人时的局面&quot;分成两类：<strong>必胜态 W</strong>——存在一步把对手送进 L；<strong>必败态 L</strong>——无论怎样走，都只能把对手送进 W。终点必须先定死：按&quot;取到最后一枚者胜&quot;，$0$ 枚时无子可取，轮到谁谁输，$0$ 是 L；按&quot;取到最后一枚者输&quot;，$0$ 却是 W，因为取走最后一枚的人已经输了。四个模型由此生长：补足法（每次取 $1\sim m$）、镜像法（局面本身对称）、周期法（取法不连续，只能枚举找规律）、枚举法（两堆可以同时取，靠差值表列出全部必败局）。</p>
 <h3>二、推导：三条理由</h3>
 <p><strong>补足法为什么补 $m+1$</strong>。写 $n=q(m+1)+r$。若 $r\ne0$，先手取 $r$ 枚，留下 $(m+1)$ 的倍数；此后对方取 $k$ 枚，先手取 $m+1-k$ 枚。因 $1\le k\le m$，故 $1\le m+1-k\le m$，这一手永远合法，每轮合计恰好 $m+1$ 枚。反过来，从倍数出发取 $k$ 枚，余数变成 $m+1-k\ne0$，只能把对手送回&quot;非倍数&quot;。两句话合起来才完整：<strong>非倍数能走到倍数，倍数只能走到非倍数</strong>，所以倍数恰是 L。</p>
@@ -586,7 +602,11 @@ $$N=(x+y)^2,$$<br />
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
-<section class="kp"><h2>统筹优化</h2><p class="meta"><span>年级：4、5</span><span>难度：★★</span></p><p>统筹优化讨论的是这样一类问题：每道工序本身要花的时间是固定的，但<strong>先做哪道、谁和谁一起做、机器什么时候开工</strong>可以由我们安排，于是总时间会不同。优化的本质不是把活变快，而是消灭三类浪费：<strong>等人、等机器、空转</strong>。小学杯赛常考四个模型：排队、烙饼、过河、双机流水。</p>
+<section class="kp"><h2>统筹优化</h2><p class="meta"><span>年级：4、5</span><span>难度：★★</span></p><p><img src="assets/geometry/comb-scheduling.svg" alt="双机流水甘特图：A 机不停，B 机只空等 1 个单位" /></p>
+<blockquote>
+<p>上排是 A 机的加工顺序，同色的 $P_i$ 在下排是它在 B 机上的那一段；B 机除了开头灰色那 1 格等待，其余时间连着干，所以工期是 $16+1=17$，而不是把两机工时直接相加的 $26$。</p>
+</blockquote>
+<p>统筹优化讨论的是这样一类问题：每道工序本身要花的时间是固定的，但<strong>先做哪道、谁和谁一起做、机器什么时候开工</strong>可以由我们安排，于是总时间会不同。优化的本质不是把活变快，而是消灭三类浪费：<strong>等人、等机器、空转</strong>。小学杯赛常考四个模型：排队、烙饼、过河、双机流水。</p>
 <h3>一、排队：短活放在权重大的位置</h3>
 <p>一台设备、一个窗口，一次只能服务一人。若顺序为 $t_1,t_2,\dots,t_n$，第 $k$ 个人占用设备的 $t_k$ 分钟，后面的 $n-k$ 个人都要陪着等，所以所有人的<strong>完成时刻</strong>之和是</p>
 <p>$$T=n t_1+(n-1)t_2+\cdots+2t_{n-1}+t_n.$$</p>
@@ -678,7 +698,11 @@ $$N=(x+y)^2,$$<br />
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
-<section class="kp"><h2>逻辑推理</h2><p class="meta"><span>年级：4、5</span><span>难度：★★</span></p><p><strong>一句话</strong>：逻辑推理不靠猜，靠把每句话记成一笔&quot;真假账&quot;，再用假设、矛盾、配额、表格，把不自洽的可能划掉。</p>
+<section class="kp"><h2>逻辑推理</h2><p class="meta"><span>年级：4、5</span><span>难度：★★</span></p><p><img src="assets/geometry/comb-logic-grid.svg" alt="对应型列表排除：一行只剩一格就打勾，再把该列其余格划掉" /></p>
+<blockquote>
+<p>行是三个人、列是三个选项，浅绿格是已确定的对应关系；虚线箭头指出推理方向——$A$ 行只剩“$2$”这一格能打勾后，同行另两格立刻划掉，同一列上 $B$、$C$ 两格也一并划掉，最后每行每列都只有一个勾。</p>
+</blockquote>
+<p><strong>一句话</strong>：逻辑推理不靠猜，靠把每句话记成一笔&quot;真假账&quot;，再用假设、矛盾、配额、表格，把不自洽的可能划掉。</p>
 <h3>一、模型：三类题与一本账</h3>
 <p><strong>身份型</strong>：每人要么句句真，要么句句假，话的真假被身份绑死。<strong>计数型</strong>：只说&quot;恰有 $k$ 句真&quot;，不论身份，话的真假由事实决定。<strong>对应型</strong>：人、城市、名次一一对应，条件多是&quot;是/不是&quot;&quot;高一名&quot;。</p>
 <p>三类题的开场一样：一人一行立账，写清原话和&quot;它何时为真&quot;，题就从读故事变成填表。分水岭在此——身份型里&quot;乙在说谎&quot;译作&quot;乙是假话者&quot;；计数型里只能译作&quot;乙这句是假命题&quot;。一词两译，混用必错。</p>
