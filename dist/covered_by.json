@@ -131,10 +131,10 @@
   {
    "example": "例1",
    "exampleTitle": "例1：一盈一亏",
-   "file": "content/05-应用题/盈亏问题.md",
+   "file": "content/12-奥数-应用题/盈亏问题.md",
    "id": "wp-profit-loss",
-   "module": "应用题",
-   "moduleDir": "05-应用题",
+   "module": "奥数-应用题",
+   "moduleDir": "12-奥数-应用题",
    "title": "盈亏问题"
   }
  ],
@@ -351,10 +351,10 @@
   {
    "example": "例3",
    "exampleTitle": "例3：两两之和求三数（★★★★★★）",
-   "file": "content/05-应用题/和差问题.md",
+   "file": "content/12-奥数-应用题/和差问题.md",
    "id": "wp-sum-difference",
-   "module": "应用题",
-   "moduleDir": "05-应用题",
+   "module": "奥数-应用题",
+   "moduleDir": "12-奥数-应用题",
    "title": "和差问题"
   }
  ],
@@ -384,10 +384,10 @@
   {
    "example": "例3",
    "exampleTitle": "例3：把两个量打包成一份（★★★★★★）",
-   "file": "content/05-应用题/和倍问题.md",
+   "file": "content/12-奥数-应用题/和倍问题.md",
    "id": "wp-sum-multiple",
-   "module": "应用题",
-   "moduleDir": "05-应用题",
+   "module": "奥数-应用题",
+   "moduleDir": "12-奥数-应用题",
    "title": "和倍问题"
   }
  ],
@@ -514,10 +514,10 @@
   {
    "example": "例2",
    "exampleTitle": "例2：两亏",
-   "file": "content/05-应用题/盈亏问题.md",
+   "file": "content/12-奥数-应用题/盈亏问题.md",
    "id": "wp-profit-loss",
-   "module": "应用题",
-   "moduleDir": "05-应用题",
+   "module": "奥数-应用题",
+   "moduleDir": "12-奥数-应用题",
    "title": "盈亏问题"
   }
  ],
@@ -569,10 +569,10 @@
   {
    "example": "例2",
    "exampleTitle": "例2：由总人数与层数反推中空方阵的边长（★★★★★）",
-   "file": "content/05-应用题/方阵问题.md",
+   "file": "content/12-奥数-应用题/方阵问题.md",
    "id": "wp-square-formation",
-   "module": "应用题",
-   "moduleDir": "05-应用题",
+   "module": "奥数-应用题",
+   "moduleDir": "12-奥数-应用题",
    "title": "方阵问题"
   }
  ],
@@ -776,10 +776,10 @@
   {
    "example": "例3",
    "exampleTitle": "例3：三队按 1、2、1 天轮流做（★★★★★★）",
-   "file": "content/05-应用题/工程问题.md",
+   "file": "content/12-奥数-应用题/工程问题.md",
    "id": "wp-work",
-   "module": "应用题",
-   "moduleDir": "05-应用题",
+   "module": "奥数-应用题",
+   "moduleDir": "12-奥数-应用题",
    "title": "工程问题"
   }
  ],
@@ -1149,10 +1149,10 @@
   {
    "example": "例3",
    "exampleTitle": "例3：三次倒出加水的递推（★★★★★★）",
-   "file": "content/05-应用题/浓度问题.md",
+   "file": "content/12-奥数-应用题/浓度问题.md",
    "id": "wp-concentration",
-   "module": "应用题",
-   "moduleDir": "05-应用题",
+   "module": "奥数-应用题",
+   "moduleDir": "12-奥数-应用题",
    "title": "浓度问题"
   }
  ],
@@ -1215,10 +1215,10 @@
   {
    "example": "例1",
    "exampleTitle": "例1：假设法",
-   "file": "content/05-应用题/鸡兔同笼.md",
+   "file": "content/12-奥数-应用题/鸡兔同笼.md",
    "id": "wp-chicken-rabbit",
-   "module": "应用题",
-   "moduleDir": "05-应用题",
+   "module": "奥数-应用题",
+   "moduleDir": "12-奥数-应用题",
    "title": "鸡兔同笼"
   }
  ],
@@ -1782,10 +1782,10 @@
   {
    "example": "例3",
    "exampleTitle": "例3：三段折扣混卖，反求总件数（★★★★★★）",
-   "file": "content/05-应用题/经济问题.md",
+   "file": "content/12-奥数-应用题/经济问题.md",
    "id": "owp-economics",
-   "module": "应用题",
-   "moduleDir": "05-应用题",
+   "module": "奥数-应用题",
+   "moduleDir": "12-奥数-应用题",
    "title": "经济问题"
   }
  ],
@@ -2517,10 +2517,10 @@
   {
    "example": "例1",
    "exampleTitle": "例1：两组条件定直线，再求牛数（★★★★）",
-   "file": "content/05-应用题/牛吃草.md",
+   "file": "content/12-奥数-应用题/牛吃草.md",
    "id": "owp-grazing",
-   "module": "应用题",
-   "moduleDir": "05-应用题",
+   "module": "奥数-应用题",
+   "moduleDir": "12-奥数-应用题",
    "title": "牛吃草"
   }
  ],
@@ -2570,10 +2570,10 @@
   {
    "example": "例2",
    "exampleTitle": "例2：反归一",
-   "file": "content/05-应用题/归一问题.md",
+   "file": "content/12-奥数-应用题/归一问题.md",
    "id": "wp-unit-rate",
-   "module": "应用题",
-   "moduleDir": "05-应用题",
+   "module": "奥数-应用题",
+   "moduleDir": "12-奥数-应用题",
    "title": "归一问题"
   }
  ],
@@ -3033,10 +3033,10 @@
   {
    "example": "例4",
    "exampleTitle": "例4：总量不变，倒着还原（★★★★★★★）",
-   "file": "content/05-应用题/和倍问题.md",
+   "file": "content/12-奥数-应用题/和倍问题.md",
    "id": "wp-sum-multiple",
-   "module": "应用题",
-   "moduleDir": "05-应用题",
+   "module": "奥数-应用题",
+   "moduleDir": "12-奥数-应用题",
    "title": "和倍问题"
   }
  ],
@@ -3044,10 +3044,10 @@
   {
    "example": "例1",
    "exampleTitle": "例1：几倍少几的还原（★★★★）",
-   "file": "content/05-应用题/和倍问题.md",
+   "file": "content/12-奥数-应用题/和倍问题.md",
    "id": "wp-sum-multiple",
-   "module": "应用题",
-   "moduleDir": "05-应用题",
+   "module": "奥数-应用题",
+   "moduleDir": "12-奥数-应用题",
    "title": "和倍问题"
   }
  ],
@@ -3077,10 +3077,10 @@
   {
    "example": "例4",
    "exampleTitle": "例4：两次移动同一批苹果（★★★★★★★）",
-   "file": "content/05-应用题/和差问题.md",
+   "file": "content/12-奥数-应用题/和差问题.md",
    "id": "wp-sum-difference",
-   "module": "应用题",
-   "moduleDir": "05-应用题",
+   "module": "奥数-应用题",
+   "moduleDir": "12-奥数-应用题",
    "title": "和差问题"
   }
  ],
@@ -3088,10 +3088,10 @@
   {
    "example": "例1",
    "exampleTitle": "例1：周长里的和与差（★★★★）",
-   "file": "content/05-应用题/和差问题.md",
+   "file": "content/12-奥数-应用题/和差问题.md",
    "id": "wp-sum-difference",
-   "module": "应用题",
-   "moduleDir": "05-应用题",
+   "module": "奥数-应用题",
+   "moduleDir": "12-奥数-应用题",
    "title": "和差问题"
   }
  ],
@@ -3482,10 +3482,10 @@
   {
    "example": "例4",
    "exampleTitle": "例4：三块草地先归一，再分段卖牛（★★★★★★★）",
-   "file": "content/05-应用题/牛吃草.md",
+   "file": "content/12-奥数-应用题/牛吃草.md",
    "id": "owp-grazing",
-   "module": "应用题",
-   "moduleDir": "05-应用题",
+   "module": "奥数-应用题",
+   "moduleDir": "12-奥数-应用题",
    "title": "牛吃草"
   }
  ],
@@ -3837,10 +3837,10 @@
   {
    "example": "例1",
    "exampleTitle": "例1：由最外层反推方阵总数与各层人数（★★★★）",
-   "file": "content/05-应用题/方阵问题.md",
+   "file": "content/12-奥数-应用题/方阵问题.md",
    "id": "wp-square-formation",
-   "module": "应用题",
-   "moduleDir": "05-应用题",
+   "module": "奥数-应用题",
+   "moduleDir": "12-奥数-应用题",
    "title": "方阵问题"
   }
  ],
@@ -4187,10 +4187,10 @@
   {
    "example": "例1",
    "exampleTitle": "例1：先单干后合作，和差定工效（★★★★）",
-   "file": "content/05-应用题/工程问题.md",
+   "file": "content/12-奥数-应用题/工程问题.md",
    "id": "wp-work",
-   "module": "应用题",
-   "moduleDir": "05-应用题",
+   "module": "奥数-应用题",
+   "moduleDir": "12-奥数-应用题",
    "title": "工程问题"
   }
  ],
@@ -4198,10 +4198,10 @@
   {
    "example": "例4",
    "exampleTitle": "例4：8 天期限下的最低费用（★★★★★★★）",
-   "file": "content/05-应用题/工程问题.md",
+   "file": "content/12-奥数-应用题/工程问题.md",
    "id": "wp-work",
-   "module": "应用题",
-   "moduleDir": "05-应用题",
+   "module": "奥数-应用题",
+   "moduleDir": "12-奥数-应用题",
    "title": "工程问题"
   }
  ],
@@ -4436,10 +4436,10 @@
   {
    "example": "例1",
    "exampleTitle": "例1：移多补少",
-   "file": "content/05-应用题/平均数应用题.md",
+   "file": "content/12-奥数-应用题/平均数应用题.md",
    "id": "wp-average",
-   "module": "应用题",
-   "moduleDir": "05-应用题",
+   "module": "奥数-应用题",
+   "moduleDir": "12-奥数-应用题",
    "title": "平均数应用题"
   }
  ],
@@ -4447,10 +4447,10 @@
   {
    "example": "例2",
    "exampleTitle": "例2：平均速度",
-   "file": "content/05-应用题/平均数应用题.md",
+   "file": "content/12-奥数-应用题/平均数应用题.md",
    "id": "wp-average",
-   "module": "应用题",
-   "moduleDir": "05-应用题",
+   "module": "奥数-应用题",
+   "moduleDir": "12-奥数-应用题",
    "title": "平均数应用题"
   }
  ],
@@ -5113,10 +5113,10 @@
   {
    "example": "例1",
    "exampleTitle": "例1：一盈一亏同率，到底赚还是亏（★★★★）",
-   "file": "content/05-应用题/经济问题.md",
+   "file": "content/12-奥数-应用题/经济问题.md",
    "id": "owp-economics",
-   "module": "应用题",
-   "moduleDir": "05-应用题",
+   "module": "奥数-应用题",
+   "moduleDir": "12-奥数-应用题",
    "title": "经济问题"
   }
  ],
@@ -5336,10 +5336,10 @@
   {
    "example": "例2",
    "exampleTitle": "例2：七折仍赚，八折才是目标的临界（★★★★★）",
-   "file": "content/05-应用题/经济问题.md",
+   "file": "content/12-奥数-应用题/经济问题.md",
    "id": "owp-economics",
-   "module": "应用题",
-   "moduleDir": "05-应用题",
+   "module": "奥数-应用题",
+   "moduleDir": "12-奥数-应用题",
    "title": "经济问题"
   }
  ],
@@ -6161,10 +6161,10 @@
   {
    "example": "例3",
    "exampleTitle": "例3：多几人少几人的双层差量方程（★★★★★★）",
-   "file": "content/05-应用题/方阵问题.md",
+   "file": "content/12-奥数-应用题/方阵问题.md",
    "id": "wp-square-formation",
-   "module": "应用题",
-   "moduleDir": "05-应用题",
+   "module": "奥数-应用题",
+   "moduleDir": "12-奥数-应用题",
    "title": "方阵问题"
   }
  ],
@@ -6172,10 +6172,10 @@
   {
    "example": "例4",
    "exampleTitle": "例4：恰好排成中空方阵的全部排法（★★★★★★★）",
-   "file": "content/05-应用题/方阵问题.md",
+   "file": "content/12-奥数-应用题/方阵问题.md",
    "id": "wp-square-formation",
-   "module": "应用题",
-   "moduleDir": "05-应用题",
+   "module": "奥数-应用题",
+   "moduleDir": "12-奥数-应用题",
    "title": "方阵问题"
   }
  ],
@@ -6721,10 +6721,10 @@
   {
    "example": "例1",
    "exampleTitle": "例1：正归一",
-   "file": "content/05-应用题/归一问题.md",
+   "file": "content/12-奥数-应用题/归一问题.md",
    "id": "wp-unit-rate",
-   "module": "应用题",
-   "moduleDir": "05-应用题",
+   "module": "奥数-应用题",
+   "moduleDir": "12-奥数-应用题",
    "title": "归一问题"
   }
  ],
@@ -7014,19 +7014,19 @@
   {
    "example": "例1",
    "exampleTitle": "例1：正归一",
-   "file": "content/05-应用题/归一问题.md",
+   "file": "content/12-奥数-应用题/归一问题.md",
    "id": "wp-unit-rate",
-   "module": "应用题",
-   "moduleDir": "05-应用题",
+   "module": "奥数-应用题",
+   "moduleDir": "12-奥数-应用题",
    "title": "归一问题"
   },
   {
    "example": "例2",
    "exampleTitle": "例2：反归一",
-   "file": "content/05-应用题/归一问题.md",
+   "file": "content/12-奥数-应用题/归一问题.md",
    "id": "wp-unit-rate",
-   "module": "应用题",
-   "moduleDir": "05-应用题",
+   "module": "奥数-应用题",
+   "moduleDir": "12-奥数-应用题",
    "title": "归一问题"
   }
  ],
@@ -7131,10 +7131,10 @@
   {
    "example": "例4",
    "exampleTitle": "例4：由两次混合反推浓度并判定可行性（★★★★★★★）",
-   "file": "content/05-应用题/浓度问题.md",
+   "file": "content/12-奥数-应用题/浓度问题.md",
    "id": "wp-concentration",
-   "module": "应用题",
-   "moduleDir": "05-应用题",
+   "module": "奥数-应用题",
+   "moduleDir": "12-奥数-应用题",
    "title": "浓度问题"
   }
  ],
@@ -7164,10 +7164,10 @@
   {
    "example": "例2",
    "exampleTitle": "例2：等量交换后两瓶浓度相同（★★★★★）",
-   "file": "content/05-应用题/浓度问题.md",
+   "file": "content/12-奥数-应用题/浓度问题.md",
    "id": "wp-concentration",
-   "module": "应用题",
-   "moduleDir": "05-应用题",
+   "module": "奥数-应用题",
+   "moduleDir": "12-奥数-应用题",
    "title": "浓度问题"
   }
  ],
@@ -7208,10 +7208,10 @@
   {
    "example": "例1",
    "exampleTitle": "例1：先加水再加盐的两步计算（★★★★）",
-   "file": "content/05-应用题/浓度问题.md",
+   "file": "content/12-奥数-应用题/浓度问题.md",
    "id": "wp-concentration",
-   "module": "应用题",
-   "moduleDir": "05-应用题",
+   "module": "奥数-应用题",
+   "moduleDir": "12-奥数-应用题",
    "title": "浓度问题"
   }
  ],
@@ -7285,10 +7285,10 @@
   {
    "example": "例3",
    "exampleTitle": "例3：中途卖牛，分段守恒（★★★★★★）",
-   "file": "content/05-应用题/牛吃草.md",
+   "file": "content/12-奥数-应用题/牛吃草.md",
    "id": "owp-grazing",
-   "module": "应用题",
-   "moduleDir": "05-应用题",
+   "module": "奥数-应用题",
+   "moduleDir": "12-奥数-应用题",
    "title": "牛吃草"
   }
  ],
@@ -7327,10 +7327,10 @@
   {
    "example": "例1",
    "exampleTitle": "例1：直线与环形",
-   "file": "content/05-应用题/植树问题.md",
+   "file": "content/12-奥数-应用题/植树问题.md",
    "id": "wp-tree-planting",
-   "module": "应用题",
-   "moduleDir": "05-应用题",
+   "module": "奥数-应用题",
+   "moduleDir": "12-奥数-应用题",
    "title": "植树问题"
   }
  ],
@@ -7750,10 +7750,10 @@
   {
    "example": "例2",
    "exampleTitle": "例2：两亏",
-   "file": "content/05-应用题/盈亏问题.md",
+   "file": "content/12-奥数-应用题/盈亏问题.md",
    "id": "wp-profit-loss",
-   "module": "应用题",
-   "moduleDir": "05-应用题",
+   "module": "奥数-应用题",
+   "moduleDir": "12-奥数-应用题",
    "title": "盈亏问题"
   }
  ],
@@ -7761,10 +7761,10 @@
   {
    "example": "例1",
    "exampleTitle": "例1：直线与环形",
-   "file": "content/05-应用题/植树问题.md",
+   "file": "content/12-奥数-应用题/植树问题.md",
    "id": "wp-tree-planting",
-   "module": "应用题",
-   "moduleDir": "05-应用题",
+   "module": "奥数-应用题",
+   "moduleDir": "12-奥数-应用题",
    "title": "植树问题"
   }
  ],
@@ -8019,10 +8019,10 @@
   {
    "example": "例1",
    "exampleTitle": "例1：移多补少",
-   "file": "content/05-应用题/平均数应用题.md",
+   "file": "content/12-奥数-应用题/平均数应用题.md",
    "id": "wp-average",
-   "module": "应用题",
-   "moduleDir": "05-应用题",
+   "module": "奥数-应用题",
+   "moduleDir": "12-奥数-应用题",
    "title": "平均数应用题"
   }
  ],
@@ -8030,10 +8030,10 @@
   {
    "example": "例4",
    "exampleTitle": "例4：缴税、定价与日利润最大（★★★★★★★）",
-   "file": "content/05-应用题/经济问题.md",
+   "file": "content/12-奥数-应用题/经济问题.md",
    "id": "owp-economics",
-   "module": "应用题",
-   "moduleDir": "05-应用题",
+   "module": "奥数-应用题",
+   "moduleDir": "12-奥数-应用题",
    "title": "经济问题"
   }
  ],
@@ -8449,10 +8449,10 @@
   {
    "example": "例2",
    "exampleTitle": "例2：草在枯萎，还要卡住天数底线（★★★★★）",
-   "file": "content/05-应用题/牛吃草.md",
+   "file": "content/12-奥数-应用题/牛吃草.md",
    "id": "owp-grazing",
-   "module": "应用题",
-   "moduleDir": "05-应用题",
+   "module": "奥数-应用题",
+   "moduleDir": "12-奥数-应用题",
    "title": "牛吃草"
   }
  ],
@@ -8731,10 +8731,10 @@
   {
    "example": "例2",
    "exampleTitle": "例2：三队两两合作与中途调人（★★★★★）",
-   "file": "content/05-应用题/工程问题.md",
+   "file": "content/12-奥数-应用题/工程问题.md",
    "id": "wp-work",
-   "module": "应用题",
-   "moduleDir": "05-应用题",
+   "module": "奥数-应用题",
+   "moduleDir": "12-奥数-应用题",
    "title": "工程问题"
   }
  ],
@@ -9786,10 +9786,10 @@
   {
    "example": "例2",
    "exampleTitle": "例2：锯木头变式",
-   "file": "content/05-应用题/植树问题.md",
+   "file": "content/12-奥数-应用题/植树问题.md",
    "id": "wp-tree-planting",
-   "module": "应用题",
-   "moduleDir": "05-应用题",
+   "module": "奥数-应用题",
+   "moduleDir": "12-奥数-应用题",
    "title": "植树问题"
   }
  ],
@@ -9863,10 +9863,10 @@
   {
    "example": "例2",
    "exampleTitle": "例2：两次搬运后的差（★★★★★）",
-   "file": "content/05-应用题/和差问题.md",
+   "file": "content/12-奥数-应用题/和差问题.md",
    "id": "wp-sum-difference",
-   "module": "应用题",
-   "moduleDir": "05-应用题",
+   "module": "奥数-应用题",
+   "moduleDir": "12-奥数-应用题",
    "title": "和差问题"
   }
  ],
@@ -9874,10 +9874,10 @@
   {
    "example": "例2",
    "exampleTitle": "例2：周长里藏着的和（★★★★★）",
-   "file": "content/05-应用题/和倍问题.md",
+   "file": "content/12-奥数-应用题/和倍问题.md",
    "id": "wp-sum-multiple",
-   "module": "应用题",
-   "moduleDir": "05-应用题",
+   "module": "奥数-应用题",
+   "moduleDir": "12-奥数-应用题",
    "title": "和倍问题"
   }
  ],
@@ -10093,10 +10093,10 @@
   {
    "example": "例2",
    "exampleTitle": "例2：变式——答题计分",
-   "file": "content/05-应用题/鸡兔同笼.md",
+   "file": "content/12-奥数-应用题/鸡兔同笼.md",
    "id": "wp-chicken-rabbit",
-   "module": "应用题",
-   "moduleDir": "05-应用题",
+   "module": "奥数-应用题",
+   "moduleDir": "12-奥数-应用题",
    "title": "鸡兔同笼"
   }
  ]

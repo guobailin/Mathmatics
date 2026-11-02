@@ -9,7 +9,7 @@ boards:
   short: 奥
   kind: olympiad
   color: '#2F6F6B'
-  intro: 计算、数论、计数、几何、行程、应用题、组合七大模块，按专题纵深拓展。
+  intro: 计算、数论、计数、几何、行程、应用题、组合七大模块；应用题另设奥数专线，按专题纵深拓展。
   domains:
   - name: 计算
     topics:
@@ -284,35 +284,14 @@ boards:
       term: null
   - name: 应用题
     topics:
-    - title: 和差问题
-      content: wp-sum-difference
-      term: null
-    - title: 和倍问题
-      content: wp-sum-multiple
-      term: null
     - title: 差倍问题
       content: wp-diff-multiple
       term: null
     - title: 年龄问题
       content: wp-age
       term: null
-    - title: 方阵问题
-      content: wp-square-formation
-      term: null
     - title: 还原问题
       content: wp-restore
-      term: null
-    - title: 工程问题
-      content: wp-work
-      term: null
-    - title: 浓度问题
-      content: wp-concentration
-      term: null
-    - title: 牛吃草
-      content: owp-grazing
-      term: null
-    - title: 经济问题
-      content: owp-economics
       term: null
     - title: 图形找规律
       content: owp-pattern
@@ -328,6 +307,29 @@ boards:
       term: null
     - title: 应用题思想方法
       content: owp-methods
+      term: null
+  - name: 奥数-应用题
+    topics:
+    - title: 和差问题
+      content: wp-sum-difference
+      term: null
+    - title: 和倍问题
+      content: wp-sum-multiple
+      term: null
+    - title: 方阵问题
+      content: wp-square-formation
+      term: null
+    - title: 工程问题
+      content: wp-work
+      term: null
+    - title: 浓度问题
+      content: wp-concentration
+      term: null
+    - title: 经济问题
+      content: owp-economics
+      term: null
+    - title: 牛吃草
+      content: owp-grazing
       term: null
   - name: 组合
     topics:

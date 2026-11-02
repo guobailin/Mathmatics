@@ -11,7 +11,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 CONTENT_DIR = os.path.join(HERE, "content")
 SRC = os.path.abspath(os.path.join(HERE, "..", "..", "content"))
 MODULES = ["06-奥数-计算", "07-奥数-计数", "08-奥数-数论",
-           "09-奥数-几何", "10-奥数-行程", "11-奥数-组合"]
+           "09-奥数-几何", "10-奥数-行程", "11-奥数-组合",
+           "12-奥数-应用题"]
 # 可选模块：卡片只覆盖其中一部分知识点，缺失不算错误
 MODULES_OPTIONAL = ["05-应用题"]
 

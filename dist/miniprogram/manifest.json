@@ -26,7 +26,7 @@
  {
   "slug": "m05",
   "module": "应用题",
-  "count": 39,
+  "count": 27,
   "file": "m05.json"
  },
  {
@@ -64,5 +64,11 @@
   "module": "奥数-组合",
   "count": 9,
   "file": "m11.json"
+ },
+ {
+  "slug": "m12",
+  "module": "奥数-应用题",
+  "count": 12,
+  "file": "m12.json"
  }
 ]
