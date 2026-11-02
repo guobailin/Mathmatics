@@ -211,7 +211,11 @@ img{max-width:100%;height:auto}
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
-<section class="kp"><h2>基本公式与平均速度</h2><p class="meta"><span>年级：4、5</span><span>难度：★</span></p><h3>一、模型：三个量，一个定义</h3>
+<section class="kp"><h2>基本公式与平均速度</h2><p class="meta"><span>年级：4、5</span><span>难度：★</span></p><p><img src="assets/geometry/travel-average.svg" alt="平均速度：两段速度按时间加权" /></p>
+<blockquote>
+<p>平均速度是总路程除以总时间，不是两个速度的算术平均。只有两段时间相等时才等于算术平均；两段路程相等时它等于调和平均 $\dfrac{2v_1v_2}{v_1+v_2}$。</p>
+</blockquote>
+<h3>一、模型：三个量，一个定义</h3>
 <p>行程题的全部家当就两个式子。第一个是 <strong>$s=vt$</strong>：路程、速度、时间三个量知二求一，任何一段匀速运动都逃不出它。第二个是<strong>平均速度的定义</strong>：</p>
 <p>$$\bar v=\frac{s_1+s_2+\cdots}{t_1+t_2+\cdots}=\frac{\text{总路程}}{\text{总时间}}.$$</p>
 <p>它只是一个&quot;除法&quot;，不是新公式。平均速度既不等于各段速度的算术平均，也不等于&quot;最快加最慢除以二&quot;；它由总路程与总时间这两个总量唯一决定。凡看到&quot;往返&quot;&quot;原路返回&quot;&quot;前一半时间&quot;&quot;前一半路程&quot;&quot;途中停留&quot;&quot;平均每小时行多少&quot;，先问一句：总量是哪两个？</p>
@@ -391,7 +395,11 @@ img{max-width:100%;height:auto}
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
-<section class="kp"><h2>多次相遇</h2><p class="meta"><span>年级：5、6</span><span>难度：★★★</span></p><p>甲从 A 地、乙从 B 地同时出发相向而行，到达对方出发点后立即折返，在两地之间不断往返，于是两人会反复相遇。处理这类题的总纲只有一句话：<strong>把两人的路程相加</strong>。折返看起来弯弯绕绕，一旦换成&quot;合走了多少个全程&quot;，问题就变成一条直线上的加法。</p>
+<section class="kp"><h2>多次相遇</h2><p class="meta"><span>年级：5、6</span><span>难度：★★★</span></p><p><img src="assets/geometry/travel-encounters.svg" alt="时间—路程图：折线的交点就是相遇" /></p>
+<blockquote>
+<p>纵轴是位置（$A$ 到 $B$），横轴是时间，两条折线一相交就是相遇。第 $k$ 次相遇时两人合走了 $(2k-1)S$，图中三个黑点依次对应合走 $1S$、$3S$、$5S$——注意第二个交点落在 $A$ 点，相遇可以发生在端点。</p>
+</blockquote>
+<p>甲从 A 地、乙从 B 地同时出发相向而行，到达对方出发点后立即折返，在两地之间不断往返，于是两人会反复相遇。处理这类题的总纲只有一句话：<strong>把两人的路程相加</strong>。折返看起来弯弯绕绕，一旦换成&quot;合走了多少个全程&quot;，问题就变成一条直线上的加法。</p>
 <h3>一、模型与核心结论</h3>
 <p>设全程为 $S$，速度和为 $v_甲+v_乙$。第一次相遇时两人合走一个 $S$；此后每再相遇一次，两人都要各自跑到端点再折回来，合起来正好多走 $2S$。所以从出发算起：</p>
 <p>$$\text{第 }n\text{ 次相遇：路程和}=(2n-1)S,\qquad t_n=\frac{(2n-1)S}{v_甲+v_乙}.$$</p>
@@ -801,7 +809,11 @@ $$\bar v=\frac{2s}{\frac{s}{v_{顺}}+\frac{s}{v_{逆}}}=\frac{2v_{顺}v_{逆}}{v
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
-<section class="kp"><h2>火车过桥</h2><p class="meta"><span>年级：4、5</span><span>难度：★★</span></p><p>普通行程把人或车看成一个点，火车不行——它太长，车头和车尾不在同一处。所以&quot;火车过桥&quot;的全部技术可以压缩成一句话：<strong>只盯车头，把每件事翻译成&quot;车头走了多远&quot;</strong>。翻译对了，剩下的只是除法。</p>
+<section class="kp"><h2>火车过桥</h2><p class="meta"><span>年级：4、5</span><span>难度：★★</span></p><p><img src="assets/geometry/travel-train-bridge.svg" alt="火车过桥的三种路程" /></p>
+<blockquote>
+<p>浅色是起点车、深色是终点车，虚线标出车头的起止位置。括线量的是<strong>车头净走的距离</strong>：过一个点为 $L$，完全通过为 $B+L$，完全在桥上为 $B-L$（要求 $B&gt;L$）。</p>
+</blockquote>
+<p>普通行程把人或车看成一个点，火车不行——它太长，车头和车尾不在同一处。所以&quot;火车过桥&quot;的全部技术可以压缩成一句话：<strong>只盯车头，把每件事翻译成&quot;车头走了多远&quot;</strong>。翻译对了，剩下的只是除法。</p>
 <h3>一、模型：三个路程</h3>
 <p>设车长 $L$、桥（隧道、站台）长 $B$、车速 $v$。</p>
 <p><strong>完全通过</strong>桥：车头上桥计时，车尾离桥结束，车头走 $B+L$，$t=\dfrac{B+L}{v}$。</p>
