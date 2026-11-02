@@ -1293,6 +1293,72 @@ $$\text{两面}=4(A+B+C),\quad \text{一面}=2(AB+BC+CA),\quad \text{零面}=ABC
 </div>
 <div class="answer-ref">（解析与答案见页末答案区）</div>
 </div></section>
+<section class="kp"><h2>角度计算</h2><p class="meta"><span>年级：4、5</span><span>难度：★</span></p><p><img src="assets/geometry/angle-calculation.svg" alt="角度计算：平行线拐点与折叠中的等角" /></p>
+<blockquote>
+<p>左图是两平行线之间的拐点，过拐点作一条平行线，一个角就拆成两个；右图是把 $\triangle ABC$ 的 $\angle A$ 沿 $DE$ 折到 $A'$，折痕两侧完全重合，所以 $\angle ADE=\angle A'DE$、$\angle AED=\angle A'ED$。</p>
+</blockquote>
+<h3>一、模型：内角和只由边数决定</h3>
+<p>三角形内角和 $180^\circ$ 是全部角度题的起点。多边形不必另记公式：从一个顶点出发连对角线，$n$ 边形被分成 $n-2$ 个三角形，所以</p>
+<p>$$\text{内角和}=(n-2)\times180^\circ .$$</p>
+<p>四边形 $360^\circ$、五边形 $540^\circ$、十边形 $1440^\circ$。反过来给内角和求边数，就是解 $n-2=\text{内角和}\div180^\circ$。</p>
+<p><strong>外角和恒为 $360^\circ$</strong>，与边数无关。理由是一行加法：每个顶点&quot;内角 $+$ 外角 $=180^\circ$&quot;，$n$ 个顶点共 $n\times180^\circ$，减去内角和 $(n-2)\times180^\circ$，剩 $360^\circ$。正 $n$ 边形每个外角就是 $360^\circ\div n$——这是&quot;给外角求边数&quot;的唯一依据，比先用内角和绕一圈快。</p>
+<h3>二、外角定理：把外面的角换进里面</h3>
+<p>三角形的一个外角，等于与它<strong>不相邻</strong>的两个内角之和：</p>
+<p>$$\angle ACD=\angle A+\angle B .$$</p>
+<p>证明只有一步：$\angle A+\angle B+\angle ACB=180^\circ$，而外角 $\angle ACD=180^\circ-\angle ACB$，两式相减即得。它的用处是<strong>把分散的角搬到同一个三角形里</strong>——五角星、凹多边形、任意&quot;尖角求和&quot;的题，都是靠这一步把五个、六个角塞进一个三角形。</p>
+<h3>三、平行线拐点：过拐点作平行线</h3>
+<p>两条平行线之间夹一个折点 $E$，这是角度题里最常见也最容易做错的图形。唯一动作：<strong>过 $E$ 作一条与它们平行的直线</strong>，于是内错角相等，一个角被拆成两个。</p>
+<ul>
+<li>拐点在两平行线<strong>之间</strong>（$M$ 型）：$\angle E=\angle B+\angle D$，外面的大角等于两个小角之和。</li>
+<li>拐点在两平行线<strong>同侧之外</strong>：$\angle E=|\angle B-\angle D|$，变成相减。</li>
+</ul>
+<p>两类不要死记，画一条辅助平行线，看内错角落在哪一侧，结论自己就出来了。若折点有多个，就每个折点各作一条平行线，逐个拆。</p>
+<h3>四、折叠：折痕两侧完全重合</h3>
+<p>折叠是轴对称，落笔前只写一句话：<strong>折痕两侧的图形全等，对应角相等</strong>。常用的两个推论：</p>
+<ul>
+<li>折痕把某个角对半分：若 $A$ 折到 $A'$，则 $\angle ADE=\angle A'DE$。</li>
+<li>折叠后出现的&quot;新角&quot;是 $180^\circ$ 减去两个相等的角：如图中 $\angle 1=180^\circ-2\angle ADE$。</li>
+</ul>
+<p>把两条推论合起来，就得到折叠题最常考的那条结论：三角形纸片把 $\angle A$ 折到 $A'$，则 $\angle 1+\angle 2=2\angle A$。证明见例 4，全过程只用&quot;内角和 $180^\circ$&quot;和&quot;对应角相等&quot;，不需要任何超纲工具。</p>
+<h3>五、易错点</h3>
+<ol>
+<li><strong>把外角当成&quot;外面的那个大角&quot;随便取</strong>。→ 外角必须由三角形的一边延长得到，与它相邻的内角加起来才是 $180^\circ$。→ 取错边，$180^\circ$ 减出来的就不是外角。</li>
+<li><strong>多边形内角和写成 $n\times180^\circ$</strong>。→ 应为 $(n-2)\times180^\circ$。→ 三角形 $n=3$ 时要能退回 $180^\circ$，这一步可以当验算。</li>
+<li><strong>给外角求边数时先算内角和</strong>。→ 直接用 $360^\circ\div$ 外角。→ 外角和恒为 $360^\circ$，绕道内角和容易在减法上出错。</li>
+<li><strong>拐点题不画辅助平行线，硬套 $\angle E=\angle B+\angle D$</strong>。→ 先判断拐点在内侧还是外侧。→ 内侧是相加、外侧是相减，套错方向直接差一个角的量。</li>
+<li><strong>折叠题把&quot;相等的角&quot;认错对象</strong>。→ 只有关于折痕对称的两个角才相等，即 $\angle ADE=\angle A'DE$，不是 $\angle ADE=\angle AED$。→ 折叠是把 $\triangle ADE$ 整体翻过去，$D$、$E$ 在折痕上不动，$A$ 与 $A'$ 才是对应点。</li>
+<li><strong>算出负角或超过 $180^\circ$ 不回头检查</strong>。→ 角一定是 $0^\circ\sim180^\circ$ 之间的正数。→ 出现负值说明辅助线画在了另一侧，或把相减当成了相加。</li>
+</ol>
+<h2>竞赛真题中的考察</h2>
+<blockquote>
+<p>本库题库 18 套六年级卷中未见纯粹的&quot;角度计算&quot;题，下列三条均为同类题型描述，未标卷次，不作真题出处引用。</p>
+</blockquote>
+<ul>
+<li><strong>同类题型</strong>：多边形内角和反求边数——给内角和先除以 $180^\circ$ 再加 $2$；给每个外角则用 $360^\circ$ 除，两条路要分清（★★★）</li>
+<li><strong>同类题型</strong>：多个尖角求和（五角星、凹多边形、折线）——用外角定理把分散的角逐个搬进同一个三角形，凑成 $180^\circ$（★★★★）</li>
+<li><strong>同类题型</strong>：折叠求角——先写折痕两侧对应角相等，再用&quot;平角 $180^\circ$&quot;或&quot;三角形内角和&quot;列式，最后用 $\angle 1+\angle 2=2\angle A$ 验算（★★★★★）</li>
+</ul>
+<blockquote>
+<p>完整题目与解答见仓库 <code>exam/answers/</code> 对应试卷文件；跨卷汇总见 <code>exam/SUMMARY.md</code>。</p>
+</blockquote>
+
+<h2 class="ex-h">例题</h2>
+<div class="example"><h3>例1：给内角和、给外角，各求边数（★★）<span class="covers">覆盖点：多边形内角和与外角和的换算</span></h3><div class="problem"><p>一个多边形的内角和是 $1440^\circ$，它是几边形？另一个正多边形每个外角是 $24^\circ$，它是几边形？若一个正多边形每个内角是 $150^\circ$，它的内角和是多少？</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例2：凹四边形里的"大角"（★★★）<span class="covers">覆盖点：三角形外角定理与不相邻内角</span></h3><div class="problem"><p>在凹四边形 $ABCD$ 中，点 $D$ 落在 $\triangle ABC$ 内部。已知 $\angle A=40^\circ$，$\angle ABD=25^\circ$，$\angle ACD=35^\circ$，求 $\angle BDC$（取小于 $180^\circ$ 的那个角）。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例3：平行线之间的拐点（★★★★）<span class="covers">覆盖点：平行线拐点的角度拆分</span></h3><div class="problem"><p>直线 $AB\parallel CD$，点 $E$ 在两条平行线之间，$\angle BAE=40^\circ$，$\angle DCE=25^\circ$。（1）求 $\angle AEC$；（2）若 $E$ 移到两条平行线的同侧之外，$\angle BAE$ 与 $\angle DCE$ 不变，求 $\angle AEC$。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div>
+<div class="example"><h3>例4：折叠三角形的一个角（★★★★★）<span class="covers">覆盖点：折叠与翻折中的等角转化</span></h3><div class="problem"><p>把 $\triangle ABC$ 的顶点 $A$ 沿直线 $DE$ 折叠，点 $A$ 落在 $A'$ 处，其中 $D$ 在边 $AB$ 上、$E$ 在边 $AC$ 上。折痕与边 $AB$、$AC$ 的夹角分别为 $\angle ADE$、$\angle AED$，折叠后在 $B$、$C$ 一侧形成的两个角为 $\angle 1=\angle BDA'$、$\angle 2=\angle CEA'$。（1）证明 $\angle 1+\angle 2=2\angle A$；（2）若 $\angle A=50^\circ$，求 $\angle 1+\angle 2$。</p>
+</div>
+<div class="answer-ref">（解析与答案见页末答案区）</div>
+</div></section>
 <section class="kp"><h2>面积比</h2><p class="meta"><span>年级：4、5</span><span>难度：★★</span></p><p><img src="assets/geometry/area-ratio.svg" alt="面积比：同高的两个三角形，面积比等于底边比" /></p>
 <blockquote>
 <p>图中 $BD:DC=3:2$，所以 $S_{\triangle ABD}:S_{\triangle ADC}=3:2$。</p>
@@ -2413,6 +2479,48 @@ $$3\times16+2\times48+1\times48=48+96+48=192.$$<br />
 $$3\times8+2\times40+1\times56=24+80+56=160,$$<br />
 贴缝层&quot;每块加一面&quot;共加 $32$ 个红面，$160+32=192$，加得不多不少。反过来说，若把贴缝两侧误当成&quot;原本零面的块&quot;，就会漏掉那些原本两面、一面的块，结果对不上 $192$。</p>
 </div><div class="answer">答案：<p>三面 $16$ 块，两面 $48$ 块，一面 $48$ 块，零面 $16$ 块；红面总数 $192$ 个，等于两个正方体红面数之和。</p>
+</div></div>
+<div class="example"><h3>角度计算 · 例1：给内角和、给外角，各求边数（★★）</h3><div class="analysis"><p><strong>为什么先想&quot;内角和里能装几个 $180^\circ$&quot;，而不是先猜边数？</strong> 因为内角和与边数是一一对应的，只要除出来是整数，边数就唯一确定；猜边数还得逐个验算，慢且容易漏。</p>
+<p>第一步，第一问用内角和公式反解：</p>
+<p>$$(n-2)\times180^\circ=1440^\circ\ \Longrightarrow\ n-2=8\ \Longrightarrow\ n=10 .$$</p>
+<p>第二步，第二问走外角：外角和恒为 $360^\circ$，每个外角 $24^\circ$，所以</p>
+<p>$$n=\frac{360^\circ}{24^\circ}=15 .$$</p>
+<p>第三步，第三问先由内角求外角。每个外角 $=180^\circ-150^\circ=30^\circ$，故 $n=360^\circ\div30^\circ=12$，内角和 $=(12-2)\times180^\circ=1800^\circ$。</p>
+<p><strong>验算</strong>：正十二边形每个内角 $=1800^\circ\div12=150^\circ$，与题设一致；十边形内角和 $1440^\circ$ 除以 $180^\circ$ 得 $8$，加 $2$ 是 $10$ ✓。</p>
+</div><div class="answer">答案：<p>十边形；十五边形；内角和 $1800^\circ$。</p>
+</div></div>
+<div class="example"><h3>角度计算 · 例2：凹四边形里的"大角"（★★★）</h3><div class="analysis"><p><strong>为什么不去直接凑 $\angle BDC$ 的内角和，而要延长一条线？</strong> 因为 $\angle BDC$ 在 $D$ 点，而已知的三个角分别贴着 $A$、$B$、$C$，彼此不在同一个三角形里，硬凑内角和永远差一块。外角定理正好相反：它专门把&quot;外面的大角&quot;换成&quot;里面两个不相邻角之和&quot;，延长 $BD$ 就把三个角串成一条链。</p>
+<p>第一步，延长 $BD$ 交 $AC$ 于 $E$。</p>
+<p>第二步，在 $\triangle ABE$ 中用外角定理：$E$ 处的外角 $\angle BEC$ 等于两个不相邻内角之和，</p>
+<p>$$\angle BEC=\angle A+\angle ABD=40^\circ+25^\circ=65^\circ .$$</p>
+<p>第三步，在 $\triangle DEC$ 中再用一次外角定理：$D$ 处的外角 $\angle BDC$ 等于</p>
+<p>$$\angle BDC=\angle BEC+\angle ACD=65^\circ+35^\circ=100^\circ .$$</p>
+<p><strong>验算</strong>：把结论写成一般式 $\angle BDC=\angle A+\angle ABD+\angle ACD$，三个角各用一次、没有重复计算；再取特例——若 $\angle ABD=\angle ACD=0$，即 $D$ 退到 $A$ 附近，$\angle BDC\to\angle A$ ✓，与 &quot;$E$ 与 $A$ 重合时两次外角定理退化为一次&quot;相符。</p>
+</div><div class="answer">答案：<p>$\angle BDC=100^\circ$。注意凹四边形在 $D$ 处的内角是这个角的优角，为 $360^\circ-100^\circ=260^\circ$——题目问的是小于 $180^\circ$ 的那个，别答成 $260^\circ$。</p>
+</div></div>
+<div class="example"><h3>角度计算 · 例3：平行线之间的拐点（★★★★）</h3><div class="analysis"><p><strong>为什么一定要过 $E$ 作平行线？</strong> 因为 $40^\circ$ 与 $25^\circ$ 分别贴着两条不同的平行线，它们谁也够不到对方；过 $E$ 作第三条平行线后，每个已知角都能找到一个内错角与它相等，两个角才第一次出现在同一个顶点上。</p>
+<p>第一步，过 $E$ 作 $EF\parallel AB$，则 $EF\parallel CD$。</p>
+<p>第二步，用内错角。$AB\parallel EF$ 时 $\angle AEF=\angle BAE=40^\circ$；$EF\parallel CD$ 时 $\angle CEF=\angle DCE=25^\circ$。</p>
+<p>第三步，$E$ 在两平行线之间时，$EF$ 落在 $\angle AEC$ 内部，所以</p>
+<p>$$\angle AEC=\angle AEF+\angle CEF=40^\circ+25^\circ=65^\circ .$$</p>
+<p>第四步，第二问：$E$ 移到同侧之外后，两条射线 $EA$、$EC$ 都在平行线的同一侧，$EF$ 不再夹在中间，而是落在 $\angle AEC$ 外部。此时</p>
+<p>$$\angle AEC=|\angle AEF-\angle CEF|=|40^\circ-25^\circ|=15^\circ .$$</p>
+<p><strong>验算</strong>：第一问另走一条路——延长 $AE$ 交 $CD$ 于 $G$。由 $AB\parallel CD$ 得内错角 $\angle EGC=\angle BAE=40^\circ$，在 $\triangle ECG$ 中 $\angle AEC$ 是 $E$ 处外角，故 $\angle AEC=\angle EGC+\angle ECG=40^\circ+25^\circ=65^\circ$ ✓，与辅助平行线法一致。第二问同理：$\angle EGC=40^\circ$、$\angle ECG=25^\circ$，此时两者在 $E$ 的同侧，外角定理给出 $\angle AEC=40^\circ-25^\circ=15^\circ$ ✓。</p>
+</div><div class="answer">答案：<p>（1）$65^\circ$；（2）$15^\circ$。</p>
+</div></div>
+<div class="example"><h3>角度计算 · 例4：折叠三角形的一个角（★★★★★）</h3><div class="analysis"><p><strong>为什么盯住 $\angle 1$、$\angle 2$ 这两个&quot;新角&quot;，而不是去追 $A'$ 的位置？</strong> 因为 $A'$ 只要落在形内，位置就被折痕唯一决定，追它等于重新解一遍题；而 $\angle 1$、$\angle 2$ 与折痕角之间各有一个&quot;平角&quot;关系，两式一加，$A'$ 就自动消掉了。</p>
+<p>第一步，写折叠给出的等角。折痕两侧全等，所以</p>
+<p>$$\angle ADE=\angle A'DE,\qquad \angle AED=\angle A'ED .$$</p>
+<p>第二步，在 $D$ 处用平角。$A$、$D$、$B$ 共线，$\angle ADE+\angle A'DE+\angle 1=180^\circ$，于是</p>
+<p>$$\angle 1=180^\circ-2\angle ADE .$$</p>
+<p>同理在 $E$ 处：$\angle 2=180^\circ-2\angle AED$。</p>
+<p>第三步，两式相加：</p>
+<p>$$\angle 1+\angle 2=360^\circ-2(\angle ADE+\angle AED) .$$</p>
+<p>第四步，在 $\triangle ADE$ 中用内角和：$\angle ADE+\angle AED=180^\circ-\angle A$，代入得</p>
+<p>$$\angle 1+\angle 2=360^\circ-2(180^\circ-\angle A)=2\angle A .$$</p>
+<p>第五步，代入 $\angle A=50^\circ$：$\angle 1+\angle 2=100^\circ$。</p>
+<p><strong>验算</strong>：取特殊折法——把 $DE$ 取得使 $\angle ADE=\angle AED=65^\circ$（等腰折），则 $\angle 1=\angle 2=180^\circ-130^\circ=50^\circ$，和是 $100^\circ$ ✓；而 $2\angle A=2\times50^\circ=100^\circ$，两路一致。再用 $\angle A=50^\circ$ 反查：$\angle ADE+\angle AED=130^\circ$ ✓ 与 $180^\circ-50^\circ$ 相符。</p>
+</div><div class="answer">答案：<p>（1）$\angle 1+\angle 2=2\angle A$，证毕；（2）$100^\circ$。</p>
 </div></div>
 <div class="example"><h3>面积比 · 例1：由三块面积反求整体（★★）</h3><div class="analysis"><p>为什么想到这一步？三块已知面积都与 $A$、$E$、$D$ 这条直线有关，先找“同顶点、底共线”的等高对，把面积比换成线段比。</p>
 <p>第一步，$S_{ABE}$ 与 $S_{BDE}$ 共顶点 $B$，底 $AE$、$ED$ 都在直线 $AD$ 上，所以<br />

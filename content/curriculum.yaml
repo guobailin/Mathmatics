@@ -184,6 +184,9 @@ boards:
       term: null
   - name: 几何
     topics:
+    - title: 角度计算
+      content: oge-angle-calculation
+      term: null
     - title: 面积比
       content: oge-area-ratio
       term: null

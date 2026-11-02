@@ -292,6 +292,17 @@
    "title": "三视图求体积"
   }
  ],
+ "三角形外角定理与不相邻内角": [
+  {
+   "example": "例2",
+   "exampleTitle": "例2：凹四边形里的\"大角\"（★★★）",
+   "file": "content/09-奥数-几何/角度计算.md",
+   "id": "oge-angle-calculation",
+   "module": "奥数-几何",
+   "moduleDir": "09-奥数-几何",
+   "title": "角度计算"
+  }
+ ],
  "三角形的特征": [
   {
    "example": "例2",
@@ -3560,6 +3571,17 @@
    "title": "轴对称情况计数"
   }
  ],
+ "多边形内角和与外角和的换算": [
+  {
+   "example": "例1",
+   "exampleTitle": "例1：给内角和、给外角，各求边数（★★）",
+   "file": "content/09-奥数-几何/角度计算.md",
+   "id": "oge-angle-calculation",
+   "module": "奥数-几何",
+   "moduleDir": "09-奥数-几何",
+   "title": "角度计算"
+  }
+ ],
  "多重约束下的分类构造与检验": [
   {
    "example": "例4",
@@ -4659,6 +4681,17 @@
    "title": "相交、垂直与平行"
   }
  ],
+ "平行线拐点的角度拆分": [
+  {
+   "example": "例3",
+   "exampleTitle": "例3：平行线之间的拐点（★★★★）",
+   "file": "content/09-奥数-几何/角度计算.md",
+   "id": "oge-angle-calculation",
+   "module": "奥数-几何",
+   "moduleDir": "09-奥数-几何",
+   "title": "角度计算"
+  }
+ ],
  "平行线间等积变形": [
   {
    "example": "例2",
@@ -5275,6 +5308,17 @@
    "module": "奥数-计算",
    "moduleDir": "06-奥数-计算",
    "title": "范围估算"
+  }
+ ],
+ "折叠与翻折中的等角转化": [
+  {
+   "example": "例4",
+   "exampleTitle": "例4：折叠三角形的一个角（★★★★★）",
+   "file": "content/09-奥数-几何/角度计算.md",
+   "id": "oge-angle-calculation",
+   "module": "奥数-几何",
+   "moduleDir": "09-奥数-几何",
+   "title": "角度计算"
   }
  ],
  "折扣成数计算": [
