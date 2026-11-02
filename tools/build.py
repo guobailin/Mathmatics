@@ -337,6 +337,29 @@ PRINT_CSS = BASE_CSS + """
 """
 
 
+def build_covered_by(kps):
+    """生成「子技能 → 覆盖它的例题」反向索引，供错因溯源与薄弱点定位使用。
+
+    key 为子技能原文（同一子技能可能在多篇出现，故按「知识点 + 子技能」聚合
+    到列表里，不做跨篇合并——同名子技能在不同篇含义未必相同）。
+    """
+    table = {}
+    for k in kps:
+        for ex in k["examples"]:
+            no = ex["title"].split("：", 1)[0]  # "例1：xxx" → "例1"
+            for c in ex["covers"]:
+                table.setdefault(c, []).append({
+                    "id": k["id"], "title": k["title"],
+                    "module": k["module"], "moduleDir": k["moduleDir"],
+                    "file": k["file"],
+                    "example": no, "exampleTitle": ex["title"],
+                })
+    out = DIST_DIR / "covered_by.json"
+    out.write_text(json.dumps(table, ensure_ascii=False, indent=1, sort_keys=True),
+                   encoding="utf-8")
+    return table
+
+
 def build_index(kps):
     idx = []
     for k in kps:
@@ -471,6 +494,7 @@ def main():
 
     os.makedirs(DIST_DIR, exist_ok=True)
     build_index(kps)
+    covered = build_covered_by(kps)
     prints = build_print(kps)
     web = build_web(kps, boards)
     exam_count = build_exam_pages(DIST_DIR / "web", ANSWERS_DIR, HEAD, BASE_CSS)
@@ -479,6 +503,7 @@ def main():
     print(f"📄 打印页 {len(prints)} 个 → dist/print/")
     print(f"🌐 网页版 → {web.relative_to(ROOT)}（真题 {exam_count} 套）")
     print(f"📱 小程序数据包 {len(manifest)} 个 → dist/miniprogram/，已同步到 miniprogram/data/")
+    print(f"🔎 覆盖点反查索引 {len(covered)} 个子技能 → dist/covered_by.json")
 
 
 if __name__ == "__main__":
