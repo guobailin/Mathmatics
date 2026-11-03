@@ -145,17 +145,24 @@ def load_knowledge_points():
         var_text = ""
         if "## 变式与自测" in tail:
             tail, var_text = tail.split("## 变式与自测", 1)
+            if "## 变式与自测" in var_text:
+                errors.append(f"{rel}: '## 变式与自测' 出现多次（重复追加），只应保留一节")
         examples = parse_examples(tail)
         if not examples:
             errors.append(f"{rel}: 没有例题（### 例N 标题）")
+        skills = meta.get("skills") or []
         variants = parse_variants(var_text)
+        if var_text.strip() and len(variants) != 4:
+            warnings.append(f"{rel}: 变式与自测 有 {len(variants)} 道（约定每篇 4 道）")
         for v in variants:
             if not v["problem"]:
                 errors.append(f"{rel} {v['title']}: 缺少 **题目**")
             if not v["answer"]:
                 errors.append(f"{rel} {v['title']}: 缺少 **答案**")
+            for c in v["covers"]:
+                if c not in skills:
+                    errors.append(f"{rel} {v['title']}: 覆盖点 '{c}' 不在 skills 清单中")
 
-        skills = meta.get("skills") or []
         covered = set()
         for ex in examples:
             if not ex["problem"]:
