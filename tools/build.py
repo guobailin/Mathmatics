@@ -41,6 +41,8 @@ KATEX_SRC = ROOT / "assets" / "katex"  # 本地化 KaTeX 运行时（含字体�
 
 REQUIRED_FIELDS = ["id", "title", "module", "grade", "tags", "difficulty", "skills", "related"]
 EXAMPLE_RE = re.compile(r"^###\s*例\d+[^\n]*$", re.M)
+# 变式与自测：### 变式1：… / ### 自测：…
+VARIANT_RE = re.compile(r"^###\s*(?:变式\s*\d+|自测)[^\n]*$", re.M)
 FIELD_RE = re.compile(r"\*\*(题目|覆盖点|解析|答案)\*\*[:：]")
 
 md = MarkdownIt("commonmark", {"html": True, "breaks": True})
@@ -54,8 +56,17 @@ def slug(module_dir: str) -> str:
 
 def parse_examples(text: str):
     """把 '## 例题' 之后的部分解析为例题列表。"""
-    parts = EXAMPLE_RE.split(text)
-    titles = EXAMPLE_RE.findall(text)
+    return _parse_blocks(text, EXAMPLE_RE)
+
+
+def parse_variants(text: str):
+    """解析 '## 变式与自测' 之后的题块（### 变式N / ### 自测）。"""
+    return _parse_blocks(text, VARIANT_RE)
+
+
+def _parse_blocks(text: str, regex):
+    parts = regex.split(text)
+    titles = regex.findall(text)
     examples = []
     for title, body in zip(titles, parts[1:]):
         segs = FIELD_RE.split(body)
@@ -130,9 +141,19 @@ def load_knowledge_points():
             continue
 
         lecture = body.split("## 例题")[0].split("## 讲解", 1)[1].strip()
-        examples = parse_examples(body.split("## 例题", 1)[1])
+        tail = body.split("## 例题", 1)[1]
+        var_text = ""
+        if "## 变式与自测" in tail:
+            tail, var_text = tail.split("## 变式与自测", 1)
+        examples = parse_examples(tail)
         if not examples:
             errors.append(f"{rel}: 没有例题（### 例N 标题）")
+        variants = parse_variants(var_text)
+        for v in variants:
+            if not v["problem"]:
+                errors.append(f"{rel} {v['title']}: 缺少 **题目**")
+            if not v["answer"]:
+                errors.append(f"{rel} {v['title']}: 缺少 **答案**")
 
         skills = meta.get("skills") or []
         covered = set()
@@ -166,6 +187,7 @@ def load_knowledge_points():
             "file": str(rel),
             "lecture": lecture,
             "examples": examples,
+            "variants": variants,
             "updated": file_updated(str(rel)),
         })
 
@@ -273,21 +295,33 @@ def render_md(text: str) -> str:
     return md.render(text)
 
 
+def _item_block(ex, for_print=False, cls="example"):
+    covers = "、".join(ex["covers"])
+    head = f'<h3>{ex["title"]}'
+    if covers:
+        head += f'<span class="covers">覆盖点：{covers}</span>'
+    head += "</h3>"
+    out = [f'<div class="{cls}">{head}',
+           f'<div class="problem">{render_md(ex["problem"])}</div>']
+    if for_print:
+        out.append('<div class="answer-ref">（解析与答案见页末答案区）</div>')
+    else:
+        out.append('<details><summary>查看解析与答案</summary>'
+                   f'<div class="analysis">{render_md(ex["analysis"])}</div>'
+                   f'<div class="answer">答案：{render_md(ex["answer"])}</div></details>')
+    out.append("</div>")
+    return "".join(out)
+
+
 def kp_to_html(k, for_print=False):
     parts = [render_md(k["lecture"])]
     parts.append('<h2 class="ex-h">例题</h2>')
     for ex in k["examples"]:
-        covers = "、".join(ex["covers"])
-        parts.append(f'<div class="example"><h3>{ex["title"]}'
-                     f'<span class="covers">覆盖点：{covers}</span></h3>'
-                     f'<div class="problem">{render_md(ex["problem"])}</div>')
-        if for_print:
-            parts.append(f'<div class="answer-ref">（解析与答案见页末答案区）</div>')
-        else:
-            parts.append(f'<details><summary>查看解析与答案</summary>'
-                         f'<div class="analysis">{render_md(ex["analysis"])}</div>'
-                         f'<div class="answer">答案：{render_md(ex["answer"])}</div></details>')
-        parts.append('</div>')
+        parts.append(_item_block(ex, for_print))
+    if k.get("variants"):
+        parts.append('<h2 class="ex-h">变式与自测</h2>')
+        for v in k["variants"]:
+            parts.append(_item_block(v, for_print, cls="example variant"))
     return fix_asset_urls("\n".join(parts))
 
 
@@ -297,6 +331,10 @@ def answers_to_html(k):
         parts.append(f'<div class="example"><h3>{k["title"]} · {ex["title"]}</h3>'
                      f'<div class="analysis">{render_md(ex["analysis"])}</div>'
                      f'<div class="answer">答案：{render_md(ex["answer"])}</div></div>')
+    for v in k.get("variants") or []:
+        parts.append(f'<div class="example"><h3>{k["title"]} · {v["title"]}</h3>'
+                     f'<div class="analysis">{render_md(v["analysis"])}</div>'
+                     f'<div class="answer">答案：{render_md(v["answer"])}</div></div>')
     return fix_asset_urls("\n".join(parts))
 
 
@@ -368,6 +406,7 @@ def build_index(kps):
             " ".join(k["skills"] or []),
             k["lecture"],
             " ".join(ex["problem"] for ex in k["examples"]),
+            " ".join(v["problem"] for v in k.get("variants") or []),
         ])
         idx.append({
             "id": k["id"], "title": k["title"], "module": k["module"],
@@ -448,6 +487,7 @@ def build_miniprogram(kps):
             "skills": k["skills"], "related": k["related"],
             "lecture": k["lecture"],
             "examples": k["examples"],
+            "variants": k.get("variants") or [],
         })
     manifest = []
     for s, items in sorted(by_module.items()):
@@ -488,7 +528,10 @@ def main():
         for e in errors:
             print(f"   {e}")
         sys.exit(1)
-    print(f"✅ 校验通过：{len(kps)} 个知识点，{sum(len(k['examples']) for k in kps)} 道例题")
+    n_var = sum(len(k.get("variants") or []) for k in kps)
+    n_kp_var = sum(1 for k in kps if k.get("variants"))
+    print(f"✅ 校验通过：{len(kps)} 个知识点，{sum(len(k['examples']) for k in kps)} 道例题"
+          + (f"，{n_kp_var} 篇共 {n_var} 道变式/自测" if n_var else ""))
     if args.check:
         return
 
