@@ -481,7 +481,7 @@ window.addEventListener('load', function(){
 
     if "--pdf" in sys.argv:
         pdf = os.path.join(BUILD_DIR, "cards.pdf")
-        chrome = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+        chrome = shutil.which("google-chrome") or shutil.which("chromium") or shutil.which("chromium-browser") or "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
         cmd = [chrome, "--headless=new", "--disable-gpu", "--no-sandbox",
                "--run-all-compositor-stages-before-draw",
                "--virtual-time-budget=8000",
