@@ -52,7 +52,8 @@
 
 - 已核对课程大纲 ID 数、正文 Markdown 文件数、卡片 JSON 数量及卡片 ID 与课程大纲的匹配关系。
 - 未逐张验证 107 条卡片中的每条数学公式、条件和图示是否正确。
-- 已在 GitHub Actions 中运行 Chrome headless 溢出检查：未发现溢出卡片。\n- 已生成并发布 `cards/cards.pdf`；实际纸张打印与双面套准仍未做实体打印测试。
+- 已在 GitHub Actions 中运行 Chrome headless 溢出检查：未发现溢出卡片。
+- 已生成并发布 `cards/cards.pdf`；实际纸张打印与双面套准仍未做实体打印测试。
 
 
 ## 5. 自动构建与渲染实测（2026-11-04）
