@@ -15,6 +15,7 @@ import html as _html
 import json
 import os
 import re
+import shutil
 import subprocess
 import sys
 
@@ -469,7 +470,7 @@ window.addEventListener('load', function(){
         open(chk, "w", encoding="utf-8").write(
             HTML_TPL.format(title="check", css=CSS, pages=body).replace(
                 "</body>", js + "</body>"))
-        chrome = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+        chrome = shutil.which("google-chrome") or shutil.which("chromium") or shutil.which("chromium-browser") or "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
         r = subprocess.run([chrome, "--headless=new", "--disable-gpu", "--no-sandbox",
                             "--virtual-time-budget=12000", "--dump-dom",
                             "file://" + chk],
