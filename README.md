@@ -4,7 +4,7 @@
 
 ## 目录
 
-- `DESIGN.md` — 总体设计方案
+- `DESIGN.md` — 总体设计方案\n- `QUALITY_AUDIT.md` — 数学与教学质量审查报告\n- `AUDIT_REGISTER.csv` — 248 个知识点逐项审查台账\n- `CURRICULUM_COVERAGE.md` — 课程覆盖矩阵\n- `CARD_AUDIT.md` — 速查卡质量审查
 - `content/` — 唯一数据源：知识点 Markdown（YAML 元数据 + 讲解 + 例题）+ `curriculum.yaml` 课程大纲
 - `templates/` — 新知识点模板
 - `tools/build.py` — 构建工具：校验覆盖矩阵 → 索引 → 打印页 → 网页版 → 小程序数据
@@ -41,7 +41,7 @@ python3 tools/build.py
 
 ## 部署（GitHub Pages）
 
-网页版与打印页已部署，改内容后一键更新：
+网页版、打印页与奥数速查卡由 GitHub Actions 自动构建部署；修改内容后推送到 main 会自动刷新。
 
 ```bash
 bash tools/deploy_gh_pages.sh               # 构建 + 部署（约 1 分钟生效）
@@ -49,6 +49,6 @@ bash tools/deploy_gh_pages.sh --skip-build  # dist/ 已是最新时只部署
 ```
 
 - 网页版（知识地图）：https://guobailin.github.io/Mathmatics/
-- 打印页：https://guobailin.github.io/Mathmatics/print/m01.html（m01–m11 共 11 个模块）
+- 奥数速查卡：https://guobailin.github.io/Mathmatics/cards/\n- 打印页：https://guobailin.github.io/Mathmatics/print/m01.html（m01–m12 共 12 个模块）
 - 公式库 KaTeX 已本地化到 `assets/katex/`（构建时自动拷入 `dist/web` 与 `dist/print`），三端均不依赖外网 CDN
 - 脚本会自动选择带 `pyyaml` + `markdown-it-py` 的 Python；也可 `PYTHON=/path/to/python3 bash tools/deploy_gh_pages.sh` 指定解释器
