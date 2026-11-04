@@ -35,7 +35,7 @@
 
 - 当前规格：单卡 13cm×9cm；建议 13–16 行，最多 4 个 sec、11 条 li，每条 li 不超过 42 字。
 - 目前静态统计不能代替浏览器实际溢出检查。
-- `render.py --check` 使用 macOS Chrome 绝对路径，在 Ubuntu CI 环境不能直接运行；本次自动部署只生成 HTML，不声称完成溢出检查或 PDF 输出。
+- `render.py` 已改为兼容 PATH 中的 Chrome/Chromium；GitHub Actions 已实际运行 `python tools/cards/render.py --check --pdf`。本轮检查结果为“溢出卡片：无”，并成功生成 PDF。
 
 ## 3. 卡片类型规范
 
@@ -52,4 +52,15 @@
 
 - 已核对课程大纲 ID 数、正文 Markdown 文件数、卡片 JSON 数量及卡片 ID 与课程大纲的匹配关系。
 - 未逐张验证 107 条卡片中的每条数学公式、条件和图示是否正确。
-- 未运行 Chrome 溢出检查；未生成 PDF；未声称完成实际纸张打印测试。
+- 已在 GitHub Actions 中运行 Chrome headless 溢出检查：未发现溢出卡片。\n- 已生成并发布 `cards/cards.pdf`；实际纸张打印与双面套准仍未做实体打印测试。
+
+
+## 5. 自动构建与渲染实测（2026-11-04）
+
+- 构建校验通过：248 个知识点、775 道例题、106 篇含变式/自测共 424 道。
+- 打印页生成：12 个模块。
+- 卡片渲染：107 条卡片记录 → 56 张正反面配对卡 → 14 张 A4（正反）纸。
+- Chrome headless 检查：`溢出卡片：无`。
+- PDF 已生成：`cards/cards.pdf`，构建日志记录文件大小 2,719,840 bytes。
+- 线上入口：`https://guobailin.github.io/Mathmatics/cards/`；PDF：`https://guobailin.github.io/Mathmatics/cards/cards.pdf`。
+- 限制：无溢出只证明当前浏览器渲染尺寸未超出卡框，不等于字体在所有系统完全一致，也不等于已完成实体打印、裁切或双面套准验证。
