@@ -1,0 +1,52 @@
+name: Build and deploy Mathmatics Pages
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'content/**'
+      - 'tools/**'
+      - 'assets/**'
+      - 'exam/**'
+      - '.github/workflows/deploy-pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathmatics-pages
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install build dependencies
+        run: python -m pip install --upgrade pyyaml markdown-it-py
+      - name: Build knowledge pages and mini-program data
+        run: python tools/build.py
+      - name: Render printable cards
+        run: python tools/cards/render.py
+      - name: Assemble Pages site
+        run: |
+          mkdir -p site/print site/cards
+          cp -a dist/web/. site/
+          cp -a dist/print/. site/print/
+          cp tools/cards/build/cards.html site/cards/index.html
+          cat > site/cards/README.txt <<'EOF'
+          Mathmatics printable knowledge cards.
+          Open index.html in a browser. Use A4 landscape, no margins, 100% scale, disable headers/footers.
+          EOF
+      - name: Publish to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./site
+          force_orphan: true
