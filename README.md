@@ -53,7 +53,7 @@ bash tools/deploy_gh_pages.sh --skip-build  # dist/ 已是最新时只部署
 ```
 
 - 网页版（知识地图）：https://guobailin.github.io/Mathmatics/
-- 奥数速查卡：https://guobailin.github.io/Mathmatics/cards/
+- 奥数速查卡：https://guobailin.github.io/Mathmatics/cards/\n- 速查卡 PDF：https://guobailin.github.io/Mathmatics/cards/cards.pdf
 - 打印页：https://guobailin.github.io/Mathmatics/print/m01.html（m01–m12 共 12 个模块）
 - 公式库 KaTeX 已本地化到 `assets/katex/`（构建时自动拷入 `dist/web` 与 `dist/print`），三端均不依赖外网 CDN
 - 脚本会自动选择带 `pyyaml` + `markdown-it-py` 的 Python；也可 `PYTHON=/path/to/python3 bash tools/deploy_gh_pages.sh` 指定解释器
