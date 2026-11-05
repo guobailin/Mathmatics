@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>幻方知识卡｜18×12cm</title>
+<style>
+@page{size:18cm 12cm;margin:0}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:#e9edf1;color:#243443;font-family:"PingFang SC","Microsoft YaHei",sans-serif}
+.card{width:18cm;height:12cm;margin:16px auto;padding:.38cm;background:#f4f7fa;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:.76cm 1fr .46cm;gap:.15cm .25cm;overflow:hidden;box-shadow:0 3px 16px #0002}
+header{grid-column:1/3;background:#18324b;color:#fff;border-radius:6px;display:flex;align-items:center;justify-content:space-between;padding:0 .3cm}
+h1{font-size:17pt;margin:0}.sub{font-size:7.5pt}
+.col{min-width:0;display:flex;flex-direction:column;gap:.13cm}
+section{background:#fff;border:1px solid #d8e1e8;border-radius:5px;padding:.14cm .18cm;min-height:0}
+h2{font-size:8.6pt;margin:0 0 .08cm;padding:.055cm .1cm;background:#dceaf5;color:#18324b;border-radius:3px}
+h2.gold{background:#f4e5b8}h2.green{background:#ddeee5}
+p{font-size:6.8pt;line-height:1.27;margin:.035cm 0}
+b{color:#18324b}
+.formula{text-align:center;background:#f4f7fa;border-radius:3px;padding:.045cm;margin:.05cm 0;font-size:7pt}
+.demo{display:flex;align-items:center;gap:.2cm;margin-top:.06cm}
+table{border-collapse:collapse;flex:none}
+td{border:1px solid #9aaab7;background:#fbfcfd;text-align:center;vertical-align:middle;width:.36cm;height:.29cm;font-size:7pt;font-weight:600}
+td.center{background:#f4e5b8}
+.note{font-size:6.3pt;line-height:1.25}
+footer{grid-column:1/3;background:#18324b;color:#fff;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:8pt;font-weight:600}
+@media print{html,body{background:#fff}.card{margin:0;box-shadow:none}}
+@media screen and (max-width:700px){body{overflow-x:auto}.card{margin:8px}}
+</style>
+</head>
+<body>
+<main class="card">
+<header><h1>幻方知识卡</h1><div class="sub">规律 · 技巧 · 例5解题路径　｜　18 × 12 cm</div></header>
+<div class="col">
+<section>
+<h2>一、三阶幻方的核心规律</h2>
+<p>① <b>幻和：</b>每行、每列、两条对角线的和相等。</p>
+<p>② <b>中心对称：</b>经过中心的相对两格之和相等，都等于中心数的2倍。</p>
+<div class="formula"><b>a+d = b+c = e+f = g+h = 2m</b></div>
+<p>③ <b>1～9标准三阶幻方：</b>中心是5；相对两数和为10；四角为偶数，边中为奇数。</p>
+<div class="demo"><table aria-label="三阶幻方"><tr><td>8</td><td>1</td><td>6</td></tr><tr><td>3</td><td class="center">5</td><td>7</td></tr><tr><td>4</td><td>9</td><td>2</td></tr></table><div class="note">每行、每列、每条对角线之和均为15；中心两侧相对数之和为10。<br>注：奇偶与中心数性质仅适用于1～9标准三阶幻方。</div></div>
+</section>
+<section style="flex:1">
+<h2>二、常用解题技巧</h2>
+<p>① <b>对称法：</b>先找中心格，再配对中心两侧的数。</p>
+<p>② <b>罗伯法（暹罗法）：</b>用于构造奇数阶标准幻方。1放第一行正中；之后每次向右上斜移一格。越过上边界从下边进入，越过右边界从左边进入；若目标格已占用，则从当前位置向下移一格。</p>
+<p>③ <b>比较法：</b>比较两条等和算式，消去相同项（公共格），留下不同项建立关系。</p>
+</section>
+</div>
+<div class="col">
+<section>
+<h2 class="green">三、三阶幻方中特定位置的数值关系</h2>
+<p>按教材图示位置：<b>a在左中、b在上中、c在右下</b>，可得：</p>
+<div class="formula"><b>a + b = 2c</b></div>
+<p>利用等和关系相减，消去两条算式中的公共格，得到这类位置关系。a、b、c必须处于图示位置，并非任意三个数都满足。</p>
+</section>
+<section style="flex:1">
+<h2 class="gold">四、例5：5×5等和方格怎么做</h2>
+<p><b>① 找完整线：</b>主对角线已知，2+7+8+2+7=26，确定每行、每列及两条对角线的目标和为26。</p>
+<p><b>② 行中求数：</b>第二行末格=26−(3+7+8+2)=<b>6</b>；第三行首格=26−(3+8+4+6)=<b>5</b>；第四行中格=26−(8+4+2+3)=<b>9</b>。</p>
+<p><b>③ 列中求数：</b>第一列末格=<b>8</b>；第五行第二格=<b>3</b>；第四列首格=<b>10</b>。</p>
+<p><b>④ 收尾：</b>第一行末格=<b>4</b>；检查每行、每列和两条对角线是否都为26。</p>
+<div class="formula"><table aria-label="例5答案"><tr><td>2</td><td>9</td><td>1</td><td>10</td><td>4</td></tr><tr><td>3</td><td>7</td><td>8</td><td>2</td><td>6</td></tr><tr><td>5</td><td>3</td><td>8</td><td>4</td><td>6</td></tr><tr><td>8</td><td>4</td><td>9</td><td>2</td><td>3</td></tr><tr><td>8</td><td>3</td><td>0</td><td>8</td><td>7</td></tr></table></div>
+</section>
+</div>
+<footer>解题口诀：先找完整线，确定目标和；行列交叉算，最后验对角。</footer>
+</main>
+</body>
+</html>
