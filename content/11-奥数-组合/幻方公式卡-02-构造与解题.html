@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>幻方公式卡 02｜构造与解题</title>
+<style>
+@page{size:18cm 12cm;margin:0}*{box-sizing:border-box}body{margin:0;background:#e9edf1;color:#243443;font-family:"PingFang SC","Microsoft YaHei",sans-serif}.card{width:18cm;height:12cm;margin:12px auto;padding:.38cm;background:#f5f8fa;display:grid;grid-template-rows:.8cm 1fr .42cm;gap:.16cm;box-shadow:0 3px 14px #0002}header,footer{background:#18324b;color:white;border-radius:6px;display:flex;align-items:center;justify-content:space-between;padding:0 .28cm}h1{font-size:16pt;margin:0}.tag{font-size:7.5pt}.body{display:grid;grid-template-columns:1fr 1fr;gap:.2cm;min-height:0}.col{display:flex;flex-direction:column;gap:.14cm;min-height:0}section{background:white;border:1px solid #d9e2e9;border-radius:5px;padding:.13cm .17cm}h2{font-size:8.7pt;color:#18324b;background:#dceaf5;border-radius:3px;margin:0 0 .07cm;padding:.05cm .1cm}p,li{font-size:6.9pt;line-height:1.25;margin:.03cm 0}ul,ol{margin:.04cm 0;padding-left:.42cm}.formula{font-size:8.6pt;text-align:center;background:#f2f6f9;border-radius:4px;padding:.06cm;margin:.05cm 0;color:#18324b}.small{font-size:6.2pt;color:#5b6b78}footer{justify-content:center;font-size:8pt;font-weight:bold}@media print{body{background:white}.card{margin:0;box-shadow:none}}@media(max-width:700px){body{overflow-x:auto}.card{margin:8px}}
+</style></head><body><main class="card">
+<header><h1>幻方公式卡 02｜构造与解题</h1><span class="tag">方法 · 阶数分类 · 验证</span></header>
+<div class="body">
+<div class="col">
+<section><h2>1. 三阶幻方五种解题工具</h2><p><b>① 先定幻和：</b>全部数字总和 T ÷ 阶数 n，得每行目标和 M。</p><p><b>② 中心对称：</b>三阶中心 m=M/3；相对两格和为2m。</p><p><b>③ 奇偶排除：</b>仅 1～9 标准三阶幻方适用：角偶、边中奇、中心5。</p><p><b>④ 列方程：</b>把行、列、对角线的等和条件写成方程，逐步消元。</p><p><b>⑤ 穷举排除：</b>先配互补数对，再排列角与边；利用旋转、镜像减少重复情况。</p></section>
+<section style="flex:1"><h2>2. 三阶特定位置关系</h2><p>若字母位置与教材示意图一致（a 在左中、b 在上中、c 在右下），可由两条等和式相减，消去公共格，得到：</p><div class="formula"><b>a + b = 2c</b></div><p class="small">这是指定位置关系，不是任意三个格子都成立。使用前先核对图中 a、b、c 的位置。</p><p><b>角格平均数：</b>角格等于与它既不同行、也不同列的两个边中格的平均数。例如示例中 8=(7+9)/2。</p></section>
+</div>
+<div class="col">
+<section><h2>3. 不同阶数的标准幻方</h2><p><b>一阶：</b>单格，数字本身就是幻和。</p><p><b>二阶：</b>不存在由四个互不相同数字组成的标准二阶幻方。因为 a+b=a+c 会推出 b=c。</p><p><b>三阶：</b>中心与对称规律最丰富；1～9 的中心为5、幻和15。</p><p><b>奇数阶（3、5、7…）：</b>可用暹罗法（罗伯法）。</p><p><b>双偶数阶（4、8、12…）：</b>可用互补数法。</p><p><b>单偶数阶（6、10、14…）：</b>需用分区交换等构造方法。</p><p class="small">除二阶外，任意阶数均存在使用 1～n² 的标准幻方。</p></section>
+<section style="flex:1"><h2>4. 两类经典构造公式</h2><p><b>奇数阶暹罗法：</b></p><ol><li>1 放在第一行正中；</li><li>后续数字向右上移动一格，越界则从对边绕回；</li><li>若目标格已占用，则从当前位置向下移一格。</li></ol><p><b>四阶互补数法：</b>先按顺序填入1～16，再将两条对角线上的数 x 换成17−x，得到幻和34。</p><div class="formula"><b>1+16 = 2+15 = … = 17</b></div></section>
+<section><h2>5. 六步检查清单</h2><div class="formula"><b>算总和 → 求幻和 → 找中心 → 配互补 → 列方程 → 全面验证</b></div><p>最后必须检查：每个指定数字恰好使用一次；所有行、列、两条主对角线的和相等。只满足行列还不够。</p></section>
+</div>
+</div><footer>幻方不是猜数字：用总和定目标，用对称和方程逐步缩小解空间。</footer>
+</main></body></html>
