@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>幻方公式卡 01｜核心规律</title>
+<style>
+@page{size:18cm 12cm;margin:0}*{box-sizing:border-box}body{margin:0;background:#e9edf1;color:#243443;font-family:"PingFang SC","Microsoft YaHei",sans-serif}.card{width:18cm;height:12cm;margin:12px auto;padding:.38cm;background:#f5f8fa;display:grid;grid-template-rows:.8cm 1fr .42cm;gap:.16cm;box-shadow:0 3px 14px #0002}header,footer{background:#18324b;color:white;border-radius:6px;display:flex;align-items:center;justify-content:space-between;padding:0 .28cm}h1{font-size:16pt;margin:0}.tag{font-size:7.5pt}.body{display:grid;grid-template-columns:1fr 1fr;gap:.2cm;min-height:0}.col{display:flex;flex-direction:column;gap:.14cm;min-height:0}section{background:white;border:1px solid #d9e2e9;border-radius:5px;padding:.13cm .17cm}h2{font-size:8.7pt;color:#18324b;background:#dceaf5;border-radius:3px;margin:0 0 .07cm;padding:.05cm .1cm}p{font-size:7pt;line-height:1.27;margin:.035cm 0}.formula{font-size:9pt;text-align:center;background:#f2f6f9;border-radius:4px;padding:.07cm;margin:.06cm 0;color:#18324b}.small{font-size:6.3pt;color:#5b6b78}.example{display:flex;gap:.2cm;align-items:center}table{border-collapse:collapse}td{width:.38cm;height:.31cm;text-align:center;border:1px solid #9aabb8;background:#fbfcfd;font-size:7pt;font-weight:bold}td.mid{background:#f4e5b8}.pill{display:inline-block;background:#eef3f7;border-radius:3px;padding:.02cm .07cm;font-size:6.6pt}footer{justify-content:center;font-size:8pt;font-weight:bold}@media print{body{background:white}.card{margin:0;box-shadow:none}}@media(max-width:700px){body{overflow-x:auto}.card{margin:8px}}
+</style></head><body><main class="card">
+<header><h1>幻方公式卡 01｜核心规律</h1><span class="tag">定义 · 幻和 · 中心 · 对称</span></header>
+<div class="body">
+<div class="col">
+<section><h2>1. 幻方与幻和</h2><p>把互不重复的数填入 n×n 方格，使每行、每列、两条主对角线的和都相等；这个公共和叫<strong>幻和 M</strong>。</p><p>若填入连续整数 1,2,…,n²：</p><div class="formula"><b>M = n(n² + 1) / 2</b></div><p>推导：总和 T = n²(n²+1)/2；又 n 行合计为 nM，因此 nM=T。</p><p class="small">例：三阶 M=15；四阶 M=34；五阶 M=65；六阶 M=111；七阶 M=175。</p></section>
+<section style="flex:1"><h2>2. 三阶中心数：重数法</h2><p>三阶中行、中列、两条对角线共四条线，每条和为 M。合计时九个数各算一次，中心 c 被算四次，即多算三次：</p><div class="formula"><b>4M = T + 3c</b></div><p>而 T=3M，所以：</p><div class="formula"><b>M = 3c　　c = M/3</b></div><p>对 1～9：T=45，M=15，中心 c=5（也是九个数的平均数）。</p></section>
+</div>
+<div class="col">
+<section><h2>3. 中心对称互补</h2><p>三阶幻方中，中心两侧的相对两格与中心在同一直线上：</p><div class="formula"><b>x + c + y = M</b><br><b>x + y = M − c = 2c</b></div><p>因此：</p><div class="formula"><b>a+i = b+h = c+g = d+f = 2m</b></div><p>标准 1～9 三阶幻方中 m=5，所以四组相对数之和均为10。</p><div class="example"><table><tr><td>8</td><td>1</td><td>6</td></tr><tr><td>3</td><td class="mid">5</td><td>7</td></tr><tr><td>4</td><td>9</td><td>2</td></tr></table><p class="small">例如 8+2=10，1+9=10，6+4=10，3+7=10。</p></div></section>
+<section style="flex:1"><h2>4. 奇偶、对称与线性变换</h2><p><b>奇偶性：</b>1～9标准三阶幻方中，中心5；四角为偶数；四边中格为奇数。此结论不能推广到任意数字集合。</p><p><b>旋转与镜像：</b>一个三阶基本幻方可旋转、翻转得到8种方向形式（正方形的 D₄ 对称）。</p><p><b>仿射变换：</b>若每格 x 变为 x′=ax+b，则每条三格线的新和为：</p><div class="formula"><b>M′ = aM + 3b</b></div><p class="small">标准 1～9 幻方 M=15，因此 M′=15a+3b。要求 a≠0 才保持数字互不相同。</p></section>
+</div>
+</div><footer>先求幻和，再看中心；相对两格互补，等于中心数的 2 倍。</footer>
+</main></body></html>
