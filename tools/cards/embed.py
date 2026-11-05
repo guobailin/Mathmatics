@@ -21,6 +21,17 @@ CARD_DIR = os.path.join(HERE, "content")
 MARK = "<!-- card:auto -->"
 END_HINT = "<!-- /card:auto -->"
 
+# 这几篇的 md「速查卡」是手工加详版：含卡片 16 行容量放不下的结论
+# （如外角和恒为 360°、平行线拐点相加减的完整表述）。
+# 回写会把它覆盖成卡片精简版，属内容降级，故整篇跳过。
+# 要解除：先把它独有的结论补进对应 JSON，再从下表删掉。
+MANUAL_MD = {
+    "oge-angle-calculation": "角度计算",
+    "oge-swallow-tail": "燕尾模型",
+    "oge-area-comprehensive": "面积综合",
+    "oge-bird-head": "鸟头模型",
+}
+
 sys.path.insert(0, HERE)
 import render  # noqa: E402  复用模块顺序、配色、badge 规则
 
@@ -143,8 +154,11 @@ def main():
     for f in sorted(glob.glob(os.path.join(CARD_DIR, "*.json"))):
         items += json.load(open(f, encoding="utf-8"))["items"]
 
-    done, no_md, no_ex = [], [], []
+    done, no_md, no_ex, kept = [], [], [], []
     for it in items:
+        if it["id"] in MANUAL_MD:
+            kept.append((it["id"], it["title"]))
+            continue
         p = idx.get(it["id"])
         if not p:
             no_md.append((it["id"], it["title"]))
@@ -159,8 +173,11 @@ def main():
             open(p, "w", encoding="utf-8").write(new)
         done.append((it["id"], it["title"], p))
 
-    print("知识点 %d 个：写入 %d，无 md %d，无「## 例题」%d%s"
-          % (len(items), len(done), len(no_md), len(no_ex), "（干跑）" if dry else ""))
+    print("知识点 %d 个：写入 %d，手工保留 %d，无 md %d，无「## 例题」%d%s"
+          % (len(items), len(done), len(kept), len(no_md), len(no_ex),
+             "（干跑）" if dry else ""))
+    if kept:
+        print("  手工保留:", "、".join(t for _, t in kept))
     for x in no_md:
         print("  无 md :", x[0], x[1])
     for x in no_ex:
