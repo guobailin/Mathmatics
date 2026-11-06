@@ -157,7 +157,7 @@
         },
         {
           "t": "fx",
-          "v": "\\text{互质数之和}=\\frac{N\\varphi(N)}{2}"
+          "v": "\\text{互质数之和}=\\frac{N\\varphi(N)}{2}\\quad(N>2)"
         },
         {
           "t": "li",
