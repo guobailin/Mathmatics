@@ -1,0 +1,720 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2024 IHC D-6 · 真题解答</title>
+<link rel="stylesheet" href="../katex/katex.min.css">
+<script defer src="../katex/katex.min.js"></script>
+<script defer src="../katex/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+<style>
+body{font-family:-apple-system,"PingFang SC","Source Han Serif SC",serif;
+max-width:760px;margin:0 auto;padding:24px;line-height:1.8;color:#222}
+h1{border-bottom:2px solid #333;padding-bottom:8px}
+h2{margin-top:1.6em}h3{font-size:1.05em}
+.meta{color:#666;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.example{border:1px solid #ddd;border-radius:8px;padding:12px 16px;margin:14px 0}
+.example h3{margin:.2em 0 .6em}
+.covers{font-size:.75em;color:#888;font-weight:normal;margin-left:1em}
+.problem{background:#f7f7f9;border-radius:6px;padding:8px 12px}
+details{margin-top:.6em}summary{cursor:pointer;color:#36c}
+.answer{color:#b30;font-weight:bold}
+img{max-width:100%;height:auto}
+
+body{max-width:920px;margin:0 auto;padding:26px 22px 64px;background:#fffdf8;
+font-family:-apple-system,"PingFang SC","Source Han Serif SC",serif;line-height:1.85;color:#222}
+.exam-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;
+flex-wrap:wrap;font-size:12px;color:#5f6a64;margin-bottom:22px}
+.exam-nav a{color:#2f6f6b;text-decoration:none;font-weight:600}
+.exam-nav a:hover{text-decoration:underline}
+.exam-kicker{font-size:10.5px;letter-spacing:.16em;color:#2f6f6b;font-weight:700;margin-bottom:4px}
+.exam-body h1{font-size:25px;line-height:1.3;margin:0 0 18px;padding-bottom:12px;border-bottom:2px solid #2f6f6b}
+.exam-body h2{font-size:19px;margin:30px 0 12px;color:#1f2a26}
+.exam-body h3{font-size:15px;margin:24px 0 8px;color:#2f6f6b}
+.exam-body table{width:100%;border-collapse:collapse;margin:14px 0;font-size:12.5px}
+.exam-body th,.exam-body td{border:1px solid #ddd6c8;padding:6px 8px;text-align:left;vertical-align:top}
+.exam-body th{background:#f4efe3;font-weight:700}
+.exam-body blockquote{margin:14px 0;padding:8px 14px;border-left:3px solid #2f6f6b;background:#f7f4ec;color:#4d5651}
+.exam-body code{background:#f1ece1;padding:1px 5px;border-radius:4px;font-size:.9em}
+.exam-body img{max-width:100%;height:auto;display:block;margin:16px auto}
+.exam-body hr{border:0;border-top:1px solid #e4ddcf;margin:22px 0}
+.exam-foot{margin-top:40px;padding-top:16px;border-top:1px solid #e4ddcf;font-size:12px;color:#8a928d}
+.exam-index-head{max-width:920px;margin:0 auto 20px}
+.exam-index-head h1{font-size:28px;margin:0 0 8px}
+.exam-index-head p{margin:0;color:#5f6a64;font-size:13px}
+.exam-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:18px 0 28px}
+.exam-grid a{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:12px 13px;
+border:1px solid #ddd6c8;border-radius:12px;background:#fffdf8;color:#1f2a26;text-decoration:none}
+.exam-grid a:hover{border-color:#2f6f6b}
+.exam-grid b{font-size:12px}.exam-grid span{font-size:10px;color:#5f6a64;white-space:nowrap}
+.exam-table{width:100%;border-collapse:collapse;font-size:12.5px}
+.exam-table th,.exam-table td{border:1px solid #ddd6c8;padding:6px 8px;text-align:left}
+.exam-table th{background:#f4efe3}
+@media(max-width:720px){.exam-grid{grid-template-columns:repeat(2,minmax(0,1fr))}body{padding:18px 15px 50px}}
+@media print{.exam-nav,.exam-foot{display:none}body{max-width:none;padding:0}.exam-grid{display:none}}
+</style></head><body><div class="exam-nav"><a href="../index.html">← 知识地图</a><span><a href="index.html">全部真题</a></span></div><div class="exam-kicker">竞赛真题 · 六年级 · 25 题</div><article class="exam-body"><h1>2024 IHC D-6 中文卷 全卷解答</h1>
+<blockquote>
+<p>来源：<code>exam/2024 IHC D-6发布版.pdf</code>（共 6 页；第 6 页为原卷答案表，本卷所有答案均已与该答案表逐题核对一致）<br />
+逐页图：<code>exam/_rendered/2024 IHC D-6发布版/page-01.png … page-06.png</code>（图形题以页面图为准）</p>
+</blockquote>
+<h2>试卷概览</h2>
+<ul>
+<li><strong>题量</strong>：25 题（全部为填空/选择，第 20 题为四选一选择题）。</li>
+<li><strong>难度分布</strong>（★1–★7）：★1 共 1 题（1）；★2 共 4 题（2、4、9、21）；★3 共 11 题（3、5、6、8、11、12、14、19、20、23、24）；★4 共 7 题（13、15、16、17、18、22、25）；★5 共 2 题（7、10）。</li>
+<li><strong>板块分布</strong>：
+<ul>
+<li>计算与数论：1、2、3、11、17、20、24</li>
+<li>计数与组合：6、9、14、18、19、21、22</li>
+<li>几何（面积比、立体、滚动、格点、割补）：7、10、12、13、16、25</li>
+<li>行程（队伍/相遇）：15</li>
+<li>应用题（浓度、百分数、投票、时钟）：5、8、23</li>
+</ul>
+</li>
+<li><strong>特点</strong>：题量 25 题、时间紧；计算量都不大，关键是&quot;看懂模型、选对方法&quot;；后段（7、10、13、18、25）拉分明显。</li>
+</ul>
+<h2>逐题解答</h2>
+<h3>第 1 题</h3>
+<p><strong>题目</strong>：将 $\dfrac{1843}{4559}$ 化为最简分数，$\dfrac{1843}{4559}=$ ________。</p>
+<p><strong>答案</strong>：$\dfrac{19}{47}$</p>
+<p><strong>解析</strong>：用辗转相除求最大公因数：<br />
+$4559-2\times1843=873$；$1843-2\times873=97$；$873=9\times97$，所以 $\gcd(1843,4559)=97$。<br />
+$1843=97\times19$，$4559=97\times47$，故 $\dfrac{1843}{4559}=\dfrac{19}{47}$。</p>
+<p><strong>验算</strong>：$19\times97=1843$，$47\times97=4559$ ✓；47 是质数且不含 19，已最简 ✓。</p>
+<p><strong>知识点</strong>：分数的基本性质与约分、分解质因数</p>
+<p><strong>思路/方法</strong>：辗转相除（更相减损）求最大公因数再约分</p>
+<p><strong>难度</strong>：★1</p>
+<hr />
+<h3>第 2 题</h3>
+<p><strong>题目</strong>：若正整数 $k\ge 2024$，那么 $2^{2k}-1-3-5-\cdots-2019-2021$ 被 3 除所得的余数是 ________。</p>
+<p><strong>答案</strong>：1</p>
+<p><strong>解析</strong>：</p>
+<ol>
+<li>奇数和：$1+3+5+\cdots+2021$；因为 $2021=2\times1011-1$，所以共 1011 项，和为 $1011^2$。</li>
+<li>$1011=3\times337$，所以 $1011^2$ 能被 3 整除。</li>
+<li>$2^{2k}=4^k$，而 $4\equiv1\pmod 3$，故 $2^{2k}\equiv1\pmod3$。</li>
+<li>所以原式 $\equiv 1-0\equiv 1\pmod 3$，余数是 1。</li>
+</ol>
+<p><strong>验算</strong>：取 $k=2024$，$2^{4048}=4^{2024}\equiv1\pmod3$；$1011^2\equiv0\pmod3$，差余 1 ✓。</p>
+<p><strong>知识点</strong>：带余除法与余数性质、同余初步</p>
+<p><strong>思路/方法</strong>：&quot;和的余数=余数的和&quot;；$n$ 个连续奇数之和 $=n^2$</p>
+<p><strong>难度</strong>：★2</p>
+<hr />
+<h3>第 3 题</h3>
+<p><strong>题目</strong>：黑板上写有 1 到 101 这 101 个自然数，现擦去其中一些数，黑板上至多保留 ________ 个数，才能使黑板上任意两数之和都不能被 5 整除。</p>
+<p><strong>答案</strong>：42</p>
+<p><strong>解析</strong>：按除以 5 的余数分类：</p>
+<ul>
+<li>余 0：5,10,…,100，共 20 个；<strong>至多取 1 个</strong>（两个余 0 的数之和仍是 5 的倍数）；</li>
+<li>余 1：1,6,…,101，共 21 个；余 4：4,9,…,99，共 20 个；<strong>余 1 与余 4 不能同时取</strong>（和余 0），二者取多的一类：21 个；</li>
+<li>余 2：2,7,…,97，共 20 个；余 3：3,8,…,98，共 20 个；<strong>余 2 与余 3 不能同时取</strong>：20 个。<br />
+所以最多保留 $1+21+20=42$ 个（例如取 1 个余 0 数 + 全部余 1 的 21 个 + 全部余 2 的 20 个）。</li>
+</ul>
+<p><strong>验算</strong>：问的是&quot;至多&quot;，构造：{5} ∪ {1,6,…,101} ∪ {2,7,…,97}，共 42 个数；任意两数之和的余数只能是 1、2、3，均不为 0 ✓。</p>
+<p><strong>知识点</strong>：带余除法与余数性质、最值问题</p>
+<p><strong>思路/方法</strong>：按余数分类，互补的两类只能取一类</p>
+<p><strong>难度</strong>：★3</p>
+<hr />
+<h3>第 4 题</h3>
+<p><strong>题目</strong>：$\dfrac{1}{\dfrac{1}{2004}+\dfrac{1}{2005}+\dfrac{1}{2006}+\cdots+\dfrac{1}{2024}}$ 的整数部分是 ________。</p>
+<p><strong>答案</strong>：95</p>
+<p><strong>解析</strong>：分母共 $2024-2004+1=21$ 项。</p>
+<ul>
+<li>上界：每项都大于 $\dfrac1{2024}$ 的平均水平。由&quot;调和平均 ≤ 算术平均&quot;（或把 2004 与 2024、2005 与 2023……成对，利用 $\dfrac1a+\dfrac1b&gt;\dfrac{2}{(a+b)/2}$），分母<br />
+$$S&gt;\frac{21}{2014}&gt;\frac{21}{2016}=\frac1{96},$$<br />
+所以原式 $&lt;96$。</li>
+<li>下界：每项都小于 $\dfrac1{2004}$ 的平均水平（同理），$S&lt;\dfrac{21}{2004}&lt;\dfrac{21}{1995}=\dfrac1{95}$，所以原式 $&gt;95$。<br />
+因此 $95&lt;\text{原式}&lt;96$，整数部分是 95。</li>
+</ul>
+<p><strong>验算</strong>：直接算 $S\approx0.010427$，$1/S\approx95.90$，整数部分 95 ✓。</p>
+<p><strong>知识点</strong>：比较大小与估算、范围估算</p>
+<p><strong>思路/方法</strong>：用&quot;平均&quot;把分母夹在 $\frac{21}{2024}$ 与 $\frac{21}{2004}$ 之间，再取倒数夹出整数部分</p>
+<p><strong>难度</strong>：★2</p>
+<hr />
+<h3>第 5 题</h3>
+<p><strong>题目</strong>：有甲、乙两个杯子，甲杯装有纯酒精，乙杯装有纯水，两杯液体质量都是 12 千克。现从甲杯中取出一定量的纯酒精，倒入乙杯并搅拌均匀，再从乙杯中取出一定量的混合液倒入甲杯，此时两杯液体质量仍然都是 12 千克。若此时甲杯中纯酒精和纯水的质量比为 $5:1$，那么第一次从甲杯中取出的纯酒精是 ________ 千克。</p>
+<p><strong>答案</strong>：2.4</p>
+<p><strong>解析</strong>：设第一次从甲取出 $x$ 千克（第二次也取 $x$ 千克，两杯才都仍是 12 千克）。</p>
+<ol>
+<li>第一次后：甲有酒精 $12-x$；乙有 12 千克水 + $x$ 千克酒精，共 $12+x$ 千克，酒精浓度 $\dfrac{x}{12+x}$。</li>
+<li>第二次从乙取回 $x$ 千克，其中水 $=\dfrac{12x}{12+x}$ 千克。</li>
+<li>此时甲中酒精:水 $=5:1$，甲仍是 12 千克，故其中水为 $2$ 千克：<br />
+$$\frac{12x}{12+x}=2\ \Rightarrow\ 12x=24+2x\ \Rightarrow\ x=2.4.$$</li>
+</ol>
+<p><strong>验算</strong>：$x=2.4$ 时甲含水 $12\times2.4/14.4=2$ 千克，含酒精 10 千克，$10:2=5:1$ ✓。</p>
+<p><strong>知识点</strong>：浓度问题、分数应用题</p>
+<p><strong>思路/方法</strong>：抓住&quot;第二次倒回后甲中水只有 2 千克&quot;，反推倒回的混合液中水的含量</p>
+<p><strong>难度</strong>：★3</p>
+<hr />
+<h3>第 6 题</h3>
+<p><strong>题目</strong>：在数 $\dfrac2{10},\dfrac3{10},\dfrac4{10},\dfrac5{10},\dfrac6{10},\dfrac7{10},\dfrac8{10},\dfrac9{10}$ 的前面分别添加&quot;＋&quot;或&quot;－&quot;号，使得它们的和等于 1。有 ________ 种不同的添加方法。</p>
+<p><strong>答案</strong>：10</p>
+<p><strong>解析</strong>：加&quot;＋&quot;或&quot;－&quot;等价于把 $2,3,\dots,9$ 分成&quot;加数组&quot;和&quot;减数组&quot;。<br />
+所有数之和 $2+3+\cdots+9=44$；设减去的数之和为 $M$，则<br />
+$$\frac{44-2M}{10}=1\ \Rightarrow\ M=17.$$<br />
+所以问题变成：从 ${2,3,4,5,6,7,8,9}$ 中选出和为 17 的若干个数，共 10 种：<br />
+${8,9},{2,6,9},{2,7,8},{3,5,9},{3,6,8},{4,5,8},{4,6,7},{2,3,4,8},{2,3,5,7},{2,4,5,6}$。</p>
+<p><strong>验算</strong>：以 ${8,9}$ 为例：$44-2\times17=10$，和 $=10/10=1$ ✓；10 种逐一检查均可 ✓。</p>
+<p><strong>知识点</strong>：枚举与分类、加乘原理</p>
+<p><strong>思路/方法</strong>：把符号问题转化为&quot;选子和&quot;问题，再分类枚举</p>
+<p><strong>难度</strong>：★3</p>
+<hr />
+<h3>第 7 题</h3>
+<p><strong>题目</strong>：如图，$F$ 和 $G$ 是 $\triangle ABC$ 边 $BC$ 上两点，满足 $BF:FG:GC=2:2:1$，连接 $AF$、$AG$，在 $AF$ 上取点 $D$，$CD$ 与 $AG$ 相交于点 $E$，$\triangle DAB$ 与 $\triangle ACE$ 的面积分别是 324 和 243。则 $\triangle ABC$ 的面积是 ________。</p>
+<p>（图：$A$ 在上，$B$、$F$、$G$、$C$ 依次在底边上，$D$ 在 $AF$ 上，$E=CD\cap AG$。）</p>
+<p><strong>答案</strong>：1620</p>
+<p><strong>解析</strong>：设 $S=[ABC]$，$t=\dfrac{AD}{AF}$。</p>
+<ol>
+<li>$\triangle DAB$ 与 $\triangle FAB$ 有公共边 $AB$，$D$ 在 $AF$ 上，高之比为 $AD:AF=t$，故<br />
+$$[DAB]=t[FAB]=t\cdot\frac{BF}{BC}\cdot S=t\cdot\frac25 S=324. \quad (1)$$</li>
+<li>求 $E$ 在 $AG$ 上的位置：记 $s=\dfrac{AE}{AG}$。在 $\triangle AFG$ 中，$D$ 在 $AF$ 上、$E$ 在 $AG$ 上、$C$ 在 $FG$ 的延长线上，且 $C,D,E$ 共线。由梅涅劳斯定理：<br />
+$$\frac{AD}{DF}\cdot\frac{FC}{CG}\cdot\frac{GE}{EA}=1<br />
+\Rightarrow \frac{t}{1-t}\cdot\frac{3}{1}\cdot\frac{1-s}{s}=1<br />
+\Rightarrow 3t(1-s)=s(1-t),$$<br />
+解得 $s=\dfrac{3t}{1+2t}$。</li>
+<li>$\triangle ACE$ 与 $\triangle ACG$ 有公共边 $AC$，$E$ 在 $AG$ 上：<br />
+$$[ACE]=s[ACG]=s\cdot\frac{CG}{BC}\cdot S=\frac{3t}{1+2t}\cdot\frac{S}{5}=243. \quad (2)$$</li>
+<li>由 (1) 得 $S=\dfrac{810}{t}$，代入 (2)：$\dfrac{3t}{1+2t}\cdot\dfrac{810}{5t}=\dfrac{486}{1+2t}=243$，得 $1+2t=2$，$t=\dfrac12$。<br />
+所以 $S=\dfrac{810}{1/2}=1620$。</li>
+</ol>
+<p><strong>验算</strong>：$t=\frac12$ 时 $[DAB]=\frac25\cdot\frac12\cdot1620=324$ ✓；$s=\frac{3\cdot(1/2)}{1+1}=\frac34$，$[ACE]=\frac34\cdot\frac{1620}{5}=243$ ✓。</p>
+<p><strong>知识点</strong>：面积比、燕尾模型（梅涅劳斯定理）</p>
+<p><strong>思路/方法</strong>：面积比=底边比（共顶点、共边两类）+ 梅涅劳斯定理定交点位置</p>
+<p><strong>难度</strong>：★5</p>
+<hr />
+<h3>第 8 题</h3>
+<p><strong>题目</strong>：幸福小学通过微信小程序对&quot;小天才科普大使&quot;进行票选，每人限投一票。小华查看了投票结果，发现投票总人数是 400，其中小华所在班级代表的投票占 48%。第二天她再次登录该网站时，发现小华所在班级代表的投票率上升到 62%，则此时投票总人数至少为 ________ 人。</p>
+<p><strong>答案</strong>：550</p>
+<p><strong>解析</strong>：</p>
+<ol>
+<li>第一天：400 票中该班代表得 $400\times48%=192$ 票，其他候选人共 $400-192=208$ 票。</li>
+<li>已投的票不会减少：第二天该班代表至少 192 票，其他候选人至少 208 票。</li>
+<li>设第二天总票数为 $T$，该班代表得 $0.62T$ 票，则其他候选人得 $0.38T$ 票：<br />
+$$0.38T\ge208\ \Rightarrow\ T\ge\dfrac{208}{0.38}\approx547.4.$$<br />
+又 $0.62T=\dfrac{31}{50}T$ 必须是整数，故 $T$ 是 50 的倍数，最小为 550。</li>
+<li>检验 $T=550$：该班代表 $550\times62%=341$ 票（比原来多 149 票），其他候选人 209 票（比原来多 1 票），都可行 ✓。</li>
+</ol>
+<p><strong>验算</strong>：$550\times0.62=341$ 为整数，$550-341=209\ge208$ ✓；若 $T=500$，则 $0.38\times500=190&lt;208$，不可能 ✓。</p>
+<p><strong>知识点</strong>：百分数应用题、最值问题</p>
+<p><strong>思路/方法</strong>：抓住&quot;已投票数只增不减&quot;列不等式，再用整数（50 的倍数）取最小</p>
+<p><strong>难度</strong>：★3</p>
+<hr />
+<h3>第 9 题</h3>
+<p><strong>题目</strong>：如果某一天是周四且日期尾数是 4，则称这一天为&quot;巧合日&quot;，如 2023 年 12 月 14 日是周四，这一天是&quot;巧合日&quot;。则 2023 年一共有 ________ 个&quot;巧合日&quot;。</p>
+<p><strong>答案</strong>：4</p>
+<p><strong>解析</strong>：日期尾数是 4 的只有每月 4 日、14 日、24 日，且 4 日→14 日→24 日相隔 10 天，星期数依次后移 3 天。<br />
+2023 年 1 月 1 日是星期日。算出各月 4 日的星期：<br />
+一月三、二月六、三月六、四月二、<strong>五月四</strong>、六月日、七月二、<strong>八月五</strong>、<strong>九月一</strong>、十月三、十一月六、<strong>十二月一</strong>。</p>
+<ul>
+<li>4 日是周四的月份：5 月 → <strong>5 月 4 日</strong>；</li>
+<li>4 日是周一的月份：9 月、12 月 → 14 日为周四 → <strong>9 月 14 日、12 月 14 日</strong>；</li>
+<li>4 日是周五的月份：8 月 → 24 日为周四 → <strong>8 月 24 日</strong>。<br />
+共 4 个巧合日。</li>
+</ul>
+<p><strong>验算</strong>：直接查 2023 年历：周四且日期尾数 4 的正是 5/4、8/24、9/14、12/14，共 4 天 ✓。</p>
+<p><strong>知识点</strong>：周期规律、分类列举</p>
+<p><strong>思路/方法</strong>：同月内 4、14、24 日的星期相差 3 天；逐月确定 4 日的星期</p>
+<p><strong>难度</strong>：★2</p>
+<hr />
+<h3>第 10 题</h3>
+<p><strong>题目</strong>：如图，$\triangle ABC$ 的三条边满足 $AC:BC:AB=3:4:5$，$E$ 和 $D$ 是 $AC$ 和 $BC$ 上的点，$AE:EC=BD:DC=2:3$，$F$ 和 $G$ 是 $AB$ 上的点，$FG:AB=3:5$，连接 $DF$、$EG$ 相交于点 $O$，则阴影部分（四边形 $AEOF$ 与 $GBDO$）与 $\triangle ABC$ 的面积比是 ________。</p>
+<p><strong>答案</strong>：$2:5$</p>
+<p><strong>解析</strong>：由 $3:4:5$ 知 $\angle C=90^\circ$。相似放大不影响面积比，取 $AC=3$、$BC=4$、$AB=5$，则 $[ABC]=6$。<br />
+以 $C$ 为原点：$C(0,0)$，$A(0,3)$，$B(4,0)$。<br />
+$E(0,\tfrac95)$，$D(\tfrac{12}5,0)$；设 $AF=x$，则 $AB$ 上 $F=A+\frac x5(B-A)$，$G=A+\frac{x+3}5(B-A)$（因 $FG=3$）。</p>
+<ol>
+<li><strong>先定 $O$</strong>：设 $O=D+s(F-D)$ 又 $O=E+t(G-E)$。把 $F,G$ 的坐标代入，比较 $B-A$ 方向与 $C-A$ 方向的系数，得 $s=t$，且<br />
+$$\frac35+s\left(\frac x5-\frac35\right)=s\left(\frac x5+\frac35\right)\Rightarrow s=\frac12.$$<br />
+所以 <strong>$O$ 既是 $FD$ 的中点，又是 $EG$ 的中点</strong>（与 $x$ 无关）。</li>
+<li>于是<br />
+$$[AEOF]=[AEF]+\frac12[EFG],\qquad [GBDO]=[GBD]+\frac12[GDF].$$<br />
+其中（面积比=底边比）：<br />
+$[AEF]=\dfrac{AF}{AB}\cdot\dfrac{AE}{AC}\cdot[ABC]=\dfrac x5\cdot\dfrac25\cdot6=\dfrac{12x}{25}$；<br />
+$[GBD]=\dfrac{GB}{AB}\cdot\dfrac{BD}{BC}\cdot[ABC]=\dfrac{2-x}{5}\cdot\dfrac25\cdot6=\dfrac{12(2-x)}{25}$；<br />
+$[EFG]=\dfrac{FG}{AB}\cdot[ABE]=\dfrac35\cdot\dfrac25\cdot6=\dfrac{36}{25}$，同理 $[GDF]=\dfrac35\cdot[ABD]=\dfrac35\cdot\dfrac25\cdot6=\dfrac{36}{25}$。</li>
+<li>阴影 $=\dfrac{12x}{25}+\dfrac{12(2-x)}{25}+\dfrac{36}{25}=\dfrac{24}{25}+\dfrac{36}{25}=\dfrac{60}{25}=\dfrac{12}{5}$。<br />
+所以阴影 $:[ABC]=\dfrac{12}{5}:6=2:5$（与 $AF$ 的长无关）。</li>
+</ol>
+<p><strong>验算</strong>：取 $x=1$（$AF=GB=1$），算得 $[AEOF]=\frac65$、$[GBDO]=\frac65$，合计 $\frac{12}5$，比值 $2:5$ ✓；$x=\frac12$、$x=\frac32$ 代入结果相同 ✓（程序取多组 $x$ 验证均得 $\frac{12}5$）。</p>
+<p><strong>知识点</strong>：面积比、燕尾模型</p>
+<p><strong>思路/方法</strong>：直角坐标定交点（证明 $O$ 为两线中点）+ 面积比=底边比</p>
+<p><strong>难度</strong>：★5</p>
+<hr />
+<h3>第 11 题</h3>
+<p><strong>题目</strong>：有一自然数，它的个位数字是 7，它共有 16 个约数，这个数最小是 ________。</p>
+<p><strong>答案</strong>：2457</p>
+<p><strong>解析</strong>：</p>
+<ol>
+<li>约数个数 16 的分解方式：$16$、$8\times2$、$4\times4$、$4\times2\times2$、$2\times2\times2\times2$，对应形式 $p^{15}$、$p^7q$、$p^3q^3$、$p^3qr$、$pqrs$。</li>
+<li>个位是 7 ⇒ 该数<strong>是奇数且不是 5 的倍数</strong>，质因数只能用 3、7、11、13……</li>
+<li>逐个形式找最小：
+<ul>
+<li>$pqrs$：$3\times7\times11\times13=3003$；</li>
+<li>$p^3q^3$：$3^3\times7^3=9261$；</li>
+<li>$p^7q$：$3^7\times11=24057$；</li>
+<li>$p^3qr$：$3^3\times7\times13=2457$（个位 7 ✓）；而 $3^3\times7\times11=2079$（个位 9 ✗）。</li>
+</ul>
+</li>
+<li>所以最小是 $2457=3^3\times7\times13$。</li>
+</ol>
+<p><strong>验算</strong>：$2457$ 的约数个数 $=(3+1)(1+1)(1+1)=16$ ✓，个位是 7 ✓；程序检查 2457 以下所有个位为 7 的数，均无恰好 16 个约数者 ✓。</p>
+<p><strong>知识点</strong>：因数个数与因数和、分解质因数</p>
+<p><strong>思路/方法</strong>：按约数个数拆指数形态 + 按个位条件筛质因数</p>
+<p><strong>难度</strong>：★3</p>
+<hr />
+<h3>第 12 题</h3>
+<p><strong>题目</strong>：如下图，把一个上底 $AD=10$ 厘米、下底 $BC=5$ 厘米的直角梯形 $ABCD$ 绕 $AB$ 旋转一周，形成一个圆台，然后做成一个纸杯。现有一个底面半径为 30 厘米、高 28 厘米的圆柱形容器，倒满该圆柱形容器需要 36 纸杯水。$CD=$ ________ 厘米。</p>
+<p><strong>答案</strong>：13</p>
+<p><strong>解析</strong>：</p>
+<ol>
+<li>绕直角腰 $AB$ 旋转，得到的是圆台：上底半径 $R=AD=10$，下底半径 $r=BC=5$，高 $h=AB$。</li>
+<li>圆柱容积 $=\pi\times30^2\times28=25200\pi$；每杯 $=\dfrac{25200\pi}{36}=700\pi$。</li>
+<li>圆台体积 $=\dfrac{\pi h}{3}(R^2+Rr+r^2)=\dfrac{\pi h}{3}(100+50+25)=\dfrac{175\pi h}{3}$。<br />
+$$\frac{175\pi h}{3}=700\pi\ \Rightarrow\ h=12.$$</li>
+<li>直角梯形中 $CD$ 是斜腰：$CD=\sqrt{AB^2+(AD-BC)^2}=\sqrt{12^2+5^2}=13$ 厘米。</li>
+</ol>
+<p><strong>验算</strong>：$CD=\sqrt{12^2+5^2}=13$；体积核对 $\frac{175\pi\times12}{3}=700\pi=\frac{25200\pi}{36}$ ✓。</p>
+<p><strong>知识点</strong>：立体几何综合、体积与容积单位</p>
+<p><strong>思路/方法</strong>：先由体积关系求高，再用勾股定理求斜腰</p>
+<p><strong>难度</strong>：★3</p>
+<hr />
+<h3>第 13 题</h3>
+<p><strong>题目</strong>：如图，下面左图中相邻两个格点间长度为 1，下面右图是对角线 $AB$ 长度为 20 的正方形纸板。在格点足够多的情况下，该纸板最多覆盖 ________ 个格点。</p>
+<p><strong>答案</strong>：225</p>
+<p><strong>解析</strong>：</p>
+<ol>
+<li>正方形对角线 20 ⇒ 边长 $10\sqrt2\approx14.14$。</li>
+<li><strong>放法</strong>：让正方形的四条边与格线平行。它可以在横向、纵向各&quot;框住&quot;15 个格点（相邻格点相距 1，15 个格点跨度 14，而 $14.14&gt;14$），一共覆盖 $15\times15=225$ 个格点。</li>
+<li>斜放时：若沿对角线方向放（呈菱形，对角线 20），能覆盖的格点数为 $1+4(1+2+\cdots+10)=221&lt;225$；其他角度经计算更少（可旋转纸板逐一比较，斜放都不超过 221）。<br />
+所以最多覆盖 225 个格点。</li>
+</ol>
+<p><strong>验算</strong>：轴对齐时把正方形中心放在 15×15 格点的中心，四边各留 $0.07$ 余量，恰好包容 225 个格点 ✓；对 $0^\circ\sim90^\circ$ 各种角度、各种平移用程序搜索，最大值正是 225（$0^\circ$ 时）✓。</p>
+<p><strong>知识点</strong>：格点面积、最值问题</p>
+<p><strong>思路/方法</strong>：构造（边与格线平行）+ 比较斜放（菱形 221 个）</p>
+<p><strong>难度</strong>：★4</p>
+<hr />
+<h3>第 14 题</h3>
+<p><strong>题目</strong>：100 枚棋子整齐地排成一列，依次编号为 1、2、3、4、……99、100。每次拿走一些棋子，剩余棋子重新从 1 开始编号。第一次拿走所有偶数编号的棋子，第二次拿走所有偶数编号的棋子，第三次拿走所有奇数编号的棋子，第四次拿走所有奇数编号的棋子，第五次拿走所有偶数编号的棋子，……以此类推，最后剩下的一枚棋子最初的编号是 ________。</p>
+<p><strong>答案</strong>：77</p>
+<p><strong>解析</strong>：按&quot;偶、偶、奇、奇&quot;循环操作，逐轮列出剩下的原始编号：</p>
+<table>
+<thead>
+<tr>
+<th>轮次</th>
+<th>拿走</th>
+<th>剩余个数</th>
+<th>剩下的原始编号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>初始</td>
+<td>—</td>
+<td>100</td>
+<td>1,2,…,100</td>
+</tr>
+<tr>
+<td>1</td>
+<td>偶数位</td>
+<td>50</td>
+<td>1,3,5,…,99</td>
+</tr>
+<tr>
+<td>2</td>
+<td>偶数位</td>
+<td>25</td>
+<td>1,5,9,…,97</td>
+</tr>
+<tr>
+<td>3</td>
+<td>奇数位</td>
+<td>12</td>
+<td>5,13,21,29,37,45,53,61,69,77,85,93</td>
+</tr>
+<tr>
+<td>4</td>
+<td>奇数位</td>
+<td>6</td>
+<td>13,29,45,61,77,93</td>
+</tr>
+<tr>
+<td>5</td>
+<td>偶数位</td>
+<td>3</td>
+<td>13,45,77</td>
+</tr>
+<tr>
+<td>6</td>
+<td>偶数位</td>
+<td>2</td>
+<td>13,77</td>
+</tr>
+<tr>
+<td>7</td>
+<td>奇数位</td>
+<td>1</td>
+<td><strong>77</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>验算</strong>：用程序按题意模拟，最后剩下的正是 77 ✓；也可检验第 7 轮时 13、77 中取偶数位（第 2 个）→77 ✓。</p>
+<p><strong>知识点</strong>：递推与归纳、分类列举</p>
+<p><strong>思路/方法</strong>：逐轮推进（每轮的重编号相当于&quot;隔一个取一个&quot;），列出剩余编号</p>
+<p><strong>难度</strong>：★3</p>
+<hr />
+<h3>第 15 题</h3>
+<p><strong>题目</strong>：如图，解放军队伍在平路 $DE$ 上前进，$DE$ 上有一段路 $AC$ 是观光桥，三角形 $ABC$ 是等腰直角三角形，直角边 $AB$ 和 $BC$ 的长均为 2 千米。当队伍排头到达 $A$ 点时，通讯员因任务需要从排尾追赶排头，恰好在 $C$ 点追上排头，并立即返回；当他回到排尾时，队伍从 $A$ 点开始前进的总路程恰好是队伍长。若通讯员和队伍的行进速度都保持不变，则队伍长是 ________ 千米。</p>
+<p><strong>答案</strong>：4</p>
+<p><strong>解析</strong>：记队伍速度 $v$、通讯员速度 $u$、队伍长 $L$。桥 $AC=\sqrt{2^2+2^2}=2\sqrt2$（千米）。</p>
+<ol>
+<li>排头到 $A$ 时，排尾在 $A$ 后方 $L$ 处；通讯员从排尾追到 $C$（排头走了 $2\sqrt2$），用时 $T_1=\dfrac{2\sqrt2}{v}$，通讯员路程 $L+2\sqrt2$：<br />
+$$u\cdot\frac{2\sqrt2}{v}=L+2\sqrt2. \quad (1)$$</li>
+<li>通讯员从 $C$ 返回排尾：此时排尾在 $C$ 后方 $L$ 处，二者相向而行，用时 $T_2=\dfrac{L}{u+v}$。</li>
+<li>全程队伍前进的路程正好是 $L$：$v(T_1+T_2)=L$，即<br />
+$$\frac{L}{v}=\frac{2\sqrt2}{v}+\frac{L}{u+v}<br />
+\Rightarrow L-\frac{Lv}{u+v}=2\sqrt2<br />
+\Rightarrow \frac{Lu}{u+v}=2\sqrt2. \quad (2)$$</li>
+<li>令 $r=\dfrac{L}{2\sqrt2}$，由 (1) 得 $\dfrac uv=r+1$；代入 (2)：$\dfrac{2\sqrt2,r(r+1)}{r+2}=2\sqrt2$，即 $r(r+1)=r+2$，$r^2=2$，$r=\sqrt2$。<br />
+所以 $L=2\sqrt2\cdot\sqrt2=4$ 千米。</li>
+</ol>
+<p><strong>验算</strong>：$L=4$ 时 $\frac uv=1+\frac{4}{2\sqrt2}=1+\sqrt2$；代入 (2)：$\frac{4(1+\sqrt2)}{2+\sqrt2}=\frac{4(1+\sqrt2)}{2+\sqrt2}=\frac{4(1+\sqrt2)(2-\sqrt2)}{2}=2(1+\sqrt2)(2-\sqrt2)=2\cdot\sqrt2=2\sqrt2$ ✓。</p>
+<p><strong>知识点</strong>：基本公式与平均速度、比例行程</p>
+<p><strong>思路/方法</strong>：追赶（同向）与返回（相向）分别用时间公式，联立解出队伍长</p>
+<p><strong>难度</strong>：★4</p>
+<hr />
+<h3>第 16 题</h3>
+<p><strong>题目</strong>：如下图所示，已知平行四边形周长是 2024 厘米，一个半径为 1 厘米的圆沿着平行四边形四边外侧滚动一周。那么圆滚动扫过的面积是 ________ 平方厘米。（$\pi$ 取 3）</p>
+<p><strong>答案</strong>：4060</p>
+<p><strong>解析</strong>：</p>
+<ol>
+<li>滚动时圆心始终离边界 1 厘米，圆半径为 1，所以&quot;扫过&quot;的区域恰好是&quot;边界外侧、到边界距离不超过 2 厘米&quot;的一条带子。</li>
+<li>平行四边形周长 $P=2024$。这条带子的面积 = 周长 × 带宽 $2r$ + 四个角处的&quot;外角扇形&quot;总面积。凸多边形外角之和为 $360^\circ$，四个角的扇形拼成一个半径为 $2r$ 的整圆：<br />
+$$S=P\cdot 2r+\pi(2r)^2=2024\times2+3\times4=4048+12=4060.$$</li>
+</ol>
+<p><strong>验算</strong>：用&quot;外平行体&quot;公式：面积 $=(A+P\cdot2r+\pi(2r)^2)-A=2rP+4\pi r^2=4048+12=4060$ ✓。</p>
+<p><strong>知识点</strong>：圆与扇形、面积综合</p>
+<p><strong>思路/方法</strong>：把扫过区域拆成&quot;沿边的长条 + 角上的扇形（拼成整圆）&quot;</p>
+<p><strong>难度</strong>：★4</p>
+<hr />
+<h3>第 17 题</h3>
+<p><strong>题目</strong>：教授写出一个自然数 $M$，小华计算出 $M$ 与 $5!$ 的最小公倍数，小红计算出 $M$ 与 $10!$ 的最大公因数，结果发现小华和小红计算结果之比为 $3:1$，那么教授写出的自然数 $M$ 有 ________ 种可能。</p>
+<p><strong>答案</strong>：48</p>
+<p><strong>解析</strong>：$5!=120=2^3\cdot3\cdot5$，$10!=3628800=2^8\cdot3^4\cdot5^2\cdot7$。<br />
+设 $M$ 的质因数指数为 $e_p$，则比值<br />
+$$\frac{\operatorname{lcm}(M,5!)}{\gcd(M,10!)}=3^1<br />
+\Rightarrow \max(e_3,1)-\min(e_3,4)=1,\quad\text{其余质数 } \max(e_p,a_p)-\min(e_p,b_p)=0.$$</p>
+<ul>
+<li>对 $p\ne3$：需 $a_p\le e_p\le b_p$（其中 $a_p$ 是 $5!$ 的指数、$b_p$ 是 $10!$ 的指数）：<br />
+$e_2\in[3,8]$ 共 6 种，$e_5\in[1,2]$ 共 2 种，$e_7\in[0,1]$ 共 2 种，其他质数只能是 0；</li>
+<li>对 $p=3$：$\max(e_3,1)-\min(e_3,4)=1$ ⇒ $e_3=0$ 或 $e_3=5$，共 2 种。<br />
+所以 $M$ 的个数 $=6\times2\times2\times2=48$。</li>
+</ul>
+<p><strong>验算</strong>：按 $e_2,e_3,e_5,e_7$ 的范围逐一枚举 $M$，符合比值的恰 48 个 ✓。</p>
+<p><strong>知识点</strong>：因数个数与因数和、短除模型</p>
+<p><strong>思路/方法</strong>：质因数指数表示 lcm/gcd，再按指数范围分类计数</p>
+<p><strong>难度</strong>：★4</p>
+<hr />
+<h3>第 18 题</h3>
+<p><strong>题目</strong>：如图，15 个面积为 1 的正方形组成下图，将其分割为 $n$ 个小长方形，要求（1）$n$ 个小长方形之间无重叠；（2）$n$ 个小长方形面积互不相同。$n=$ ________。</p>
+<p>（图形：5×5 方格中，第 1 行第 3 格；第 2 行第 2、3 格；第 3 行第 1、2、3 格；第 4 行第 1—5 格；第 5 行第 1—4 格，共 15 格。）</p>
+<p><strong>答案</strong>：5</p>
+<p><strong>解析</strong>：</p>
+<ol>
+<li>$n$ 个长方形的面积是 $n$ 个<strong>互不相同的正整数</strong>，总和为 15。因为最小的 $n$ 个不同正整数之和为 $1+2+\cdots+n$，必须<br />
+$$1+2+\cdots+n\le15\ \Rightarrow\ n\le5.$$</li>
+<li>$n=5$ 可以实现：把图形分成面积为 $1,2,3,4,5$ 的五块（例如：第 1 行第 3 格 = 1；第 2 行第 2、3 格（横放 1×2）= 2；第 3 行第 1—3 格（横放 1×3）= 3；第 5 行第 1—4 格（横放 1×4）= 4；第 4 行第 1—5 格（横放 1×5）= 5。这样 15 格恰好被分成 5 个面积分别为 1、2、3、4、5 的长方形，且互不重叠）。</li>
+<li>所以 $n$ 的最大值（也是本题答案）是 5。</li>
+</ol>
+<p><strong>验算</strong>：$1+2+3+4+5=15$ ✓；上面的分割恰覆盖 5×5 图形中的 15 个格子，无重叠 ✓（程序穷举也找到 6 种这样的分割）✓。</p>
+<p><strong>知识点</strong>：操作与探究、最值问题</p>
+<p><strong>思路/方法</strong>：面积互异⇒&quot;1+2+…+n≤15&quot;给出上界，再构造达到上界</p>
+<p><strong>难度</strong>：★4</p>
+<hr />
+<h3>第 19 题</h3>
+<p><strong>题目</strong>：魔法学院有一种运算法则：$\begin{vmatrix}a&amp;b\c&amp;d\end{vmatrix}=\left(\overline{db}+\overline{dc}\right)-\left(\overline{ab}+\overline{ac}\right)$，其中 $a,b,c,d$ 均为 1~9 的数字，例如：当数组 $(a,b,c,d)$ 为 $(2,2,3,4)$ 时，<br />
+$$\begin{vmatrix}2&amp;2\3&amp;4\end{vmatrix}=(42+43)-(22+23)=40.$$<br />
+按照这个法则，能使运算结果为 20 的数组 $(a,b,c,d)$ 有 ________ 种可能。</p>
+<p><strong>答案</strong>：648</p>
+<p><strong>解析</strong>：$\overline{db}=10d+b$，$\overline{dc}=10d+c$，$\overline{ab}=10a+b$，$\overline{ac}=10a+c$，所以<br />
+$$\begin{vmatrix}a&amp;b\c&amp;d\end{vmatrix}=(10d+b+10d+c)-(10a+b+10a+c)=20d-20a=20(d-a).$$<br />
+要求结果 $=20$，即 $d-a=1$：$a$ 可取 $1\sim8$（8 种），$d=a+1$；$b$、$c$ 各可取 $1\sim9$（各 9 种）。<br />
+共 $8\times9\times9=648$ 种。</p>
+<p><strong>验算</strong>：例 $(a,b,c,d)=(2,2,3,4)$：$d-a=2$，结果 $20\times2=40$ ✓（与题中示例一致）；$d-a=1$ 时结果恒为 20 ✓。</p>
+<p><strong>知识点</strong>：位值原理、加乘原理</p>
+<p><strong>思路/方法</strong>：把&quot;两位数&quot;写成 $10\times$十位$+$个位，化简后发现结果只与 $d-a$ 有关</p>
+<p><strong>难度</strong>：★3</p>
+<hr />
+<h3>第 20 题</h3>
+<p><strong>题目</strong>：下列哪一项的值不能被任何小于 10 的质数整除（　　）。<br />
+A. $2^{2024}+2^{2023}$　　B. $2^{2023}+1$　　C. $2^{2024}-1$　　D. $2^{2023}-1$</p>
+<p><strong>答案</strong>：D</p>
+<p><strong>解析</strong>：小于 10 的质数是 2、3、5、7。</p>
+<ul>
+<li>A：$2^{2024}+2^{2023}=2^{2023}(2+1)=3\times2^{2023}$，能被 3 整除；</li>
+<li>B：$2023$ 是奇数，$2\equiv-1\pmod3$，所以 $2^{2023}\equiv-1\pmod3$，$2^{2023}+1\equiv0\pmod3$，能被 3 整除；</li>
+<li>C：$2024$ 是偶数，$2^{2024}\equiv1\pmod3$，$2^{2024}-1\equiv0\pmod3$，能被 3 整除；</li>
+<li>D：$2^{2023}\equiv-1\pmod3\Rightarrow 2^{2023}-1\equiv-2\equiv1\pmod3$，不被 3 整除；又 $2^{2023}-1$ 是奇数（不被 2 整除）；$2023\equiv3\pmod4$ ⇒ $2^{2023}\equiv2^3=8\equiv3\pmod5$，$2^{2023}-1\equiv2\pmod5$，不被 5 整除；$2023\equiv1\pmod3$（模 7 的周期为 3：$2^3\equiv1$）⇒ $2^{2023}\equiv2\pmod7$，$2^{2023}-1\equiv1\pmod7$，不被 7 整除。<br />
+所以 D 不能被任何小于 10 的质数整除。</li>
+</ul>
+<p><strong>验算</strong>：A、B、C 都被 3 整除；D 对 2、3、5、7 的余数分别为 1、1、2、1，均非 0 ✓。</p>
+<p><strong>知识点</strong>：数的整除特征、尾数与末位</p>
+<p><strong>思路/方法</strong>：用&quot;幂的周期性 + 同余&quot;，分别检验 2、3、5、7</p>
+<p><strong>难度</strong>：★3</p>
+<hr />
+<h3>第 21 题</h3>
+<p><strong>题目</strong>：方程 $x_1+x_2+4x_3=15$ 的自然数解的个数是 ________。</p>
+<p><strong>答案</strong>：40</p>
+<p><strong>解析</strong>：$x_3$ 可取 $0,1,2,3$。<br />
+对每个 $x_3$，$x_1+x_2=15-4x_3$，非负整数解的个数为 $(15-4x_3)+1=16-4x_3$。<br />
+总数 $=16+12+8+4=40$。</p>
+<p><strong>验算</strong>：$x_3=0$ 时 $x_1+x_2=15$ 有 16 组；$x_3=3$ 时 $x_1+x_2=3$ 有 4 组；$16+12+8+4=40$ ✓。</p>
+<p><strong>知识点</strong>：不定方程、分类列举</p>
+<p><strong>思路/方法</strong>：按 $x_3$ 分类，用&quot;$x_1+x_2=N$ 的非负解有 $N+1$ 组&quot;</p>
+<p><strong>难度</strong>：★2</p>
+<hr />
+<h3>第 22 题</h3>
+<p><strong>题目</strong>：圆周上有 10 个点，任两点之间连一条线段，任三条线段在圆内不交于同一点，这些线段在圆内可交出 ________ 个三角形（三角形的顶点都在圆内）。</p>
+<p><strong>答案</strong>：210</p>
+<p><strong>解析</strong>：圆内由这些线段交出的每个三角形，其三条边各是一条弦，三个顶点都是弦的交点。任取圆周上 6 个点，按顺序记为 $A_1,A_2,\dots,A_6$，则弦 $A_1A_4$、$A_2A_5$、$A_3A_6$ 两两相交，交出<strong>唯一</strong>一个三角形；反过来每个这样的三角形也对应圆周上唯一 6 个点（三条弦的 6 个端点）。<br />
+所以三角形个数 $=\mathrm{C}<em>{10}^{6}=\mathrm{C}</em>{10}^{4}=210$。</p>
+<p><strong>验算</strong>：$\mathrm{C}_{10}^6=\dfrac{10\times9\times8\times7}{4\times3\times2\times1}=210$ ✓；任三弦不共点的条件保证每个三角形的顶点互不相同、不退化 ✓。</p>
+<p><strong>知识点</strong>：排列组合、几何计数</p>
+<p><strong>思路/方法</strong>：6 点 ↔ 一个内接三角形（三条&quot;主对角线&quot;两两相交）一一对应</p>
+<p><strong>难度</strong>：★4</p>
+<hr />
+<h3>第 23 题</h3>
+<p><strong>题目</strong>：从中午 12 点开始，当时针和分针第五次形成 180 度角时，这时是 ________ 点 ________ 分。（注：按 24 小时制填写）</p>
+<p><strong>答案</strong>：16 时 54 又 $\dfrac{6}{11}$ 分（即 16 时 $54\dfrac6{11}$ 分）</p>
+<p><strong>解析</strong>：</p>
+<ol>
+<li>分针每分钟转 $6^\circ$，时针每分钟转 $0.5^\circ$，两者夹角每分钟增大 $5.5^\circ=\dfrac{11}{2}^\circ$。</li>
+<li>第一次成 180°：$t_1=\dfrac{180}{5.5}=\dfrac{360}{11}$ 分钟；之后每再成 180° 需再转 $360^\circ$，即间隔 $\dfrac{720}{11}$ 分钟。</li>
+<li>第五次：$t_5=\dfrac{360}{11}+4\times\dfrac{720}{11}=\dfrac{3240}{11}$ 分钟 $=294\dfrac6{11}$ 分钟 $=4$ 小时 $54\dfrac6{11}$ 分钟。</li>
+<li>从中午 12 点起算：$12+4=16$ 时，故为 <strong>16 时 $54\dfrac{6}{11}$ 分</strong>。</li>
+</ol>
+<p><strong>验算</strong>：$t_5\approx294.545$ 分钟 = 4 小时 54.5 分钟；16 时 54.545 分时，时针角 $=4\times30+54.545\times0.5=147.27^\circ$，分针角 $=54.545\times6=327.27^\circ$，差 $180.0^\circ$ ✓。</p>
+<p><strong>知识点</strong>：时钟问题</p>
+<p><strong>思路/方法</strong>：相对速度 $5.5^\circ/$分；180° 每隔 $\frac{720}{11}$ 分钟出现一次</p>
+<p><strong>难度</strong>：★3</p>
+<hr />
+<h3>第 24 题</h3>
+<p><strong>题目</strong>：记 $[x]$ 表示不超过 $x$ 的最大整数，则<br />
+$$\left[\frac{2023\times1}{2024}\right]+\left[\frac{2023\times2}{2024}\right]+\cdots+\left[\frac{2023\times2023}{2024}\right]=$$ ________。</p>
+<p><strong>答案</strong>：2045253</p>
+<p><strong>解析</strong>：<br />
+$$\frac{2023k}{2024}=\frac{(2024-1)k}{2024}=k-\frac{k}{2024}.$$<br />
+因为 $1\le k\le2023$，所以 $0&lt;\dfrac{k}{2024}&lt;1$，故 $\left[\dfrac{2023k}{2024}\right]=k-1$。<br />
+原式 $=\sum_{k=1}^{2023}(k-1)=0+1+2+\cdots+2022=\dfrac{2022\times2023}{2}=2045253$。</p>
+<p><strong>验算</strong>：$2022\times2023=4090506$，除以 2 得 2045253 ✓；首项 $k=1$ 时为 0（$\frac{2023}{2024}$ 取整 0）、末项 $k=2023$ 时为 2022 ✓。</p>
+<p><strong>知识点</strong>：速算与巧算、公式类计算</p>
+<p><strong>思路/方法</strong>：先把分数写成&quot;整数 − 真分数&quot;，去取整后变成等差数列</p>
+<p><strong>难度</strong>：★3</p>
+<hr />
+<h3>第 25 题</h3>
+<p><strong>题目</strong>：如图，五边形 $ABCDE$ 的三条边 $AE$、$CB$、$CD$ 的长均为 10 厘米，$AB$ 与 $DE$ 的长度之和也是 10。如果 $\angle ABC=\angle CDE=90^\circ$，则五边形 $ABCDE$ 的面积是 ________ 平方厘米。</p>
+<p><strong>答案</strong>：100</p>
+<p><strong>解析</strong>：连接 $AC$、$CE$，把五边形分成 $\triangle ABC$、$\triangle CDE$、$\triangle ACE$ 三块。</p>
+<ol>
+<li>$\triangle ABC$ 是直角三角形，$\angle B=90^\circ$，$[ABC]=\dfrac12\cdot AB\cdot BC=\dfrac12\cdot AB\cdot10=5AB$。</li>
+<li>$\triangle CDE$ 是直角三角形，$\angle D=90^\circ$，$[CDE]=\dfrac12\cdot CD\cdot DE=\dfrac12\cdot10\cdot DE=5DE$。<br />
+所以 $[ABC]+[CDE]=5(AB+DE)=5\times10=50$。</li>
+<li>$\triangle ACE$：由勾股定理<br />
+$$AC^2=AB^2+BC^2=AB^2+100,\qquad CE^2=CD^2+DE^2=(10-AB)^2+100,\qquad AE=10.$$<br />
+设 $AB=x$，则 $DE=10-x$。用海伦公式（或余弦定理）化简：<br />
+$$16[ACE]^2=2\big(p^2q^2+q^2r^2+r^2p^2\big)-\big(p^4+q^4+r^4\big),$$<br />
+其中 $p^2=x^2+100$，$q^2=(10-x)^2+100$，$r^2=100$。代入展开后 $x$ 全部消去，得 $16[ACE]^2=40000$，$[ACE]=50$。</li>
+<li>五边形面积 $=50+50=100$ 平方厘米。</li>
+</ol>
+<p><strong>验算</strong>：取 $AB=DE=5$，可算得 $AC=CE=\sqrt{125}$，$\triangle ACE$ 的底 $AE=10$、高 $=\sqrt{125-25}=10$，$[ACE]=50$；$[ABC]=[CDE]=25$；合计 $25+25+50=100$ ✓。对 $AB=3,4,6,7$ 等值代入海伦公式，$[ACE]$ 恒为 50（程序验证）✓。</p>
+<p><strong>知识点</strong>：面积综合、几何思想方法</p>
+<p><strong>思路/方法</strong>：连对角线分成三个三角形；两个直角三角形面积和为 50，关键证明 $\triangle ACE$ 面积恒为 50</p>
+<p><strong>难度</strong>：★4</p>
+<hr />
+<h2>知识点与思路总结表</h2>
+<table>
+<thead>
+<tr>
+<th>题号</th>
+<th>知识点</th>
+<th>方法</th>
+<th>难度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>分数的基本性质与约分、分解质因数</td>
+<td>辗转相除求最大公因数</td>
+<td>★1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>带余除法与余数性质、同余初步</td>
+<td>连续奇数和 $=n^2$ + 幂的同余周期</td>
+<td>★2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>带余除法与余数性质、最值问题</td>
+<td>按余数分类，互补类取多的一类</td>
+<td>★3</td>
+</tr>
+<tr>
+<td>4</td>
+<td>比较大小与估算、范围估算</td>
+<td>用平均把分母夹住，取倒数定整数部分</td>
+<td>★2</td>
+</tr>
+<tr>
+<td>5</td>
+<td>浓度问题、分数应用题</td>
+<td>抓&quot;倒回后甲中只有 2 kg 水&quot;列方程</td>
+<td>★3</td>
+</tr>
+<tr>
+<td>6</td>
+<td>枚举与分类、加乘原理</td>
+<td>符号问题 → 子和问题（和 17）枚举</td>
+<td>★3</td>
+</tr>
+<tr>
+<td>7</td>
+<td>面积比、燕尾模型</td>
+<td>面积比=底边比 + 梅涅劳斯</td>
+<td>★5</td>
+</tr>
+<tr>
+<td>8</td>
+<td>百分数应用题、最值问题</td>
+<td>已投票数只增不减 → 不等式 + 整数取最小</td>
+<td>★3</td>
+</tr>
+<tr>
+<td>9</td>
+<td>周期规律、分类列举</td>
+<td>4/14/24 日星期相差 3 天，逐月查</td>
+<td>★2</td>
+</tr>
+<tr>
+<td>10</td>
+<td>面积比、燕尾模型</td>
+<td>坐标定交点（O 为中点）+ 面积比=底边比</td>
+<td>★5</td>
+</tr>
+<tr>
+<td>11</td>
+<td>因数个数与因数和、分解质因数</td>
+<td>指数形态枚举 + 个位条件筛</td>
+<td>★3</td>
+</tr>
+<tr>
+<td>12</td>
+<td>立体几何综合、体积与容积单位</td>
+<td>圆台体积求高 + 勾股求斜腰</td>
+<td>★3</td>
+</tr>
+<tr>
+<td>13</td>
+<td>格点面积、最值问题</td>
+<td>构造轴对齐 15×15；斜放比较</td>
+<td>★4</td>
+</tr>
+<tr>
+<td>14</td>
+<td>递推与归纳、分类列举</td>
+<td>逐轮&quot;隔一取一&quot;，列表推进</td>
+<td>★3</td>
+</tr>
+<tr>
+<td>15</td>
+<td>基本公式与平均速度、比例行程</td>
+<td>追及/相向两段列式联立</td>
+<td>★4</td>
+</tr>
+<tr>
+<td>16</td>
+<td>圆与扇形、面积综合</td>
+<td>扫过面积 = 周长×2r + 角上扇形拼圆</td>
+<td>★4</td>
+</tr>
+<tr>
+<td>17</td>
+<td>因数个数与因数和、短除模型</td>
+<td>lcm/gcd 的质因数指数分类计数</td>
+<td>★4</td>
+</tr>
+<tr>
+<td>18</td>
+<td>操作与探究、最值问题</td>
+<td>互异面积和 ≥1+2+…+n 给上界 + 构造</td>
+<td>★4</td>
+</tr>
+<tr>
+<td>19</td>
+<td>位值原理、加乘原理</td>
+<td>化成 $20(d-a)$，条件 $d-a=1$</td>
+<td>★3</td>
+</tr>
+<tr>
+<td>20</td>
+<td>数的整除特征、尾数与末位</td>
+<td>模 2、3、5、7 的幂周期检验</td>
+<td>★3</td>
+</tr>
+<tr>
+<td>21</td>
+<td>不定方程、分类列举</td>
+<td>按 $x_3$ 分类，$x_1+x_2=N$ 有 $N+1$ 解</td>
+<td>★2</td>
+</tr>
+<tr>
+<td>22</td>
+<td>排列组合、几何计数</td>
+<td>6 点 ↔ 一个圆内三角形，$\mathrm{C}_{10}^6$</td>
+<td>★4</td>
+</tr>
+<tr>
+<td>23</td>
+<td>时钟问题</td>
+<td>相对速度 5.5°/分，180° 每隔 720/11 分</td>
+<td>★3</td>
+</tr>
+<tr>
+<td>24</td>
+<td>速算与巧算、公式类计算</td>
+<td>拆成&quot;整数−真分数&quot;去取整 → 等差数列</td>
+<td>★3</td>
+</tr>
+<tr>
+<td>25</td>
+<td>面积综合、几何思想方法</td>
+<td>连对角线分三块；$\triangle ACE$ 面积恒 50</td>
+<td>★4</td>
+</tr>
+</tbody>
+</table>
+<p><strong>方法归类</strong></p>
+<ul>
+<li><strong>分类/枚举型</strong>：3、6、11、14、17、18、21 —— 先定&quot;分类标准&quot;，再有序枚举，避免漏项。</li>
+<li><strong>面积比型</strong>：7、10、25 —— 面积比 = 底边比（共顶点、共边）；交点位置用梅涅劳斯或坐标。</li>
+<li><strong>整体/构造型</strong>：4、8、13、16、22、24 —— 抓住&quot;夹逼、补形、对应&quot;的巧劲，别硬算。</li>
+<li><strong>模型转化型</strong>：5（浓度）、15（行程）、12（立体）、19（位值）、20（同余）—— 先翻译成熟悉模型再解。</li>
+</ul>
+<h2>易错点与教学建议</h2>
+<ol>
+<li><strong>第 1、4 题（估算/约分）</strong>：第 4 题易直接把分母算成小数再除，既慢又错；教学要强调&quot;先夹再取倒数&quot;的估算套路，并注意 21 项（不是 20 项）。</li>
+<li><strong>第 6 题（符号→和的转化）</strong>：容易只试加号、或漏掉&quot;4 个数相加&quot;的情况。要点：符号问题先化成&quot;选子和为 17&quot;，再分类枚举（按含最大数 9、8…分类）。</li>
+<li><strong>第 7、10 题（面积比）</strong>：两题都易错在&quot;共顶点/共边&quot;的判断。第 7 题要求梅涅劳斯（或燕尾）定交点；第 10 题的关键结论&quot;$O$ 是两条线的中点&quot;与 $AF$ 无关，可用特殊位置（如 $AF=GB$）检验答案。</li>
+<li><strong>第 8 题（投票）</strong>：最常见的错是&quot;总人数 ≥ 400 就行&quot;，忽略&quot;已投的票不会减少&quot;（其他候选人至少 208 票），从而漏掉 $T\ge548$ 的约束；再加上&quot;62% = 31/50 ⇒ T 为 50 的倍数&quot;才能得 550。</li>
+<li><strong>第 9 题（巧合日）</strong>：不要把&quot;每个月都有 4、14、24 日各查一次&quot;漏算；注意 2023 年不是闰年，2 月只有 28 天（不影响 4、14、24 日）。</li>
+<li><strong>第 11、17 题（约数/数论）</strong>：第 11 题别忘了&quot;个位是 7 ⇒ 是奇数、且不能被 5 整除&quot;；第 17 题注意 $e_3$ 有两个取值（0 和 5），漏一个就少一半。</li>
+<li><strong>第 12 题（圆台）</strong>：易把 $AD$、$BC$ 当成直径（它们是旋转半径）；斜腰 $CD$ 用勾股定理时别忘&quot;上下底半径差 = 10−5&quot;。</li>
+<li><strong>第 13 题（格点）</strong>：要说明&quot;为什么 15×15 可行&quot;（14.14 &gt; 14）；不要想当然认为斜放能覆盖更多。</li>
+<li><strong>第 14 题（棋子）</strong>：操作周期的起点（第 3 次开始拿奇数位）最容易弄反；建议列&quot;每轮剩余编号&quot;表核对。</li>
+<li><strong>第 15 题（队伍）</strong>：注意通信员&quot;返回排尾&quot;是相向而行（相对速度 $u+v$），而追赶是 $u-v$；且&quot;队伍前进总路程 = 队伍长&quot;是第二个方程。</li>
+<li><strong>第 16 题（滚动面积）</strong>：别漏掉角上四个扇形（拼成半径 $2r$ 的整圆）；带宽是 $2r$ 不是 $r$。</li>
+<li><strong>第 18 题（分割）</strong>：先由&quot;面积互异&quot;得到 $1+2+\cdots+n\le15$ 的上界，再构造；只构造不说明上界会不严谨。</li>
+<li><strong>第 20 题（整除）</strong>：只需检查 2、3、5、7 四个质数；A、B、C 都能被 3 整除，D 需分别验证模 3、5、7。</li>
+<li><strong>第 22 题（圆内三角形）</strong>：关键是&quot;每 6 个圆周点确定唯一一个圆内三角形&quot;这个一一对应，别直接数线段交点（会算成 $\mathrm{C}_{10}^4$ 或其他）。</li>
+<li><strong>第 23 题（时钟）</strong>：注意&quot;第五次&quot;是从 12:00 后的第一次开始数；答案要写成&quot;16 时 $54\frac6{11}$ 分&quot;，不要四舍五入。</li>
+<li><strong>第 25 题（割补）</strong>：核心是&quot;$AB+DE=10$ 让两个直角三角形面积和恒为 50&quot;，以及 $\triangle ACE$ 面积恒为 50；建议用特殊值（$AB=DE=5$）先猜出 100，再说明一般情形的理由。</li>
+</ol>
+</article><div class="exam-foot"><a href="../index.html">← 返回知识地图</a> · <a href="index.html">全部真题</a></div></body></html>

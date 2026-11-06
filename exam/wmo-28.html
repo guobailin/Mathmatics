@@ -1,0 +1,685 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第 28 届 WMO · 真题解答</title>
+<link rel="stylesheet" href="../katex/katex.min.css">
+<script defer src="../katex/katex.min.js"></script>
+<script defer src="../katex/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+<style>
+body{font-family:-apple-system,"PingFang SC","Source Han Serif SC",serif;
+max-width:760px;margin:0 auto;padding:24px;line-height:1.8;color:#222}
+h1{border-bottom:2px solid #333;padding-bottom:8px}
+h2{margin-top:1.6em}h3{font-size:1.05em}
+.meta{color:#666;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.example{border:1px solid #ddd;border-radius:8px;padding:12px 16px;margin:14px 0}
+.example h3{margin:.2em 0 .6em}
+.covers{font-size:.75em;color:#888;font-weight:normal;margin-left:1em}
+.problem{background:#f7f7f9;border-radius:6px;padding:8px 12px}
+details{margin-top:.6em}summary{cursor:pointer;color:#36c}
+.answer{color:#b30;font-weight:bold}
+img{max-width:100%;height:auto}
+
+body{max-width:920px;margin:0 auto;padding:26px 22px 64px;background:#fffdf8;
+font-family:-apple-system,"PingFang SC","Source Han Serif SC",serif;line-height:1.85;color:#222}
+.exam-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;
+flex-wrap:wrap;font-size:12px;color:#5f6a64;margin-bottom:22px}
+.exam-nav a{color:#2f6f6b;text-decoration:none;font-weight:600}
+.exam-nav a:hover{text-decoration:underline}
+.exam-kicker{font-size:10.5px;letter-spacing:.16em;color:#2f6f6b;font-weight:700;margin-bottom:4px}
+.exam-body h1{font-size:25px;line-height:1.3;margin:0 0 18px;padding-bottom:12px;border-bottom:2px solid #2f6f6b}
+.exam-body h2{font-size:19px;margin:30px 0 12px;color:#1f2a26}
+.exam-body h3{font-size:15px;margin:24px 0 8px;color:#2f6f6b}
+.exam-body table{width:100%;border-collapse:collapse;margin:14px 0;font-size:12.5px}
+.exam-body th,.exam-body td{border:1px solid #ddd6c8;padding:6px 8px;text-align:left;vertical-align:top}
+.exam-body th{background:#f4efe3;font-weight:700}
+.exam-body blockquote{margin:14px 0;padding:8px 14px;border-left:3px solid #2f6f6b;background:#f7f4ec;color:#4d5651}
+.exam-body code{background:#f1ece1;padding:1px 5px;border-radius:4px;font-size:.9em}
+.exam-body img{max-width:100%;height:auto;display:block;margin:16px auto}
+.exam-body hr{border:0;border-top:1px solid #e4ddcf;margin:22px 0}
+.exam-foot{margin-top:40px;padding-top:16px;border-top:1px solid #e4ddcf;font-size:12px;color:#8a928d}
+.exam-index-head{max-width:920px;margin:0 auto 20px}
+.exam-index-head h1{font-size:28px;margin:0 0 8px}
+.exam-index-head p{margin:0;color:#5f6a64;font-size:13px}
+.exam-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:18px 0 28px}
+.exam-grid a{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:12px 13px;
+border:1px solid #ddd6c8;border-radius:12px;background:#fffdf8;color:#1f2a26;text-decoration:none}
+.exam-grid a:hover{border-color:#2f6f6b}
+.exam-grid b{font-size:12px}.exam-grid span{font-size:10px;color:#5f6a64;white-space:nowrap}
+.exam-table{width:100%;border-collapse:collapse;font-size:12.5px}
+.exam-table th,.exam-table td{border:1px solid #ddd6c8;padding:6px 8px;text-align:left}
+.exam-table th{background:#f4efe3}
+@media(max-width:720px){.exam-grid{grid-template-columns:repeat(2,minmax(0,1fr))}body{padding:18px 15px 50px}}
+@media print{.exam-nav,.exam-foot{display:none}body{max-width:none;padding:0}.exam-grid{display:none}}
+</style></head><body><div class="exam-nav"><a href="../index.html">← 知识地图</a><span><a href="index.html">全部真题</a></span></div><div class="exam-kicker">竞赛真题 · 六年级 · 20 题</div><article class="exam-body"><h1>第28届WMO六年级组试卷 全卷解答</h1>
+<blockquote>
+<p>来源：<code>exam/第28届WMO六年级试卷.pdf</code>（共 6 页；第 6 页为原卷附带的答案表，本卷所有答案均已与该答案表核对一致）</p>
+</blockquote>
+<h2>试卷概览</h2>
+<ul>
+<li><strong>题量</strong>：20 题。第 1—16 题为填空题；第 17、18、19、20 题各含 2 个小问（第 19、20 题为图形操作与逻辑推理题）。</li>
+<li><strong>难度分布</strong>（★1–★7）：★1 共 1 题（1）；★2 共 6 题（2、4、5、7、8、12）；★3 共 5 题（3、6、10、15、17）；★4 共 5 题（9、11、13、14、18）；★5 共 2 题（16、19）；★6 共 1 题（20）。</li>
+<li><strong>板块分布</strong>：
+<ul>
+<li>计算与定义新运算：1、4</li>
+<li>比、百分数与应用题（浓度、经济、比例）：2、5、7、12、13、17</li>
+<li>数论（分解质因数、余数、末位）：8、10、18</li>
+<li>几何（立体计数、圆与扇形、棱柱体积）：6、11、15</li>
+<li>计数与组合（抽屉原理、分组计数、位值最值）：9、14、16</li>
+<li>逻辑推理与游戏策略：3、19、20</li>
+</ul>
+</li>
+<li><strong>特点</strong>：本卷几乎所有题目都要先&quot;读懂模型&quot;再做（图形题 6、11、19、20 必须结合原图），纯计算题少，重在方法选择与验算。</li>
+</ul>
+<hr />
+<h2>逐题解答</h2>
+<h3>第 1 题</h3>
+<p><strong>题目</strong>：计算：$\dfrac{1+2+3+4+5}{1+2+3+4}-\dfrac{1+2}{1+2+3}=$ ____。</p>
+<p><strong>答案</strong>：1</p>
+<p><strong>解析</strong>：<br />
+先分别把每个分数的分子、分母求和：</p>
+<ul>
+<li>$\dfrac{1+2+3+4+5}{1+2+3+4}=\dfrac{15}{10}=\dfrac{3}{2}$；</li>
+<li>$\dfrac{1+2}{1+2+3}=\dfrac{3}{6}=\dfrac{1}{2}$。</li>
+</ul>
+<p>所以原式 $=\dfrac{3}{2}-\dfrac{1}{2}=1$。</p>
+<p><strong>验算</strong>：$\dfrac{15}{10}-\dfrac{3}{6}=1.5-0.5=1$，与答案一致。</p>
+<p><strong>知识点</strong>：分数的加法和减法、分数的基本性质与约分</p>
+<p><strong>思路/方法</strong>：整体求和 → 约分成最简分数 → 再相减（&quot;先合并、再约分&quot;）</p>
+<p><strong>难度</strong>：★1</p>
+<hr />
+<h3>第 2 题</h3>
+<p><strong>题目</strong>：$M$ 国和 $N$ 国两国的领土面积之比为 $16:7$，人口之比为 $8:3$，则 $M$ 国、$N$ 国人口密度之比为 ____。</p>
+<p><strong>答案</strong>：$7:6$</p>
+<p><strong>解析</strong>：<br />
+人口密度 = 人口 ÷ 面积。按&quot;份数&quot;来算：</p>
+<ul>
+<li>$M$ 国人口密度相当于 $\dfrac{8}{16}=\dfrac{1}{2}$（每 1 份面积上的人口）；</li>
+<li>$N$ 国人口密度相当于 $\dfrac{3}{7}$。</li>
+</ul>
+<p>两密度之比 $=\dfrac{1}{2}:\dfrac{3}{7}$，同乘 14 得 $7:6$。</p>
+<p><strong>验算</strong>：$M$ 国密度略大（$\frac12\approx0.50$，$\frac37\approx0.43$），$7:6$ 中 $7&gt;6$，符合。</p>
+<p><strong>知识点</strong>：比的意义、比的基本性质与化简</p>
+<p><strong>思路/方法</strong>：先写&quot;密度=人口÷面积&quot;的关系式，再化成最简整数比</p>
+<p><strong>难度</strong>：★2</p>
+<hr />
+<h3>第 3 题</h3>
+<p><strong>题目</strong>：欧欧将图中八个圆圈中的每一个都涂上红色、黄色或蓝色的一种，使得有直线相连的两个圆圈颜色不同。那么必然被涂上相同颜色的两个圆圈是 ____。<br />
+A. ⑤⑧　B. ①⑥　C. ②⑦　D. ④⑤</p>
+<p>（图中共 8 个圆圈与下列连线：①—②，②—③，③—④，②—⑤，②—⑥，②—⑧，⑤—⑥，⑥—⑧，⑥—⑦。）</p>
+<p><strong>答案</strong>：A（⑤⑧）</p>
+<p><strong>解析</strong>：<br />
+先看圈 ② 和 ⑥：它们之间有连线，所以颜色一定不同，记为&quot;②红、⑥黄&quot;（颜色名可换，结论不变）。<br />
+再看圈 ⑤：⑤ 同时与 ②、⑥ 相连，所以 ⑤ 既不能是红、也不能是黄，只能是<strong>蓝</strong>。<br />
+再看圈 ⑧：⑧ 也同时与 ②、⑥ 相连，同样既不能红、也不能黄，只能是<strong>蓝</strong>。<br />
+因此 ⑤ 与 ⑧ 一定同色，选 A。</p>
+<p>其余选项为什么不&quot;必然&quot;：① 只与 ② 相连，可以涂红或蓝；④ 只与 ③ 相连，可自由取色；⑦ 只与 ⑥ 相连，可以涂红或蓝。它们都能找得到与配对圈不同色的涂法，所以不是必然同色。</p>
+<p><strong>验算</strong>：按&quot;②=红、⑥=黄、⑤=⑧=蓝、③=蓝（不与②同）、①=蓝、④=红、⑦=红&quot;可以完整涂出满足条件的方案，说明只有 ⑤⑧ 被三色规则&quot;锁死&quot;。</p>
+<p><strong>知识点</strong>：逻辑推理、构造与论证</p>
+<p><strong>思路/方法</strong>：找&quot;同时与两个颜色不同的点相连&quot;的点——它只能取第三种颜色；再用反例排除其他选项</p>
+<p><strong>难度</strong>：★3</p>
+<hr />
+<h3>第 4 题</h3>
+<p><strong>题目</strong>：设 $\dfrac12\triangle 3=\dfrac12\times\dfrac13\times\dfrac14$，$\dfrac19\triangle 2=\dfrac19\times\dfrac1{10}$，则 $\dfrac12\triangle 4-\dfrac13\triangle 4=$ ____。</p>
+<p><strong>答案</strong>：$\dfrac{1}{180}$</p>
+<p><strong>解析</strong>：<br />
+读懂&quot;$\triangle$&quot;的含义：$a\triangle n$ 表示从 $a$ 开始，连续写 $n$ 个&quot;分子为 1、分母依次加 1&quot;的分数相乘。</p>
+<ul>
+<li>$\dfrac12\triangle 4=\dfrac12\times\dfrac13\times\dfrac14\times\dfrac15=\dfrac{1}{120}$；</li>
+<li>$\dfrac13\triangle 4=\dfrac13\times\dfrac14\times\dfrac15\times\dfrac16=\dfrac{1}{360}$。</li>
+</ul>
+<p>所以原式 $=\dfrac{1}{120}-\dfrac{1}{360}=\dfrac{3}{360}-\dfrac{1}{360}=\dfrac{2}{360}=\dfrac{1}{180}$。</p>
+<p><strong>验算</strong>：$\frac{1}{120}\approx0.00833$，$\frac{1}{360}\approx0.00278$，差 $\approx0.00556=\frac{1}{180}$ ✓。</p>
+<p><strong>知识点</strong>：定义新运算、分数乘法</p>
+<p><strong>思路/方法</strong>：先从示例中&quot;翻译&quot;出新运算的规则（项数、起点），再代入</p>
+<p><strong>难度</strong>：★2</p>
+<hr />
+<h3>第 5 题</h3>
+<p><strong>题目</strong>：一种 30 升的油漆混合物是由 25% 的红色颜料、30% 的黄色颜料和 45% 的水组成。向原来混合物中再加入 5 升黄色颜料，那么新的混合物中黄色颜料所占的百分比是 ____。</p>
+<p><strong>答案</strong>：40%</p>
+<p><strong>解析</strong>：<br />
+原来黄色颜料 $=30\times30%=9$（升）。<br />
+加入 5 升黄色颜料后：黄色 $=9+5=14$（升），总量 $=30+5=35$（升）。<br />
+新的百分比 $=14\div35=0.4=40%$。</p>
+<p><strong>验算</strong>：红色 $30\times25%=7.5$ 升、水 $30\times45%=13.5$ 升都不变，$7.5+13.5+14=35$ 升 ✓。</p>
+<p><strong>知识点</strong>：浓度问题、百分数应用题</p>
+<p><strong>思路/方法</strong>：只追踪&quot;变了的量&quot;（黄色颜料和总量），其余组分不变</p>
+<p><strong>难度</strong>：★2</p>
+<hr />
+<h3>第 6 题</h3>
+<p><strong>题目</strong>：如图，大正方体被切成 64 个小正方体，正好有一个小正方体是灰色的。在第一天，那个灰色小正方体把所有相邻的小正方体变成灰色（如果两个正方体有共同的面，我们称它们相邻）。在第二天，所有灰色小正方体做相同的动作。在第二天结束时，共有 ____ 个灰色小正方体。</p>
+<p>（图中灰色小正方体在大正方体的<strong>上表面中间</strong>，不在任何一条棱上。）</p>
+<p><strong>答案</strong>：17</p>
+<p><strong>解析</strong>：<br />
+$64=4\times4\times4$，所以大正方体每条棱上有 4 个小正方体。<br />
+灰色方块在顶层且不在棱上，与它有公共面的小方块只有 <strong>5 个</strong>（同层的上、下、左、右 4 个 + 正下方 1 个）。</p>
+<ul>
+<li>第一天结束：$1+5=6$ 个灰色。</li>
+<li>第二天：所有灰色方块（共 6 个）再把它自己周围的面相邻方块染灰。新变灰的方块恰好是&quot;从最初灰块出发走 2 步（过一个公共面算 1 步）能到达、但原来不是灰色&quot;的方块。按层数：
+<ul>
+<li>顶层（同一层内）：与灰块相距 2 格的有 6 个（4 个斜对角 + 上下方向各 1 个）；</li>
+<li>第二层（灰块正下方那一层的四周）：4 个；</li>
+<li>第三层（正下方再下一格）：1 个。<br />
+合计新增 $6+4+1=11$ 个。</li>
+</ul>
+</li>
+</ul>
+<p>第二天结束时共 $6+11=17$ 个。</p>
+<p><strong>验算</strong>：换一种数法——统计&quot;与最初灰块的距离不超过 2&quot;的小方块：$1+5+11=17$ ✓（若灰块在棱上或角上，个数会变成 13 或 10，与图不符，说明&quot;中层&quot;的位置判断正确）。</p>
+<p><strong>知识点</strong>：立体几何综合、分类列举</p>
+<p><strong>思路/方法</strong>：把&quot;传染&quot;看成按&quot;距离层数&quot;扩展，分层计数</p>
+<p><strong>难度</strong>：★3</p>
+<hr />
+<h3>第 7 题</h3>
+<p><strong>题目</strong>：全班喜欢踢足球的人数占全班人数的 $\dfrac47$，喜欢踢足球的男生占全班踢足球人数的 $\dfrac34$。若全班男生、女生人数是相等的，那么女生中不喜欢踢足球的人数占全班人数的 ____。</p>
+<p><strong>答案</strong>：$\dfrac{5}{14}$</p>
+<p><strong>解析</strong>：设全班为 14 份（取 4 和 7 的公倍数最方便）。</p>
+<ul>
+<li>喜欢踢足球的共 $14\times\dfrac47=8$ 份；</li>
+<li>其中男生 $8\times\dfrac34=6$ 份，所以男生共 7 份中，不喜欢踢球的有 $7-6=1$ 份；</li>
+<li>女生共 7 份，其中喜欢踢球的 $8-6=2$ 份，所以女生中不喜欢踢球的有 $7-2=5$ 份。</li>
+</ul>
+<p>占全班的 $\dfrac{5}{14}$。</p>
+<p><strong>验算</strong>：不踢球的总人数 $=1+5=6$ 份 $=\dfrac{6}{14}=\dfrac{3}{7}$，而 $1-\dfrac47=\dfrac37$ ✓。</p>
+<p><strong>知识点</strong>：分数应用题、比的意义</p>
+<p><strong>思路/方法</strong>：份数法（设总数为 14 份），把&quot;占谁&quot;的分数逐层转成份数</p>
+<p><strong>难度</strong>：★2</p>
+<hr />
+<h3>第 8 题</h3>
+<p><strong>题目</strong>：明明忘记了自己的电脑密码，但他还记得密码 $abcd$ 隐藏在 $8925=3^a\times b^2\times c^1\times17^d$ 的分解式中，那么明明的电脑密码是 ____。</p>
+<p><strong>答案</strong>：1571</p>
+<p><strong>解析</strong>：<br />
+把 8925 分解质因数：<br />
+$8925=3\times2975=3\times25\times119=3\times5^2\times7\times17$。<br />
+与 $3^a\times b^2\times c^1\times17^d$ 逐项对照：$a=1$，$b=5$，$c=7$，$d=1$，所以密码 $abcd=1571$。</p>
+<p><strong>验算</strong>：$3\times5^2\times7\times17=3\times25\times7\times17=8925$ ✓。</p>
+<p><strong>知识点</strong>：分解质因数</p>
+<p><strong>思路/方法</strong>：先把数分解成质因数幂的乘积，再&quot;对号入座&quot;读出各位数字</p>
+<p><strong>难度</strong>：★2</p>
+<hr />
+<h3>第 9 题</h3>
+<p><strong>题目</strong>：一首诗可以有任意行数，任意一行都可以与其它行互相押韵或互不押韵。对于只有两行的诗，它们有两种不同的韵律结构：互相押韵或互不押韵。对于三行的诗，它们有五种韵律结构：三行都押韵；其中两行互相押韵（共三种选择）；三行都不押韵。有 31 名诗人进行作诗比赛，每名诗人写一首四行的诗，则韵律结构相同的至少有 ____ 人。<br />
+（注：四行都押韵有两种情况，一种是四行全押同一个韵；另一种是两组押韵，如第 1 行和第 2 行押一个韵，第 3 行和第 4 行也押一个韵。韵律结构是不一样的。）</p>
+<p><strong>答案</strong>：3</p>
+<p><strong>解析</strong>：<br />
+韵律结构就是&quot;把 4 行分成若干个押韵组&quot;的分法。按分组的类型数一数：</p>
+<ol>
+<li>四行各自不押韵（$1+1+1+1$）：1 种；</li>
+<li>两行押韵、另两行各不同（$2+1+1$）：选哪两行押韵有 $\mathrm{C}_4^2=6$ 种；</li>
+<li>两组各两行押韵（$2+2$）：${12|34}$、${13|24}$、${14|23}$，共 3 种；</li>
+<li>三行互押、一行不同（$3+1$）：选哪一行&quot;不同&quot;有 4 种；</li>
+<li>四行全押同一个韵：1 种。</li>
+</ol>
+<p>共 $1+6+3+4+1=15$ 种韵律结构。</p>
+<p>31 名诗人只有 15 种结构可填。若每种结构至多 2 人，则最多 $15\times2=30$ 人 $&lt;31$，矛盾。所以至少有一种结构被 $\left\lceil\dfrac{31}{15}\right\rceil=3$ 人采用。</p>
+<p><strong>验算</strong>：$31=15\times2+1$，是&quot;抽屉原理&quot;的标准形式（15 个抽屉放 31 个苹果）。</p>
+<p><strong>知识点</strong>：抽屉原理、枚举与分类</p>
+<p><strong>思路/方法</strong>：先把&quot;结构&quot;数清楚（分类型枚举 15 种），再用抽屉原理求&quot;至少&quot;</p>
+<p><strong>难度</strong>：★4</p>
+<hr />
+<h3>第 10 题</h3>
+<p><strong>题目</strong>：数 59 具有以下性质：当它被 2 除余 1；被 3 除余 2；被 4 除余 3；被 5 除余 4；被 6 除余 5。那么，具有这样性质的三位数共有 ____ 个。</p>
+<p><strong>答案</strong>：15</p>
+<p><strong>解析</strong>：<br />
+&quot;被 2 除余 1、被 3 除余 2、……、被 6 除余 5&quot;，都等价于&quot;这个数加 1 后能被 2、3、4、5、6 整除&quot;（$59+1=60$ 就是例子）。<br />
+$[2,3,4,5,6]=60$，所以这样的数是 $60k-1$。</p>
+<p>三位数需 $100\le60k-1\le999$：</p>
+<ul>
+<li>最小：$60\times2-1=119$；</li>
+<li>最大：$60\times16-1=959$（$60\times17-1=1019&gt;999$）。</li>
+</ul>
+<p>共 $16-2+1=15$ 个。</p>
+<p><strong>验算</strong>：$60\times1-1=59$ 是两位数，$60\times17-1=1019$ 是四位数，都排除；$119,179,239,299,359,419,479,539,599,659,719,779,839,899,959$ 共 15 个 ✓。</p>
+<p><strong>知识点</strong>：带余除法与余数性质、余数问题物不知数</p>
+<p><strong>思路/方法</strong>：把&quot;余数为除数减 1&quot;统一成&quot;加 1 后被整除&quot;，再用最小公倍数</p>
+<p><strong>难度</strong>：★3</p>
+<hr />
+<h3>第 11 题</h3>
+<p><strong>题目</strong>：在圆上，$BC$ 是直径，长 20 厘米，$ABDC$ 是一个正方形，那么阴影部分的面积是 ____ 平方厘米。（$\pi$ 取 3.14）</p>
+<p>（图中 $O$ 为圆心，$BC$ 为水平直径、$AD$ 为竖直直径；$P$、$Q$ 分别是 $AB$、$AC$ 的中点，连接 $PO$、$QO$，两个白色三角形为 $\triangle PBO$、$\triangle QCO$，其余位于上半圆内的部分为阴影。）</p>
+<p><strong>答案</strong>：107</p>
+<p><strong>解析</strong>：<br />
+半径 $r=20\div2=10$ 厘米。</p>
+<ul>
+<li>上半圆面积 $=\dfrac12\pi r^2=\dfrac12\times3.14\times100=157$（平方厘米）。</li>
+<li>空白部分是两个等腰三角形 $\triangle PBO$、$\triangle QCO$：
+<ul>
+<li>每个三角形以半径 $OB=OC=10$ 厘米为底；</li>
+<li>$P$、$Q$ 是 $AB$、$AC$ 的中点，而 $A$ 到 $BC$ 的距离就是半径 10，所以 $P$、$Q$ 到 $BC$ 的距离是 $10\div2=5$ 厘米（即每个三角形的高为 5）。</li>
+<li>每个三角形面积 $=10\times5\div2=25$，两个共 50。</li>
+</ul>
+</li>
+<li>阴影面积 $=157-50=107$（平方厘米）。</li>
+</ul>
+<p><strong>验算</strong>：换一种切法核对——阴影 = 两个弓形 + 中间那个阴影方块：<br />
+两个弓形（$AB$、$AC$ 上的弓形）每个 $=\dfrac{\pi r^2}{4}-\dfrac{r^2}{2}=78.5-50=28.5$，共 57；<br />
+中间阴影是以 $AO$、$PQ$ 为对角线的正方形（$AO=PQ=10$），面积 $=\dfrac{10\times10}{2}=50$；<br />
+$57+50=107$ ✓，两种算法一致。</p>
+<p><strong>知识点</strong>：圆与扇形、面积综合</p>
+<p><strong>思路/方法</strong>：&quot;整体（半圆）− 空白（两个三角形）&quot;或&quot;分割成弓形 + 正方形&quot;，用两种方法互检</p>
+<p><strong>难度</strong>：★4</p>
+<hr />
+<h3>第 12 题</h3>
+<p><strong>题目</strong>：容器 $A$ 的砂糖水 200 g 中含糖浓度 30%，容器 $B$ 的砂糖水 400 g 中含糖浓度 10%。现在从 $A$ 中移 100 g 到 $B$，又从 $B$ 中移 100 g 到 $A$，则这时 $A$ 的浓度是 ____%。</p>
+<p><strong>答案</strong>：22</p>
+<p><strong>解析</strong>：<br />
+开始：$A$ 中糖 $200\times30%=60$ g；$B$ 中糖 $400\times10%=40$ g。</p>
+<ul>
+<li>第一次（$A\to B$ 100 g）：这 100 g 含糖 $100\times30%=30$ g。$A$ 剩 100 g、含糖 30 g；$B$ 变 500 g、含糖 $40+30=70$ g（浓度 $70\div500=14%$）。</li>
+<li>第二次（$B\to A$ 100 g）：这 100 g 含糖 $100\times14%=14$ g。$A$ 变 $100+100=200$ g、含糖 $30+14=44$ g。</li>
+</ul>
+<p>$A$ 的浓度 $=44\div200=0.22=22%$。</p>
+<p><strong>验算</strong>：糖的总量应守恒：$A$ 中 44 g + $B$ 中 $(400\times14%)=56$ g $=100$ g $=60+40$ ✓。</p>
+<p><strong>知识点</strong>：浓度问题</p>
+<p><strong>思路/方法</strong>：分步追踪&quot;溶液质量&quot;和&quot;溶质质量&quot;，每次只算移走那一杯里的糖</p>
+<p><strong>难度</strong>：★2</p>
+<hr />
+<h3>第 13 题</h3>
+<p><strong>题目</strong>：若进价便宜 10%，售价降低 5%，则利润率上升了 7 个百分点。那么，原来的利润率是 ____%。</p>
+<p><strong>答案</strong>：26</p>
+<p><strong>解析</strong>：<br />
+设原进价为 $c$，原售价为 $s$，原利润率 $p=\dfrac{s-c}{c}$，即 $s=c(1+p)$。<br />
+新进价 $0.9c$，新售价 $0.95s$，新利润率<br />
+$$\frac{0.95s-0.9c}{0.9c}=\frac{0.95(1+p)-0.9}{0.9}=\frac{0.05+0.95p}{0.9}.$$<br />
+由题意：$\dfrac{0.05+0.95p}{0.9}=p+0.07$，<br />
+去分母：$0.05+0.95p=0.9p+0.063$，<br />
+得 $0.05p=0.013$，$p=0.26=26%$。</p>
+<p><strong>验算</strong>：设进价 100 元、售价 126 元（利润率 26%）。新进价 90 元、新售价 $126\times95%=119.7$ 元，利润 $29.7$ 元，利润率 $29.7\div90=33%=26%+7%$ ✓。</p>
+<p><strong>知识点</strong>：经济问题、百分数应用题</p>
+<p><strong>思路/方法</strong>：设字母列方程（利润率 $=\frac{\text{售价}-\text{进价}}{\text{进价}}$），&quot;上升 7 个百分点&quot;即新利润率 $=p+7%$</p>
+<p><strong>难度</strong>：★4</p>
+<hr />
+<h3>第 14 题</h3>
+<p><strong>题目</strong>：将数字 1、2、3、4、5、6、7、8、9 按任意顺序写成一排，其中相邻的 4 个数字组成一个四位数，共可以组成 6 个四位数，则这 6 个四位数的和最大为 ____。</p>
+<p><strong>答案</strong>：43180</p>
+<p><strong>解析</strong>：<br />
+设这一排为 $d_1d_2\cdots d_9$，6 个四位数是 $d_1d_2d_3d_4,\ d_2d_3d_4d_5,\ \dots,\ d_6d_7d_8d_9$。<br />
+把和按位置拆开，看每一位数字被&quot;算进&quot;多少（千位 1000、百位 100、十位 10、个位 1）：</p>
+<table>
+<thead>
+<tr>
+<th>位置</th>
+<th>出现在哪几个四位数里</th>
+<th>权重</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$d_1$</td>
+<td>第 1 个（千位）</td>
+<td>1000</td>
+</tr>
+<tr>
+<td>$d_2$</td>
+<td>第 1 个（百位）+ 第 2 个（千位）</td>
+<td>1100</td>
+</tr>
+<tr>
+<td>$d_3$</td>
+<td>第 1 个（十位）+ 第 2 个（百位）+ 第 3 个（千位）</td>
+<td>1110</td>
+</tr>
+<tr>
+<td>$d_4,d_5,d_6$</td>
+<td>各出现 4 次（千、百、十、个位都当过）</td>
+<td>1111</td>
+</tr>
+<tr>
+<td>$d_7$</td>
+<td>第 4 个（个位）+ 第 5 个（十位）+ 第 6 个（百位）</td>
+<td>111</td>
+</tr>
+<tr>
+<td>$d_8$</td>
+<td>第 5 个（个位）+ 第 6 个（十位）</td>
+<td>11</td>
+</tr>
+<tr>
+<td>$d_9$</td>
+<td>第 6 个（个位）</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>所以总和 $=1000d_1+1100d_2+1110d_3+1111(d_4+d_5+d_6)+111d_7+11d_8+d_9$。<br />
+要最大，就把最大的数字放到权重最大的位置：9、8、7 放三个 1111 位，6 放 1110 位，5 放 1100 位，4 放 1000 位，3 放 111 位，2 放 11 位，1 放 1 位：</p>
+<p>$$1111\times(9+8+7)+1110\times6+1100\times5+1000\times4+111\times3+11\times2+1=26664+6660+5500+4000+333+22+1=43180.$$</p>
+<p><strong>验算</strong>：取一种达到最大值的排法 $4,5,6,9,8,7,3,2,1$，6 个四位数为 $4569,5698,6987,9873,8732,7321$，和 $=10267+6987+9873+8732+7321=43180$ ✓。</p>
+<p><strong>知识点</strong>：位值原理、最值问题</p>
+<p><strong>思路/方法</strong>：算权重（每个位置被乘多少次、在什么数位），排序后&quot;大数配大权重&quot;</p>
+<p><strong>难度</strong>：★4</p>
+<hr />
+<h3>第 15 题</h3>
+<p><strong>题目</strong>：如图所示，是一个有水深 1 米的浅水区和水深 1.5 米的深水区的大型游泳池，两区中间衔接区是一直线斜坡。从游泳池内部量得游泳池的长是 50 米、宽是 30 米，浅水区的长度是 10 米，深水区的长度是 20 米。若将这个大型游泳池注满水，需要水 ____ 立方米。<br />
+（注：上下底面平行且相等、侧棱平行且相等的几何体统称为棱柱，它们的体积等于底面积与高的乘积。）</p>
+<p><strong>答案</strong>：1950</p>
+<p><strong>解析</strong>：<br />
+沿长度方向把池子分成三段（每段宽都是 30 米）：</p>
+<ol>
+<li>浅水区：长 10 米、深 1 米，体积 $10\times30\times1=300$；</li>
+<li>斜坡区：长 $50-10-20=20$ 米，水深从 1 米均匀变到 1.5 米，平均水深 $\dfrac{1+1.5}{2}=1.25$ 米，体积 $20\times30\times1.25=750$；</li>
+<li>深水区：长 20 米、深 1.5 米，体积 $20\times30\times1.5=900$。</li>
+</ol>
+<p>总水量 $=300+750+900=1950$（立方米）。</p>
+<p><strong>验算</strong>：平均水深 $=1950\div(50\times30)=1.3$ 米；按长度加权平均：$\dfrac{10\times1+20\times1.25+20\times1.5}{50}=\dfrac{10+25+30}{50}=1.3$ ✓。</p>
+<p><strong>知识点</strong>：立体几何综合、体积与容积单位</p>
+<p><strong>思路/方法</strong>：分段求体积（斜坡段按&quot;平均水深&quot;的棱柱处理）</p>
+<p><strong>难度</strong>：★3</p>
+<hr />
+<h3>第 16 题</h3>
+<p><strong>题目</strong>：有六个条件：&quot;偶数&quot;、&quot;240 的因数&quot;、&quot;3 的倍数&quot;、&quot;奇数&quot;、&quot;质数&quot;和&quot;正方形数&quot;，它们不重复地分布在网格周围 $a$、$b$、$c$、$d$、$e$ 和 $f$ 的位置上。将数字 1、2、3、4、5、6、7、8、9 填入到网格内的空白格中，使每个数字都满足它们所在行和列上标注的条件，一共有 ____ 种不同的填数方式。<br />
+（网格为 3 行 3 列：$a$、$b$、$c$ 标在三列的上方，$d$、$e$、$f$ 标在三行的左侧。）</p>
+<p><strong>答案</strong>：72</p>
+<p><strong>解析</strong>：<br />
+先把 1—9 中每个数满足的条件列出来：</p>
+<ul>
+<li>1：240 的因数、奇数、正方形数；</li>
+<li>2：偶数、240 的因数、质数；</li>
+<li>3：240 的因数、3 的倍数、奇数、质数；</li>
+<li>4：偶数、240 的因数、正方形数；</li>
+<li>5：240 的因数、奇数、质数；</li>
+<li>6：偶数、240 的因数、3 的倍数；</li>
+<li>7：奇数、质数；</li>
+<li>8：偶数、240 的因数；</li>
+<li>9：3 的倍数、奇数、正方形数。</li>
+</ul>
+<p><strong>第一步：找出哪两个条件能放在同一行或同一列。</strong><br />
+一个格子里的数要同时满足&quot;行条件&quot;和&quot;列条件&quot;，所以：</p>
+<ul>
+<li><strong>7</strong> 只满足&quot;奇数、质数&quot;，所以 7 所在格子的两个条件恰好是&quot;奇数&quot;和&quot;质数&quot;——它们必须一个在行、一个在列；</li>
+<li><strong>8</strong> 只满足&quot;偶数、240 的因数&quot;，同理&quot;偶数&quot;与&quot;240 的因数&quot;必须一个在行、一个在列；</li>
+<li>&quot;奇数&quot;与&quot;偶数&quot;没有公共数字，若分处行和列就会出现一个&quot;填不进数&quot;的空格，所以它们必须<strong>同在</strong>行（或同在列）；</li>
+<li>&quot;质数&quot;与&quot;正方形数&quot;在 1—9 中没有公共数字（$1,4,9$ 都不是质数），所以它们也必须<strong>同在</strong>行（或同在列）。</li>
+</ul>
+<p>由&quot;奇数与质数分属行、列&quot;，而&quot;奇数与偶数同组&quot;&quot;质数与正方形数同组&quot;，可推出六个条件只能分成两组：<br />
+$${\text{奇数},\ \text{偶数},\ \text{3 的倍数}}\quad\text{和}\quad{\text{质数},\ \text{正方形数},\ \text{240 的因数}}.$$<br />
+一组放在 $a,b,c$（列），另一组放在 $d,e,f$（行）。</p>
+<p><strong>第二步：数填法。</strong></p>
+<ul>
+<li>两组中哪一组当&quot;列&quot;：2 种；</li>
+<li>3 个列条件在 $a,b,c$ 中排列：$3!=6$ 种；</li>
+<li>3 个行条件在 $d,e,f$ 中排列：$3!=6$ 种。<br />
+共 $2\times6\times6=72$ 种。</li>
+</ul>
+<p><strong>第三步：确认每种排法下填数只有 1 种。</strong>（以&quot;列=质数、正方形数、240 的因数；行=奇数、偶数、3 的倍数&quot;为例）</p>
+<ul>
+<li>7 只能在&quot;奇数∩质数&quot;；8 只能在&quot;偶数∩240 的因数&quot;；</li>
+<li>&quot;偶数∩质数&quot;只容得下 2，所以 2 在此；&quot;偶数∩正方形数&quot;只容得下 4，所以 4 在此；</li>
+<li>&quot;3 的倍数∩质数&quot;只容得下 3，3 在此；&quot;3 的倍数∩正方形数&quot;只容得下 9，9 在此；</li>
+<li>于是&quot;3 的倍数∩240 的因数&quot;只能放 6；最后剩下 1 和 5：1 同时是&quot;奇数、正方形数&quot;，放入&quot;奇数∩正方形数&quot;，5 放入&quot;奇数∩240 的因数&quot;。</li>
+</ul>
+<p>填法唯一。故总数为 72。</p>
+<p><strong>验算</strong>：把两组互换（行、列对调）同样有 $6\times6=36$ 种，$36\times2=72$，与答案表一致 ✓。</p>
+<p><strong>知识点</strong>：逻辑推理、分类列举</p>
+<p><strong>思路/方法</strong>：用&quot;7 和 8 只能满足两个条件&quot;锁定条件分组，再把&quot;互斥条件必须同组&quot;作为筛选，最后分行、列排列计数</p>
+<p><strong>难度</strong>：★5</p>
+<hr />
+<h3>第 17 题</h3>
+<p><strong>题目</strong>：山羊和绵羊性情不同。羊群中当山羊与绵羊的数量比为 $3:7$ 时，则生态平衡。<br />
+（1）若某生态平衡的草原上，绵羊比山羊多 16 只，那么山羊有多少只？<br />
+（2）假设在某草原原本平衡的羊群中，山羊和绵羊都被狼吃掉了 42 只，为了达到新的平衡，如果只补充一种羊，那么应补充的是山羊还是绵羊？需要补充多少只？</p>
+<p><strong>答案</strong>：（1）12 只；（2）应补充<strong>山羊</strong>，需补充 24 只。</p>
+<p><strong>解析</strong>：<br />
+（1）平衡时山羊:绵羊 $=3:7$，即山羊 3 份、绵羊 7 份，绵羊比山羊多 $7-3=4$ 份。<br />
+$4$ 份 $=16$ 只 $\Rightarrow 1$ 份 $=4$ 只，所以山羊 $=3\times4=12$ 只（绵羊 $=7\times4=28$ 只）。</p>
+<p>（2）设原来山羊 $3k$ 只、绵羊 $7k$ 只。各被吃掉 42 只后：山羊 $3k-42$ 只、绵羊 $7k-42$ 只。</p>
+<p>若补充山羊 $x$ 只使比例恢复 $3:7$：<br />
+$$\frac{3k-42+x}{7k-42}=\frac37\ \Rightarrow\ 7(3k-42+x)=3(7k-42)$$<br />
+$$21k-294+7x=21k-126\ \Rightarrow\ 7x=168\ \Rightarrow\ x=24.$$<br />
+（若改为补充绵羊 $y$ 只，会得到 $3y=-168$，不可能。）所以只能补充山羊 24 只，且这个结果与原来羊群的大小 $k$ 无关。</p>
+<p><strong>验算</strong>：取 $k=20$（山羊 60、绵羊 140），被吃掉后为 18 和 98；补山羊 24 只后 $42:98=3:7$ ✓。再验（1）：$28-12=16$ ✓。</p>
+<p><strong>知识点</strong>：按比例分配、比的意义</p>
+<p><strong>思路/方法</strong>：（1）份数法；（2）设份数为 $3k$、$7k$ 列比例方程，&quot;只补一种&quot;两种情形都试</p>
+<p><strong>难度</strong>：★3</p>
+<hr />
+<h3>第 18 题</h3>
+<p><strong>题目</strong>：已知 $n!$ 表示从 1 连续乘到整数 $n$，例如：$2!=1\times2$，$3!=1\times2\times3$，则：<br />
+（1）求 $4!\times9!$ 与 $7!\times5!$ 的最大公因数；（结果用数值表示）<br />
+（2）将 $13!$ 展开计算之后所得的结果中，最后一个非零数字是多少？</p>
+<p><strong>答案</strong>：（1）120960；（2）8</p>
+<p><strong>解析</strong>：<br />
+（1）用质因数分解（比硬乘更稳）：</p>
+<ul>
+<li>$4!=2^3\times3$，$9!=2^7\times3^4\times5\times7$，所以 $4!\times9!=2^{10}\times3^5\times5\times7$；</li>
+<li>$7!=2^4\times3^2\times5\times7$，$5!=2^3\times3\times5$，所以 $7!\times5!=2^7\times3^3\times5^2\times7$。</li>
+</ul>
+<p>最大公因数取公共质因数的最低次幂：<br />
+$$\gcd=2^7\times3^3\times5\times7=128\times27\times35=120960.$$</p>
+<p>（2）$13!=6227020800$，最后一个非零数字是 <strong>8</strong>。</p>
+<p>也可以不算出 $13!$：$13!$ 中质因数 5 的个数 $=\left\lfloor\frac{13}{5}\right\rfloor=2$，2 的个数 $=\left\lfloor\frac{13}{2}\right\rfloor+\left\lfloor\frac{13}{4}\right\rfloor+\left\lfloor\frac{13}{8}\right\rfloor=6+3+1=10$。<br />
+去掉 2 个&quot;10&quot;（用掉 $5^2$ 和 $2^2$）后，剩余部分<br />
+$$2^8\times3^5\times7\times11\times13$$<br />
+的个位数 $=6\times3\times7\times1\times3=378$ 的个位数 $=8$。</p>
+<p><strong>验算</strong>：$8709120=120960\times72$，$604800=120960\times5$，而 $\gcd(72,5)=1$，说明 120960 就是最大公因数 ✓；$13!=6227020800$ 末位非零数字为 8 ✓。</p>
+<p><strong>知识点</strong>：分解质因数、尾数与末位</p>
+<p><strong>思路/方法</strong>：（1）质因数分解后&quot;取最低次幂&quot;；（2）先数因数 5 的个数确定末尾 0 的个数，再去掉 10 求末位</p>
+<p><strong>难度</strong>：★4</p>
+<hr />
+<h3>第 19 题</h3>
+<p><strong>题目</strong>：用小正方形拼成如图所示三个图案，甲、乙两人轮流从中涂黑一个 $1\times2$ 的小长方形，方格不能重复涂黑，轮到谁无法按要求涂黑时，就算谁输。<br />
+（1）如果在第二个图案中进行游戏，甲先涂黑了 5、6 两格，乙应该先涂黑标有 ____ 的长方形才能保证获胜；<br />
+（2）如果在这三个图案上进行游戏，甲为了保证获胜，应该先涂黑标有 ____ 的长方形。</p>
+<p>（三个图案的格子编号：</p>
+<ul>
+<li><strong>图案一</strong>：1、2、3 竖排成一列（3 格）；</li>
+<li><strong>图案二</strong>：第一行 4、7、8、10、11；第二行 5、（空）、9、（空）、12；第三行 6、（空）、（空）、（空）、13（共 10 格）；</li>
+<li><strong>图案三</strong>：第一行 14、17、19；第二行 15、（空）、（空）；第三行 16、18、20（共 7 格）。）</li>
+</ul>
+<p><strong>答案</strong>：（1）8、10；（2）8、9</p>
+<p><strong>解析</strong>：<br />
+涂一个 $1\times2$ 长方形 = 在相邻两格中选中它们；此后这两格不能再被覆盖。&quot;谁不能涂谁输&quot;是&quot;取到最后一个者胜&quot;的游戏。先看三个图案的&quot;链状结构&quot;：</p>
+<ul>
+<li>图案一：1—2—3，一条 3 格短链（只能放 1 个长方形）；</li>
+<li>图案二：6—5—4—7—8，且 8 还连着 9 和 10—11—12—13（在 8 处分叉）；</li>
+<li>图案三：19—17—14—15—16—18—20，一条 7 格长链。</li>
+</ul>
+<p><strong>（1）</strong> 甲先涂 5、6 后，图案二剩下：4—7—8—9 与 8—10—11—12—13（仍在 8 处分叉）。<br />
+乙应涂 <strong>8、10</strong>：这样 8 被占后，剩下能涂的只有 4—7 和 11—12（或 12—13）两处，共 2 步；甲涂一处、乙涂一处，轮到甲时无处可涂，乙胜。<br />
+若乙改涂 8、9，则图形被拆成&quot;4—7&quot;（2 格）和&quot;10—11—12—13&quot;（4 格）两条链；甲只要涂 10、11，就剩下&quot;12—13&quot;和&quot;4—7&quot;两处，此后乙涂一处、甲涂一处，乙先无处可涂，乙输。所以只有涂 8、10 能保证乙胜。</p>
+<p><strong>（2）</strong> 三幅图案同时进行。用&quot;胜负值&quot;来判断（一个局面的胜负值 = 先手方最多能&quot;多走几步&quot;的度量，相同则互相抵消）：</p>
+<ul>
+<li>图案一（3 格链）：只能涂 1 步就结束，胜负值为 1；</li>
+<li>图案二（10 格、8 处分叉）：胜负值为 4；</li>
+<li>图案三（7 格链）：先手取 14、15 可把它分成一条 2 格链和一条 3 格链（两者的胜负值都是 1，互相抵消），所以它的胜负值为 1。<br />
+三者按&quot;胜负值相同就抵消&quot;的规则算：图案一与图案三的 1 与 1 抵消，只剩图案二的 4，说明先手（甲）有必胜下法。<br />
+甲要取一个长方形，使取完后三幅图案的胜负值全部抵消（结果变成 0）。逐一检验，只有取 <strong>8、9</strong> 可以：<br />
+取 8、9 后，图案二变成两条完全相同的 4 格链（6—5—4—7 与 10—11—12—13），两条链胜负值相同、可以互相抵消；图案一与图案三的胜负值也抵消，于是乙面对的是&quot;必败局面&quot;。此后甲采用&quot;对称应对&quot;：乙在哪条 4 格链上涂，甲就在另一条链的对应位置涂；乙动图案三，甲就把图案三拆成与图案一相配的两段；这样乙每涂一个甲都能接着涂，最后乙先无处可涂。<br />
+若甲先取别的长方形（如 8、10 或 14、15），乙都有对称应对，甲反而不利。</li>
+</ul>
+<p><strong>验算</strong>：用&quot;逐步枚举&quot;（把每幅图剩余部分的所有可能走法都算一遍）检验：（1）中乙唯一能走向必败局面的涂法是 8、10；（2）中甲唯一能保证获胜的第一步是 8、9，与答案表一致。</p>
+<p><strong>知识点</strong>：游戏策略、构造与论证</p>
+<p><strong>思路/方法</strong>：把图形化成&quot;链/树&quot;，用对称配对与胜负值（P/N 局面）分析，最后用穷举验证</p>
+<p><strong>难度</strong>：★5</p>
+<hr />
+<h3>第 20 题</h3>
+<p><strong>题目</strong>：在星际大战中，每一艘战舰周围都有肉眼看不到的防护网。防护网是以战舰为中心的 $3\times3$ 大小的圆形。当镭射射出时：<br />
+① 没有障碍物时，镭射射出的方向是直线；<br />
+② 当镭射射出的方向与战舰成一直线时，可命中战舰；<br />
+③ 当镭射射出的方向与战舰不成一条直线，并遇到防护网时，镭射会以直角反射出去，若再次遇到防护网，则继续反射；<br />
+④ 当镭射射到两艘战舰的防护网重叠的位置时，镭射会原路返回；<br />
+⑤ 在防护网内镭射时，若镭射与战舰成一条直线时，可命中战舰；否则立刻沿原路返回。<br />
+图中的号码代表镭射射出和射进的方向，镭射从①号射入，会从另一个①号射出；带拐弯的箭头表示镭射从此处射入后沿原路返回。<br />
+（1）请根据 3 艘战舰图中的标识，3 艘战舰中相对位于最上边的战舰的位置是 ____。<br />
+（2）请根据 4 艘战舰图中的标识，4 艘战舰中相对位于最右边的战舰的位置是 ____。<br />
+注：例如第 $a$ 列、第 $A$ 排用 $(a,A)$ 表示。</p>
+<p><strong>答案</strong>：（1）$(e,E)$；（2）$(f,C)$</p>
+<p><strong>解析</strong>：<br />
+读图方法（原卷上方大图是规则示例）：</p>
+<ul>
+<li>边框上的<strong>编号</strong>（①—⑥）表示镭射的进出方向，同一个编号出现两次（一处射入、另一处射出）；</li>
+<li><strong>&quot;命中&quot;</strong> 表示从该处射入的镭射能直接命中战舰，说明<strong>该列/该排上有战舰</strong>；</li>
+<li><strong>带拐弯的箭头</strong> 表示镭射从此处射入后沿原路返回，说明射到了&quot;两艘战舰防护网重叠&quot;的位置（或斜着撞网后被弹回）。</li>
+</ul>
+<p>（1）5×5 的&quot;3 艘战舰图&quot;边框标识：</p>
+<ul>
+<li>上边：第 $a$、$b$、$c$ 列依次是 ②、命中、①；下边：第 $d$ 列是 ①；</li>
+<li>左边：第 $D$、$C$、$B$ 排依次是 ②、命中、&quot;原路返回&quot;；</li>
+<li>右边：第 $D$、$C$、$B$ 排依次是&quot;原路返回&quot;、命中、&quot;原路返回&quot;。<br />
+由上边 $b$ 列的&quot;命中&quot;知 $b$ 列有战舰；由左、右两边 $C$ 排的&quot;命中&quot;知 $C$ 排有战舰；再结合左 $B$、右 $B$、右 $D$ 处&quot;原路返回&quot;（对应两艘战舰防护网重叠）与 ①② 两条镭射的进出位置，逐格试放，可得三艘战舰分别在 $(b,C)$、$(c,A)$、$(e,E)$（此时边框上每条标识都能解释通）。其中最上边的一艘在第 $e$ 列、第 $E$ 排，即 $(e,E)$。</li>
+</ul>
+<p>（2）6×6 的&quot;4 艘战舰图&quot;边框标识：</p>
+<ul>
+<li>上边 $a$—$f$ 依次是：⑥、②、命中、返回、命中、①；</li>
+<li>下边 $a$—$f$ 依次是：⑥、③、④、命中、返回、命中；</li>
+<li>左边 $F$—$A$ 依次是：②、命中、③、命中、④、⑤；</li>
+<li>右边 $F$—$A$ 依次是：①、命中、返回、命中、返回、⑤。<br />
+上边 $c$、$e$ 的&quot;命中&quot;说明有战舰在 $c$ 列、$e$ 列；下边 $d$、$f$ 的&quot;命中&quot;说明有战舰在 $d$ 列、$f$ 列；左右两边 $E$、$C$ 的&quot;命中&quot;说明两排各两艘。再由&quot;原路返回&quot;（上 $d$、下 $e$、右 $D$、右 $B$ 处）确定两艘战舰防护网的重叠位置，逐格试放并核对 ①—⑥ 六条镭射的进出方向，可得四艘战舰分别在 $(c,E)$、$(d,E)$、$(e,C)$、$(f,C)$。其中最右边的一艘在第 $f$ 列、第 $C$ 排，即 $(f,C)$。</li>
+</ul>
+<blockquote>
+<p><strong>【待核对】</strong> 本题图形复杂，上面&quot;战舰位置&quot;是按边框标识逐条追踪推得的结论，最终答案已与试卷第 6 页官方答案表核对一致；但镭射在大图中的每一段具体折线路径（尤其 ①—⑥ 的拐弯点）难以从印刷图逐段复核，教学时请对照原卷第 5 页原图再走一遍。</p>
+</blockquote>
+<p><strong>知识点</strong>：逻辑推理、游戏策略</p>
+<p><strong>思路/方法</strong>：把边框标识当作&quot;射线的入口/出口&quot;，先由&quot;命中&quot;定出战舰所在的行列，再由&quot;原路返回&quot;与编号射线定出重叠处，最后逐格试放验证</p>
+<p><strong>难度</strong>：★6</p>
+<hr />
+<h2>知识点与思路总结表</h2>
+<table>
+<thead>
+<tr>
+<th>题号</th>
+<th>知识点</th>
+<th>方法</th>
+<th>难度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>分数的加法和减法、分数的基本性质与约分</td>
+<td>先求和再约分</td>
+<td>★1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>比的意义、比的基本性质与化简</td>
+<td>密度=人口÷面积，再化最简整数比</td>
+<td>★2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>逻辑推理、构造与论证</td>
+<td>三色染色：同时连两个异色点者必为第三色</td>
+<td>★3</td>
+</tr>
+<tr>
+<td>4</td>
+<td>定义新运算、分数乘法</td>
+<td>先翻译新运算规则再代入</td>
+<td>★2</td>
+</tr>
+<tr>
+<td>5</td>
+<td>浓度问题、百分数应用题</td>
+<td>只追踪变化的溶质与总量</td>
+<td>★2</td>
+</tr>
+<tr>
+<td>6</td>
+<td>立体几何综合、分类列举</td>
+<td>按&quot;距离层数&quot;分层计数</td>
+<td>★3</td>
+</tr>
+<tr>
+<td>7</td>
+<td>分数应用题、比的意义</td>
+<td>份数法（设全班 14 份）</td>
+<td>★2</td>
+</tr>
+<tr>
+<td>8</td>
+<td>分解质因数</td>
+<td>分解质因数后按指数对号入座</td>
+<td>★2</td>
+</tr>
+<tr>
+<td>9</td>
+<td>抽屉原理、枚举与分类</td>
+<td>先数 15 种韵律结构，再用抽屉原理</td>
+<td>★4</td>
+</tr>
+<tr>
+<td>10</td>
+<td>带余除法与余数性质、余数问题物不知数</td>
+<td>&quot;加 1 被整除&quot;化为 60k−1</td>
+<td>★3</td>
+</tr>
+<tr>
+<td>11</td>
+<td>圆与扇形、面积综合</td>
+<td>半圆减两个三角形（并用弓形+正方形互检）</td>
+<td>★4</td>
+</tr>
+<tr>
+<td>12</td>
+<td>浓度问题</td>
+<td>分步追踪溶质质量</td>
+<td>★2</td>
+</tr>
+<tr>
+<td>13</td>
+<td>经济问题、百分数应用题</td>
+<td>设进价、售价列方程</td>
+<td>★4</td>
+</tr>
+<tr>
+<td>14</td>
+<td>位值原理、最值问题</td>
+<td>算权重，大数配大权重</td>
+<td>★4</td>
+</tr>
+<tr>
+<td>15</td>
+<td>立体几何综合、体积与容积单位</td>
+<td>分段求体积，斜坡用平均水深</td>
+<td>★3</td>
+</tr>
+<tr>
+<td>16</td>
+<td>逻辑推理、分类列举</td>
+<td>由 7、8 锁定条件分组，再排列计数</td>
+<td>★5</td>
+</tr>
+<tr>
+<td>17</td>
+<td>按比例分配、比的意义</td>
+<td>份数法 + 比例方程</td>
+<td>★3</td>
+</tr>
+<tr>
+<td>18</td>
+<td>分解质因数、尾数与末位</td>
+<td>质因数分解取最低次幂；去 10 求末位</td>
+<td>★4</td>
+</tr>
+<tr>
+<td>19</td>
+<td>游戏策略、构造与论证</td>
+<td>链/树结构 + 对称配对（P/N 局面），穷举验证</td>
+<td>★5</td>
+</tr>
+<tr>
+<td>20</td>
+<td>逻辑推理、游戏策略</td>
+<td>边框标识 → 命中定行列 → 返回定重叠 → 试放验证</td>
+<td>★6</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>易错点与教学建议</h2>
+<ol>
+<li><strong>计算题（1、4、18）</strong>：这类题丢分多来自&quot;看错符号/漏乘项&quot;。第 4 题要特别注意&quot;$\triangle n$ 是 $n$ 项相乘&quot;而不是乘到 $n$；第 18 题求最大公因数时，用质因数分解取&quot;最低次幂&quot;比硬算更稳，教学时应让学生养成先分解的习惯。</li>
+<li><strong>比与百分数（2、5、7、12、13、17）</strong>：最容易错的是&quot;占谁&quot;——第 7 题的 $\frac34$ 是&quot;占踢球人数的&quot;，第 13 题的&quot;上升 7 个百分点&quot;是绝对差，不是&quot;上升 7%&quot;。建议统一训练：先写&quot;谁÷谁&quot;，再代数据；浓度题按&quot;溶质质量守恒&quot;分步追踪。</li>
+<li><strong>几何题（6、11、15）</strong>：
+<ul>
+<li>第 6 题的关键是判断灰色方块&quot;在面上（不在棱上）&quot;，否则相邻数会算成 4 或 3；教学中可让学生用 4×4×4 的橡皮泥/方块模型数一遍。</li>
+<li>第 11 题的空白三角形高为 5 是易错点（要用&quot;中点 → 高度减半&quot;），面积题尽量用两种方法互检。</li>
+<li>第 15 题斜坡段必须用&quot;平均水深&quot;，不能直接用&quot;1.5 米&quot;或&quot;1 米&quot;。</li>
+</ul>
+</li>
+<li><strong>数论（8、10、18）</strong>：第 8 题容易把 $b^2$、$c^1$ 的指数当成数字的一部分；第 10 题注意&quot;余数=除数−1&quot;的统一化，并留意三位数的上下界（59 是两位、1019 是四位）；第 18(2) 题&quot;最后一个非零数字&quot;要先把末尾的 0 去干净（数 5 的个数）。</li>
+<li><strong>计数（9、14、16）</strong>：第 9 题必须把&quot;2+2&quot;的 3 种和&quot;2+1+1&quot;的 6 种分清楚；第 14 题要逐位算&quot;权重&quot;，不能想当然认为两端权重最大（$d_1$ 只有 1000，而 $d_4$—$d_6$ 有 1111）；第 16 题先锁定&quot;条件分组&quot;再排列，避免直接枚举 9 个数的全排列。</li>
+<li><strong>逻辑与游戏（3、19、20）</strong>：第 3 题要说明&quot;为什么其他选项不必然&quot;，用反例排除；第 19 题是&quot;不能取者输&quot;的对策游戏，建议教学时用&quot;链化 + 对称配对&quot;直观讲解，并用小规模穷举验证（本题答案为 (1) 8、10；(2) 8、9）；第 20 题必须先读规则再看图，建议把边框标识抄到网格四边，再逐条射线用彩笔描——注意&quot;命中&quot;表示该行/列有战舰，&quot;拐弯箭头&quot;表示射到两网重叠处。</li>
+<li><strong>通用建议</strong>：本卷答案页（第 6 页）给出了全部答案，可作为自测核对；建议学生做完后先自查&quot;量纲/合理性&quot;（如第 11 题面积约 107 平方厘米略小于半圆 157 是合理的，第 15 题平均水深 1.3 米介于 1 与 1.5 之间是合理的），再对答案。</li>
+</ol>
+</article><div class="exam-foot"><a href="../index.html">← 返回知识地图</a> · <a href="index.html">全部真题</a></div></body></html>
