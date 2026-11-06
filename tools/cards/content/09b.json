@@ -473,7 +473,7 @@
         },
         {
           "t": "fx",
-          "v": "S_{\\text{柱侧}}=2\\pi rh,\\quad S_{\\text{锥侧}}=\\pi rl"
+          "v": "S_{\\text{柱侧}}=2\\pi rh,\\quad S_{\\text{直圆锥侧}}=\\pi rl"
         },
         {
           "t": "li",
