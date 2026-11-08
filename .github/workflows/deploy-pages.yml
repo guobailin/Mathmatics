@@ -15,7 +15,7 @@ permissions:
 
 concurrency:
   group: mathmatics-pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build-and-deploy:
@@ -29,6 +29,8 @@ jobs:
           python-version: '3.11'
       - name: Install build dependencies
         run: python -m pip install --upgrade pyyaml markdown-it-py
+      - name: Sync embedded cards from standalone JSON source
+        run: python tools/cards/embed.py
       - name: Build knowledge pages and mini-program data
         run: python tools/build.py
       - name: Verify Markdown, cards and mini-program consistency
@@ -43,7 +45,7 @@ jobs:
         run: |
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git add CONSISTENCY_MATRIX.csv CONSISTENCY_ISSUES.csv
+          git add content CONSISTENCY_MATRIX.csv CONSISTENCY_ISSUES.csv
           if ! git diff --cached --quiet; then
             git commit -m "chore: refresh T8 consistency audit outputs"
             git push origin HEAD:main
