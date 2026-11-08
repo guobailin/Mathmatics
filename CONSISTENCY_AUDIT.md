@@ -94,5 +94,15 @@
 ## 5. 验收边界
 
 - 已完成：知识点与小程序 ID 映射、卡片 ID 映射、重复/缺失/空字段结构盘点、manifest 修正、旧统计文档校准。
-- **最终通过条件**：本次 GitHub Actions 中 `Verify Markdown, cards and mini-program consistency` 步骤成功，且问题 CSV 无未解决项。
+- **最终结果：通过。** GitHub Actions run `42489774543` 成功；门禁输出 Markdown 249 IDs、小程序 249 个唯一 ID、独立卡片 107 IDs、自动内嵌卡 103 条完全一致、4 条手工保留、问题数 0。`CONSISTENCY_MATRIX.csv` 已生成 249 行知识点记录，`CONSISTENCY_ISSUES.csv` 仅有表头、无未解决差异。
 - 结构一致不等于数学内容正确；数学推导、答案复算、教材覆盖、竞赛题来源和实体打印仍由 T1–T7、T9–T10 的专项任务分别验收。
+
+
+## 6. 最终自动验收结果（2026-11-08）
+
+- GitHub Actions：<https://github.com/guobailin/Mathmatics/actions/runs/42489774543>，结论 success。
+- `tools/cards/embed.py`：107 个卡片 ID 中写入 103 个自动卡片，保留 4 个手工维护卡片；无缺少 Markdown、无缺少“例题”锚点。
+- `tools/build.py`：校验通过，249 个知识点、778 道例题、107 篇共 428 道变式/自测；构建 12 个小程序模块。
+- `tools/check_consistency.py`：249/249 小程序记录与 Markdown 源字段逐项一致；103/103 自动内嵌卡与独立 JSON 一致；4 个手工卡存在；问题 0。
+- 矩阵：`CONSISTENCY_MATRIX.csv` 共 249 条知识点记录；问题清单 `CONSISTENCY_ISSUES.csv` 无未解决项。
+- **后续转交 T9**：卡片渲染检查报告 13 张卡片有溢出（牛吃草、经济问题、分数裂项、速算与巧算、线分圆环、最大公因数与最小公倍数、进位制、斜三角形面积、立体几何综合、角度计算、时钟问题、火车追及、基本公式与平均速度）。这是 JSON 同步后的版面容量问题，不是三端数据错配；T9 应逐张压缩并重新做 Chrome 检查。
