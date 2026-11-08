@@ -11,6 +11,8 @@
 - `AUDIT_REGISTER.csv` — 248 个知识点逐项审查台账
 - `CURRICULUM_COVERAGE.md` — 课程覆盖矩阵
 - `CARD_AUDIT.md` — 速查卡质量审查
+- `exam/SOURCE_AUDIT.md` — 竞赛/测评资料来源审计（18份资料、482题，官方原始来源认证状态）
+- `exam/SOURCE_REGISTER.csv` — 逐份资料来源证据登记
 - `content/` — 唯一数据源：知识点 Markdown（YAML 元数据 + 讲解 + 例题）+ `curriculum.yaml` 课程大纲
 - `templates/` — 新知识点模板
 - `tools/build.py` — 构建工具：校验覆盖矩阵 → 索引 → 打印页 → 网页版 → 小程序数据
