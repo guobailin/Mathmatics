@@ -225,7 +225,7 @@
         },
         {
           "t": "li",
-          "v": "一半模型：平行四边形内 $E$ 在一边上，$S_{CDE}=\\frac{1}{2}S$"
+          "v": "一半模型：平行四边形 $ABCD$ 中，$E\\in AB$（$AB\\parallel CD$）时 $S_{CDE}=\\frac{1}{2}S$"
         },
         {
           "t": "li",
@@ -285,7 +285,7 @@
         },
         {
           "t": "li",
-          "v": "反 A 型：$\\angle ACD=\\angle ABC$，对应错位（$D$ 配 $C$）"
+          "v": "反 A 型：$D\\in AB$ 且 $\\angle ACD=\\angle ABC$，对应错位（$D$ 配 $C$）"
         },
         {
           "t": "fx",
@@ -397,7 +397,7 @@
         },
         {
           "t": "fx",
-          "v": "D\\in BC:\\quad h^2=AB^2-x^2=AC^2-(BC-x)^2"
+          "v": "$D$ 为 $A$ 到 $BC$ 的垂足，$D\\in BC$，设 $BD=x$：\\quad h^2=AB^2-x^2=AC^2-(BC-x)^2"
         },
         {
           "t": "li",
