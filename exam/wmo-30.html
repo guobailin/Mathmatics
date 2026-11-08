@@ -1,0 +1,894 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第 30 届 WMO · 真题解答</title>
+<link rel="stylesheet" href="../katex/katex.min.css">
+<script defer src="../katex/katex.min.js"></script>
+<script defer src="../katex/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+<style>
+body{font-family:-apple-system,"PingFang SC","Source Han Serif SC",serif;
+max-width:760px;margin:0 auto;padding:24px;line-height:1.8;color:#222}
+h1{border-bottom:2px solid #333;padding-bottom:8px}
+h2{margin-top:1.6em}h3{font-size:1.05em}
+.meta{color:#666;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.example{border:1px solid #ddd;border-radius:8px;padding:12px 16px;margin:14px 0}
+.example h3{margin:.2em 0 .6em}
+.covers{font-size:.75em;color:#888;font-weight:normal;margin-left:1em}
+.problem{background:#f7f7f9;border-radius:6px;padding:8px 12px}
+details{margin-top:.6em}summary{cursor:pointer;color:#36c}
+.answer{color:#b30;font-weight:bold}
+img{max-width:100%;height:auto}
+
+body{max-width:920px;margin:0 auto;padding:26px 22px 64px;background:#fffdf8;
+font-family:-apple-system,"PingFang SC","Source Han Serif SC",serif;line-height:1.85;color:#222}
+.exam-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;
+flex-wrap:wrap;font-size:12px;color:#5f6a64;margin-bottom:22px}
+.exam-nav a{color:#2f6f6b;text-decoration:none;font-weight:600}
+.exam-nav a:hover{text-decoration:underline}
+.exam-kicker{font-size:10.5px;letter-spacing:.16em;color:#2f6f6b;font-weight:700;margin-bottom:4px}
+.exam-body h1{font-size:25px;line-height:1.3;margin:0 0 18px;padding-bottom:12px;border-bottom:2px solid #2f6f6b}
+.exam-body h2{font-size:19px;margin:30px 0 12px;color:#1f2a26}
+.exam-body h3{font-size:15px;margin:24px 0 8px;color:#2f6f6b}
+.exam-body table{width:100%;border-collapse:collapse;margin:14px 0;font-size:12.5px}
+.exam-body th,.exam-body td{border:1px solid #ddd6c8;padding:6px 8px;text-align:left;vertical-align:top}
+.exam-body th{background:#f4efe3;font-weight:700}
+.exam-body blockquote{margin:14px 0;padding:8px 14px;border-left:3px solid #2f6f6b;background:#f7f4ec;color:#4d5651}
+.exam-body code{background:#f1ece1;padding:1px 5px;border-radius:4px;font-size:.9em}
+.exam-body img{max-width:100%;height:auto;display:block;margin:16px auto}
+.exam-body hr{border:0;border-top:1px solid #e4ddcf;margin:22px 0}
+.exam-foot{margin-top:40px;padding-top:16px;border-top:1px solid #e4ddcf;font-size:12px;color:#8a928d}
+.exam-index-head{max-width:920px;margin:0 auto 20px}
+.exam-index-head h1{font-size:28px;margin:0 0 8px}
+.exam-index-head p{margin:0;color:#5f6a64;font-size:13px}
+.exam-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:18px 0 28px}
+.exam-grid a{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:12px 13px;
+border:1px solid #ddd6c8;border-radius:12px;background:#fffdf8;color:#1f2a26;text-decoration:none}
+.exam-grid a:hover{border-color:#2f6f6b}
+.exam-grid b{font-size:12px}.exam-grid span{font-size:10px;color:#5f6a64;white-space:nowrap}
+.exam-table{width:100%;border-collapse:collapse;font-size:12.5px}
+.exam-table th,.exam-table td{border:1px solid #ddd6c8;padding:6px 8px;text-align:left}
+.exam-table th{background:#f4efe3}
+@media(max-width:720px){.exam-grid{grid-template-columns:repeat(2,minmax(0,1fr))}body{padding:18px 15px 50px}}
+@media print{.exam-nav,.exam-foot{display:none}body{max-width:none;padding:0}.exam-grid{display:none}}
+</style></head><body><div class="exam-nav"><a href="../index.html">← 知识地图</a><span><a href="index.html">全部真题</a></span></div><div class="exam-kicker">竞赛真题 · 六年级 · 20 题</div><article class="exam-body"><h1>第 30 届 WMO 六年级组试卷 · 逐题解答</h1>
+<h2>试卷概览</h2>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>试卷</td>
+<td>第 30 届 WMO 创新融合讨论大会 · 六年级组（善思培优 小学竞赛）</td>
+</tr>
+<tr>
+<td>源文件</td>
+<td><code>exam/第30届WMO六年级试卷.pdf</code>（6 页，第 6 页为官方答案页）</td>
+</tr>
+<tr>
+<td>题量</td>
+<td>20 题（第 1–16 题填空，第 17–19 题多小问，第 20 题图形推理两小问）</td>
+</tr>
+<tr>
+<td>主要模块</td>
+<td>计算与方程（1、2、5）、计数与概率（3、4、15、16）、数论（13、19）、几何（6、8）、应用题（7、9、11、12、17、18）、组合与推理（10、14、19、20）</td>
+</tr>
+<tr>
+<td>难度分布</td>
+<td>★2：7 题　★3：4 题　★4：2 题　★5：3 题　★6：3 题　★7：1 题</td>
+</tr>
+<tr>
+<td>答案形式</td>
+<td>数值 / 百分数 / 分数 / 排列顺序 / 方格编号，均按官方答案页核对</td>
+</tr>
+</tbody>
+</table>
+<h3>答案速览</h3>
+<table>
+<thead>
+<tr>
+<th>题号</th>
+<th>答案</th>
+<th>题号</th>
+<th>答案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>$\dfrac12$（0.5）</td>
+<td>11</td>
+<td>864 块</td>
+</tr>
+<tr>
+<td>2</td>
+<td>$\dfrac{1}{1225}$</td>
+<td>12</td>
+<td>16 升</td>
+</tr>
+<tr>
+<td>3</td>
+<td>5%</td>
+<td>13</td>
+<td>50 个</td>
+</tr>
+<tr>
+<td>4</td>
+<td>$\dfrac{3}{10}$</td>
+<td>14</td>
+<td>7 次</td>
+</tr>
+<tr>
+<td>5</td>
+<td>11</td>
+<td>15</td>
+<td>55 人</td>
+</tr>
+<tr>
+<td>6</td>
+<td>9 块</td>
+<td>16</td>
+<td>27 个</td>
+</tr>
+<tr>
+<td>7</td>
+<td>47.5%</td>
+<td>17</td>
+<td>（1）丙甲丁乙；（2）31.25%</td>
+</tr>
+<tr>
+<td>8</td>
+<td>$\dfrac{11}{8}=1.375$</td>
+<td>18</td>
+<td>（1）多 12 元；（2）1875 元</td>
+</tr>
+<tr>
+<td>9</td>
+<td>11 个</td>
+<td>19</td>
+<td>（1）35；（2）14</td>
+</tr>
+<tr>
+<td>10</td>
+<td>B（乙格写 2）</td>
+<td>20</td>
+<td>（1）13、23、35；（2）6、8、25</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>逐题解答</h2>
+<h3>第 1 题</h3>
+<p><strong>题目</strong>：若 $\dfrac{1}{x+\frac14}=1\dfrac13$，则 $x=$ ________。</p>
+<p><strong>答案</strong>：$x=\dfrac12$（即 0.5）</p>
+<p><strong>解析</strong>：<br />
+$1\dfrac13=\dfrac43$，所以 $x+\dfrac14=1\div\dfrac43=\dfrac34$，<br />
+$x=\dfrac34-\dfrac14=\dfrac12$。</p>
+<p><strong>验算</strong>：$x+\dfrac14=\dfrac12+\dfrac14=\dfrac34$，$\dfrac{1}{3/4}=\dfrac43=1\dfrac13$，成立。</p>
+<p><strong>知识点</strong>：解方程与等式的性质；分数四则混合运算</p>
+<p><strong>思路/方法</strong>：从外到内逐层&quot;剥开&quot;——先算右边带分数化成假分数，再对 $\dfrac{1}{\square}$ 用除法还原，最后移项。</p>
+<p><strong>难度</strong>：★2</p>
+<hr />
+<h3>第 2 题</h3>
+<p><strong>题目</strong>：计算 $\left(1-\dfrac23\right)\times\left(1-\dfrac24\right)\times\left(1-\dfrac25\right)\times\cdots\times\left(1-\dfrac{2}{48}\right)\times\left(1-\dfrac{2}{49}\right)\times\left(1-\dfrac{2}{50}\right)=$ ________。</p>
+<p><strong>答案</strong>：$\dfrac{1}{1225}$</p>
+<p><strong>解析</strong>：<br />
+每一项先通分成一个分数：$1-\dfrac{2}{k}=\dfrac{k-2}{k}$，所以原式</p>
+<p>$$\frac{1}{3}\times\frac{2}{4}\times\frac{3}{5}\times\frac{4}{6}\times\cdots\times\frac{47}{49}\times\frac{48}{50}.$$</p>
+<p>分子是 $1\times2\times3\times\cdots\times48$，分母是 $3\times4\times5\times\cdots\times50$。中间 $3\sim48$ 全部斜着约掉，只剩</p>
+<p>$$\frac{1\times2}{49\times50}=\frac{2}{2450}=\frac{1}{1225}.$$</p>
+<p><strong>验算</strong>：取前三项 $\frac13\times\frac24\times\frac35=\frac{6}{60}=\frac{1}{10}$，而公式 $\frac{1\times2}{5\times6}=\frac{2}{30}=\frac1{10}$，一致；结果 $\frac{1}{1225}\approx0.00082$，很小但为正，合理。</p>
+<p><strong>知识点</strong>：分数乘法；分数的基本性质与约分</p>
+<p><strong>思路/方法</strong>：先写通项再&quot;斜向相消&quot;（连乘约分）。这类题的关键是发现每一项都能写成 $\frac{k-2}{k}$，且分母往后错两位就能被分子吃掉。</p>
+<p><strong>难度</strong>：★3</p>
+<hr />
+<h3>第 3 题</h3>
+<p><strong>题目</strong>：在一场使用纸笔作答的标准化考试中，如果 85% 的应试者第一题回答正确，75% 的应试者第二题回答正确，65% 的应试者两题都回答正确，那么两题都回答错误的应试者有 ________。</p>
+<p><strong>答案</strong>：5%</p>
+<p><strong>解析</strong>：<br />
+用容斥：至少答对一题的比例 = 答对第一题 + 答对第二题 − 两题都对</p>
+<p>$$85%+75%-65%=95%.$$</p>
+<p>所以两题都答错的有 $100%-95%=5%$。</p>
+<p><strong>验算</strong>：只对第一题 20%、只对第二题 10%、两题都对 65%，合计 95%，再加上两题都错的 5% 正好 100%。</p>
+<p><strong>知识点</strong>：容斥原理；百分数</p>
+<p><strong>思路/方法</strong>：画两个相交的圆（韦恩图），&quot;并集 = 两个集合之和 − 交集&quot;。</p>
+<p><strong>难度</strong>：★2</p>
+<hr />
+<h3>第 4 题</h3>
+<p><strong>题目</strong>：一个袋子里有 5 颗弹珠，其中 2 颗橙色、3 颗蓝色。如果从袋中不放回地先后取出 2 颗弹珠，第一颗是橙色且第二颗是蓝色的概率是 ________。</p>
+<p><strong>答案</strong>：$\dfrac{3}{10}$</p>
+<p><strong>解析</strong>：<br />
+第一颗取到橙色：$\dfrac25$；此时袋中剩 4 颗，其中 3 颗蓝色，第二颗取到蓝色：$\dfrac34$。两步都要发生，相乘：</p>
+<p>$$\frac25\times\frac34=\frac{6}{20}=\frac{3}{10}.$$</p>
+<p><strong>验算</strong>：用枚举法数一数：先橙后蓝的情况有 $2\times3=6$ 种，总情况 $5\times4=20$ 种，$\dfrac6{20}=\dfrac3{10}$，一致。</p>
+<p><strong>知识点</strong>：概率初步</p>
+<p><strong>思路/方法</strong>：&quot;不放回&quot;要按顺序乘条件概率；也可用&quot;有序枚举&quot;总数与有利数之比。</p>
+<p><strong>难度</strong>：★2</p>
+<hr />
+<h3>第 5 题</h3>
+<p><strong>题目</strong>：奥斑马用英文字母编制密码，即给每一个字母分配一个数值，然后将每个字母的数值相加计算出每个单词的数值。依据她的密码，$ADR$ 的数值为 7，同样地，$CBR$ 的数值为 6，$CBS$ 的数值为 10。那么依据她的密码，$ADS$ 的数值是 ________。</p>
+<p><strong>答案</strong>：11</p>
+<p><strong>解析</strong>：<br />
+把每个单词的数值看成字母数值之和：</p>
+<p>$$A+D+R=7,\qquad C+B+R=6,\qquad C+B+S=10.$$</p>
+<p>要求的 $ADS=A+D+S$。用&quot;整体代换&quot;：把第 1 式与第 3 式相加，再减去第 2 式：</p>
+<p>$$(A+D+R)+(C+B+S)-(C+B+R)=A+D+S=7+10-6=11.$$</p>
+<p><strong>验算</strong>：设 $A=0,D=2,R=5$ 则 $ADR=7$；取 $C=1,B=0,R=5$ 得 $CBR=6$；再令 $S=9$ 得 $CBS=1+0+9=10$，此时 $ADS=0+2+9=11$，完全一致（答案不依赖具体分配）。</p>
+<p><strong>知识点</strong>：用字母表示数；等式的性质</p>
+<p><strong>思路/方法</strong>：设未知字母，&quot;整体相加相减&quot;消去不要的字母，不必求出每个字母。</p>
+<p><strong>难度</strong>：★2</p>
+<hr />
+<h3>第 6 题</h3>
+<p><strong>题目</strong>：用大小相同的灰色积木和透明积木搭成 $3\times3\times3$ 的正方体，要使主视图、俯视图、左视图都如下图所示（一个 $3\times3$ 全灰的正方形），至少需要 ________ 块灰色积木。</p>
+<p><strong>答案</strong>：9 块</p>
+<p><strong>解析</strong>：</p>
+<ul>
+<li>每一个视图都是 $3\times3$ 全灰，也就是每个视图有 9 个&quot;灰格&quot;要填。</li>
+<li>一块灰色积木放在某个位置，在主视图、俯视图、左视图中<strong>各只占 1 格</strong>（每块最多为每个视图贡献 1 个灰格）。</li>
+<li>三个视图一共要&quot;填&quot; $9\times3=27$ 个灰格，而每块灰积木只贡献 3 个，所以灰色积木至少 $27\div3=9$ 块。</li>
+<li>9 块确实能做到：从上往下数第 $i$ 层、第 $j$ 列，把灰积木放在第 $k$ 层，使 $k$ 随 $i+j$ 循环取值（如 $k=1,2,3$ 按 $i+j$ 的余数轮换），则主视图、俯视图、左视图的 9 个位置都被灰积木覆盖到。</li>
+</ul>
+<p><strong>验算</strong>：若少于 9 块（比如 8 块），三个视图最多只有 8 个位置被覆盖，必有一个视图缺格，与&quot;三个视图全灰&quot;矛盾，所以 9 块是最少。</p>
+<p><strong>知识点</strong>：三视图求体积；最值问题</p>
+<p><strong>思路/方法</strong>：&quot;每块积木在每个视图各贡献 1 格&quot;的下界估计 + 构造验证。先算下界，再举例说明能达到。</p>
+<p><strong>难度</strong>：★4</p>
+<hr />
+<h3>第 7 题</h3>
+<p><strong>题目</strong>：在多思学校，教工和学生的人数之比是 $1:7$。如果每 7 个学生里面 3 个是女生，而教工的五分之一是男性，那么女性人数占总人数的 ________。（填百分数）</p>
+<p><strong>答案</strong>：47.5%</p>
+<p><strong>解析</strong>：<br />
+把教工看成 1 份，学生就是 7 份，总人数 8 份。</p>
+<ul>
+<li>学生中女生：$7\times\dfrac37=3$ 份；</li>
+<li>教工中女性：$1-\dfrac15=\dfrac45=0.8$ 份（教工五分之一是男性，五分之四是女性）。</li>
+</ul>
+<p>女性共 $3+0.8=3.8$ 份，占总数 $3.8\div8=0.475=47.5%$。</p>
+<p><strong>验算</strong>：设教工 5 人、学生 35 人（比 1:7），女生 $35\times\frac37=15$ 人，女教工 $5\times\frac45=4$ 人，共 19 人；总 40 人，$19÷40=47.5%$，一致。</p>
+<p><strong>知识点</strong>：比的意义；百分数</p>
+<p><strong>思路/方法</strong>：&quot;设份数&quot;（把比当成份数），单位&quot;1&quot;统一到总份数上。</p>
+<p><strong>难度</strong>：★2</p>
+<hr />
+<h3>第 8 题</h3>
+<p><strong>题目</strong>：小泉设计了一款机器人，下图是这款机器人的某种表情图片。这个表情里面包含了很多数学图形：有四个小正方形，一个大正方形，两个小圆，一个大圆，一个三角形。若小正方形的边长为 1，大、小各圆都过其所在正方形 4 条边的中点，那么图中阴影部分的总面积是 ________。</p>
+<p><strong>答案</strong>：$\dfrac{11}{8}=1.375$</p>
+<p><strong>解析</strong>：<br />
+先确定各量（小正方形边长 1）：</p>
+<ul>
+<li>大正方形由 4 个小正方形拼成，边长 $2$，面积 $4$。</li>
+<li>大圆是大正方形的内切圆，半径 $1$，面积 $\pi$。</li>
+<li>两个小圆分别是左、右两个小正方形的内切圆，半径 $\dfrac12$，面积各 $\dfrac{\pi}{4}$。</li>
+<li>两个小正方形的中心各距大正方形中心 $\dfrac{\sqrt2}{2}$（沿水平方向），这在大正方形的两条&quot;中线&quot;上（图中间那个 X）。</li>
+</ul>
+<p>把阴影分成四块分别算：</p>
+<ol>
+<li><strong>左&quot;眼睛&quot;＋右&quot;眼睛&quot;</strong>：左眼涂的是&quot;小圆在大圆外面的部分&quot;，右眼涂的是&quot;小圆在大圆里面的部分&quot;。左右两个小圆一样大，这两块合起来正好是<strong>一个整小圆</strong>，面积</li>
+</ol>
+<p>$$S_1=\pi\times\left(\frac12\right)^2=\frac{\pi}{4}.$$</p>
+<ol start="2">
+<li><strong>底部阴影</strong>：是&quot;大正方形内部、大圆外部&quot;的一个角落，四个角完全一样，所以</li>
+</ol>
+<p>$$S_2=\frac{4-\pi}{4}=1-\frac{\pi}{4}.$$</p>
+<ol start="3">
+<li><strong>上方三角形</strong>：顶点是大正方形的一个顶点，底边的两个端点是两条&quot;中线&quot;与小圆的<strong>切点</strong>。设大正方形中心为 $O$：每个小正方形以 $O$ 为一个顶点、以大正方形的一个顶点为对角顶点，边长 $1$，所以 $O$ 到大正方形顶点的距离是 $\sqrt2$；而两条&quot;中线&quot;恰好是小正方形的两条边，小圆与它们相切于边的中点，这个切点到 $O$ 的距离就是小正方形边长的一半 $\dfrac12$，方向与水平线成 $45^\circ$。因此两个切点到 $O$ 的水平、竖直距离都是 $\dfrac12\times\dfrac{\sqrt2}{2}=\dfrac{\sqrt2}{4}$。于是</li>
+</ol>
+<p>$$\text{底边}=\frac{\sqrt2}{2},\qquad \text{高}=\sqrt2-\frac{\sqrt2}{4}=\frac{3\sqrt2}{4},$$</p>
+<p>$$S_3=\frac12\times\frac{\sqrt2}{2}\times\frac{3\sqrt2}{4}=\frac{3}{8}.$$</p>
+<ol start="4">
+<li><strong>总和</strong>：</li>
+</ol>
+<p>$$S=S_1+S_2+S_3=\frac{\pi}{4}+\left(1-\frac{\pi}{4}\right)+\frac{3}{8}=1+\frac{3}{8}=\frac{11}{8}=1.375.$$</p>
+<p><strong>验算</strong>：$\pi$ 恰好被消掉，这与&quot;答案是有理数&quot;相符；$\frac{11}{8}=1.375$，比&quot;一个角 $1-\frac{\pi}{4}\approx0.215$ ＋ 一个小圆 $\approx0.785$&quot;之和多 $0.375$，量级合理。</p>
+<p><strong>知识点</strong>：圆与扇形；组合图形的面积；面积综合</p>
+<p><strong>思路/方法</strong>：<strong>割补 + 整体代换</strong>。两个眼睛一内一外恰好拼成一个整圆（不必分别算弓形面积）；四个角完全对称；三角形用&quot;中心—顶点—切点&quot;的线段关系求底和高。</p>
+<p><strong>难度</strong>：★6</p>
+<hr />
+<h3>第 9 题</h3>
+<p><strong>题目</strong>：编号为 $1\sim10$ 的十个果盘里，每个盘都盛有水果，一共 100 个。其中第一盘里有 16 个，并且编号相邻的三个果盘中水果个数的和都相等，第 8 盘中水果最多可能有 ________ 个。</p>
+<p><strong>答案</strong>：11 个</p>
+<p><strong>解析</strong>：<br />
+设第 $i$ 盘有 $a_i$ 个，由&quot;相邻三盘之和都相等&quot;：</p>
+<p>$$a_i+a_{i+1}+a_{i+2}=a_{i+1}+a_{i+2}+a_{i+3}\ \Longrightarrow\ a_i=a_{i+3}.$$</p>
+<p>所以数列以 3 为周期：$a_1=a_4=a_7=a_{10}=16$，$a_2=a_5=a_8$，$a_3=a_6=a_9$。</p>
+<p>总数：$4\times16+3(a_2+a_3)=100$，得</p>
+<p>$$64+3(a_2+a_3)=100\ \Longrightarrow\ a_2+a_3=12.$$</p>
+<p>每个果盘都盛有水果，所以 $a_3\ge1$，从而 $a_2=12-a_3\le11$。由于 $a_8=a_2$，故 $a_8\le11$。</p>
+<p><strong>构造</strong>：取 $a_2=11,\ a_3=1$，数列为</p>
+<p>$$16,\ 11,\ 1,\ 16,\ 11,\ 1,\ 16,\ 11,\ 1,\ 16,$$</p>
+<p>和为 $4\times16+3\times11+3\times1=64+33+3=100$，每盘都非空，且任意相邻三盘和都是 $16+11+1=28$。所以第 8 盘最多 11 个。</p>
+<p><strong>验算</strong>：把 $a_2=12,\ a_3=0$ 代进去会有一盘是 0 个，违反&quot;每个盘都盛有水果&quot;，故不能再大。</p>
+<p><strong>知识点</strong>：数列与数表（周期性）；最值问题</p>
+<p><strong>思路/方法</strong>：&quot;相减消项&quot;得周期 3；再用总和定出两格之和，最后用&quot;每盘非空&quot;这一隐含条件给出上界并构造取到。</p>
+<p><strong>难度</strong>：★4</p>
+<hr />
+<h3>第 10 题</h3>
+<p><strong>题目</strong>：在 $3\times3$ 的方格盘里可以玩很多种两人对战游戏。小泉和欧欧设计了一种新型的 $3\times3$ 填数游戏，游戏规则如下：小泉、欧欧两人轮流在方格中写 $2、4、5、6、7、8、9、10、11$ 这 9 个数中的一个，所写的数不能重复。最后小泉的得分是上、下两行六个数之和，欧欧的得分是左、右两列的六个数之和，得分多者获胜。若首先由小泉写数，他应该先在 ________，才能必定获胜。<br />
+A. 甲格写 11　　B. 乙格写 2　　C. 丙格写 10　　D. 丁格写 11<br />
+（方格图中：甲在第一行中间，乙在第二行左边，丁在第二行右边，丙在第三行中间。）</p>
+<p><strong>答案</strong>：<strong>B（乙格写 2）</strong></p>
+<p><strong>解析</strong>：<br />
+设九个格子的数为 $a_{ij}$。小泉得分 $=a_{11}+a_{12}+a_{13}+a_{31}+a_{32}+a_{33}$，欧欧得分 $=a_{11}+a_{21}+a_{31}+a_{13}+a_{23}+a_{33}$。相减：</p>
+<p>$$\text{小泉}-\text{欧欧}=a_{12}+a_{32}-a_{21}-a_{23}=\text{甲}+\text{丙}-\text{乙}-\text{丁}.$$</p>
+<p>四个角的格子两边都算（相减抵消），中心格两人都不算，<strong>所以只有甲、丙、乙、丁四格影响胜负</strong>，小泉要保证 $\text{甲}+\text{丙}&gt;\text{乙}+\text{丁}$。</p>
+<p><strong>先写 2 进乙格为什么能必胜</strong>：乙是欧欧的得分格，把最小的 2 塞进去等于&quot;锁死&quot;欧欧一格。之后小泉按下面的策略应对（还剩 $4,5,\dots,11$ 八个数）：</p>
+<ul>
+<li>欧欧若往甲、丙写数，小泉就把剩下最大的数写进自己另一个空着的得分格；</li>
+<li>欧欧若往丁或无关格写数，小泉就把剩下最大的数写进甲或丙。</li>
+</ul>
+<p>最坏情况：欧欧把 11 写进丁、再把 4 塞进丙，则甲 $=10$、丙 $=4$、乙 $=2$、丁 $=11$，小泉 $14&gt;$ 欧欧 $13$，仍胜 1 分。其他应对欧欧更差（例如欧欧先塞 4 进丙，小泉拿 11、10，则 $15:12$）。</p>
+<p><strong>为什么其他三个都输</strong>（说明答案唯一）：</p>
+<ul>
+<li>A（甲格写 11）：欧欧有应对把局面拖成和棋或反超，小泉不能保证必胜（极小极大搜索值为 0，即和棋）。</li>
+<li>C（丙格写 10）：欧欧写 2 到甲，再拿 11 进乙，则 $12&lt;15$，小泉输。</li>
+<li>D（丁格写 11）：等于白送欧欧 11 分，欧欧写 2 到甲、9 进乙，则 $12&lt;20$，小泉输。</li>
+</ul>
+<p><strong>验算</strong>：用程序对全部走法做博弈搜索（极小极大），在&quot;先手第一步&quot;的所有选择里，<strong>只有&quot;把 2 写进欧欧的得分格（乙或丁）&quot;能保证小泉必胜</strong>，其余第一步都不能必胜——与选项 B 一致。</p>
+<p><strong>知识点</strong>：游戏策略；逻辑推理（极端情况分析）</p>
+<p><strong>思路/方法</strong>：&quot;作差看关键格&quot;把 6+6 个数化成 4 个数；再用&quot;先手抢最小数塞给对方 + 之后每轮拿最大数&quot;的配对/应对策略。</p>
+<p><strong>难度</strong>：★5</p>
+<hr />
+<h3>第 11 题</h3>
+<p><strong>题目</strong>：一名建筑工人用 8 小时可以砌成一面墙，另一名建筑工人需要用 9 小时才能砌相同的一面墙。若他们两人一起工作，有时会停下来聊天，这样每个小时会少砌 60 块砖。若他们一起用 6 小时砌完这面墙，则这面墙一共有 ________ 块砖。</p>
+<p><strong>答案</strong>：864 块</p>
+<p><strong>解析</strong>：<br />
+设这面墙共 $x$ 块砖，则两人每小时分别砌 $\dfrac{x}{8}$、$\dfrac{x}{9}$ 块。一起干活时每小时砌</p>
+<p>$$\frac{x}{8}+\frac{x}{9}-60.$$</p>
+<p>6 小时砌完：</p>
+<p>$$6\left(\frac{x}{8}+\frac{x}{9}-60\right)=x.$$</p>
+<p>$$\frac{17x}{12}-360=x\ \Longrightarrow\ \frac{5x}{12}=360\ \Longrightarrow\ x=864.$$</p>
+<p><strong>验算</strong>：甲 $864÷8=108$ 块/时，乙 $864÷9=96$ 块/时，合起来 $204$ 块/时，聊天后每小时 $204-60=144$ 块，$144\times6=864$ ✓。</p>
+<p><strong>知识点</strong>：工程问题；列方程解应用题</p>
+<p><strong>思路/方法</strong>：把&quot;一面墙&quot;设为未知数 $x$，&quot;工作效率 = 总量 ÷ 时间&quot;；&quot;每小时少 60 块&quot;是效率上的减法。</p>
+<p><strong>难度</strong>：★3</p>
+<hr />
+<h3>第 12 题</h3>
+<p><strong>题目</strong>：在一家高档油漆店，紫红色油漆是由 5 份红色油漆和 3 份蓝色油漆组成。淡紫色油漆是由 3 份红色油漆和 5 份蓝色油漆组成。那么要把 24 升的紫红色油漆变成淡紫色油漆，需要加入 ________ 升蓝色油漆。</p>
+<p><strong>答案</strong>：16 升</p>
+<p><strong>解析</strong>：<br />
+紫红色 $5:3$，共 $5+3=8$ 份，24 升 → 每份 $24÷8=3$ 升，其中红色 $5\times3=15$ 升、蓝色 $3\times3=9$ 升。</p>
+<p>变成淡紫色只加蓝色，红色仍是 15 升。淡紫色要求红$:$蓝 $=3:5$，所以蓝色应为</p>
+<p>$$15\times\frac{5}{3}=25\ \text{升},$$</p>
+<p>需要加入 $25-9=16$ 升。</p>
+<p><strong>验算</strong>：加入后红 $15$、蓝 $25$，比 $15:25=3:5$ ✓；总体积 $24+16=40$ 升也合理。</p>
+<p><strong>知识点</strong>：浓度问题（比的应用）；按比例分配</p>
+<p><strong>思路/方法</strong>：抓住&quot;只加蓝、红不变&quot;，用&quot;红色占 3 份&quot;反推蓝色应有的份数。</p>
+<p><strong>难度</strong>：★2</p>
+<hr />
+<h3>第 13 题</h3>
+<p><strong>题目</strong>：假设 $x$ 是一个三位数 $\overline{ABC}$，$y$ 是另一个三位数 $\overline{CBA}$，数字 $A$ 和 $C$ 都不为 0。如果 $x-y=396$，那么 $x$ 可以表示成 ________ 个不同的三位数。</p>
+<p><strong>答案</strong>：50 个</p>
+<p><strong>解析</strong>：<br />
+按位值写开：</p>
+<p>$$x-y=(100A+10B+C)-(100C+10B+A)=99(A-C).$$</p>
+<p>由 $99(A-C)=396$ 得 $A-C=4$。</p>
+<ul>
+<li>$A$ 是百位且 $A\le9$、$C=A-4\ge1$，所以 $A=5,6,7,8,9$ 共 <strong>5</strong> 种；</li>
+<li>$B$ 可以是 $0\sim9$ 中任意数字，共 <strong>10</strong> 种。</li>
+</ul>
+<p>所以 $x$ 有 $5\times10=50$ 个。</p>
+<p><strong>验算</strong>：取 $A=9,C=5$，则 $x-y=99\times4=396$ 与 $B$ 无关；$A=5,C=1$ 也是 396。中间位 $B$ 自由，故正好 $5\times10=50$。</p>
+<p><strong>知识点</strong>：位值原理；不定方程</p>
+<p><strong>思路/方法</strong>：写成位值展开式，发现中间位 $B$ 自动抵消，条件只落在 $A,C$ 上，再用&quot;逐位枚举&quot;计数。</p>
+<p><strong>难度</strong>：★3</p>
+<hr />
+<h3>第 14 题</h3>
+<p><strong>题目</strong>：龙博士在他的花园里放了七盏灯，每盏灯都带有一个开关按钮。龙博士将每个按钮连接到除了与它相邻的两盏灯之外的其他灯上（七盏灯按顺序 1~7 围成一圈）。当按下按钮时，与该按钮连接的五盏灯都会改变状态。例如，初始状态为所有灯都熄灭，若按下按钮 1，则 1、3、4、5、6 这五盏灯都会打开；然后按下按钮 2，则 2 和 7 打开，4、5、6 这三盏灯熄灭。在所有灯都熄灭的前提下，龙博士至少需要按 ________ 次按钮才能打开所有的灯。</p>
+<p><strong>答案</strong>：7 次</p>
+<p><strong>解析</strong>：<br />
+按按钮 $i$ 会改变 5 盏灯：第 $i$ 盏（自己）以及除 $i-1$、$i+1$ 以外的其他灯。也就是说，<strong>第 $j$ 盏灯只被&quot;除 $j$ 的两个邻居以外的 5 个按钮&quot;改变</strong>。</p>
+<p><strong>能做到 7 次</strong>：每个按钮各按 1 次。这时每盏灯恰好被 5 个按钮影响，被改变 5 次（奇数次），全部由灭变亮 ✓。</p>
+<p><strong>不能少于 7 次</strong>：只看每个按钮按的次数的奇偶性，记为 $a_1,\dots,a_7$，总次数 $S=a_1+\cdots+a_7$（按奇偶看）。第 $j$ 盏灯被改变的次数是</p>
+<p>$$S-a_{j-1}-a_{j+1}\quad(\text{下标按 }7\text{ 循环}),$$</p>
+<p>要全亮，必须对每个 $j$ 都有 $S-a_{j-1}-a_{j+1}\equiv1\pmod 2$，即相邻两个按钮的按次数之和 $a_{j-1}+a_{j+1}$ 的奇偶性都相同。比较 $j$ 与 $j+2$ 两式得 $a_{j-1}\equiv a_{j+3}\pmod2$；由于在 7 个位置上反复加 3 能走遍所有位置，所以 $a_1,\dots,a_7$ <strong>奇偶性全部相同</strong>。若全是偶数，则每盏灯改变次数都是偶数，不能全亮；故全是奇数，每个按钮至少按 1 次，总次数至少 7 次。</p>
+<p><strong>验算</strong>：按 5 次的情况——每盏灯改变次数的奇偶必须为奇，而由上面的论证 $a_i$ 必须全部同奇偶，不可能；所以 5、3、1 次都不行，最少就是 7 次。</p>
+<p><strong>知识点</strong>：操作与探究；奇数与偶数</p>
+<p><strong>思路/方法</strong>：<strong>奇偶性分析</strong> + 构造：先给出 7 次的做法，再用&quot;只看奇偶&quot;证明少于 7 次不可能。注意下标成环、邻居是 $j-1,j+1$。</p>
+<p><strong>难度</strong>：★6</p>
+<hr />
+<h3>第 15 题</h3>
+<p><strong>题目</strong>：有一个闯关游戏共有 10 个关卡，闯关者从第 1 关开始闯关，依次到第 2 关、第 3 关……闯完第 10 关就可以获胜。闯关过程中允许跳跃关卡，但每次最多跳跃 1 关（跳关到达的关卡难度会增大），相邻两关不能同时都跳过，并且第 1 关和第 10 关是必须要闯的关卡。有一批游戏爱好者参与这个闯关游戏，他们在规定的时间内完成游戏从而获胜，并且他们所闯的关卡都不完全相同，这批闯关者最多有 ________ 人。</p>
+<p><strong>答案</strong>：55 人</p>
+<p><strong>解析</strong>：<br />
+每个人&quot;闯的关卡&quot;就是一个包含 1 和 10 的子集，并且<strong>被跳过的关卡（集合 $T$）中不能有两关相邻</strong>（题目说&quot;相邻两关不能同时都跳过&quot;，也即&quot;每次最多跳跃 1 关&quot;）。</p>
+<p>第 1、10 关必须闯，所以只需决定中间第 $2\sim9$ 关里跳过哪些，且跳过的关卡互不相邻。问题变成：</p>
+<blockquote>
+<p>从 8 个位置（第 2~9 关）中选出若干个，要求任意两个不相邻，有多少种选法？</p>
+</blockquote>
+<p>用递推：设 $f(n)$ 表示 $n$ 个连续位置里&quot;互不相邻地选&quot;的方法数。看最后一个位置：不选它 → $f(n-1)$ 种；选它 → 它前一个不能选 → $f(n-2)$ 种。所以</p>
+<p>$$f(n)=f(n-1)+f(n-2),\qquad f(1)=2,\ f(2)=3.$$</p>
+<p>依次算出：$f(3)=5,\ f(4)=8,\ f(5)=13,\ f(6)=21,\ f(7)=34,\ f(8)=55$。</p>
+<p>所以最多有 <strong>55</strong> 人（每类闯关路线一种，路线都不相同）。</p>
+<p><strong>验算</strong>：列出 n=1,2,3：n=1 有&quot;不选/选&quot;2 种；n=2 有&quot;都不选、选第一个、选第二个&quot;3 种；n=3 有 5 种 ✓。递推无误，$f(8)=55$。</p>
+<p><strong>知识点</strong>：递推与归纳；枚举与分类</p>
+<p><strong>思路/方法</strong>：&quot;不相邻选取&quot;的标准递推（斐波那契型）。关键是翻译题意：跳过的关卡不相邻。</p>
+<p><strong>难度</strong>：★5</p>
+<hr />
+<h3>第 16 题</h3>
+<p><strong>题目</strong>：将 $1\sim100$ 这 100 个自然数写成一排：$1234567891011121314\cdots99100$，然后从左到右每三个数字组成一个加法算式：$(1+2+3)$，$(4+5+6)$，$(7+8+9)$，$(1+0+1)$，$(1+1+2)$，$(1+3+1)$，…，$(8+9+9)$，$(1+0+0)$。所有这种算式中，有 ________ 个算式的结果是 3 的倍数。</p>
+<p><strong>答案</strong>：27 个</p>
+<p><strong>解析</strong>：<br />
+先数位数：$1\sim9$ 有 9 位，$10\sim99$ 有 $90\times2=180$ 位，$100$ 有 3 位，共 $192$ 位。每 3 位一组，$192\div3=64$ 组。</p>
+<p>因为 $10\equiv1\pmod3$，所以三位的数字和 $\equiv$ 这个三位数 $\pmod3$；判断&quot;数字和是不是 3 的倍数&quot;就等于判断&quot;这三位组成的数是不是 3 的倍数&quot;。</p>
+<p><strong>第 1~9 的 9 个数字</strong>：正好 3 组 $123、456、789$，数字和为 $6、15、24$，都能被 3 整除 → <strong>3 个</strong>。</p>
+<p><strong>第 10~99 的 180 个数字</strong>：共 60 组。每 3 个连续两位数（6 个数字）恰好组成 2 组，逐块计算：</p>
+<table>
+<thead>
+<tr>
+<th>两位数</th>
+<th>两个算式</th>
+<th>数字和</th>
+<th>是 3 的倍数？</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10–12</td>
+<td>101、112</td>
+<td>2、4</td>
+<td>否</td>
+</tr>
+<tr>
+<td>13–15</td>
+<td>131、415</td>
+<td>5、10</td>
+<td>否</td>
+</tr>
+<tr>
+<td>16–18</td>
+<td>161、718</td>
+<td>8、16</td>
+<td>否</td>
+</tr>
+<tr>
+<td>19–21</td>
+<td>192、021</td>
+<td>12、3</td>
+<td><strong>2 个</strong></td>
+</tr>
+<tr>
+<td>22–24</td>
+<td>222、324</td>
+<td>6、9</td>
+<td><strong>2 个</strong></td>
+</tr>
+<tr>
+<td>25–27</td>
+<td>252、627</td>
+<td>9、15</td>
+<td><strong>2 个</strong></td>
+</tr>
+<tr>
+<td>28–30</td>
+<td>282、930</td>
+<td>12、12</td>
+<td><strong>2 个</strong></td>
+</tr>
+<tr>
+<td>31–48</td>
+<td>共 12 组（313、233、…、464、748）</td>
+<td>—</td>
+<td>0 个</td>
+</tr>
+<tr>
+<td>49–51</td>
+<td>495、051</td>
+<td>18、6</td>
+<td><strong>2 个</strong></td>
+</tr>
+<tr>
+<td>52–54</td>
+<td>525、354</td>
+<td>12、12</td>
+<td><strong>2 个</strong></td>
+</tr>
+<tr>
+<td>55–57</td>
+<td>555、657</td>
+<td>15、18</td>
+<td><strong>2 个</strong></td>
+</tr>
+<tr>
+<td>58–60</td>
+<td>585、960</td>
+<td>18、15</td>
+<td><strong>2 个</strong></td>
+</tr>
+<tr>
+<td>61–78</td>
+<td>共 12 组（616、263、…、767、778）</td>
+<td>—</td>
+<td>0 个</td>
+</tr>
+<tr>
+<td>79–81</td>
+<td>798、081</td>
+<td>24、9</td>
+<td><strong>2 个</strong></td>
+</tr>
+<tr>
+<td>82–84</td>
+<td>828、384</td>
+<td>18、15</td>
+<td><strong>2 个</strong></td>
+</tr>
+<tr>
+<td>85–87</td>
+<td>858、687</td>
+<td>21、21</td>
+<td><strong>2 个</strong></td>
+</tr>
+<tr>
+<td>88–90</td>
+<td>888、990</td>
+<td>24、18</td>
+<td><strong>2 个</strong></td>
+</tr>
+<tr>
+<td>91–99</td>
+<td>共 6 组（919、293、…、979、899）</td>
+<td>—</td>
+<td>0 个</td>
+</tr>
+</tbody>
+</table>
+<p>所以 10~99 中能被 3 整除的算式有 $4\times2\times3=24$ 个（四块×每块 2 个，共三组这样的&quot;四块&quot;）。</p>
+<p><strong>第 100 的 3 个数字</strong>：最后 1 组 $(1+0+0)$，和 $1$，不是 3 的倍数 → 0 个。</p>
+<p><strong>合计</strong>：$3+24=27$ 个。</p>
+<p><strong>验算</strong>：组数 $3+60+1=64$ 组，与位数一致；被统计的组数为 $3+24=27$，其余 37 组数字和都不是 3 的倍数 ✓。</p>
+<p><strong>知识点</strong>：数的整除特征；数字谜/数列与数表</p>
+<p><strong>思路/方法</strong>：先定&quot;组数&quot;，再用 $10\equiv1\pmod3$ 把判断化为数字和；最后<strong>分段块状枚举</strong>（每 3 个两位数 = 2 组），减少计算量。</p>
+<p><strong>难度</strong>：★5</p>
+<hr />
+<h3>第 17 题</h3>
+<p><strong>题目</strong>：实验室内正在研制一种能够抑制新型冠状病毒的药物，用 3 千克药粉和 9 千克纯净水制成 12 千克药液，平均分成四份，分别装在甲、乙、丙、丁四个容器中，并进行如下操作：<br />
+将甲容器中的溶液蒸发掉 1 千克水；在乙容器中加入 1 千克水；在丙容器中加入 1 千克药粉且完全溶解；从丁容器中倒出 1 千克溶液。<br />
+（1）此时四个容器中的溶液浓度从高到低排列是 ________。<br />
+（2）此时将甲容器与丁容器中的药液混合，混合药液的浓度是 ________。</p>
+<p><strong>答案</strong>：（1）丙、甲、丁、乙（丙 &gt; 甲 &gt; 丁 &gt; 乙）；（2）31.25%</p>
+<p><strong>解析</strong>：<br />
+原药液浓度 $=\dfrac{3}{3+9}=25%$。平均分成 4 份，每份 3 千克，其中药粉 $0.75$ 千克、水 $2.25$ 千克。</p>
+<table>
+<thead>
+<tr>
+<th>容器</th>
+<th>操作</th>
+<th>现在总质量</th>
+<th>现在药粉质量</th>
+<th>浓度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>甲</td>
+<td>蒸发 1 千克水</td>
+<td>2 千克</td>
+<td>0.75 千克</td>
+<td>$0.75÷2=37.5%$</td>
+</tr>
+<tr>
+<td>乙</td>
+<td>加 1 千克水</td>
+<td>4 千克</td>
+<td>0.75 千克</td>
+<td>$0.75÷4=18.75%$</td>
+</tr>
+<tr>
+<td>丙</td>
+<td>加 1 千克药粉</td>
+<td>4 千克</td>
+<td>1.75 千克</td>
+<td>$1.75÷4=43.75%$</td>
+</tr>
+<tr>
+<td>丁</td>
+<td>倒出 1 千克溶液</td>
+<td>2 千克</td>
+<td>0.5 千克</td>
+<td>$0.5÷2=25%$</td>
+</tr>
+</tbody>
+</table>
+<p>（1）$43.75%&gt;37.5%&gt;25%&gt;18.75%$，所以从高到低是 <strong>丙、甲、丁、乙</strong>。</p>
+<p>（2）甲、丁混合：药粉 $0.75+0.5=1.25$ 千克，溶液 $2+2=4$ 千克，浓度</p>
+<p>$$\frac{1.25}{4}=0.3125=31.25%.$$</p>
+<p><strong>验算</strong>：丁倒出 1 千克溶液后浓度不变（都是 25%），剩 2 千克中含药粉 $2\times25%=0.5$ 千克 ✓；丙加药粉后 $1.75÷4=43.75%$ ✓。</p>
+<p><strong>知识点</strong>：浓度问题</p>
+<p><strong>思路/方法</strong>：抓住&quot;浓度 = 药粉 ÷ 溶液&quot;，逐容器列表；蒸发水 / 加水不改变药粉量，加药粉不改变水量，倒出溶液浓度不变。</p>
+<p><strong>难度</strong>：★3</p>
+<hr />
+<h3>第 18 题</h3>
+<p><strong>题目</strong>：某手机商从卖出去的一部 X 型号手机中可赚到的利润相当于进价的 10%。而手机更新迭代速度比较快，为了给新品让路，也为了防止旧款机型堆货，厂商的进货价经常会变动。现在他用比原来进价低 10% 的价钱买进这部 X 型号手机，再以现在进价的 112% 的价格卖出。<br />
+（1）如果这部手机原来的进价是 1500 元，那么现在卖出这部手机获得的利润比原来的利润 <strong><strong><strong><strong>（填&quot;多&quot;或&quot;少&quot;）</strong></strong></strong></strong> 元。<br />
+（2）如果现在卖出这部手机获得的利润比原来多 15 元，那么这部手机原来的进价是 ________ 元。</p>
+<p><strong>答案</strong>：（1）<strong>多</strong>，12 元；（2）1875 元</p>
+<p><strong>解析</strong>：<br />
+设原来进价为 $C$ 元。</p>
+<ul>
+<li>原来的利润：$10%\times C=0.1C$；</li>
+<li>现在的进价：$0.9C$；现在的售价：$0.9C\times112%=1.008C$；</li>
+<li>现在的利润：$1.008C-0.9C=0.108C$。</li>
+</ul>
+<p>两者之差：$0.108C-0.1C=0.008C$。</p>
+<p>（1）$C=1500$：差 $=0.008\times1500=12$ 元，为<strong>多 12 元</strong>。<br />
+（2）$0.008C=15\ \Longrightarrow\ C=15\div0.008=1875$ 元。</p>
+<p><strong>验算</strong>：（1）原利润 $150$ 元；现在进价 1350 元，售价 $1350\times1.12=1512$ 元，利润 $162$ 元，$162-150=12$ ✓。<br />
+（2）$C=1875$：原利润 $187.5$ 元；现在进价 $1687.5$ 元，售价 $1890$ 元，利润 $202.5$ 元，$202.5-187.5=15$ ✓。</p>
+<p><strong>知识点</strong>：经济问题；百分数应用题（折扣与成数）</p>
+<p><strong>思路/方法</strong>：设原进价为&quot;1&quot;（或 $C$），把&quot;低 10%&quot;&quot;112%&quot;都化成乘法，再作差；第（2）问就是&quot;差 × 原价 = 15&quot;的一次方程。</p>
+<p><strong>难度</strong>：★2</p>
+<hr />
+<h3>第 19 题</h3>
+<p><strong>题目</strong>：将 $1\sim6$ 各一个（6 不能当 9 用）组成 3 个两位数，给甲、乙、丙各一个，每人只能看到自己的两位数，并依次发生如下对话：<br />
+甲说：我手里的两位数是个合数，但它的每一位数字都是质数。<br />
+乙说：我的两位数和甲的两位数之和可能是个平方数。<br />
+丙说：你们两人的两位数之和确实是个平方数。<br />
+甲说：我还是不知道你们两人的数。<br />
+乙说：我不知道丙的数，但是甲的数可能是最大的。<br />
+若他们都是聪明且诚实的好孩子，<br />
+（1）甲手里的数是 ________。（2）乙手里的数是 ________。</p>
+<p><strong>答案</strong>：（1）35；（2）14</p>
+<p><strong>解析</strong>：</p>
+<p><strong>第一步：甲的话缩小范围。</strong><br />
+&quot;每一位数字都是质数&quot;→ 数字只能是 $2,3,5$；&quot;是合数&quot;→ 排除 $23、53$ 这样的质数；数字不能重复（$1\sim6$ 各用一次）→ 排除 $22、33、55$。所以</p>
+<p>$$\text{甲}\in{25,\ 32,\ 35,\ 52}.$$</p>
+<p><strong>第二步：乙的话。</strong><br />
+乙知道自己的数，也知道甲的数是上面 4 个之一。乙说&quot;我的数 + 甲的数<strong>可能</strong>是平方数&quot;，即存在一种可能的甲，使和是完全平方数。逐一检验乙可能的数（数字互不重复）：</p>
+<ul>
+<li>乙 $=14$：甲的 4 种可能都与 14 不重数字，$14+25=39$，$14+32=46$，$14+35=49=7^2$，$14+52=66$ → <strong>有</strong>平方数 ✓</li>
+<li>乙 $=46$：$46+25=71$，$46+32=78$，$46+35=81=9^2$，$46+52=98$ → <strong>有</strong> ✓</li>
+<li>其余（如 16、41、64、12、15、24……）：与所有可能的甲相加都不是平方数，或根本没有可行的甲 → 乙不会这么说。</li>
+</ul>
+<p>所以乙的数只能是 <strong>14 或 46</strong>。</p>
+<p><strong>第三步：丙的话。</strong><br />
+丙说&quot;确实&quot;是平方数，并且丙能断定。把&quot;甲∈{25,32,35,52}、乙∈{14,46}&quot;与&quot;数字不能重复&quot;合起来检查剩下的数字，能成立的搭配只有 4 种：</p>
+<p>$$(35,14,26),\ (35,14,62),\ (35,46,12),\ (35,46,21).$$</p>
+<p>（例如丙拿 26 时，剩下的数字 ${1,3,4,5}$ 只能拼成甲 $=35$、乙 $=14$，和 $49$ 是平方数；丙拿 12 时只能拼成甲 $=35$、乙 $=46$，和 $81$ 是平方数。）所以丙的这句话让大家都知道了：<strong>甲一定是 35</strong>，乙是 14 或 46。</p>
+<p><strong>第四步：甲说&quot;我还是不知道&quot;。</strong><br />
+甲拿的是 35，他知道乙是 14 或 46，而乙为 14 时丙是 26 或 62，乙为 46 时丙是 12 或 21——甲确实分不清，符合&quot;不知道&quot;。</p>
+<p><strong>第五步：乙说&quot;我不知道丙的数，但甲的数可能是最大的&quot;。</strong></p>
+<ul>
+<li>若乙 $=14$：丙可能是 26 或 62，乙不知道丙 ✓；并且甲 $35&gt;14$、$35&gt;26$，所以&quot;甲的数<strong>可能</strong>最大&quot;成立 ✓。</li>
+<li>若乙 $=46$：甲 $35&lt;46$，甲的数是最大<strong>不可能</strong>成立 ✗。</li>
+</ul>
+<p>所以乙 $=14$，甲 $=35$（丙是 26 或 62，题目没问）。</p>
+<p><strong>验算</strong>：把答案 $(35,14,26)$ 或 $(35,14,62)$ 代回五句话：35 是合数且数字 3、5 都是质数 ✓；$14+35=49=7^2$ ✓；丙能确定 ✓；甲不知乙、丙 ✓；乙不知丙且 $35$ 可能最大 ✓。全部吻合。</p>
+<p><strong>知识点</strong>：逻辑推理；质数与合数；完全平方数</p>
+<p><strong>思路/方法</strong>：<strong>逐句排除法</strong>。每句话都把&quot;可能的数对&quot;缩小一次；&quot;可能/确实/不知道&quot;这些词对应的是&quot;存在性/必然性/多解&quot;，要分清。</p>
+<p><strong>难度</strong>：★6</p>
+<hr />
+<h3>第 20 题</h3>
+<p><strong>题目</strong>：在星际大战中，每一艘战舰周围都有肉眼看不到的防护网。防护网是以战舰为中心的 $3\times3$ 大小的圆形（图 1：方格正中放一艘战舰，圆过 $3\times3$ 方格的四边中点，半径 1.5 格）。若双方开战发出镭射，镭射射出的路线以及击中目标有如下规则（如图 2）：<br />
+① 没有障碍物时，镭射射出的方向是直线；<br />
+② 当镭射射出的方向与战舰成一直线时，可命中战舰；<br />
+③ 当镭射射出的方向与战舰不成一条直线，并遇到防护网时，镭射会以直角反射出去，若再次遇到防护网，则继续反射；<br />
+④ 当镭射射到两艘战舰的防护网重叠的位置时，镭射会原路返回；<br />
+⑤ 在防护网内镭射时，若镭射与战舰成一条直线时，可命中战舰；否则立刻沿原路返回。<br />
+（1）一次甲、乙双方开战时，甲方镭射射出后，出现了如图 3 的路线。从&quot;命中&quot;位置射出，可命中战舰。乙方共有 3 艘战舰，它们的位置分别是 ________。<br />
+（2）图 4 中的号码代表镭射射出和射进的方向，镭射从①号射入，会从另一个①号射出；带拐弯的箭头表示镭射从此处射入后沿原路返回。图中有 3 艘战舰，它们的位置分别是 ________。</p>
+<p><strong>答案</strong>：（1）13、23、35；（2）6、8、25</p>
+<p><strong>解析</strong>：</p>
+<p>先把规则翻译成&quot;解题用的三句话&quot;：</p>
+<ul>
+<li>镭射沿<strong>每行/每列的中心线</strong>（穿过格子中心）走直线；</li>
+<li>若沿这条线正好对着一艘战舰 → <strong>命中</strong>（规则②⑤）；</li>
+<li>若撞到某艘战舰的防护网（圆，半径 1.5 格）而没对着它 → <strong>转 90°</strong>（规则③）；</li>
+<li>在两艘战舰防护网的<strong>重叠处</strong>，或在网内却没对着战舰 → <strong>原路返回</strong>（规则④⑤）。</li>
+</ul>
+<p><strong>（1）图 3（$6\times6$，编号 1~36）</strong></p>
+<p>① 图 3 中有一条镭射沿第 5 行（25、26、27、28、29、30 这一行）的中心线从左边射入，向右走，在 <strong>28 格左侧</strong>折回、原路射出。原路返回说明这里<strong>恰好是两艘战舰防护网的重叠处</strong>。第 5 行中心线到&quot;上一行、下一行&quot;的中心距离都是 1 格，若第 5 列（即 23、29、35 这一列）的<strong>上、下两行各有一艘战舰</strong>（第 4 行的 23、第 6 行的 35），它们到第 5 行中心线的距离都是 1 格，两条射线恰在第 5 行中心线距第 5 列中心 $1.118$ 格处相交（约 28 格内），正与图吻合 → <strong>23、35</strong>。</p>
+<p>② 另一条镭射沿第 2 列（8、14、20、26、32 这一列）的中心线从下方射入，向上走到 <strong>20 格</strong>处向右转 90°。转 90° 说明它撞到了某艘战舰的防护网，而这艘战舰不能在第 2 列上（若在第 2 列，镭射会直接命中而不是转弯）。在&quot;13、23、35&quot;中，只有 <strong>13</strong>（第 3 行第 1 列）的防护网覆盖到 20 格（20 格中心到 13 格中心约 1.41 格 &lt; 1.5 格）→ <strong>13</strong>。</p>
+<p>③ 转弯后镭射沿第 4 行向右，进入 23 的防护网并沿直线命中（图 3 中箭头止于 22 格附近、正对着 5 列的 23）→ 与②中的 23 互相验证。</p>
+<p>④ 图 3 左侧&quot;命中&quot;标注在第 3 行旁边：从那里沿第 3 行向右射，正好对着 13 → 再次印证 13。</p>
+<p>所以三艘战舰在 <strong>13、23、35</strong>。</p>
+<p><strong>（2）图 4（$5\times5$，编号 1~25）</strong></p>
+<p>图 4 外围标注：上方第 2 列有拐弯箭头、第 3 列&quot;命中&quot;、第 4 列②；下方第 2 列拐弯箭头、第 3 列&quot;命中&quot;、第 4 列拐弯箭头；右侧第 1 行②、第 2 行&quot;命中&quot;、第 3 行①；左侧第 4 行①、第 5 行&quot;命中&quot;。</p>
+<p>① <strong>上、下第 2 列的拐弯箭头</strong>：从第 2 列上方、下方射入都原路返回，说明第 2 列上遇到的是<strong>两艘战舰防护网的重叠处</strong>。第 2 行右端和第 3 列上、下都有&quot;命中&quot;标注，说明第 2 行有战舰、第 3 列也有战舰。第 2 行、关于第 2 列左右对称的两个格子是 <strong>6（第 2 行第 1 列）和 8（第 2 行第 3 列）</strong>：它们的防护网在第 2 列上相交（重叠点距第 2 行中心线 1.118 格，恰好落在第 2 列中心线上），镭射射到即原路返回 ✓。</p>
+<p>② <strong>第 5 行左侧&quot;命中&quot;</strong>：沿第 5 行向右能命中，说明第 5 行有战舰。<strong>第 4 列下方的拐弯箭头</strong>：从第 4 列底部射入就原路返回，按规则⑤说明射入点已经落在这艘战舰的防护网内、且镭射与它不成一条直线——所以这艘战舰<strong>不在第 4 列</strong>（否则镭射沿第 4 列直行会&quot;命中&quot;而不是返回），而在第 4 列旁边。射入点（第 4 列底边中点）与第 5 行第 5 列方格中心相距约 1.12 格，小于 1.5 格，正好&quot;在网内又不成直线&quot;；再结合 ① 号镭射是&quot;先沿第 4 行向右走一段、再向上反射&quot;，取第 4 列右侧的那一格 → 战舰在 <strong>25（第 5 行第 5 列）</strong>。</p>
+<p>③ <strong>验证 ① 号镭射</strong>：从第 4 行左侧①射入向右，先撞到 25 的防护网（第 4 行中心线离 25 的中心 1 格），按规则③以直角向上反射；向上走时撞到 8 的防护网，再以直角向右反射，从第 3 行右侧的另一个①射出——与题意完全一致 ✓。</p>
+<p>④ <strong>验证各个&quot;命中&quot;位置</strong>：第 2 行右侧向左射 → 先命中 8；第 5 行左侧向右射 → 命中 25；第 3 列上、下射入 → 命中 8；② 从第 4 列上方射入，撞到 8 的防护网后以直角向右反射，从第 1 行右侧的②射出 ✓。</p>
+<p>所以三艘战舰在 <strong>6、8、25</strong>。</p>
+<blockquote>
+<p>说明：图 3、图 4 为扫描件，反射点的像素位置与理想几何有 1~2 个像素的偏差；上面按&quot;防护网为半径 1.5 格的圆、镭射沿行/列中心线&quot;的规则还原，所得位置与官方答案页给出的 (13、23、35) 和 (6、8、25) 完全一致。</p>
+</blockquote>
+<p><strong>知识点</strong>：逻辑推理；操作与探究（路径与反射）</p>
+<p><strong>思路/方法</strong>：<strong>把规则翻译成&quot;直线—命中—转 90°—原路返回&quot;四种情形</strong>，再按&quot;重叠 → 两艘对称的战舰&quot;&quot;网内不对齐 → 原路返回&quot;&quot;对齐 → 命中&quot;逐条反推位置，最后用 ① 号路线整体验证。</p>
+<p><strong>难度</strong>：★7</p>
+<hr />
+<h2>知识点与思路总结表</h2>
+<table>
+<thead>
+<tr>
+<th>题号</th>
+<th>知识点</th>
+<th>方法</th>
+<th>难度</th>
+<th>答案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>解方程与等式的性质、分数四则混合运算</td>
+<td>逆运算逐层还原</td>
+<td>★2</td>
+<td>$\frac12$</td>
+</tr>
+<tr>
+<td>2</td>
+<td>分数乘法、约分</td>
+<td>通项 + 斜向相消</td>
+<td>★3</td>
+<td>$\frac{1}{1225}$</td>
+</tr>
+<tr>
+<td>3</td>
+<td>容斥原理、百分数</td>
+<td>韦恩图：并 = 和 − 交</td>
+<td>★2</td>
+<td>5%</td>
+</tr>
+<tr>
+<td>4</td>
+<td>概率初步</td>
+<td>分步相乘（不放回）</td>
+<td>★2</td>
+<td>$\frac{3}{10}$</td>
+</tr>
+<tr>
+<td>5</td>
+<td>用字母表示数、等式的性质</td>
+<td>整体代换消元</td>
+<td>★2</td>
+<td>11</td>
+</tr>
+<tr>
+<td>6</td>
+<td>三视图求体积、最值问题</td>
+<td>下界估计 + 构造</td>
+<td>★4</td>
+<td>9</td>
+</tr>
+<tr>
+<td>7</td>
+<td>比的意义、百分数</td>
+<td>设份数、统一单位 1</td>
+<td>★2</td>
+<td>47.5%</td>
+</tr>
+<tr>
+<td>8</td>
+<td>圆与扇形、组合图形面积</td>
+<td>割补 + 整体代换（π 抵消）</td>
+<td>★6</td>
+<td>$\frac{11}{8}$</td>
+</tr>
+<tr>
+<td>9</td>
+<td>数列与数表、最值问题</td>
+<td>相减消项得周期 3</td>
+<td>★4</td>
+<td>11</td>
+</tr>
+<tr>
+<td>10</td>
+<td>游戏策略、逻辑推理</td>
+<td>作差找关键格 + 应对策略</td>
+<td>★5</td>
+<td>B（乙格写 2）</td>
+</tr>
+<tr>
+<td>11</td>
+<td>工程问题、列方程解应用题</td>
+<td>设总量为 $x$，效率相加再减</td>
+<td>★3</td>
+<td>864</td>
+</tr>
+<tr>
+<td>12</td>
+<td>浓度问题、按比例分配</td>
+<td>抓不变量（红色量不变）</td>
+<td>★2</td>
+<td>16</td>
+</tr>
+<tr>
+<td>13</td>
+<td>位值原理、不定方程</td>
+<td>位值展开、逐位枚举</td>
+<td>★3</td>
+<td>50</td>
+</tr>
+<tr>
+<td>14</td>
+<td>操作与探究、奇数与偶数</td>
+<td>奇偶性分析 + 构造</td>
+<td>★6</td>
+<td>7</td>
+</tr>
+<tr>
+<td>15</td>
+<td>递推与归纳、枚举与分类</td>
+<td>不相邻选取的斐波那契递推</td>
+<td>★5</td>
+<td>55</td>
+</tr>
+<tr>
+<td>16</td>
+<td>数的整除特征、数列与数表</td>
+<td>分组 + 分段块枚举</td>
+<td>★5</td>
+<td>27</td>
+</tr>
+<tr>
+<td>17</td>
+<td>浓度问题</td>
+<td>列表法、抓溶质守恒</td>
+<td>★3</td>
+<td>丙甲丁乙；31.25%</td>
+</tr>
+<tr>
+<td>18</td>
+<td>经济问题、百分数应用题</td>
+<td>设&quot;1&quot;、乘法表示折扣、作差</td>
+<td>★2</td>
+<td>多 12 元；1875</td>
+</tr>
+<tr>
+<td>19</td>
+<td>逻辑推理、质数与合数、完全平方数</td>
+<td>逐句排除（可能/确实/不知道）</td>
+<td>★6</td>
+<td>35；14</td>
+</tr>
+<tr>
+<td>20</td>
+<td>逻辑推理、操作与探究</td>
+<td>规则翻译 + 路径反推 + 整体验证</td>
+<td>★7</td>
+<td>13/23/35；6/8/25</td>
+</tr>
+</tbody>
+</table>
+<p><strong>知识模块分布</strong></p>
+<ul>
+<li>计算与方程：1、2、5（3 题）</li>
+<li>计数与概率：3、4、15、16（4 题）</li>
+<li>数论：13、19（2 题）</li>
+<li>图形与几何：6、8（2 题）</li>
+<li>应用题：7、9、11、12、17、18（6 题）</li>
+<li>组合、操作、推理：10、14、19、20（4 题，19 跨数论与推理）</li>
+</ul>
+<hr />
+<h2>易错点与教学建议</h2>
+<ol>
+<li><strong>第 1 题</strong>：带分数要先化假分数，且 $\frac{1}{\square}$ 还原时要取倒数。建议强调&quot;从外往里剥&quot;的顺序。</li>
+<li><strong>第 2 题</strong>：常见错误是项数数错（从 $k=3$ 到 $k=50$ 共 48 项，对应分子 $1\sim48$）。建议先写出通项 $\frac{k-2}{k}$，再用小例子（前 3 项）验证公式。</li>
+<li><strong>第 3 题</strong>：容易把&quot;65% 两题都对&quot;重复计算。用容斥公式前先画韦恩图，明确&quot;至少对一题&quot;是并集。</li>
+<li><strong>第 4 题</strong>：忘记&quot;不放回&quot;导致第二颗命中率仍用 $\frac35$。强调第二颗的样本空间变成 4 颗。</li>
+<li><strong>第 5 题</strong>：学生易去逐个求字母。教学时引导观察&quot;要的三项 = 第 1 式 + 第 3 式 − 第 2 式&quot;，体验&quot;整体思想&quot;。</li>
+<li><strong>第 6 题</strong>：容易错答 27（全灰）或 5。要讲清&quot;一块积木对一个视图只贡献 1 格&quot;，用&quot;要覆盖 27 个视角格&quot;求下界，再举例说明 9 块可行。</li>
+<li><strong>第 7 题</strong>：教工与学生的份数容易混。建议统一设 8 份，分别算女生份数（学生 3 份 + 教工 0.8 份）。</li>
+<li><strong>第 8 题</strong>：难在&quot;阴影不规则&quot;。关键是两点：两个眼睛一内一外可拼成一个整圆（整体代换）；四个角落对称，只需算一个。三角形要学生动手在图上标出&quot;切点是中线与小圆的切点&quot;，并用 $\sqrt2$ 关系求底、高。可先用&quot;单位小方格 + 圆规&quot;作图辅助理解。</li>
+<li><strong>第 9 题</strong>：容易漏掉&quot;每个盘都盛有水果&quot;（隐含 $a_3\ge1$），直接答 12。教学时强调&quot;隐含条件&quot;和&quot;构造验证&quot;两个环节。</li>
+<li><strong>第 10 题</strong>：学生易只看&quot;上、下两行&quot;和&quot;左、右两列&quot;表面。关键是引导作差，发现<strong>四个角抵消、中心无用</strong>，只剩甲、丙、乙、丁四格。再用&quot;把最小数塞进对方格子&quot;的直觉说明 B。</li>
+<li><strong>第 11 题</strong>：注意&quot;少砌 60 块&quot;是每小时少 60 块（效率差），不是总量少 60。列方程时要写&quot;6 小时 × 合作效率 = 总量&quot;。</li>
+<li><strong>第 12 题</strong>：容易把&quot;24 升紫红色 → 变成淡紫色&quot;理解成&quot;倒掉再配&quot;。强调只加蓝色、红色量不变。</li>
+<li><strong>第 13 题</strong>：$x-y=99(A-C)$ 要让学生自己用位值展开推一遍；还要注意 $B$ 可以是 0（$B$ 在十位，$x$ 仍是三位数）。</li>
+<li><strong>第 14 题</strong>：学生很难想到&quot;只看奇偶&quot;。教学分两步：先构造&quot;每盏按 1 次 → 每盏改变 5 次（奇数）&quot;；再证&quot;每个按钮必须按奇数次&quot;（相邻按钮对之和奇偶相同 → 全同 → 不能全偶）。</li>
+<li><strong>第 15 题</strong>：题意翻译是难点——&quot;跳过的关卡不能相邻&quot; ↔ &quot;不相邻选取&quot;。建议先枚举 $n=1,2,3$ 找规律，再写递推。</li>
+<li><strong>第 16 题</strong>：易错在段与段之间&quot;组&quot;错位。建议先算总位数（192）和总组数（64），再按&quot;3 个两位数 = 2 组&quot;分块计算，并强调 $10\equiv1\pmod3$ 的转化。</li>
+<li><strong>第 17 题</strong>：蒸发水、加水、加药粉、倒出溶液四种操作对&quot;溶质/溶液&quot;的影响要分清。倒出溶液浓度不变是最易错的一条。</li>
+<li><strong>第 18 题</strong>：注意&quot;现在售价&quot;是&quot;现在进价&quot;的 112%，不是原价的 112%。用 $C$ 表示原进价可避免混淆。</li>
+<li><strong>第 19 题</strong>：这是&quot;对话推理&quot;题，建议画表格逐句排除。要特别提醒：&quot;可能&quot;只要存在一种情况，&quot;确实&quot;要求所有情况都成立。另外丙的后两句（&quot;确实&quot;和&quot;可能最大&quot;）对区分 14/46 是关键。</li>
+<li><strong>第 20 题</strong>：新定义规则题，建议先用图 2 的例子逐条读懂规则（哪条线对应哪条规则），再回到图 3、图 4。做题时把&quot;直行、命中、转 90°、原路返回&quot;四种现象当成线索：<strong>原路返回 → 重叠或网内不对齐；转 90° → 撞到网的边界</strong>。最后一定要用 ① 号路线整体检查一遍，避免只满足局部线索。</li>
+</ol>
+<p><strong>整体教学建议</strong></p>
+<ul>
+<li>本卷阅读量大（第 14、15、19、20 题都是长题干），平时要专项训练&quot;把文字翻译成数学条件&quot;，可让学生自己画表格/韦恩图/示意图。</li>
+<li>第 8、20 题考查&quot;图形想象 + 规则推理&quot;，建议多做&quot;看图说理&quot;的口头训练：先说清每个阴影块由哪些图形拼成、边界是什么。</li>
+<li>第 10、14、19 题考查&quot;策略与推理&quot;，适合用小组对抗、辩论的方式教学，让学生体会&quot;如果我是对手会怎么走/怎么说&quot;。</li>
+<li>第 6、9、16 题的答案都需要&quot;先估下界/上界，再构造例子&quot;的完整闭环，建议把&quot;构造验证&quot;作为解题的固定最后一步。</li>
+</ul>
+</article><div class="exam-foot"><a href="../index.html">← 返回知识地图</a> · <a href="index.html">全部真题</a></div></body></html>
