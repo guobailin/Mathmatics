@@ -81,13 +81,13 @@
 
 ## 4. 自动化一致性门禁
 
-新增 `tools/check_consistency.py`，并接入 `.github/workflows/deploy-pages.yml`。工作流在 `python tools/build.py` 后执行以下检查：
+新增 `tools/check_consistency.py`，并接入 `.github/workflows/deploy-pages.yml`。工作流先运行 `python tools/cards/embed.py`，依据独立 JSON 唯一真源重建非手工内嵌卡（4 篇 `MANUAL_MD` 保留项跳过）；随后运行 `python tools/build.py`，最后执行以下检查：
 
 1. Markdown 源 ID 唯一，课程大纲引用有效。
 2. 小程序记录与 Markdown 源 ID 集合一致。
 3. 小程序的 title、module、grade、tags、difficulty、skills、related、lecture、examples、variants 与构建源数据逐字段一致。
 4. 独立卡片 ID 必须对应 Markdown 正文。
-5. 自动生成的内嵌卡片块必须与独立卡片 JSON 逐块一致；4 篇手工保留卡片单独检查，不被自动覆盖。
+5. 自动生成的内嵌卡片块必须与独立卡片 JSON 逐块一致；4 篇手工保留卡片单独检查，不被自动覆盖。首次运行发现 65 条自动卡片差异（38 条原本一致、4 条手工保留），将按 JSON 源重建后再复核。
 6. dist/miniprogram 与构建后 miniprogram/data 一致，manifest 模块计数一致。
 7. 自动生成 `CONSISTENCY_MATRIX.csv` 和 `CONSISTENCY_ISSUES.csv`，并由 GitHub Actions 提交审计产物。
 
