@@ -589,7 +589,7 @@
         },
         {
           "t": "fx",
-          "v": "\\frac{a}{b}<\\frac{a+c}{b+d}<\\frac{c}{d}\\quad(b,d>0,\ ad<bc)"
+          "v": "\\frac{a}{b}<\\frac{a+c}{b+d}<\\frac{c}{d}\\quad(b,d>0,\\ ad<bc)"
         },
         {
           "t": "tip",
