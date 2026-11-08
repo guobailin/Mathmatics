@@ -35,7 +35,7 @@
 
 - 当前规格：单卡 13cm×9cm；建议 13–16 行，最多 4 个 sec、11 条 li，每条 li 不超过 42 字。
 - 目前静态统计不能代替浏览器实际溢出检查。
-- `render.py` 已改为兼容 PATH 中的 Chrome/Chromium；GitHub Actions 已实际运行 `python tools/cards/render.py --check --pdf`。本轮检查结果为“溢出卡片：无”，并成功生成 PDF。
+- `render.py` 已改为兼容 PATH 中的 Chrome/Chromium；GitHub Actions 已实际运行 `python tools/cards/render.py --check --pdf`。T8 从独立 JSON 重新生成 103 条自动内嵌卡后，最新渲染发现 13 张卡片溢出；见第 8 节。此项属于版面容量问题，转交 T9 修复。
 
 ## 3. 卡片类型规范
 
@@ -62,8 +62,8 @@
 - GitHub Actions 最新相关构建成功；构建脚本通过全部内容元数据、技能覆盖、例题字段与变式结构校验。构建统计更新为 249 个知识点、778 道例题、107 篇含变式/自测共 428 道；T5 补齐页码问题后，知识点总数为 249。
 - 打印页生成：12 个模块。
 - 卡片渲染：107 条卡片记录 → 56 张正反面配对卡 → 14 张 A4（正反）纸。
-- Chrome headless 检查：`溢出卡片：无`。
-- PDF 已生成：`cards/cards.pdf`，构建日志记录文件大小 2,719,840 bytes。
+- Chrome headless 检查（T8 同步 JSON 源后）：13 张卡片溢出；详见第 8 节，旧的“无溢出”结果属于同步前快照。
+- PDF 已生成：`cards/cards.pdf`，最新 T8 构建日志记录文件大小 2,855,612 bytes。
 - 线上入口：`https://guobailin.github.io/Mathmatics/cards/`；PDF：`https://guobailin.github.io/Mathmatics/cards/cards.pdf`。
 - 限制：无溢出只证明当前浏览器渲染尺寸未超出卡框，不等于字体在所有系统完全一致，也不等于已完成实体打印、裁切或双面套准验证。
 
@@ -372,6 +372,8 @@
 
 - 第一次自动比对结果：107 条卡片中 38 条内嵌块与 JSON 源逐字一致，4 条为 `embed.py` 明确列入 `MANUAL_MD` 的手工保留卡，另有 65 条自动卡片块存在差异。
 - 抽查 `app-page-number` 与 `cnt-circle-regions`，发现差异涉及自动生成说明文字、公式/变量排版，以及独立 JSON 中较新的条件补充；例如线分圆环卡的 JSON 源已明确“其他交点均为简单点”等条件，旧内嵌块未完整同步。
-- 按 `tools/cards/SPEC.md` 的数据源约定，独立 JSON 是卡片唯一真源；4 篇手工保留卡继续跳过自动回写，其余卡片由 `tools/cards/embed.py` 从 JSON 重新生成，再由 `tools/check_consistency.py` 逐块验证。
+- 按 `tools/cards/SPEC.md` 的数据源约定，独立 JSON 是卡片唯一真源；4 篇手工保留卡继续跳过自动回写，其余 103 张卡片由 `tools/cards/embed.py` 从 JSON 重新生成，并由 `tools/check_consistency.py` 逐块验证。最新结果为 103 条 exact、4 条 manual、0 条 drift。
 - 此同步只改写 `<!-- card:auto -->` 标记内的摘要，不改动讲解正文、竞赛题索引、例题和变式；若后续发现应保留的卡片独有结论，应先合并到 JSON 源再重新生成。
 - T8 自动门禁最终通过前，不将 65 条差异宣称为已修复。
+
+- T8 同步后的版面检查发现 13 张卡片溢出：牛吃草、经济问题、分数裂项、速算与巧算、线分圆环、最大公因数与最小公倍数、进位制、斜三角形面积、立体几何综合、角度计算、时钟问题、火车追及、基本公式与平均速度。T9 应逐卡精简 JSON 源并重跑渲染检查；不要再手改 Markdown 内嵌卡。
