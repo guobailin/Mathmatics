@@ -473,7 +473,7 @@
         },
         {
           "t": "fx",
-          "v": "S_{\\text{柱侧}}=2\\pi rh,\\quad S_{\\text{直圆锥侧}}=\\pi rl"
+          "v": "S_{\\text{直圆柱侧}}=2\\pi rh,\\quad S_{\\text{直圆锥侧}}=\\pi rl"
         },
         {
           "t": "li",
@@ -541,7 +541,7 @@
         },
         {
           "t": "fx",
-          "v": "D\\text{ 在 }BC\\text{ 的延长线上时：}\\quad\\angle ACD=\\angle A+\\angle B"
+          "v": "D\\text{ 在 }BC\\text{ 的延长线上且位于 }C\\text{ 外侧时：}\\quad\\angle ACD=\\angle A+\\angle B"
         },
         {
           "t": "li",
