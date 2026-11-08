@@ -837,7 +837,7 @@
         },
         {
           "t": "fx",
-          "v": "1\\\\le n\\\\le9:\\\\quad R_n^2=123\\\\cdots n\\\\cdots321,\\\\quad 1+2+\\\\cdots+n+\\\\cdots+2+1=n^2"
+          "v": "R_n^2=123\\\\cdots n\\\\cdots321\\\\quad(1\\\\le n\\\\le9);\\\\quad 1+2+\\\\cdots+n+\\\\cdots+2+1=n^2"
         },
         {
           "t": "fx",
