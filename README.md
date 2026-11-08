@@ -2,15 +2,18 @@
 
 小学数学知识库（课内 1–6 年级 + 小学奥数）：按知识点组织，支持查询、打印、微信小程序访问，可持续增补。
 
-> 质量状态（2026-11-08）：248/248 知识点正文与例题首轮审校已完成；课程标准逐条映射、12册教材逐册逐单元纸本核验、107条独立卡片逐卡专项审计仍在推进。详见 QUALITY_AUDIT.md、CURRICULUM_COVERAGE.md 和 CARD_AUDIT.md。
+> 质量状态（2026-11-08）：249/249 知识点正文与例题首轮审校已完成；课程标准逐条映射、12册教材逐册逐单元纸本核验、107条独立卡片逐卡专项审计仍在推进。详见 QUALITY_AUDIT.md、CURRICULUM_COVERAGE.md 和 CARD_AUDIT.md。
 
 ## 目录
 
 - `DESIGN.md` — 总体设计方案
 - `QUALITY_AUDIT.md` — 数学与教学质量审查报告
-- `AUDIT_REGISTER.csv` — 248 个知识点逐项审查台账
+- `AUDIT_REGISTER.csv` — 249 个知识点逐项审查台账
 - `CURRICULUM_COVERAGE.md` — 课程覆盖矩阵
 - `CARD_AUDIT.md` — 速查卡质量审查
+- `CONSISTENCY_AUDIT.md` — 正文、独立卡片、小程序三端一致性审查
+- `CONSISTENCY_MATRIX.csv` — 249 个知识点三端映射矩阵
+- `CONSISTENCY_ISSUES.csv` — 一致性问题与处理记录
 - `exam/SOURCE_AUDIT.md` — 竞赛/测评资料来源审计（18份资料、482题，官方原始来源认证状态）
 - `exam/SOURCE_REGISTER.csv` — 逐份资料来源证据登记
 - `content/` — 唯一数据源：知识点 Markdown（YAML 元数据 + 讲解 + 例题）+ `curriculum.yaml` 课程大纲
