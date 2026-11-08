@@ -181,7 +181,7 @@
         },
         {
           "t": "fx",
-          "v": "a_n=a_1+(n-1)d,\\quad n=\\frac{a_n-a_1}{d}+1"
+          "v": "a_n=a_1+(n-1)d,\\quad n=\\frac{a_n-a_1}{d}+1\\ (d\\ne0)"
         },
         {
           "t": "fx",
@@ -213,7 +213,7 @@
         },
         {
           "t": "warn",
-          "v": "易错：项数 =（末项−首项）÷公差 + 1，别少算 1"
+          "v": "易错：反求项数须 $d\\ne0$；$d=0$ 时各项相等，不能用端点差除以公差"
         }
       ]
     },
@@ -637,11 +637,11 @@
         },
         {
           "t": "fx",
-          "v": "a+b=b+a,\\quad a\\times b=b\\times a,\\quad (a+b)c=ac+bc,\\quad (a+b)\\div c=a\\div c+b\\div c"
+          "v": "a+b=b+a,\\quad a\\times b=b\\times a,\\quad (a+b)c=ac+bc,\\quad (a+b)\\div c=a\\div c+b\\div c（$c\\ne0$）"
         },
         {
           "t": "fx",
-          "v": "(a+b)+c=a+(b+c),\\quad (ab)c=a(bc),\\quad a-b-c=a-(b+c),\\quad a\\div b\\div c=a\\div(bc)"
+          "v": "(a+b)+c=a+(b+c),\\quad (ab)c=a(bc),\\quad a-b-c=a-(b+c),\\quad a\\div b\\div c=a\\div(bc)（$b,c\\ne0$）"
         },
         {
           "t": "fx",
@@ -801,7 +801,7 @@
         },
         {
           "t": "fx",
-          "v": "111\\cdots1\\times111\\cdots1=123\\cdots n\\cdots321,\\quad 1+2+\\cdots+n+\\cdots+2+1=n^2"
+          "v": "1\\le n\\le9:\\quad 111\\cdots1\\times111\\cdots1=123\\cdots n\\cdots321"
         },
         {
           "t": "fx",
