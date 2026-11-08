@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>数学知识卡片｜三角形中线定理与重心、圆排列公式</title>
+<style>
+@page { size: 120mm 180mm; margin: 0; }
+* { box-sizing: border-box; }
+html,body { margin:0; padding:0; font-family:"Noto Sans CJK SC","PingFang SC","Microsoft YaHei",sans-serif; color:#182536; }
+.card { width:120mm; height:180mm; padding:8mm 8mm 7mm; page-break-after:always; break-after:page; position:relative; overflow:hidden; background:#fff; }
+.card:last-child { page-break-after:auto; break-after:auto; }
+.kicker { font-size:9pt; letter-spacing:1.5px; color:#54718f; font-weight:700; }
+h1 { font-size:22pt; line-height:1.25; margin:2.5mm 0 2mm; color:#132b45; }
+.subtitle { font-size:9pt; color:#63758a; margin-bottom:4mm; }
+.rule { height:1px; background:#d7e1eb; margin:3mm 0; }
+.section { font-size:11pt; font-weight:800; color:#1d527d; margin:3mm 0 1.5mm; }
+p,li { font-size:9.2pt; line-height:1.48; margin:1mm 0; }
+ul { padding-left:5mm; margin:1mm 0 2mm; }
+.formula { background:#f1f6fb; border-left:3px solid #4b83b5; border-radius:2mm; padding:2.5mm 3mm; margin:2mm 0; text-align:center; font-size:14pt; font-weight:700; color:#163d61; }
+.formula.small { font-size:11.5pt; }
+.note { background:#fff8e9; border-left:3px solid #d39b38; padding:2mm 3mm; margin:2mm 0; font-size:8.6pt; line-height:1.45; }
+.diagram { width:100%; display:block; margin:1mm auto 2mm; }
+.grid2 { display:grid; grid-template-columns:1fr 1fr; gap:2mm; }
+.mini { border:1px solid #dce5ee; border-radius:2mm; padding:2mm; }
+.mini b { display:block; font-size:9pt; color:#1d527d; margin-bottom:1mm; }
+.mini span { font-size:8.3pt; line-height:1.4; }
+.footer { position:absolute; left:8mm; right:8mm; bottom:5mm; display:flex; justify-content:space-between; border-top:1px solid #d7e1eb; padding-top:2mm; color:#8190a0; font-size:7.5pt; }
+.math { font-family:"Times New Roman",serif; font-style:italic; }
+@media screen { body { background:#e9edf2; padding:8mm 0; } .card { margin:0 auto 8mm; box-shadow:0 2mm 7mm #0002; } }
+@media print { body { background:#fff; } }
+</style>
+</head>
+<body>
+<section class="card">
+  <div class="kicker">几何 · 三角形</div>
+  <h1>中线定理与重心性质</h1>
+  <div class="subtitle">一条中线看长度关系；三条中线看重心与面积关系</div>
+  <div class="rule"></div>
+  <div class="section">一、三角形中线定理（阿波罗尼斯定理）</div>
+  <svg class="diagram" viewBox="0 0 420 190" aria-label="三角形ABC，D是BC中点，AD为中线">
+    <polygon points="205,18 55,160 355,160" fill="#eef5fb" stroke="#315f86" stroke-width="3"/>
+    <line x1="205" y1="18" x2="205" y2="160" stroke="#d16b35" stroke-width="3"/>
+    <circle cx="205" cy="160" r="4" fill="#d16b35"/>
+    <circle cx="55" cy="160" r="3" fill="#315f86"/><circle cx="355" cy="160" r="3" fill="#315f86"/>
+    <path d="M190 160 L190 147 L203 147" fill="none" stroke="#315f86" stroke-width="1.5"/>
+    <text x="205" y="12" text-anchor="middle" font-size="15" fill="#18344e">A</text>
+    <text x="45" y="178" text-anchor="middle" font-size="15" fill="#18344e">B</text>
+    <text x="365" y="178" text-anchor="middle" font-size="15" fill="#18344e">C</text>
+    <text x="205" y="181" text-anchor="middle" font-size="15" fill="#b55326">D</text>
+    <text x="214" y="92" font-size="14" fill="#b55326">中线 AD</text>
+    <text x="118" y="174" font-size="12" fill="#315f86">BD</text>
+    <text x="286" y="174" font-size="12" fill="#315f86">DC</text>
+  </svg>
+  <p>若 <b>D 是 BC 的中点</b>，则 AD 是边 BC 上的中线，且：</p>
+  <div class="formula">AB² + AC² = 2(AD² + BD²)</div>
+  <p>因为 BD = DC = BC/2，也可写成：</p>
+  <div class="formula small">AB² + AC² = 2AD² + ½BC²</div>
+  <div class="note"><b>理解：</b>两腰平方和 = 2×（中线平方 + 半底边平方）。已知三边可求中线；已知中线也可反求边长关系。</div>
+  <div class="section">二、三角形重心的性质</div>
+  <svg class="diagram" viewBox="0 0 420 190" aria-label="三角形三条中线交于重心G，AG:GD=2:1">
+    <polygon points="205,15 55,165 355,165" fill="#f5f8fb" stroke="#315f86" stroke-width="2.5"/>
+    <line x1="205" y1="15" x2="205" y2="165" stroke="#d16b35" stroke-width="2"/>
+    <line x1="55" y1="165" x2="280" y2="90" stroke="#5c8f75" stroke-width="2"/>
+    <line x1="355" y1="165" x2="130" y2="90" stroke="#8b75aa" stroke-width="2"/>
+    <circle cx="205" cy="115" r="5" fill="#d16b35"/>
+    <text x="205" y="10" text-anchor="middle" font-size="14" fill="#18344e">A</text>
+    <text x="45" y="181" font-size="14" fill="#18344e">B</text><text x="365" y="181" font-size="14" fill="#18344e">C</text>
+    <text x="215" y="112" font-size="14" fill="#b55326" font-weight="bold">G</text>
+    <text x="214" y="65" font-size="12" fill="#b55326">2份</text><text x="214" y="145" font-size="12" fill="#b55326">1份</text>
+  </svg>
+  <ul>
+    <li><b>三条中线交于一点</b>，交点 G 叫重心。</li>
+    <li>重心把每条中线分成 <b>2∶1</b>，靠顶点的一段较长。</li>
+    <li>若 D 是 BC 中点，则 <b>AG:GD = 2:1</b>，且 AG = ⅔AD。</li>
+    <li>三条中线把三角形分成 <b>6 个面积相等</b>的小三角形。</li>
+  </ul>
+  <div class="note"><b>易错提醒：</b>2∶1 的顺序是“顶点到重心 : 重心到边中点”；不要写反。中线是线段，重心是三条中线的交点。</div>
+  <div class="footer"><span>数学知识卡片 · 几何</span><span>成品尺寸 12 × 18 cm</span></div>
+</section>
+<section class="card">
+  <div class="kicker">计数原理 · 排列组合</div>
+  <h1>圆排列公式</h1>
+  <div class="subtitle">围成一圈：旋转后相同，镜像通常不同</div>
+  <div class="rule"></div>
+  <div class="section">一、核心公式</div>
+  <svg class="diagram" viewBox="0 0 420 205" aria-label="五个人围圆桌排列示意图">
+    <circle cx="210" cy="101" r="75" fill="#f4f8fc" stroke="#9ab0c5" stroke-width="2"/>
+    <circle cx="210" cy="26" r="13" fill="#dceaf6" stroke="#315f86" stroke-width="1.5"/>
+    <circle cx="281" cy="78" r="13" fill="#dceaf6" stroke="#315f86" stroke-width="1.5"/>
+    <circle cx="254" cy="162" r="13" fill="#dceaf6" stroke="#315f86" stroke-width="1.5"/>
+    <circle cx="166" cy="162" r="13" fill="#dceaf6" stroke="#315f86" stroke-width="1.5"/>
+    <circle cx="139" cy="78" r="13" fill="#dceaf6" stroke="#315f86" stroke-width="1.5"/>
+    <g fill="#18344e" font-size="13" text-anchor="middle"><text x="210" y="31">A</text><text x="281" y="83">B</text><text x="254" y="167">C</text><text x="166" y="167">D</text><text x="139" y="83">E</text></g>
+    <text x="210" y="105" text-anchor="middle" font-size="13" fill="#54718f">圆桌</text>
+  </svg>
+  <p>n 个<b>不同</b>元素围成一圈，若只把旋转后的排列视为相同：</p>
+  <div class="formula">圆排列数 = (n − 1)!</div>
+  <p>其中 n ≥ 2。常见圆桌问题 n ≥ 3。</p>
+  <div class="section">二、为什么是 (n−1)!</div>
+  <ul>
+    <li>先固定一个人（或一个元素）的位置，消除整体旋转造成的重复。</li>
+    <li>其余 n−1 个不同元素自由排列，共有 (n−1)! 种。</li>
+  </ul>
+  <div class="formula small">例：5 人围圆桌坐 → (5−1)! = 4! = 24 种</div>
+  <div class="section">三、先判断“什么算相同”</div>
+  <div class="grid2">
+    <div class="mini"><b>圆桌就座</b><span>只消旋转；顺时针与逆时针次序不同。用 (n−1)!</span></div>
+    <div class="mini"><b>项链 / 手环</b><span>若翻转后也视为相同，才需要进一步考虑镜像重复。</span></div>
+  </div>
+  <div class="section">四、典型变式</div>
+  <ul>
+    <li><b>甲必须坐某位置：</b>固定甲，其余人圆排列，(n−1)!。</li>
+    <li><b>甲、乙相邻：</b>把甲乙捆成一组，组内有 2 种次序；整体圆排列为 2×(n−2)!。</li>
+    <li><b>甲、乙不相邻：</b>总数 − 相邻数 = (n−1)! − 2(n−2)!。</li>
+  </ul>
+  <div class="note"><b>易错提醒：</b>不能直接用 n!；圆排列不是把镜像也自动合并。只有题目明确说“翻转后相同”时，才按项链/手环模型处理。</div>
+  <div class="footer"><span>数学知识卡片 · 排列组合</span><span>成品尺寸 12 × 18 cm</span></div>
+</section>
+</body>
+</html>
