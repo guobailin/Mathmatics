@@ -22,7 +22,7 @@
 - `dist/` — 构建产物（打印 HTML、网页版、小程序数据包）
 - `miniprogram/` — 微信小程序源码（数据在 `miniprogram/data/`，由构建自动同步）
 - `h5-preview/` — 小程序 H5 效果预览（近似版，`npm run dev` 启动本地预览）
-- `delivery/` — 小程序静态编译证据包
+- `delivery/` — 小程序静态编译证据包；`delivery/cards/` 另有 3 张 12×18 cm 可打印知识卡（中线定理 / 重心 / 圆排列公式）
 - `参考讲义/` — 原始讲义素材
 
 ## 使用
@@ -35,6 +35,7 @@ python3 tools/build.py --check  # 只校验
 - 查询/浏览：打开 `dist/web/index.html`。首页是按「年级 → 领域 → 知识点」组织的知识地图（1–6 年级 + 奥数），支持搜索与状态筛选。
 - 奥数专题按竞赛难度编排：每个知识点含 4 道 ★4–★7 例题，讲解含模型推导、高级变形与竞赛视角；课内知识点保持 2–4 道 ★3–★5 例题。
 - 打印：打开 `dist/print/<模块>.html`，浏览器 Cmd+P 出 PDF
+- 12×18 cm 知识卡：打开 `delivery/cards/geometry-median-centroid-and-circular-permutation-12x18.html`，或直接打印同目录 PDF（3 页 = 3 张卡，按「实际大小 100%」打印）；详见 `delivery/cards/README.md`
 - 小程序：微信开发者工具导入 `miniprogram/` 目录（选测试号即可预览；命令行调用需在 工具→设置→安全设置 中开启"服务端口"）
 - H5 预览：`cd h5-preview && npm run dev`（或 `python3 tools/build_h5_preview.py` 重新生成）
 
